@@ -1,0 +1,68 @@
+<div class="pagehead">
+  <p class="kicker"><span class="n">STUDY GUIDE · CORE 60 · A6</span>MFG 105 · Lesson 08</p>
+  <h1>Forging</h1>
+  <p class="sub">Deformation with a fist instead of rolls: open-die and impression-die forging,
+  the upsetting analysis that sizes the press, and the grain-flow argument that makes forged
+  flanges and shafts the default for critical duty.</p>
+</div>
+
+<section class="part tight">
+  <div class="measure rv">
+    <h3>Objectives</h3>
+    <ol class="objectives">
+      <li>Distinguish open-die, impression-die, and flashless forging by tooling and by what each can promise.</li>
+      <li>Compute an upsetting force including friction's barreling penalty, units carried through.</li>
+      <li>Explain grain flow — what it genuinely buys and what it does not.</li>
+    </ol>
+
+    <h3>Key equations — sourced (Groover, Ch. 19)</h3>
+    <div class="keybox">
+      <span class="cap">Upsetting a cylinder: strain, flow stress, friction factor, force</span>
+      <div class="eqrow"><span class="eq">ε <b>=</b> ln <b>(</b><span class="fr"><span class="nu">h<sub>0</sub></span><span class="de">h</span></span><b>)</b> ,&nbsp;&nbsp; Y<sub>f</sub> <b>=</b> K ε<sup>n</sup></span><span class="eqnum">(1)</span></div>
+      <div class="eqrow"><span class="eq">K<sub>f</sub> <b>=</b> 1 + <span class="fr"><span class="nu">0.4 μ D</span><span class="de">h</span></span> ,&nbsp;&nbsp; F <b>=</b> K<sub>f</sub> Y<sub>f</sub> A</span><span class="eqnum">(2)</span></div>
+    </div>
+    <p>Volume constancy sets the growing area A = V/h; the flow curve (K, n from the material's
+    cold-work behavior) sets the strength at the current strain; K<sub>f</sub> taxes the force for
+    friction at the dies — the same friction that barrels the part.</p>
+
+    <div class="keybox">
+      <span class="cap">Condensed worked example — cold upsetting a low-carbon steel slug</span>
+      <p style="margin:10px 0 4px">d₀ = 50 mm, h₀ = 70 mm, upset to h = 40 mm; annealed low-C steel K = 500 MPa, n = 0.25 (Groover's flow-curve table); μ = 0.25:</p>
+      <p style="margin:4px 0;font-family:var(--mono);font-size:14px">
+      V = π/4 × 50² × 70 = 137,400 mm³ → A = V/h = 3,436 mm², D = √(4A/π) = 66.1 mm<br>
+      ε = ln(70/40) = 0.56 → Y_f = 500 × 0.56^0.25 = 432 MPa<br>
+      K_f = 1 + 0.4 × 0.25 × 66.1/40 = 1.17<br>
+      F = 1.17 × 432×10⁶ × 3.436×10⁻³ ≈ <strong style="color:var(--ember)">1.73 MN</strong>&nbsp;&nbsp;(≈ 176 tonnes-force at the final instant)</p>
+    </div>
+
+    <h3>Misconceptions</h3>
+    <div class="miscon">
+      <article>
+        <div class="wrong">"Forged parts are simply stronger than cast parts."</div>
+        <div class="right">Forging refines structure, closes porosity, and aligns inclusion
+        stringers along the flow direction — so properties improve <em>along</em> the grain flow
+        and fatigue resistance rises where flow follows the loading path. Across the flow, the
+        advantage shrinks. A well-designed casting can beat a badly oriented forging; specify
+        the loading direction before praising the process.</div>
+      </article>
+      <article>
+        <div class="wrong">"Flash is just wasted metal."</div>
+        <div class="right">In impression-die forging, flash is a pressure valve and a die-filling
+        tool: the thin flash land chokes outward flow, building the internal pressure that forces
+        metal into the last corners of the cavity. It is then trimmed — engineered waste,
+        not accidental waste.</div>
+      </article>
+    </div>
+
+    <h3>Kuwait floor</h3>
+    <p>Kuwait imports most forgings, but a maintenance-to-manufacturing engineer meets them
+    daily as flanges, valve internals, crane hooks, and shafts — and meets forging questions in
+    HEISCO-type fabrication and repair scopes: verifying material certificates, reading grain
+    flow in a failed hook's fracture, and knowing why a machined-from-bar replacement is not
+    automatically equivalent to the forged original.</p>
+
+    <p class="small"><strong>Study from</strong> — Groover, Ch. 19; Kalpakjian &amp; Schmid,
+    forging chapter (die design and defects: laps, cold shuts, underfill). Video: NPTEL
+    "Fundamentals of Manufacturing Processes" (IIT Roorkee — verified), forming block.</p>
+  </div>
+</section>

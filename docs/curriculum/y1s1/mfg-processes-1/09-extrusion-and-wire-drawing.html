@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Extrusion and wire drawing — Manufacturing Processes I — Casting &amp; Bulk Forming — Sun Devil Factory</title>
+<meta name="description" content="Direct and indirect extrusion; extrusion ratio and pressure estimates. Wire drawing through dies in tandem — reduction per pass, drawing stress, and w">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+<header class="hd">
+  <a class="wordmark" href="../../../index.html">Sun Devil <span>Factory</span></a>
+  <nav aria-label="Site">
+    <a href="../../../index.html">Start Here</a>
+    <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+    <a href="../../../career/index.html">Career</a>
+  </nav>
+</header>
+<main>
+<div class="pagehead">
+  <p class="kicker"><span class="n">STUDY GUIDE · CORE 60 · A7</span>MFG 105 · Lesson 09</p>
+  <h1>Extrusion and wire drawing</h1>
+  <p class="sub">Two die processes, opposite stress states: extrusion pushes metal through a die,
+  drawing pulls it. The difference decides everything — including why a wire must survive its own
+  process. Gulf Cable's conductor line is this lesson running at production speed.</p>
+</div>
+
+<section class="part tight">
+  <div class="measure rv">
+    <h3>Objectives</h3>
+    <ol class="objectives">
+      <li>Compute extrusion ratio and estimate ram pressure with an empirical extrusion-strain model.</li>
+      <li>Compute drawing stress for a wire pass and check it against the drawn wire's own yield strength.</li>
+      <li>Explain why drawing reductions are limited per pass and how tandem drawing machines exploit that limit.</li>
+    </ol>
+
+    <h3>Key equations — sourced (Groover, Ch. 19)</h3>
+    <div class="keybox">
+      <span class="cap">Extrusion (Johnson's empirical extrusion strain) and round-wire drawing</span>
+      <div class="eqrow"><span class="eq">r<sub>x</sub> <b>=</b> <span class="fr"><span class="nu">A<sub>0</sub></span><span class="de">A<sub>f</sub></span></span> ,&nbsp;&nbsp; ε<sub>x</sub> <b>=</b> a + b · ln r<sub>x</sub> ,&nbsp;&nbsp; p <b>=</b> Ȳ<sub>f</sub> ε<sub>x</sub></span><span class="eqnum">(1)</span></div>
+      <div class="eqrow"><span class="eq">σ<sub>d</sub> <b>=</b> Ȳ<sub>f</sub> <b>(</b>1 + <span class="fr"><span class="nu">μ</span><span class="de">α</span></span><b>)</b> φ · ln <b>(</b><span class="fr"><span class="nu">A<sub>0</sub></span><span class="de">A<sub>f</sub></span></span><b>)</b></span><span class="eqnum">(2)</span></div>
+    </div>
+    <p>In (1), a ≈ 0.8 and b ≈ 1.2–1.5 fold ideal work, friction, and redundant shear into one
+    empirical strain (Groover's treatment of Johnson's equation). In (2), μ is die friction,
+    α the die half-angle (radians), and φ ≥ 1 a redundant-work factor that grows for short
+    contact geometries. The absolute constraint: σ<sub>d</sub> must stay well below the drawn
+    wire's yield stress, or the wire yields and snaps at the exit instead of drawing at the die.</p>
+
+    <div class="keybox">
+      <span class="cap">Condensed worked example — one copper drawing pass (Gulf Cable-type duty)</span>
+      <p style="margin:10px 0 4px">Annealed copper (K = 300 MPa, n = 0.50), wire 3.50 → 3.03 mm (25 % area reduction), μ = 0.07, α = 6° = 0.105 rad:</p>
+      <p style="margin:4px 0;font-family:var(--mono);font-size:14px">
+      ln(A₀/A_f) = ln(1.333) = 0.288 → Ȳ_f = K εⁿ/(1+n) = 300 × 0.288^0.5 / 1.5 = 107 MPa<br>
+      contact: L_c = (3.50−3.03)/(2 sin 6°) = 2.25 mm; D̄/L_c = 3.27/2.25 = 1.45 → φ = 0.88 + 0.12 × 1.45 = 1.05<br>
+      σ_d = 107 × (1 + 0.07/0.105) × 1.05 × 0.288 ≈ <strong style="color:var(--ember)">54 MPa</strong><br>
+      check: flow stress of drawn wire = 300 × 0.288^0.5 = 161 MPa ≫ 54 MPa ✓ safe pass<br>
+      draw force = 54 MPa × 7.21 mm² ≈ <strong style="color:var(--ember)">390 N</strong> per wire</p>
+    </div>
+
+    <h3>Misconceptions</h3>
+    <div class="miscon">
+      <article>
+        <div class="wrong">"Take the biggest reduction the die survives — fewer passes, faster line."</div>
+        <div class="right">The die is not the limit; the wire is. σ<sub>d</sub> rises with
+        ln(A₀/A_f) and must stay below the wire's yield — the theoretical ceiling is 63 % area
+        reduction even for a frictionless, ideal pass, and practice runs far lower. Hence tandem
+        machines: many modest passes, each re-checked, often with anneals between blocks as
+        strain hardening accumulates.</div>
+      </article>
+      <article>
+        <div class="wrong">"Extrusion and drawing are the same process from the die's point of view."</div>
+        <div class="right">The die geometry is similar; the stress state is opposite. Extrusion's
+        compression lets it take enormous strains in one shot (r<sub>x</sub> of 40+ for aluminum)
+        and even improves workability; drawing's tension caps every pass. That one sign change
+        explains both process's products: massive sections from extrusion, kilometres of fine
+        wire from drawing.</div>
+      </article>
+    </div>
+
+    <h3>Kuwait floor</h3>
+    <p>Gulf Cable's conductor route is this lesson end to end: copper (and aluminum) rod drawn
+    through tandem die blocks toward conductor sizes, annealed to restore ductility, stranded
+    into conductors, then insulated by polymer extrusion — equation (1)'s polymer cousin — over
+    the moving conductor. Die wear, lubricant condition, and tension control are the line's
+    daily maintenance-engineering diet, and wire breaks are its OEE story.</p>
+
+    <p class="small"><strong>Study from</strong> — Groover, Ch. 19; Kalpakjian &amp; Schmid,
+    extrusion and drawing chapters. Video: NPTEL "Fundamentals of Manufacturing Processes"
+    (IIT Roorkee — verified), forming block.</p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="inner">
+    
+    <div class="cols">
+      <div>
+        <h5>The pathway</h5>
+        A maintenance engineer's route into manufacturing:<br>
+        Reliability · Asset Integrity · Production/Operations · Maintenance Planning
+      </div>
+      <div>
+        <h5>Site</h5>
+        <a href="../../../index.html">Start here</a><br>
+        <a href="../../../curriculum/index.html">Curriculum — 48 courses</a><br>
+        <a href="../../../career/index.html">Career strategy</a>
+      </div>
+      <div>
+        <h5>Kuwait industry context</h5>
+        Kuwait Steel · Gulf Cable · Kirby Building Systems · EQUATE · KDD / Petra · HEISCO
+      </div>
+    </div>
+    <div class="mark">Sun Devil Factory</div>
+    <p class="fine">Educational material. Worked-example values are pedagogical; representative
+    industrial figures are labeled as such and are not published operating data of any named
+    company. Photography is openly licensed; credits on each image and in the repository.</p>
+  </div>
+</footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

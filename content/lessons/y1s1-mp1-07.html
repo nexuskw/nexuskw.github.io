@@ -1,0 +1,74 @@
+<div class="pagehead">
+  <p class="kicker"><span class="n">STUDY GUIDE · CORE 60 · A5</span>MFG 105 · Lesson 07</p>
+  <h1>Rolling of metals</h1>
+  <p class="sub">Squeezing a billet between driven rolls is the highest-tonnage deformation
+  process on earth, and the second half of Kuwait Steel's plant. This guide gives you the bite
+  condition, the force and power estimates, and the defect map.</p>
+</div>
+
+<section class="part tight">
+  <div class="measure rv">
+    <h3>Objectives</h3>
+    <ol class="objectives">
+      <li>Check whether a pass is possible — the friction bite condition — before computing anything else.</li>
+      <li>Estimate roll force, torque, and power for a flat-rolling pass with units carried through.</li>
+      <li>Distinguish hot from cold rolling by purpose, and map common rolled-product defects to their stand-level causes.</li>
+    </ol>
+
+    <h3>Key equations — sourced (Groover, Ch. 19)</h3>
+    <div class="keybox">
+      <span class="cap">Flat rolling: draft limit, contact length, force, torque, power</span>
+      <div class="eqrow"><span class="eq">d<sub>max</sub> <b>=</b> μ<sup>2</sup> R</span><span class="eqnum">(1)</span></div>
+      <div class="eqrow"><span class="eq">L <b>=</b> <span class="rt">√<span class="rd">R (h<sub>0</sub> − h<sub>f</sub>)</span></span> ,&nbsp;&nbsp; F <b>=</b> Ȳ<sub>f</sub> · w · L ,&nbsp;&nbsp; T <b>=</b> 0.5 F L ,&nbsp;&nbsp; P <b>=</b> 2π N F L</span><span class="eqnum">(2)</span></div>
+    </div>
+    <p>Draft d = h₀ − h<sub>f</sub> cannot exceed μ²R or the rolls skid instead of biting — friction
+    is what <em>drives</em> the stock through. L is the projected contact length, Ȳ<sub>f</sub> the mean
+    flow stress over the pass, w the width, N the roll speed (rev/time; P covers both rolls).</p>
+
+    <div class="keybox">
+      <span class="cap">Condensed worked example — hot rolling a steel flat</span>
+      <p style="margin:10px 0 4px">h₀ = 30 mm → h<sub>f</sub> = 22 mm, R = 300 mm, w = 250 mm, μ = 0.30 (hot), Ȳ<sub>f</sub> ≈ 180 MPa (representative hot flow stress), N = 50 rpm:</p>
+      <p style="margin:4px 0;font-family:var(--mono);font-size:14px">
+      bite: d = 8 mm ≤ μ²R = 0.09 × 300 = 27 mm ✓<br>
+      L = √(300 × 8) = 49 mm<br>
+      F = 180×10⁶ × 0.250 × 0.049 = <strong style="color:var(--ember)">2.2 MN</strong>&nbsp;&nbsp;(≈ 225 tonnes-force on the stand)<br>
+      T = 0.5 × 2.2×10⁶ × 0.049 ≈ 54 kN·m per roll<br>
+      P = 2π × (50/60) × 2.2×10⁶ × 0.049 ≈ <strong style="color:var(--ember)">566 kW</strong></p>
+    </div>
+
+    <h3>Misconceptions</h3>
+    <div class="miscon">
+      <article>
+        <div class="wrong">"Friction is the enemy in rolling, like in every forming process."</div>
+        <div class="right">In rolling, friction is the engine: equation (1) says no friction, no
+        bite, no process. The cost is that the same friction raises force and wear. Hot rolling
+        runs rough and grippy on purpose; cold rolling lubricates and accepts smaller drafts.</div>
+      </article>
+      <article>
+        <div class="wrong">"Cold rolling is just hot rolling with tighter tolerance."</div>
+        <div class="right">Cold rolling changes the product's <em>properties</em>: strain
+        hardening raises strength, and the surface arrives clean and precise. Hot rolling buys
+        big shape change cheaply above recrystallization; cold rolling sells strength and
+        finish. Different products, not different settings.</div>
+      </article>
+    </div>
+
+    <h3>Defect map</h3>
+    <p>Wavy edges and center buckle — roll bending making thickness (and hence elongation)
+    uneven across the width; crown and camber management is the fix. Alligatoring — center-line
+    weakness splitting the bar at exit (upstream casting quality returns: Lesson 04's centerline
+    segregation). Rolled-in scale and seams — descaling practice and cast-billet surface
+    condition. In a rebar mill, ribs and grade marks add roll-wear as a first-class quality
+    variable.</p>
+
+    <h3>Kuwait floor</h3>
+    <p>Kuwait Steel's mill takes the caster's billets through a reheat furnace and a train of
+    stands to deformed rebar. Every equation above is live there: bite limits set pass schedules,
+    stand forces size the mill's motors and bearings — the same bearings and gearboxes the
+    reliability lessons of Year 4 monitor.</p>
+
+    <p class="small"><strong>Study from</strong> — Groover, Ch. 19; <em>The Making, Shaping and
+    Treating of Steel</em> (AISE) for mill practice. Video: NPTEL "Fundamentals of Manufacturing
+    Processes" (IIT Roorkee — verified) covers rolling in its forming block.</p>
+  </div>
+</section>

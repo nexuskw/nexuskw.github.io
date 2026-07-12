@@ -7,19 +7,87 @@
       "code": "MTH 101",
       "title": "Engineering Mathematics I",
       "summary": "Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, always pointed at rates, areas, and physical balances you will meet again in thermodynamics and vibrations.",
-      "taught_from": ["MIT OCW 18.01 Single Variable Calculus (ocw.mit.edu)"],
+      "taught_from": [
+        "MIT OCW 18.01 Single Variable Calculus (ocw.mit.edu)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Functions, units, and engineering magnitudes", "tier": 3, "scope": "What a function is when its argument is a temperature or a flow rate. Unit discipline and dimensional homogeneity as the first error-check every engineer owns. Orders of magnitude and sanity estimates.", "src": "MIT OCW 18.01"},
-        {"n": 2, "t": "Limits and continuity", "tier": 3, "scope": "The limit as the formal version of 'what happens as we approach'. Continuity and why physical quantities are usually, but not always, continuous. One-sided limits at switching events.", "src": "MIT OCW 18.01"},
-        {"n": 3, "t": "The derivative as a rate", "tier": 3, "scope": "Definition from first principles, then the derivative as velocity, heat-up rate, and wear rate. Differentiability versus continuity. Reading slopes off real trend data.", "src": "MIT OCW 18.01"},
-        {"n": 4, "t": "Differentiation rules and the chain rule", "tier": 3, "scope": "Product, quotient, and chain rules with mechanical fluency as the goal. Implicit differentiation. The chain rule as the engine behind every related-rates problem in plant contexts.", "src": "MIT OCW 18.01"},
-        {"n": 5, "t": "Exponentials, logarithms, and growth/decay", "tier": 3, "scope": "e and ln as the natural language of charging, cooling, and decay processes. Log scales for spanning decades of data. Semilog reading of exponential trends — the shape behind Newton cooling and RC circuits.", "src": "MIT OCW 18.01"},
-        {"n": 6, "t": "Extrema, curve behavior, and optimization", "tier": 3, "scope": "First and second derivative tests. Framing a physical question as minimize-cost or maximize-output with constraints stated honestly. Classic geometry-of-a-tank optimizations as rehearsal for design trade-offs.", "src": "MIT OCW 18.01"},
-        {"n": 7, "t": "The integral as accumulation", "tier": 3, "scope": "Riemann sums to the definite integral. Accumulated flow from a rate curve, energy from a power trace. The Fundamental Theorem as the bridge between rates and totals.", "src": "MIT OCW 18.01"},
-        {"n": 8, "t": "Integration techniques", "tier": 3, "scope": "Substitution, integration by parts, and simple partial fractions. Choosing a technique by recognizing structure. Numerical fallback when no closed form exists.", "src": "MIT OCW 18.01"},
-        {"n": 9, "t": "Applications: areas, volumes, work, and averages", "tier": 3, "scope": "Solids of revolution for vessels and shafts. Work integrals for pumping and lifting. Mean value of a fluctuating signal — the first meeting with RMS thinking.", "src": "MIT OCW 18.01"},
-        {"n": 10, "t": "First-order differential equations", "tier": 3, "scope": "Separable and linear first-order ODEs. Tank mixing, Newton cooling, and first-order sensor lag solved end to end. Time constants as the physical meaning of the solution.", "src": "MIT OCW 18.01"},
-        {"n": 11, "t": "Taylor series and approximation", "tier": 3, "scope": "Linear and quadratic approximation of functions near an operating point. Where sin θ ≈ θ comes from and when it lies. Error terms as an engineering honesty clause.", "src": "MIT OCW 18.01"}
+        {
+          "n": 1,
+          "t": "Functions, units, and engineering magnitudes",
+          "tier": 3,
+          "scope": "What a function is when its argument is a temperature or a flow rate. Unit discipline and dimensional homogeneity as the first error-check every engineer owns. Orders of magnitude and sanity estimates.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 2,
+          "t": "Limits and continuity",
+          "tier": 3,
+          "scope": "The limit as the formal version of 'what happens as we approach'. Continuity and why physical quantities are usually, but not always, continuous. One-sided limits at switching events.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 3,
+          "t": "The derivative as a rate",
+          "tier": 3,
+          "scope": "Definition from first principles, then the derivative as velocity, heat-up rate, and wear rate. Differentiability versus continuity. Reading slopes off real trend data.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 4,
+          "t": "Differentiation rules and the chain rule",
+          "tier": 3,
+          "scope": "Product, quotient, and chain rules with mechanical fluency as the goal. Implicit differentiation. The chain rule as the engine behind every related-rates problem in plant contexts.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 5,
+          "t": "Exponentials, logarithms, and growth/decay",
+          "tier": 3,
+          "scope": "e and ln as the natural language of charging, cooling, and decay processes. Log scales for spanning decades of data. Semilog reading of exponential trends — the shape behind Newton cooling and RC circuits.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 6,
+          "t": "Extrema, curve behavior, and optimization",
+          "tier": 3,
+          "scope": "First and second derivative tests. Framing a physical question as minimize-cost or maximize-output with constraints stated honestly. Classic geometry-of-a-tank optimizations as rehearsal for design trade-offs.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 7,
+          "t": "The integral as accumulation",
+          "tier": 3,
+          "scope": "Riemann sums to the definite integral. Accumulated flow from a rate curve, energy from a power trace. The Fundamental Theorem as the bridge between rates and totals.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 8,
+          "t": "Integration techniques",
+          "tier": 3,
+          "scope": "Substitution, integration by parts, and simple partial fractions. Choosing a technique by recognizing structure. Numerical fallback when no closed form exists.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 9,
+          "t": "Applications: areas, volumes, work, and averages",
+          "tier": 3,
+          "scope": "Solids of revolution for vessels and shafts. Work integrals for pumping and lifting. Mean value of a fluctuating signal — the first meeting with RMS thinking.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 10,
+          "t": "First-order differential equations",
+          "tier": 3,
+          "scope": "Separable and linear first-order ODEs. Tank mixing, Newton cooling, and first-order sensor lag solved end to end. Time constants as the physical meaning of the solution.",
+          "src": "MIT OCW 18.01"
+        },
+        {
+          "n": 11,
+          "t": "Taylor series and approximation",
+          "tier": 3,
+          "scope": "Linear and quadratic approximation of functions near an operating point. Where sin θ ≈ θ comes from and when it lies. Error terms as an engineering honesty clause.",
+          "src": "MIT OCW 18.01"
+        }
       ]
     },
     {
@@ -27,19 +95,87 @@
       "code": "DRW 102",
       "title": "Engineering Drawing & CAD",
       "summary": "The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.",
-      "taught_from": ["MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)"],
+      "taught_from": [
+        "MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Why drawings rule the plant", "tier": 3, "scope": "The drawing as a contract between design, fabrication, and maintenance. Title blocks, revisions, and drawing control. What 'as-built' means and why it is often untrue.", "src": "NPTEL: Engineering Drawing"},
-        {"n": 2, "t": "Projection theory and orthographic views", "tier": 3, "scope": "First-angle and third-angle projection and how to tell them apart on sight. Choosing principal views. Reading a three-view drawing back into a 3-D object.", "src": "NPTEL: Engineering Drawing"},
-        {"n": 3, "t": "Isometric and pictorial views", "tier": 3, "scope": "Isometric drawing for communication with the shop floor. Sketching a part freehand in proportion. When a pictorial view misleads and a section is owed instead.", "src": "NPTEL: Engineering Drawing"},
-        {"n": 4, "t": "Sections and conventions", "tier": 3, "scope": "Full, half, offset, and revolved sections. Hatching conventions by material. The conventions for ribs, shafts, and fasteners that are deliberately not sectioned.", "src": "NPTEL: Engineering Drawing"},
-        {"n": 5, "t": "Dimensioning practice", "tier": 3, "scope": "Datum thinking: dimension from function, not convenience. Chain versus baseline dimensioning and tolerance stack-up. Over-dimensioning as an error, not a courtesy.", "src": "NPTEL: Engineering Drawing"},
-        {"n": 6, "t": "Tolerances, fits, and limits", "tier": 3, "scope": "Limits and fits for shafts and holes; clearance, transition, and interference classes. Why a bearing seat tolerance is a maintenance issue, not a design nicety. Reading fit callouts on real drawings.", "src": "NPTEL: Engineering Drawing"},
-        {"n": 7, "t": "GD&T essentials", "tier": 3, "scope": "Feature control frames, datums, flatness, position, runout. What GD&T buys over coordinate tolerances. Runout callouts as the language of rotating-equipment repair standards.", "src": "NPTEL: Engineering Drawing"},
-        {"n": 8, "t": "Fasteners, welds, and surface symbols", "tier": 3, "scope": "Thread designation and fastener callouts. Weld symbols on structural drawings — the arrow side convention that everyone gets wrong once. Surface finish symbols and Ra values.", "src": "NPTEL: Engineering Drawing"},
-        {"n": 9, "t": "Parametric CAD: parts", "tier": 3, "scope": "Sketch–constrain–feature workflow in any parametric CAD tool. Design intent: modeling so the part edits sanely. Fully defined sketches as a discipline.", "src": "NPTEL: Engineering Drawing and Computer Graphics"},
-        {"n": 10, "t": "Parametric CAD: assemblies and drawings", "tier": 3, "scope": "Mates and degrees of freedom in assemblies. Generating dimensioned drawings from models. Bills of materials and balloon callouts — the bridge to spare-parts thinking.", "src": "NPTEL: Engineering Drawing and Computer Graphics"},
-        {"n": 11, "t": "Reading plant drawings", "tier": 3, "scope": "GA drawings, fabrication drawings, and datasheets read side by side. Tracing a dimension from a pump GA to a foundation bolt plan. Practice on structural-steel and equipment drawings.", "src": "NPTEL: Engineering Drawing"}
+        {
+          "n": 1,
+          "t": "Why drawings rule the plant",
+          "tier": 3,
+          "scope": "The drawing as a contract between design, fabrication, and maintenance. Title blocks, revisions, and drawing control. What 'as-built' means and why it is often untrue.",
+          "src": "NPTEL: Engineering Drawing"
+        },
+        {
+          "n": 2,
+          "t": "Projection theory and orthographic views",
+          "tier": 3,
+          "scope": "First-angle and third-angle projection and how to tell them apart on sight. Choosing principal views. Reading a three-view drawing back into a 3-D object.",
+          "src": "NPTEL: Engineering Drawing"
+        },
+        {
+          "n": 3,
+          "t": "Isometric and pictorial views",
+          "tier": 3,
+          "scope": "Isometric drawing for communication with the shop floor. Sketching a part freehand in proportion. When a pictorial view misleads and a section is owed instead.",
+          "src": "NPTEL: Engineering Drawing"
+        },
+        {
+          "n": 4,
+          "t": "Sections and conventions",
+          "tier": 3,
+          "scope": "Full, half, offset, and revolved sections. Hatching conventions by material. The conventions for ribs, shafts, and fasteners that are deliberately not sectioned.",
+          "src": "NPTEL: Engineering Drawing"
+        },
+        {
+          "n": 5,
+          "t": "Dimensioning practice",
+          "tier": 3,
+          "scope": "Datum thinking: dimension from function, not convenience. Chain versus baseline dimensioning and tolerance stack-up. Over-dimensioning as an error, not a courtesy.",
+          "src": "NPTEL: Engineering Drawing"
+        },
+        {
+          "n": 6,
+          "t": "Tolerances, fits, and limits",
+          "tier": 3,
+          "scope": "Limits and fits for shafts and holes; clearance, transition, and interference classes. Why a bearing seat tolerance is a maintenance issue, not a design nicety. Reading fit callouts on real drawings.",
+          "src": "NPTEL: Engineering Drawing"
+        },
+        {
+          "n": 7,
+          "t": "GD&T essentials",
+          "tier": 3,
+          "scope": "Feature control frames, datums, flatness, position, runout. What GD&T buys over coordinate tolerances. Runout callouts as the language of rotating-equipment repair standards.",
+          "src": "NPTEL: Engineering Drawing"
+        },
+        {
+          "n": 8,
+          "t": "Fasteners, welds, and surface symbols",
+          "tier": 3,
+          "scope": "Thread designation and fastener callouts. Weld symbols on structural drawings — the arrow side convention that everyone gets wrong once. Surface finish symbols and Ra values.",
+          "src": "NPTEL: Engineering Drawing"
+        },
+        {
+          "n": 9,
+          "t": "Parametric CAD: parts",
+          "tier": 3,
+          "scope": "Sketch–constrain–feature workflow in any parametric CAD tool. Design intent: modeling so the part edits sanely. Fully defined sketches as a discipline.",
+          "src": "NPTEL: Engineering Drawing and Computer Graphics"
+        },
+        {
+          "n": 10,
+          "t": "Parametric CAD: assemblies and drawings",
+          "tier": 3,
+          "scope": "Mates and degrees of freedom in assemblies. Generating dimensioned drawings from models. Bills of materials and balloon callouts — the bridge to spare-parts thinking.",
+          "src": "NPTEL: Engineering Drawing and Computer Graphics"
+        },
+        {
+          "n": 11,
+          "t": "Reading plant drawings",
+          "tier": 3,
+          "scope": "GA drawings, fabrication drawings, and datasheets read side by side. Tracing a dimension from a pump GA to a foundation bolt plan. Practice on structural-steel and equipment drawings.",
+          "src": "NPTEL: Engineering Drawing"
+        }
       ]
     },
     {
@@ -47,19 +183,87 @@
       "code": "STA 103",
       "title": "Engineering Statics",
       "summary": "Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.",
-      "taught_from": ["MIT OCW 2.001 Mechanics & Materials I (ocw.mit.edu)"],
+      "taught_from": [
+        "MIT OCW 2.001 Mechanics & Materials I (ocw.mit.edu)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Forces, vectors, and resultants", "tier": 3, "scope": "Force as a vector; components and resultants in 2-D and 3-D. Units and the weight–mass distinction that still catches graduates. Resolving cable and strut forces.", "src": "MIT OCW 2.001"},
-        {"n": 2, "t": "Moments and couples", "tier": 3, "scope": "Moment of a force about a point and an axis. Couples as pure turning effect. Varignon's theorem used to simplify real load cases.", "src": "MIT OCW 2.001"},
-        {"n": 3, "t": "The free-body diagram", "tier": 3, "scope": "The single most important skill in this course: isolate, replace, label. Support types and their reactions. Every equilibrium error traces back to a bad FBD.", "src": "MIT OCW 2.001"},
-        {"n": 4, "t": "Equilibrium of a particle", "tier": 3, "scope": "Concurrent force systems in 2-D and 3-D. Cable-and-pulley systems and spring balances. Solving cleanly with components versus geometry.", "src": "MIT OCW 2.001"},
-        {"n": 5, "t": "Equilibrium of rigid bodies", "tier": 3, "scope": "The full ΣF = 0, ΣM = 0 toolkit. Two- and three-force members as shortcuts. Statically determinate versus indeterminate — and why the distinction matters later.", "src": "MIT OCW 2.001"},
-        {"n": 6, "t": "Trusses", "tier": 3, "scope": "Method of joints and method of sections. Zero-force members by inspection. Reading a pipe-rack or roof truss as a load path, not a picture.", "src": "MIT OCW 2.001"},
-        {"n": 7, "t": "Frames and machines", "tier": 3, "scope": "Multi-member structures with internal pins. Dismembering frames correctly — action and reaction at every pin. Mechanical advantage of linkages and clamps.", "src": "MIT OCW 2.001"},
-        {"n": 8, "t": "Internal forces: shear and bending moment", "tier": 3, "scope": "Cutting a beam and exposing N, V, M. Shear and moment diagrams for point and distributed loads. The diagrams as the input strength-of-materials will demand.", "src": "MIT OCW 2.001"},
-        {"n": 9, "t": "Friction", "tier": 3, "scope": "Dry friction, impending motion, and the friction cone. Wedges, screws, and belt friction — the capstan equation derived. Why belt tension ratios govern conveyor drives.", "src": "MIT OCW 2.001"},
-        {"n": 10, "t": "Centroids and centers of gravity", "tier": 3, "scope": "Centroids by integration and by composite parts. Center of gravity of built-up sections and equipment skids. Lifting-plan relevance: where the hook must sit.", "src": "MIT OCW 2.001"},
-        {"n": 11, "t": "Moments of inertia", "tier": 3, "scope": "Second moment of area by integration and parallel-axis theorem. Composite sections used in structural tables. The property that will set bending stress in Strength of Materials.", "src": "MIT OCW 2.001"}
+        {
+          "n": 1,
+          "t": "Forces, vectors, and resultants",
+          "tier": 3,
+          "scope": "Force as a vector; components and resultants in 2-D and 3-D. Units and the weight–mass distinction that still catches graduates. Resolving cable and strut forces.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 2,
+          "t": "Moments and couples",
+          "tier": 3,
+          "scope": "Moment of a force about a point and an axis. Couples as pure turning effect. Varignon's theorem used to simplify real load cases.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 3,
+          "t": "The free-body diagram",
+          "tier": 3,
+          "scope": "The single most important skill in this course: isolate, replace, label. Support types and their reactions. Every equilibrium error traces back to a bad FBD.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 4,
+          "t": "Equilibrium of a particle",
+          "tier": 3,
+          "scope": "Concurrent force systems in 2-D and 3-D. Cable-and-pulley systems and spring balances. Solving cleanly with components versus geometry.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 5,
+          "t": "Equilibrium of rigid bodies",
+          "tier": 3,
+          "scope": "The full ΣF = 0, ΣM = 0 toolkit. Two- and three-force members as shortcuts. Statically determinate versus indeterminate — and why the distinction matters later.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 6,
+          "t": "Trusses",
+          "tier": 3,
+          "scope": "Method of joints and method of sections. Zero-force members by inspection. Reading a pipe-rack or roof truss as a load path, not a picture.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 7,
+          "t": "Frames and machines",
+          "tier": 3,
+          "scope": "Multi-member structures with internal pins. Dismembering frames correctly — action and reaction at every pin. Mechanical advantage of linkages and clamps.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 8,
+          "t": "Internal forces: shear and bending moment",
+          "tier": 3,
+          "scope": "Cutting a beam and exposing N, V, M. Shear and moment diagrams for point and distributed loads. The diagrams as the input strength-of-materials will demand.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 9,
+          "t": "Friction",
+          "tier": 3,
+          "scope": "Dry friction, impending motion, and the friction cone. Wedges, screws, and belt friction — the capstan equation derived. Why belt tension ratios govern conveyor drives.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 10,
+          "t": "Centroids and centers of gravity",
+          "tier": 3,
+          "scope": "Centroids by integration and by composite parts. Center of gravity of built-up sections and equipment skids. Lifting-plan relevance: where the hook must sit.",
+          "src": "MIT OCW 2.001"
+        },
+        {
+          "n": 11,
+          "t": "Moments of inertia",
+          "tier": 3,
+          "scope": "Second moment of area by integration and parallel-axis theorem. Composite sections used in structural tables. The property that will set bending stress in Strength of Materials.",
+          "src": "MIT OCW 2.001"
+        }
       ]
     },
     {
@@ -67,19 +271,87 @@
       "code": "MAT 104",
       "title": "Materials Science I",
       "summary": "Atoms to microstructure: bonding, crystal structures, defects, diffusion, and mechanical behavior — the vocabulary in which every later conversation about steels, failure, and heat treatment is conducted.",
-      "taught_from": ["Callister & Rethwisch, Materials Science and Engineering: An Introduction (Wiley)"],
+      "taught_from": [
+        "Callister & Rethwisch, Materials Science and Engineering: An Introduction (Wiley)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Why materials fail the plant", "tier": 3, "scope": "Materials classes — metals, ceramics, polymers, composites — and what each trades away. Structure–property–processing–performance as the course's spine. Reading a failed component as a materials question.", "src": "Callister & Rethwisch, Ch. 1"},
-        {"n": 2, "t": "Atomic bonding", "tier": 3, "scope": "Metallic, ionic, covalent, and secondary bonding. Bond energy curves and where stiffness and thermal expansion come from. Why metals conduct and deform while ceramics shatter.", "src": "Callister & Rethwisch, Ch. 2"},
-        {"n": 3, "t": "Crystal structures", "tier": 3, "scope": "BCC, FCC, and HCP cells; coordination and packing factors. Density calculations from lattice data. Why FCC metals form and slip differently from BCC — a fact with cold-weather consequences.", "src": "Callister & Rethwisch, Ch. 3"},
-        {"n": 4, "t": "Crystallographic directions and planes", "tier": 3, "scope": "Miller indices for directions and planes. Close-packed planes and slip systems. Anisotropy: why rolled plate has direction-dependent properties.", "src": "Callister & Rethwisch, Ch. 3"},
-        {"n": 5, "t": "Defects in solids", "tier": 3, "scope": "Vacancies, interstitials, and substitutional atoms; dislocations edge and screw; grain boundaries. The defect population as the true design variable. Perfect crystals are a textbook fiction — usefully so.", "src": "Callister & Rethwisch, Ch. 4"},
-        {"n": 6, "t": "Diffusion", "tier": 3, "scope": "Fick's first and second laws with the physical picture of jumping atoms. Temperature dependence through the Arrhenius form. Carburizing depth as a worked application — the √Dt scaling that recurs everywhere.", "src": "Callister & Rethwisch, Ch. 5"},
-        {"n": 7, "t": "Mechanical properties I: elasticity and the tension test", "tier": 3, "scope": "Engineering stress and strain; modulus, yield, UTS, ductility from the tensile curve. True versus engineering quantities. The tension test as the industry's reference experiment.", "src": "Callister & Rethwisch, Ch. 6"},
-        {"n": 8, "t": "Mechanical properties II: hardness and toughness", "tier": 3, "scope": "Hardness scales — Brinell, Vickers, Rockwell — and their conversions and abuses. Impact energy and the ductile-brittle transition. Hardness as the maintenance engineer's field instrument.", "src": "Callister & Rethwisch, Ch. 6"},
-        {"n": 9, "t": "Dislocations and strengthening", "tier": 3, "scope": "Slip as dislocation motion. Strengthening by grain refinement, solid solution, strain hardening, and precipitates — all as obstacles to dislocations. Why 'harder' usually costs 'tougher'.", "src": "Callister & Rethwisch, Ch. 7"},
-        {"n": 10, "t": "Recovery, recrystallization, and grain growth", "tier": 3, "scope": "What annealing actually does to a cold-worked metal. Recrystallization temperature and its rule-of-thumb relation to melting point. The hot-working/cold-working boundary defined properly.", "src": "Callister & Rethwisch, Ch. 7"},
-        {"n": 11, "t": "Solidification and cast structure", "tier": 3, "scope": "Nucleation and growth; chill, columnar, and equiaxed zones in a casting. Segregation at the scale of dendrites and of ingots. The materials-science half of the casting lectures in MFG 105.", "src": "Callister & Rethwisch, Ch. 9; Flemings, Solidification Processing"}
+        {
+          "n": 1,
+          "t": "Why materials fail the plant",
+          "tier": 3,
+          "scope": "Materials classes — metals, ceramics, polymers, composites — and what each trades away. Structure–property–processing–performance as the course's spine. Reading a failed component as a materials question.",
+          "src": "Callister & Rethwisch, Ch. 1"
+        },
+        {
+          "n": 2,
+          "t": "Atomic bonding",
+          "tier": 3,
+          "scope": "Metallic, ionic, covalent, and secondary bonding. Bond energy curves and where stiffness and thermal expansion come from. Why metals conduct and deform while ceramics shatter.",
+          "src": "Callister & Rethwisch, Ch. 2"
+        },
+        {
+          "n": 3,
+          "t": "Crystal structures",
+          "tier": 3,
+          "scope": "BCC, FCC, and HCP cells; coordination and packing factors. Density calculations from lattice data. Why FCC metals form and slip differently from BCC — a fact with cold-weather consequences.",
+          "src": "Callister & Rethwisch, Ch. 3"
+        },
+        {
+          "n": 4,
+          "t": "Crystallographic directions and planes",
+          "tier": 3,
+          "scope": "Miller indices for directions and planes. Close-packed planes and slip systems. Anisotropy: why rolled plate has direction-dependent properties.",
+          "src": "Callister & Rethwisch, Ch. 3"
+        },
+        {
+          "n": 5,
+          "t": "Defects in solids",
+          "tier": 3,
+          "scope": "Vacancies, interstitials, and substitutional atoms; dislocations edge and screw; grain boundaries. The defect population as the true design variable. Perfect crystals are a textbook fiction — usefully so.",
+          "src": "Callister & Rethwisch, Ch. 4"
+        },
+        {
+          "n": 6,
+          "t": "Diffusion",
+          "tier": 3,
+          "scope": "Fick's first and second laws with the physical picture of jumping atoms. Temperature dependence through the Arrhenius form. Carburizing depth as a worked application — the √Dt scaling that recurs everywhere.",
+          "src": "Callister & Rethwisch, Ch. 5"
+        },
+        {
+          "n": 7,
+          "t": "Mechanical properties I: elasticity and the tension test",
+          "tier": 3,
+          "scope": "Engineering stress and strain; modulus, yield, UTS, ductility from the tensile curve. True versus engineering quantities. The tension test as the industry's reference experiment.",
+          "src": "Callister & Rethwisch, Ch. 6"
+        },
+        {
+          "n": 8,
+          "t": "Mechanical properties II: hardness and toughness",
+          "tier": 3,
+          "scope": "Hardness scales — Brinell, Vickers, Rockwell — and their conversions and abuses. Impact energy and the ductile-brittle transition. Hardness as the maintenance engineer's field instrument.",
+          "src": "Callister & Rethwisch, Ch. 6"
+        },
+        {
+          "n": 9,
+          "t": "Dislocations and strengthening",
+          "tier": 3,
+          "scope": "Slip as dislocation motion. Strengthening by grain refinement, solid solution, strain hardening, and precipitates — all as obstacles to dislocations. Why 'harder' usually costs 'tougher'.",
+          "src": "Callister & Rethwisch, Ch. 7"
+        },
+        {
+          "n": 10,
+          "t": "Recovery, recrystallization, and grain growth",
+          "tier": 3,
+          "scope": "What annealing actually does to a cold-worked metal. Recrystallization temperature and its rule-of-thumb relation to melting point. The hot-working/cold-working boundary defined properly.",
+          "src": "Callister & Rethwisch, Ch. 7"
+        },
+        {
+          "n": 11,
+          "t": "Solidification and cast structure",
+          "tier": 3,
+          "scope": "Nucleation and growth; chill, columnar, and equiaxed zones in a casting. Segregation at the scale of dendrites and of ingots. The materials-science half of the casting lectures in MFG 105.",
+          "src": "Callister & Rethwisch, Ch. 9; Flemings, Solidification Processing"
+        }
       ]
     },
     {
@@ -93,20 +365,127 @@
         "Flemings, Solidification Processing (McGraw-Hill, 1974)",
         "ASM Handbook, Volume 15: Casting"
       ],
-      "videos": [],
+      "videos": [
+        {
+          "title": "2.008 Design and Manufacturing II",
+          "url": "https://ocw.mit.edu/courses/2-008-design-and-manufacturing-ii-spring-2025/",
+          "src": "MIT OpenCourseWare",
+          "tag": "COURSE MATERIALS · VERIFIED LIVE",
+          "note": "MIT's manufacturing-processes course: lecture notes, labs, and exams. The process-physics complement to this course."
+        },
+        {
+          "title": "Fundamentals of Manufacturing Processes — IIT Roorkee (Prof. D. K. Dwivedi)",
+          "url": "https://nptel.ac.in/courses/112107219",
+          "src": "NPTEL",
+          "tag": "FULL VIDEO COURSE · VERIFIED LIVE",
+          "note": "Complete lecture-video series covering casting, forming, and joining fundamentals at exactly this course's level."
+        }
+      ],
       "lessons": [
-        {"n": 1, "t": "The manufacturing plant: process taxonomy and material flow", "tier": 2, "core60": "A1", "content": "y1s1-mp1-01", "scope": "Every manufacturing operation sorted into a working taxonomy — casting, forming, machining, joining, finishing, assembly — and the material flow of a real plant traced end to end. The map the rest of the curriculum hangs on.", "src": "Groover, Ch. 1; Kalpakjian & Schmid, General Introduction"},
-        {"n": 2, "t": "Metal casting I — solidification, gating, and riser design", "tier": 1, "core60": "A2", "content": "y1s1-mp1-02", "scope": "The full lecture: pouring energy balance, Bernoulli-derived gating design, Chvorinov's rule derived from mold heat conduction, shrinkage regimes, and riser sizing — with worked examples carried through in units.", "src": "Groover, Ch. 10; Flemings; Çengel & Ghajar, Ch. 4", "kuwait": "Kuwait Steel"},
-        {"n": 3, "t": "Metal casting II — practice, quality, and defects", "tier": 1, "core60": "A3", "content": "y1s1-mp1-03", "scope": "From theory to the foundry floor: patterns and allowances, molding sand behavior, fluidity, and the defect families — gas porosity via Sievert's law, shrinkage porosity, hot tears, sand defects — each tied to its physical cause and its inspection method.", "src": "Groover, Ch. 10–11; Campbell, Complete Casting Handbook; ASM Handbook Vol. 15", "kuwait": "HEISCO"},
-        {"n": 4, "t": "Continuous casting of steel", "tier": 2, "core60": "A4", "content": "y1s1-mp1-04", "scope": "The billet caster as a permanent-mold casting process running at steady state: shell growth, metallurgical length, breakout risk, and quality issues from rhomboidity to pinholes. Kuwait Steel's core process.", "src": "The Making, Shaping and Treating of Steel (AISE); Groover, Ch. 11", "kuwait": "Kuwait Steel"},
-        {"n": 5, "t": "Casting processes survey: sand to die casting", "tier": 3, "scope": "Shell, investment, permanent mold, and die casting compared on tolerance, finish, section thickness, and economics. Expendable versus permanent molds as the organizing split. Choosing a casting route for a given part and volume.", "src": "Groover, Ch. 11; Kalpakjian & Schmid, casting chapters"},
-        {"n": 6, "t": "Fundamentals of metal forming", "tier": 3, "scope": "Flow stress and the flow curve; hot, warm, and cold working defined by homologous temperature. Strain-rate sensitivity in hot work. Friction and lubrication at the die interface — the tax every forming process pays.", "src": "Groover, Ch. 18; Kalpakjian & Schmid, forming fundamentals"},
-        {"n": 7, "t": "Rolling of metals", "tier": 2, "core60": "A5", "content": "y1s1-mp1-07", "scope": "Flat and shape rolling from draft and bite condition through roll force and torque estimates. Hot rolling of billets into rebar as run at Kuwait Steel's mill. Rolled-product defects and their upstream causes.", "src": "Groover, Ch. 19; The Making, Shaping and Treating of Steel (AISE)", "kuwait": "Kuwait Steel"},
-        {"n": 8, "t": "Forging", "tier": 2, "core60": "A6", "content": "y1s1-mp1-08", "scope": "Open-die and impression-die forging; upsetting analysis with friction; flash, draft, and forging loads. Grain flow as forging's signature advantage. What a forged flange or valve body buys over a casting.", "src": "Groover, Ch. 19; Kalpakjian & Schmid, forging chapter", "kuwait": "HEISCO"},
-        {"n": 9, "t": "Extrusion and wire drawing", "tier": 2, "core60": "A7", "content": "y1s1-mp1-09", "scope": "Direct and indirect extrusion; extrusion ratio and pressure estimates. Wire drawing through dies in tandem — reduction per pass, drawing stress, and why the wire must not yield in the drawn section. Gulf Cable's conductor line as the standing example.", "src": "Groover, Ch. 19; Kalpakjian & Schmid, extrusion & drawing chapters", "kuwait": "Gulf Cable"},
-        {"n": 10, "t": "Powder metallurgy", "tier": 3, "scope": "Powder production, compaction, and sintering. Density as the controlling quality variable. Where PM wins: small complex parts at volume, porous bearings, and hard-to-melt materials.", "src": "Groover, powder metallurgy chapter; Kalpakjian & Schmid"},
-        {"n": 11, "t": "Forming defects and workability", "tier": 3, "scope": "Edge cracking, center bursts (chevrons), laps, and surface defects mapped to their process causes. Workability limits and how processes are kept inside them. Defects as process diagnostics, not random events.", "src": "Kalpakjian & Schmid, forming chapters; Groover, Ch. 19"},
-        {"n": 12, "t": "Process selection and cost fundamentals", "tier": 3, "scope": "Choosing among casting, forming, and machining for a given geometry, alloy, tolerance, and volume. Fixed versus variable cost and the break-even volume between processes. Near-net-shape thinking as an economic argument.", "src": "Groover, process selection discussions; Kalpakjian & Schmid"}
+        {
+          "n": 1,
+          "t": "The manufacturing plant: process taxonomy and material flow",
+          "tier": 2,
+          "core60": "A1",
+          "content": "y1s1-mp1-01",
+          "scope": "Every manufacturing operation sorted into a working taxonomy — casting, forming, machining, joining, finishing, assembly — and the material flow of a real plant traced end to end. The map the rest of the curriculum hangs on.",
+          "src": "Groover, Ch. 1; Kalpakjian & Schmid, General Introduction"
+        },
+        {
+          "n": 2,
+          "t": "Metal casting I — solidification, gating, and riser design",
+          "tier": 1,
+          "core60": "A2",
+          "content": "y1s1-mp1-02",
+          "scope": "The full lecture: pouring energy balance, Bernoulli-derived gating design, Chvorinov's rule derived from mold heat conduction, shrinkage regimes, and riser sizing — with worked examples carried through in units.",
+          "src": "Groover, Ch. 10; Flemings; Çengel & Ghajar, Ch. 4",
+          "kuwait": "Kuwait Steel"
+        },
+        {
+          "n": 3,
+          "t": "Metal casting II — practice, quality, and defects",
+          "tier": 1,
+          "core60": "A3",
+          "content": "y1s1-mp1-03",
+          "scope": "From theory to the foundry floor: patterns and allowances, molding sand behavior, fluidity, and the defect families — gas porosity via Sievert's law, shrinkage porosity, hot tears, sand defects — each tied to its physical cause and its inspection method.",
+          "src": "Groover, Ch. 10–11; Campbell, Complete Casting Handbook; ASM Handbook Vol. 15",
+          "kuwait": "HEISCO"
+        },
+        {
+          "n": 4,
+          "t": "Continuous casting of steel",
+          "tier": 2,
+          "core60": "A4",
+          "content": "y1s1-mp1-04",
+          "scope": "The billet caster as a permanent-mold casting process running at steady state: shell growth, metallurgical length, breakout risk, and quality issues from rhomboidity to pinholes. Kuwait Steel's core process.",
+          "src": "The Making, Shaping and Treating of Steel (AISE); Groover, Ch. 11",
+          "kuwait": "Kuwait Steel"
+        },
+        {
+          "n": 5,
+          "t": "Casting processes survey: sand to die casting",
+          "tier": 3,
+          "scope": "Shell, investment, permanent mold, and die casting compared on tolerance, finish, section thickness, and economics. Expendable versus permanent molds as the organizing split. Choosing a casting route for a given part and volume.",
+          "src": "Groover, Ch. 11; Kalpakjian & Schmid, casting chapters"
+        },
+        {
+          "n": 6,
+          "t": "Fundamentals of metal forming",
+          "tier": 3,
+          "scope": "Flow stress and the flow curve; hot, warm, and cold working defined by homologous temperature. Strain-rate sensitivity in hot work. Friction and lubrication at the die interface — the tax every forming process pays.",
+          "src": "Groover, Ch. 18; Kalpakjian & Schmid, forming fundamentals"
+        },
+        {
+          "n": 7,
+          "t": "Rolling of metals",
+          "tier": 2,
+          "core60": "A5",
+          "content": "y1s1-mp1-07",
+          "scope": "Flat and shape rolling from draft and bite condition through roll force and torque estimates. Hot rolling of billets into rebar as run at Kuwait Steel's mill. Rolled-product defects and their upstream causes.",
+          "src": "Groover, Ch. 19; The Making, Shaping and Treating of Steel (AISE)",
+          "kuwait": "Kuwait Steel"
+        },
+        {
+          "n": 8,
+          "t": "Forging",
+          "tier": 2,
+          "core60": "A6",
+          "content": "y1s1-mp1-08",
+          "scope": "Open-die and impression-die forging; upsetting analysis with friction; flash, draft, and forging loads. Grain flow as forging's signature advantage. What a forged flange or valve body buys over a casting.",
+          "src": "Groover, Ch. 19; Kalpakjian & Schmid, forging chapter",
+          "kuwait": "HEISCO"
+        },
+        {
+          "n": 9,
+          "t": "Extrusion and wire drawing",
+          "tier": 2,
+          "core60": "A7",
+          "content": "y1s1-mp1-09",
+          "scope": "Direct and indirect extrusion; extrusion ratio and pressure estimates. Wire drawing through dies in tandem — reduction per pass, drawing stress, and why the wire must not yield in the drawn section. Gulf Cable's conductor line as the standing example.",
+          "src": "Groover, Ch. 19; Kalpakjian & Schmid, extrusion & drawing chapters",
+          "kuwait": "Gulf Cable"
+        },
+        {
+          "n": 10,
+          "t": "Powder metallurgy",
+          "tier": 3,
+          "scope": "Powder production, compaction, and sintering. Density as the controlling quality variable. Where PM wins: small complex parts at volume, porous bearings, and hard-to-melt materials.",
+          "src": "Groover, powder metallurgy chapter; Kalpakjian & Schmid"
+        },
+        {
+          "n": 11,
+          "t": "Forming defects and workability",
+          "tier": 3,
+          "scope": "Edge cracking, center bursts (chevrons), laps, and surface defects mapped to their process causes. Workability limits and how processes are kept inside them. Defects as process diagnostics, not random events.",
+          "src": "Kalpakjian & Schmid, forming chapters; Groover, Ch. 19"
+        },
+        {
+          "n": 12,
+          "t": "Process selection and cost fundamentals",
+          "tier": 3,
+          "scope": "Choosing among casting, forming, and machining for a given geometry, alloy, tolerance, and volume. Fixed versus variable cost and the break-even volume between processes. Near-net-shape thinking as an economic argument.",
+          "src": "Groover, process selection discussions; Kalpakjian & Schmid"
+        }
       ]
     },
     {
@@ -114,18 +493,80 @@
       "code": "CMP 106",
       "title": "Engineering Computing",
       "summary": "Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.",
-      "taught_from": ["MIT OCW 6.0001 Introduction to Computer Science and Programming in Python (ocw.mit.edu)"],
+      "taught_from": [
+        "MIT OCW 6.0001 Introduction to Computer Science and Programming in Python (ocw.mit.edu)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Why engineers script", "tier": 3, "scope": "The spreadsheet's limits and the script's advantages: repeatability, audit trail, scale. Setting up Python and running a first calculation. Version thinking for engineering work.", "src": "MIT OCW 6.0001"},
-        {"n": 2, "t": "Variables, types, and expressions", "tier": 3, "scope": "Numbers, strings, booleans; assignment and naming that reads like engineering. Floating point and its surprises in unit conversions. Writing formulas as code without transcription errors.", "src": "MIT OCW 6.0001"},
-        {"n": 3, "t": "Control flow", "tier": 3, "scope": "Conditionals and loops for case logic and iteration. Guard clauses for invalid inputs. Translating a calculation procedure into control flow.", "src": "MIT OCW 6.0001"},
-        {"n": 4, "t": "Functions", "tier": 3, "scope": "Functions as named, testable calculations. Arguments, returns, and docstrings that state units. Building a small library of personal engineering functions.", "src": "MIT OCW 6.0001"},
-        {"n": 5, "t": "Lists, dictionaries, and files", "tier": 3, "scope": "Collections for measurement sets and equipment records. Reading and writing CSV files — the lingua franca of plant data exports. Cleaning real, messy data defensively.", "src": "MIT OCW 6.0001"},
-        {"n": 6, "t": "Arrays and numerical work", "tier": 3, "scope": "NumPy arrays for vectorized calculation over whole datasets. Elementwise operations, aggregation, and broadcasting. A vibration record processed without a single explicit loop.", "src": "MIT OCW 6.0001; NumPy documentation practice"},
-        {"n": 7, "t": "Plotting engineering data", "tier": 3, "scope": "Time series, scatter, and log-scale plots with honest axes and units. The plot as an argument, not a decoration. Reproducing a textbook figure from raw numbers.", "src": "MIT OCW 6.0001"},
-        {"n": 8, "t": "Curve fitting and interpolation", "tier": 3, "scope": "Least-squares fits to calibration and performance data. Interpolation for table lookups — steam tables and pump curves as targets. Residuals as the fit's honesty check.", "src": "MIT OCW 6.0001"},
-        {"n": 9, "t": "Small simulations", "tier": 3, "scope": "Time-stepping a first-order ODE: tank level, cooling, simple reliability decay. Step size and stability observed experimentally. Simulation as a cheap laboratory.", "src": "MIT OCW 6.0001"},
-        {"n": 10, "t": "Project: a maintenance data mini-analysis", "tier": 3, "scope": "End-to-end exercise: load a work-order export, clean it, compute simple KPIs, and plot the story. The habits of reproducible analysis. This project pattern returns in Reliability Engineering.", "src": "MIT OCW 6.0001"}
+        {
+          "n": 1,
+          "t": "Why engineers script",
+          "tier": 3,
+          "scope": "The spreadsheet's limits and the script's advantages: repeatability, audit trail, scale. Setting up Python and running a first calculation. Version thinking for engineering work.",
+          "src": "MIT OCW 6.0001"
+        },
+        {
+          "n": 2,
+          "t": "Variables, types, and expressions",
+          "tier": 3,
+          "scope": "Numbers, strings, booleans; assignment and naming that reads like engineering. Floating point and its surprises in unit conversions. Writing formulas as code without transcription errors.",
+          "src": "MIT OCW 6.0001"
+        },
+        {
+          "n": 3,
+          "t": "Control flow",
+          "tier": 3,
+          "scope": "Conditionals and loops for case logic and iteration. Guard clauses for invalid inputs. Translating a calculation procedure into control flow.",
+          "src": "MIT OCW 6.0001"
+        },
+        {
+          "n": 4,
+          "t": "Functions",
+          "tier": 3,
+          "scope": "Functions as named, testable calculations. Arguments, returns, and docstrings that state units. Building a small library of personal engineering functions.",
+          "src": "MIT OCW 6.0001"
+        },
+        {
+          "n": 5,
+          "t": "Lists, dictionaries, and files",
+          "tier": 3,
+          "scope": "Collections for measurement sets and equipment records. Reading and writing CSV files — the lingua franca of plant data exports. Cleaning real, messy data defensively.",
+          "src": "MIT OCW 6.0001"
+        },
+        {
+          "n": 6,
+          "t": "Arrays and numerical work",
+          "tier": 3,
+          "scope": "NumPy arrays for vectorized calculation over whole datasets. Elementwise operations, aggregation, and broadcasting. A vibration record processed without a single explicit loop.",
+          "src": "MIT OCW 6.0001; NumPy documentation practice"
+        },
+        {
+          "n": 7,
+          "t": "Plotting engineering data",
+          "tier": 3,
+          "scope": "Time series, scatter, and log-scale plots with honest axes and units. The plot as an argument, not a decoration. Reproducing a textbook figure from raw numbers.",
+          "src": "MIT OCW 6.0001"
+        },
+        {
+          "n": 8,
+          "t": "Curve fitting and interpolation",
+          "tier": 3,
+          "scope": "Least-squares fits to calibration and performance data. Interpolation for table lookups — steam tables and pump curves as targets. Residuals as the fit's honesty check.",
+          "src": "MIT OCW 6.0001"
+        },
+        {
+          "n": 9,
+          "t": "Small simulations",
+          "tier": 3,
+          "scope": "Time-stepping a first-order ODE: tank level, cooling, simple reliability decay. Step size and stability observed experimentally. Simulation as a cheap laboratory.",
+          "src": "MIT OCW 6.0001"
+        },
+        {
+          "n": 10,
+          "t": "Project: a maintenance data mini-analysis",
+          "tier": 3,
+          "scope": "End-to-end exercise: load a work-order export, clean it, compute simple KPIs, and plot the story. The habits of reproducible analysis. This project pattern returns in Reliability Engineering.",
+          "src": "MIT OCW 6.0001"
+        }
       ]
     }
   ]

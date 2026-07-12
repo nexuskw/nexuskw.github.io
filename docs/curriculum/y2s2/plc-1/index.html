@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PLC Fundamentals I — Sun Devil Factory</title>
+<meta name="description" content="The plant's reflexes: PLC hardware, scan cycle, ladder logic, timers and counters, and disciplined I/O wiring — taught to read-and-troubleshoot level ">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+<header class="hd">
+  <a class="wordmark" href="../../../index.html">Sun Devil <span>Factory</span></a>
+  <nav aria-label="Site">
+    <a href="../../../index.html">Start Here</a>
+    <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+    <a href="../../../career/index.html">Career</a>
+  </nav>
+</header>
+<main>
+
+<div class="pagehead">
+  <p class="kicker"><span class="n">PLC 255</span>Year 2 · Semester 2</p>
+  <h1>PLC Fundamentals I</h1>
+  <p class="sub">The plant's reflexes: PLC hardware, scan cycle, ladder logic, timers and counters, and disciplined I/O wiring — taught to read-and-troubleshoot level first, author level second.</p>
+</div>
+<section class="part tight">
+  <div class="wide">
+    <p class="small">11 lessons · 1 in the Core&nbsp;60 ·
+    Primary texts: </p>
+    <ul class="plain small"><li>NPTEL: Industrial Automation and Control (nptel.ac.in)</li></ul>
+    <div class="lessons">
+<div class="lesson-row rv">
+  <div class="no">01</div>
+  <div>
+    <h4>Control before PLCs: relay logic</h4>
+    <p class="scope">Contactors, control relays, and hardwired interlocks. Reading a motor-starter schematic fluently. The relay heritage that ladder logic still speaks.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">02</div>
+  <div>
+    <h4>PLC architecture and the scan cycle</h4>
+    <p class="scope">CPU, I/O, rack, and power supply; the read–execute–write scan and its timing consequences. Why outputs update when they do. Watchdogs and fault states.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">03</div>
+  <div>
+    <h4>Ladder logic essentials<span class="badge queued">Core 60 · guide queued</span></h4>
+    <p class="scope">Contacts, coils, seal-in circuits, and interlocks — the core patterns of industrial logic, each drawn and traced. Start/stop of a motor with safety interlocks built the standard way. Reading unfamiliar ladder cold: the transition engineer's most bankable automation skill.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · G1</b> · NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">04</div>
+  <div>
+    <h4>Timers and counters</h4>
+    <p class="scope">On-delay, off-delay, and retentive timers; up/down counters. Debounce, staging, and timeout patterns. A star-delta starter sequence programmed and traced.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">05</div>
+  <div>
+    <h4>Digital I/O wiring</h4>
+    <p class="scope">Sinking/sourcing, wet and dry contacts, and field-device interfacing. Fusing and commons in the I/O rack. The wiring faults behind most 'PLC problems'.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">06</div>
+  <div>
+    <h4>Analog I/O and scaling</h4>
+    <p class="scope">4–20 mA and 0–10 V channels; raw counts to engineering units scaled correctly. Resolution and out-of-range handling. A transmitter read into a displayed value end to end.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">07</div>
+  <div>
+    <h4>Program structure and documentation</h4>
+    <p class="scope">Rungs into routines; tags and comments that survive personnel turnover. State-based thinking for sequences. Programs written to be troubleshot at 3 a.m.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">08</div>
+  <div>
+    <h4>Troubleshooting with a live PLC</h4>
+    <p class="scope">Online monitoring, forcing with fear, and cross-referencing. A systematic fault-finding method from symptom to rung to field device. The lesson maintenance hiring managers actually test.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">09</div>
+  <div>
+    <h4>Safety circuits and the PLC's limits</h4>
+    <p class="scope">E-stops, safety relays, and why safety functions live outside standard PLC logic. Categories of safety architecture in outline. The boundary every integrator must respect.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">10</div>
+  <div>
+    <h4>HMI basics</h4>
+    <p class="scope">Operator screens: tags, alarms, and navigation that helps at 3 a.m. Alarm philosophy — fewer, truer alarms. The HMI as the machine's public face.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div>
+<div class="lesson-row rv">
+  <div class="no">11</div>
+  <div>
+    <h4>Mini-project: a conveyor segment</h4>
+    <p class="scope">Program a conveyor start-up with permissives, timers, and fault latching; document it; then troubleshoot three injected faults. The full loop: specify, program, verify. PLC II builds from here.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Automation and Control</p>
+  </div>
+</div></div>
+    
+  </div>
+</section>
+</main>
+<footer>
+  <div class="inner">
+    
+    <div class="cols">
+      <div>
+        <h5>The pathway</h5>
+        A maintenance engineer's route into manufacturing:<br>
+        Reliability · Asset Integrity · Production/Operations · Maintenance Planning
+      </div>
+      <div>
+        <h5>Site</h5>
+        <a href="../../../index.html">Start here</a><br>
+        <a href="../../../curriculum/index.html">Curriculum — 48 courses</a><br>
+        <a href="../../../career/index.html">Career strategy</a>
+      </div>
+      <div>
+        <h5>Kuwait industry context</h5>
+        Kuwait Steel · Gulf Cable · Kirby Building Systems · EQUATE · KDD / Petra · HEISCO
+      </div>
+    </div>
+    <div class="mark">Sun Devil Factory</div>
+    <p class="fine">Educational material. Worked-example values are pedagogical; representative
+    industrial figures are labeled as such and are not published operating data of any named
+    company. Photography is openly licensed; credits on each image and in the repository.</p>
+  </div>
+</footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

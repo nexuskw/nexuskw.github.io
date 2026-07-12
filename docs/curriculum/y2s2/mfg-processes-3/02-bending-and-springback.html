@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bending and springback — Manufacturing Processes III — Sheet, Plastics &amp; Additive — Sun Devil Factory</title>
+<meta name="description" content="Bend allowance from neutral-axis geometry; bending force; and springback — why it happens, how much to expect, and the compensation strategies press b">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+<header class="hd">
+  <a class="wordmark" href="../../../index.html">Sun Devil <span>Factory</span></a>
+  <nav aria-label="Site">
+    <a href="../../../index.html">Start Here</a>
+    <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+    <a href="../../../career/index.html">Career</a>
+  </nav>
+</header>
+<main>
+<div class="pagehead">
+  <p class="kicker"><span class="n">STUDY GUIDE · CORE 60 · A8</span>MFG 254 · Lesson 02</p>
+  <h1>Sheet-metal bending and springback</h1>
+  <p class="sub">Bend a sheet and it bends back — not fully, and not unpredictably. Springback is
+  elastic physics, not a defect, and every press brake and roll-forming line on Kirby's floor is
+  tooled around it. This guide covers the bend geometry, the force estimate, and the compensation
+  logic.</p>
+</div>
+
+<section class="part tight">
+  <div class="measure rv">
+    <h3>Objectives</h3>
+    <ol class="objectives">
+      <li>Compute bend allowance so a flat blank folds to the drawing's dimensions.</li>
+      <li>Estimate V-bending force and pick a press with margin, units carried through.</li>
+      <li>Explain what drives springback and name the two families of compensation.</li>
+    </ol>
+
+    <h3>Key equations — sourced (Groover, Ch. 20)</h3>
+    <div class="keybox">
+      <span class="cap">Bend allowance and V-die bending force</span>
+      <div class="eqrow"><span class="eq">BA <b>=</b> 2π <span class="fr"><span class="nu">A</span><span class="de">360</span></span> <b>(</b>R + K<sub>ba</sub> t<b>)</b></span><span class="eqnum">(1)</span></div>
+      <div class="eqrow"><span class="eq">F <b>=</b> <span class="fr"><span class="nu">K<sub>bf</sub> · TS · w · t<sup>2</sup></span><span class="de">D</span></span></span><span class="eqnum">(2)</span></div>
+    </div>
+    <p>In (1), A is the bend angle, R the inside radius, and K<sub>ba</sub> locates the neutral
+    axis (Groover: 0.33 for tight bends R &lt; 2t, 0.5 for R ≥ 2t) — the neutral axis migrates
+    inward as bending sharpens, which is the whole reason blanks are not sized by naive
+    centerline arithmetic. In (2), TS is tensile strength, w bend width, t thickness, D the die
+    opening, K<sub>bf</sub> ≈ 1.33 for V-dies.</p>
+    <p><strong>Springback</strong>: on unloading, the elastic part of the through-thickness
+    strain distribution recovers; the bend opens and its radius grows. The drivers fall straight
+    out of beam elasticity — springback grows with the material's yield-to-modulus ratio Y/E and
+    with R/t (gentler bends are more elastic overall). That is why high-strength steels and
+    aluminum (high Y/E) spring back hard, and why annealed mild steel is forgiving.</p>
+
+    <div class="keybox">
+      <span class="cap">Condensed worked example — one brake bend</span>
+      <p style="margin:10px 0 4px">90° V-bend, mild steel TS = 450 MPa, t = 2 mm, w = 250 mm, R = 5 mm, die opening D = 25 mm:</p>
+      <p style="margin:4px 0;font-family:var(--mono);font-size:14px">
+      R/t = 2.5 ≥ 2 → K_ba = 0.5<br>
+      BA = 2π(90/360)(5 + 0.5×2) = (π/2)(6) = <strong style="color:var(--ember)">9.4 mm</strong> of blank consumed by the bend<br>
+      F = 1.33 × 450 × 250 × 2² / 25 = <strong style="color:var(--ember)">23.9 kN</strong> (≈ 2.4 tonnes) — a small brake job; specify press tonnage with margin over this instantaneous peak.</p>
+    </div>
+
+    <h3>Misconceptions</h3>
+    <div class="miscon">
+      <article>
+        <div class="wrong">"Springback is a quality defect — good tooling eliminates it."</div>
+        <div class="right">Springback is Hooke's law; it cannot be eliminated, only compensated.
+        Family one: <em>overbend</em> past the target so recovery lands on it. Family two:
+        <em>bottoming/coining</em> — plastically setting the bend zone at the stroke's end.
+        Roll-forming lines compensate in the flower pattern's last passes. Fighting the physics
+        instead of budgeting for it is the actual defect.</div>
+      </article>
+      <article>
+        <div class="wrong">"Stronger sheet needs a tighter radius allowance, weaker sheet more."</div>
+        <div class="right">Backwards on both ends. Minimum bend radius is a <em>ductility</em>
+        limit (crack the outer fiber and no allowance saves you), while springback scales with
+        Y/E. A high-strength, low-ductility sheet needs a <em>larger</em> minimum radius and
+        <em>more</em> overbend — the two requirements stack, they don't trade.</div>
+      </article>
+    </div>
+
+    <h3>Kuwait floor</h3>
+    <p>Kirby Building Systems' panels, purlins, and trim are this lesson at line speed:
+    coil-fed roll forming and brake bending of structural sheet, with tooling that encodes
+    springback compensation for each gauge and grade. A gauge substitution or a coil with
+    off-spec yield strength shows up the same afternoon as out-of-tolerance profiles — the
+    production engineer's first sheet-metal lesson, learned here for free.</p>
+
+    <p class="small"><strong>Study from</strong> — Groover, Ch. 20; Kalpakjian &amp; Schmid,
+    sheet-forming chapter (minimum bend radius and springback data). Course-level videos are
+    linked on the MFG 254 course page.</p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="inner">
+    
+    <div class="cols">
+      <div>
+        <h5>The pathway</h5>
+        A maintenance engineer's route into manufacturing:<br>
+        Reliability · Asset Integrity · Production/Operations · Maintenance Planning
+      </div>
+      <div>
+        <h5>Site</h5>
+        <a href="../../../index.html">Start here</a><br>
+        <a href="../../../curriculum/index.html">Curriculum — 48 courses</a><br>
+        <a href="../../../career/index.html">Career strategy</a>
+      </div>
+      <div>
+        <h5>Kuwait industry context</h5>
+        Kuwait Steel · Gulf Cable · Kirby Building Systems · EQUATE · KDD / Petra · HEISCO
+      </div>
+    </div>
+    <div class="mark">Sun Devil Factory</div>
+    <p class="fine">Educational material. Worked-example values are pedagogical; representative
+    industrial figures are labeled as such and are not published operating data of any named
+    company. Photography is openly licensed; credits on each image and in the repository.</p>
+  </div>
+</footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

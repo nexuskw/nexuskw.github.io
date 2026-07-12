@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Continuous casting of steel — Manufacturing Processes I — Casting &amp; Bulk Forming — Sun Devil Factory</title>
+<meta name="description" content="The billet caster as a permanent-mold casting process running at steady state: shell growth, metallurgical length, breakout risk, and quality issues f">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+<header class="hd">
+  <a class="wordmark" href="../../../index.html">Sun Devil <span>Factory</span></a>
+  <nav aria-label="Site">
+    <a href="../../../index.html">Start Here</a>
+    <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+    <a href="../../../career/index.html">Career</a>
+  </nav>
+</header>
+<main>
+<div class="pagehead">
+  <p class="kicker"><span class="n">STUDY GUIDE · CORE 60 · A4</span>MFG 105 · Lesson 04</p>
+  <h1>Continuous casting of steel</h1>
+  <p class="sub">The billet caster is Lecture 1's physics running at steady state, twenty-four
+  hours a day. This guide compresses the machine, its two governing equations, and the quality
+  logic — Kuwait Steel's core process, and the interview topic that proves you did the reading.</p>
+</div>
+
+<section class="part tight">
+  <div class="measure rv">
+    <h3>Objectives</h3>
+    <ol class="objectives">
+      <li>Trace the caster: ladle → tundish → water-cooled oscillating copper mold → spray zones → straightener → torch cutoff.</li>
+      <li>Compute shell thickness at any point and the metallurgical length, and defend the torch position with them.</li>
+      <li>Explain why casting speed trades against breakout risk, and name the main billet quality defects.</li>
+    </ol>
+
+    <h3>Key equations — sourced</h3>
+    <div class="keybox">
+      <span class="cap">Shell growth and metallurgical length (The Making, Shaping and Treating of Steel, AISE; same 1/√t physics as Lecture 1's Chvorinov derivation)</span>
+      <div class="eqrow"><span class="eq">δ <b>=</b> K <span class="rt">√<span class="rd">t</span></span></span><span class="eqnum">(1)</span></div>
+      <div class="eqrow"><span class="eq">L<sub>m</sub> <b>=</b> v · t<sub>full</sub> <b>=</b> v <b>(</b><span class="fr"><span class="nu">d</span><span class="de">2K</span></span><b>)</b><sup>2</sup></span><span class="eqnum">(2)</span></div>
+    </div>
+    <p>δ is solid shell thickness after time t; K is the solidification constant (typically
+    25–30 mm/min<sup>½</sup> for water-cooled casters); the strand is fully solid when δ reaches the
+    half-thickness d/2, which at casting speed v happens a fixed distance L<sub>m</sub> — the
+    metallurgical length — below the mold.</p>
+
+    <div class="keybox">
+      <span class="cap">Condensed worked example — representative billet-caster values, not published Kuwait Steel data</span>
+      <p style="margin:10px 0 4px">130 mm square billet, K = 27 mm/min<sup>½</sup>, v = 2.6 m/min, mold length 0.8 m:</p>
+      <p style="margin:4px 0;font-family:var(--mono);font-size:14px">
+      t_full = (65/27)² = 5.8 min → L_m = 2.6 × 5.8 ≈ <strong style="color:var(--ember)">15 m</strong><br>
+      shell at mold exit: t = 0.8/2.6 = 0.31 min → δ = 27√0.31 ≈ <strong style="color:var(--ember)">15 mm</strong><br>
+      push v to 3.4 m/min → exit shell ≈ 13 mm, L_m ≈ 19.6 m — thinner skin, longer liquid core.</p>
+    </div>
+
+    <h3>Misconceptions</h3>
+    <div class="miscon">
+      <article>
+        <div class="wrong">"The strand is solid when it leaves the mold."</div>
+        <div class="right">At mold exit it is a ~15 mm skin over a liquid core that persists for
+        ~15 m of machine. Every roller and spray nozzle in between exists to contain and grow
+        that skin. A skin rupture — a breakout — pours liquid steel over the machine; it is the
+        melt shop's most feared routine event.</div>
+      </article>
+      <article>
+        <div class="wrong">"Raising casting speed is free tonnage."</div>
+        <div class="right">Equation (2): L_m grows with v while the mold-exit shell thins as
+        1/√v. Speed is bought with breakout risk, deeper liquid core, and quality penalties
+        (centerline segregation, rhomboidity). The speed setpoint is a managed trade-off, not
+        a throttle.</div>
+      </article>
+    </div>
+
+    <h3>Quality connection</h3>
+    <p>Lecture 2's defect families reappear at the caster with new names: pinholes (dissolved
+    gas), internal and centerline cracks (thermal stress and bulging between rolls), rhomboidity
+    (uneven mold cooling), and centerline segregation (the last liquid at the core is
+    solute-rich — Lecture 1's dendritic argument at machine scale). Each traces to a specific
+    subsystem: mold level control, oscillation, spray pattern, roll alignment — which is why
+    caster maintenance quality is billet quality.</p>
+
+    <h3>Kuwait floor</h3>
+    <p>Kuwait Steel's route — EAF, ladle furnace, billet caster, rolling mill — makes this
+    lesson the single most direct process-knowledge card you can play in their interviews. The
+    four target roles all touch the caster: mold and oscillator health (reliability), strand
+    containment (integrity), speed–quality trade-offs (production), and mold/segment change
+    planning (planning).</p>
+
+    <p class="small"><strong>Study from</strong> — <em>The Making, Shaping and Treating of
+    Steel</em> (AISE); Groover Ch. 11 on continuous casting; Lecture 1 §08 for the derivation
+    connection. Video: "Steelmaking: Continuous Casting" (CorusBCSATraining, YouTube — verified)
+    linked from the course page.</p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="inner">
+    
+    <div class="cols">
+      <div>
+        <h5>The pathway</h5>
+        A maintenance engineer's route into manufacturing:<br>
+        Reliability · Asset Integrity · Production/Operations · Maintenance Planning
+      </div>
+      <div>
+        <h5>Site</h5>
+        <a href="../../../index.html">Start here</a><br>
+        <a href="../../../curriculum/index.html">Curriculum — 48 courses</a><br>
+        <a href="../../../career/index.html">Career strategy</a>
+      </div>
+      <div>
+        <h5>Kuwait industry context</h5>
+        Kuwait Steel · Gulf Cable · Kirby Building Systems · EQUATE · KDD / Petra · HEISCO
+      </div>
+    </div>
+    <div class="mark">Sun Devil Factory</div>
+    <p class="fine">Educational material. Worked-example values are pedagogical; representative
+    industrial figures are labeled as such and are not published operating data of any named
+    company. Photography is openly licensed; credits on each image and in the repository.</p>
+  </div>
+</footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

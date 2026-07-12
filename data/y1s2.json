@@ -7,19 +7,87 @@
       "code": "MTH 151",
       "title": "Engineering Mathematics II",
       "summary": "Multivariable calculus, linear algebra, and second-order differential equations — the mathematics that vibrations, control systems, and heat transfer will spend the next three years consuming.",
-      "taught_from": ["MIT OCW 18.02 Multivariable Calculus; 18.03 Differential Equations (ocw.mit.edu)"],
+      "taught_from": [
+        "MIT OCW 18.02 Multivariable Calculus; 18.03 Differential Equations (ocw.mit.edu)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Vectors and vector geometry", "tier": 3, "scope": "Dot and cross products with their physical readings: work and moment. Lines and planes in space. The geometry underneath 3-D statics revisited with better tools.", "src": "MIT OCW 18.02"},
-        {"n": 2, "t": "Partial derivatives", "tier": 3, "scope": "Functions of several variables and their partial rates. The gradient as steepest ascent. Sensitivity thinking: which input moves the output most.", "src": "MIT OCW 18.02"},
-        {"n": 3, "t": "Chain rule and total differentials", "tier": 3, "scope": "Multivariable chain rule and the total differential. Error propagation through a formula — the uncertainty calculation every measurement report owes. Linearization around an operating point.", "src": "MIT OCW 18.02"},
-        {"n": 4, "t": "Multiple integrals", "tier": 3, "scope": "Double and triple integrals over regions. Mass, centroid, and moment of inertia of solid parts computed properly. Order of integration chosen for sanity.", "src": "MIT OCW 18.02"},
-        {"n": 5, "t": "Vector fields, flux, and circulation", "tier": 3, "scope": "Vector fields as flow pictures. Line integrals and work; surface integrals and flux. The divergence and curl read physically — sources and swirl.", "src": "MIT OCW 18.02"},
-        {"n": 6, "t": "Matrices and linear systems", "tier": 3, "scope": "Matrix algebra and Gaussian elimination. Solving real systems: truss equations, circuit equations, mass balances. Singularity as a physical warning, not just an algebraic one.", "src": "MIT OCW 18.03 / 18.06 materials"},
-        {"n": 7, "t": "Eigenvalues and eigenvectors", "tier": 3, "scope": "The eigenproblem stated and solved for small systems. Eigenvalues as natural rates and frequencies. The concept that becomes mode shapes in Vibrations.", "src": "MIT OCW 18.03"},
-        {"n": 8, "t": "Second-order linear ODEs", "tier": 3, "scope": "Homogeneous solutions: overdamped, critically damped, underdamped. The characteristic equation as the system's fingerprint. Mass-spring-damper solved completely — memorize this solution's shape.", "src": "MIT OCW 18.03"},
-        {"n": 9, "t": "Forced oscillations and resonance", "tier": 3, "scope": "Particular solutions for harmonic forcing. Amplitude and phase versus frequency; resonance and its danger. The mathematical skeleton of every vibration spectrum you will ever read.", "src": "MIT OCW 18.03"},
-        {"n": 10, "t": "Laplace transforms", "tier": 3, "scope": "Transform pairs and properties; solving ODEs by algebra. Transfer functions previewed. The s-domain as the control engineer's home ground.", "src": "MIT OCW 18.03"},
-        {"n": 11, "t": "Fourier series first contact", "tier": 3, "scope": "Periodic signals decomposed into harmonics. Spectra of square and sawtooth waves computed by hand. Why a vibration analyst's FFT screen shows lines where the machine has defects.", "src": "MIT OCW 18.03"}
+        {
+          "n": 1,
+          "t": "Vectors and vector geometry",
+          "tier": 3,
+          "scope": "Dot and cross products with their physical readings: work and moment. Lines and planes in space. The geometry underneath 3-D statics revisited with better tools.",
+          "src": "MIT OCW 18.02"
+        },
+        {
+          "n": 2,
+          "t": "Partial derivatives",
+          "tier": 3,
+          "scope": "Functions of several variables and their partial rates. The gradient as steepest ascent. Sensitivity thinking: which input moves the output most.",
+          "src": "MIT OCW 18.02"
+        },
+        {
+          "n": 3,
+          "t": "Chain rule and total differentials",
+          "tier": 3,
+          "scope": "Multivariable chain rule and the total differential. Error propagation through a formula — the uncertainty calculation every measurement report owes. Linearization around an operating point.",
+          "src": "MIT OCW 18.02"
+        },
+        {
+          "n": 4,
+          "t": "Multiple integrals",
+          "tier": 3,
+          "scope": "Double and triple integrals over regions. Mass, centroid, and moment of inertia of solid parts computed properly. Order of integration chosen for sanity.",
+          "src": "MIT OCW 18.02"
+        },
+        {
+          "n": 5,
+          "t": "Vector fields, flux, and circulation",
+          "tier": 3,
+          "scope": "Vector fields as flow pictures. Line integrals and work; surface integrals and flux. The divergence and curl read physically — sources and swirl.",
+          "src": "MIT OCW 18.02"
+        },
+        {
+          "n": 6,
+          "t": "Matrices and linear systems",
+          "tier": 3,
+          "scope": "Matrix algebra and Gaussian elimination. Solving real systems: truss equations, circuit equations, mass balances. Singularity as a physical warning, not just an algebraic one.",
+          "src": "MIT OCW 18.03 / 18.06 materials"
+        },
+        {
+          "n": 7,
+          "t": "Eigenvalues and eigenvectors",
+          "tier": 3,
+          "scope": "The eigenproblem stated and solved for small systems. Eigenvalues as natural rates and frequencies. The concept that becomes mode shapes in Vibrations.",
+          "src": "MIT OCW 18.03"
+        },
+        {
+          "n": 8,
+          "t": "Second-order linear ODEs",
+          "tier": 3,
+          "scope": "Homogeneous solutions: overdamped, critically damped, underdamped. The characteristic equation as the system's fingerprint. Mass-spring-damper solved completely — memorize this solution's shape.",
+          "src": "MIT OCW 18.03"
+        },
+        {
+          "n": 9,
+          "t": "Forced oscillations and resonance",
+          "tier": 3,
+          "scope": "Particular solutions for harmonic forcing. Amplitude and phase versus frequency; resonance and its danger. The mathematical skeleton of every vibration spectrum you will ever read.",
+          "src": "MIT OCW 18.03"
+        },
+        {
+          "n": 10,
+          "t": "Laplace transforms",
+          "tier": 3,
+          "scope": "Transform pairs and properties; solving ODEs by algebra. Transfer functions previewed. The s-domain as the control engineer's home ground.",
+          "src": "MIT OCW 18.03"
+        },
+        {
+          "n": 11,
+          "t": "Fourier series first contact",
+          "tier": 3,
+          "scope": "Periodic signals decomposed into harmonics. Spectra of square and sawtooth waves computed by hand. Why a vibration analyst's FFT screen shows lines where the machine has defects.",
+          "src": "MIT OCW 18.03"
+        }
       ]
     },
     {
@@ -27,19 +95,87 @@
       "code": "DYN 152",
       "title": "Engineering Dynamics",
       "summary": "Motion with forces attached: kinematics of particles and rigid bodies, Newton–Euler methods, work–energy and impulse–momentum — aimed squarely at the rotating machinery this pathway lives on.",
-      "taught_from": ["MIT OCW 2.003 Engineering Dynamics (ocw.mit.edu)"],
+      "taught_from": [
+        "MIT OCW 2.003 Engineering Dynamics (ocw.mit.edu)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Particle kinematics", "tier": 3, "scope": "Position, velocity, acceleration in rectilinear and curvilinear motion. Normal-tangential and polar descriptions. Reading motion from data rather than formulas.", "src": "MIT OCW 2.003"},
-        {"n": 2, "t": "Newton's second law for particles", "tier": 3, "scope": "F = ma applied with disciplined FBDs. Friction, drag, and constraint forces. Curvilinear applications: vehicles on curves, whirling masses.", "src": "MIT OCW 2.003"},
-        {"n": 3, "t": "Work and energy", "tier": 3, "scope": "Work of forces and couples; kinetic and potential energy. The work–energy theorem as an accounting identity. When energy methods beat force methods.", "src": "MIT OCW 2.003"},
-        {"n": 4, "t": "Impulse, momentum, and impact", "tier": 3, "scope": "Linear impulse–momentum; conservation in collisions. Coefficient of restitution. Hammer blows and coupling impacts as plant-floor examples.", "src": "MIT OCW 2.003"},
-        {"n": 5, "t": "Systems of particles", "tier": 3, "scope": "Center of mass motion and internal versus external forces. Steady mass flow forces — the jet on a plate that becomes pump and turbine thinking. Rocket-style variable-mass reasoning in brief.", "src": "MIT OCW 2.003"},
-        {"n": 6, "t": "Rigid-body kinematics", "tier": 3, "scope": "Translation, fixed-axis rotation, and general plane motion. Relative velocity and instant centers. Gear and linkage motion analyzed cleanly.", "src": "MIT OCW 2.003"},
-        {"n": 7, "t": "Relative acceleration and Coriolis", "tier": 3, "scope": "Acceleration analysis of linkages. Rotating reference frames and the Coriolis term. Where slider-in-slot mechanisms get their surprising accelerations.", "src": "MIT OCW 2.003"},
-        {"n": 8, "t": "Rigid-body kinetics: Newton–Euler", "tier": 3, "scope": "Mass moment of inertia — measured, tabulated, and composed. ΣM = Iα for fixed-axis rotation and general plane motion. Starting torque of a loaded drum computed honestly.", "src": "MIT OCW 2.003"},
-        {"n": 9, "t": "Rotational energy and momentum", "tier": 3, "scope": "Kinetic energy of rotation; angular impulse and momentum. Flywheels as energy stores — sizing one for load smoothing. Conservation demonstrations that survive into turbine trip analysis.", "src": "MIT OCW 2.003"},
-        {"n": 10, "t": "Balancing of rotors", "tier": 3, "scope": "Static versus dynamic unbalance defined precisely. Single- and two-plane balancing logic. Why unbalance shows at 1× running speed — the vibration analyst's first spectral line explained by dynamics.", "src": "MIT OCW 2.003"},
-        {"n": 11, "t": "Introduction to vibration", "tier": 3, "scope": "The single degree-of-freedom oscillator from Newton's law. Natural frequency and damping ratio measured from a decay trace. The bridge lesson into the Year 3 Vibrations course.", "src": "MIT OCW 2.003"}
+        {
+          "n": 1,
+          "t": "Particle kinematics",
+          "tier": 3,
+          "scope": "Position, velocity, acceleration in rectilinear and curvilinear motion. Normal-tangential and polar descriptions. Reading motion from data rather than formulas.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 2,
+          "t": "Newton's second law for particles",
+          "tier": 3,
+          "scope": "F = ma applied with disciplined FBDs. Friction, drag, and constraint forces. Curvilinear applications: vehicles on curves, whirling masses.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 3,
+          "t": "Work and energy",
+          "tier": 3,
+          "scope": "Work of forces and couples; kinetic and potential energy. The work–energy theorem as an accounting identity. When energy methods beat force methods.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 4,
+          "t": "Impulse, momentum, and impact",
+          "tier": 3,
+          "scope": "Linear impulse–momentum; conservation in collisions. Coefficient of restitution. Hammer blows and coupling impacts as plant-floor examples.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 5,
+          "t": "Systems of particles",
+          "tier": 3,
+          "scope": "Center of mass motion and internal versus external forces. Steady mass flow forces — the jet on a plate that becomes pump and turbine thinking. Rocket-style variable-mass reasoning in brief.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 6,
+          "t": "Rigid-body kinematics",
+          "tier": 3,
+          "scope": "Translation, fixed-axis rotation, and general plane motion. Relative velocity and instant centers. Gear and linkage motion analyzed cleanly.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 7,
+          "t": "Relative acceleration and Coriolis",
+          "tier": 3,
+          "scope": "Acceleration analysis of linkages. Rotating reference frames and the Coriolis term. Where slider-in-slot mechanisms get their surprising accelerations.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 8,
+          "t": "Rigid-body kinetics: Newton–Euler",
+          "tier": 3,
+          "scope": "Mass moment of inertia — measured, tabulated, and composed. ΣM = Iα for fixed-axis rotation and general plane motion. Starting torque of a loaded drum computed honestly.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 9,
+          "t": "Rotational energy and momentum",
+          "tier": 3,
+          "scope": "Kinetic energy of rotation; angular impulse and momentum. Flywheels as energy stores — sizing one for load smoothing. Conservation demonstrations that survive into turbine trip analysis.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 10,
+          "t": "Balancing of rotors",
+          "tier": 3,
+          "scope": "Static versus dynamic unbalance defined precisely. Single- and two-plane balancing logic. Why unbalance shows at 1× running speed — the vibration analyst's first spectral line explained by dynamics.",
+          "src": "MIT OCW 2.003"
+        },
+        {
+          "n": 11,
+          "t": "Introduction to vibration",
+          "tier": 3,
+          "scope": "The single degree-of-freedom oscillator from Newton's law. Natural frequency and damping ratio measured from a decay trace. The bridge lesson into the Year 3 Vibrations course.",
+          "src": "MIT OCW 2.003"
+        }
       ]
     },
     {
@@ -47,19 +183,89 @@
       "code": "MAT 153",
       "title": "Materials Science II",
       "summary": "The metallurgy that runs a steel-centric region: phase diagrams, the iron–carbon system, heat treatment, alloy and stainless steels, and the failure mechanisms — fatigue, creep, embrittlement — that maintenance exists to outrun.",
-      "taught_from": ["Callister & Rethwisch, Materials Science and Engineering: An Introduction (Wiley)"],
+      "taught_from": [
+        "Callister & Rethwisch, Materials Science and Engineering: An Introduction (Wiley)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Phase diagrams", "tier": 3, "scope": "Phases, components, and equilibrium. Binary isomorphous and eutectic systems; tie lines and the lever rule worked carefully. Reading a phase diagram as a map of what microstructure is possible.", "src": "Callister & Rethwisch, Ch. 9"},
-        {"n": 2, "t": "The iron–carbon system and heat treatment", "tier": 2, "core60": "B2", "scope": "Ferrite, austenite, cementite, pearlite; the eutectoid reaction. TTT/CCT thinking, quench-and-temper, hardenability, and the microstructures — martensite to tempered martensite — that set steel properties. The single most load-bearing lesson in this course.", "src": "Callister & Rethwisch, Ch. 9–10"},
-        {"n": 3, "t": "Annealing, normalizing, and surface hardening", "tier": 3, "scope": "Full anneal, normalize, stress relief, and spheroidize — what each buys and costs. Case hardening: carburizing, nitriding, induction. Choosing a treatment from a drawing callout.", "src": "Callister & Rethwisch, Ch. 10–11"},
-        {"n": 4, "t": "Carbon and alloy steels", "tier": 3, "scope": "Steel designation systems and what the digits encode. Effects of Mn, Cr, Mo, Ni on hardenability and toughness. Selecting among plain-carbon and low-alloy grades for shafts, gears, and structures.", "src": "Callister & Rethwisch, Ch. 11"},
-        {"n": 5, "t": "Stainless steels and cast irons", "tier": 3, "scope": "Austenitic, ferritic, martensitic, and duplex stainless families; sensitization as the classic trap. Gray, ductile, and white cast irons and their fracture signatures. Materials the Gulf's process plants order by the ton.", "src": "Callister & Rethwisch, Ch. 11"},
-        {"n": 6, "t": "Nonferrous alloys", "tier": 3, "scope": "Aluminum and its temper designations; copper alloys — including the conductor grades drawn at Gulf Cable; nickel alloys for heat and corrosion. Where each family earns its cost premium.", "src": "Callister & Rethwisch, Ch. 11"},
-        {"n": 7, "t": "Fatigue, fracture, and creep", "tier": 2, "core60": "B3", "scope": "S–N behavior and endurance limits; fracture mechanics in its simplest honest form (K, toughness, flaw size); creep regimes and life estimation. The three mechanisms behind most rotating-equipment and high-temperature failures, with fracture-surface reading as the diagnostic skill.", "src": "Callister & Rethwisch, Ch. 8"},
-        {"n": 8, "t": "Polymers and elastomers", "tier": 3, "scope": "Thermoplastics versus thermosets; glass transition; viscoelasticity. Elastomers for seals — the O-ring as an engineering component. Temperature and chemical limits that kill polymer parts in service.", "src": "Callister & Rethwisch, polymer chapters"},
-        {"n": 9, "t": "Ceramics and composites", "tier": 3, "scope": "Ceramic strength statistics and why tension is the enemy. Refractories — the furnace linings of a melt shop. Fiber composites and where they appear in industrial hardware.", "src": "Callister & Rethwisch, ceramics & composites chapters"},
-        {"n": 10, "t": "Environmental degradation preview", "tier": 3, "scope": "Oxidation and aqueous corrosion in outline; galvanic couples and passivity. Hydrogen embrittlement flagged for later. The trailer for Year 3's full corrosion course.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 11, "t": "Materials selection in practice", "tier": 3, "scope": "Property indices and screening; cost and availability as first-class constraints. Substitution decisions when the specified grade is unobtainable — a real procurement scenario. Documenting a selection so an auditor can follow it.", "src": "Callister & Rethwisch, closing chapters"}
+        {
+          "n": 1,
+          "t": "Phase diagrams",
+          "tier": 3,
+          "scope": "Phases, components, and equilibrium. Binary isomorphous and eutectic systems; tie lines and the lever rule worked carefully. Reading a phase diagram as a map of what microstructure is possible.",
+          "src": "Callister & Rethwisch, Ch. 9"
+        },
+        {
+          "n": 2,
+          "t": "The iron–carbon system and heat treatment",
+          "tier": 2,
+          "core60": "B2",
+          "scope": "Ferrite, austenite, cementite, pearlite; the eutectoid reaction. TTT/CCT thinking, quench-and-temper, hardenability, and the microstructures — martensite to tempered martensite — that set steel properties. The single most load-bearing lesson in this course.",
+          "src": "Callister & Rethwisch, Ch. 9–10"
+        },
+        {
+          "n": 3,
+          "t": "Annealing, normalizing, and surface hardening",
+          "tier": 3,
+          "scope": "Full anneal, normalize, stress relief, and spheroidize — what each buys and costs. Case hardening: carburizing, nitriding, induction. Choosing a treatment from a drawing callout.",
+          "src": "Callister & Rethwisch, Ch. 10–11"
+        },
+        {
+          "n": 4,
+          "t": "Carbon and alloy steels",
+          "tier": 3,
+          "scope": "Steel designation systems and what the digits encode. Effects of Mn, Cr, Mo, Ni on hardenability and toughness. Selecting among plain-carbon and low-alloy grades for shafts, gears, and structures.",
+          "src": "Callister & Rethwisch, Ch. 11"
+        },
+        {
+          "n": 5,
+          "t": "Stainless steels and cast irons",
+          "tier": 3,
+          "scope": "Austenitic, ferritic, martensitic, and duplex stainless families; sensitization as the classic trap. Gray, ductile, and white cast irons and their fracture signatures. Materials the Gulf's process plants order by the ton.",
+          "src": "Callister & Rethwisch, Ch. 11"
+        },
+        {
+          "n": 6,
+          "t": "Nonferrous alloys",
+          "tier": 3,
+          "scope": "Aluminum and its temper designations; copper alloys — including the conductor grades drawn at Gulf Cable; nickel alloys for heat and corrosion. Where each family earns its cost premium.",
+          "src": "Callister & Rethwisch, Ch. 11"
+        },
+        {
+          "n": 7,
+          "t": "Fatigue, fracture, and creep",
+          "tier": 2,
+          "core60": "B3",
+          "scope": "S–N behavior and endurance limits; fracture mechanics in its simplest honest form (K, toughness, flaw size); creep regimes and life estimation. The three mechanisms behind most rotating-equipment and high-temperature failures, with fracture-surface reading as the diagnostic skill.",
+          "src": "Callister & Rethwisch, Ch. 8"
+        },
+        {
+          "n": 8,
+          "t": "Polymers and elastomers",
+          "tier": 3,
+          "scope": "Thermoplastics versus thermosets; glass transition; viscoelasticity. Elastomers for seals — the O-ring as an engineering component. Temperature and chemical limits that kill polymer parts in service.",
+          "src": "Callister & Rethwisch, polymer chapters"
+        },
+        {
+          "n": 9,
+          "t": "Ceramics and composites",
+          "tier": 3,
+          "scope": "Ceramic strength statistics and why tension is the enemy. Refractories — the furnace linings of a melt shop. Fiber composites and where they appear in industrial hardware.",
+          "src": "Callister & Rethwisch, ceramics & composites chapters"
+        },
+        {
+          "n": 10,
+          "t": "Environmental degradation preview",
+          "tier": 3,
+          "scope": "Oxidation and aqueous corrosion in outline; galvanic couples and passivity. Hydrogen embrittlement flagged for later. The trailer for Year 3's full corrosion course.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 11,
+          "t": "Materials selection in practice",
+          "tier": 3,
+          "scope": "Property indices and screening; cost and availability as first-class constraints. Substitution decisions when the specified grade is unobtainable — a real procurement scenario. Documenting a selection so an auditor can follow it.",
+          "src": "Callister & Rethwisch, closing chapters"
+        }
       ]
     },
     {
@@ -73,18 +279,104 @@
         "Black & Kohser, DeGarmo's Materials and Processes in Manufacturing (Wiley)"
       ],
       "lessons": [
-        {"n": 1, "t": "Theory of metal machining", "tier": 2, "core60": "A9", "scope": "Orthogonal cutting model: shear plane, chip formation, cutting forces, and the Merchant relation. Cutting temperature and where tool wear comes from. Taylor tool-life equation with its exponents read as economics.", "src": "Groover, Ch. 21"},
-        {"n": 2, "t": "Cutting tools and fluids", "tier": 3, "scope": "Tool materials from HSS to coated carbides and ceramics; wear modes — flank, crater, notch. Insert geometry and grades read from a catalog. Cutting fluids and their delivery, with health notes.", "src": "Groover, cutting-tool chapter; Kalpakjian & Schmid"},
-        {"n": 3, "t": "Turning, milling, and drilling", "tier": 2, "core60": "A10", "scope": "The core operations with their speeds-and-feeds arithmetic: material removal rate, machining time, and power. Workholding logic. One condensed worked example runs a job from print to cycle estimate.", "src": "Groover, Ch. 22"},
-        {"n": 4, "t": "Machine tools and CNC basics", "tier": 3, "scope": "Lathe and machining-center anatomy; axes and coordinate systems. What G-code programs actually command. Accuracy, repeatability, and backlash as machine-health quantities a maintenance engineer owns.", "src": "Groover, CNC sections; Kalpakjian & Schmid"},
-        {"n": 5, "t": "Grinding and abrasive processes", "tier": 2, "core60": "A11", "scope": "Abrasive mechanics: grain depth of cut, specific energy, and why grinding burns parts when abused. Wheel designation decoded. Surface and cylindrical grinding with dressing and balancing practice.", "src": "Groover, Ch. 25"},
-        {"n": 6, "t": "Surface finish and integrity", "tier": 3, "scope": "Ra and Rz defined and measured; finish versus process capability charts. Residual stresses from machining and grinding. Why a ground bearing journal's finish is a reliability parameter.", "src": "Groover, surface chapters; Kalpakjian & Schmid"},
-        {"n": 7, "t": "Nontraditional machining", "tier": 3, "scope": "EDM, wire EDM, ECM, laser and abrasive-waterjet cutting. Where conventional cutting cannot go: hardened dies, delicate profiles. Selection by material, feature, and tolerance.", "src": "Groover, nontraditional processes chapter"},
-        {"n": 8, "t": "Welding processes I — arc processes", "tier": 2, "core60": "A12", "scope": "SMAW, GMAW, FCAW, GTAW, SAW: how each arc works, its consumables, positions, and typical defects. Heat input defined and computed. The process lineup on Kirby's structural fabrication floor.", "src": "Groover, welding chapters; Kalpakjian & Schmid", "kuwait": "Kirby Building Systems"},
-        {"n": 9, "t": "Welding processes II — resistance, gas, and solid state", "tier": 3, "scope": "Resistance spot and seam welding; oxyfuel processes; friction and explosion welding in outline. Brazing and soldering distinguished properly from welding. Matching process to joint, material, and volume.", "src": "Groover, welding chapters; Black & Kohser"},
-        {"n": 10, "t": "Thermal cutting and joint preparation", "tier": 3, "scope": "Oxyfuel, plasma, and laser cutting; kerf and heat-affected edges. Joint types and edge preparation geometry. Fit-up as the quiet variable behind weld quality.", "src": "Kalpakjian & Schmid; Black & Kohser"},
-        {"n": 11, "t": "Mechanical joining", "tier": 3, "scope": "Bolted joints: preload, torque–tension, and why gasketed flanges leak when torqued wrong. Riveting and adhesive bonding in outline. The maintenance view: joints are made to be remade.", "src": "Groover, assembly chapters; Kalpakjian & Schmid"},
-        {"n": 12, "t": "Additive manufacturing first contact", "tier": 3, "scope": "The AM process families in one pass: PBF, DED, FDM, binder jetting. Where AM already earns keep: jigs, obsolete spares, prototypes. Honest limits — surface, properties, qualification.", "src": "Groover, additive manufacturing chapter"}
+        {
+          "n": 1,
+          "t": "Theory of metal machining",
+          "tier": 2,
+          "core60": "A9",
+          "scope": "Orthogonal cutting model: shear plane, chip formation, cutting forces, and the Merchant relation. Cutting temperature and where tool wear comes from. Taylor tool-life equation with its exponents read as economics.",
+          "src": "Groover, Ch. 21"
+        },
+        {
+          "n": 2,
+          "t": "Cutting tools and fluids",
+          "tier": 3,
+          "scope": "Tool materials from HSS to coated carbides and ceramics; wear modes — flank, crater, notch. Insert geometry and grades read from a catalog. Cutting fluids and their delivery, with health notes.",
+          "src": "Groover, cutting-tool chapter; Kalpakjian & Schmid"
+        },
+        {
+          "n": 3,
+          "t": "Turning, milling, and drilling",
+          "tier": 2,
+          "core60": "A10",
+          "scope": "The core operations with their speeds-and-feeds arithmetic: material removal rate, machining time, and power. Workholding logic. One condensed worked example runs a job from print to cycle estimate.",
+          "src": "Groover, Ch. 22"
+        },
+        {
+          "n": 4,
+          "t": "Machine tools and CNC basics",
+          "tier": 3,
+          "scope": "Lathe and machining-center anatomy; axes and coordinate systems. What G-code programs actually command. Accuracy, repeatability, and backlash as machine-health quantities a maintenance engineer owns.",
+          "src": "Groover, CNC sections; Kalpakjian & Schmid"
+        },
+        {
+          "n": 5,
+          "t": "Grinding and abrasive processes",
+          "tier": 2,
+          "core60": "A11",
+          "scope": "Abrasive mechanics: grain depth of cut, specific energy, and why grinding burns parts when abused. Wheel designation decoded. Surface and cylindrical grinding with dressing and balancing practice.",
+          "src": "Groover, Ch. 25"
+        },
+        {
+          "n": 6,
+          "t": "Surface finish and integrity",
+          "tier": 3,
+          "scope": "Ra and Rz defined and measured; finish versus process capability charts. Residual stresses from machining and grinding. Why a ground bearing journal's finish is a reliability parameter.",
+          "src": "Groover, surface chapters; Kalpakjian & Schmid"
+        },
+        {
+          "n": 7,
+          "t": "Nontraditional machining",
+          "tier": 3,
+          "scope": "EDM, wire EDM, ECM, laser and abrasive-waterjet cutting. Where conventional cutting cannot go: hardened dies, delicate profiles. Selection by material, feature, and tolerance.",
+          "src": "Groover, nontraditional processes chapter"
+        },
+        {
+          "n": 8,
+          "t": "Welding processes I — arc processes",
+          "tier": 2,
+          "core60": "A12",
+          "scope": "SMAW, GMAW, FCAW, GTAW, SAW: how each arc works, its consumables, positions, and typical defects. Heat input defined and computed. The process lineup on Kirby's structural fabrication floor.",
+          "src": "Groover, welding chapters; Kalpakjian & Schmid",
+          "kuwait": "Kirby Building Systems"
+        },
+        {
+          "n": 9,
+          "t": "Welding processes II — resistance, gas, and solid state",
+          "tier": 3,
+          "scope": "Resistance spot and seam welding; oxyfuel processes; friction and explosion welding in outline. Brazing and soldering distinguished properly from welding. Matching process to joint, material, and volume.",
+          "src": "Groover, welding chapters; Black & Kohser"
+        },
+        {
+          "n": 10,
+          "t": "Thermal cutting and joint preparation",
+          "tier": 3,
+          "scope": "Oxyfuel, plasma, and laser cutting; kerf and heat-affected edges. Joint types and edge preparation geometry. Fit-up as the quiet variable behind weld quality.",
+          "src": "Kalpakjian & Schmid; Black & Kohser"
+        },
+        {
+          "n": 11,
+          "t": "Mechanical joining",
+          "tier": 3,
+          "scope": "Bolted joints: preload, torque–tension, and why gasketed flanges leak when torqued wrong. Riveting and adhesive bonding in outline. The maintenance view: joints are made to be remade.",
+          "src": "Groover, assembly chapters; Kalpakjian & Schmid"
+        },
+        {
+          "n": 12,
+          "t": "Additive manufacturing first contact",
+          "tier": 3,
+          "scope": "The AM process families in one pass: PBF, DED, FDM, binder jetting. Where AM already earns keep: jigs, obsolete spares, prototypes. Honest limits — surface, properties, qualification.",
+          "src": "Groover, additive manufacturing chapter"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Manufacturing Processes II — IIT Kharagpur",
+          "url": "https://nptel.ac.in/courses/112105126",
+          "src": "NPTEL",
+          "tag": "FULL VIDEO COURSE · VERIFIED LIVE",
+          "note": "Machining-focused lecture series: cutting mechanics, tools, and grinding — the video companion to this course's core."
+        }
       ]
     },
     {
@@ -92,19 +384,88 @@
       "code": "THM 155",
       "title": "Thermodynamics I",
       "summary": "Energy accounting with consequences: properties, the first law for closed systems and control volumes, the second law, and entropy — taught toward boilers, compressors, and turbines rather than abstract cycles.",
-      "taught_from": ["Çengel (with Boles), Thermodynamics: An Engineering Approach (McGraw-Hill) — via MIT OCW/NPTEL equivalents", "NPTEL: Basic Thermodynamics (nptel.ac.in)"],
+      "taught_from": [
+        "Çengel (with Boles), Thermodynamics: An Engineering Approach (McGraw-Hill) — via MIT OCW/NPTEL equivalents",
+        "NPTEL: Basic Thermodynamics (nptel.ac.in)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Systems, properties, and state", "tier": 3, "scope": "Closed and open systems; intensive and extensive properties; equilibrium and process paths. The state postulate in working form. Units and sign conventions fixed once, forever.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 2, "t": "Pure substance properties and steam tables", "tier": 3, "scope": "Phase regions, quality, and the P–v and T–s diagrams. Steam-table fluency drills — the skill utilities engineering assumes. Superheat and subcooling located physically.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 3, "t": "Work and heat", "tier": 3, "scope": "Boundary work computed for standard processes; heat as energy in transit, not a substance. Path dependence demonstrated. Reading work from a P–v diagram's area.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 4, "t": "First law: closed systems", "tier": 3, "scope": "Energy balance for closed systems with internal energy and enthalpy distinguished. Specific heats and ideal-gas relations. Piston-cylinder and rigid-tank problems solved in a fixed format.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 5, "t": "First law: control volumes", "tier": 3, "scope": "Steady-flow energy equation term by term. Nozzles, turbines, compressors, pumps, throttles, and heat exchangers as one-line devices. The equation this pathway will use weekly for four years.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 6, "t": "Transient flow processes", "tier": 3, "scope": "Charging and discharging tanks; the uniform-state, uniform-flow model. Compressed-air receiver behavior as the working example. Where steady-flow assumptions break.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 7, "t": "Second law and machines", "tier": 3, "scope": "Kelvin–Planck and Clausius statements; thermal efficiency and COP defined honestly. Carnot limits as ceilings no vendor brochure escapes. Refrigerators and heat pumps as reversed engines.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 8, "t": "Entropy", "tier": 3, "scope": "Entropy as a property; the increase principle for isolated systems. T–s diagrams and isentropic reference processes. Entropy generation as the bookkeeping of irreversibility.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 9, "t": "Isentropic efficiency", "tier": 3, "scope": "Turbine, compressor, and pump efficiencies defined against the isentropic ideal. Real machine performance located on the h–s diagram. The number that separates a healthy compressor from a worn one.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 10, "t": "Exergy first contact", "tier": 3, "scope": "Available work and dead states in outline. Exergy destruction as the cost of irreversibility. Why utilities audits speak this language — a preview of Thermo II.", "src": "NPTEL: Basic Thermodynamics"},
-        {"n": 11, "t": "Gas power cycle sketches", "tier": 3, "scope": "Otto, Diesel, and Brayton cycles in ideal form. Mean effective pressure and back-work ratio. Enough cycle literacy to hold a conversation about gas turbines — depth deferred to Thermo II.", "src": "NPTEL: Basic Thermodynamics"}
+        {
+          "n": 1,
+          "t": "Systems, properties, and state",
+          "tier": 3,
+          "scope": "Closed and open systems; intensive and extensive properties; equilibrium and process paths. The state postulate in working form. Units and sign conventions fixed once, forever.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 2,
+          "t": "Pure substance properties and steam tables",
+          "tier": 3,
+          "scope": "Phase regions, quality, and the P–v and T–s diagrams. Steam-table fluency drills — the skill utilities engineering assumes. Superheat and subcooling located physically.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 3,
+          "t": "Work and heat",
+          "tier": 3,
+          "scope": "Boundary work computed for standard processes; heat as energy in transit, not a substance. Path dependence demonstrated. Reading work from a P–v diagram's area.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 4,
+          "t": "First law: closed systems",
+          "tier": 3,
+          "scope": "Energy balance for closed systems with internal energy and enthalpy distinguished. Specific heats and ideal-gas relations. Piston-cylinder and rigid-tank problems solved in a fixed format.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 5,
+          "t": "First law: control volumes",
+          "tier": 3,
+          "scope": "Steady-flow energy equation term by term. Nozzles, turbines, compressors, pumps, throttles, and heat exchangers as one-line devices. The equation this pathway will use weekly for four years.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 6,
+          "t": "Transient flow processes",
+          "tier": 3,
+          "scope": "Charging and discharging tanks; the uniform-state, uniform-flow model. Compressed-air receiver behavior as the working example. Where steady-flow assumptions break.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 7,
+          "t": "Second law and machines",
+          "tier": 3,
+          "scope": "Kelvin–Planck and Clausius statements; thermal efficiency and COP defined honestly. Carnot limits as ceilings no vendor brochure escapes. Refrigerators and heat pumps as reversed engines.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 8,
+          "t": "Entropy",
+          "tier": 3,
+          "scope": "Entropy as a property; the increase principle for isolated systems. T–s diagrams and isentropic reference processes. Entropy generation as the bookkeeping of irreversibility.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 9,
+          "t": "Isentropic efficiency",
+          "tier": 3,
+          "scope": "Turbine, compressor, and pump efficiencies defined against the isentropic ideal. Real machine performance located on the h–s diagram. The number that separates a healthy compressor from a worn one.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 10,
+          "t": "Exergy first contact",
+          "tier": 3,
+          "scope": "Available work and dead states in outline. Exergy destruction as the cost of irreversibility. Why utilities audits speak this language — a preview of Thermo II.",
+          "src": "NPTEL: Basic Thermodynamics"
+        },
+        {
+          "n": 11,
+          "t": "Gas power cycle sketches",
+          "tier": 3,
+          "scope": "Otto, Diesel, and Brayton cycles in ideal form. Mean effective pressure and back-work ratio. Enough cycle literacy to hold a conversation about gas turbines — depth deferred to Thermo II.",
+          "src": "NPTEL: Basic Thermodynamics"
+        }
       ]
     },
     {
@@ -112,18 +473,81 @@
       "code": "ELE 156",
       "title": "Electrical Fundamentals for Mechanical Engineers",
       "summary": "The electrical literacy a plant demands of its mechanical engineers: DC and AC circuits, three-phase power, transformers, and above all the induction motor — starter to nameplate to failure modes.",
-      "taught_from": ["NPTEL: Basic Electrical Technology (nptel.ac.in)", "MIT OCW circuits materials"],
+      "taught_from": [
+        "NPTEL: Basic Electrical Technology (nptel.ac.in)",
+        "MIT OCW circuits materials"
+      ],
       "lessons": [
-        {"n": 1, "t": "Charge, current, voltage, and power", "tier": 3, "scope": "The electrical quantities with water analogies used and then retired. Ohm's law and power dissipation. Reading a multimeter without folklore.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 2, "t": "DC circuit analysis", "tier": 3, "scope": "Series-parallel reduction, Kirchhoff's laws, and voltage/current dividers. Practical sources and internal resistance. Battery-fed control circuits as examples.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 3, "t": "Capacitance and inductance", "tier": 3, "scope": "Energy storage in fields; V–I relations for C and L. First-order transients and time constants. Why inductive loads arc switches and need suppression.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 4, "t": "AC fundamentals and phasors", "tier": 3, "scope": "Sinusoids, RMS values, and phasor representation. Impedance of R, L, C and series combinations. The 50 Hz world quantified.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 5, "t": "AC power and power factor", "tier": 3, "scope": "Real, reactive, and apparent power; the power triangle. Power factor and why utilities bill for it. Correction capacitors sized in a worked example.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 6, "t": "Three-phase systems", "tier": 3, "scope": "Wye and delta connections; line versus phase quantities. Three-phase power calculation. Why industrial plants are three-phase places.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 7, "t": "Transformers", "tier": 3, "scope": "Ideal transformer relations and real losses. Nameplate data decoded. Distribution transformers in a plant one-line diagram.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 8, "t": "The induction motor", "tier": 3, "scope": "Rotating field, slip, and the torque–speed curve. Nameplate literacy: power, current, service factor, insulation class. The machine that drives nearly every pump and fan you will ever maintain.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 9, "t": "Motor starting, protection, and VFDs", "tier": 3, "scope": "DOL and star-delta starting; overloads and protection classes. Variable-frequency drives in outline: what they do to the torque curve and to bearings. Motor circuit anatomy from MCC to terminal box.", "src": "NPTEL: Basic Electrical Technology"},
-        {"n": 10, "t": "Electrical safety and measurements", "tier": 3, "scope": "Shock and arc-flash hazards respected properly; lockout-tagout as a mechanical engineer practices it. Insulation resistance and clamp-meter measurements. The boundary line between mechanical and electrical work scopes.", "src": "NPTEL: Basic Electrical Technology"}
+        {
+          "n": 1,
+          "t": "Charge, current, voltage, and power",
+          "tier": 3,
+          "scope": "The electrical quantities with water analogies used and then retired. Ohm's law and power dissipation. Reading a multimeter without folklore.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 2,
+          "t": "DC circuit analysis",
+          "tier": 3,
+          "scope": "Series-parallel reduction, Kirchhoff's laws, and voltage/current dividers. Practical sources and internal resistance. Battery-fed control circuits as examples.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 3,
+          "t": "Capacitance and inductance",
+          "tier": 3,
+          "scope": "Energy storage in fields; V–I relations for C and L. First-order transients and time constants. Why inductive loads arc switches and need suppression.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 4,
+          "t": "AC fundamentals and phasors",
+          "tier": 3,
+          "scope": "Sinusoids, RMS values, and phasor representation. Impedance of R, L, C and series combinations. The 50 Hz world quantified.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 5,
+          "t": "AC power and power factor",
+          "tier": 3,
+          "scope": "Real, reactive, and apparent power; the power triangle. Power factor and why utilities bill for it. Correction capacitors sized in a worked example.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 6,
+          "t": "Three-phase systems",
+          "tier": 3,
+          "scope": "Wye and delta connections; line versus phase quantities. Three-phase power calculation. Why industrial plants are three-phase places.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 7,
+          "t": "Transformers",
+          "tier": 3,
+          "scope": "Ideal transformer relations and real losses. Nameplate data decoded. Distribution transformers in a plant one-line diagram.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 8,
+          "t": "The induction motor",
+          "tier": 3,
+          "scope": "Rotating field, slip, and the torque–speed curve. Nameplate literacy: power, current, service factor, insulation class. The machine that drives nearly every pump and fan you will ever maintain.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 9,
+          "t": "Motor starting, protection, and VFDs",
+          "tier": 3,
+          "scope": "DOL and star-delta starting; overloads and protection classes. Variable-frequency drives in outline: what they do to the torque curve and to bearings. Motor circuit anatomy from MCC to terminal box.",
+          "src": "NPTEL: Basic Electrical Technology"
+        },
+        {
+          "n": 10,
+          "t": "Electrical safety and measurements",
+          "tier": 3,
+          "scope": "Shock and arc-flash hazards respected properly; lockout-tagout as a mechanical engineer practices it. Insulation resistance and clamp-meter measurements. The boundary line between mechanical and electrical work scopes.",
+          "src": "NPTEL: Basic Electrical Technology"
+        }
       ]
     }
   ]
