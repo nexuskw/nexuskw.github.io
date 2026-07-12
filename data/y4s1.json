@@ -7,20 +7,149 @@
       "code": "RTE 401",
       "title": "Rotating Equipment",
       "summary": "The machines this pathway exists for: pumps, compressors, seals, bearings, couplings, and gearboxes — theory from the fluids and design courses, failure modes from the field, all eight Core-60 lessons in one course.",
-      "taught_from": ["Çengel & Cimbala, Ch. 14 (turbomachinery)", "NPTEL: Turbomachinery and maintenance-related courses (nptel.ac.in)", "SMRP CMRP framework for practice content"],
+      "taught_from": [
+        "Çengel & Cimbala, Ch. 14 (turbomachinery)",
+        "NPTEL: Turbomachinery and maintenance-related courses (nptel.ac.in)",
+        "SMRP CMRP framework for practice content"
+      ],
       "lessons": [
-        {"n": 1, "t": "Centrifugal pump theory and curves", "tier": 2, "core60": "E1", "scope": "Euler head to real head: the H–Q curve derived, then read like an instrument — BEP, shutoff, runout, and efficiency contours. Power and affinity laws with their honest limits. The condensed example: re-rating a pump for a speed change without leaving the curve's validity.", "src": "Çengel & Cimbala, Ch. 14", "kuwait": "EQUATE"},
-        {"n": 2, "t": "System curves, NPSH, and cavitation", "tier": 2, "core60": "E2", "scope": "System resistance built from static head plus friction; the operating point as intersection. NPSH available derived from the installation, NPSH required read from the vendor, and the margin between them defended. Cavitation's physics, sound, and damage signature — and why throttling a suction valve is a firing offense.", "src": "Çengel & Cimbala, Ch. 8, 14", "kuwait": "EQUATE"},
-        {"n": 3, "t": "Positive displacement pumps", "tier": 2, "core60": "E3", "scope": "Gear, screw, diaphragm, and reciprocating pumps: flow nearly independent of pressure, and the relief-valve consequence that follows. Pulsation and its dampeners. Where PD pumps replace centrifugals — viscosity, metering, and low-flow/high-head duty.", "src": "NPTEL: pump-related content; Çengel & Cimbala"},
-        {"n": 4, "t": "Compressors", "tier": 2, "core60": "E4", "scope": "Centrifugal and reciprocating compressors with the thermodynamics attached: polytropic work, discharge temperature, and capacity control. Surge — the phenomenon, the map, and the anti-surge loop. Air and process compression duties across the six anchor plants.", "src": "NPTEL: Applied Thermodynamics content; Çengel & Cimbala", "kuwait": "EQUATE"},
-        {"n": 5, "t": "Mechanical seals", "tier": 2, "core60": "E5", "scope": "Seal anatomy: faces, secondary seals, springs, and the fluid film that does the real work. Seal plans in outline — flush, quench, and dual-seal logic. Failure reading: heat checking, coking, dry running. The single highest-value component lesson for a process-plant maintenance engineer.", "src": "SMRP framework; NPTEL rotating machinery content", "kuwait": "EQUATE"},
-        {"n": 6, "t": "Bearings and lubrication in service", "tier": 2, "core60": "E6", "scope": "Rolling-element and journal bearings from the design course, now in service: fits, internal clearance, lubrication regimes, and the L10 promise versus installed reality. Grease quantity and interval arithmetic. Failure atlas: spalling, fluting, false brinelling — each traced to its cause.", "src": "NPTEL: Machine Design content; SMRP framework"},
-        {"n": 7, "t": "Couplings, alignment, and balancing", "tier": 2, "core60": "E7", "scope": "Coupling types and what each forgives; shaft alignment by rim-and-face and reverse-dial logic with tolerances stated in real units; field balancing in one and two planes. Thermal growth targets. The precision-maintenance trio that removes the two commonest vibration sources before they start.", "src": "NPTEL: Theory of Machines content; SMRP framework"},
-        {"n": 8, "t": "Gearboxes and their failure modes", "tier": 2, "core60": "E8", "scope": "Industrial gearbox architectures; loads and life from the design course compressed into inspection practice. The failure atlas: micropitting, macropitting, scuffing, tooth bending fatigue — with the oil-analysis and vibration signatures of each. Backlash and contact-pattern checks at rebuild.", "src": "NPTEL: Machine Design content; SMRP framework", "kuwait": "Kuwait Steel"},
-        {"n": 9, "t": "Fans and blowers", "tier": 3, "scope": "Fan laws and curves; static versus total pressure. Balance and belt issues as the routine failure diet. Cooling and ventilation duties in Gulf summer.", "src": "Çengel & Cimbala, Ch. 14"},
-        {"n": 10, "t": "Steam and gas turbines in outline", "tier": 3, "scope": "Stage energy conversion recalled from thermodynamics; governing and protection systems. Steam quality's blade consequences. The prime movers behind large trains, respected from a maintenance distance.", "src": "NPTEL: Applied Thermodynamics"},
-        {"n": 11, "t": "Machinery installation and commissioning", "tier": 3, "scope": "Foundations, grouting, and soft foot; piping strain as the silent misalignment source. Commissioning checks and baseline data capture. The installation quality that decides the first five years of vibration history.", "src": "SMRP framework"},
-        {"n": 12, "t": "Rotating equipment failure investigation project", "tier": 3, "scope": "A staged failed-pump scenario: history, vibration data, oil results, and teardown photographs provided. Produce the failure analysis and corrective actions. The course's eight core lessons deployed as one investigation.", "src": "SMRP framework; NPTEL reliability content"}
+        {
+          "n": 1,
+          "t": "Centrifugal pump theory and curves",
+          "tier": 2,
+          "core60": "E1",
+          "scope": "Euler head to real head: the H–Q curve derived, then read like an instrument — BEP, shutoff, runout, and efficiency contours. Power and affinity laws with their honest limits. The condensed example: re-rating a pump for a speed change without leaving the curve's validity.",
+          "src": "Çengel & Cimbala, Ch. 14",
+          "kuwait": "EQUATE",
+          "preview": [
+            "Affinity laws: speed drops 10% — what happens to flow, head, and power?",
+            "Where on the H–Q curve does efficiency peak, and what goes wrong running far out on the curve?",
+            "Why is sustained operation at shutoff destructive when a brief excursion is survivable?"
+          ]
+        },
+        {
+          "n": 2,
+          "t": "System curves, NPSH, and cavitation",
+          "tier": 2,
+          "core60": "E2",
+          "scope": "System resistance built from static head plus friction; the operating point as intersection. NPSH available derived from the installation, NPSH required read from the vendor, and the margin between them defended. Cavitation's physics, sound, and damage signature — and why throttling a suction valve is a firing offense.",
+          "src": "Çengel & Cimbala, Ch. 8, 14",
+          "kuwait": "EQUATE",
+          "preview": [
+            "NPSHa = 6 m against NPSHr = 4.5 m: verdict, and what margin does good practice want?",
+            "Why is a 5 m suction lift of 60 °C water already in trouble before any calculation?",
+            "Slightly throttling the discharge quiets cavitation noise: explain the mechanism."
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Positive displacement pumps",
+          "tier": 2,
+          "core60": "E3",
+          "scope": "Gear, screw, diaphragm, and reciprocating pumps: flow nearly independent of pressure, and the relief-valve consequence that follows. Pulsation and its dampeners. Where PD pumps replace centrifugals — viscosity, metering, and low-flow/high-head duty.",
+          "src": "NPTEL: pump-related content; Çengel & Cimbala",
+          "preview": [
+            "Why must a PD pump never start against a closed discharge without a relief path?",
+            "At fixed speed, what changes gear-pump delivery as pressure rises, and by what mechanism?",
+            "Why does metering duty default to PD pumps over centrifugals?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "Compressors",
+          "tier": 2,
+          "core60": "E4",
+          "scope": "Centrifugal and reciprocating compressors with the thermodynamics attached: polytropic work, discharge temperature, and capacity control. Surge — the phenomenon, the map, and the anti-surge loop. Air and process compression duties across the six anchor plants.",
+          "src": "NPTEL: Applied Thermodynamics content; Çengel & Cimbala",
+          "kuwait": "EQUATE",
+          "preview": [
+            "What sets reciprocating-compressor discharge temperature, and what limits pressure ratio per stage?",
+            "Define surge in a centrifugal compressor in one sentence.",
+            "Why does intercooling between stages save power? Tie it to the T–s picture."
+          ]
+        },
+        {
+          "n": 5,
+          "t": "Mechanical seals",
+          "tier": 2,
+          "core60": "E5",
+          "scope": "Seal anatomy: faces, secondary seals, springs, and the fluid film that does the real work. Seal plans in outline — flush, quench, and dual-seal logic. Failure reading: heat checking, coking, dry running. The single highest-value component lesson for a process-plant maintenance engineer.",
+          "src": "SMRP framework; NPTEL rotating machinery content",
+          "kuwait": "EQUATE",
+          "preview": [
+            "Name a mechanical seal's two sealing interfaces — which rotates and which is static?",
+            "Why can thirty seconds of dry running end a seal that survived three years?",
+            "What does a flush plan physically deliver to the seal faces, and against which failure modes?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Bearings and lubrication in service",
+          "tier": 2,
+          "core60": "E6",
+          "scope": "Rolling-element and journal bearings from the design course, now in service: fits, internal clearance, lubrication regimes, and the L10 promise versus installed reality. Grease quantity and interval arithmetic. Failure atlas: spalling, fluting, false brinelling — each traced to its cause.",
+          "src": "NPTEL: Machine Design content; SMRP framework",
+          "preview": [
+            "L10 is 40,000 h at design load; load rises 26%. Estimate the new L10 for ball bearings.",
+            "Why is over-greasing a bearing as damaging as starvation?",
+            "Fluting on a bearing raceway: cause, and which drive technology made it epidemic?"
+          ]
+        },
+        {
+          "n": 7,
+          "t": "Couplings, alignment, and balancing",
+          "tier": 2,
+          "core60": "E7",
+          "scope": "Coupling types and what each forgives; shaft alignment by rim-and-face and reverse-dial logic with tolerances stated in real units; field balancing in one and two planes. Thermal growth targets. The precision-maintenance trio that removes the two commonest vibration sources before they start.",
+          "src": "NPTEL: Theory of Machines content; SMRP framework",
+          "preview": [
+            "What do rim-and-face and reverse-dial methods both actually measure between two shafts?",
+            "Give the physical mechanism that puts misalignment's signature at 2× running speed.",
+            "Between balance grades G6.3 and G2.5, what changes physically on the rotor?"
+          ]
+        },
+        {
+          "n": 8,
+          "t": "Gearboxes and their failure modes",
+          "tier": 2,
+          "core60": "E8",
+          "scope": "Industrial gearbox architectures; loads and life from the design course compressed into inspection practice. The failure atlas: micropitting, macropitting, scuffing, tooth bending fatigue — with the oil-analysis and vibration signatures of each. Backlash and contact-pattern checks at rebuild.",
+          "src": "NPTEL: Machine Design content; SMRP framework",
+          "kuwait": "Kuwait Steel",
+          "preview": [
+            "Compute gear-mesh frequency for a 23-tooth pinion at 1,475 rpm.",
+            "Micropitting versus macropitting: which lubrication property is implicated first, and why?",
+            "Sidebands around GMF spaced at output-shaft speed: what are they telling you?"
+          ]
+        },
+        {
+          "n": 9,
+          "t": "Fans and blowers",
+          "tier": 3,
+          "scope": "Fan laws and curves; static versus total pressure. Balance and belt issues as the routine failure diet. Cooling and ventilation duties in Gulf summer.",
+          "src": "Çengel & Cimbala, Ch. 14"
+        },
+        {
+          "n": 10,
+          "t": "Steam and gas turbines in outline",
+          "tier": 3,
+          "scope": "Stage energy conversion recalled from thermodynamics; governing and protection systems. Steam quality's blade consequences. The prime movers behind large trains, respected from a maintenance distance.",
+          "src": "NPTEL: Applied Thermodynamics"
+        },
+        {
+          "n": 11,
+          "t": "Machinery installation and commissioning",
+          "tier": 3,
+          "scope": "Foundations, grouting, and soft foot; piping strain as the silent misalignment source. Commissioning checks and baseline data capture. The installation quality that decides the first five years of vibration history.",
+          "src": "SMRP framework"
+        },
+        {
+          "n": 12,
+          "t": "Rotating equipment failure investigation project",
+          "tier": 3,
+          "scope": "A staged failed-pump scenario: history, vibration data, oil results, and teardown photographs provided. Produce the failure analysis and corrective actions. The course's eight core lessons deployed as one investigation.",
+          "src": "SMRP framework; NPTEL reliability content"
+        }
       ]
     },
     {
@@ -28,19 +157,90 @@
       "code": "AIM 402",
       "title": "Asset Integrity Management",
       "summary": "Keeping contained energy contained: integrity management systems, risk-based inspection, fitness-for-service thinking, and the inspection programs for static equipment — the asset integrity engineer's course.",
-      "taught_from": ["Callister & Rethwisch, Ch. 8, 17 (failure & corrosion foundations)", "NPTEL: reliability and corrosion course content (nptel.ac.in)"],
+      "taught_from": [
+        "Callister & Rethwisch, Ch. 8, 17 (failure & corrosion foundations)",
+        "NPTEL: reliability and corrosion course content (nptel.ac.in)"
+      ],
       "lessons": [
-        {"n": 1, "t": "What asset integrity means", "tier": 3, "scope": "Integrity as the discipline over static equipment: vessels, piping, tanks, relief systems. Loss-of-containment consequence logic. The role's boundaries against maintenance and inspection functions.", "src": "NPTEL reliability content; industry framework survey"},
-        {"n": 2, "t": "Damage mechanisms inventory", "tier": 3, "scope": "The degradation bestiary organized for static equipment: thinning, cracking, embrittlement, mechanical damage. Susceptibility mapped from process conditions. The corrosion course operationalized into an integrity register.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 3, "t": "Inspection methods for static equipment", "tier": 3, "scope": "Visual, UT thickness, shear-wave, and profile radiography deployed on vessels and piping. CML selection — where to measure so the data means something. Inspection effectiveness graded honestly.", "src": "NPTEL NDT-related content"},
-        {"n": 4, "t": "Risk-based inspection", "tier": 3, "scope": "Probability and consequence of failure combined into inspection priority. Interval setting from remaining life and confidence. RBI as budget allocation defended with arithmetic.", "src": "NPTEL reliability content"},
-        {"n": 5, "t": "Fitness for service thinking", "tier": 3, "scope": "The engineering question behind FFS: is the flawed equipment safe to run, and for how long? Corrosion allowance and minimum thickness logic; crack-like flaws flagged to specialists. When to call the assessment versus replace.", "src": "Callister & Rethwisch, Ch. 8"},
-        {"n": 6, "t": "Pressure relief system integrity", "tier": 3, "scope": "Relief philosophy: every credible overpressure case owns a device. PSV testing intervals and pre-test capture of as-found condition. The protective systems audit trail regulators read first.", "src": "NPTEL process safety content"},
-        {"n": 7, "t": "Piping integrity", "tier": 3, "scope": "Piping classes, circuits, and injection-point programs; dead legs and small-bore vulnerability. Support and vibration walkdowns. Piping as the plant's largest and least-loved asset.", "src": "NPTEL content; Callister & Rethwisch, Ch. 17", "kuwait": "EQUATE"},
-        {"n": 8, "t": "Storage tank integrity", "tier": 3, "scope": "Atmospheric tank anatomy: shell, bottom, roof; settlement and corrosion patterns. Internal inspection logic and intervals. Floor scanning and the repair decisions it triggers.", "src": "NPTEL content"},
-        {"n": 9, "t": "Corrosion under insulation programs", "tier": 3, "scope": "CUI's mechanism, temperature bands, and moisture pathways. Inspection strategies from stripping to screening. The Gulf coastal plant's standing CUI battle, budgeted properly.", "src": "Callister & Rethwisch, Ch. 17", "kuwait": "EQUATE"},
-        {"n": 10, "t": "Integrity data and KPIs", "tier": 3, "scope": "Thickness data management, corrosion-rate calculation, and remaining-life projections. Overdue-inspection and temporary-repair KPIs. The integrity dashboard a plant manager should demand.", "src": "NPTEL reliability content"},
-        {"n": 11, "t": "Integrity management system project", "tier": 3, "scope": "For a small unit: damage-mechanism register, CML plan, inspection schedule, and KPI set assembled into one integrity plan. The document set of the asset integrity engineer's first 90 days.", "src": "Course synthesis"}
+        {
+          "n": 1,
+          "t": "What asset integrity means",
+          "tier": 3,
+          "scope": "Integrity as the discipline over static equipment: vessels, piping, tanks, relief systems. Loss-of-containment consequence logic. The role's boundaries against maintenance and inspection functions.",
+          "src": "NPTEL reliability content; industry framework survey"
+        },
+        {
+          "n": 2,
+          "t": "Damage mechanisms inventory",
+          "tier": 3,
+          "scope": "The degradation bestiary organized for static equipment: thinning, cracking, embrittlement, mechanical damage. Susceptibility mapped from process conditions. The corrosion course operationalized into an integrity register.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 3,
+          "t": "Inspection methods for static equipment",
+          "tier": 3,
+          "scope": "Visual, UT thickness, shear-wave, and profile radiography deployed on vessels and piping. CML selection — where to measure so the data means something. Inspection effectiveness graded honestly.",
+          "src": "NPTEL NDT-related content"
+        },
+        {
+          "n": 4,
+          "t": "Risk-based inspection",
+          "tier": 3,
+          "scope": "Probability and consequence of failure combined into inspection priority. Interval setting from remaining life and confidence. RBI as budget allocation defended with arithmetic.",
+          "src": "NPTEL reliability content"
+        },
+        {
+          "n": 5,
+          "t": "Fitness for service thinking",
+          "tier": 3,
+          "scope": "The engineering question behind FFS: is the flawed equipment safe to run, and for how long? Corrosion allowance and minimum thickness logic; crack-like flaws flagged to specialists. When to call the assessment versus replace.",
+          "src": "Callister & Rethwisch, Ch. 8"
+        },
+        {
+          "n": 6,
+          "t": "Pressure relief system integrity",
+          "tier": 3,
+          "scope": "Relief philosophy: every credible overpressure case owns a device. PSV testing intervals and pre-test capture of as-found condition. The protective systems audit trail regulators read first.",
+          "src": "NPTEL process safety content"
+        },
+        {
+          "n": 7,
+          "t": "Piping integrity",
+          "tier": 3,
+          "scope": "Piping classes, circuits, and injection-point programs; dead legs and small-bore vulnerability. Support and vibration walkdowns. Piping as the plant's largest and least-loved asset.",
+          "src": "NPTEL content; Callister & Rethwisch, Ch. 17",
+          "kuwait": "EQUATE"
+        },
+        {
+          "n": 8,
+          "t": "Storage tank integrity",
+          "tier": 3,
+          "scope": "Atmospheric tank anatomy: shell, bottom, roof; settlement and corrosion patterns. Internal inspection logic and intervals. Floor scanning and the repair decisions it triggers.",
+          "src": "NPTEL content"
+        },
+        {
+          "n": 9,
+          "t": "Corrosion under insulation programs",
+          "tier": 3,
+          "scope": "CUI's mechanism, temperature bands, and moisture pathways. Inspection strategies from stripping to screening. The Gulf coastal plant's standing CUI battle, budgeted properly.",
+          "src": "Callister & Rethwisch, Ch. 17",
+          "kuwait": "EQUATE"
+        },
+        {
+          "n": 10,
+          "t": "Integrity data and KPIs",
+          "tier": 3,
+          "scope": "Thickness data management, corrosion-rate calculation, and remaining-life projections. Overdue-inspection and temporary-repair KPIs. The integrity dashboard a plant manager should demand.",
+          "src": "NPTEL reliability content"
+        },
+        {
+          "n": 11,
+          "t": "Integrity management system project",
+          "tier": 3,
+          "scope": "For a small unit: damage-mechanism register, CML plan, inspection schedule, and KPI set assembled into one integrity plan. The document set of the asset integrity engineer's first 90 days.",
+          "src": "Course synthesis"
+        }
       ]
     },
     {
@@ -48,20 +248,144 @@
       "code": "CDM 403",
       "title": "Condition Monitoring & Predictive Maintenance",
       "summary": "Reading machines before they fail: PdM strategy on P–F economics, vibration analysis from sensor to spectrum diagnosis, thermography, oil analysis, and ultrasound — all eight Core-60 lessons, the vibration analyst's foundation.",
-      "taught_from": ["NPTEL: Mechanical Vibrations (prerequisite); ISO 18436-aligned practice content", "SMRP CMRP framework"],
+      "taught_from": [
+        "NPTEL: Mechanical Vibrations (prerequisite); ISO 18436-aligned practice content",
+        "SMRP CMRP framework"
+      ],
       "lessons": [
-        {"n": 1, "t": "PdM strategy and P–F economics", "tier": 2, "core60": "D1", "scope": "Condition monitoring justified from the P–F curve: detection windows, inspection intervals at a fraction of P–F, and the money mathematics of caught-early versus run-to-wreck. Technology-to-failure-mode mapping as the program design act. The strategy lesson that keeps PdM from becoming gadget collecting.", "src": "SMRP CMRP framework"},
-        {"n": 2, "t": "Vibration fundamentals for analysts", "tier": 2, "core60": "D2", "scope": "Amplitude, frequency, and phase as the analyst's three currencies; displacement, velocity, and acceleration with their frequency emphases and unit conversions. Overall levels and ISO-style zone thinking versus spectral analysis. The vibration course's theory recast into measurement language.", "src": "NPTEL: Mechanical Vibrations; ISO 18436-aligned content"},
-        {"n": 3, "t": "Measurement and the FFT", "tier": 2, "core60": "D3", "scope": "Accelerometer mounting and its frequency ceiling; Fmax, resolution, averaging, and windowing chosen deliberately. The FFT's gifts and traps — leakage, aliasing already met in Electronics. A measurement setup specified for a motor-pump train as the condensed example.", "src": "NPTEL: Mechanical Vibrations; signal content from ELX 205"},
-        {"n": 4, "t": "Spectrum analysis I: unbalance, misalignment, looseness", "tier": 2, "core60": "D4", "scope": "The first diagnostic trio: 1× dominant radial for unbalance; 2× and axial content for misalignment; harmonic families and raised floors for looseness. Phase analysis as the disambiguator. Case spectra read line by line, the way the certification practicals do.", "src": "ISO 18436-aligned content; NPTEL: Mechanical Vibrations"},
-        {"n": 5, "t": "Spectrum analysis II: bearings and gears", "tier": 2, "core60": "D5", "scope": "Rolling-element defect frequencies computed from geometry; the enveloping/demodulation technique and why early bearing damage hides from ordinary spectra. Gear mesh frequencies and sidebands as the gearbox's confession. Severity staging from first detection to removal decision.", "src": "ISO 18436-aligned content"},
-        {"n": 6, "t": "Infrared thermography", "tier": 2, "core60": "D6", "scope": "Radiation physics from the heat-transfer course made practical: emissivity, reflection, and why shiny metal lies to the camera. Electrical and mechanical survey practice; delta-T severity conventions. The condensed example: an MCC survey with three findings graded and reported.", "src": "Çengel & Ghajar, Ch. 12 foundations; ISO 18436-aligned practice"},
-        {"n": 7, "t": "Oil analysis and wear debris", "tier": 2, "core60": "D7", "scope": "The three questions of oil analysis — fluid health, contamination, machine wear — with the tests behind each: viscosity, TAN, particle counts, elements, ferrography in outline. Sampling technique as the program's real quality gate. Reading a gearbox report against its history.", "src": "SMRP framework; tribology content from MNT 306"},
-        {"n": 8, "t": "Ultrasound, MCA, and building routes", "tier": 2, "core60": "D8", "scope": "Airborne and structure-borne ultrasound for leaks, bearings, and electrical faults; motor current analysis in outline for rotor-bar and load diagnostics. Building PdM routes: what, where, how often, and who closes the loop. The program-assembly lesson that turns four technologies into one system.", "src": "SMRP CMRP framework"},
-        {"n": 9, "t": "Online monitoring and protection systems", "tier": 3, "scope": "Permanently installed sensors, protection versus prediction, and trip logic on critical trains. Proximity probes on journal-bearing machines. When online systems earn their cost.", "src": "ISO 18436-aligned content", "kuwait": "EQUATE"},
-        {"n": 10, "t": "Diagnostics case marathon", "tier": 3, "scope": "A dozen anonymized cases across the four technologies read cold, then debriefed. Differential diagnosis practice: competing explanations ranked. The pattern library a working analyst carries.", "src": "Course synthesis"},
-        {"n": 11, "t": "PdM data management and trending", "tier": 3, "scope": "Baselines, alarm limits, and trend curation; false-alarm discipline. Integrating PdM findings into the CMMS work flow. The administrative half that makes the technical half matter.", "src": "SMRP framework"},
-        {"n": 12, "t": "PdM program design project", "tier": 3, "scope": "For a given equipment list: criticality-based technology assignment, routes, intervals, and KPI set, costed and staffed. The deliverable a reliability engineer presents to justify the program. Course capstone.", "src": "SMRP CMRP framework"}
+        {
+          "n": 1,
+          "t": "PdM strategy and P–F economics",
+          "tier": 2,
+          "core60": "D1",
+          "scope": "Condition monitoring justified from the P–F curve: detection windows, inspection intervals at a fraction of P–F, and the money mathematics of caught-early versus run-to-wreck. Technology-to-failure-mode mapping as the program design act. The strategy lesson that keeps PdM from becoming gadget collecting.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "A failure mode has a 4-month P–F interval: make the economic case for a monthly route.",
+            "Match technologies to failure modes: bearing spall, misalignment, hot electrical joint, degraded oil.",
+            "Why is owning an analyzer not the same as having a PdM program? Name the missing pieces."
+          ]
+        },
+        {
+          "n": 2,
+          "t": "Vibration fundamentals for analysts",
+          "tier": 2,
+          "core60": "D2",
+          "scope": "Amplitude, frequency, and phase as the analyst's three currencies; displacement, velocity, and acceleration with their frequency emphases and unit conversions. Overall levels and ISO-style zone thinking versus spectral analysis. The vibration course's theory recast into measurement language.",
+          "src": "NPTEL: Mechanical Vibrations; ISO 18436-aligned content",
+          "preview": [
+            "Convert 4 mm/s RMS at 100 Hz to a displacement amplitude — order of magnitude.",
+            "Why velocity for general severity, acceleration for bearings and gears, displacement for low-speed machines?",
+            "What does a commissioning baseline buy that absolute ISO-zone limits cannot?"
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Measurement and the FFT",
+          "tier": 2,
+          "core60": "D3",
+          "scope": "Accelerometer mounting and its frequency ceiling; Fmax, resolution, averaging, and windowing chosen deliberately. The FFT's gifts and traps — leakage, aliasing already met in Electronics. A measurement setup specified for a motor-pump train as the condensed example.",
+          "src": "NPTEL: Mechanical Vibrations; signal content from ELX 205",
+          "preview": [
+            "With Fmax 1,000 Hz and 1,600 lines, what is the spectral resolution per line?",
+            "Why does a loose magnet mount silently cap your usable Fmax?",
+            "What does a Hanning window trade away, and what does it buy?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "Spectrum analysis I: unbalance, misalignment, looseness",
+          "tier": 2,
+          "core60": "D4",
+          "scope": "The first diagnostic trio: 1× dominant radial for unbalance; 2× and axial content for misalignment; harmonic families and raised floors for looseness. Phase analysis as the disambiguator. Case spectra read line by line, the way the certification practicals do.",
+          "src": "ISO 18436-aligned content; NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Dominant 1× radial, little axial, stable phase: unbalance or misalignment — and what confirms it?",
+            "A harmonic forest 1×–10× over a raised floor: which fault family, and what mechanical check follows?",
+            "Why is phase measured before any field balancing attempt?"
+          ]
+        },
+        {
+          "n": 5,
+          "t": "Spectrum analysis II: bearings and gears",
+          "tier": 2,
+          "core60": "D5",
+          "scope": "Rolling-element defect frequencies computed from geometry; the enveloping/demodulation technique and why early bearing damage hides from ordinary spectra. Gear mesh frequencies and sidebands as the gearbox's confession. Severity staging from first detection to removal decision.",
+          "src": "ISO 18436-aligned content",
+          "preview": [
+            "BPFO factor 3.58 at 1,480 rpm: what frequency line do you hunt?",
+            "Why does early bearing damage appear in enveloped spectra long before ordinary velocity spectra?",
+            "In a gearbox spectrum, sideband spacing around GMF identifies what?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Infrared thermography",
+          "tier": 2,
+          "core60": "D6",
+          "scope": "Radiation physics from the heat-transfer course made practical: emissivity, reflection, and why shiny metal lies to the camera. Electrical and mechanical survey practice; delta-T severity conventions. The condensed example: an MCC survey with three findings graded and reported.",
+          "src": "Çengel & Ghajar, Ch. 12 foundations; ISO 18436-aligned practice",
+          "preview": [
+            "A shiny bus bar with emissivity ~0.2 reads 45 °C: why might it be far hotter, and what fixes the reading?",
+            "Why must electrical thermography surveys run under meaningful load?",
+            "One phase of a three-phase connection runs 25 K hotter than its siblings: severity logic?"
+          ]
+        },
+        {
+          "n": 7,
+          "t": "Oil analysis and wear debris",
+          "tier": 2,
+          "core60": "D7",
+          "scope": "The three questions of oil analysis — fluid health, contamination, machine wear — with the tests behind each: viscosity, TAN, particle counts, elements, ferrography in outline. Sampling technique as the program's real quality gate. Reading a gearbox report against its history.",
+          "src": "SMRP framework; tribology content from MNT 306",
+          "preview": [
+            "Viscosity up 20% and TAN doubled: what has happened to the oil, and what typically drove it?",
+            "Iron and chromium rising together in a gearbox sample: what does the pairing suggest?",
+            "Why does the sampling point decide whether an oil-analysis trend means anything?"
+          ]
+        },
+        {
+          "n": 8,
+          "t": "Ultrasound, MCA, and building routes",
+          "tier": 2,
+          "core60": "D8",
+          "scope": "Airborne and structure-borne ultrasound for leaks, bearings, and electrical faults; motor current analysis in outline for rotor-bar and load diagnostics. Building PdM routes: what, where, how often, and who closes the loop. The program-assembly lesson that turns four technologies into one system.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "What makes a 40 kHz ultrasound sensor find leaks your ears cannot?",
+            "In motor current analysis, broken rotor bars appear as sidebands spaced by what quantity?",
+            "Name three consistency disciplines that keep a monthly route's data comparable."
+          ]
+        },
+        {
+          "n": 9,
+          "t": "Online monitoring and protection systems",
+          "tier": 3,
+          "scope": "Permanently installed sensors, protection versus prediction, and trip logic on critical trains. Proximity probes on journal-bearing machines. When online systems earn their cost.",
+          "src": "ISO 18436-aligned content",
+          "kuwait": "EQUATE"
+        },
+        {
+          "n": 10,
+          "t": "Diagnostics case marathon",
+          "tier": 3,
+          "scope": "A dozen anonymized cases across the four technologies read cold, then debriefed. Differential diagnosis practice: competing explanations ranked. The pattern library a working analyst carries.",
+          "src": "Course synthesis"
+        },
+        {
+          "n": 11,
+          "t": "PdM data management and trending",
+          "tier": 3,
+          "scope": "Baselines, alarm limits, and trend curation; false-alarm discipline. Integrating PdM findings into the CMMS work flow. The administrative half that makes the technical half matter.",
+          "src": "SMRP framework"
+        },
+        {
+          "n": 12,
+          "t": "PdM program design project",
+          "tier": 3,
+          "scope": "For a given equipment list: criticality-based technology assignment, routes, intervals, and KPI set, costed and staffed. The deliverable a reliability engineer presents to justify the program. Course capstone.",
+          "src": "SMRP CMRP framework"
+        }
       ]
     },
     {
@@ -69,18 +393,87 @@
       "code": "SCA 404",
       "title": "SCADA, DCS & IIoT",
       "summary": "The data layer above the machines: SCADA architecture, historians, OEE from real signals, and the industrial internet — where production data becomes the numbers management runs the plant by.",
-      "taught_from": ["NPTEL: Industrial Automation and Control (nptel.ac.in)"],
+      "taught_from": [
+        "NPTEL: Industrial Automation and Control (nptel.ac.in)"
+      ],
       "lessons": [
-        {"n": 1, "t": "SCADA architecture", "tier": 3, "scope": "RTUs/PLCs, servers, and clients; polling versus report-by-exception. Redundancy patterns. SCADA versus DCS versus PLC+HMI — the taxonomy settled.", "src": "NPTEL: Industrial Automation and Control"},
-        {"n": 2, "t": "Data acquisition and historians", "tier": 3, "scope": "Tags, scan classes, and deadbands; compression and its analytical costs. Time-series storage and retrieval. The historian as the plant's memory — and its garbage-in problem.", "src": "NPTEL: Industrial Automation and Control"},
-        {"n": 3, "t": "OEE from signals", "tier": 2, "core60": "G4", "scope": "Availability, performance, and quality computed from real machine states and counts — with the state-model design that decides whether OEE means anything. Loss trees beneath the top number. The condensed example: an OEE calculation built from a filling line's PLC signals, honestly handling changeovers and micro-stops.", "src": "NPTEL: Industrial Automation and Control; Groover, automation chapters", "kuwait": "KDD / Petra"},
-        {"n": 4, "t": "Alarm systems at scale", "tier": 3, "scope": "Alarm rationalization: priorities, floods, and standing-alarm hygiene. Metrics for alarm-system health. The control-room human factors this decides.", "src": "NPTEL: Industrial Automation and Control"},
-        {"n": 5, "t": "Industrial communication for data", "tier": 3, "scope": "OPC UA as the interoperability workhorse; MQTT for telemetry. Mapping the automation stack's data paths. Where integration projects actually stall.", "src": "NPTEL: Industrial Automation and Control"},
-        {"n": 6, "t": "IIoT sensors and edge devices", "tier": 3, "scope": "Wireless condition sensors, gateways, and edge processing. Battery, bandwidth, and placement realities. Retrofit monitoring for brownfield plants — the honest use case.", "src": "NPTEL: Industrial Automation and Control"},
-        {"n": 7, "t": "Dashboards and reporting that change behavior", "tier": 3, "scope": "KPI design: leading versus lagging, owner versus audience. Dashboard sins: vanity metrics and unactionable charts. Production meetings run from data with provenance.", "src": "NPTEL content; course synthesis"},
-        {"n": 8, "t": "Analytics and anomaly detection in outline", "tier": 3, "scope": "Statistical baselines and simple models on historian data; what 'AI for PdM' can and cannot promise today. Pilot design with success criteria. Skepticism as an engineering instrument.", "src": "NPTEL content"},
-        {"n": 9, "t": "OT/IT convergence and security", "tier": 3, "scope": "Network zones and conduits; patching and backup discipline for control systems. Remote vendor access governed. The security posture a data project must not degrade.", "src": "NPTEL: Industrial Automation and Control"},
-        {"n": 10, "t": "Plant data project", "tier": 3, "scope": "From a provided historian extract: build state logic, compute OEE, find the top three losses, and present the case for one improvement. Data engineering in production clothing. Course capstone.", "src": "Course synthesis"}
+        {
+          "n": 1,
+          "t": "SCADA architecture",
+          "tier": 3,
+          "scope": "RTUs/PLCs, servers, and clients; polling versus report-by-exception. Redundancy patterns. SCADA versus DCS versus PLC+HMI — the taxonomy settled.",
+          "src": "NPTEL: Industrial Automation and Control"
+        },
+        {
+          "n": 2,
+          "t": "Data acquisition and historians",
+          "tier": 3,
+          "scope": "Tags, scan classes, and deadbands; compression and its analytical costs. Time-series storage and retrieval. The historian as the plant's memory — and its garbage-in problem.",
+          "src": "NPTEL: Industrial Automation and Control"
+        },
+        {
+          "n": 3,
+          "t": "OEE from signals",
+          "tier": 2,
+          "core60": "G4",
+          "scope": "Availability, performance, and quality computed from real machine states and counts — with the state-model design that decides whether OEE means anything. Loss trees beneath the top number. The condensed example: an OEE calculation built from a filling line's PLC signals, honestly handling changeovers and micro-stops.",
+          "src": "NPTEL: Industrial Automation and Control; Groover, automation chapters",
+          "kuwait": "KDD / Petra",
+          "preview": [
+            "Availability 90%, performance 95%, quality 99%: compute OEE.",
+            "A 10-minute changeover is logged as running-at-zero-rate: which OEE factor lies, and how does the state model fix it?",
+            "Why do sub-30-second micro-stops vanish from manual logs yet dominate performance loss?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "Alarm systems at scale",
+          "tier": 3,
+          "scope": "Alarm rationalization: priorities, floods, and standing-alarm hygiene. Metrics for alarm-system health. The control-room human factors this decides.",
+          "src": "NPTEL: Industrial Automation and Control"
+        },
+        {
+          "n": 5,
+          "t": "Industrial communication for data",
+          "tier": 3,
+          "scope": "OPC UA as the interoperability workhorse; MQTT for telemetry. Mapping the automation stack's data paths. Where integration projects actually stall.",
+          "src": "NPTEL: Industrial Automation and Control"
+        },
+        {
+          "n": 6,
+          "t": "IIoT sensors and edge devices",
+          "tier": 3,
+          "scope": "Wireless condition sensors, gateways, and edge processing. Battery, bandwidth, and placement realities. Retrofit monitoring for brownfield plants — the honest use case.",
+          "src": "NPTEL: Industrial Automation and Control"
+        },
+        {
+          "n": 7,
+          "t": "Dashboards and reporting that change behavior",
+          "tier": 3,
+          "scope": "KPI design: leading versus lagging, owner versus audience. Dashboard sins: vanity metrics and unactionable charts. Production meetings run from data with provenance.",
+          "src": "NPTEL content; course synthesis"
+        },
+        {
+          "n": 8,
+          "t": "Analytics and anomaly detection in outline",
+          "tier": 3,
+          "scope": "Statistical baselines and simple models on historian data; what 'AI for PdM' can and cannot promise today. Pilot design with success criteria. Skepticism as an engineering instrument.",
+          "src": "NPTEL content"
+        },
+        {
+          "n": 9,
+          "t": "OT/IT convergence and security",
+          "tier": 3,
+          "scope": "Network zones and conduits; patching and backup discipline for control systems. Remote vendor access governed. The security posture a data project must not degrade.",
+          "src": "NPTEL: Industrial Automation and Control"
+        },
+        {
+          "n": 10,
+          "t": "Plant data project",
+          "tier": 3,
+          "scope": "From a provided historian extract: build state logic, compute OEE, find the top three losses, and present the case for one improvement. Data engineering in production clothing. Course capstone.",
+          "src": "Course synthesis"
+        }
       ]
     },
     {
@@ -88,19 +481,89 @@
       "code": "LSS 405",
       "title": "Lean & Six Sigma",
       "summary": "Waste and variation hunted systematically: value-stream thinking, flow and pull, SMED, and the DMAIC toolkit — the production engineer's improvement operating system, statistics included.",
-      "taught_from": ["NPTEL: quality and operations management courses (nptel.ac.in)", "Engineering Statistics (STS 206) as prerequisite"],
+      "taught_from": [
+        "NPTEL: quality and operations management courses (nptel.ac.in)",
+        "Engineering Statistics (STS 206) as prerequisite"
+      ],
       "lessons": [
-        {"n": 1, "t": "Lean's logic", "tier": 3, "scope": "Value versus waste; the seven wastes spotted on a real line walk. Flow interrupted as the master symptom. Lean as engineering, stripped of ceremony.", "src": "NPTEL operations management content"},
-        {"n": 2, "t": "Value stream mapping", "tier": 3, "scope": "Current-state mapping with data boxes and lead-time ladders. Future-state design rules. The map as an argument for specific, dated changes.", "src": "NPTEL operations management content"},
-        {"n": 3, "t": "Flow, pull, and kanban", "tier": 3, "scope": "Batch-size effects derived from Little's law; supermarkets and kanban loops sized. Push versus pull honestly compared. Where pull fails: long changeovers and unstable processes.", "src": "NPTEL operations management content"},
-        {"n": 4, "t": "SMED: changeover reduction", "tier": 3, "scope": "Internal versus external setup separated, then converted. Video-study method. Changeover time as capacity: the filling-line flavor change worked as the example.", "src": "NPTEL operations management content", "kuwait": "KDD / Petra"},
-        {"n": 5, "t": "5S and visual management", "tier": 3, "scope": "Workplace organization as failure prevention, not housekeeping theater. Visual controls that surface abnormality in seconds. The maintenance-shop 5S case: tools, spares, and shadow boards.", "src": "NPTEL operations management content"},
-        {"n": 6, "t": "DMAIC: Define and Measure", "tier": 3, "scope": "Problem statements with baselines and scope; measurement-system checks before data is trusted — gauge R&R recalled. Process capability as the Measure phase's verdict. Projects chartered so they can fail honestly.", "src": "NPTEL quality content; STS 206 foundations"},
-        {"n": 7, "t": "DMAIC: Analyze", "tier": 3, "scope": "Root-cause candidates from fishbones and stratification; hypothesis tests separating signal from noise. Regression on process data. The statistics course earning its keep.", "src": "NPTEL quality content; STS 206 foundations"},
-        {"n": 8, "t": "DMAIC: Improve and Control", "tier": 3, "scope": "Solutions tested by experiment where stakes justify it; error-proofing over exhortation. Control plans and response plans that outlive the project team. The handover that decides whether gains persist.", "src": "NPTEL quality content"},
-        {"n": 9, "t": "Design of experiments in practice", "tier": 3, "scope": "Two-level factorials run on a process; effects and interactions computed and plotted. Blocking and randomization as insurance. A sealing-parameter experiment worked end to end.", "src": "NPTEL quality content; STS 206"},
-        {"n": 10, "t": "Lean maintenance", "tier": 3, "scope": "Wrench-time study as the maintenance value-stream map; travel, waiting, and parts-chasing quantified. Kitting and planning as waste removal. The improvement lens turned on the maintenance function itself.", "src": "SMRP framework; NPTEL operations content"},
-        {"n": 11, "t": "Improvement project simulation", "tier": 3, "scope": "A guided DMAIC on a provided dataset: charter to control plan with tollgate reviews. Statistical tools used where they earn their place. The portfolio artifact for interviews.", "src": "Course synthesis"}
+        {
+          "n": 1,
+          "t": "Lean's logic",
+          "tier": 3,
+          "scope": "Value versus waste; the seven wastes spotted on a real line walk. Flow interrupted as the master symptom. Lean as engineering, stripped of ceremony.",
+          "src": "NPTEL operations management content"
+        },
+        {
+          "n": 2,
+          "t": "Value stream mapping",
+          "tier": 3,
+          "scope": "Current-state mapping with data boxes and lead-time ladders. Future-state design rules. The map as an argument for specific, dated changes.",
+          "src": "NPTEL operations management content"
+        },
+        {
+          "n": 3,
+          "t": "Flow, pull, and kanban",
+          "tier": 3,
+          "scope": "Batch-size effects derived from Little's law; supermarkets and kanban loops sized. Push versus pull honestly compared. Where pull fails: long changeovers and unstable processes.",
+          "src": "NPTEL operations management content"
+        },
+        {
+          "n": 4,
+          "t": "SMED: changeover reduction",
+          "tier": 3,
+          "scope": "Internal versus external setup separated, then converted. Video-study method. Changeover time as capacity: the filling-line flavor change worked as the example.",
+          "src": "NPTEL operations management content",
+          "kuwait": "KDD / Petra"
+        },
+        {
+          "n": 5,
+          "t": "5S and visual management",
+          "tier": 3,
+          "scope": "Workplace organization as failure prevention, not housekeeping theater. Visual controls that surface abnormality in seconds. The maintenance-shop 5S case: tools, spares, and shadow boards.",
+          "src": "NPTEL operations management content"
+        },
+        {
+          "n": 6,
+          "t": "DMAIC: Define and Measure",
+          "tier": 3,
+          "scope": "Problem statements with baselines and scope; measurement-system checks before data is trusted — gauge R&R recalled. Process capability as the Measure phase's verdict. Projects chartered so they can fail honestly.",
+          "src": "NPTEL quality content; STS 206 foundations"
+        },
+        {
+          "n": 7,
+          "t": "DMAIC: Analyze",
+          "tier": 3,
+          "scope": "Root-cause candidates from fishbones and stratification; hypothesis tests separating signal from noise. Regression on process data. The statistics course earning its keep.",
+          "src": "NPTEL quality content; STS 206 foundations"
+        },
+        {
+          "n": 8,
+          "t": "DMAIC: Improve and Control",
+          "tier": 3,
+          "scope": "Solutions tested by experiment where stakes justify it; error-proofing over exhortation. Control plans and response plans that outlive the project team. The handover that decides whether gains persist.",
+          "src": "NPTEL quality content"
+        },
+        {
+          "n": 9,
+          "t": "Design of experiments in practice",
+          "tier": 3,
+          "scope": "Two-level factorials run on a process; effects and interactions computed and plotted. Blocking and randomization as insurance. A sealing-parameter experiment worked end to end.",
+          "src": "NPTEL quality content; STS 206"
+        },
+        {
+          "n": 10,
+          "t": "Lean maintenance",
+          "tier": 3,
+          "scope": "Wrench-time study as the maintenance value-stream map; travel, waiting, and parts-chasing quantified. Kitting and planning as waste removal. The improvement lens turned on the maintenance function itself.",
+          "src": "SMRP framework; NPTEL operations content"
+        },
+        {
+          "n": 11,
+          "t": "Improvement project simulation",
+          "tier": 3,
+          "scope": "A guided DMAIC on a provided dataset: charter to control plan with tollgate reviews. Statistical tools used where they earn their place. The portfolio artifact for interviews.",
+          "src": "Course synthesis"
+        }
       ]
     },
     {
@@ -108,18 +571,80 @@
       "code": "ECO 406",
       "title": "Engineering Economics & Project Management",
       "summary": "Money and schedules as engineering quantities: time value, NPV and payback, replacement decisions, and the project management that delivers plant work — the language of every budget meeting you will attend.",
-      "taught_from": ["NPTEL: Engineering Economics and Project Management courses (nptel.ac.in)"],
+      "taught_from": [
+        "NPTEL: Engineering Economics and Project Management courses (nptel.ac.in)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Time value of money", "tier": 3, "scope": "Interest, compounding, and equivalence; cash-flow diagrams drawn before any formula. Present and future worth conversions. The arithmetic under every 'is it worth it'.", "src": "NPTEL: Engineering Economics"},
-        {"n": 2, "t": "Comparing alternatives", "tier": 3, "scope": "NPV, annual worth, and IRR with their agreement and disagreement cases. Do-nothing as a legitimate alternative. Ranking repairs, replacements, and upgrades on one axis.", "src": "NPTEL: Engineering Economics"},
-        {"n": 3, "t": "Payback and its abuses", "tier": 3, "scope": "Simple and discounted payback computed; where payback misleads and why management loves it anyway. Presenting both payback and NPV without contradiction. The reliability project's financial one-pager.", "src": "NPTEL: Engineering Economics"},
-        {"n": 4, "t": "Depreciation and after-tax thinking", "tier": 3, "scope": "Depreciation methods in outline and their cash-flow effects. Book versus market value in replacement studies. Enough tax logic to read finance's spreadsheet.", "src": "NPTEL: Engineering Economics"},
-        {"n": 5, "t": "Replacement analysis", "tier": 3, "scope": "Defender versus challenger economics; economic life from rising O&M against falling capital recovery. The repair-versus-replace decision formalized. A pump replacement case argued with numbers.", "src": "NPTEL: Engineering Economics"},
-        {"n": 6, "t": "Life-cycle cost", "tier": 3, "scope": "Acquisition, ownership, and disposal costs integrated; energy and maintenance dominating most industrial LCCs. Sensitivity on the assumptions that matter. Procurement decisions moved from price to cost.", "src": "NPTEL: Engineering Economics"},
-        {"n": 7, "t": "Project management fundamentals", "tier": 3, "scope": "Scope, WBS, and responsibility assignment; the triple constraint stated without cliché. Stakeholders and the single-page charter. Plant projects sized from kilodinar to shutdown scale.", "src": "NPTEL: Project Management"},
-        {"n": 8, "t": "Scheduling: CPM and float", "tier": 3, "scope": "Networks, critical paths, and float computed by hand once. Crashing economics. The schedule literacy turnarounds will demand at scale.", "src": "NPTEL: Project Management"},
-        {"n": 9, "t": "Cost control and earned value", "tier": 3, "scope": "Budgets, commitments, and actuals separated; earned-value indices computed and interpreted. Forecast at completion honestly. Progress reporting that survives audit.", "src": "NPTEL: Project Management"},
-        {"n": 10, "t": "Business-case project", "tier": 3, "scope": "Build the full case for one reliability improvement: baseline losses, options, NPV/payback, risks, and implementation schedule. Presented as a one-pager plus backup. The document that gets funding.", "src": "Course synthesis"}
+        {
+          "n": 1,
+          "t": "Time value of money",
+          "tier": 3,
+          "scope": "Interest, compounding, and equivalence; cash-flow diagrams drawn before any formula. Present and future worth conversions. The arithmetic under every 'is it worth it'.",
+          "src": "NPTEL: Engineering Economics"
+        },
+        {
+          "n": 2,
+          "t": "Comparing alternatives",
+          "tier": 3,
+          "scope": "NPV, annual worth, and IRR with their agreement and disagreement cases. Do-nothing as a legitimate alternative. Ranking repairs, replacements, and upgrades on one axis.",
+          "src": "NPTEL: Engineering Economics"
+        },
+        {
+          "n": 3,
+          "t": "Payback and its abuses",
+          "tier": 3,
+          "scope": "Simple and discounted payback computed; where payback misleads and why management loves it anyway. Presenting both payback and NPV without contradiction. The reliability project's financial one-pager.",
+          "src": "NPTEL: Engineering Economics"
+        },
+        {
+          "n": 4,
+          "t": "Depreciation and after-tax thinking",
+          "tier": 3,
+          "scope": "Depreciation methods in outline and their cash-flow effects. Book versus market value in replacement studies. Enough tax logic to read finance's spreadsheet.",
+          "src": "NPTEL: Engineering Economics"
+        },
+        {
+          "n": 5,
+          "t": "Replacement analysis",
+          "tier": 3,
+          "scope": "Defender versus challenger economics; economic life from rising O&M against falling capital recovery. The repair-versus-replace decision formalized. A pump replacement case argued with numbers.",
+          "src": "NPTEL: Engineering Economics"
+        },
+        {
+          "n": 6,
+          "t": "Life-cycle cost",
+          "tier": 3,
+          "scope": "Acquisition, ownership, and disposal costs integrated; energy and maintenance dominating most industrial LCCs. Sensitivity on the assumptions that matter. Procurement decisions moved from price to cost.",
+          "src": "NPTEL: Engineering Economics"
+        },
+        {
+          "n": 7,
+          "t": "Project management fundamentals",
+          "tier": 3,
+          "scope": "Scope, WBS, and responsibility assignment; the triple constraint stated without cliché. Stakeholders and the single-page charter. Plant projects sized from kilodinar to shutdown scale.",
+          "src": "NPTEL: Project Management"
+        },
+        {
+          "n": 8,
+          "t": "Scheduling: CPM and float",
+          "tier": 3,
+          "scope": "Networks, critical paths, and float computed by hand once. Crashing economics. The schedule literacy turnarounds will demand at scale.",
+          "src": "NPTEL: Project Management"
+        },
+        {
+          "n": 9,
+          "t": "Cost control and earned value",
+          "tier": 3,
+          "scope": "Budgets, commitments, and actuals separated; earned-value indices computed and interpreted. Forecast at completion honestly. Progress reporting that survives audit.",
+          "src": "NPTEL: Project Management"
+        },
+        {
+          "n": 10,
+          "t": "Business-case project",
+          "tier": 3,
+          "scope": "Build the full case for one reliability improvement: baseline losses, options, NPV/payback, risks, and implementation schedule. Presented as a one-pager plus backup. The document that gets funding.",
+          "src": "Course synthesis"
+        }
       ]
     }
   ]

@@ -389,7 +389,12 @@
           "core60": "A1",
           "content": "y1s1-mp1-01",
           "scope": "Every manufacturing operation sorted into a working taxonomy — casting, forming, machining, joining, finishing, assembly — and the material flow of a real plant traced end to end. The map the rest of the curriculum hangs on.",
-          "src": "Groover, Ch. 1; Kalpakjian & Schmid, General Introduction"
+          "src": "Groover, Ch. 1; Kalpakjian & Schmid, General Introduction",
+          "preview": [
+            "Which two process families shape most of the world's metal by tonnage — and where does machining actually sit?",
+            "Classify every step of rebar production, scrap to bundled bar, into the six-family taxonomy.",
+            "Primary versus secondary shaping: define both with one example of each from a cable plant."
+          ]
         },
         {
           "n": 2,
@@ -399,7 +404,12 @@
           "content": "y1s1-mp1-02",
           "scope": "The full lecture: pouring energy balance, Bernoulli-derived gating design, Chvorinov's rule derived from mold heat conduction, shrinkage regimes, and riser sizing — with worked examples carried through in units.",
           "src": "Groover, Ch. 10; Flemings; Çengel & Ghajar, Ch. 4",
-          "kuwait": "Kuwait Steel"
+          "kuwait": "Kuwait Steel",
+          "preview": [
+            "A casting has V/A = 2.0 cm and Cₘ = 2.5 min/cm²: how long until it is fully solid?",
+            "The free metal surface sits 250 mm above the sprue base: what is the base velocity by Torricelli?",
+            "Why must a riser out-modulus its casting, and what design margin did our worked example use?"
+          ]
         },
         {
           "n": 3,
@@ -409,7 +419,12 @@
           "content": "y1s1-mp1-03",
           "scope": "From theory to the foundry floor: patterns and allowances, molding sand behavior, fluidity, and the defect families — gas porosity via Sievert's law, shrinkage porosity, hot tears, sand defects — each tied to its physical cause and its inspection method.",
           "src": "Groover, Ch. 10–11; Campbell, Complete Casting Handbook; ASM Handbook Vol. 15",
-          "kuwait": "HEISCO"
+          "kuwait": "HEISCO",
+          "preview": [
+            "Halving the hydrogen partial pressure over a melt cuts dissolved hydrogen by what factor — and why not one-half?",
+            "Smooth spherical pores near the surface versus a jagged void in a thick boss: name each family and its matching fix.",
+            "A 9,000 cm³ steel casting shrinks 3% on solidification; the riser feeds 14% of its own volume. Minimum riser volume?"
+          ]
         },
         {
           "n": 4,
@@ -419,7 +434,12 @@
           "content": "y1s1-mp1-04",
           "scope": "The billet caster as a permanent-mold casting process running at steady state: shell growth, metallurgical length, breakout risk, and quality issues from rhomboidity to pinholes. Kuwait Steel's core process.",
           "src": "The Making, Shaping and Treating of Steel (AISE); Groover, Ch. 11",
-          "kuwait": "Kuwait Steel"
+          "kuwait": "Kuwait Steel",
+          "preview": [
+            "A 140 mm square billet cast with K = 26 mm/min^½: minutes until the core is solid?",
+            "At 2.4 m/min casting speed, roughly how far below the mold must the torch cut — and why no closer?",
+            "Why is casting speed not a free productivity knob? Name both penalties."
+          ]
         },
         {
           "n": 5,
@@ -443,7 +463,12 @@
           "content": "y1s1-mp1-07",
           "scope": "Flat and shape rolling from draft and bite condition through roll force and torque estimates. Hot rolling of billets into rebar as run at Kuwait Steel's mill. Rolled-product defects and their upstream causes.",
           "src": "Groover, Ch. 19; The Making, Shaping and Treating of Steel (AISE)",
-          "kuwait": "Kuwait Steel"
+          "kuwait": "Kuwait Steel",
+          "preview": [
+            "With μ = 0.25 and 350 mm radius rolls, what is the maximum draft in a single pass?",
+            "Compute the contact length for Δh = 6 mm on 300 mm radius rolls.",
+            "Rolling needs the friction that other forming processes fight — why?"
+          ]
         },
         {
           "n": 8,
@@ -453,7 +478,12 @@
           "content": "y1s1-mp1-08",
           "scope": "Open-die and impression-die forging; upsetting analysis with friction; flash, draft, and forging loads. Grain flow as forging's signature advantage. What a forged flange or valve body buys over a casting.",
           "src": "Groover, Ch. 19; Kalpakjian & Schmid, forging chapter",
-          "kuwait": "HEISCO"
+          "kuwait": "HEISCO",
+          "preview": [
+            "What true strain does upsetting from 80 mm to 50 mm impose?",
+            "For K = 600 MPa and n = 0.2 at ε = 0.47, what flow stress must the press overcome before friction?",
+            "What does grain flow buy in a forged crane hook — and in which loading direction?"
+          ]
         },
         {
           "n": 9,
@@ -463,7 +493,12 @@
           "content": "y1s1-mp1-09",
           "scope": "Direct and indirect extrusion; extrusion ratio and pressure estimates. Wire drawing through dies in tandem — reduction per pass, drawing stress, and why the wire must not yield in the drawn section. Gulf Cable's conductor line as the standing example.",
           "src": "Groover, Ch. 19; Kalpakjian & Schmid, extrusion & drawing chapters",
-          "kuwait": "Gulf Cable"
+          "kuwait": "Gulf Cable",
+          "preview": [
+            "What is the extrusion ratio when a 100 mm billet becomes a 25 mm rod?",
+            "Why is a 60% area reduction impossible in one wire-drawing pass even with a perfect, frictionless die?",
+            "A pass gives draw stress 60 MPa on wire whose exit flow stress is 160 MPa: safe or failing, and by what criterion?"
+          ]
         },
         {
           "n": 10,

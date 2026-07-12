@@ -200,7 +200,12 @@
           "tier": 2,
           "core60": "B2",
           "scope": "Ferrite, austenite, cementite, pearlite; the eutectoid reaction. TTT/CCT thinking, quench-and-temper, hardenability, and the microstructures — martensite to tempered martensite — that set steel properties. The single most load-bearing lesson in this course.",
-          "src": "Callister & Rethwisch, Ch. 9–10"
+          "src": "Callister & Rethwisch, Ch. 9–10",
+          "preview": [
+            "For 0.40 wt% C steel just below the eutectoid, use the lever rule: roughly what fraction is pearlite?",
+            "Quench austenite past the nose of the TTT curve: what forms, and why is tempering then non-negotiable?",
+            "Why does the core of a thick quenched shaft end up softer than its surface?"
+          ]
         },
         {
           "n": 3,
@@ -236,7 +241,12 @@
           "tier": 2,
           "core60": "B3",
           "scope": "S–N behavior and endurance limits; fracture mechanics in its simplest honest form (K, toughness, flaw size); creep regimes and life estimation. The three mechanisms behind most rotating-equipment and high-temperature failures, with fracture-surface reading as the diagnostic skill.",
-          "src": "Callister & Rethwisch, Ch. 8"
+          "src": "Callister & Rethwisch, Ch. 8",
+          "preview": [
+            "A polished steel has UTS 800 MPa: what first-cut endurance limit does the 0.5·UTS rule suggest, before knockdown factors?",
+            "Which two fracture-surface features distinguish fatigue from ductile overload?",
+            "How can a part pass its tensile test yet fail in service at half that stress?"
+          ]
         },
         {
           "n": 8,
@@ -285,7 +295,12 @@
           "tier": 2,
           "core60": "A9",
           "scope": "Orthogonal cutting model: shear plane, chip formation, cutting forces, and the Merchant relation. Cutting temperature and where tool wear comes from. Taylor tool-life equation with its exponents read as economics.",
-          "src": "Groover, Ch. 21"
+          "src": "Groover, Ch. 21",
+          "preview": [
+            "Cutting at 200 m/min gives 30 min of tool life; with Taylor exponent n = 0.25, evaluate the constant C = vTⁿ.",
+            "Where does most of the cutting energy end up, and why does that cap cutting speed?",
+            "If tool–chip friction falls, what does the Merchant relation predict for the shear angle and cutting force?"
+          ]
         },
         {
           "n": 2,
@@ -300,7 +315,12 @@
           "tier": 2,
           "core60": "A10",
           "scope": "The core operations with their speeds-and-feeds arithmetic: material removal rate, machining time, and power. Workholding logic. One condensed worked example runs a job from print to cycle estimate.",
-          "src": "Groover, Ch. 22"
+          "src": "Groover, Ch. 22",
+          "preview": [
+            "Compute MRR for turning at v = 150 m/min, f = 0.3 mm/rev, depth 3 mm.",
+            "How long is one 300 mm turning pass at 0.3 mm/rev and 800 rpm?",
+            "Why does chip evacuation dominate deep-hole drilling in a way milling never sees?"
+          ]
         },
         {
           "n": 4,
@@ -315,7 +335,12 @@
           "tier": 2,
           "core60": "A11",
           "scope": "Abrasive mechanics: grain depth of cut, specific energy, and why grinding burns parts when abused. Wheel designation decoded. Surface and cylindrical grinding with dressing and balancing practice.",
-          "src": "Groover, Ch. 25"
+          "src": "Groover, Ch. 25",
+          "preview": [
+            "Why can grinding burn or crack a surface that turning would leave unharmed?",
+            "In a wheel marked A60KV, what do the A, the 60, and the K each specify?",
+            "What does dressing restore, and what workpiece symptom says it is overdue?"
+          ]
         },
         {
           "n": 6,
@@ -338,7 +363,12 @@
           "core60": "A12",
           "scope": "SMAW, GMAW, FCAW, GTAW, SAW: how each arc works, its consumables, positions, and typical defects. Heat input defined and computed. The process lineup on Kirby's structural fabrication floor.",
           "src": "Groover, welding chapters; Kalpakjian & Schmid",
-          "kuwait": "Kirby Building Systems"
+          "kuwait": "Kirby Building Systems",
+          "preview": [
+            "Compute heat input for 25 V, 200 A at 5 mm/s travel.",
+            "For structural work outdoors in wind, which arc process displaces GMAW and why?",
+            "Why is GTAW the default for open root passes despite its deposition rate?"
+          ]
         },
         {
           "n": 9,

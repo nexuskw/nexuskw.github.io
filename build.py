@@ -21,6 +21,19 @@ CORE60_BLOCKS = {
     "F": "Planning", "G": "Automation",
 }
 
+FORK = (
+    '<svg class="fork" viewBox="0 0 22 30" aria-hidden="true" focusable="false">'
+    '<path d="M11,0 L13.1,3.2 L13.1,13 L8.9,13 L8.9,3.2 Z"/>'
+    '<path d="M3,1.4 C1.8,4.6 2.1,8.6 3.9,11.5 C4.6,12.5 5.5,13 6.5,13 L8.6,13 '
+    'C6.8,11.4 5.7,8.9 5.4,5.9 C5.3,4.3 5.1,2.7 3,1.4 Z"/>'
+    '<path d="M19,1.4 C20.2,4.6 19.9,8.6 18.1,11.5 C17.4,12.5 16.5,13 15.5,13 L13.4,13 '
+    'C15.2,11.4 16.3,8.9 16.6,5.9 C16.7,4.3 16.9,2.7 19,1.4 Z"/>'
+    '<rect x="3.2" y="13" width="15.6" height="2.6"/>'
+    '<rect x="8.5" y="15.6" width="5" height="1.9"/>'
+    '<rect x="9.6" y="15.6" width="2.8" height="14.4"/>'
+    '</svg>'
+)
+
 PAGE = """<!doctype html>
 <html lang="en">
 <head>
@@ -32,7 +45,7 @@ PAGE = """<!doctype html>
 </head>
 <body>
 <header class="hd">
-  <a class="wordmark" href="{prefix}index.html">Sun Devil <span>Factory</span></a>
+  <a class="wordmark" href="{prefix}index.html">Sun {fork} Devil <span>Factory</span></a>
   <nav aria-label="Site">
     <a href="{prefix}index.html"{on_home}>Start Here</a>
     <a href="{prefix}curriculum/index.html"{on_curr}>Curriculum</a>
@@ -62,7 +75,7 @@ PAGE = """<!doctype html>
         Kuwait Steel · Gulf Cable · Kirby Building Systems · EQUATE · KDD / Petra · HEISCO
       </div>
     </div>
-    <div class="mark">Sun Devil Factory</div>
+    <div class="mark"><span class="mn">Sun</span> {fork} <span class="mn">Devil</span> Factory</div>
     <p class="fine">Educational material. Worked-example values are pedagogical; representative
     industrial figures are labeled as such and are not published operating data of any named
     company. Photography is openly licensed; credits on each image and in the repository.</p>
@@ -84,10 +97,40 @@ def esc(s):
              .replace('"', "&quot;"))
 
 
+def load_sources():
+    """Registry of verified source URLs; returns [(escaped_match, name, url)]
+    sorted longest-match-first so specific names win over generic ones."""
+    reg = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
+    entries = []
+    for s in reg["sources"]:
+        for m in s["match"]:
+            entries.append((esc(m), s["name"], s["url"]))
+    entries.sort(key=lambda e: -len(e[0]))
+    return entries
+
+
+SOURCES = None  # set in main()
+
+
+def linkify(escaped_text):
+    """Replace known source names (already-escaped text) with links to the
+    verified registry URL. Placeholder pass prevents nested anchors."""
+    subs = []
+    for m, name, url in SOURCES:
+        if m in escaped_text:
+            token = f"\x00{len(subs)}\x00"
+            escaped_text = escaped_text.replace(m, token, 1)
+            subs.append((token, f'<a href="{url}" title="{esc(name)}" '
+                                f'target="_blank" rel="noopener">{m}</a>'))
+    for token, anchor in subs:
+        escaped_text = escaped_text.replace(token, anchor)
+    return escaped_text
+
+
 def page(path, title, desc, body, prefix, active="", footer_next=""):
     html = PAGE.format(
         title=esc(title), desc=esc(desc), prefix=prefix, body=body,
-        footer_next=footer_next,
+        footer_next=footer_next, fork=FORK,
         on_home=' class="on"' if active == "home" else "",
         on_curr=' class="on"' if active == "curriculum" else "",
         on_career=' class="on"' if active == "career" else "",
@@ -137,19 +180,26 @@ def build_course_page(sem, course, prefix):
             title_html = title
         core = les.get("core60")
         core_note = f' <b>CORE 60 · {esc(core)}</b> ·' if core else ""
-        src = esc(les.get("src", ""))
+        src = linkify(esc(les.get("src", "")))
         scope = esc(les.get("scope", ""))
+        preview = ""
+        if les.get("preview"):
+            qs = "".join(f"<li>{esc(q)}</li>" for q in les["preview"])
+            preview = (f'<div class="preview"><b>After this lesson you can '
+                       f'answer:</b><ul>{qs}</ul></div>')
         rows.append(f"""
 <div class="lesson-row rv">
   <div class="no">{les['n']:02d}</div>
   <div>
     <h4>{title_html}{badge}</h4>
     <p class="scope">{scope}</p>
+    {preview}
     <p class="src"><b>Taught from</b> —{core_note} {src}</p>
   </div>
 </div>""")
 
-    taught = "".join(f"<li>{esc(t)}</li>" for t in course.get("taught_from", []))
+    taught = "".join(f"<li>{linkify(esc(t))}</li>"
+                     for t in course.get("taught_from", []))
     vids = ""
     if course.get("videos"):
         cards = "".join(f"""
@@ -266,7 +316,12 @@ def main():
     (OUT / ".nojekyll").write_text("")
     shutil.copytree(ROOT / "assets", OUT / "assets")
 
+    global SOURCES
+    SOURCES = load_sources()
     sems = load_curriculum()
+    n_prev = sum(1 for s in sems for c in s["courses"] for l in c["lessons"]
+                 if l.get("preview"))
+    print(f"preview questions: {n_prev}/522 lessons")
 
     # sanity: counts
     n_courses = sum(len(s["courses"]) for s in sems)

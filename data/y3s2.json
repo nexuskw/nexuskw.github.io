@@ -7,19 +7,88 @@
       "code": "VIB 351",
       "title": "Mechanical Vibrations",
       "summary": "The theory under the analyzer screen: free and forced vibration, damping, multi-degree systems, rotor basics, and isolation — taught so Year 4's condition-monitoring course lands on solid mathematics.",
-      "taught_from": ["NPTEL: Mechanical Vibrations (nptel.ac.in)", "MIT OCW 2.003 materials"],
+      "taught_from": [
+        "NPTEL: Mechanical Vibrations (nptel.ac.in)",
+        "MIT OCW 2.003 materials"
+      ],
       "lessons": [
-        {"n": 1, "t": "The single degree of freedom system", "tier": 3, "scope": "Equation of motion from Newton and from energy. Natural frequency's dependence on stiffness and mass — and on nothing else. The model that explains half of all machine vibration behavior.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 2, "t": "Damped free vibration", "tier": 3, "scope": "Viscous damping and the three response regimes. Logarithmic decrement measured from a bump test. Damping ratio as the machine's shock absorber rating.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 3, "t": "Harmonically forced vibration", "tier": 3, "scope": "The frequency response function derived: amplitude and phase versus forcing frequency. Resonance quantified by Q. Why passing through resonance on run-up is survivable but dwelling is not.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 4, "t": "Rotating unbalance and whirl", "tier": 3, "scope": "Unbalance forcing derived from eccentric mass; response above and below critical speed. The phase flip through resonance. First contact with rotor dynamics language.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 5, "t": "Support motion and transmissibility", "tier": 3, "scope": "Base-excited systems and force transmissibility derived. The isolation region above √2 times natural frequency. Why soft mounts protect and when they betray.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 6, "t": "Vibration isolation design", "tier": 3, "scope": "Isolator selection: static deflection, natural frequency, damping trade-offs. Inertia blocks and their sizing logic. A compressor installation isolated on paper.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 7, "t": "Two degrees of freedom and mode shapes", "tier": 3, "scope": "Coupled equations, natural frequencies, and mode shapes solved via the eigenproblem promised in Math II. Beating between close modes. The concept structure for all modal analysis.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 8, "t": "Multi-DOF and continuous systems in outline", "tier": 3, "scope": "Modal superposition as the organizing idea. Beam and shaft natural frequencies from standard results. Why long rotors have families of criticals.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 9, "t": "Torsional vibration", "tier": 3, "scope": "Shaft-train torsional models; natural frequencies of two- and three-inertia systems. Excitation from VFDs and reciprocating machines. The invisible vibration that breaks couplings.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 10, "t": "Measurement preview: sensors and signals", "tier": 3, "scope": "Accelerometer, velocity, and displacement measurement physics; integration between them. Mounting effects on usable frequency range. The hardware bridge to Year 4's analysis course.", "src": "NPTEL: Mechanical Vibrations"},
-        {"n": 11, "t": "Field vibration phenomena tour", "tier": 3, "scope": "Resonance, beats, looseness nonlinearity, and self-excited whirl shown as measured signatures. Each tied back to its lesson's mathematics. The course's theory validated against plant reality.", "src": "NPTEL: Mechanical Vibrations"}
+        {
+          "n": 1,
+          "t": "The single degree of freedom system",
+          "tier": 3,
+          "scope": "Equation of motion from Newton and from energy. Natural frequency's dependence on stiffness and mass — and on nothing else. The model that explains half of all machine vibration behavior.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 2,
+          "t": "Damped free vibration",
+          "tier": 3,
+          "scope": "Viscous damping and the three response regimes. Logarithmic decrement measured from a bump test. Damping ratio as the machine's shock absorber rating.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 3,
+          "t": "Harmonically forced vibration",
+          "tier": 3,
+          "scope": "The frequency response function derived: amplitude and phase versus forcing frequency. Resonance quantified by Q. Why passing through resonance on run-up is survivable but dwelling is not.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 4,
+          "t": "Rotating unbalance and whirl",
+          "tier": 3,
+          "scope": "Unbalance forcing derived from eccentric mass; response above and below critical speed. The phase flip through resonance. First contact with rotor dynamics language.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 5,
+          "t": "Support motion and transmissibility",
+          "tier": 3,
+          "scope": "Base-excited systems and force transmissibility derived. The isolation region above √2 times natural frequency. Why soft mounts protect and when they betray.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 6,
+          "t": "Vibration isolation design",
+          "tier": 3,
+          "scope": "Isolator selection: static deflection, natural frequency, damping trade-offs. Inertia blocks and their sizing logic. A compressor installation isolated on paper.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 7,
+          "t": "Two degrees of freedom and mode shapes",
+          "tier": 3,
+          "scope": "Coupled equations, natural frequencies, and mode shapes solved via the eigenproblem promised in Math II. Beating between close modes. The concept structure for all modal analysis.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 8,
+          "t": "Multi-DOF and continuous systems in outline",
+          "tier": 3,
+          "scope": "Modal superposition as the organizing idea. Beam and shaft natural frequencies from standard results. Why long rotors have families of criticals.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 9,
+          "t": "Torsional vibration",
+          "tier": 3,
+          "scope": "Shaft-train torsional models; natural frequencies of two- and three-inertia systems. Excitation from VFDs and reciprocating machines. The invisible vibration that breaks couplings.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 10,
+          "t": "Measurement preview: sensors and signals",
+          "tier": 3,
+          "scope": "Accelerometer, velocity, and displacement measurement physics; integration between them. Mounting effects on usable frequency range. The hardware bridge to Year 4's analysis course.",
+          "src": "NPTEL: Mechanical Vibrations"
+        },
+        {
+          "n": 11,
+          "t": "Field vibration phenomena tour",
+          "tier": 3,
+          "scope": "Resonance, beats, looseness nonlinearity, and self-excited whirl shown as measured signatures. Each tied back to its lesson's mathematics. The course's theory validated against plant reality.",
+          "src": "NPTEL: Mechanical Vibrations"
+        }
       ]
     },
     {
@@ -27,19 +96,95 @@
       "code": "INS 352",
       "title": "Instrumentation & Process Control",
       "summary": "The control loop as plumbing and paperwork: P&ID literacy, transmitters and control valves, loop tuning in the field, and the safety instrumented systems that sit above regulation — EQUATE-style process-plant territory.",
-      "taught_from": ["NPTEL: Industrial Instrumentation; Process Control (nptel.ac.in)"],
+      "taught_from": [
+        "NPTEL: Industrial Instrumentation; Process Control (nptel.ac.in)"
+      ],
       "lessons": [
-        {"n": 1, "t": "The process control loop end to end", "tier": 3, "scope": "Sensor, transmitter, controller, and final element as one signal chain. Loop drawings versus P&IDs. Every element's failure mode inventoried.", "src": "NPTEL: Process Control"},
-        {"n": 2, "t": "P&ID reading", "tier": 2, "core60": "G3", "scope": "ISA-style symbols and tag grammar decoded — the identification letters, loop numbers, and line conventions that make a P&ID legible. Equipment, instruments, and interlocks traced through a real sheet. The drawing a process plant hands you on day one, read without flinching.", "src": "NPTEL: Process Control; Industrial Instrumentation", "kuwait": "EQUATE"},
-        {"n": 3, "t": "Control valves", "tier": 3, "scope": "Globe, ball, and butterfly bodies; inherent versus installed characteristic derived from the pressure-ratio argument. Cv sizing in outline; cavitation and flashing in valves. Positioners and their diagnostics.", "src": "NPTEL: Process Control"},
-        {"n": 4, "t": "Transmitter engineering in the field", "tier": 3, "scope": "Ranging, elevation/suppression, and impulse-line practice consolidated. Smart transmitter diagnostics used properly. Calibration versus validation on live plants.", "src": "NPTEL: Industrial Instrumentation"},
-        {"n": 5, "t": "Loop tuning in practice", "tier": 3, "scope": "Process identification from bump tests: gain, time constant, dead time. Lambda and reaction-curve tuning applied to level, flow, and temperature archetypes. Dead time as the real enemy, named.", "src": "NPTEL: Process Control"},
-        {"n": 6, "t": "Multiloop structures", "tier": 3, "scope": "Cascade, ratio, and feedforward — each derived from a disturbance argument. Split-range and override control where hardware demands it. Reading these structures off a P&ID.", "src": "NPTEL: Process Control"},
-        {"n": 7, "t": "DCS and control-room architecture", "tier": 3, "scope": "DCS versus PLC/SCADA delineated honestly. Controllers, I/O, and HMI stations in a process-plant architecture. Alarm management at plant scale — the rationalization discipline.", "src": "NPTEL: Process Control", "kuwait": "EQUATE"},
-        {"n": 8, "t": "Safety instrumented systems", "tier": 3, "scope": "The protection layers above control; SIS separated from BPCS by design. SIL concepts and proof testing in outline. Trip logic read from cause-and-effect diagrams.", "src": "NPTEL: Process Control"},
-        {"n": 9, "t": "Analyzers and special measurements", "tier": 3, "scope": "pH, conductivity, and gas analyzers in outline; sample systems as the real failure point. Analyzer maintenance economics. Where analyzers gate product release.", "src": "NPTEL: Industrial Instrumentation"},
-        {"n": 10, "t": "Instrument maintenance and reliability", "tier": 3, "scope": "Calibration programs, drift trending, and smart diagnostics as condition monitoring for instruments. Instrument criticality ranking. The instrument technician–reliability engineer interface.", "src": "NPTEL: Industrial Instrumentation"},
-        {"n": 11, "t": "Loop package project", "tier": 3, "scope": "For one control loop: P&ID extract, instrument datasheets, valve sizing sketch, tuning plan, and test procedure. The document set of a small management-of-change. Instrumentation practiced as engineering, not adjustment.", "src": "NPTEL: Process Control"}
+        {
+          "n": 1,
+          "t": "The process control loop end to end",
+          "tier": 3,
+          "scope": "Sensor, transmitter, controller, and final element as one signal chain. Loop drawings versus P&IDs. Every element's failure mode inventoried.",
+          "src": "NPTEL: Process Control"
+        },
+        {
+          "n": 2,
+          "t": "P&ID reading",
+          "tier": 2,
+          "core60": "G3",
+          "scope": "ISA-style symbols and tag grammar decoded — the identification letters, loop numbers, and line conventions that make a P&ID legible. Equipment, instruments, and interlocks traced through a real sheet. The drawing a process plant hands you on day one, read without flinching.",
+          "src": "NPTEL: Process Control; Industrial Instrumentation",
+          "kuwait": "EQUATE",
+          "preview": [
+            "Decode the tag FIC-201: what does each letter say, and what does the number point to?",
+            "How does a P&ID tell you a control valve's failure position, and why does it matter in a trip?",
+            "What distinguishes instrument signal lines from process lines on the drawing?"
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Control valves",
+          "tier": 3,
+          "scope": "Globe, ball, and butterfly bodies; inherent versus installed characteristic derived from the pressure-ratio argument. Cv sizing in outline; cavitation and flashing in valves. Positioners and their diagnostics.",
+          "src": "NPTEL: Process Control"
+        },
+        {
+          "n": 4,
+          "t": "Transmitter engineering in the field",
+          "tier": 3,
+          "scope": "Ranging, elevation/suppression, and impulse-line practice consolidated. Smart transmitter diagnostics used properly. Calibration versus validation on live plants.",
+          "src": "NPTEL: Industrial Instrumentation"
+        },
+        {
+          "n": 5,
+          "t": "Loop tuning in practice",
+          "tier": 3,
+          "scope": "Process identification from bump tests: gain, time constant, dead time. Lambda and reaction-curve tuning applied to level, flow, and temperature archetypes. Dead time as the real enemy, named.",
+          "src": "NPTEL: Process Control"
+        },
+        {
+          "n": 6,
+          "t": "Multiloop structures",
+          "tier": 3,
+          "scope": "Cascade, ratio, and feedforward — each derived from a disturbance argument. Split-range and override control where hardware demands it. Reading these structures off a P&ID.",
+          "src": "NPTEL: Process Control"
+        },
+        {
+          "n": 7,
+          "t": "DCS and control-room architecture",
+          "tier": 3,
+          "scope": "DCS versus PLC/SCADA delineated honestly. Controllers, I/O, and HMI stations in a process-plant architecture. Alarm management at plant scale — the rationalization discipline.",
+          "src": "NPTEL: Process Control",
+          "kuwait": "EQUATE"
+        },
+        {
+          "n": 8,
+          "t": "Safety instrumented systems",
+          "tier": 3,
+          "scope": "The protection layers above control; SIS separated from BPCS by design. SIL concepts and proof testing in outline. Trip logic read from cause-and-effect diagrams.",
+          "src": "NPTEL: Process Control"
+        },
+        {
+          "n": 9,
+          "t": "Analyzers and special measurements",
+          "tier": 3,
+          "scope": "pH, conductivity, and gas analyzers in outline; sample systems as the real failure point. Analyzer maintenance economics. Where analyzers gate product release.",
+          "src": "NPTEL: Industrial Instrumentation"
+        },
+        {
+          "n": 10,
+          "t": "Instrument maintenance and reliability",
+          "tier": 3,
+          "scope": "Calibration programs, drift trending, and smart diagnostics as condition monitoring for instruments. Instrument criticality ranking. The instrument technician–reliability engineer interface.",
+          "src": "NPTEL: Industrial Instrumentation"
+        },
+        {
+          "n": 11,
+          "t": "Loop package project",
+          "tier": 3,
+          "scope": "For one control loop: P&ID extract, instrument datasheets, valve sizing sketch, tuning plan, and test procedure. The document set of a small management-of-change. Instrumentation practiced as engineering, not adjustment.",
+          "src": "NPTEL: Process Control"
+        }
       ]
     },
     {
@@ -47,18 +192,82 @@
       "code": "ROB 353",
       "title": "Industrial Robotics",
       "summary": "Robots as production equipment: kinematics enough to reason, plus the practical layer — end effectors, safety systems, palletizing and welding cells, and what a robot cell demands from maintenance.",
-      "taught_from": ["NPTEL: Industrial Robotics (nptel.ac.in)"],
+      "taught_from": [
+        "NPTEL: Industrial Robotics (nptel.ac.in)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Robot anatomy and types", "tier": 3, "scope": "Articulated, SCARA, delta, and cartesian architectures with their sweet spots. Axes, envelopes, and payload ratings read from datasheets. Repeatability versus accuracy — the specification that matters.", "src": "NPTEL: Industrial Robotics"},
-        {"n": 2, "t": "Kinematics fundamentals", "tier": 3, "scope": "Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mathematics to respect the controller.", "src": "NPTEL: Industrial Robotics"},
-        {"n": 3, "t": "Drives, encoders, and calibration", "tier": 3, "scope": "Servo axes, gearing, and absolute encoders; mastering and calibration procedures. Backlash and its symptoms in path quality. The maintenance anatomy of an arm.", "src": "NPTEL: Industrial Robotics"},
-        {"n": 4, "t": "End effectors and tooling", "tier": 3, "scope": "Grippers — pneumatic, servo, vacuum, magnetic — matched to product. Tool changers and dress packs, the wear items nobody budgets. Payload and center-of-gravity arithmetic.", "src": "NPTEL: Industrial Robotics"},
-        {"n": 5, "t": "Programming and teaching", "tier": 3, "scope": "Jogging, frames, and point teaching; motion types and speed/approximation trade-offs. Program structure for cells with variants. Offline programming in outline.", "src": "NPTEL: Industrial Robotics"},
-        {"n": 6, "t": "Robot safety systems", "tier": 3, "scope": "Guarding, light curtains, and safety-rated monitored stops; collaborative modes with their real limits. Risk assessment for a cell. Safety as the cell's first design input.", "src": "NPTEL: Industrial Robotics"},
-        {"n": 7, "t": "Palletizing and material-handling cells", "tier": 3, "scope": "End-of-line palletizing patterns and cycle-time budgets. Conveyor tracking basics. The robot cell most likely to appear at the end of a KDD-style packaging line.", "src": "NPTEL: Industrial Robotics", "kuwait": "KDD / Petra"},
-        {"n": 8, "t": "Robotic welding cells", "tier": 3, "scope": "Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural work of the Kirby kind.", "src": "NPTEL: Industrial Robotics", "kuwait": "Kirby Building Systems"},
-        {"n": 9, "t": "Cell integration", "tier": 3, "scope": "The robot inside the PLC's state machine: handshakes, permissives, and fault recovery paths. Peripheral devices and fixturing. Cycle-time analysis against the line's takt.", "src": "NPTEL: Industrial Robotics"},
-        {"n": 10, "t": "Robot maintenance and diagnostics", "tier": 3, "scope": "Preventive tasks: lubrication, belts, batteries, dress-pack inspection. Error logs and drift trends as early warnings. What a robot's reliability program looks like on paper.", "src": "NPTEL: Industrial Robotics"}
+        {
+          "n": 1,
+          "t": "Robot anatomy and types",
+          "tier": 3,
+          "scope": "Articulated, SCARA, delta, and cartesian architectures with their sweet spots. Axes, envelopes, and payload ratings read from datasheets. Repeatability versus accuracy — the specification that matters.",
+          "src": "NPTEL: Industrial Robotics"
+        },
+        {
+          "n": 2,
+          "t": "Kinematics fundamentals",
+          "tier": 3,
+          "scope": "Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mathematics to respect the controller.",
+          "src": "NPTEL: Industrial Robotics"
+        },
+        {
+          "n": 3,
+          "t": "Drives, encoders, and calibration",
+          "tier": 3,
+          "scope": "Servo axes, gearing, and absolute encoders; mastering and calibration procedures. Backlash and its symptoms in path quality. The maintenance anatomy of an arm.",
+          "src": "NPTEL: Industrial Robotics"
+        },
+        {
+          "n": 4,
+          "t": "End effectors and tooling",
+          "tier": 3,
+          "scope": "Grippers — pneumatic, servo, vacuum, magnetic — matched to product. Tool changers and dress packs, the wear items nobody budgets. Payload and center-of-gravity arithmetic.",
+          "src": "NPTEL: Industrial Robotics"
+        },
+        {
+          "n": 5,
+          "t": "Programming and teaching",
+          "tier": 3,
+          "scope": "Jogging, frames, and point teaching; motion types and speed/approximation trade-offs. Program structure for cells with variants. Offline programming in outline.",
+          "src": "NPTEL: Industrial Robotics"
+        },
+        {
+          "n": 6,
+          "t": "Robot safety systems",
+          "tier": 3,
+          "scope": "Guarding, light curtains, and safety-rated monitored stops; collaborative modes with their real limits. Risk assessment for a cell. Safety as the cell's first design input.",
+          "src": "NPTEL: Industrial Robotics"
+        },
+        {
+          "n": 7,
+          "t": "Palletizing and material-handling cells",
+          "tier": 3,
+          "scope": "End-of-line palletizing patterns and cycle-time budgets. Conveyor tracking basics. The robot cell most likely to appear at the end of a KDD-style packaging line.",
+          "src": "NPTEL: Industrial Robotics",
+          "kuwait": "KDD / Petra"
+        },
+        {
+          "n": 8,
+          "t": "Robotic welding cells",
+          "tier": 3,
+          "scope": "Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural work of the Kirby kind.",
+          "src": "NPTEL: Industrial Robotics",
+          "kuwait": "Kirby Building Systems"
+        },
+        {
+          "n": 9,
+          "t": "Cell integration",
+          "tier": 3,
+          "scope": "The robot inside the PLC's state machine: handshakes, permissives, and fault recovery paths. Peripheral devices and fixturing. Cycle-time analysis against the line's takt.",
+          "src": "NPTEL: Industrial Robotics"
+        },
+        {
+          "n": 10,
+          "t": "Robot maintenance and diagnostics",
+          "tier": 3,
+          "scope": "Preventive tasks: lubrication, belts, batteries, dress-pack inspection. Error logs and drift trends as early warnings. What a robot's reliability program looks like on paper.",
+          "src": "NPTEL: Industrial Robotics"
+        }
       ]
     },
     {
@@ -66,20 +275,120 @@
       "code": "REL 354",
       "title": "Reliability Engineering I",
       "summary": "Quantified failure: reliability mathematics, Weibull analysis of real data, system modeling, and FMEA/FMECA — the analytical core of the reliability engineer role this pathway targets.",
-      "taught_from": ["NPTEL: Reliability Engineering (nptel.ac.in)", "Engineering Statistics course as prerequisite"],
+      "taught_from": [
+        "NPTEL: Reliability Engineering (nptel.ac.in)",
+        "Engineering Statistics course as prerequisite"
+      ],
       "lessons": [
-        {"n": 1, "t": "Reliability functions", "tier": 3, "scope": "Reliability, CDF, PDF, and hazard rate defined and interrelated with derivations. The bathtub curve as hazard-rate biography. Reading each function's story from the others.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 2, "t": "The exponential model", "tier": 3, "scope": "Constant hazard rate and its memoryless consequence proven. MTBF's honest meaning under the exponential. Where the model applies — and the electronics-versus-wearout boundary.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 3, "t": "Weibull analysis", "tier": 2, "core60": "C2", "scope": "The Weibull distribution with shape and scale parameters read as physics: β<1 infant mortality, β≈1 random, β>1 wearout. Median-rank plotting of a real failure dataset, censored points handled correctly. The analysis that turns a failure log into a maintenance strategy argument.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 4, "t": "Fitting and interpreting failure data", "tier": 3, "scope": "Data collection sins: mixed failure modes, missing suspensions, bad timestamps. Goodness of fit with judgment. Confidence bounds that keep conclusions honest.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 5, "t": "System reliability models", "tier": 2, "core60": "C3", "scope": "Series, parallel, and k-out-of-n structures derived from probability first principles; reliability block diagrams of real equipment trains. Redundancy's diminishing returns and common-cause caveat. A pumping station modeled end to end as the condensed example.", "src": "NPTEL: Reliability Engineering", "kuwait": "EQUATE"},
-        {"n": 6, "t": "Availability and maintainability analysis", "tier": 3, "scope": "Repairable-system measures; availability from failure and repair distributions. Maintainability as design property — access, modularity, error-proofing. Where MTTR is really spent, measured.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 7, "t": "FMEA/FMECA", "tier": 2, "core60": "C4", "scope": "Failure modes and effects analysis built properly: functions, functional failures, modes, effects, severity–occurrence–detection scoring, and the RPN's known abuses. Criticality analysis as the FMECA extension. One equipment FMEA worked as the condensed example — the template interviews ask you to narrate.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 8, "t": "Fault tree analysis", "tier": 3, "scope": "Top events, gates, and minimal cut sets; quantification with basic-event probabilities. FTA versus FMEA — deductive versus inductive. Protective-system failures as the classic application.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 9, "t": "RCM principles", "tier": 2, "core60": "C5", "scope": "Reliability-centered maintenance's seven questions and its decision logic: condition-based first, time-based where age matters, run-to-failure where consequences permit, redesign where nothing works. Hidden failures and failure-finding intervals. The framework that disciplines every PM program worth the name.", "src": "NPTEL: Reliability Engineering; SMRP CMRP framework"},
-        {"n": 10, "t": "Reliability testing and growth", "tier": 3, "scope": "Life testing and accelerated testing in outline; reliability growth tracking during commissioning. Burn-in's logic and limits. Evidence standards for 'the fix worked'.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 11, "t": "Human factors in reliability", "tier": 3, "scope": "Maintenance-induced failures: the uncomfortable data. Error-provocative designs and procedures. Designing tasks so the night shift succeeds.", "src": "NPTEL: Reliability Engineering"},
-        {"n": 12, "t": "Reliability data project", "tier": 3, "scope": "From a provided failure log: clean, classify, Weibull-fit, model the system, and recommend strategy changes with quantified backing. The full Reliability I toolkit exercised once. Deliverable formatted as a plant engineering report.", "src": "NPTEL: Reliability Engineering"}
+        {
+          "n": 1,
+          "t": "Reliability functions",
+          "tier": 3,
+          "scope": "Reliability, CDF, PDF, and hazard rate defined and interrelated with derivations. The bathtub curve as hazard-rate biography. Reading each function's story from the others.",
+          "src": "NPTEL: Reliability Engineering"
+        },
+        {
+          "n": 2,
+          "t": "The exponential model",
+          "tier": 3,
+          "scope": "Constant hazard rate and its memoryless consequence proven. MTBF's honest meaning under the exponential. Where the model applies — and the electronics-versus-wearout boundary.",
+          "src": "NPTEL: Reliability Engineering"
+        },
+        {
+          "n": 3,
+          "t": "Weibull analysis",
+          "tier": 2,
+          "core60": "C2",
+          "scope": "The Weibull distribution with shape and scale parameters read as physics: β<1 infant mortality, β≈1 random, β>1 wearout. Median-rank plotting of a real failure dataset, censored points handled correctly. The analysis that turns a failure log into a maintenance strategy argument.",
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "A seal population fits Weibull β = 0.7: what regime is that, and is scheduled replacement justified?",
+            "β = 3.2, η = 18 months: why plan intervention well before the MTBF, and roughly when?",
+            "Why must suspensions (censored units) enter the fit rather than being discarded?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "Fitting and interpreting failure data",
+          "tier": 3,
+          "scope": "Data collection sins: mixed failure modes, missing suspensions, bad timestamps. Goodness of fit with judgment. Confidence bounds that keep conclusions honest.",
+          "src": "NPTEL: Reliability Engineering"
+        },
+        {
+          "n": 5,
+          "t": "System reliability models",
+          "tier": 2,
+          "core60": "C3",
+          "scope": "Series, parallel, and k-out-of-n structures derived from probability first principles; reliability block diagrams of real equipment trains. Redundancy's diminishing returns and common-cause caveat. A pumping station modeled end to end as the condensed example.",
+          "src": "NPTEL: Reliability Engineering",
+          "kuwait": "EQUATE",
+          "preview": [
+            "Two pumps in parallel, each R = 0.90, either sufficient: system reliability?",
+            "Three series components at R = 0.95 each: system reliability?",
+            "Why does adding redundancy do nothing against common-cause failures?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Availability and maintainability analysis",
+          "tier": 3,
+          "scope": "Repairable-system measures; availability from failure and repair distributions. Maintainability as design property — access, modularity, error-proofing. Where MTTR is really spent, measured.",
+          "src": "NPTEL: Reliability Engineering"
+        },
+        {
+          "n": 7,
+          "t": "FMEA/FMECA",
+          "tier": 2,
+          "core60": "C4",
+          "scope": "Failure modes and effects analysis built properly: functions, functional failures, modes, effects, severity–occurrence–detection scoring, and the RPN's known abuses. Criticality analysis as the FMECA extension. One equipment FMEA worked as the condensed example — the template interviews ask you to narrate.",
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "Two failure modes both score RPN 72 — one from severity 9, one from occurrence 9. Why must they be treated differently?",
+            "For a leaking mechanical seal, give one failure mode, one cause, and one effect — correctly sorted.",
+            "What does a detection score of 9 actually assert about your monitoring capability?"
+          ]
+        },
+        {
+          "n": 8,
+          "t": "Fault tree analysis",
+          "tier": 3,
+          "scope": "Top events, gates, and minimal cut sets; quantification with basic-event probabilities. FTA versus FMEA — deductive versus inductive. Protective-system failures as the classic application.",
+          "src": "NPTEL: Reliability Engineering"
+        },
+        {
+          "n": 9,
+          "t": "RCM principles",
+          "tier": 2,
+          "core60": "C5",
+          "scope": "Reliability-centered maintenance's seven questions and its decision logic: condition-based first, time-based where age matters, run-to-failure where consequences permit, redesign where nothing works. Hidden failures and failure-finding intervals. The framework that disciplines every PM program worth the name.",
+          "src": "NPTEL: Reliability Engineering; SMRP CMRP framework",
+          "preview": [
+            "Why does RCM route hidden failures to failure-finding tasks, and what makes a failure 'hidden'?",
+            "Under what two conditions does RCM legitimately assign run-to-failure?",
+            "Explain how a blanket monthly-PM policy over- and under-maintains the same plant simultaneously."
+          ]
+        },
+        {
+          "n": 10,
+          "t": "Reliability testing and growth",
+          "tier": 3,
+          "scope": "Life testing and accelerated testing in outline; reliability growth tracking during commissioning. Burn-in's logic and limits. Evidence standards for 'the fix worked'.",
+          "src": "NPTEL: Reliability Engineering"
+        },
+        {
+          "n": 11,
+          "t": "Human factors in reliability",
+          "tier": 3,
+          "scope": "Maintenance-induced failures: the uncomfortable data. Error-provocative designs and procedures. Designing tasks so the night shift succeeds.",
+          "src": "NPTEL: Reliability Engineering"
+        },
+        {
+          "n": 12,
+          "t": "Reliability data project",
+          "tier": 3,
+          "scope": "From a provided failure log: clean, classify, Weibull-fit, model the system, and recommend strategy changes with quantified backing. The full Reliability I toolkit exercised once. Deliverable formatted as a plant engineering report.",
+          "src": "NPTEL: Reliability Engineering"
+        }
       ]
     },
     {
@@ -87,18 +396,88 @@
       "code": "COR 355",
       "title": "Corrosion & Degradation",
       "summary": "The Gulf's tax on steel: electrochemical fundamentals, the corrosion forms bestiary, marine and coastal service, and the defenses — materials, coatings, cathodic protection, inhibitors — that asset integrity budgets buy.",
-      "taught_from": ["Callister & Rethwisch, Ch. 17; NPTEL: Corrosion-related materials courses (nptel.ac.in)"],
+      "taught_from": [
+        "Callister & Rethwisch, Ch. 17; NPTEL: Corrosion-related materials courses (nptel.ac.in)"
+      ],
       "lessons": [
-        {"n": 1, "t": "Electrochemistry of corrosion", "tier": 3, "scope": "Anodes, cathodes, and the corrosion cell derived from half-reactions. Galvanic series versus EMF series — the practical one wins. Corrosion rate units and conversions.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 2, "t": "Corrosion in Gulf service", "tier": 2, "core60": "B4", "scope": "Chlorides, heat, humidity, and marine atmosphere as the region's standing corrosion load. Pitting and crevice attack on stainless; CUI — corrosion under insulation — as the hidden budget-eater; seawater cooling circuits. The condensed example: ranking degradation threats for a coastal plant's asset register.", "src": "Callister & Rethwisch, Ch. 17", "kuwait": "EQUATE"},
-        {"n": 3, "t": "Uniform, galvanic, and crevice corrosion", "tier": 3, "scope": "The 'benign' uniform mode and when it isn't; galvanic couples with area-ratio arithmetic; crevices as chemistry chambers. Design details that create or kill crevices. Gasket and fastener implications.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 4, "t": "Pitting and localized attack", "tier": 3, "scope": "Pit initiation on passive films; chloride's special villainy. PREN as a stainless selection number. Why pits sink ships that thickness surveys called healthy.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 5, "t": "Environmentally assisted cracking", "tier": 3, "scope": "Stress corrosion cracking's three-ingredient recipe; chloride SCC of austenitics; hydrogen embrittlement and sulfide stress cracking in outline. Why EAC failures are sudden and forensic. Materials–environment pairings memorized by the industry.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 6, "t": "Flow-assisted and mechanical degradation", "tier": 3, "scope": "Erosion-corrosion, cavitation damage, and fretting. Velocity limits in piping specs explained. The pump-impeller damage gallery interpreted.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 7, "t": "High-temperature degradation", "tier": 3, "scope": "Oxidation kinetics and scale protectiveness; sulfidation and fuel-ash attack in outline. Creep–corrosion interactions at furnace conditions. The melt-shop and fired-heater materials problem.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 8, "t": "Coatings and linings", "tier": 3, "scope": "Surface preparation standards as the real quality variable; coating families and their service envelopes. Inspection: holiday testing and DFT. Coating failure modes read like weld defects.", "src": "Callister & Rethwisch, Ch. 17; NPTEL corrosion content"},
-        {"n": 9, "t": "Cathodic protection and inhibitors", "tier": 3, "scope": "Sacrificial and impressed-current CP with the electrochemistry made explicit. CP surveys in outline. Inhibitors and chemical treatment where coatings can't go.", "src": "Callister & Rethwisch, Ch. 17"},
-        {"n": 10, "t": "Corrosion monitoring and management", "tier": 3, "scope": "Coupons, ER probes, and thickness-monitoring locations; corrosion rates fed into remaining-life arithmetic. Corrosion management systems as documents that direct money. The bridge into Year 4's asset integrity course.", "src": "Callister & Rethwisch, Ch. 17", "kuwait": "EQUATE"}
+        {
+          "n": 1,
+          "t": "Electrochemistry of corrosion",
+          "tier": 3,
+          "scope": "Anodes, cathodes, and the corrosion cell derived from half-reactions. Galvanic series versus EMF series — the practical one wins. Corrosion rate units and conversions.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 2,
+          "t": "Corrosion in Gulf service",
+          "tier": 2,
+          "core60": "B4",
+          "scope": "Chlorides, heat, humidity, and marine atmosphere as the region's standing corrosion load. Pitting and crevice attack on stainless; CUI — corrosion under insulation — as the hidden budget-eater; seawater cooling circuits. The condensed example: ranking degradation threats for a coastal plant's asset register.",
+          "src": "Callister & Rethwisch, Ch. 17",
+          "kuwait": "EQUATE",
+          "preview": [
+            "Why do chlorides defeat stainless passivity, and which two localized attack forms result?",
+            "Corrosion under insulation: why does insulation make attack worse, and what keeps it hidden from surveys?",
+            "For a coastal Gulf plant, name three chloride-driven threats you would register before any inspection data exists."
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Uniform, galvanic, and crevice corrosion",
+          "tier": 3,
+          "scope": "The 'benign' uniform mode and when it isn't; galvanic couples with area-ratio arithmetic; crevices as chemistry chambers. Design details that create or kill crevices. Gasket and fastener implications.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 4,
+          "t": "Pitting and localized attack",
+          "tier": 3,
+          "scope": "Pit initiation on passive films; chloride's special villainy. PREN as a stainless selection number. Why pits sink ships that thickness surveys called healthy.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 5,
+          "t": "Environmentally assisted cracking",
+          "tier": 3,
+          "scope": "Stress corrosion cracking's three-ingredient recipe; chloride SCC of austenitics; hydrogen embrittlement and sulfide stress cracking in outline. Why EAC failures are sudden and forensic. Materials–environment pairings memorized by the industry.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 6,
+          "t": "Flow-assisted and mechanical degradation",
+          "tier": 3,
+          "scope": "Erosion-corrosion, cavitation damage, and fretting. Velocity limits in piping specs explained. The pump-impeller damage gallery interpreted.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 7,
+          "t": "High-temperature degradation",
+          "tier": 3,
+          "scope": "Oxidation kinetics and scale protectiveness; sulfidation and fuel-ash attack in outline. Creep–corrosion interactions at furnace conditions. The melt-shop and fired-heater materials problem.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 8,
+          "t": "Coatings and linings",
+          "tier": 3,
+          "scope": "Surface preparation standards as the real quality variable; coating families and their service envelopes. Inspection: holiday testing and DFT. Coating failure modes read like weld defects.",
+          "src": "Callister & Rethwisch, Ch. 17; NPTEL corrosion content"
+        },
+        {
+          "n": 9,
+          "t": "Cathodic protection and inhibitors",
+          "tier": 3,
+          "scope": "Sacrificial and impressed-current CP with the electrochemistry made explicit. CP surveys in outline. Inhibitors and chemical treatment where coatings can't go.",
+          "src": "Callister & Rethwisch, Ch. 17"
+        },
+        {
+          "n": 10,
+          "t": "Corrosion monitoring and management",
+          "tier": 3,
+          "scope": "Coupons, ER probes, and thickness-monitoring locations; corrosion rates fed into remaining-life arithmetic. Corrosion management systems as documents that direct money. The bridge into Year 4's asset integrity course.",
+          "src": "Callister & Rethwisch, Ch. 17",
+          "kuwait": "EQUATE"
+        }
       ]
     },
     {
@@ -106,19 +485,89 @@
       "code": "PPC 356",
       "title": "Production Planning & Control",
       "summary": "The factory's calendar: forecasting, capacity, scheduling, inventory, and MRP — how production commitments are made and kept, and where maintenance windows must be fought for inside them.",
-      "taught_from": ["NPTEL: Production and Operations Management-family courses (nptel.ac.in)", "Groover, production systems chapters"],
+      "taught_from": [
+        "NPTEL: Production and Operations Management-family courses (nptel.ac.in)",
+        "Groover, production systems chapters"
+      ],
       "lessons": [
-        {"n": 1, "t": "Production systems and layouts", "tier": 3, "scope": "Job shop, batch, line, and continuous production with their planning personalities. Layout types and material flow. Where each Kuwait anchor plant sits on this spectrum.", "src": "Groover, production systems chapters"},
-        {"n": 2, "t": "Demand forecasting", "tier": 3, "scope": "Moving averages and exponential smoothing with error tracking. Seasonality in outline. Forecasts as inputs to be doubted, not truths.", "src": "NPTEL: Production and Operations Management"},
-        {"n": 3, "t": "Capacity and takt", "tier": 3, "scope": "Design versus effective capacity; utilization and efficiency separated. Takt time computed and confronted with cycle times. Bottleneck identification as the first act of scheduling.", "src": "NPTEL: Production and Operations Management"},
-        {"n": 4, "t": "Aggregate planning and MPS", "tier": 3, "scope": "Level versus chase strategies costed. The master production schedule as the plant's promise ledger. Frozen zones and why they exist.", "src": "NPTEL: Production and Operations Management"},
-        {"n": 5, "t": "Inventory management", "tier": 3, "scope": "EOQ derived and then handled with care; safety stock from service levels; ABC classification. Holding-cost honesty. The same mathematics that will price spare parts in Year 4.", "src": "NPTEL: Production and Operations Management"},
-        {"n": 6, "t": "MRP and ERP logic", "tier": 3, "scope": "Bills of materials, lead-time offsetting, and the MRP explosion worked by hand once. ERP as MRP grown up. Data accuracy as the system's oxygen.", "src": "NPTEL: Production and Operations Management"},
-        {"n": 7, "t": "Shop-floor scheduling", "tier": 3, "scope": "Dispatching rules and their trade-offs; Gantt logic and finite capacity. Sequence-dependent setups — the changeover matrix. Why the schedule is always wrong and still necessary.", "src": "NPTEL: Production and Operations Management"},
-        {"n": 8, "t": "Line balancing", "tier": 3, "scope": "Precedence diagrams, station assignment, and balance efficiency. Rebalancing for demand changes. The packaging-line application: staffing a KDD-style line to takt.", "src": "Groover, assembly-line chapters", "kuwait": "KDD / Petra"},
-        {"n": 9, "t": "Maintenance in the production plan", "tier": 3, "scope": "Planned windows, opportunistic maintenance, and shutdown coordination as scheduling problems. The production–maintenance negotiation formalized. Availability commitments read from both sides of the table.", "src": "NPTEL: Production and Operations Management; SMRP framework"},
-        {"n": 10, "t": "Performance measurement", "tier": 3, "scope": "Schedule adherence, throughput, WIP, and lead time as a coherent measure set. Little's law derived and used. The metrics OEE will join in Year 4.", "src": "NPTEL: Production and Operations Management"},
-        {"n": 11, "t": "Planning case study", "tier": 3, "scope": "A multi-product line planned through one quarter: forecast, MPS, MRP run, schedule, and a maintenance-window negotiation. Deliverables in planner's formats. The course's tools used as one system.", "src": "NPTEL: Production and Operations Management"}
+        {
+          "n": 1,
+          "t": "Production systems and layouts",
+          "tier": 3,
+          "scope": "Job shop, batch, line, and continuous production with their planning personalities. Layout types and material flow. Where each Kuwait anchor plant sits on this spectrum.",
+          "src": "Groover, production systems chapters"
+        },
+        {
+          "n": 2,
+          "t": "Demand forecasting",
+          "tier": 3,
+          "scope": "Moving averages and exponential smoothing with error tracking. Seasonality in outline. Forecasts as inputs to be doubted, not truths.",
+          "src": "NPTEL: Production and Operations Management"
+        },
+        {
+          "n": 3,
+          "t": "Capacity and takt",
+          "tier": 3,
+          "scope": "Design versus effective capacity; utilization and efficiency separated. Takt time computed and confronted with cycle times. Bottleneck identification as the first act of scheduling.",
+          "src": "NPTEL: Production and Operations Management"
+        },
+        {
+          "n": 4,
+          "t": "Aggregate planning and MPS",
+          "tier": 3,
+          "scope": "Level versus chase strategies costed. The master production schedule as the plant's promise ledger. Frozen zones and why they exist.",
+          "src": "NPTEL: Production and Operations Management"
+        },
+        {
+          "n": 5,
+          "t": "Inventory management",
+          "tier": 3,
+          "scope": "EOQ derived and then handled with care; safety stock from service levels; ABC classification. Holding-cost honesty. The same mathematics that will price spare parts in Year 4.",
+          "src": "NPTEL: Production and Operations Management"
+        },
+        {
+          "n": 6,
+          "t": "MRP and ERP logic",
+          "tier": 3,
+          "scope": "Bills of materials, lead-time offsetting, and the MRP explosion worked by hand once. ERP as MRP grown up. Data accuracy as the system's oxygen.",
+          "src": "NPTEL: Production and Operations Management"
+        },
+        {
+          "n": 7,
+          "t": "Shop-floor scheduling",
+          "tier": 3,
+          "scope": "Dispatching rules and their trade-offs; Gantt logic and finite capacity. Sequence-dependent setups — the changeover matrix. Why the schedule is always wrong and still necessary.",
+          "src": "NPTEL: Production and Operations Management"
+        },
+        {
+          "n": 8,
+          "t": "Line balancing",
+          "tier": 3,
+          "scope": "Precedence diagrams, station assignment, and balance efficiency. Rebalancing for demand changes. The packaging-line application: staffing a KDD-style line to takt.",
+          "src": "Groover, assembly-line chapters",
+          "kuwait": "KDD / Petra"
+        },
+        {
+          "n": 9,
+          "t": "Maintenance in the production plan",
+          "tier": 3,
+          "scope": "Planned windows, opportunistic maintenance, and shutdown coordination as scheduling problems. The production–maintenance negotiation formalized. Availability commitments read from both sides of the table.",
+          "src": "NPTEL: Production and Operations Management; SMRP framework"
+        },
+        {
+          "n": 10,
+          "t": "Performance measurement",
+          "tier": 3,
+          "scope": "Schedule adherence, throughput, WIP, and lead time as a coherent measure set. Little's law derived and used. The metrics OEE will join in Year 4.",
+          "src": "NPTEL: Production and Operations Management"
+        },
+        {
+          "n": 11,
+          "t": "Planning case study",
+          "tier": 3,
+          "scope": "A multi-product line planned through one quarter: forecast, MPS, MRP run, schedule, and a maintenance-window negotiation. Deliverables in planner's formats. The course's tools used as one system.",
+          "src": "NPTEL: Production and Operations Management"
+        }
       ]
     }
   ]

@@ -132,6 +132,17 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
+- Preview questions ("preview" field, rendered above Taught-from): 60/522 —
+  Core 60 complete. Remaining batches in order: y1s1, y1s2, y2s1, y2s2,
+  y3s1, y3s2, y4s1, y4s2 (Tier-3 lessons only; Core-60 already done).
+  Rules: original wording, 2 conceptual questions per Tier-3 lesson,
+  numeric micro-problems on Core-60, match the lesson scope + cited source,
+  no invented plant data.
+- Source registry: data/sources.json — every URL verified live before entry
+  (OCW course pages, NPTEL course pages, Open Library work pages,
+  smrp.org, nebosh.org.uk). Sources without verifiable official URLs stay
+  plain text. build.py linkify() renders them.
+
 - Tier 1 done: y1s1-mp1-02 (casting solidification), y1s1-mp1-03 (casting
   practice, quality & defects).
 - Tier 2 done (batch 1, A-block): see ledger comments in data/y1s1.json and

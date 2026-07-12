@@ -8,6 +8,7 @@
   --line:#dcddd9;
   --line-soft:#e9eae6;
   --ember:#b0521c;
+  --maroon:#8C1D40;
   --board:#1e2125;
   --board-ink:#e9e7e0;
   --board-line:#3a3e45;
@@ -39,10 +40,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offs
 }
 .wordmark{
   font-family:var(--sans);font-weight:700;font-size:13px;
-  letter-spacing:.34em;text-transform:uppercase;color:var(--ink);
+  letter-spacing:.34em;text-transform:uppercase;color:var(--maroon);
   text-decoration:none;white-space:nowrap;
 }
 .wordmark span{color:var(--steel)}
+.fork{height:.8em;width:auto;vertical-align:-.06em;color:var(--ember);display:inline-block}
+.fork path,.fork rect{fill:currentColor}
+footer .mark .mn{color:var(--maroon)}
 .hd nav{display:flex;gap:26px;flex-wrap:wrap}
 .hd nav a{
   font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
@@ -235,6 +239,14 @@ figcaption .notice b{color:var(--ember);font-weight:600;letter-spacing:.12em;fon
 .lesson-row .scope{font-size:15px;color:#33373c;margin:0 0 10px;max-width:75ch}
 .lesson-row .src{font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;color:var(--steel)}
 .lesson-row .src b{letter-spacing:.14em;text-transform:uppercase;font-size:10.5px}
+.lesson-row .src a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+.lesson-row .src a:hover{border-color:var(--ember);color:var(--ember)}
+ul.plain a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+ul.plain a:hover{border-color:var(--ember);color:var(--ember)}
+.preview{border:1px solid var(--line-soft);border-left:3px solid var(--ember);background:#f6f5f0;padding:14px 18px 12px;margin:0 0 14px;max-width:75ch}
+.preview b{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember)}
+.preview ul{margin:8px 0 0;padding-left:18px}
+.preview li{font-size:14px;line-height:1.6;color:#33373c;margin:4px 0}
 .badge{display:inline-block;font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:3px 9px;margin-left:10px;vertical-align:2px}
 .badge.t1{background:var(--ink);color:var(--paper)}
 .badge.t2{border:1px solid var(--ember);color:var(--ember)}
