@@ -1,0 +1,123 @@
+{
+  "id": "y4s2",
+  "title": "Year 4 · Semester 2",
+  "courses": [
+    {
+      "id": "smart-manufacturing",
+      "code": "SMF 451",
+      "title": "Smart Manufacturing & Digital Twin",
+      "summary": "Industry 4.0 without the brochure: data architectures, digital-twin levels, simulation, and predictive analytics — evaluated with an engineer's skepticism and a maintenance career's use cases.",
+      "taught_from": ["NPTEL: Industry 4.0 and Industrial Internet of Things-family courses (nptel.ac.in)"],
+      "lessons": [
+        {"n": 1, "t": "Industry 4.0 taxonomy", "tier": 3, "scope": "The technology cluster named and sorted: connectivity, data, analytics, autonomy. Maturity models used as maps, not scorecards. Separating what is deployed from what is marketed.", "src": "NPTEL: Industry 4.0 courses"},
+        {"n": 2, "t": "Manufacturing data architecture", "tier": 3, "scope": "From sensor to historian to lake: the data pipeline with its quality gates. Context — asset hierarchies and event framing — as the expensive part. Why analytics projects die of data preparation.", "src": "NPTEL: Industry 4.0 courses"},
+        {"n": 3, "t": "Digital twin levels", "tier": 3, "scope": "Descriptive, diagnostic, predictive, and prescriptive twins distinguished by what they can answer. Asset versus process twins. An honest inventory of what each level costs to build and keep true.", "src": "NPTEL: Industry 4.0 courses"},
+        {"n": 4, "t": "Simulation of production systems", "tier": 3, "scope": "Discrete-event simulation for lines and buffers; validation against measured cycle data. Experiments on the model instead of the plant. The packaging line simulated for a debottlenecking decision.", "src": "NPTEL: Industry 4.0 courses", "kuwait": "KDD / Petra"},
+        {"n": 5, "t": "Predictive maintenance analytics", "tier": 3, "scope": "Feature extraction from vibration and process data; models from thresholds to learning methods in outline. Validation against labeled failures — the scarce commodity. Where analytics augments and where it hallucinates.", "src": "NPTEL: Industry 4.0 courses"},
+        {"n": 6, "t": "Machine vision and quality 4.0", "tier": 3, "scope": "Cameras, lighting, and defect detection on moving product. Classical vision versus learned models. False-reject economics on a high-speed line.", "src": "NPTEL: Industry 4.0 courses"},
+        {"n": 7, "t": "Additive and digital workflows", "tier": 3, "scope": "Scan-to-print for obsolete spares; digital part inventories. Qualification questions for load-bearing prints. The maintenance storeroom's digital future, soberly assessed.", "src": "NPTEL: Industry 4.0; Groover, additive chapter"},
+        {"n": 8, "t": "Cybersecurity for smart plants", "tier": 3, "scope": "Expanded attack surface of connected equipment; segmentation and monitoring revisited at plant scale. Incident response for OT. Security as a precondition, not a feature.", "src": "NPTEL: Industry 4.0 courses"},
+        {"n": 9, "t": "Economics of digitalization", "tier": 3, "scope": "Pilot-to-scale economics; the graveyard of proofs-of-concept explained. Benefits tracked against baselines the finance department accepts. Engineering economics applied to the smartest buzzwords.", "src": "NPTEL: Industry 4.0; ECO 406 foundations"},
+        {"n": 10, "t": "Smart manufacturing case evaluation", "tier": 3, "scope": "Evaluate a vendor's condition-monitoring-plus-analytics proposal for a representative plant: architecture, claims, gaps, and a pilot design with success criteria. The skeptical adoption skill this decade rewards.", "src": "Course synthesis"}
+      ]
+    },
+    {
+      "id": "maintenance-planning",
+      "code": "MPL 452",
+      "title": "Maintenance Planning, Turnarounds & CMMS",
+      "summary": "The maintenance planning engineer's complete toolkit: work management flow, job plans, scheduling, backlog and KPIs, spares, CMMS/SAP PM, turnarounds, and budgets — all eight Core-60 planning lessons in one course.",
+      "taught_from": ["SMRP CMRP framework (practitioner curriculum; framework, not a textbook)", "NPTEL: operations and project management content (nptel.ac.in)"],
+      "lessons": [
+        {"n": 1, "t": "The work management flow", "tier": 2, "core60": "F1", "scope": "Identify, plan, schedule, execute, close, analyze — the loop drawn as the maintenance department's operating system, with role boundaries (requester, planner, scheduler, supervisor) made explicit. Where the loop breaks in real plants: unplanned work injection, closure without data. The map every other planning lesson locates itself on.", "src": "SMRP CMRP framework"},
+        {"n": 2, "t": "Work identification and prioritization", "tier": 3, "scope": "Notification quality standards; screening and duplicate control. Priority set by criticality and consequence, not by who shouts. The gatekeeping function that protects the schedule.", "src": "SMRP CMRP framework"},
+        {"n": 3, "t": "Job planning", "tier": 2, "core60": "F2", "scope": "The planned job package: scoped steps, labor and duration estimates, parts, tools, permits, and drawings — assembled before the job needs them. Estimating methods and the feedback loop from actuals. The condensed example: a pump seal-replacement package built line by line, the planner interview's favorite question.", "src": "SMRP CMRP framework", "kuwait": "EQUATE"},
+        {"n": 4, "t": "Scheduling", "tier": 2, "core60": "F3", "scope": "Weekly scheduling against capacity: crew hours netted for leave and standing work, jobs committed by priority and readiness. Schedule compliance measured without gaming. The coordination meeting run properly — operations equipment release as the binding constraint.", "src": "SMRP CMRP framework"},
+        {"n": 5, "t": "Backlog and maintenance KPIs", "tier": 2, "core60": "F4", "scope": "Backlog in crew-weeks: healthy ranges, aging analysis, and ready-versus-total distinction. The planning KPI set — schedule compliance, planned-work ratio, PM compliance, wrench time — each defined with its known manipulations. Reading a maintenance department's health from five numbers.", "src": "SMRP CMRP framework"},
+        {"n": 6, "t": "Spare parts and BOMs", "tier": 2, "core60": "F5", "scope": "Equipment bills of materials as the planner's index; criticality-driven stocking policies, min/max arithmetic from the inventory course, and the insurance-spare decision. Storeroom discipline: bin accuracy, preservation, kitting. The spares lesson EQUATE-scale plants staff whole teams for.", "src": "SMRP CMRP framework; PPC 356 foundations", "kuwait": "EQUATE"},
+        {"n": 7, "t": "CMMS and SAP PM", "tier": 2, "core60": "F6", "scope": "The CMMS data model: functional locations, equipment, task lists, work orders, notifications — SAP PM's names used since the Gulf runs on them. Master-data quality as the system's foundation; history codes that make analysis possible. What 'we have SAP but no data' means and how it happened.", "src": "SMRP CMRP framework"},
+        {"n": 8, "t": "Turnarounds", "tier": 2, "core60": "F7", "scope": "The turnaround as a project: scope freeze, worklist challenge, long-lead procurement, and the CPM schedule at thousands of activities. Execution control: progress, extra work, and the discovery-work process. Why turnarounds overrun — scope, always scope — and the premium the Gulf pays planners who prevent it.", "src": "SMRP CMRP framework; NPTEL: Project Management", "kuwait": "EQUATE"},
+        {"n": 9, "t": "Maintenance budgeting", "tier": 2, "core60": "F8", "scope": "Zero-based versus historical budgeting; the budget built from PM programs, predicted corrective load, and turnaround accruals. Cost tracking by equipment and failure code — where the reliability engineer's Pareto comes from. Defending a budget with failure data instead of adjectives.", "src": "SMRP CMRP framework; ECO 406 foundations"},
+        {"n": 10, "t": "Shutdown execution management", "tier": 3, "scope": "Daily battle rhythm: progress capture, lookaheads, and constraint clearing. Field coordination of contractors — the HEISCO-scale interface. Handback and startup sequencing with operations.", "src": "SMRP framework; NPTEL: Project Management", "kuwait": "HEISCO"},
+        {"n": 11, "t": "Contractor and service management", "tier": 3, "scope": "Scoping service contracts; unit-rate versus lump-sum trade-offs. Contractor performance measured like internal crews. The owner's-engineer skill of buying maintenance work well.", "src": "SMRP framework"},
+        {"n": 12, "t": "Planning simulation capstone", "tier": 3, "scope": "A four-week simulated plant: notifications arrive, you plan, schedule, and report KPIs; then a mini-turnaround is planned end to end. The full course exercised as one continuous role-play. Portfolio output: a complete planner's package.", "src": "Course synthesis"}
+      ]
+    },
+    {
+      "id": "pressure-equipment",
+      "code": "PEP 453",
+      "title": "Pressure Equipment & Piping",
+      "summary": "The hardware that holds the pressure: vessel and piping construction logic, materials and joints revisited at code level, flanges and gaskets, relief devices, and inspection/repair thinking for static equipment.",
+      "taught_from": ["Strength of Materials (SOM 201) foundations", "NPTEL: pressure vessel and piping-related courses (nptel.ac.in)"],
+      "lessons": [
+        {"n": 1, "t": "Pressure equipment taxonomy", "tier": 3, "scope": "Vessels, exchangers, boilers, piping, and tanks as regulated equipment classes. Design-code logic in outline: allowable stress and joint efficiency concepts. Why codes exist — written after explosions.", "src": "NPTEL pressure vessel content; SOM 201 foundations"},
+        {"n": 2, "t": "Vessel shells and heads", "tier": 3, "scope": "Thin-wall theory recalled, then thickness logic with corrosion allowance. Head types and their stress behavior. Nozzles and reinforcement in concept.", "src": "SOM 201; NPTEL pressure vessel content"},
+        {"n": 3, "t": "Piping systems and layout", "tier": 3, "scope": "Pipe schedules, fittings, and specs; flexibility and thermal expansion loops from the thermal-stress lesson. Supports: shoes, guides, hangers, springs. Reading a piping isometric fluently.", "src": "NPTEL piping content"},
+        {"n": 4, "t": "Flanged joints and gaskets", "tier": 3, "scope": "Flange classes and facings; gasket selection and seating stress from the bolted-joint lesson. Controlled bolting: sequence, lubrication, and torque versus tension. Why flanges leak in January and how to stop it.", "src": "MDN 251 foundations; NPTEL piping content"},
+        {"n": 5, "t": "Valves as pressure equipment", "tier": 3, "scope": "Gate, globe, check, ball, and butterfly internals; stem sealing and packing. Valve selection by service. Maintenance-relevant failure modes: passing, seizing, packing leaks.", "src": "NPTEL piping content"},
+        {"n": 6, "t": "Overpressure protection", "tier": 3, "scope": "Relief scenarios and device types: spring PSVs, pilot-operated, rupture discs. Set pressure, accumulation, and backpressure concepts. Installation sins: inlet losses and isolated relief paths.", "src": "NPTEL process safety content"},
+        {"n": 7, "t": "Fabrication and welding at code level", "tier": 3, "scope": "The WPS/PQR system recalled under vessel and piping rules; NDT extents and hydrotest logic. Traceability from mill certificate to weld map. The fabrication paper trail HEISCO-scale shops live by.", "src": "WLD 305 foundations", "kuwait": "HEISCO"},
+        {"n": 8, "t": "In-service inspection", "tier": 3, "scope": "Thickness surveys, CML programs, and inspection intervals from the asset-integrity course specialized to vessels and piping. Internal inspection findings and their dispositions. The inspector–engineer interface in practice.", "src": "AIM 402 foundations"},
+        {"n": 9, "t": "Repairs and alterations", "tier": 3, "scope": "Temporary repairs — clamps, wraps — with expiry dates that must be honored; weld repairs and their qualification. Rerating logic in outline. Management of change for pressure equipment.", "src": "NPTEL content; AIM 402 foundations"},
+        {"n": 10, "t": "Failure case studies", "tier": 3, "scope": "Classic vessel and piping failures dissected: brittle fracture, CUI ruptures, dead-leg corrosion, relief-path isolation. Each traced through the lessons that would have prevented it. Institutional memory as curriculum.", "src": "Course synthesis"},
+        {"n": 11, "t": "Static equipment dossier project", "tier": 3, "scope": "For one vessel and its piping circuit: equipment dossier with design data, damage mechanisms, CMLs, relief basis, and repair history template. The record-keeping backbone of integrity work, built once by hand.", "src": "Course synthesis"}
+      ]
+    },
+    {
+      "id": "hse",
+      "code": "HSE 454",
+      "title": "HSE for Industrial Operations",
+      "summary": "NEBOSH-aligned depth on top of Year 2's safety course: risk management systems, process safety, occupational health, environmental control, and the safety leadership expected of engineers in Gulf plants.",
+      "taught_from": ["NPTEL: Industrial Safety Engineering (nptel.ac.in); NEBOSH IGC syllabus alignment (framework, not a textbook)"],
+      "lessons": [
+        {"n": 1, "t": "Safety management systems", "tier": 3, "scope": "Policy, plan, do, check, act — the management-system loop applied to HSE. Leading versus lagging indicators. Why paperwork systems fail without field verification.", "src": "NEBOSH IGC alignment; NPTEL: Industrial Safety"},
+        {"n": 2, "t": "Risk assessment at system level", "tier": 3, "scope": "Suitable-and-sufficient assessment; task-based versus area-based approaches. ALARP reasoning with cost-benefit honesty. Assessment as design input, not filing.", "src": "NEBOSH IGC alignment"},
+        {"n": 3, "t": "Process safety fundamentals", "tier": 3, "scope": "Major-accident hazards distinguished from occupational ones; barriers and the Swiss-cheese picture used precisely. HAZOP participation basics for mechanical engineers. The EQUATE-scale context of process safety.", "src": "NPTEL: Industrial Safety; NEBOSH alignment", "kuwait": "EQUATE"},
+        {"n": 4, "t": "Occupational health", "tier": 3, "scope": "Noise, vibration, dust, and chemical exposure with measurement basics. Hearing conservation and hand-arm vibration for maintenance trades. Health surveillance as long-horizon duty of care.", "src": "NEBOSH IGC alignment"},
+        {"n": 5, "t": "Ergonomics and manual handling", "tier": 3, "scope": "Load assessment and workplace design; the maintenance task's awkward-posture reality. Mechanical aids and job design. Musculoskeletal injury as the trade's chronic epidemic.", "src": "NEBOSH IGC alignment"},
+        {"n": 6, "t": "Environmental management", "tier": 3, "scope": "Emissions, effluents, and waste streams of industrial plants; permits and monitoring in outline. Spill prevention and response. The environmental file an integrity engineer inherits.", "src": "NEBOSH alignment; NPTEL content"},
+        {"n": 7, "t": "Emergency preparedness", "tier": 3, "scope": "Scenario planning, alarm and evacuation systems, and drills that test rather than perform. Fire systems interface with maintenance. Command structure basics for engineers on scene.", "src": "NEBOSH IGC alignment"},
+        {"n": 8, "t": "Contractor and permit interfaces at scale", "tier": 3, "scope": "Multi-employer worksites and the coordination duty; permit systems under turnaround load. Induction and competence verification. Where fabrication-yard practice meets plant rules.", "src": "NEBOSH alignment", "kuwait": "HEISCO"},
+        {"n": 9, "t": "Safety culture and leadership", "tier": 3, "scope": "Culture measured by what happens when nobody watches; just-culture response to error. The engineer's daily leadership: walkdowns, questions, and stopping work. Influence without authority, practiced.", "src": "NEBOSH IGC alignment"},
+        {"n": 10, "t": "HSE case file project", "tier": 3, "scope": "Build the HSE plan for a maintenance shutdown package: risk assessments, permits, isolations, emergency arrangements, and monitoring. The integration exercise that mirrors real pre-shutdown reviews.", "src": "Course synthesis"}
+      ]
+    },
+    {
+      "id": "reliability-2",
+      "code": "REL 455",
+      "title": "Reliability Engineering II",
+      "summary": "From analysis to institution: RCM implementation and root cause analysis in practice, bad-actor elimination, reliability KPIs, and the design of a plant reliability program that survives management changes.",
+      "taught_from": ["NPTEL: Reliability Engineering (nptel.ac.in)", "SMRP CMRP framework (practitioner curriculum)"],
+      "lessons": [
+        {"n": 1, "t": "RCM implementation and RCA", "tier": 2, "core60": "C6", "scope": "Running a real RCM study: team composition, facilitation discipline, and the information the analysis eats. Then root cause analysis as its operational partner — evidence preservation, causal-factor charting, and the 5-why's honest limits. The condensed example: an RCA on a repeat seal failure, from timeline to verified systemic cause.", "src": "NPTEL: Reliability Engineering; SMRP CMRP framework", "kuwait": "EQUATE"},
+        {"n": 2, "t": "Bad-actor programs and reliability KPIs", "tier": 2, "core60": "C7", "scope": "Pareto analysis of failure records to find the vital few; bad-actor teams with closure discipline. The reliability KPI set — MTBF by asset class, top-loss trending, PM effectiveness — built from CMMS data with its coding sins acknowledged. One bad-actor case tracked from data to eliminated failure mode.", "src": "SMRP CMRP framework; NPTEL: Reliability Engineering", "kuwait": "Kuwait Steel"},
+        {"n": 3, "t": "Building a plant reliability program", "tier": 2, "core60": "C8", "scope": "The program architecture: criticality analysis feeding strategy development, PdM routes, planning integration, and a living KPI system — sequenced as a realistic multi-year roadmap with early wins funding later phases. Organizational design: where reliability engineers report and why it matters. The lesson that turns this curriculum into a job plan.", "src": "SMRP CMRP framework"},
+        {"n": 4, "t": "Failure reporting and analysis systems", "tier": 3, "scope": "FRACAS logic: capture, code, analyze, act. Failure coding taxonomies that analysts can actually use. The data pipeline that makes Weibull analysis possible years later.", "src": "NPTEL: Reliability Engineering"},
+        {"n": 5, "t": "Life-cycle reliability: design for maintainability", "tier": 3, "scope": "Reliability input to procurement specs; maintainability reviews of vendor drawings. Access, isolation, and monitoring provisions bought cheaply at design time. The capital-project seat reliability engineers must claim.", "src": "SMRP framework"},
+        {"n": 6, "t": "Spares optimization with reliability data", "tier": 3, "scope": "Failure distributions driving stocking levels; Monte Carlo thinking for insurance spares. Pooling and vendor-held options. The reliability–inventory interface quantified.", "src": "NPTEL: Reliability Engineering; MPL 452 foundations"},
+        {"n": 7, "t": "Operational reliability: procedures and precision", "tier": 3, "scope": "Operating-envelope discipline and startup/shutdown stress; precision-maintenance standards as failure prevention. Operator care integrated with PdM findings. Reliability as everyone's output, engineered.", "src": "SMRP framework"},
+        {"n": 8, "t": "Management of change for reliability", "tier": 3, "scope": "MOC review of modifications for reliability impact; temporary equipment and its expiry. Documentation updates as part of the change, not afterthought. The quiet failures MOC exists to prevent.", "src": "SMRP framework"},
+        {"n": 9, "t": "Economics of reliability programs", "tier": 3, "scope": "Program costs against avoided losses; the credibility problem of counting non-events. Baseline construction and honest attribution. Selling year three of a program in year one's budget cycle.", "src": "SMRP framework; ECO 406 foundations"},
+        {"n": 10, "t": "Reliability program capstone", "tier": 3, "scope": "Design the complete reliability program for a described plant: assessment, roadmap, organization, KPIs, and first-year plan with budget. Presented as to a plant manager. The portfolio piece for reliability-engineer interviews.", "src": "Course synthesis"}
+      ]
+    },
+    {
+      "id": "capstone",
+      "code": "CAP 456",
+      "title": "Capstone — Integrated Plant Project",
+      "summary": "One plant, every course: a semester-long integrated project that takes a described factory from asset register to reliability program, production plan, and improvement portfolio — the curriculum proven as a single working toolkit.",
+      "taught_from": ["Course synthesis across the entire curriculum"],
+      "lessons": [
+        {"n": 1, "t": "The plant brief and asset register", "tier": 3, "scope": "The project plant described: process, equipment, history, and constraints. Building the functional-location hierarchy and asset register. The dataset every later phase consumes.", "src": "Course synthesis"},
+        {"n": 2, "t": "Criticality and strategy assignment", "tier": 3, "scope": "Criticality analysis across the register; maintenance strategy assigned per class with RCM logic on the top tier. Deliverable: the strategy matrix with justifications.", "src": "REL 354/455 foundations"},
+        {"n": 3, "t": "PdM program design", "tier": 3, "scope": "Technology mapping, routes, and intervals for the critical equipment; baseline campaign planned. Deliverable: the condition-monitoring program document.", "src": "CDM 403 foundations"},
+        {"n": 4, "t": "Planning system build", "tier": 3, "scope": "Job plans for the top ten repetitive jobs; weekly scheduling process and KPI definitions. Deliverable: the planner's handbook for this plant.", "src": "MPL 452 foundations"},
+        {"n": 5, "t": "Integrity and inspection plan", "tier": 3, "scope": "Damage mechanisms, CML plans, and relief-device registers for the static equipment. Deliverable: the integrity plan section.", "src": "AIM 402 / PEP 453 foundations"},
+        {"n": 6, "t": "Production plan and OEE baseline", "tier": 3, "scope": "Capacity, takt, and schedule for the product mix; OEE state model defined from available signals. Deliverable: production plan with loss-accounting design.", "src": "PPC 356 / SCA 404 foundations"},
+        {"n": 7, "t": "Improvement portfolio", "tier": 3, "scope": "Three costed improvement cases — one reliability, one changeover, one energy — with NPV and payback. Deliverable: the investment one-pagers.", "src": "LSS 405 / ECO 406 foundations"},
+        {"n": 8, "t": "HSE integration", "tier": 3, "scope": "Risk assessments and permit requirements woven into the job plans and shutdown scope. Deliverable: the HSE annexes that make the plans executable.", "src": "SAF 256 / HSE 454 foundations"},
+        {"n": 9, "t": "The integrated report", "tier": 3, "scope": "All phases assembled into one coherent plant-engineering dossier with an executive summary written last and read first. Internal consistency audit across sections. The document that demonstrates the whole pathway.", "src": "Course synthesis"},
+        {"n": 10, "t": "Defense and portfolio review", "tier": 3, "scope": "The dossier defended against structured challenge: assumptions probed, trade-offs justified. Feedback folded into the final portfolio. The dress rehearsal for the interviews the career section prepares.", "src": "Course synthesis"}
+      ]
+    }
+  ]
+}
