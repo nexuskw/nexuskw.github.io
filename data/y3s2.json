@@ -17,77 +17,121 @@
           "t": "The single degree of freedom system",
           "tier": 3,
           "scope": "Equation of motion from Newton and from energy. Natural frequency's dependence on stiffness and mass — and on nothing else. The model that explains half of all machine vibration behavior.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Why does natural frequency depend on k and m and nothing else?",
+            "Write the SDOF equation of motion from Newton — where does each term come from?"
+          ]
         },
         {
           "n": 2,
           "t": "Damped free vibration",
           "tier": 3,
           "scope": "Viscous damping and the three response regimes. Logarithmic decrement measured from a bump test. Damping ratio as the machine's shock absorber rating.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Extract damping ratio from successive peak amplitudes — what's the method called?",
+            "What separates the three damping regimes physically?"
+          ]
         },
         {
           "n": 3,
           "t": "Harmonically forced vibration",
           "tier": 3,
           "scope": "The frequency response function derived: amplitude and phase versus forcing frequency. Resonance quantified by Q. Why passing through resonance on run-up is survivable but dwelling is not.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Why does dwelling at resonance destroy what a run-up pass-through survives?",
+            "What does Q measure about a resonance?"
+          ]
         },
         {
           "n": 4,
           "t": "Rotating unbalance and whirl",
           "tier": 3,
           "scope": "Unbalance forcing derived from eccentric mass; response above and below critical speed. The phase flip through resonance. First contact with rotor dynamics language.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Above its critical speed, where does a rotor's mass center ride, and why is that calmer?",
+            "What does the 180° phase flip through a critical tell an analyst?"
+          ]
         },
         {
           "n": 5,
           "t": "Support motion and transmissibility",
           "tier": 3,
           "scope": "Base-excited systems and force transmissibility derived. The isolation region above √2 times natural frequency. Why soft mounts protect and when they betray.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Why does isolation only begin above √2 times the natural frequency?",
+            "When does adding damping worsen isolation?"
+          ]
         },
         {
           "n": 6,
           "t": "Vibration isolation design",
           "tier": 3,
           "scope": "Isolator selection: static deflection, natural frequency, damping trade-offs. Inertia blocks and their sizing logic. A compressor installation isolated on paper.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Why does isolator static deflection encode its natural frequency?",
+            "What does an inertia block actually add?"
+          ]
         },
         {
           "n": 7,
           "t": "Two degrees of freedom and mode shapes",
           "tier": 3,
           "scope": "Coupled equations, natural frequencies, and mode shapes solved via the eigenproblem promised in Math II. Beating between close modes. The concept structure for all modal analysis.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "What is a mode shape, in one sentence?",
+            "Why do two close natural frequencies produce beating?"
+          ]
         },
         {
           "n": 8,
           "t": "Multi-DOF and continuous systems in outline",
           "tier": 3,
           "scope": "Modal superposition as the organizing idea. Beam and shaft natural frequencies from standard results. Why long rotors have families of criticals.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "What does modal superposition claim about complex vibration?",
+            "Why do long rotors have families of critical speeds?"
+          ]
         },
         {
           "n": 9,
           "t": "Torsional vibration",
           "tier": 3,
           "scope": "Shaft-train torsional models; natural frequencies of two- and three-inertia systems. Excitation from VFDs and reciprocating machines. The invisible vibration that breaks couplings.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Why is torsional vibration invisible to casing measurements?",
+            "What excites torsional modes in VFD-driven trains?"
+          ]
         },
         {
           "n": 10,
           "t": "Measurement preview: sensors and signals",
           "tier": 3,
           "scope": "Accelerometer, velocity, and displacement measurement physics; integration between them. Mounting effects on usable frequency range. The hardware bridge to Year 4's analysis course.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Why does accelerometer mounting set the usable frequency ceiling?",
+            "Integrating acceleration to velocity: what does it amplify?"
+          ]
         },
         {
           "n": 11,
           "t": "Field vibration phenomena tour",
           "tier": 3,
           "scope": "Resonance, beats, looseness nonlinearity, and self-excited whirl shown as measured signatures. Each tied back to its lesson's mathematics. The course's theory validated against plant reality.",
-          "src": "NPTEL: Mechanical Vibrations"
+          "src": "NPTEL: Mechanical Vibrations",
+          "preview": [
+            "Match beats, looseness, and whirl to their measured signatures.",
+            "Which lesson's mathematics explains each signature you saw?"
+          ]
         }
       ]
     },
@@ -105,7 +149,11 @@
           "t": "The process control loop end to end",
           "tier": 3,
           "scope": "Sensor, transmitter, controller, and final element as one signal chain. Loop drawings versus P&IDs. Every element's failure mode inventoried.",
-          "src": "NPTEL: Process Control"
+          "src": "NPTEL: Process Control",
+          "preview": [
+            "Trace a level loop end to end: name every element's failure mode.",
+            "Loop drawing versus P&ID: what does each give the troubleshooter?"
+          ]
         },
         {
           "n": 2,
@@ -126,28 +174,44 @@
           "t": "Control valves",
           "tier": 3,
           "scope": "Globe, ball, and butterfly bodies; inherent versus installed characteristic derived from the pressure-ratio argument. Cv sizing in outline; cavitation and flashing in valves. Positioners and their diagnostics.",
-          "src": "NPTEL: Process Control"
+          "src": "NPTEL: Process Control",
+          "preview": [
+            "Inherent versus installed valve characteristic: what bends the curve?",
+            "Why does an equal-percentage valve suit most flow loops?"
+          ]
         },
         {
           "n": 4,
           "t": "Transmitter engineering in the field",
           "tier": 3,
           "scope": "Ranging, elevation/suppression, and impulse-line practice consolidated. Smart transmitter diagnostics used properly. Calibration versus validation on live plants.",
-          "src": "NPTEL: Industrial Instrumentation"
+          "src": "NPTEL: Industrial Instrumentation",
+          "preview": [
+            "Elevation versus suppression in DP level: when does each apply?",
+            "Calibration versus validation on a live plant: what differs?"
+          ]
         },
         {
           "n": 5,
           "t": "Loop tuning in practice",
           "tier": 3,
           "scope": "Process identification from bump tests: gain, time constant, dead time. Lambda and reaction-curve tuning applied to level, flow, and temperature archetypes. Dead time as the real enemy, named.",
-          "src": "NPTEL: Process Control"
+          "src": "NPTEL: Process Control",
+          "preview": [
+            "From a bump test, extract gain, time constant, and dead time.",
+            "Why is dead time the real enemy of tight control?"
+          ]
         },
         {
           "n": 6,
           "t": "Multiloop structures",
           "tier": 3,
           "scope": "Cascade, ratio, and feedforward — each derived from a disturbance argument. Split-range and override control where hardware demands it. Reading these structures off a P&ID.",
-          "src": "NPTEL: Process Control"
+          "src": "NPTEL: Process Control",
+          "preview": [
+            "When does cascade control earn its complexity?",
+            "What disturbance does feedforward kill that feedback cannot?"
+          ]
         },
         {
           "n": 7,
@@ -155,35 +219,55 @@
           "tier": 3,
           "scope": "DCS versus PLC/SCADA delineated honestly. Controllers, I/O, and HMI stations in a process-plant architecture. Alarm management at plant scale — the rationalization discipline.",
           "src": "NPTEL: Process Control",
-          "kuwait": "EQUATE"
+          "kuwait": "EQUATE",
+          "preview": [
+            "DCS versus PLC/SCADA: what genuinely differs?",
+            "What does alarm rationalization remove and preserve?"
+          ]
         },
         {
           "n": 8,
           "t": "Safety instrumented systems",
           "tier": 3,
           "scope": "The protection layers above control; SIS separated from BPCS by design. SIL concepts and proof testing in outline. Trip logic read from cause-and-effect diagrams.",
-          "src": "NPTEL: Process Control"
+          "src": "NPTEL: Process Control",
+          "preview": [
+            "Why must SIS be independent of the BPCS?",
+            "What does a proof test prove?"
+          ]
         },
         {
           "n": 9,
           "t": "Analyzers and special measurements",
           "tier": 3,
           "scope": "pH, conductivity, and gas analyzers in outline; sample systems as the real failure point. Analyzer maintenance economics. Where analyzers gate product release.",
-          "src": "NPTEL: Industrial Instrumentation"
+          "src": "NPTEL: Industrial Instrumentation",
+          "preview": [
+            "Why do sample systems fail more than analyzers?",
+            "What does analyzer dead time do to control?"
+          ]
         },
         {
           "n": 10,
           "t": "Instrument maintenance and reliability",
           "tier": 3,
           "scope": "Calibration programs, drift trending, and smart diagnostics as condition monitoring for instruments. Instrument criticality ranking. The instrument technician–reliability engineer interface.",
-          "src": "NPTEL: Industrial Instrumentation"
+          "src": "NPTEL: Industrial Instrumentation",
+          "preview": [
+            "What makes instrument drift a condition-monitoring signal?",
+            "Rank instrument criticality: which loops earn tight calibration intervals?"
+          ]
         },
         {
           "n": 11,
           "t": "Loop package project",
           "tier": 3,
           "scope": "For one control loop: P&ID extract, instrument datasheets, valve sizing sketch, tuning plan, and test procedure. The document set of a small management-of-change. Instrumentation practiced as engineering, not adjustment.",
-          "src": "NPTEL: Process Control"
+          "src": "NPTEL: Process Control",
+          "preview": [
+            "In the loop package, why does the valve sizing sketch precede tuning?",
+            "What does the test procedure verify that commissioning often skips?"
+          ]
         }
       ]
     },
@@ -201,42 +285,66 @@
           "t": "Robot anatomy and types",
           "tier": 3,
           "scope": "Articulated, SCARA, delta, and cartesian architectures with their sweet spots. Axes, envelopes, and payload ratings read from datasheets. Repeatability versus accuracy — the specification that matters.",
-          "src": "NPTEL: Industrial Robotics"
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Repeatability versus accuracy: which does a robot datasheet promise?",
+            "Match SCARA, delta, and articulated arms to their natural tasks."
+          ]
         },
         {
           "n": 2,
           "t": "Kinematics fundamentals",
           "tier": 3,
           "scope": "Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mathematics to respect the controller.",
-          "src": "NPTEL: Industrial Robotics"
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "What is a singularity, and why does the wrist flip near one?",
+            "Forward versus inverse kinematics: which is the hard direction, and why?"
+          ]
         },
         {
           "n": 3,
           "t": "Drives, encoders, and calibration",
           "tier": 3,
           "scope": "Servo axes, gearing, and absolute encoders; mastering and calibration procedures. Backlash and its symptoms in path quality. The maintenance anatomy of an arm.",
-          "src": "NPTEL: Industrial Robotics"
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Why do absolute encoders remove homing?",
+            "What does mastering restore after a crash?"
+          ]
         },
         {
           "n": 4,
           "t": "End effectors and tooling",
           "tier": 3,
           "scope": "Grippers — pneumatic, servo, vacuum, magnetic — matched to product. Tool changers and dress packs, the wear items nobody budgets. Payload and center-of-gravity arithmetic.",
-          "src": "NPTEL: Industrial Robotics"
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Why does payload include the gripper and its cable dress?",
+            "Vacuum versus servo gripper: pick per product and defend."
+          ]
         },
         {
           "n": 5,
           "t": "Programming and teaching",
           "tier": 3,
           "scope": "Jogging, frames, and point teaching; motion types and speed/approximation trade-offs. Program structure for cells with variants. Offline programming in outline.",
-          "src": "NPTEL: Industrial Robotics"
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "What does motion blending (approximation) trade for cycle time?",
+            "Why teach frames instead of points?"
+          ]
         },
         {
           "n": 6,
           "t": "Robot safety systems",
           "tier": 3,
           "scope": "Guarding, light curtains, and safety-rated monitored stops; collaborative modes with their real limits. Risk assessment for a cell. Safety as the cell's first design input.",
-          "src": "NPTEL: Industrial Robotics"
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "What does a safety-rated monitored stop guarantee?",
+            "Why are collaborative speeds so low in practice?"
+          ]
         },
         {
           "n": 7,
@@ -244,7 +352,11 @@
           "tier": 3,
           "scope": "End-of-line palletizing patterns and cycle-time budgets. Conveyor tracking basics. The robot cell most likely to appear at the end of a KDD-style packaging line.",
           "src": "NPTEL: Industrial Robotics",
-          "kuwait": "KDD / Petra"
+          "kuwait": "KDD / Petra",
+          "preview": [
+            "What makes palletizing patterns a solved problem — and mixed cases not?",
+            "Why does conveyor tracking need an encoder?"
+          ]
         },
         {
           "n": 8,
@@ -252,21 +364,33 @@
           "tier": 3,
           "scope": "Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural work of the Kirby kind.",
           "src": "NPTEL: Industrial Robotics",
-          "kuwait": "Kirby Building Systems"
+          "kuwait": "Kirby Building Systems",
+          "preview": [
+            "What does a positioner add to a welding cell's reach and quality?",
+            "Why is TCP calibration the weld path's foundation?"
+          ]
         },
         {
           "n": 9,
           "t": "Cell integration",
           "tier": 3,
           "scope": "The robot inside the PLC's state machine: handshakes, permissives, and fault recovery paths. Peripheral devices and fixturing. Cycle-time analysis against the line's takt.",
-          "src": "NPTEL: Industrial Robotics"
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Design the PLC–robot handshake for a jam: who recovers whom?",
+            "Why does fixturing rank above the robot in cell accuracy?"
+          ]
         },
         {
           "n": 10,
           "t": "Robot maintenance and diagnostics",
           "tier": 3,
           "scope": "Preventive tasks: lubrication, belts, batteries, dress-pack inspection. Error logs and drift trends as early warnings. What a robot's reliability program looks like on paper.",
-          "src": "NPTEL: Industrial Robotics"
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Which preventive tasks keep an arm's accuracy — name three.",
+            "What do error logs trend before failures announce themselves?"
+          ]
         }
       ]
     },
@@ -285,14 +409,22 @@
           "t": "Reliability functions",
           "tier": 3,
           "scope": "Reliability, CDF, PDF, and hazard rate defined and interrelated with derivations. The bathtub curve as hazard-rate biography. Reading each function's story from the others.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "Relate R(t), F(t), f(t), and h(t): which pair determines the rest?",
+            "What does the bathtub curve's middle actually claim?"
+          ]
         },
         {
           "n": 2,
           "t": "The exponential model",
           "tier": 3,
           "scope": "Constant hazard rate and its memoryless consequence proven. MTBF's honest meaning under the exponential. Where the model applies — and the electronics-versus-wearout boundary.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "Prove memorylessness for the exponential in one line.",
+            "Why is MTBF alone a misleading purchase criterion?"
+          ]
         },
         {
           "n": 3,
@@ -312,7 +444,11 @@
           "t": "Fitting and interpreting failure data",
           "tier": 3,
           "scope": "Data collection sins: mixed failure modes, missing suspensions, bad timestamps. Goodness of fit with judgment. Confidence bounds that keep conclusions honest.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "Name three data sins that corrupt Weibull fits.",
+            "What do confidence bounds add to a fitted line?"
+          ]
         },
         {
           "n": 5,
@@ -333,7 +469,11 @@
           "t": "Availability and maintainability analysis",
           "tier": 3,
           "scope": "Repairable-system measures; availability from failure and repair distributions. Maintainability as design property — access, modularity, error-proofing. Where MTTR is really spent, measured.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "Availability versus reliability: a machine with poor MTBF but great MTTR — what results?",
+            "Where does maintainability get designed in?"
+          ]
         },
         {
           "n": 7,
@@ -353,7 +493,11 @@
           "t": "Fault tree analysis",
           "tier": 3,
           "scope": "Top events, gates, and minimal cut sets; quantification with basic-event probabilities. FTA versus FMEA — deductive versus inductive. Protective-system failures as the classic application.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "Build a fault tree for 'pump fails to start': first two gates?",
+            "What does a minimal cut set expose?"
+          ]
         },
         {
           "n": 9,
@@ -373,21 +517,33 @@
           "t": "Reliability testing and growth",
           "tier": 3,
           "scope": "Life testing and accelerated testing in outline; reliability growth tracking during commissioning. Burn-in's logic and limits. Evidence standards for 'the fix worked'.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "What does reliability growth tracking during commissioning reveal?",
+            "Burn-in: what does it remove, and from which bathtub region?"
+          ]
         },
         {
           "n": 11,
           "t": "Human factors in reliability",
           "tier": 3,
           "scope": "Maintenance-induced failures: the uncomfortable data. Error-provocative designs and procedures. Designing tasks so the night shift succeeds.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "Why do maintenance-induced failures spike after intrusive PMs?",
+            "Name two error-provocative designs you have met."
+          ]
         },
         {
           "n": 12,
           "t": "Reliability data project",
           "tier": 3,
           "scope": "From a provided failure log: clean, classify, Weibull-fit, model the system, and recommend strategy changes with quantified backing. The full Reliability I toolkit exercised once. Deliverable formatted as a plant engineering report.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "In the data project, what did cleaning change about the conclusion?",
+            "Which recommendation survived the confidence bounds?"
+          ]
         }
       ]
     },
@@ -405,7 +561,11 @@
           "t": "Electrochemistry of corrosion",
           "tier": 3,
           "scope": "Anodes, cathodes, and the corrosion cell derived from half-reactions. Galvanic series versus EMF series — the practical one wins. Corrosion rate units and conversions.",
-          "src": "Callister & Rethwisch, Ch. 17"
+          "src": "Callister & Rethwisch, Ch. 17",
+          "preview": [
+            "Identify anode and cathode in a rusting couple — where does metal leave?",
+            "Why does the galvanic series beat the EMF series for practice?"
+          ]
         },
         {
           "n": 2,
@@ -426,49 +586,77 @@
           "t": "Uniform, galvanic, and crevice corrosion",
           "tier": 3,
           "scope": "The 'benign' uniform mode and when it isn't; galvanic couples with area-ratio arithmetic; crevices as chemistry chambers. Design details that create or kill crevices. Gasket and fastener implications.",
-          "src": "Callister & Rethwisch, Ch. 17"
+          "src": "Callister & Rethwisch, Ch. 17",
+          "preview": [
+            "Why does a small anode with a big cathode corrode catastrophically?",
+            "What makes a crevice its own chemistry chamber?"
+          ]
         },
         {
           "n": 4,
           "t": "Pitting and localized attack",
           "tier": 3,
           "scope": "Pit initiation on passive films; chloride's special villainy. PREN as a stainless selection number. Why pits sink ships that thickness surveys called healthy.",
-          "src": "Callister & Rethwisch, Ch. 17"
+          "src": "Callister & Rethwisch, Ch. 17",
+          "preview": [
+            "Why do pits sink equipment that thickness surveys called healthy?",
+            "What does PREN rank, and what does it ignore?"
+          ]
         },
         {
           "n": 5,
           "t": "Environmentally assisted cracking",
           "tier": 3,
           "scope": "Stress corrosion cracking's three-ingredient recipe; chloride SCC of austenitics; hydrogen embrittlement and sulfide stress cracking in outline. Why EAC failures are sudden and forensic. Materials–environment pairings memorized by the industry.",
-          "src": "Callister & Rethwisch, Ch. 17"
+          "src": "Callister & Rethwisch, Ch. 17",
+          "preview": [
+            "Name SCC's three ingredients and one industrial pairing.",
+            "Why are EAC failures sudden rather than gradual?"
+          ]
         },
         {
           "n": 6,
           "t": "Flow-assisted and mechanical degradation",
           "tier": 3,
           "scope": "Erosion-corrosion, cavitation damage, and fretting. Velocity limits in piping specs explained. The pump-impeller damage gallery interpreted.",
-          "src": "Callister & Rethwisch, Ch. 17"
+          "src": "Callister & Rethwisch, Ch. 17",
+          "preview": [
+            "Erosion-corrosion versus cavitation damage: how do the surfaces differ?",
+            "Why do velocity limits appear in piping specs?"
+          ]
         },
         {
           "n": 7,
           "t": "High-temperature degradation",
           "tier": 3,
           "scope": "Oxidation kinetics and scale protectiveness; sulfidation and fuel-ash attack in outline. Creep–corrosion interactions at furnace conditions. The melt-shop and fired-heater materials problem.",
-          "src": "Callister & Rethwisch, Ch. 17"
+          "src": "Callister & Rethwisch, Ch. 17",
+          "preview": [
+            "What makes an oxide scale protective versus useless?",
+            "Where does creep meet corrosion in a fired heater?"
+          ]
         },
         {
           "n": 8,
           "t": "Coatings and linings",
           "tier": 3,
           "scope": "Surface preparation standards as the real quality variable; coating families and their service envelopes. Inspection: holiday testing and DFT. Coating failure modes read like weld defects.",
-          "src": "Callister & Rethwisch, Ch. 17; NPTEL corrosion content"
+          "src": "Callister & Rethwisch, Ch. 17; NPTEL corrosion content",
+          "preview": [
+            "Why does surface preparation outweigh coating choice?",
+            "What does holiday testing find?"
+          ]
         },
         {
           "n": 9,
           "t": "Cathodic protection and inhibitors",
           "tier": 3,
           "scope": "Sacrificial and impressed-current CP with the electrochemistry made explicit. CP surveys in outline. Inhibitors and chemical treatment where coatings can't go.",
-          "src": "Callister & Rethwisch, Ch. 17"
+          "src": "Callister & Rethwisch, Ch. 17",
+          "preview": [
+            "Sacrificial versus impressed-current CP: when does each fit?",
+            "What does a CP survey actually measure?"
+          ]
         },
         {
           "n": 10,
@@ -476,7 +664,11 @@
           "tier": 3,
           "scope": "Coupons, ER probes, and thickness-monitoring locations; corrosion rates fed into remaining-life arithmetic. Corrosion management systems as documents that direct money. The bridge into Year 4's asset integrity course.",
           "src": "Callister & Rethwisch, Ch. 17",
-          "kuwait": "EQUATE"
+          "kuwait": "EQUATE",
+          "preview": [
+            "Where do you place corrosion coupons for a truthful rate?",
+            "Turn a corrosion rate into remaining life: what arithmetic and what caveats?"
+          ]
         }
       ]
     },
@@ -495,49 +687,77 @@
           "t": "Production systems and layouts",
           "tier": 3,
           "scope": "Job shop, batch, line, and continuous production with their planning personalities. Layout types and material flow. Where each Kuwait anchor plant sits on this spectrum.",
-          "src": "Groover, production systems chapters"
+          "src": "Groover, production systems chapters",
+          "preview": [
+            "Place the six anchor plants on the job-shop-to-continuous spectrum.",
+            "What does layout type do to material travel?"
+          ]
         },
         {
           "n": 2,
           "t": "Demand forecasting",
           "tier": 3,
           "scope": "Moving averages and exponential smoothing with error tracking. Seasonality in outline. Forecasts as inputs to be doubted, not truths.",
-          "src": "NPTEL: Production and Operations Management"
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Why does exponential smoothing chase less than a short moving average?",
+            "What does tracking signal warn about a forecast?"
+          ]
         },
         {
           "n": 3,
           "t": "Capacity and takt",
           "tier": 3,
           "scope": "Design versus effective capacity; utilization and efficiency separated. Takt time computed and confronted with cycle times. Bottleneck identification as the first act of scheduling.",
-          "src": "NPTEL: Production and Operations Management"
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Compute takt for 4,800 units in two 8-h shifts.",
+            "Why does the bottleneck define capacity regardless of averages?"
+          ]
         },
         {
           "n": 4,
           "t": "Aggregate planning and MPS",
           "tier": 3,
           "scope": "Level versus chase strategies costed. The master production schedule as the plant's promise ledger. Frozen zones and why they exist.",
-          "src": "NPTEL: Production and Operations Management"
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Level versus chase: what does each cost in a dairy's demand cycle?",
+            "What does a frozen zone protect?"
+          ]
         },
         {
           "n": 5,
           "t": "Inventory management",
           "tier": 3,
           "scope": "EOQ derived and then handled with care; safety stock from service levels; ABC classification. Holding-cost honesty. The same mathematics that will price spare parts in Year 4.",
-          "src": "NPTEL: Production and Operations Management"
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Derive EOQ's logic without the formula: what balances?",
+            "Why does ABC classification concentrate attention?"
+          ]
         },
         {
           "n": 6,
           "t": "MRP and ERP logic",
           "tier": 3,
           "scope": "Bills of materials, lead-time offsetting, and the MRP explosion worked by hand once. ERP as MRP grown up. Data accuracy as the system's oxygen.",
-          "src": "NPTEL: Production and Operations Management"
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Explode a two-level BOM by hand: what offsets apply?",
+            "Why does inventory accuracy gate MRP's usefulness?"
+          ]
         },
         {
           "n": 7,
           "t": "Shop-floor scheduling",
           "tier": 3,
           "scope": "Dispatching rules and their trade-offs; Gantt logic and finite capacity. Sequence-dependent setups — the changeover matrix. Why the schedule is always wrong and still necessary.",
-          "src": "NPTEL: Production and Operations Management"
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Compare SPT and EDD dispatching on lateness.",
+            "Why do sequence-dependent setups wreck naive schedules?"
+          ]
         },
         {
           "n": 8,
@@ -545,28 +765,44 @@
           "tier": 3,
           "scope": "Precedence diagrams, station assignment, and balance efficiency. Rebalancing for demand changes. The packaging-line application: staffing a KDD-style line to takt.",
           "src": "Groover, assembly-line chapters",
-          "kuwait": "KDD / Petra"
+          "kuwait": "KDD / Petra",
+          "preview": [
+            "Balance a 5-station line: what does efficiency measure?",
+            "Where does rebalancing come from when demand shifts?"
+          ]
         },
         {
           "n": 9,
           "t": "Maintenance in the production plan",
           "tier": 3,
           "scope": "Planned windows, opportunistic maintenance, and shutdown coordination as scheduling problems. The production–maintenance negotiation formalized. Availability commitments read from both sides of the table.",
-          "src": "NPTEL: Production and Operations Management; SMRP framework"
+          "src": "NPTEL: Production and Operations Management; SMRP framework",
+          "preview": [
+            "Why are maintenance windows a scheduling negotiation, not a request?",
+            "What does opportunistic maintenance require from planning?"
+          ]
         },
         {
           "n": 10,
           "t": "Performance measurement",
           "tier": 3,
           "scope": "Schedule adherence, throughput, WIP, and lead time as a coherent measure set. Little's law derived and used. The metrics OEE will join in Year 4.",
-          "src": "NPTEL: Production and Operations Management"
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "State Little's law and one plant use.",
+            "Why does WIP hide problems?"
+          ]
         },
         {
           "n": 11,
           "t": "Planning case study",
           "tier": 3,
           "scope": "A multi-product line planned through one quarter: forecast, MPS, MRP run, schedule, and a maintenance-window negotiation. Deliverables in planner's formats. The course's tools used as one system.",
-          "src": "NPTEL: Production and Operations Management"
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "In the case, what broke first: forecast, capacity, or schedule?",
+            "Which maintenance window did you defend, and with what argument?"
+          ]
         }
       ]
     }

@@ -16,21 +16,33 @@
           "t": "Industry 4.0 taxonomy",
           "tier": 3,
           "scope": "The technology cluster named and sorted: connectivity, data, analytics, autonomy. Maturity models used as maps, not scorecards. Separating what is deployed from what is marketed.",
-          "src": "NPTEL: Industry 4.0 courses"
+          "src": "NPTEL: Industry 4.0 courses",
+          "preview": [
+            "Sort connectivity, data, analytics, autonomy: which layer fails first in practice?",
+            "Deployed versus marketed: name one test that separates them."
+          ]
         },
         {
           "n": 2,
           "t": "Manufacturing data architecture",
           "tier": 3,
           "scope": "From sensor to historian to lake: the data pipeline with its quality gates. Context — asset hierarchies and event framing — as the expensive part. Why analytics projects die of data preparation.",
-          "src": "NPTEL: Industry 4.0 courses"
+          "src": "NPTEL: Industry 4.0 courses",
+          "preview": [
+            "Why does context (hierarchy, event framing) cost more than storage?",
+            "Where do analytics projects actually die, and why?"
+          ]
         },
         {
           "n": 3,
           "t": "Digital twin levels",
           "tier": 3,
           "scope": "Descriptive, diagnostic, predictive, and prescriptive twins distinguished by what they can answer. Asset versus process twins. An honest inventory of what each level costs to build and keep true.",
-          "src": "NPTEL: Industry 4.0 courses"
+          "src": "NPTEL: Industry 4.0 courses",
+          "preview": [
+            "Distinguish the four twin levels by the question each answers.",
+            "What does keeping a twin true cost, ongoing?"
+          ]
         },
         {
           "n": 4,
@@ -38,49 +50,77 @@
           "tier": 3,
           "scope": "Discrete-event simulation for lines and buffers; validation against measured cycle data. Experiments on the model instead of the plant. The packaging line simulated for a debottlenecking decision.",
           "src": "NPTEL: Industry 4.0 courses",
-          "kuwait": "KDD / Petra"
+          "kuwait": "KDD / Petra",
+          "preview": [
+            "What validates a discrete-event model before you trust its experiments?",
+            "Why simulate the buffer sizes rather than argue about them?"
+          ]
         },
         {
           "n": 5,
           "t": "Predictive maintenance analytics",
           "tier": 3,
           "scope": "Feature extraction from vibration and process data; models from thresholds to learning methods in outline. Validation against labeled failures — the scarce commodity. Where analytics augments and where it hallucinates.",
-          "src": "NPTEL: Industry 4.0 courses"
+          "src": "NPTEL: Industry 4.0 courses",
+          "preview": [
+            "Why are labeled failures the scarce commodity of PdM analytics?",
+            "What can a threshold do that a learned model cannot — and vice versa?"
+          ]
         },
         {
           "n": 6,
           "t": "Machine vision and quality 4.0",
           "tier": 3,
           "scope": "Cameras, lighting, and defect detection on moving product. Classical vision versus learned models. False-reject economics on a high-speed line.",
-          "src": "NPTEL: Industry 4.0 courses"
+          "src": "NPTEL: Industry 4.0 courses",
+          "preview": [
+            "Why does lighting beat algorithms in machine vision?",
+            "What does a false reject cost on a high-speed line?"
+          ]
         },
         {
           "n": 7,
           "t": "Additive and digital workflows",
           "tier": 3,
           "scope": "Scan-to-print for obsolete spares; digital part inventories. Qualification questions for load-bearing prints. The maintenance storeroom's digital future, soberly assessed.",
-          "src": "NPTEL: Industry 4.0; Groover, additive chapter"
+          "src": "NPTEL: Industry 4.0; Groover, additive chapter",
+          "preview": [
+            "What qualification questions gate a printed load-bearing spare?",
+            "Scan-to-print: where does the accuracy chain break?"
+          ]
         },
         {
           "n": 8,
           "t": "Cybersecurity for smart plants",
           "tier": 3,
           "scope": "Expanded attack surface of connected equipment; segmentation and monitoring revisited at plant scale. Incident response for OT. Security as a precondition, not a feature.",
-          "src": "NPTEL: Industry 4.0 courses"
+          "src": "NPTEL: Industry 4.0 courses",
+          "preview": [
+            "What new attack surface does each connected sensor add?",
+            "Why is OT incident response different from IT's?"
+          ]
         },
         {
           "n": 9,
           "t": "Economics of digitalization",
           "tier": 3,
           "scope": "Pilot-to-scale economics; the graveyard of proofs-of-concept explained. Benefits tracked against baselines the finance department accepts. Engineering economics applied to the smartest buzzwords.",
-          "src": "NPTEL: Industry 4.0; ECO 406 foundations"
+          "src": "NPTEL: Industry 4.0; ECO 406 foundations",
+          "preview": [
+            "Why do pilots scale so rarely — name two structural reasons.",
+            "What baseline makes a digitalization benefit auditable?"
+          ]
         },
         {
           "n": 10,
           "t": "Smart manufacturing case evaluation",
           "tier": 3,
           "scope": "Evaluate a vendor's condition-monitoring-plus-analytics proposal for a representative plant: architecture, claims, gaps, and a pilot design with success criteria. The skeptical adoption skill this decade rewards.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "In the vendor evaluation, which claim failed the evidence test?",
+            "What did your pilot design measure that the brochure didn't?"
+          ]
         }
       ]
     },
@@ -112,7 +152,11 @@
           "t": "Work identification and prioritization",
           "tier": 3,
           "scope": "Notification quality standards; screening and duplicate control. Priority set by criticality and consequence, not by who shouts. The gatekeeping function that protects the schedule.",
-          "src": "SMRP CMRP framework"
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "What does a quality notification contain that a shout does not?",
+            "Why does screening protect the schedule?"
+          ]
         },
         {
           "n": 3,
@@ -214,21 +258,33 @@
           "tier": 3,
           "scope": "Daily battle rhythm: progress capture, lookaheads, and constraint clearing. Field coordination of contractors — the HEISCO-scale interface. Handback and startup sequencing with operations.",
           "src": "SMRP framework; NPTEL: Project Management",
-          "kuwait": "HEISCO"
+          "kuwait": "HEISCO",
+          "preview": [
+            "What does the daily battle rhythm capture that weekly reports miss?",
+            "Why is handback sequencing an operations decision?"
+          ]
         },
         {
           "n": 11,
           "t": "Contractor and service management",
           "tier": 3,
           "scope": "Scoping service contracts; unit-rate versus lump-sum trade-offs. Contractor performance measured like internal crews. The owner's-engineer skill of buying maintenance work well.",
-          "src": "SMRP framework"
+          "src": "SMRP framework",
+          "preview": [
+            "Unit-rate versus lump-sum: which risk sits where?",
+            "What makes contractor performance measurable?"
+          ]
         },
         {
           "n": 12,
           "t": "Planning simulation capstone",
           "tier": 3,
           "scope": "A four-week simulated plant: notifications arrive, you plan, schedule, and report KPIs; then a mini-turnaround is planned end to end. The full course exercised as one continuous role-play. Portfolio output: a complete planner's package.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "In the simulation, what broke your first weekly schedule?",
+            "What did the mini-turnaround teach about scope freeze?"
+          ]
         }
       ]
     },
@@ -247,42 +303,66 @@
           "t": "Pressure equipment taxonomy",
           "tier": 3,
           "scope": "Vessels, exchangers, boilers, piping, and tanks as regulated equipment classes. Design-code logic in outline: allowable stress and joint efficiency concepts. Why codes exist — written after explosions.",
-          "src": "NPTEL pressure vessel content; SOM 201 foundations"
+          "src": "NPTEL pressure vessel content; SOM 201 foundations",
+          "preview": [
+            "Why do pressure codes exist — what pattern preceded them?",
+            "What does joint efficiency discount, and why?"
+          ]
         },
         {
           "n": 2,
           "t": "Vessel shells and heads",
           "tier": 3,
           "scope": "Thin-wall theory recalled, then thickness logic with corrosion allowance. Head types and their stress behavior. Nozzles and reinforcement in concept.",
-          "src": "SOM 201; NPTEL pressure vessel content"
+          "src": "SOM 201; NPTEL pressure vessel content",
+          "preview": [
+            "Why do heads and shells meet at a discontinuity stress?",
+            "What does corrosion allowance buy, and for how long?"
+          ]
         },
         {
           "n": 3,
           "t": "Piping systems and layout",
           "tier": 3,
           "scope": "Pipe schedules, fittings, and specs; flexibility and thermal expansion loops from the thermal-stress lesson. Supports: shoes, guides, hangers, springs. Reading a piping isometric fluently.",
-          "src": "NPTEL piping content"
+          "src": "NPTEL piping content",
+          "preview": [
+            "Why do expansion loops exist, and what do they trade?",
+            "Read a piping isometric: what three things do you check first?"
+          ]
         },
         {
           "n": 4,
           "t": "Flanged joints and gaskets",
           "tier": 3,
           "scope": "Flange classes and facings; gasket selection and seating stress from the bolted-joint lesson. Controlled bolting: sequence, lubrication, and torque versus tension. Why flanges leak in January and how to stop it.",
-          "src": "MDN 251 foundations; NPTEL piping content"
+          "src": "MDN 251 foundations; NPTEL piping content",
+          "preview": [
+            "Why does bolt-up sequence matter on a flange?",
+            "What does gasket seating stress require of the bolts?"
+          ]
         },
         {
           "n": 5,
           "t": "Valves as pressure equipment",
           "tier": 3,
           "scope": "Gate, globe, check, ball, and butterfly internals; stem sealing and packing. Valve selection by service. Maintenance-relevant failure modes: passing, seizing, packing leaks.",
-          "src": "NPTEL piping content"
+          "src": "NPTEL piping content",
+          "preview": [
+            "Gate versus globe: which throttles, which isolates, and why?",
+            "What does packing seal, and what tells you it's failing?"
+          ]
         },
         {
           "n": 6,
           "t": "Overpressure protection",
           "tier": 3,
           "scope": "Relief scenarios and device types: spring PSVs, pilot-operated, rupture discs. Set pressure, accumulation, and backpressure concepts. Installation sins: inlet losses and isolated relief paths.",
-          "src": "NPTEL process safety content"
+          "src": "NPTEL process safety content",
+          "preview": [
+            "Set pressure, accumulation, backpressure: define each in one line.",
+            "Name two installation sins that disable a healthy PSV."
+          ]
         },
         {
           "n": 7,
@@ -290,35 +370,55 @@
           "tier": 3,
           "scope": "The WPS/PQR system recalled under vessel and piping rules; NDT extents and hydrotest logic. Traceability from mill certificate to weld map. The fabrication paper trail HEISCO-scale shops live by.",
           "src": "WLD 305 foundations",
-          "kuwait": "HEISCO"
+          "kuwait": "HEISCO",
+          "preview": [
+            "What traceability chain links a weld to its mill certificate?",
+            "What does hydrotest prove, and what does it not?"
+          ]
         },
         {
           "n": 8,
           "t": "In-service inspection",
           "tier": 3,
           "scope": "Thickness surveys, CML programs, and inspection intervals from the asset-integrity course specialized to vessels and piping. Internal inspection findings and their dispositions. The inspector–engineer interface in practice.",
-          "src": "AIM 402 foundations"
+          "src": "AIM 402 foundations",
+          "preview": [
+            "Why do CMLs live where they live on a piping circuit?",
+            "What disposition options follow an internal inspection finding?"
+          ]
         },
         {
           "n": 9,
           "t": "Repairs and alterations",
           "tier": 3,
           "scope": "Temporary repairs — clamps, wraps — with expiry dates that must be honored; weld repairs and their qualification. Rerating logic in outline. Management of change for pressure equipment.",
-          "src": "NPTEL content; AIM 402 foundations"
+          "src": "NPTEL content; AIM 402 foundations",
+          "preview": [
+            "Why do temporary repairs carry expiry dates?",
+            "What does MOC review before a rerate?"
+          ]
         },
         {
           "n": 10,
           "t": "Failure case studies",
           "tier": 3,
           "scope": "Classic vessel and piping failures dissected: brittle fracture, CUI ruptures, dead-leg corrosion, relief-path isolation. Each traced through the lessons that would have prevented it. Institutional memory as curriculum.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "Pick one classic failure and name the lesson that would have prevented it.",
+            "What made brittle fracture disasters a temperature story?"
+          ]
         },
         {
           "n": 11,
           "t": "Static equipment dossier project",
           "tier": 3,
           "scope": "For one vessel and its piping circuit: equipment dossier with design data, damage mechanisms, CMLs, relief basis, and repair history template. The record-keeping backbone of integrity work, built once by hand.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "What belongs in an equipment dossier before you inherit it?",
+            "Which record gap would worry you most, and why?"
+          ]
         }
       ]
     },
@@ -336,14 +436,22 @@
           "t": "Safety management systems",
           "tier": 3,
           "scope": "Policy, plan, do, check, act — the management-system loop applied to HSE. Leading versus lagging indicators. Why paperwork systems fail without field verification.",
-          "src": "NEBOSH IGC alignment; NPTEL: Industrial Safety"
+          "src": "NEBOSH IGC alignment; NPTEL: Industrial Safety",
+          "preview": [
+            "Map plan-do-check-act onto an HSE management system.",
+            "Why do paperwork systems fail without field verification?"
+          ]
         },
         {
           "n": 2,
           "t": "Risk assessment at system level",
           "tier": 3,
           "scope": "Suitable-and-sufficient assessment; task-based versus area-based approaches. ALARP reasoning with cost-benefit honesty. Assessment as design input, not filing.",
-          "src": "NEBOSH IGC alignment"
+          "src": "NEBOSH IGC alignment",
+          "preview": [
+            "What makes a risk assessment 'suitable and sufficient'?",
+            "State ALARP without pretending cost doesn't exist."
+          ]
         },
         {
           "n": 3,
@@ -351,35 +459,55 @@
           "tier": 3,
           "scope": "Major-accident hazards distinguished from occupational ones; barriers and the Swiss-cheese picture used precisely. HAZOP participation basics for mechanical engineers. The EQUATE-scale context of process safety.",
           "src": "NPTEL: Industrial Safety; NEBOSH alignment",
-          "kuwait": "EQUATE"
+          "kuwait": "EQUATE",
+          "preview": [
+            "Major-accident versus occupational hazards: why different tools?",
+            "What does a barrier diagram make visible?"
+          ]
         },
         {
           "n": 4,
           "t": "Occupational health",
           "tier": 3,
           "scope": "Noise, vibration, dust, and chemical exposure with measurement basics. Hearing conservation and hand-arm vibration for maintenance trades. Health surveillance as long-horizon duty of care.",
-          "src": "NEBOSH IGC alignment"
+          "src": "NEBOSH IGC alignment",
+          "preview": [
+            "Why does hearing loss dominate maintenance-trade claims?",
+            "What does health surveillance detect that PPE hides?"
+          ]
         },
         {
           "n": 5,
           "t": "Ergonomics and manual handling",
           "tier": 3,
           "scope": "Load assessment and workplace design; the maintenance task's awkward-posture reality. Mechanical aids and job design. Musculoskeletal injury as the trade's chronic epidemic.",
-          "src": "NEBOSH IGC alignment"
+          "src": "NEBOSH IGC alignment",
+          "preview": [
+            "Why are maintenance postures ergonomic worst cases?",
+            "Name two mechanical aids that remove manual-handling risk."
+          ]
         },
         {
           "n": 6,
           "t": "Environmental management",
           "tier": 3,
           "scope": "Emissions, effluents, and waste streams of industrial plants; permits and monitoring in outline. Spill prevention and response. The environmental file an integrity engineer inherits.",
-          "src": "NEBOSH alignment; NPTEL content"
+          "src": "NEBOSH alignment; NPTEL content",
+          "preview": [
+            "Which environmental streams does a plant permit typically bound?",
+            "What does spill response require pre-staged?"
+          ]
         },
         {
           "n": 7,
           "t": "Emergency preparedness",
           "tier": 3,
           "scope": "Scenario planning, alarm and evacuation systems, and drills that test rather than perform. Fire systems interface with maintenance. Command structure basics for engineers on scene.",
-          "src": "NEBOSH IGC alignment"
+          "src": "NEBOSH IGC alignment",
+          "preview": [
+            "What makes a drill a test rather than a performance?",
+            "Where does maintenance interface with fire systems?"
+          ]
         },
         {
           "n": 8,
@@ -387,21 +515,33 @@
           "tier": 3,
           "scope": "Multi-employer worksites and the coordination duty; permit systems under turnaround load. Induction and competence verification. Where fabrication-yard practice meets plant rules.",
           "src": "NEBOSH alignment",
-          "kuwait": "HEISCO"
+          "kuwait": "HEISCO",
+          "preview": [
+            "Who coordinates when three employers share a worksite?",
+            "What does induction verify beyond attendance?"
+          ]
         },
         {
           "n": 9,
           "t": "Safety culture and leadership",
           "tier": 3,
           "scope": "Culture measured by what happens when nobody watches; just-culture response to error. The engineer's daily leadership: walkdowns, questions, and stopping work. Influence without authority, practiced.",
-          "src": "NEBOSH IGC alignment"
+          "src": "NEBOSH IGC alignment",
+          "preview": [
+            "What does stopping work actually require of an engineer?",
+            "Name one just-culture response to an honest error."
+          ]
         },
         {
           "n": 10,
           "t": "HSE case file project",
           "tier": 3,
           "scope": "Build the HSE plan for a maintenance shutdown package: risk assessments, permits, isolations, emergency arrangements, and monitoring. The integration exercise that mirrors real pre-shutdown reviews.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "In the shutdown HSE plan, which permit interaction was trickiest?",
+            "What monitoring continued after handback?"
+          ]
         }
       ]
     },
@@ -461,49 +601,77 @@
           "t": "Failure reporting and analysis systems",
           "tier": 3,
           "scope": "FRACAS logic: capture, code, analyze, act. Failure coding taxonomies that analysts can actually use. The data pipeline that makes Weibull analysis possible years later.",
-          "src": "NPTEL: Reliability Engineering"
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "What does FRACAS close that work orders leave open?",
+            "Why do failure codes fail, and what fixes them?"
+          ]
         },
         {
           "n": 5,
           "t": "Life-cycle reliability: design for maintainability",
           "tier": 3,
           "scope": "Reliability input to procurement specs; maintainability reviews of vendor drawings. Access, isolation, and monitoring provisions bought cheaply at design time. The capital-project seat reliability engineers must claim.",
-          "src": "SMRP framework"
+          "src": "SMRP framework",
+          "preview": [
+            "Name three maintainability features to demand on vendor drawings.",
+            "Why is design-stage reliability input so cheap?"
+          ]
         },
         {
           "n": 6,
           "t": "Spares optimization with reliability data",
           "tier": 3,
           "scope": "Failure distributions driving stocking levels; Monte Carlo thinking for insurance spares. Pooling and vendor-held options. The reliability–inventory interface quantified.",
-          "src": "NPTEL: Reliability Engineering; MPL 452 foundations"
+          "src": "NPTEL: Reliability Engineering; MPL 452 foundations",
+          "preview": [
+            "What does Monte Carlo add to an insurance-spare decision?",
+            "When does vendor-held stock beat owning?"
+          ]
         },
         {
           "n": 7,
           "t": "Operational reliability: procedures and precision",
           "tier": 3,
           "scope": "Operating-envelope discipline and startup/shutdown stress; precision-maintenance standards as failure prevention. Operator care integrated with PdM findings. Reliability as everyone's output, engineered.",
-          "src": "SMRP framework"
+          "src": "SMRP framework",
+          "preview": [
+            "Why do startups and shutdowns concentrate failures?",
+            "What does an operating envelope discipline protect?"
+          ]
         },
         {
           "n": 8,
           "t": "Management of change for reliability",
           "tier": 3,
           "scope": "MOC review of modifications for reliability impact; temporary equipment and its expiry. Documentation updates as part of the change, not afterthought. The quiet failures MOC exists to prevent.",
-          "src": "SMRP framework"
+          "src": "SMRP framework",
+          "preview": [
+            "Which changes sneak past MOC most often?",
+            "Why must documentation updates ride inside the change?"
+          ]
         },
         {
           "n": 9,
           "t": "Economics of reliability programs",
           "tier": 3,
           "scope": "Program costs against avoided losses; the credibility problem of counting non-events. Baseline construction and honest attribution. Selling year three of a program in year one's budget cycle.",
-          "src": "SMRP framework; ECO 406 foundations"
+          "src": "SMRP framework; ECO 406 foundations",
+          "preview": [
+            "Why is counting non-events the program's credibility problem?",
+            "What baseline construction makes avoided losses believable?"
+          ]
         },
         {
           "n": 10,
           "t": "Reliability program capstone",
           "tier": 3,
           "scope": "Design the complete reliability program for a described plant: assessment, roadmap, organization, KPIs, and first-year plan with budget. Presented as to a plant manager. The portfolio piece for reliability-engineer interviews.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "Which first-year move funds year two in your capstone program?",
+            "What did you put in the plant manager's one-page summary?"
+          ]
         }
       ]
     },
@@ -521,70 +689,110 @@
           "t": "The plant brief and asset register",
           "tier": 3,
           "scope": "The project plant described: process, equipment, history, and constraints. Building the functional-location hierarchy and asset register. The dataset every later phase consumes.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "What makes a functional-location hierarchy analyzable later?",
+            "Which asset data did you refuse to invent, and what did you do instead?"
+          ]
         },
         {
           "n": 2,
           "t": "Criticality and strategy assignment",
           "tier": 3,
           "scope": "Criticality analysis across the register; maintenance strategy assigned per class with RCM logic on the top tier. Deliverable: the strategy matrix with justifications.",
-          "src": "REL 354/455 foundations"
+          "src": "REL 354/455 foundations",
+          "preview": [
+            "Which criticality tier got RCM, and why not all of them?",
+            "Defend one strategy assignment an auditor questioned."
+          ]
         },
         {
           "n": 3,
           "t": "PdM program design",
           "tier": 3,
           "scope": "Technology mapping, routes, and intervals for the critical equipment; baseline campaign planned. Deliverable: the condition-monitoring program document.",
-          "src": "CDM 403 foundations"
+          "src": "CDM 403 foundations",
+          "preview": [
+            "Which technology-to-failure-mode mapping drove your routes?",
+            "What baseline campaign precedes alarms?"
+          ]
         },
         {
           "n": 4,
           "t": "Planning system build",
           "tier": 3,
           "scope": "Job plans for the top ten repetitive jobs; weekly scheduling process and KPI definitions. Deliverable: the planner's handbook for this plant.",
-          "src": "MPL 452 foundations"
+          "src": "MPL 452 foundations",
+          "preview": [
+            "Which of your ten job plans has the tightest estimate, and why?",
+            "What KPI set did the planner's handbook define?"
+          ]
         },
         {
           "n": 5,
           "t": "Integrity and inspection plan",
           "tier": 3,
           "scope": "Damage mechanisms, CML plans, and relief-device registers for the static equipment. Deliverable: the integrity plan section.",
-          "src": "AIM 402 / PEP 453 foundations"
+          "src": "AIM 402 / PEP 453 foundations",
+          "preview": [
+            "Which damage mechanism topped the static register?",
+            "How did relief devices enter the schedule?"
+          ]
         },
         {
           "n": 6,
           "t": "Production plan and OEE baseline",
           "tier": 3,
           "scope": "Capacity, takt, and schedule for the product mix; OEE state model defined from available signals. Deliverable: production plan with loss-accounting design.",
-          "src": "PPC 356 / SCA 404 foundations"
+          "src": "PPC 356 / SCA 404 foundations",
+          "preview": [
+            "Where did takt and cycle time collide in your plan?",
+            "What state model feeds the OEE baseline?"
+          ]
         },
         {
           "n": 7,
           "t": "Improvement portfolio",
           "tier": 3,
           "scope": "Three costed improvement cases — one reliability, one changeover, one energy — with NPV and payback. Deliverable: the investment one-pagers.",
-          "src": "LSS 405 / ECO 406 foundations"
+          "src": "LSS 405 / ECO 406 foundations",
+          "preview": [
+            "Which improvement case had the best NPV, and what made it credible?",
+            "Which case did you reject despite good optics?"
+          ]
         },
         {
           "n": 8,
           "t": "HSE integration",
           "tier": 3,
           "scope": "Risk assessments and permit requirements woven into the job plans and shutdown scope. Deliverable: the HSE annexes that make the plans executable.",
-          "src": "SAF 256 / HSE 454 foundations"
+          "src": "SAF 256 / HSE 454 foundations",
+          "preview": [
+            "Which job plan changed after HSE integration?",
+            "What isolation complexity did the shutdown scope reveal?"
+          ]
         },
         {
           "n": 9,
           "t": "The integrated report",
           "tier": 3,
           "scope": "All phases assembled into one coherent plant-engineering dossier with an executive summary written last and read first. Internal consistency audit across sections. The document that demonstrates the whole pathway.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "What inconsistency did the internal audit catch?",
+            "Why is the executive summary written last?"
+          ]
         },
         {
           "n": 10,
           "t": "Defense and portfolio review",
           "tier": 3,
           "scope": "The dossier defended against structured challenge: assumptions probed, trade-offs justified. Feedback folded into the final portfolio. The dress rehearsal for the interviews the career section prepares.",
-          "src": "Course synthesis"
+          "src": "Course synthesis",
+          "preview": [
+            "Which assumption fell first under challenge?",
+            "What would you build differently in a second pass?"
+          ]
         }
       ]
     }

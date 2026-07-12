@@ -17,77 +17,121 @@
           "t": "Spur gear design: bending",
           "tier": 3,
           "scope": "Lewis bending analysis with velocity and geometry factors. Module and face width chosen against tooth breakage. Where root cracks start and why.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "Which two velocity-dependent factors modify Lewis bending stress?",
+            "Why do gear root cracks start on the tension side?"
+          ]
         },
         {
           "n": 2,
           "t": "Spur gear design: surface durability",
           "tier": 3,
           "scope": "Contact stress by Hertzian logic; pitting as the surface fatigue mode. Bending versus pitting as competing failure budgets. The design meaning of gear micropitting found in an oil sample.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "Bending versus pitting: which failure budget wears out and which breaks?",
+            "What does micropitting in an oil report imply about film thickness?"
+          ]
         },
         {
           "n": 3,
           "t": "Helical, bevel, and worm gearing",
           "tier": 3,
           "scope": "Helical geometry and axial thrust; bevel basics; worm-drive efficiency and its heat problem. Selection logic across gear types. Thrust-bearing consequences of helix choices.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "Why do helical gears thrust axially, and who pays for it?",
+            "Where does a worm drive's efficiency go?"
+          ]
         },
         {
           "n": 4,
           "t": "Rolling-element bearings",
           "tier": 3,
           "scope": "Bearing types and the L10 life equation used honestly. Equivalent loads with combined radial and thrust. Fits, preload, and mounting — where installed life is won or lost.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "Why does bearing life follow a cube (or 10/3) law in load?",
+            "What does preload buy a spindle bearing and cost it?"
+          ]
         },
         {
           "n": 5,
           "t": "Journal bearings and lubrication theory",
           "tier": 3,
           "scope": "Hydrodynamic action from Reynolds-equation reasoning in outline; Sommerfeld thinking and minimum film thickness. Viscosity selection and clearance. The bearings under every large turbine and compressor.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "What builds the oil wedge in a journal bearing?",
+            "Why is minimum film thickness the design's real deliverable?"
+          ]
         },
         {
           "n": 6,
           "t": "Belt drives",
           "tier": 3,
           "scope": "V-belt mechanics from the capstan relation; power ratings and service factors. Tensioning — the maintenance variable that decides belt life. Multi-belt sets and matching.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "Why do V-belts grip more than flat belts at the same tension?",
+            "What does incorrect tension do to belt and bearing life simultaneously?"
+          ]
         },
         {
           "n": 7,
           "t": "Chain drives",
           "tier": 3,
           "scope": "Roller-chain geometry and chordal action. Ratings, lubrication regimes, and elongation limits. Sprocket wear read as a diagnostic.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "What is chordal action and what does it do at high speed?",
+            "When does chain elongation condemn the sprockets too?"
+          ]
         },
         {
           "n": 8,
           "t": "Clutches and brakes",
           "tier": 3,
           "scope": "Friction clutch and brake torque from pressure assumptions — uniform wear versus uniform pressure derived. Energy dissipation and thermal sizing. Where brakes fade and clutches slip.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "Uniform pressure versus uniform wear: which assumption is conservative for clutch torque?",
+            "What sizes a brake thermally rather than frictionally?"
+          ]
         },
         {
           "n": 9,
           "t": "Couplings and shaft alignment tolerances",
           "tier": 3,
           "scope": "Rigid, elastomeric, gear, and disc couplings; what misalignment each tolerates and transmits. Coupling selection against torque and misalignment spectra. The design basis under alignment standards used in the field.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "Match coupling types to the misalignment each forgives.",
+            "Why does a rigid coupling turn misalignment into bearing load?"
+          ]
         },
         {
           "n": 10,
           "t": "Flywheels and rotating-part integrity",
           "tier": 3,
           "scope": "Rotating-disc stresses and burst margins. Flywheel energy sizing revisited with stress limits. Overspeed as a design case, not an accident report.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "Where is a spinning disc's stress maximum, and why does overspeed test matter?",
+            "What margin does a burst test demonstrate?"
+          ]
         },
         {
           "n": 11,
           "t": "Design review: a gearbox teardown on paper",
           "tier": 3,
           "scope": "A complete gearbox audited element by element: gears, bearings, shafts, seals, housing. Each element's failure budget identified. The design-side twin of a maintenance teardown report.",
-          "src": "NPTEL: Machine Design"
+          "src": "NPTEL: Machine Design",
+          "preview": [
+            "In the gearbox teardown, which element's failure budget was thinnest?",
+            "What would you inspect first at overhaul, and on what design grounds?"
+          ]
         }
       ]
     },
@@ -106,70 +150,110 @@
           "t": "Dynamic modeling of physical systems",
           "tier": 3,
           "scope": "Mechanical, thermal, and fluid systems reduced to ODEs. Analogies across domains made explicit. The model as a decision about what to ignore.",
-          "src": "MIT OCW 2.04A; NPTEL: Control Engineering"
+          "src": "MIT OCW 2.04A; NPTEL: Control Engineering",
+          "preview": [
+            "Model a heated tank as first order: what are its gain and time constant physically?",
+            "What did your model deliberately ignore, and when does that bite?"
+          ]
         },
         {
           "n": 2,
           "t": "Laplace transfer functions",
           "tier": 3,
           "scope": "From ODE to transfer function; poles and zeros as the system's anatomy. Block-diagram algebra. The s-plane as a map of behavior.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "What do poles and zeros each shape in a response?",
+            "Reduce a feedback loop's block diagram to one transfer function: what's the formula?"
+          ]
         },
         {
           "n": 3,
           "t": "First- and second-order responses",
           "tier": 3,
           "scope": "Time constants, damping ratio, natural frequency, and the step-response vocabulary: rise time, overshoot, settling. Reading system character from a trend chart. The response shapes every operator recognizes without naming.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "Estimate damping ratio from 25% overshoot — roughly what value?",
+            "Why does rise time trade against overshoot?"
+          ]
         },
         {
           "n": 4,
           "t": "Closed-loop behavior and steady-state error",
           "tier": 3,
           "scope": "Feedback's gifts: disturbance rejection and desensitization — and its price: potential instability. Error constants and system type. Why integral action exists.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "Why does feedback reject disturbances but risk instability?",
+            "Which system type removes steady-state error to a step?"
+          ]
         },
         {
           "n": 5,
           "t": "Stability: Routh–Hurwitz",
           "tier": 3,
           "scope": "The stability question posed algebraically. Routh arrays and parameter ranges for stability. Gain limits computed before anything oscillates in the field.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "What question does Routh–Hurwitz answer without solving roots?",
+            "Find the gain range for stability: what does the array's first column do?"
+          ]
         },
         {
           "n": 6,
           "t": "Root locus",
           "tier": 3,
           "scope": "Pole migration with gain drawn by rule. Design by pole placement on the locus. Seeing why more gain destabilizes — graphically, permanently.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "Why does increasing gain drive poles toward instability on a locus?",
+            "What do asymptotes of the root locus tell you?"
+          ]
         },
         {
           "n": 7,
           "t": "Frequency response and Bode plots",
           "tier": 3,
           "scope": "Sinusoidal steady state; magnitude and phase plots constructed from asymptotes. Gain and phase margins as robustness currency. The frequency view that unifies control and vibration analysis.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "Read gain and phase margin off a Bode plot: what does each protect?",
+            "Why does the frequency view unify control and vibration thinking?"
+          ]
         },
         {
           "n": 8,
           "t": "PID control",
           "tier": 3,
           "scope": "P, I, and D actions each derived from a need; tuning by Ziegler–Nichols and by informed iteration. Integral windup and derivative noise handled practically. The controller that runs 90% of industry.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "What does integral action remove and what does it risk?",
+            "Why does derivative action hate noisy sensors?"
+          ]
         },
         {
           "n": 9,
           "t": "Practical loop hardware",
           "tier": 3,
           "scope": "Actuators, positioners, and valve characteristics inside the loop. Deadband, stiction, and hysteresis as control killers. Loop problems that masquerade as tuning problems.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "What do stiction and deadband do to a well-tuned loop?",
+            "Why can a valve problem masquerade as a tuning problem?"
+          ]
         },
         {
           "n": 10,
           "t": "Discrete-time and digital control basics",
           "tier": 3,
           "scope": "Sampling in the loop; the PLC/DCS as a discrete controller. Scan-rate effects on stability margins. Enough discrete theory to respect the digital reality.",
-          "src": "NPTEL: Control Engineering"
+          "src": "NPTEL: Control Engineering",
+          "preview": [
+            "What does sampling too slowly do to stability margins?",
+            "Why does a PLC PID need anti-windup on output limits?"
+          ]
         },
         {
           "n": 11,
@@ -177,7 +261,11 @@
           "tier": 3,
           "scope": "Speed, tension, and temperature loops from real machinery contexts — an extruder barrel and a winder analyzed. Loop interaction previewed. Control theory attached to hardware nameplates.",
           "src": "NPTEL: Control Engineering",
-          "kuwait": "Gulf Cable"
+          "kuwait": "Gulf Cable",
+          "preview": [
+            "In the extruder temperature case, what made the loop slow — process or tuning?",
+            "Which loop of the winder interacts with tension, and how?"
+          ]
         }
       ]
     },
@@ -195,70 +283,110 @@
           "t": "Structured programming and IEC languages",
           "tier": 3,
           "scope": "Function blocks, structured text, and sequential function charts beside ladder. Choosing a language per task. Code organization for machines with modes.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "Pick a language per task: sequence, math block, interlock — and justify.",
+            "What does a function block encapsulate that ladder rungs scatter?"
+          ]
         },
         {
           "n": 2,
           "t": "State machines for sequential control",
           "tier": 3,
           "scope": "Modes, states, and transitions designed before coding. Auto/manual/maintenance mode architecture. The pattern that makes complex machines debuggable.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "Design states for auto/manual/maintenance: what transitions need guarding?",
+            "Why do state machines make faults recoverable?"
+          ]
         },
         {
           "n": 3,
           "t": "Analog processing and PID in the PLC",
           "tier": 3,
           "scope": "Scaling, filtering, and alarm limits on analog channels. The PLC PID instruction configured and tuned. Temperature and flow loops closed in logic.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "Why filter an analog input, and what does over-filtering cost?",
+            "Configure PID in the PLC: which three parameters first?"
+          ]
         },
         {
           "n": 4,
           "t": "Industrial networks I: fieldbus fundamentals",
           "tier": 3,
           "scope": "Why networks replaced point wiring; topology, addressing, and determinism. Modbus RTU/TCP as the lingua franca. Reading a network architecture drawing.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "What does determinism mean on a fieldbus?",
+            "Why did Modbus survive forty years?"
+          ]
         },
         {
           "n": 5,
           "t": "Industrial networks II: industrial Ethernet",
           "tier": 3,
           "scope": "EtherNet/IP and PROFINET in outline; switches, VLANs, and segmentation for machine networks. Diagnostics from port LEDs to managed-switch counters. When the 'PLC fault' is a network fault.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "What do managed-switch diagnostics reveal that ping cannot?",
+            "Why segment machine networks from office networks?"
+          ]
         },
         {
           "n": 6,
           "t": "VFDs and motion integration",
           "tier": 3,
           "scope": "Drive parameters, control words, and status words over the network. Speed and torque references from logic. Commissioning a networked drive without folklore.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "What do control and status words exchange with a drive?",
+            "Commission a networked VFD: which parameters are non-negotiable?"
+          ]
         },
         {
           "n": 7,
           "t": "Data handling and recipes",
           "tier": 3,
           "scope": "Arrays, structures, and recipe management for product changeovers. Batch parameters downloaded safely. Production data captured at source for OEE.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "Why do recipes beat hand-entered setpoints at changeover?",
+            "What data should logic capture at the moment of a fault?"
+          ]
         },
         {
           "n": 8,
           "t": "Alarm management and diagnostics design",
           "tier": 3,
           "scope": "Alarm philosophy applied in logic: priority, deadband, and state-based suppression. First-out capture for trips. Designing the diagnostics you will want during the outage.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "Design first-out capture for a trip chain: what does it answer?",
+            "Which alarms deserve priority 1, and what does that imply for the rest?"
+          ]
         },
         {
           "n": 9,
           "t": "OT cybersecurity basics",
           "tier": 3,
           "scope": "Why plant networks are attacked and how they are segmented, patched, and backed up. Remote access done with adult supervision. The maintenance engineer's cyber hygiene responsibilities.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "Name three OT-security practices a maintenance engineer owns.",
+            "Why is remote vendor access both necessary and dangerous?"
+          ]
         },
         {
           "n": 10,
           "t": "Integration project: a two-station line",
           "tier": 3,
           "scope": "Two PLC stations, one network, shared interlocks, one HMI: specify, program, and fault-test the pair. Handshake design under failure conditions. The systems view PLC I could not yet teach.",
-          "src": "NPTEL: Industrial Automation and Control"
+          "src": "NPTEL: Industrial Automation and Control",
+          "preview": [
+            "In the two-station project, what handshake failure did you design against?",
+            "Why does the HMI show line state, not just device state?"
+          ]
         }
       ]
     },
@@ -276,63 +404,99 @@
           "t": "Fluid power principles",
           "tier": 3,
           "scope": "Pascal's law to force multiplication; power as pressure times flow. Where fluid power beats electromechanical drives. The efficiency price paid for force density.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Why does fluid power win on force density and lose on efficiency?",
+            "Compute-style: pressure times flow gives what, in what units?"
+          ]
         },
         {
           "n": 2,
           "t": "Hydraulic fluids and contamination control",
           "tier": 3,
           "scope": "Fluid functions and properties; ISO cleanliness codes read and specified. Filtration placement and beta ratios. Contamination as the leading cause of hydraulic failure — treated with due respect.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Read ISO 4406 18/16/13: what does each number count?",
+            "Why does contamination, not wear, head the hydraulic failure list?"
+          ]
         },
         {
           "n": 3,
           "t": "Hydraulic pumps",
           "tier": 3,
           "scope": "Gear, vane, and piston pumps; fixed versus variable displacement. Volumetric efficiency measured and trended. Pressure-compensated control explained without mystery.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Gear versus piston pump: efficiency, cost, and cleanliness sensitivity.",
+            "What does a pressure-compensated pump hold constant?"
+          ]
         },
         {
           "n": 4,
           "t": "Actuators",
           "tier": 3,
           "scope": "Cylinder sizing for force and speed; cushioning and seal packages. Hydraulic motors in brief. Rod buckling and mounting classes — statics put to work.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Size a cylinder for force: which area does retraction use?",
+            "Why does rod buckling limit long strokes?"
+          ]
         },
         {
           "n": 5,
           "t": "Pressure and flow control valves",
           "tier": 3,
           "scope": "Relief, reducing, and sequence valves; flow controls and meter-in/meter-out logic. Cracking pressure and override characterized. The valves that shape a circuit's personality.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Relief versus reducing valve: which protects, which regulates?",
+            "What does cracking pressure mean for system heat?"
+          ]
         },
         {
           "n": 6,
           "t": "Directional valves and circuit reading",
           "tier": 3,
           "scope": "Spool centers and their consequences; ISO 1219 symbols read fluently. Standard circuits: regenerative, counterbalance, unloading. Schematic-to-machine correspondence drilled.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Read a spool symbol's center condition: what happens de-energized?",
+            "Meter-in versus meter-out: which controls an overrunning load?"
+          ]
         },
         {
           "n": 7,
           "t": "Accumulators and system dynamics",
           "tier": 3,
           "scope": "Gas-charged accumulators: sizing, precharge, and safety. Shock suppression and supplementary flow. Stored energy respected during maintenance.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Why does accumulator precharge decide its usable volume?",
+            "Name the stored-energy hazard before maintenance."
+          ]
         },
         {
           "n": 8,
           "t": "Hydraulic system troubleshooting",
           "tier": 3,
           "scope": "Heat, noise, and slow motion as the three complaints; a diagnostic tree for each. Test-point measurements against the schematic. Case-based practice on press and mobile circuits.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Heat, noise, slow motion: give one cause chain for each complaint.",
+            "Why measure at test points instead of trusting gauges on the schematic?"
+          ]
         },
         {
           "n": 9,
           "t": "Pneumatic systems",
           "tier": 3,
           "scope": "Air preparation — filter, regulator, lubricator; valve and cylinder families; sizing with compressibility acknowledged. Where pneumatics wins: speed, cleanliness, simplicity. Leakage economics revisited from Thermo II.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "Why does compressibility make pneumatics springy?",
+            "What does the FRL unit condition, and in what order?"
+          ]
         },
         {
           "n": 10,
@@ -340,14 +504,22 @@
           "tier": 3,
           "scope": "Solenoid valves, reed sensors, and PLC-driven pneumatic sequences. Grippers and pick-and-place motions. The actuation layer of packaging machinery.",
           "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
-          "kuwait": "KDD / Petra"
+          "kuwait": "KDD / Petra",
+          "preview": [
+            "Sequence a pick-and-place with two cylinders: what feedback confirms motion?",
+            "Why do reed sensors fail, and what replaces them?"
+          ]
         },
         {
           "n": 11,
           "t": "Proportional and servo systems first contact",
           "tier": 3,
           "scope": "Proportional valves and closed-loop positioning in outline. Where servo-hydraulics still rules: presses and test rigs. The control-systems course connected to oil.",
-          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics"
+          "src": "NPTEL: Industrial Oil Hydraulics and Pneumatics",
+          "preview": [
+            "What does a proportional valve add over bang-bang control?",
+            "Where does servo-hydraulics still beat electric servos?"
+          ]
         }
       ]
     },
@@ -367,7 +539,11 @@
           "t": "Welding as a metallurgical event",
           "tier": 3,
           "scope": "The weld thermal cycle: peak temperatures and cooling rates across the joint. Fusion zone, HAZ, and base metal as three different materials. Why welding is heat treatment you didn't order.",
-          "src": "Groover, welding chapters; Callister & Rethwisch, Ch. 10"
+          "src": "Groover, welding chapters; Callister & Rethwisch, Ch. 10",
+          "preview": [
+            "Sketch the weld thermal cycle: which features control microstructure?",
+            "Why is welding 'heat treatment you didn't order'?"
+          ]
         },
         {
           "n": 2,
@@ -388,7 +564,11 @@
           "t": "Residual stress and distortion",
           "tier": 3,
           "scope": "Why welds pull: thermal contraction against restraint. Distortion modes and sequencing countermeasures. PWHT — what it relieves and what it costs.",
-          "src": "Kalpakjian & Schmid, joining chapters"
+          "src": "Kalpakjian & Schmid, joining chapters",
+          "preview": [
+            "Why do welds pull, and which direction does a butt joint shrink most?",
+            "What does PWHT relieve, and what does it cost?"
+          ]
         },
         {
           "n": 4,
@@ -410,14 +590,22 @@
           "tier": 3,
           "scope": "Symbol fluency on fabrication drawings; effective throat and size selection recalled from design. Access and position as quality factors. Reading a Kirby-style shop drawing's weld map.",
           "src": "Groover; Kalpakjian & Schmid",
-          "kuwait": "Kirby Building Systems"
+          "kuwait": "Kirby Building Systems",
+          "preview": [
+            "Read effective throat from a fillet symbol: what fails if undersized?",
+            "Why does access decide weld quality before the arc strikes?"
+          ]
         },
         {
           "n": 6,
           "t": "Welding of specific materials",
           "tier": 3,
           "scope": "Carbon and low-alloy steels, stainless (sensitization and ferrite control), and aluminum's oxide and porosity problems. Dissimilar joints in outline. Matching filler to base with reasons.",
-          "src": "Kalpakjian & Schmid; Callister & Rethwisch, Ch. 11"
+          "src": "Kalpakjian & Schmid; Callister & Rethwisch, Ch. 11",
+          "preview": [
+            "Why does austenitic stainless demand ferrite control in the weld?",
+            "What makes aluminum's oxide layer a welding problem?"
+          ]
         },
         {
           "n": 7,
@@ -438,21 +626,33 @@
           "t": "Ultrasonic testing in depth",
           "tier": 3,
           "scope": "Wave propagation, probes, and calibration blocks. Angle-beam weld scanning geometry. Sizing and characterizing indications — where UT skill actually lives.",
-          "src": "Kalpakjian & Schmid, inspection sections"
+          "src": "Kalpakjian & Schmid, inspection sections",
+          "preview": [
+            "Why does angle-beam UT find what straight-beam misses in welds?",
+            "What does a calibration block calibrate?"
+          ]
         },
         {
           "n": 9,
           "t": "Radiographic testing in depth",
           "tier": 3,
           "scope": "Source selection, geometry, and image quality indicators. Film and digital reading of the classic defect appearances. Radiation safety as an absolute boundary.",
-          "src": "Kalpakjian & Schmid, inspection sections"
+          "src": "Kalpakjian & Schmid, inspection sections",
+          "preview": [
+            "What does an IQI (penetrameter) prove about a radiograph?",
+            "Why is source-side versus film-side geometry visible in the image?"
+          ]
         },
         {
           "n": 10,
           "t": "Welding procedure and welder qualification",
           "tier": 3,
           "scope": "WPS variables — essential and nonessential; PQR testing: tensiles, bends, macros. Welder performance qualification and its limits of position and thickness. The paperwork that makes welds trustworthy.",
-          "src": "Groover; Kalpakjian & Schmid"
+          "src": "Groover; Kalpakjian & Schmid",
+          "preview": [
+            "Essential versus nonessential WPS variables: what changes force requalification?",
+            "What do bend tests reveal that tensiles miss?"
+          ]
         },
         {
           "n": 11,
@@ -460,7 +660,11 @@
           "tier": 3,
           "scope": "Arc gouging and defect excavation; repair sequences that don't make things worse. Excavation verification by MT/PT. Repair welding as controlled surgery, permitted and documented.",
           "src": "Kalpakjian & Schmid",
-          "kuwait": "HEISCO"
+          "kuwait": "HEISCO",
+          "preview": [
+            "Why verify excavation by MT/PT before rewelding?",
+            "What documentation must a repair weld leave behind?"
+          ]
         },
         {
           "n": 12,
@@ -468,7 +672,11 @@
           "tier": 3,
           "scope": "Assemble an inspection and test plan for a welded assembly: hold points, NDT extents, acceptance criteria, and records. The QA/QC document flow of a fabrication contract walked once end to end.",
           "src": "Kalpakjian & Schmid; Groover",
-          "kuwait": "Kirby Building Systems"
+          "kuwait": "Kirby Building Systems",
+          "preview": [
+            "What belongs at a hold point versus a witness point?",
+            "Why does an ITP bind subcontractors before work starts?"
+          ]
         }
       ]
     },
@@ -487,7 +695,11 @@
           "t": "Why equipment fails",
           "tier": 3,
           "scope": "Failure as a process, not an event: load versus capability over time. Failure modes, mechanisms, and causes distinguished rigorously. The language that makes failure discussable.",
-          "src": "SMRP CMRP framework; NPTEL maintenance courses"
+          "src": "SMRP CMRP framework; NPTEL maintenance courses",
+          "preview": [
+            "Failure mode versus mechanism versus cause: sort a seized bearing into all three.",
+            "Why is 'load exceeded capability' the universal failure sentence?"
+          ]
         },
         {
           "n": 2,
@@ -507,63 +719,99 @@
           "t": "Maintenance strategy types",
           "tier": 3,
           "scope": "Run-to-failure, time-based, condition-based, and proactive strategies — each legitimate somewhere. Strategy selection by failure pattern and consequence. Why 'more PM' is not a strategy.",
-          "src": "SMRP CMRP framework"
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Match each strategy to the failure pattern it suits.",
+            "Why is run-to-failure a legitimate strategy and not neglect?"
+          ]
         },
         {
           "n": 4,
           "t": "Reliability vocabulary with numbers",
           "tier": 3,
           "scope": "MTBF, MTTR, availability, and utilization defined with equations and abused-examples. Inherent versus operational availability. Calculating them from real work-order data, including the data's lies.",
-          "src": "SMRP CMRP framework; NPTEL reliability courses"
+          "src": "SMRP CMRP framework; NPTEL reliability courses",
+          "preview": [
+            "Compute availability from MTBF 400 h and MTTR 8 h.",
+            "Inherent versus operational availability: what does the gap contain?"
+          ]
         },
         {
           "n": 5,
           "t": "Criticality analysis",
           "tier": 3,
           "scope": "Ranking equipment by consequence and likelihood; criticality matrices built honestly. The 10% of assets that deserve 60% of engineering attention. Criticality as the master key to every later prioritization.",
-          "src": "SMRP CMRP framework"
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Build a criticality matrix: which axes, and who scores?",
+            "Why does criticality drive every later prioritization?"
+          ]
         },
         {
           "n": 6,
           "t": "Preventive maintenance engineering",
           "tier": 3,
           "scope": "PM tasks written against failure modes, not habits. Intervals from failure data and P–F logic. The PM review: deleting tasks as a legitimate outcome.",
-          "src": "SMRP CMRP framework"
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Write a PM task against a specific failure mode — what makes it effective?",
+            "Why is deleting PMs sometimes the right outcome of a review?"
+          ]
         },
         {
           "n": 7,
           "t": "Lubrication fundamentals",
           "tier": 3,
           "scope": "Lubrication regimes from journal-bearing theory; grease versus oil decisions. Selection, storage, and contamination control. Lubrication as the cheapest reliability program in the plant.",
-          "src": "NPTEL tribology-related content; SMRP framework"
+          "src": "NPTEL tribology-related content; SMRP framework",
+          "preview": [
+            "Which lubrication regime protects at startup, and why is startup the danger?",
+            "Grease versus oil: name two deciding factors."
+          ]
         },
         {
           "n": 8,
           "t": "Precision maintenance practices",
           "tier": 3,
           "scope": "Alignment, balancing, fastener torque, and installation standards as failure-prevention engineering. The craftsmanship–reliability link quantified where possible. Why 'fitted and ran' is not a completion standard.",
-          "src": "SMRP CMRP framework"
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Why does precision alignment extend seal and bearing life?",
+            "What does 'fitted and ran' fail to verify?"
+          ]
         },
         {
           "n": 9,
           "t": "Operator care and autonomous maintenance",
           "tier": 3,
           "scope": "CLAIR-style operator tasks: clean, lubricate, adjust, inspect, report. The operations–maintenance interface designed, not fought over. TPM origins acknowledged without the cult.",
-          "src": "SMRP CMRP framework"
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Which operator tasks genuinely prevent failures?",
+            "Why does the operations–maintenance interface need design, not goodwill?"
+          ]
         },
         {
           "n": 10,
           "t": "Maintenance economics",
           "tier": 3,
           "scope": "Cost of downtime versus cost of maintenance; direct, indirect, and consequence costs. The optimum that moves with criticality. Making a maintenance budget argument management can audit.",
-          "src": "SMRP CMRP framework"
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Which downtime costs never appear on the maintenance budget?",
+            "Why does the maintenance optimum move with criticality?"
+          ]
         },
         {
           "n": 11,
           "t": "The maintenance function in the organization",
           "tier": 3,
           "scope": "Roles: technician, planner, supervisor, reliability engineer — who owns what. Centralized versus area maintenance. Where the transitioning maintenance engineer's experience already maps onto this course's language.",
-          "src": "SMRP CMRP framework"
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Map your current maintenance experience onto the roles in this lesson.",
+            "Which role owns strategy, and which owns this week's schedule?"
+          ]
         }
       ]
     }

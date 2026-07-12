@@ -132,12 +132,11 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
-- Preview questions ("preview" field, rendered above Taught-from): 60/522 —
-  Core 60 complete. Remaining batches in order: y1s1, y1s2, y2s1, y2s2,
-  y3s1, y3s2, y4s1, y4s2 (Tier-3 lessons only; Core-60 already done).
-  Rules: original wording, 2 conceptual questions per Tier-3 lesson,
-  numeric micro-problems on Core-60, match the lesson scope + cited source,
-  no invented plant data.
+- Preview questions ("preview" field, rendered above Taught-from): 522/522 —
+  COMPLETE (Core 60 numeric micro-problems + all Tier-3 conceptual pairs,
+  all 8 semesters). Rules that governed them: original wording, match the
+  lesson scope + cited source, no invented plant data. New lessons added
+  later must ship with a preview field.
 - Source registry: data/sources.json — every URL verified live before entry
   (OCW course pages, NPTEL course pages, Open Library work pages,
   smrp.org, nebosh.org.uk). Sources without verifiable official URLs stay
