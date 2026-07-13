@@ -132,6 +132,22 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
+- ARCHITECTURE (2026-07-13, owner-approved): every lesson has its own page
+  with FIVE TABS — Lecture / Foundations / Worked Examples / Kuwait Floor /
+  Library (~573 pages total). Tabs are populated from real content at the
+  lesson's tier; unbuilt depth carries queued labels, never filler. Owner
+  explicitly chose: keep paper/ink/ember design with maroon+gold as
+  accents only (NO full ASU maroon/gold re-skin — trademark + design
+  consistency); depth continues in batches, Core-60 first. The "522 fully
+  written lessons in one pass" spec was rejected as infeasible/dishonest.
+  MathJax was NOT added: the site's equation system is the hand-built
+  HTML/CSS notation from the approved artifact; new Tier-1 lectures should
+  use it (see y1s1-mp1-02 fragment) for visual consistency.
+  Library-tab embeds are generated ONLY from registry/card URLs that are
+  embeddable YouTube watch/playlist links — all verified. Client search:
+  docs/curriculum/search-index.json + JS on the curriculum index.
+  Deploy target: github.com/sundevilfactory/asu → sundevilfactory.github.io/asu/.
+
 - Preview questions ("preview" field, rendered above Taught-from): 522/522 —
   COMPLETE (Core 60 numeric micro-problems + all Tier-3 conceptual pairs,
   all 8 semesters). Rules that governed them: original wording, match the

@@ -2,6 +2,9 @@
 """Sun Devil Factory — static site generator.
 
 Zero dependencies. Reads data/*.json + content fragments, emits docs/.
+Every lesson gets its own page with five tabs (Lecture / Foundations /
+Worked Examples / Kuwait Floor / Library), populated with real content at
+its current tier depth — unbuilt depth is labeled queued, never faked.
 GitHub Pages serves docs/ on main. Run:  python3 build.py
 """
 import json
@@ -86,6 +89,9 @@ PAGE = """<!doctype html>
 </html>
 """
 
+YT_WATCH = re.compile(r"youtube\.com/watch\?v=([\w-]{6,})")
+YT_LIST = re.compile(r"youtube\.com/playlist\?list=([\w-]+)")
+
 
 def slugify(text):
     s = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
@@ -97,9 +103,19 @@ def esc(s):
              .replace('"', "&quot;"))
 
 
+def yt_embed_url(url):
+    """Return an embeddable YouTube URL, or None. Only watch/playlist URLs
+    embed; channels and non-YouTube pages stay links."""
+    m = YT_WATCH.search(url or "")
+    if m:
+        return f"https://www.youtube.com/embed/{m.group(1)}"
+    m = YT_LIST.search(url or "")
+    if m:
+        return f"https://www.youtube.com/embed/videoseries?list={m.group(1)}"
+    return None
+
+
 def load_sources():
-    """Registry of verified source URLs; returns [(escaped_match, entry)]
-    sorted longest-match-first so specific names win over generic ones."""
     reg = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
     entries = []
     for s in reg["sources"]:
@@ -113,9 +129,6 @@ SOURCES = None  # set in main()
 
 
 def linkify(escaped_text):
-    """Replace known source names (already-escaped text) with links to the
-    verified registry URL, plus optional Watch-lectures / label / Arabic
-    companions. Placeholder pass prevents nested anchors."""
     subs = []
     for m, s in SOURCES:
         if m in escaped_text:
@@ -139,6 +152,16 @@ def linkify(escaped_text):
     for token, anchor in subs:
         escaped_text = escaped_text.replace(token, anchor)
     return escaped_text
+
+
+def matched_sources(raw_text):
+    """Registry entries whose match string appears in the raw text."""
+    esc_t = esc(raw_text or "")
+    out = []
+    for m, s in SOURCES:
+        if m in esc_t and s not in out:
+            out.append(s)
+    return out
 
 
 def page(path, title, desc, body, prefix, active="", footer_next=""):
@@ -182,50 +205,249 @@ def lesson_page_name(course, lesson):
     return f"{lesson['n']:02d}-{slugify(lesson['t'])[:60]}.html"
 
 
+def preview_block(les):
+    if not les.get("preview"):
+        return ""
+    qs = "".join(f"<li>{esc(q)}</li>" for q in les["preview"])
+    return (f'<div class="preview"><b>After this lesson you can '
+            f'answer:</b><ul>{qs}</ul></div>')
+
+
+def strip_pagehead(frag):
+    """Remove a fragment's own pagehead (the lesson shell provides one)."""
+    return re.sub(r'\s*<div class="pagehead">.*?</div>\s*', "", frag,
+                  count=1, flags=re.S)
+
+
+def embed_card(url, caption, sub=""):
+    e = yt_embed_url(url)
+    if not e:
+        return ""
+    sub_html = f'<span class="src">{esc(sub)}</span>' if sub else ""
+    return (f'<figure class="embed"><iframe loading="lazy" '
+            f'src="{e}" title="{esc(caption)}" frameborder="0" '
+            f'allow="accelerometer; encrypted-media; picture-in-picture" '
+            f'allowfullscreen></iframe>'
+            f'<figcaption>{esc(caption)} {sub_html}</figcaption></figure>')
+
+
+def video_cards(course):
+    """Course-level courseware cards: embeds where the URL is embeddable,
+    link cards otherwise."""
+    cards = []
+    for v in course.get("videos", []):
+        e = embed_card(v["url"], v["title"], v.get("src", ""))
+        if e:
+            cards.append(e)
+        else:
+            cards.append(f"""
+<a class="vid" href="{esc(v['url'])}" target="_blank" rel="noopener">
+  <span class="vtag">{esc(v.get('tag', 'COURSE VIDEO — VERIFIED'))}</span>
+  <h4>{esc(v['title'])}</h4>
+  <p>{esc(v.get('note', ''))}</p>
+  <span class="src">{esc(v['src'])}</span>
+</a>""")
+    return cards
+
+
+def build_lesson_page(sem, course, les, prefix):
+    """One page per lesson, five tabs, populated from what actually exists."""
+    n_total = len(course["lessons"])
+    tier = les.get("tier", 3)
+    core = les.get("core60")
+    frag_id = les.get("content")
+    frag = None
+    if frag_id:
+        frag = fragment(f"lessons/{frag_id}.html")
+        if frag is None:
+            raise SystemExit(f"missing content fragment: {frag_id}")
+        frag = strip_pagehead(frag.replace("{{prefix}}", prefix))
+
+    src_raw = les.get("src", "")
+    src_html = linkify(esc(src_raw))
+    taught = "".join(f"<li>{linkify(esc(t))}</li>"
+                     for t in course.get("taught_from", []))
+
+    # ---------- Lecture ----------
+    if frag:
+        kind = "full lecture" if tier == 1 else "study guide"
+        lecture = preview_block(les) + frag
+        fmt = "Full lecture · ~90 min" if tier == 1 else "Study guide · Core 60"
+    else:
+        depth = ("This is a Core 60 lesson — its study guide is queued and will "
+                 "replace this skeleton." if core else
+                 "Structured-notes tier: the scope below defines the lesson; "
+                 "full teaching depth is queued behind the Core 60.")
+        lecture = f"""
+<div class="measure">
+  <p class="lead">{esc(les.get('scope', ''))}</p>
+  {preview_block(les)}
+  <p class="queued-note">{depth}</p>
+</div>"""
+        fmt = "Scope + sources (depth queued)"
+
+    # ---------- Foundations ----------
+    frag_note = ("<p>This lesson's foundations layer — prerequisite refreshers "
+                 "and dependency map — is embedded in the lecture itself: open "
+                 "the <b>Lecture</b> tab.</p>" if frag and tier == 1 else "")
+    foundations = f"""
+<div class="measure">
+  {frag_note}
+  <p>This lesson belongs to <b>{esc(course['code'])} · {esc(course['title'])}</b>
+  ({esc(sem['title'])}). It stands on the course's primary texts:</p>
+  <ul class="plain">{taught}</ul>
+  <p class="small">Course context: {esc(course['summary'])}</p>
+</div>"""
+
+    # ---------- Worked examples ----------
+    if frag and tier == 1:
+        examples = ("<div class=\"measure\"><p>The worked examples for this "
+                    "lesson are written into the lecture as whiteboard boards — "
+                    "open the <b>Lecture</b> tab and scroll to the dark board "
+                    "sections. Each carries given data, numbered steps with "
+                    "units, and an engineering read-out.</p></div>")
+    elif frag:
+        examples = ("<div class=\"measure\"><p>This study guide carries one "
+                    "condensed worked example inside the <b>Lecture</b> tab "
+                    "(the boxed calculation). Full multi-example depth arrives "
+                    "when this lesson is promoted to lecture tier.</p></div>")
+    elif les.get("preview"):
+        qs = "".join(f"<li>{esc(q)}</li>" for q in les["preview"])
+        examples = f"""
+<div class="measure">
+  <p>Worked solutions for this lesson are queued. Until they land, use the
+  lesson's own checkpoint questions as practice prompts — attempt them from
+  the cited source before reading on:</p>
+  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
+  <ul>{qs}</ul></div>
+</div>"""
+    else:
+        examples = ("<div class=\"measure\"><p class=\"queued-note\">Worked "
+                    "examples queued for this lesson.</p></div>")
+
+    # ---------- Kuwait floor ----------
+    kw = les.get("kuwait")
+    if frag:
+        kuwait = ("<div class=\"measure\"><p>This lesson's Kuwait-floor "
+                  "application is written into the <b>Lecture</b> tab — see its "
+                  "Kuwait floor section." +
+                  (f" Anchor company: <b>{esc(kw)}</b>." if kw else "") +
+                  "</p></div>")
+    elif kw:
+        kuwait = f"""
+<div class="measure">
+  <p>Kuwait anchor for this lesson: <b>{esc(kw)}</b>. The full floor vignette
+  is written when this lesson's guide is built; until then, the
+  <a href="{prefix}career/index.html">career page</a> maps what {esc(kw)}
+  runs and which roles touch this topic.</p>
+</div>"""
+    else:
+        kuwait = ("<div class=\"measure\"><p class=\"queued-note\">No Kuwait "
+                  "anchor assigned to this lesson yet. The six anchor companies "
+                  "and their processes are mapped on the career page.</p></div>")
+
+    # ---------- Library ----------
+    embeds = []
+    seen = set()
+    for s in matched_sources(src_raw):
+        for key, cap in (("url", s["name"]),
+                         ("watch", s["name"] + " — lecture videos"),):
+            u = s.get(key)
+            if u and u not in seen:
+                e = embed_card(u, cap)
+                if e:
+                    embeds.append(e)
+                    seen.add(u)
+        ar = s.get("arabic")
+        ar_url = ar["url"] if isinstance(ar, dict) else ar
+        if ar_url and ar_url not in seen:
+            e = embed_card(ar_url, "In Arabic — alternative",
+                           "verified independent educator")
+            if e:
+                embeds.append(e)
+                seen.add(ar_url)
+    course_cards = video_cards(course)
+    embeds_html = "".join(embeds)
+    cards_html = (f'<h3>Course-level courseware</h3><div class="vids">'
+                  f'{"".join(course_cards)}</div>') if course_cards else ""
+    library = f"""
+<div class="measure">
+  <p class="src"><b>Taught from</b> — {src_html}</p>
+  {embeds_html if embeds_html else
+   '<p class="small">No verified embeddable video is mapped to this specific lesson yet — verified links above and course-level courseware below are the study path.</p>'}
+</div>
+<div class="wide">{cards_html}</div>"""
+
+    # ---------- shell ----------
+    core_chip = f'<span class="badge t2">CORE 60 · {esc(core)}</span>' if core else ""
+    name = lesson_page_name(course, les)
+    idx = next(i for i, l in enumerate(course["lessons"]) if l["n"] == les["n"])
+    prev_l = course["lessons"][idx - 1] if idx > 0 else None
+    next_l = course["lessons"][idx + 1] if idx + 1 < n_total else None
+    nav = "<nav class=\"prevnext\">"
+    if prev_l:
+        nav += (f'<a href="{lesson_page_name(course, prev_l)}">← '
+                f'{prev_l["n"]:02d} · {esc(prev_l["t"])}</a>')
+    nav += f'<a href="index.html">All lessons · {esc(course["code"])}</a>'
+    if next_l:
+        nav += (f'<a href="{lesson_page_name(course, next_l)}">'
+                f'{next_l["n"]:02d} · {esc(next_l["t"])} →</a>')
+    nav += "</nav>"
+
+    body = f"""
+<nav class="crumbs"><a href="{prefix}curriculum/index.html">Curriculum</a> /
+<a href="index.html">{esc(course['code'])} · {esc(course['title'])}</a> /
+<span>Lesson {les['n']:02d}</span></nav>
+<div class="pagehead">
+  <p class="kicker"><span class="n">{esc(course['code'])} · LESSON {les['n']:02d} OF {n_total}</span>{esc(fmt)} {core_chip}</p>
+  <h1>{esc(les['t'])}</h1>
+</div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Worked Examples</button>
+  <button data-tab="t-kuwait">Kuwait Floor</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>{lecture}</section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>{foundations}</section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>{examples}</section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2>{kuwait}</section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>{library}</section>
+{nav}"""
+    page(
+        f"curriculum/{sem['id']}/{course['id']}/{name}",
+        f"{les['t']} — {course['title']} — Sun Devil Factory",
+        les.get("scope", "")[:150], body, prefix, "curriculum",
+    )
+
+
 def build_course_page(sem, course, prefix):
     rows = []
     for les in course["lessons"]:
-        title = esc(les["t"])
+        href = lesson_page_name(course, les)
+        title_html = f'<a href="{href}">{esc(les["t"])}</a>'
         badge = tier_badge(les)
-        if les.get("content"):
-            href = lesson_page_name(course, les)
-            title_html = f'<a href="{href}">{title}</a>'
-        else:
-            title_html = title
         core = les.get("core60")
         core_note = f' <b>CORE 60 · {esc(core)}</b> ·' if core else ""
         src = linkify(esc(les.get("src", "")))
         scope = esc(les.get("scope", ""))
-        preview = ""
-        if les.get("preview"):
-            qs = "".join(f"<li>{esc(q)}</li>" for q in les["preview"])
-            preview = (f'<div class="preview"><b>After this lesson you can '
-                       f'answer:</b><ul>{qs}</ul></div>')
         rows.append(f"""
 <div class="lesson-row rv">
   <div class="no">{les['n']:02d}</div>
   <div>
     <h4>{title_html}{badge}</h4>
     <p class="scope">{scope}</p>
-    {preview}
+    {preview_block(les)}
     <p class="src"><b>Taught from</b> —{core_note} {src}</p>
   </div>
 </div>""")
 
     taught = "".join(f"<li>{linkify(esc(t))}</li>"
                      for t in course.get("taught_from", []))
-    vids = ""
-    if course.get("videos"):
-        cards = "".join(f"""
-<a class="vid" href="{esc(v['url'])}" target="_blank" rel="noopener">
-  <span class="vtag">{esc(v.get('tag', 'COURSE VIDEO — VERIFIED'))}</span>
-  <h4>{esc(v['title'])}</h4>
-  <p>{esc(v.get('note', ''))}</p>
-  <span class="src">{esc(v['src'])}</span>
-</a>""" for v in course["videos"])
-        vids = f"""
-<h3>Open courseware for this course</h3>
-<div class="vids">{cards}</div>"""
+    cards = video_cards(course)
+    vids = (f'<h3>Open courseware for this course</h3><div class="vids">'
+            f'{"".join(cards)}</div>') if cards else ""
 
     n_core = sum(1 for l in course["lessons"] if l.get("core60"))
     body = f"""
@@ -248,24 +470,6 @@ def build_course_page(sem, course, prefix):
         f"{course['title']} — Sun Devil Factory",
         course["summary"][:150], body, prefix, "curriculum",
     )
-
-
-def build_lesson_pages(sem, course, prefix):
-    for les in course["lessons"]:
-        frag_id = les.get("content")
-        if not frag_id:
-            continue
-        frag = fragment(f"lessons/{frag_id}.html")
-        if frag is None:
-            raise SystemExit(f"missing content fragment: {frag_id}")
-        frag = frag.replace("{{prefix}}", prefix)
-        name = lesson_page_name(course, les)
-        nxt = ""
-        page(
-            f"curriculum/{sem['id']}/{course['id']}/{name}",
-            f"{les['t']} — {course['title']} — Sun Devil Factory",
-            les.get("scope", "")[:150], frag, prefix, "curriculum", nxt,
-        )
 
 
 def build_curriculum_index(sems, prefix):
@@ -301,11 +505,32 @@ def build_curriculum_index(sems, prefix):
   plant floors actually test — and are built to study-guide or full-lecture depth.
   Everything else carries a scope note and its textbook source, so you always know
   what a topic is and where it is taught from.</p>
+  <div class="searchbox">
+    <input type="search" id="lessonSearch" placeholder="Search all {total_lessons} lessons — title, course, keywords…"
+      aria-label="Search lessons" data-index="search-index.json">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
 </div>
 <section class="part tight"><div class="wide">{''.join(parts)}</div></section>"""
     page("curriculum/index.html", "Curriculum — Sun Devil Factory",
          "48 courses and 522 lessons mapped for a maintenance-to-manufacturing transition.",
          body, prefix, "curriculum")
+
+
+def build_search_index(sems):
+    idx = []
+    for sem in sems:
+        for c in sem["courses"]:
+            for les in c["lessons"]:
+                idx.append({
+                    "t": les["t"],
+                    "c": f"{c['code']} · {c['title']}",
+                    "u": f"{sem['id']}/{c['id']}/{lesson_page_name(c, les)}",
+                    "k": les.get("scope", "")[:140],
+                })
+    (OUT / "curriculum" / "search-index.json").write_text(
+        json.dumps(idx, ensure_ascii=False), encoding="utf-8")
+    return len(idx)
 
 
 def build_static_pages(sems, prefix_root):
@@ -337,7 +562,6 @@ def main():
                  if l.get("preview"))
     print(f"preview questions: {n_prev}/522 lessons")
 
-    # sanity: counts
     n_courses = sum(len(s["courses"]) for s in sems)
     n_lessons = sum(len(c["lessons"]) for s in sems for c in s["courses"])
     n_core = sum(1 for s in sems for c in s["courses"] for l in c["lessons"]
@@ -348,9 +572,14 @@ def main():
     for sem in sems:
         for course in sem["courses"]:
             build_course_page(sem, course, "../../../")
-            build_lesson_pages(sem, course, "../../../")
+            for les in course["lessons"]:
+                build_lesson_page(sem, course, les, "../../../")
     build_static_pages(sems, "")
+    n_idx = build_search_index(sems)
     n_pages = len(list(OUT.rglob("*.html")))
+    n_embeds = sum(p.read_text(encoding="utf-8").count("youtube.com/embed")
+                   for p in OUT.rglob("*.html"))
+    print(f"search index: {n_idx} entries | embedded players: {n_embeds}")
     print(f"wrote {n_pages} pages -> {OUT}")
 
 
