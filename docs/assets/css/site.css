@@ -352,3 +352,13 @@ footer .fine{font-size:11.5px;color:#7d828a;margin-top:14px;line-height:1.7}
   .sidenav{border-right:0;border-bottom:1px solid var(--line);padding:18px 4vw}
   .sidenav details{display:inline-block;margin-right:18px;border:0}
 }
+
+/* ---------- lesson/course hero (artifact treatment, sidebar-column safe) ---------- */
+.hero.lesson{min-height:52vh}
+.hero.lesson h1{font-size:clamp(28px,3.4vw,50px)}
+.hero.lesson .sub{font-size:16.5px;max-width:60ch}
+.withside .hero.lesson{margin:0}
+.corechip{max-width:1060px;margin:14px auto 0;padding:0 4vw}
+
+/* lesson hero: heavier scrim so any pool photo stays legible */
+.hero.lesson::after{background:linear-gradient(180deg,rgba(12,13,15,.62) 0%,rgba(12,13,15,.42) 45%,rgba(12,13,15,.84) 100%)}

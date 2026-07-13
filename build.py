@@ -89,6 +89,80 @@ PAGE = """<!doctype html>
 </html>
 """
 
+PHOTOS = {
+    "sand-pour": ("sand-pour.jpg",
+        "Molten cast iron poured into a green-sand mold in a foundry",
+        "Photo: Sm faysal — CC BY-SA 4.0, Wikimedia Commons"),
+    "eaf-tapping": ("eaf-tapping.jpg",
+        "White-hot steel tapped from a 35-ton electric furnace",
+        "Photo: Alfred T. Palmer, U.S. OWI — public domain (Library of Congress)"),
+    "caster-interior": ("caster-interior.jpg",
+        "Ladle and tundish inside a continuous casting facility",
+        "Photo: Jet Lowe, HAER — public domain (Library of Congress)"),
+    "billet-cutting": ("billet-cutting.jpg",
+        "Gas torch cutting a red-hot steel billet",
+        "Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons"),
+    "welding": ("welding.jpg",
+        "Welder striking an arc on structural steel",
+        "Photo: Spc. Erica Isaacson, U.S. Army (DVIDS) — public domain, via Wikimedia Commons"),
+    "machining": ("machining.jpg",
+        "Turning a workpiece on an engine lathe",
+        "Photo: Mostafa Meraji — CC0, via Wikimedia Commons"),
+    "control-room": ("control-room.jpg",
+        "Control hall of the Kelenföld power plant, Budapest",
+        "Kelenföld Power Plant. Photo: AndreasS — CC BY 2.0, via Wikimedia Commons"),
+    "turbine-hall": ("turbine-hall.jpg",
+        "The historic turbine hall building, Johannesburg",
+        "Turbine hall building, Johannesburg. Photo: Ossewa — CC BY 4.0, via Wikimedia Commons"),
+}
+
+COURSE_PHOTO = {
+    "mfg-processes-1": "sand-pour", "mfg-processes-2": "machining",
+    "mfg-processes-3": "machining",
+    "materials-1": "billet-cutting", "materials-2": "billet-cutting",
+    "corrosion": "billet-cutting",
+    "welding-ndt": "welding", "safety": "welding", "hse": "welding",
+    "electrical": "control-room", "electronics-sensors": "control-room",
+    "plc-1": "control-room", "plc-2": "control-room",
+    "controls-1": "control-room", "instrumentation": "control-room",
+    "scada-iiot": "control-room", "robotics": "control-room",
+    "smart-manufacturing": "control-room", "computing": "control-room",
+    "statistics": "control-room", "math-1": "control-room",
+    "math-2": "control-room",
+    "drawing-cad": "machining", "statics": "machining",
+    "strength": "machining", "machine-design-1": "machining",
+    "machine-design-2": "machining", "kinematics-machinery": "machining",
+    "metrology": "machining",
+    "thermo-1": "eaf-tapping", "thermo-2": "eaf-tapping",
+    "fluids": "eaf-tapping", "heat-transfer": "eaf-tapping",
+    "hydraulics-pneumatics": "eaf-tapping", "rotating-equipment": "eaf-tapping",
+    "vibrations": "eaf-tapping", "dynamics": "eaf-tapping",
+    "condition-monitoring": "eaf-tapping", "reliability-1": "eaf-tapping",
+    "reliability-2": "turbine-hall", "maintenance-planning": "turbine-hall",
+    "asset-integrity": "caster-interior", "pressure-equipment": "caster-interior",
+    "capstone": "caster-interior",
+    "maintenance-fundamentals": "turbine-hall", "production-planning": "turbine-hall",
+    "lean-six-sigma": "turbine-hall", "engineering-economics": "turbine-hall",
+}
+
+
+def hero_block(course, prefix, eyebrow, title, sub, meta):
+    key = COURSE_PHOTO.get(course["id"], "eaf-tapping")
+    f, alt, credit = PHOTOS[key]
+    meta_html = "".join(f"<div>{m[0]}<b>{esc(m[1])}</b></div>" for m in meta)
+    return f"""
+<div class="hero lesson">
+  <img src="{prefix}assets/img/{f}" alt="{esc(alt)}">
+  <div class="hero-inner">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{esc(title)}</h1>
+    <p class="sub">{esc(sub)}</p>
+    <div class="hero-meta">{meta_html}</div>
+  </div>
+  <div class="hero-credit">{esc(credit)}</div>
+</div>"""
+
+
 MATHJAX = (
     "<script>MathJax={tex:{inlineMath:[['\\\\(','\\\\)']]},svg:{fontCache:'global'}};</script>\n"
     '<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>\n'
@@ -308,7 +382,6 @@ def build_lesson_page(sems, sem, course, les, prefix):
                  "full teaching depth is queued behind the Core 60.")
         lecture = f"""
 <div class="measure">
-  <p class="lead">{esc(les.get('scope', ''))}</p>
   {preview_block(les)}
   <p class="queued-note">{depth}</p>
 </div>"""
@@ -422,14 +495,21 @@ def build_lesson_page(sems, sem, course, les, prefix):
                 f'{next_l["n"]:02d} · {esc(next_l["t"])} →</a>')
     nav += "</nav>"
 
+    first_text = re.split(r"[—(;]", course.get("taught_from", [""])[0])[0].strip()[:44]
+    n_q = len(les.get("preview", []))
+    assess = ("2 worked boards + hidden-answer check" if frag and tier == 1 else
+              f"{n_q} checkpoint questions" if n_q else "queued")
+    hero = hero_block(
+        course, prefix,
+        f"{esc(course['code'])} · LESSON {les['n']:02d} OF {n_total} · {esc(sem['title'].upper())}",
+        les["t"], les.get("scope", ""),
+        [("Format", fmt), ("Primary text", first_text), ("Assessment", assess)])
     body = f"""
 <nav class="crumbs"><a href="{prefix}curriculum/index.html">Curriculum</a> /
 <a href="index.html">{esc(course['code'])} · {esc(course['title'])}</a> /
 <span>Lesson {les['n']:02d}</span></nav>
-<div class="pagehead">
-  <p class="kicker"><span class="n">{esc(course['code'])} · LESSON {les['n']:02d} OF {n_total}</span>{esc(fmt)} {core_chip}</p>
-  <h1>{esc(les['t'])}</h1>
-</div>
+{hero}
+<div class="corechip">{core_chip}</div>
 <div class="tabs" role="tablist">
   <button class="on" data-tab="t-lecture">Lecture</button>
   <button data-tab="t-foundations">Foundations</button>
@@ -481,12 +561,14 @@ def build_course_page(sems, sem, course, prefix):
             f'{"".join(cards)}</div>') if cards else ""
 
     n_core = sum(1 for l in course["lessons"] if l.get("core60"))
+    hero = hero_block(
+        course, prefix, f"{esc(course['code'])} · {esc(sem['title'].upper())}",
+        course["title"], course["summary"],
+        [("Lessons", str(len(course["lessons"]))),
+         ("Core 60", str(n_core) if n_core else "—"),
+         ("Track", "Maintenance → Manufacturing")])
     body = f"""
-<div class="pagehead">
-  <p class="kicker"><span class="n">{esc(course['code'])}</span>{esc(sem['title'])}</p>
-  <h1>{esc(course['title'])}</h1>
-  <p class="sub">{esc(course['summary'])}</p>
-</div>
+{hero}
 <section class="part tight">
   <div class="wide">
     <p class="small">{len(course['lessons'])} lessons · {n_core} in the Core&nbsp;60 ·
