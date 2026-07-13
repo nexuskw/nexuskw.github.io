@@ -18,5 +18,15 @@ facilities.
 4. `billet-cutting.jpg` — "Steel billet gas cutter." Photo: GenFM31.
    CC BY-SA 4.0. Via Wikimedia Commons.
 
+
+5. `welding.jpg` — "Welding Away." Photo: Spc. Erica Isaacson, U.S. Army
+   (DVIDS 128479). Public domain. Via Wikimedia Commons.
+6. `machining.jpg` — "Turning (machining process), Qom City, Iran (03)."
+   Photo: Mostafa Meraji. CC0. Via Wikimedia Commons.
+7. `control-room.jpg` — "Power Plant Kelenföld," Budapest. Photo: AndreasS
+   (Norway), Flickr. CC BY 2.0. Via Wikimedia Commons.
+8. `turbine-hall.jpg` — "Turbine Hall JHB 1" (building exterior),
+   Johannesburg. Photo: Ossewa. CC BY 4.0. Via Wikimedia Commons.
+
 CC BY-SA images are reused under their license terms with attribution; any
 modification here is limited to resizing/compression.

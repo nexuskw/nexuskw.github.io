@@ -30,7 +30,7 @@
     <p class="eyebrow">MTH 101 · LESSON 04 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Differentiation rules and the chain rule</h1>
     <p class="sub">Product, quotient, and chain rules with mechanical fluency as the goal. Implicit differentiation. The chain rule as the engine behind every related-rates problem in plant contexts.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Kelenföld Power Plant. Photo: AndreasS — CC BY 2.0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,74 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Tank level depends on flow, flow on valve position: which rule chains the sensitivities together?</li><li>Differentiate x·e^x and explain which rule did the work.</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Tank level depends on flow, flow on valve position: which rule chains the sensitivities together?</li><li>Differentiate x·e^x and explain which rule did the work.</li></ul></div><div class="measure">
+<h3>§1 · The rules — machinery for slopes</h3>
+<p>Yesterday's limit definition is correct and slow. Today we industrialize it. For
+constants \(c\), functions \(u, v\):</p>
+\[ (cu)' = cu', \qquad (u+v)' = u' + v', \qquad (x^n)' = nx^{n-1} \tag{1} \]
+\[ (uv)' = u'v + uv', \qquad \left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2} \tag{2} \]
+<p>Each is proved once from the limit and used forever. The power rule follows from expanding
+\( (x+\Delta x)^n \) and watching every term above first order vanish with \( \Delta x \) —
+the same "higher-order terms die" argument that engineering approximation lives on.</p>
+<h3>§2 · The chain rule — rates through a chain of causes</h3>
+<p>Plant variables cause each other in chains: valve position sets flow, flow sets level,
+level sets pressure. If \( y = f(u) \) and \( u = g(x) \):</p>
+\[ \frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx} \tag{3} \]
+<p>Rates multiply along the chain. This single rule powers every sensitivity argument you will
+make: how much does discharge pressure move per percent of speed? Differentiate through the
+chain of dependencies and multiply the local sensitivities.</p>
+<h3>§3 · Relative rates — the engineer's favorite</h3>
+<p>Divide a derivative by its function and you get relative sensitivity. For a fan law
+\( P = kN^3 \), logarithmic differentiation gives \( \frac{dP}{P} = 3\frac{dN}{N} \): a 2%
+speed increase costs ≈6% more power ((1.02)³ = 1.061 exactly). This is why slowing a fan or
+pump slightly is the cheapest energy project in any plant — the cube works for you on the way
+down.</p>
+<p><strong>Closing.</strong> Rules (1)–(2) mechanize differentiation; the chain rule (3) walks
+rates through cause-and-effect; relative rates turn calculus into percentage talk that
+managers act on.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 101 · Engineering Mathematics I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, always pointed at rates, areas, and physical balances you will meet again in thermodynamics and vibrations.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The derivative as limit</b> (Lesson 3) — today's rules are shortcuts to that limit.</li>
+<li><b>Exponent algebra</b> — \( x^{-1} \), \( x^{1/2} \) so the power rule covers roots and reciprocals.</li>
+<li><b>Composite functions</b> — recognizing \( f(g(x)) \) before differentiating it.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Product/quotient rule</b> — derivatives of combined effects; equation (2).</li>
+<li><b>Chain rule</b> — derivative through nested dependence; equation (3).</li>
+<li><b>Sensitivity</b> — output change per unit input change; a derivative with a job.</li>
+<li><b>Relative (log) sensitivity</b> — percent-per-percent; \( d\ln y / d\ln x \).</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Tank level depends on flow, flow on valve position: which rule chains the sensitivities together?</li><li>Differentiate x·e^x and explain which rule did the work.</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — chain rule, straight up</h4>
+<p><b>Problem.</b> \( y = (3x^2+2)^4 \). <b>Find:</b> \( y'(1) \).</p>
+<p><b>Solution.</b> (1) Outer: \( \frac{d}{du}u^4 = 4u^3 \) with \( u = 3x^2+2 \).
+(2) Inner: \( u' = 6x \). (3) Chain: \( y' = 4(3x^2+2)^3 \cdot 6x = 24x(3x^2+2)^3 \).
+(4) At \( x=1 \): \( 24 \times 5^3 = 24 \times 125 = 3000 \).</p>
+<p><b>Answer:</b> 3000. <b>Sanity check:</b> numerically, \( y(1.001) - y(1) \approx
+628.0\!-\!625 = 3.0 \) over \( \Delta x = 0.001 \) → slope ≈ 3000. Confirmed.</p>
+<h4>Worked example 2 — the affinity-law energy argument</h4>
+<p><b>Problem.</b> A 90 kW cooling fan runs at fixed speed with dampers throttling. A VFD
+retrofit would slow it 10%. Using the fan law \( P = kN^3 \), <b>find</b> the approximate and
+exact power saving.</p>
+<p><b>Solution.</b> (1) Relative rates: \( dP/P = 3\,dN/N = 3 \times (-10\%) = -30\% \)
+(first-order estimate). (2) Exact: \( (0.9)^3 = 0.729 \) → 27.1% saving.
+(3) Power: \( 90 \times 0.271 = 24.4\ \mathrm{kW} \) saved continuously.</p>
+<p><b>Answer:</b> ≈24 kW (exact 27.1%, linear estimate 30%). <b>Sanity check:</b> the linear
+estimate overshoots because the cube curve bends — for a 10% change the two agree within a few
+points, exactly what a first-order method promises.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — selling the VFD with one line of calculus.</b> You arrive at an energy review
+where a utilities fan farm runs throttled year-round. Management wants payback numbers, not
+mathematics. You write one line on the whiteboard — <em>power moves three percent for every
+percent of speed</em> — and translate: 10% slower ≈ 25–30% less power, per fan, forever. The
+chain rule and the cube law did the argument; the spreadsheet that follows merely confirms
+what equation (3) already promised. The retrofit gets scoped that week.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>

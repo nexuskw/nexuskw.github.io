@@ -30,7 +30,7 @@
     <p class="eyebrow">MTH 101 · LESSON 03 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>The derivative as a rate</h1>
     <p class="sub">Definition from first principles, then the derivative as velocity, heat-up rate, and wear rate. Differentiability versus continuity. Reading slopes off real trend data.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Kelenföld Power Plant. Photo: AndreasS — CC BY 2.0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,77 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>A bearing temperature trend rises 2 °C/hour: what derivative statement is that, and toward what does it point?</li><li>Why can a function be continuous yet not differentiable at a point — and what would that look like on a trend?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A bearing temperature trend rises 2 °C/hour: what derivative statement is that, and toward what does it point?</li><li>Why can a function be continuous yet not differentiable at a point — and what would that look like on a trend?</li></ul></div><div class="measure">
+<h3>§1 · From average rate to instantaneous rate</h3>
+<p>Between Monday and Friday a bearing housing warmed from 62 °C to 74 °C: average rate
+3 °C/day. But <em>right now</em>, this hour, how fast is it heating? Squeeze the interval and
+the average rate converges — Lesson 2's limit — to the instantaneous rate:</p>
+\[ \frac{dT}{dt} = \lim_{\Delta t\to 0}\frac{T(t+\Delta t)-T(t)}{\Delta t} \tag{1} \]
+<p>That is the derivative: the local slope of the trend, the speed of change at an instant.
+Units divide: °C per hour, m³ per second, mm/s of vibration per week. A derivative always has
+units, and always tells a maintenance story.</p>
+<h3>§2 · The derivative as the trend's confession</h3>
+<p>Condition monitoring is derivative-reading as a profession. A flat vibration trend with
+\( dV/dt \approx 0 \) buys you time; the same amplitude with a steep positive slope buys you a
+work order. Two machines at identical 4 mm/s are in different worlds if one arrived there over
+three years and the other over three weeks. Value tells you <em>where</em> it is; the
+derivative tells you <em>where it's going</em>.</p>
+<h3>§3 · Computing from a model</h3>
+<p>Given a fitted trend \( T(t) = 40 + 0.8t + 0.05t^2 \) (°C, hours), the power rule (proved
+next lesson) gives \( T'(t) = 0.8 + 0.1t \): the heating <em>accelerates</em>, because the rate
+itself grows. Set \( T'(t) \) against an alarm rate and you get a time-to-act, not just a
+number: solve \( 0.8+0.1t = 2.5 \) → \( t = 17\ \mathrm{h} \). The derivative converts a curve
+into a deadline.</p>
+<p><strong>Closing.</strong> The derivative is a limit of average rates, it carries units, and
+on the plant floor it is the difference between watching a number and reading its intent.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 101 · Engineering Mathematics I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, always pointed at rates, areas, and physical balances you will meet again in thermodynamics and vibrations.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Limits</b> (Lesson 2) — the derivative is literally a limit; no limit, no slope.</li>
+<li><b>Slope of a line</b> — rise over run; the derivative generalizes it to curves.</li>
+<li><b>Function notation</b> (Lesson 1) — \( T'(t) \) is itself a new function of time.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Derivative</b> — instantaneous rate of change; slope of the tangent line.</li>
+<li><b>Tangent line</b> — the straight line that best mimics the curve at one point.</li>
+<li><b>Secant slope</b> — average rate across an interval; the derivative's approximation.</li>
+<li><b>Differentiable</b> — smooth enough to own a slope (no corners, no jumps).</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>A bearing temperature trend rises 2 °C/hour: what derivative statement is that, and toward what does it point?</li><li>Why can a function be continuous yet not differentiable at a point — and what would that look like on a trend?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — time-to-alarm from a fitted trend</h4>
+<p><b>Problem.</b> A gearbox housing temperature trend fits
+\( T(t) = 40 + 0.8t + 0.05t^2 \) (°C, \(t\) in hours since the shift began). Site practice
+flags any heating rate above 2.5 °C/h. <b>Find:</b> the rate at \( t=10\ \mathrm{h} \) and the
+time the rate limit is reached.</p>
+<p><b>Solution.</b> (1) Differentiate: \( T'(t) = 0.8 + 0.1t \).
+(2) At \( t=10 \): \( T'(10) = 0.8 + 1.0 = 1.8\ \mathrm{°C/h} \) — under the limit.
+(3) Set \( 0.8 + 0.1t = 2.5 \Rightarrow t = 17\ \mathrm{h} \).</p>
+<p><b>Answer:</b> 1.8 °C/h now; the 2.5 °C/h threshold arrives at \( t = 17\ \mathrm{h} \).
+<b>Sanity check:</b> the rate grows 0.1 °C/h every hour; from 1.8 at \(t=10\), seven more hours
+adds 0.7 → 2.5. Consistent.</p>
+<h4>Worked example 2 — filling rate from level</h4>
+<p><b>Problem.</b> A vertical cylindrical tank, diameter 3.0 m, shows level rising at
+0.40 m per minute. <b>Find:</b> the inflow in m³/h.</p>
+<p><b>Solution.</b> (1) \( V = A h \) with \( A = \pi D^2/4 = \pi (3.0)^2/4 = 7.07\ \mathrm{m^2} \).
+(2) Chain of rates: \( \dot V = A \, \dot h = 7.07 \times 0.40 = 2.83\ \mathrm{m^3/min} \).
+(3) Convert: \( 2.83 \times 60 = 170\ \mathrm{m^3/h} \).</p>
+<p><b>Answer:</b> ≈170 m³/h. <b>Sanity check:</b> the tank gains 24 m³ every 10 minutes —
+about 3.4 m of level per hour, which a 3 m-diameter receiving tank plausibly does during
+transfer. Units chain cleanly: m² × m/min → m³/min.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — two identical numbers, one work order.</b> You arrive for the monthly route
+at a cable plant's drawing line and both gearboxes read 3.9 mm/s. The history tells them
+apart: unit A has sat between 3.7 and 4.0 for two years (\( dV/dt \approx 0 \)); unit B was at
+2.1 six weeks ago — a slope of ~0.3 mm/s per week and climbing. Same value, different
+derivative, different decision: A stays on route, B gets an inspection window before the next
+production campaign. When you defend that call in the morning meeting, the argument is
+equation (1), spoken in plain language: it isn't where the number is, it's how fast it's
+moving.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>

@@ -352,8 +352,18 @@ def sidebar_html(sems, cur_sem, cur_course, prefix):
     return "".join(parts)
 
 
-def build_lesson_page(sems, sem, course, les, prefix):
+def load_tab_content(sem, course):
+    """Optional full per-tab content: data/content/<sem>-<course>.json
+    maps lesson n (as str) -> {lecture, foundations, examples, kuwait} HTML."""
+    f = DATA / "content" / f"{sem['id']}-{course['id']}.json"
+    if not f.exists():
+        return {}
+    return json.loads(f.read_text(encoding="utf-8"))
+
+
+def build_lesson_page(sems, sem, course, les, prefix, tabs=None):
     """One page per lesson, five tabs, populated from what actually exists."""
+    tabs = (tabs or {}).get(str(les["n"]), {})
     n_total = len(course["lessons"])
     tier = les.get("tier", 3)
     core = les.get("core60")
@@ -371,7 +381,10 @@ def build_lesson_page(sems, sem, course, les, prefix):
                      for t in course.get("taught_from", []))
 
     # ---------- Lecture ----------
-    if frag:
+    if tabs.get("lecture"):
+        lecture = preview_block(les) + f'<div class="measure">{tabs["lecture"]}</div>'
+        fmt = "Full lesson"
+    elif frag:
         kind = "full lecture" if tier == 1 else "study guide"
         lecture = preview_block(les) + frag
         fmt = "Full lecture · ~90 min" if tier == 1 else "Study guide · Core 60"
@@ -388,10 +401,13 @@ def build_lesson_page(sems, sem, course, les, prefix):
         fmt = "Scope + sources (depth queued)"
 
     # ---------- Foundations ----------
+    if tabs.get("foundations"):
+        foundations = f'<div class="measure">{tabs["foundations"]}</div>'
     frag_note = ("<p>This lesson's foundations layer — prerequisite refreshers "
                  "and dependency map — is embedded in the lecture itself: open "
                  "the <b>Lecture</b> tab.</p>" if frag and tier == 1 else "")
-    foundations = f"""
+    if not tabs.get("foundations"):
+        foundations = f"""
 <div class="measure">
   {frag_note}
   <p>This lesson belongs to <b>{esc(course['code'])} · {esc(course['title'])}</b>
@@ -401,7 +417,9 @@ def build_lesson_page(sems, sem, course, les, prefix):
 </div>"""
 
     # ---------- Worked examples ----------
-    if frag and tier == 1:
+    if tabs.get("examples"):
+        examples = f'<div class="measure">{tabs["examples"]}</div>'
+    elif frag and tier == 1:
         examples = ("<div class=\"measure\"><p>The worked examples for this "
                     "lesson are written into the lecture as whiteboard boards — "
                     "open the <b>Lecture</b> tab and scroll to the dark board "
@@ -428,7 +446,9 @@ def build_lesson_page(sems, sem, course, les, prefix):
 
     # ---------- Kuwait floor ----------
     kw = les.get("kuwait")
-    if frag:
+    if tabs.get("kuwait"):
+        kuwait = f'<div class="measure">{tabs["kuwait"]}</div>'
+    elif frag:
         kuwait = ("<div class=\"measure\"><p>This lesson's Kuwait-floor "
                   "application is written into the <b>Lecture</b> tab — see its "
                   "Kuwait floor section." +
@@ -498,6 +518,7 @@ def build_lesson_page(sems, sem, course, les, prefix):
     first_text = re.split(r"[—(;]", course.get("taught_from", [""])[0])[0].strip()[:44]
     n_q = len(les.get("preview", []))
     assess = ("2 worked boards + hidden-answer check" if frag and tier == 1 else
+              "worked examples + checkpoint questions" if tabs.get("examples") else
               f"{n_q} checkpoint questions" if n_q else "queued")
     hero = hero_block(
         course, prefix,
@@ -687,8 +708,9 @@ def main():
     for sem in sems:
         for course in sem["courses"]:
             build_course_page(sems, sem, course, "../../../")
+            tabs = load_tab_content(sem, course)
             for les in course["lessons"]:
-                build_lesson_page(sems, sem, course, les, "../../../")
+                build_lesson_page(sems, sem, course, les, "../../../", tabs)
     build_static_pages(sems, "")
     n_idx = build_search_index(sems)
     n_pages = len(list(OUT.rglob("*.html")))

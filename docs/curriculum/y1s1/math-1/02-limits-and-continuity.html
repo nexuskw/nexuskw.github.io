@@ -30,7 +30,7 @@
     <p class="eyebrow">MTH 101 · LESSON 02 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Limits and continuity</h1>
     <p class="sub">The limit as the formal version of 'what happens as we approach'. Continuity and why physical quantities are usually, but not always, continuous. One-sided limits at switching events.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Kelenföld Power Plant. Photo: AndreasS — CC BY 2.0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,78 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Give a plant quantity that genuinely jumps discontinuously, and one that only appears to.</li><li>What does a one-sided limit describe at a relay switching instant?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Give a plant quantity that genuinely jumps discontinuously, and one that only appears to.</li><li>What does a one-sided limit describe at a relay switching instant?</li></ul></div><div class="measure">
+<h3>§1 · Why limits exist in a plant</h3>
+<p>A limit answers one question: <em>what value does a function approach as its input
+approaches a point?</em> Formally, \( \lim_{x\to a} f(x) = L \) means we can force \( f(x) \)
+arbitrarily close to \( L \) by taking \( x \) close enough to \( a \). The definition sounds
+abstract; the plant meaning is concrete: what does the sensor settle toward, what does the
+ratio become, what happens at the operating edge?</p>
+<h3>§2 · The ratio that defines everything</h3>
+<p>The most important limit in this course is a ratio of vanishing quantities,</p>
+\[ \lim_{\theta\to 0}\frac{\sin\theta}{\theta} = 1 \tag{1} \]
+<p>Try it numerically: at \( \theta = 0.1 \) rad the ratio is 0.9983; at 0.01, 0.99998. The
+two quantities shrink together but their <em>ratio</em> converges — that is the whole mental
+model for the derivative in the next lesson, where a vanishing rise over a vanishing run
+converges to a slope.</p>
+<h3>§3 · Continuity — and what it means for signals</h3>
+<p>\( f \) is continuous at \( a \) when \( \lim_{x\to a} f(x) = f(a) \): no jump, no hole, no
+blow-up. Physical processes — temperature, level, pressure — are continuous; their
+<em>measurements</em> need not be. A thermocouple that jumps 40 °C between scans hasn't
+witnessed magic; it has witnessed electrical noise, a loose connection, or a step change in
+what is being touched. Knowing which physical variables can and cannot jump is a diagnostic
+tool: pressure can step (valve slam), metal temperature cannot.</p>
+<p>One-sided limits close the lesson: a relay approaching its trip point from below and from
+above sees two different worlds, \( \lim_{x\to a^-} \) and \( \lim_{x\to a^+} \). Hysteresis is
+one-sided limits wearing work clothes.</p>
+<p><strong>Closing.</strong> Limits formalize approach; continuity formalizes no surprises.
+Tomorrow they combine into the derivative.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 101 · Engineering Mathematics I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, always pointed at rates, areas, and physical balances you will meet again in thermodynamics and vibrations.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Function evaluation and graphs</b> (Lesson 1) — reading \( f \) near a point, not just at it.</li>
+<li><b>Radian measure</b> — equation (1) is false in degrees; radians make arc = radius × angle.</li>
+<li><b>Factoring</b> — resolving \( \tfrac{x^2-9}{x-3} \) requires \( (x-3)(x+3) \).</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Limit</b> — the value a function approaches; may exist where the function value doesn't.</li>
+<li><b>Continuity</b> — limit equals value; the graph draws without lifting the pen.</li>
+<li><b>One-sided limit</b> — approach from below (\(a^-\)) or above (\(a^+\)) only.</li>
+<li><b>Removable discontinuity</b> — a hole; the limit exists but the definition misses it.</li>
+<li><b>Hysteresis</b> — deliberate gap between rising and falling switching points.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Give a plant quantity that genuinely jumps discontinuously, and one that only appears to.</li><li>What does a one-sided limit describe at a relay switching instant?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — a hole, not a wall</h4>
+<p><b>Problem.</b> Evaluate \( \displaystyle\lim_{x\to 3}\frac{x^2-9}{x-3} \), which appears as a
+0/0 form. <b>Find:</b> the limit.</p>
+<p><b>Solution.</b> (1) Factor: \( \frac{(x-3)(x+3)}{x-3} = x+3 \) for \( x \ne 3 \).
+(2) The simplified function is continuous, so the limit is \( 3+3 = 6 \).</p>
+<p><b>Answer:</b> 6. <b>Sanity check:</b> at \( x=3.001 \), the original ratio gives
+\( (9.006-9)/0.001 = 6.001 \) — converging on 6 as promised.</p>
+<h4>Worked example 2 — sensor step or process step?</h4>
+<p><b>Problem.</b> During pasteurizer start-up at a dairy filling plant, the product-outlet RTD
+logs 71.8, 71.9, 71.9, <b>112.4</b>, 72.0 °C at 1 s scan. <b>Find:</b> is the 112.4 reading a
+process event or an instrument event, and which continuity argument decides it?</p>
+<p><b>Solution.</b> (1) Product temperature obeys a thermal time constant of tens of seconds:
+its true trajectory is continuous and cannot traverse +40 °C and −40 °C within 2 s.
+(2) An instrument channel — connector, noise burst, scan glitch — can jump discontinuously.
+(3) Therefore the spike violates physical continuity but not signal behavior: instrument event.</p>
+<p><b>Answer:</b> single-scan instrument artifact; flag the channel, don't chase a process
+excursion. <b>Sanity check:</b> energy to heat the product stream 40 °C in 1 s would exceed the
+pasteurizer's entire installed heating duty by an order of magnitude.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the trip that "came from nowhere."</b> You arrive at a compressor package that
+tripped on high discharge temperature. The trend shows a smooth 8 °C/min climb for six minutes,
+then trip — continuous, physical, real: a cooler problem, not a sensor problem. The operator
+insists the temperature "jumped." The one-second historian data says otherwise: nothing jumped;
+it <em>approached</em>. You write the finding around the trend's continuity and the fouled
+cooler is confirmed at inspection. Limits are how you argue with certainty about what a signal
+was doing just before the event.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>

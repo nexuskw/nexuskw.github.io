@@ -30,7 +30,7 @@
     <p class="eyebrow">MTH 101 · LESSON 06 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Extrema, curve behavior, and optimization</h1>
     <p class="sub">First and second derivative tests. Framing a physical question as minimize-cost or maximize-output with constraints stated honestly. Classic geometry-of-a-tank optimizations as rehearsal for design trade-offs.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Kelenföld Power Plant. Photo: AndreasS — CC BY 2.0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,80 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>A closed tank must hold fixed volume with minimum surface: set up (don't solve) the optimization.</li><li>What distinguishes a local maximum from the global one on a cost curve, and why does the difference matter?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A closed tank must hold fixed volume with minimum surface: set up (don't solve) the optimization.</li><li>What distinguishes a local maximum from the global one on a cost curve, and why does the difference matter?</li></ul></div><div class="measure">
+<h3>§1 · Where curves turn</h3>
+<p>A smooth function can only reverse direction where its derivative is zero. Those points —
+where \( f'(x) = 0 \) — are the <em>critical points</em>, and among them live the maxima and
+minima that engineering actually cares about: least material, least energy, most throughput.
+The second derivative classifies them: \( f'' > 0 \) cups upward (minimum), \( f'' < 0 \) caps
+downward (maximum).</p>
+<h3>§2 · The optimization recipe</h3>
+<p>Every optimization in this course follows one recipe:</p>
+\[ \text{model} \to \text{constraint} \to \text{single-variable objective} \to f'(x)=0 \to \text{check ends} \tag{1} \]
+<p>Write the quantity to optimize; use the constraint to eliminate variables; differentiate;
+solve; then — the step everyone forgets — <em>check the boundary</em>. In a plant, optima
+frequently live at the constraint (valve fully open, maximum allowed speed) rather than at an
+interior zero of the derivative. The mathematics is honest about this only if you ask.</p>
+<h3>§3 · A worked shape decision</h3>
+<p>Minimum-surface tanks, minimum-loss pipe runs, maximum-volume boxes from fixed sheet —
+these classic problems all reduce to recipe (1). In §Worked Examples we size an open-top
+square tank for 4 m³ with least plate area — the kind of trade a fabrication shop quotes
+weekly — and find the optimum has height equal to half the base side, a proportion worth
+memorizing.</p>
+<p><strong>Closing.</strong> Derivative zero finds candidates; the second derivative sorts
+them; the boundary check keeps you honest. Optimization is calculus with a purchase order
+attached.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 101 · Engineering Mathematics I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, always pointed at rates, areas, and physical balances you will meet again in thermodynamics and vibrations.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Differentiation rules</b> (Lesson 4) — fast, error-free \( f' \) is the entry fee.</li>
+<li><b>Solving equations</b> — critical points come from \( f'(x)=0 \), often polynomial.</li>
+<li><b>Geometry formulas</b> — areas and volumes supply objectives and constraints.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Critical point</b> — where \( f' = 0 \) or fails to exist; candidate for extremum.</li>
+<li><b>Local vs global extremum</b> — best nearby vs best overall; boundaries decide the difference.</li>
+<li><b>Concavity</b> — the cup/cap direction given by \( f'' \).</li>
+<li><b>Inflection point</b> — concavity flips; trends change character here.</li>
+<li><b>Constraint</b> — the equality that trades one design variable for another.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>A closed tank must hold fixed volume with minimum surface: set up (don't solve) the optimization.</li><li>What distinguishes a local maximum from the global one on a cost curve, and why does the difference matter?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — least steel for a square tank</h4>
+<p><b>Problem.</b> A fabrication shop must build an open-top, square-base tank holding
+\( V = 4\ \mathrm{m^3} \). <b>Find:</b> base side \( x \) and height \( h \) minimizing plate
+area.</p>
+<p><b>Solution.</b> (1) Objective: \( A = x^2 + 4xh \) (base + four walls).
+(2) Constraint: \( x^2 h = 4 \Rightarrow h = 4/x^2 \).
+(3) Substitute: \( A(x) = x^2 + 16/x \).
+(4) Differentiate: \( A' = 2x - 16/x^2 = 0 \Rightarrow x^3 = 8 \Rightarrow x = 2\ \mathrm{m} \),
+so \( h = 1\ \mathrm{m} \).
+(5) Classify: \( A'' = 2 + 32/x^3 > 0 \) → minimum. \( A = 4 + 8 = 12\ \mathrm{m^2} \).</p>
+<p><b>Answer:</b> 2 m × 2 m base, 1 m high; 12 m² of plate.
+<b>Sanity check:</b> nudge to \( x = 1.8 \): \( A = 3.24 + 8.89 = 12.13\ \mathrm{m^2} \) —
+worse, as a minimum demands.</p>
+<h4>Worked example 2 — the boundary wins</h4>
+<p><b>Problem.</b> Pump energy cost falls with impeller trim \( x \) (%) as
+\( E(x) = 100 - 1.2x \) while vibration risk cost rises as \( R(x) = 0.05x^2 \); trims beyond
+15% are forbidden by the OEM. <b>Find:</b> the trim minimizing total cost \( C = E + R \) on
+\( [0, 15] \).</p>
+<p><b>Solution.</b> (1) \( C(x) = 100 - 1.2x + 0.05x^2 \).
+(2) \( C' = -1.2 + 0.1x = 0 \Rightarrow x = 12 \) — interior candidate, \( C(12) = 100 - 14.4 + 7.2 = 92.8 \).
+(3) Check ends: \( C(0) = 100 \), \( C(15) = 100 - 18 + 11.25 = 93.25 \).</p>
+<p><b>Answer:</b> trim 12% (interior optimum beats both boundaries).
+<b>Sanity check:</b> \( C'' = 0.1 > 0 \) confirms a minimum; had the OEM cap been 10%, the
+answer would have been the boundary, 10% — recipe (1)'s final step earning its keep.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the cheapest tank in the yard.</b> You arrive at a fabricator's estimating
+office with three quotes for the same 4 m³ rinse tank, each a different shape. The estimator
+prices plate by the square metre; nobody has asked what shape minimizes metres. Twenty minutes
+of Lesson-6 calculus — worked example 1 verbatim — shows the 2 × 2 × 1 proportion saves plate
+against both taller quotes, and the shop standardizes the proportion for the whole small-tank
+family. Optimization didn't need software; it needed someone to write \( A' = 0 \).</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>

@@ -30,7 +30,7 @@
     <p class="eyebrow">MTH 101 · LESSON 10 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>First-order differential equations</h1>
     <p class="sub">Separable and linear first-order ODEs. Tank mixing, Newton cooling, and first-order sensor lag solved end to end. Time constants as the physical meaning of the solution.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Kelenföld Power Plant. Photo: AndreasS — CC BY 2.0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,78 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Newton cooling: write the ODE and say what each symbol claims physically.</li><li>Two mixing tanks differ only in volume: which has the longer time constant, and why?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Newton cooling: write the ODE and say what each symbol claims physically.</li><li>Two mixing tanks differ only in volume: which has the longer time constant, and why?</li></ul></div><div class="measure">
+<h3>§1 · Equations that contain their own rates</h3>
+<p>A differential equation relates a quantity to its own rate of change. The plant's
+archetype: a hot mass losing heat in proportion to its excess over ambient,</p>
+\[ \frac{dT}{dt} = -\frac{T - T_\infty}{\tau} \tag{1} \]
+<p>Read it aloud: <em>the hotter it is above ambient, the faster it cools.</em> Most
+first-order plant dynamics — thermal soak, tank draining, filter loading, RC circuits,
+instrument response — are equation (1) with different nouns.</p>
+<h3>§2 · Solving by separation</h3>
+<p>Separable equations split variables to opposite sides and integrate:</p>
+\[ \int\frac{dT}{T-T_\infty} = -\int\frac{dt}{\tau} \;\Rightarrow\; \ln|T-T_\infty| = -\frac{t}{\tau}+C \;\Rightarrow\; T = T_\infty + (T_0-T_\infty)e^{-t/\tau} \tag{2} \]
+<p>Lesson 5's cooling curve wasn't handed down; it is <em>derived</em> here, in three lines,
+from a physical statement. The constant of integration is fixed by the initial condition
+\( T(0) = T_0 \) — every first-order ODE needs one known point to pin its trajectory.</p>
+<h3>§3 · Reading dynamics without solving</h3>
+<p>Much of an ODE's story is available without solution. Set the rate to zero and you find
+equilibria (here \( T = T_\infty \)). The sign of the rate tells direction of travel; its size
+sets speed. The coefficient \( 1/\tau \) is the speed of the whole approach — measure it from
+data and you know the system's tempo. Engineers <em>read</em> ODEs more often than they solve
+them; the solving builds the reading instinct.</p>
+<p><strong>Closing.</strong> First-order ODEs encode self-referential change; separation
+solves the classics; initial conditions select the one real trajectory among the many
+possible.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 101 · Engineering Mathematics I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, always pointed at rates, areas, and physical balances you will meet again in thermodynamics and vibrations.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Integration</b> (Lessons 7–8) — both sides of (2) are integrals.</li>
+<li><b>Log/exponential inversion</b> (Lesson 5) — un-logging produces the exponential form.</li>
+<li><b>Derivative-as-rate</b> (Lesson 3) — the equation's left side is a trend slope.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>ODE</b> — equation containing a function and its derivatives.</li>
+<li><b>Separable</b> — variables can be isolated on opposite sides.</li>
+<li><b>Initial condition</b> — the known starting point pinning the unique solution.</li>
+<li><b>Equilibrium</b> — where the rate is zero and the system rests.</li>
+<li><b>First-order system</b> — dynamics fully described by one \( \tau \).</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Newton cooling: write the ODE and say what each symbol claims physically.</li><li>Two mixing tanks differ only in volume: which has the longer time constant, and why?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — flushing a tank clean</h4>
+<p><b>Problem.</b> A 10 m³ well-mixed tank of contaminated water (concentration \( C_0 \)) is
+flushed with clean water at 0.5 m³/min, overflowing at the same rate. <b>Find:</b> \( C(t) \)
+and the time to reach 10% of \( C_0 \).</p>
+<p><b>Solution.</b> (1) Mass balance: \( V\frac{dC}{dt} = -QC \Rightarrow \frac{dC}{dt} = -\frac{Q}{V}C = -0.05\,C \) (per minute).
+(2) Separate and solve: \( C = C_0 e^{-0.05t} \).
+(3) Set \( 0.1 = e^{-0.05t} \Rightarrow t = \ln 10 / 0.05 = 46.1\ \mathrm{min} \).</p>
+<p><b>Answer:</b> \( C(t)=C_0e^{-0.05t} \); ≈46 minutes to 10%.
+<b>Sanity check:</b> \( \tau = V/Q = 20 \) min; 10% requires \( \ln 10 = 2.30 \) time
+constants → 46 min. Two roads, one number.</p>
+<h4>Worked example 2 — time constant from two data points</h4>
+<p><b>Problem.</b> A motor winding, tripped at \( t=0 \), reads 95 °C at \( t=10 \) min and
+65 °C at \( t=30 \) min; ambient is 35 °C. Assuming first-order cooling, <b>find</b> \( \tau \)
+and the temperature at \( t=60 \) min.</p>
+<p><b>Solution.</b> (1) Excess temperatures: 60 °C and 30 °C — halved in 20 minutes.
+(2) Half-life relation: \( t_{1/2} = \tau\ln 2 \Rightarrow \tau = 20/0.693 = 28.9\ \mathrm{min} \).
+(3) At \( t=60 \): excess \( = 60 \cdot e^{-(60-10)/28.9} = 60\,e^{-1.732} = 60 \times 0.177 = 10.6 \) °C
+→ \( T = 45.6\ \mathrm{°C} \).</p>
+<p><b>Answer:</b> \( \tau \approx 29 \) min; ≈46 °C an hour after trip.
+<b>Sanity check:</b> from 30 min to 60 min is ~one half-life plus a bit: 30 °C excess → ~10.6 °C.
+Consistent with halving each 20 minutes.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — when can we megger it?</b> You arrive after a 400 kW motor trip; electrical
+wants winding temperature below 50 °C before insulation-resistance testing, and production
+wants the answer <em>now</em>. Two thermocouple readings, the half-life trick from worked
+example 2, and equation (2) give a defensible ETA — about an hour — instead of somebody's
+guess. You post the cooling curve on the permit desk; the test starts on schedule; nobody
+meggered a hot winding and nobody stood idle an extra shift. One separable ODE, one better
+afternoon.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>

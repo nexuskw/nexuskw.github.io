@@ -30,7 +30,7 @@
     <p class="eyebrow">MTH 101 · LESSON 05 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Exponentials, logarithms, and growth/decay</h1>
     <p class="sub">e and ln as the natural language of charging, cooling, and decay processes. Log scales for spanning decades of data. Semilog reading of exponential trends — the shape behind Newton cooling and RC circuits.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Kelenföld Power Plant. Photo: AndreasS — CC BY 2.0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,74 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why do cooling curves plot straight on semilog axes, and what does the slope encode?</li><li>What does a time constant of 5 minutes say about how long until a sensor reads ~63% of a step change?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why do cooling curves plot straight on semilog axes, and what does the slope encode?</li><li>What does a time constant of 5 minutes say about how long until a sensor reads ~63% of a step change?</li></ul></div><div class="measure">
+<h3>§1 · The function that is its own derivative</h3>
+<p>One function grows at a rate equal to its own size: \( \frac{d}{dt}e^{t} = e^{t} \).
+Scale time by a constant and \( \frac{d}{dt}e^{kt} = k e^{kt} \): growth or decay proportional
+to the current amount. That single property makes \( e^{kt} \) the native language of charging
+capacitors, cooling castings, decaying vibration transients, draining accumulators, and
+compounding costs.</p>
+<h3>§2 · Decay with an offset — the plant's favorite curve</h3>
+<p>A hot object doesn't decay to zero; it decays to ambient. The working form is</p>
+\[ T(t) = T_\infty + (T_0 - T_\infty)\,e^{-t/\tau} \tag{1} \]
+<p>where \( \tau \) is the <em>time constant</em>: after one \( \tau \), 63% of the gap to
+ambient is closed; after 3\( \tau \), 95%; after 5\( \tau \), it's over. Ask "how many time
+constants?" and any first-order transient becomes readable at a glance.</p>
+<h3>§3 · Logarithms — solving for time</h3>
+<p>The logarithm inverts the exponential; it is how you extract <em>when</em>:</p>
+\[ t = \tau \,\ln\!\frac{T_0 - T_\infty}{T(t) - T_\infty} \tag{2} \]
+<p>Logs also compress scale (decibels, pH, Richter) and straighten exponentials: plot
+\( \ln(T - T_\infty) \) against \( t \) and first-order data falls on a line whose slope is
+\( -1/\tau \). Fitting a straight line to a log plot is how you <em>measure</em> a time
+constant from plant data.</p>
+<p><strong>Closing.</strong> \( e^{kt} \) encodes self-proportional change; \( \tau \) makes
+transients countable; logarithms solve for time and straighten curves so data confesses its
+constants.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 101 · Engineering Mathematics I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, always pointed at rates, areas, and physical balances you will meet again in thermodynamics and vibrations.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Chain rule</b> (Lesson 4) — \( \frac{d}{dt}e^{-t/\tau} = -\tfrac{1}{\tau}e^{-t/\tau} \).</li>
+<li><b>Log laws</b> — \( \ln(ab) = \ln a + \ln b \), \( \ln e^x = x \); equation (2) is these laws at work.</li>
+<li><b>Limits</b> (Lesson 2) — \( e^{-t/\tau}\to 0 \): the transient's destiny is ambient.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Time constant \( \tau \)</b> — time to close 63% of the remaining gap; the transient's fingerprint.</li>
+<li><b>Asymptote</b> — the value approached but never crossed; here, ambient.</li>
+<li><b>Half-life</b> — time to halve; \( t_{1/2} = \tau \ln 2 \approx 0.693\,\tau \).</li>
+<li><b>Semilog plot</b> — log axis that renders exponentials straight.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why do cooling curves plot straight on semilog axes, and what does the slope encode?</li><li>What does a time constant of 5 minutes say about how long until a sensor reads ~63% of a step change?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — billet cooling window</h4>
+<p><b>Problem.</b> A steel billet leaves a cooling bed model at \( T_0 = 900\ \mathrm{°C} \)
+into \( T_\infty = 30\ \mathrm{°C} \) surroundings with \( \tau = 45 \) min (representative
+first-order fit). <b>Find:</b> temperature after 60 min, and the time to reach 100 °C for safe
+handling.</p>
+<p><b>Solution.</b> (1) \( T(60) = 30 + 870\,e^{-60/45} = 30 + 870\,e^{-1.333} \).
+(2) \( e^{-1.333} = 0.264 \Rightarrow T(60) = 30 + 229 = 259\ \mathrm{°C} \).
+(3) For 100 °C, equation (2): \( t = 45 \ln\frac{870}{70} = 45 \ln 12.43 = 45 \times 2.52 = 113\ \mathrm{min} \).</p>
+<p><b>Answer:</b> ≈259 °C after an hour; ≈113 min (≈2.5\( \tau \)) to 100 °C.
+<b>Sanity check:</b> 100 °C sits 92% of the way to ambient, and 2.5 time constants closes
+~92% of the gap. Internally consistent.</p>
+<h4>Worked example 2 — doubling time from a growth rate</h4>
+<p><b>Problem.</b> Plant electricity tariff escalates 3% per year. <b>Find:</b> the doubling
+time of the bill at constant consumption.</p>
+<p><b>Solution.</b> (1) Growth: \( C = C_0(1.03)^n \). Doubling when \( (1.03)^n = 2 \).
+(2) \( n = \ln 2 / \ln 1.03 = 0.6931 / 0.02956 = 23.4 \) years.</p>
+<p><b>Answer:</b> ≈23 years. <b>Sanity check:</b> the rule of 70 gives \( 70/3 \approx 23.3 \) —
+the shortcut and the logarithm agree.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — how long until we can touch it?</b> You arrive at a melt-shop planning
+meeting: a repair crew needs billets on the cooling bed handled "as soon as possible." The
+shift engineer guesses; you fit instead. Two historian points —
+620 °C at 30 min, 259 °C at 60 min — on a semilog plot of \( T-30 \) give a straight line
+whose slope yields \( \tau \approx 45 \) min, and equation (2) turns that into a
+committed answer: just under two hours to 100 °C. Scheduling gets a number with a derivation
+behind it instead of a shrug, and nobody gloves up against a 260-degree surface.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>

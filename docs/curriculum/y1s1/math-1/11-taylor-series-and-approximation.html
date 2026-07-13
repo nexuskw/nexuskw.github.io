@@ -30,7 +30,7 @@
     <p class="eyebrow">MTH 101 · LESSON 11 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Taylor series and approximation</h1>
     <p class="sub">Linear and quadratic approximation of functions near an operating point. Where sin θ ≈ θ comes from and when it lies. Error terms as an engineering honesty clause.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Kelenföld Power Plant. Photo: AndreasS — CC BY 2.0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,77 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Where does sin θ ≈ θ come from, and at roughly what angle does the lie exceed 1%?</li><li>Why does linearization around an operating point underpin control engineering?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Where does sin θ ≈ θ come from, and at roughly what angle does the lie exceed 1%?</li><li>Why does linearization around an operating point underpin control engineering?</li></ul></div><div class="measure">
+<h3>§1 · Every smooth function is locally a polynomial</h3>
+<p>Zoom into any smooth curve and it straightens; zoom with more care and it bends like a
+parabola. Taylor's theorem makes this precise: near \( x = a \),</p>
+\[ f(x) \approx f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2 + \cdots \tag{1} \]
+<p>The first two terms are the tangent line — <em>linearization</em> — and the third begins to
+track curvature. Engineering lives on truncations of (1): every "small-angle," "small-signal,"
+and "about the operating point" argument you will ever meet is a Taylor series with the tail
+cut off.</p>
+<h3>§2 · The classic small approximations</h3>
+\[ \sin\theta \approx \theta - \frac{\theta^3}{6}, \qquad \cos\theta \approx 1 - \frac{\theta^2}{2}, \qquad e^x \approx 1 + x + \frac{x^2}{2} \tag{2} \]
+<p>At \( \theta = 10° = 0.1745 \) rad, \( \sin\theta = 0.17365 \): the one-term approximation
+\( \theta \) errs by 0.5%, and adding the cubic term shrinks the error to 0.0004%. This is why
+pendulum periods, beam deflections, and control models replace \( \sin\theta \) with
+\( \theta \) below ~15° and nobody blushes.</p>
+<h3>§3 · Knowing the size of the tail</h3>
+<p>An approximation without an error bound is a wish. The first neglected term estimates the
+error: truncating after \( \theta \) leaves \( \sim\theta^3/6 \). Professional habit: state
+the operating range, evaluate the first dropped term at the range's edge, and write both down.
+That habit is what separates "we linearized about 50% flow" from hand-waving — and it is
+exactly how instrument nonlinearity specs and control-model validity limits are written.</p>
+<p><strong>Closing.</strong> Taylor series turn smooth functions into local polynomials;
+linearization is its two-term truncation; the first dropped term prices the honesty of the
+approximation. This lesson closes the course by naming the approximation culture the whole
+curriculum will use.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 101 · Engineering Mathematics I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, always pointed at rates, areas, and physical balances you will meet again in thermodynamics and vibrations.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Derivatives of all orders</b> (Lessons 3–5) — coefficients of (1) are derivatives at a point.</li>
+<li><b>Factorials and powers</b> — the series' bookkeeping.</li>
+<li><b>Radians</b> (Lesson 2) — (2) is a radian-only privilege.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Taylor series</b> — the local polynomial replica of a smooth function.</li>
+<li><b>Linearization</b> — first-order truncation; tangent-line model.</li>
+<li><b>Truncation error</b> — the tail you dropped; sized by the first dropped term.</li>
+<li><b>Operating point</b> — the \( a \) around which the plant model is expanded.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Where does sin θ ≈ θ come from, and at roughly what angle does the lie exceed 1%?</li><li>Why does linearization around an operating point underpin control engineering?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — pricing the small-angle lie</h4>
+<p><b>Problem.</b> A pendulum-style level float swings ±12°. The controls model uses
+\( \sin\theta \approx \theta \). <b>Find:</b> the worst-case percentage error of that model
+across the swing.</p>
+<p><b>Solution.</b> (1) \( 12° = 0.2094 \) rad; \( \sin(0.2094) = 0.20791 \).
+(2) Error \( = (0.2094 - 0.20791)/0.20791 = 0.72\% \).
+(3) First-dropped-term estimate: \( \theta^3/6 = 0.00153 \) → \( 0.00153/0.2079 = 0.74\% \) —
+the bound predicts the actual error almost exactly.</p>
+<p><b>Answer:</b> ≤0.75% across the swing — negligible against a ±2% level transmitter.
+<b>Sanity check:</b> error grows with \( \theta^2 \) relative terms; at 24° it would be ~3% —
+still quotable, but now worth stating.</p>
+<h4>Worked example 2 — quick exponential estimates</h4>
+<p><b>Problem.</b> Estimate \( e^{0.1} \) with two and three terms of (2), against the true
+1.10517.</p>
+<p><b>Solution.</b> (1) Two terms: \( 1 + 0.1 = 1.1 \) — error 0.47%.
+(2) Three terms: \( 1 + 0.1 + 0.005 = 1.105 \) — error 0.015%.</p>
+<p><b>Answer:</b> 1.1 (coarse), 1.105 (fine). <b>Sanity check:</b> next term \( x^3/6 =
+0.000167 \) predicts the residual error of the three-term estimate — matches the 0.00017
+shortfall exactly.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the transmitter that was "linear enough."</b> You arrive at a metering
+review: a DP flow transmitter infers flow from \( Q \propto \sqrt{\Delta P} \), but the legacy
+scaling block linearized the square root around 70% of range. Below 30% flow the plant has
+been over-reading for years. Taylor's first dropped term, evaluated at the low end, prices the
+distortion at 4% — precisely the unexplained loss the mass balance kept showing. The fix is a
+proper square-root block; the diagnosis was a truncation-error estimate on one line of a
+notepad. Approximations are fine; unpriced approximations are not.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
