@@ -207,7 +207,12 @@
           "preview": [
             "Distinguish normal and tangential acceleration on a curved conveyor path.",
             "When is polar description more natural than Cartesian?"
-          ]
+          ],
+          "video": {
+            "id": "7aMiZ3b0Ieg",
+            "title": "Dynamics Lesson 1 — Introduction and Constant Acceleration Equations",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 2,
@@ -218,7 +223,12 @@
           "preview": [
             "Why must the FBD precede F = ma, not follow it?",
             "A mass on a curve at constant speed still accelerates: toward where, and why?"
-          ]
+          ],
+          "video": {
+            "id": "yyxF1WbfF2A",
+            "title": "Dynamics Lesson 16 — Drawing Kinetic Diagrams",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 3,
@@ -229,7 +239,12 @@
           "preview": [
             "When does the work–energy theorem beat force analysis?",
             "Why does a couple's work involve angle, not distance?"
-          ]
+          ],
+          "video": {
+            "id": "laNDiFcpVVM",
+            "title": "Dynamics Lesson 23 — Intro to Work in Dynamic Systems",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 4,
@@ -240,7 +255,12 @@
           "preview": [
             "What does the coefficient of restitution measure, and what are its limits 0 and 1?",
             "Why do hammer blows deliver huge forces from modest energy?"
-          ]
+          ],
+          "video": {
+            "id": "jcOQI3VPx_U",
+            "title": "Dynamics Lesson 26 — Impulse and Momentum Collision Examples",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 5,
@@ -251,7 +271,12 @@
           "preview": [
             "Why do internal forces cancel in a system of particles?",
             "Compute the force of a steady water jet on a plate — which principle applies?"
-          ]
+          ],
+          "video": {
+            "id": "3OTtHgbArVA",
+            "title": "Dynamics Lesson 13 — Absolute Dependent Motion of Two Particles",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 6,
@@ -262,7 +287,12 @@
           "preview": [
             "Locate the instant center of a rolling wheel — and use it to read velocities.",
             "What makes general plane motion decomposable into translation plus rotation?"
-          ]
+          ],
+          "video": {
+            "id": "9iHXsJVohnI",
+            "title": "Dynamics Lesson 28 — Introduction to Relative Motion Analysis",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 7,
@@ -273,7 +303,12 @@
           "preview": [
             "Where does the Coriolis term appear in a slider-in-slot mechanism?",
             "Why does acceleration analysis need velocity analysis first?"
-          ]
+          ],
+          "video": {
+            "id": "1zp6uf-08ds",
+            "title": "Dynamics — Rigid Body Relative Acceleration Notes",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 8,
@@ -284,7 +319,12 @@
           "preview": [
             "Why does mass moment of inertia depend on the axis chosen?",
             "Starting torque of a loaded drum: which two terms add?"
-          ]
+          ],
+          "video": {
+            "id": "2qEqnF9V8hs",
+            "title": "Dynamics Lesson 31 — Rolling Motion with Torque Problem",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 9,
@@ -295,7 +335,12 @@
           "preview": [
             "Why does a flywheel smooth speed but not average torque?",
             "Rotational KE: why does doubling speed quadruple stored energy?"
-          ]
+          ],
+          "video": {
+            "id": "o7_zmuBweHI",
+            "title": "Rotational Kinetic Energy",
+            "channel": "Khan Academy"
+          }
         },
         {
           "n": 10,
@@ -317,7 +362,12 @@
           "preview": [
             "From a decay trace, how do you extract damping ratio?",
             "What does natural frequency depend on — and pointedly not depend on?"
-          ]
+          ],
+          "video": {
+            "id": "YbFgNsM6r44",
+            "title": "MIT 8.03 Lec 1 — Simple Harmonic Motion (reinforcement/bridge lecture)",
+            "channel": "MIT OpenCourseWare"
+          }
         }
       ]
     },

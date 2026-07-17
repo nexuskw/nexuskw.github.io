@@ -352,7 +352,12 @@
           "preview": [
             "Why does a flywheel's stored energy grow with the square of its speed?",
             "A wheel spins down under constant friction torque: what does the linear speed-time trace look like?"
-          ]
+          ],
+          "video": {
+            "id": "pY1rwEsdCRo",
+            "title": "Rotational Kinetic Energy of Rigid Systems",
+            "channel": "Khan Academy"
+          }
         },
         {
           "n": 11,
@@ -363,7 +368,12 @@
           "preview": [
             "A 2 kg mass hangs on an 800 N/m spring: natural frequency? (≈3.2 Hz)",
             "Why does a pendulum's period not care about its mass?"
-          ]
+          ],
+          "video": {
+            "id": "YbFgNsM6r44",
+            "title": "MIT 8.03 Lec 1 — Simple Harmonic Motion (reinforcement/bridge lecture)",
+            "channel": "MIT OpenCourseWare"
+          }
         }
       ]
     },

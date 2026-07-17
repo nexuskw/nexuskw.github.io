@@ -223,10 +223,15 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   math-3 addition) — refine math-2 toward pure multivariable/vector
   calculus in a future map revision. math-2 L7 (3Blue1Brown
   eigenvectors, PFDu9oVAE-g) APPROVED & embedded 2026-07-18 — math-2 now
-  11/11; embeds 74. AWAITING RULING: Wave C table (dynamics 11 rows +
-  physics-1 L10/L11; Hanson/ED/Khan/MIT-8.03 candidates all
-  oEmbed-verified; one candidate discarded at the gate — John Wolbeck,
-  unapproved channel). QUEUED FOR NEXT PASS (owner-approved as
+  11/11; embeds 74. WAVE C APPROVED & EXECUTED (owner,
+  2026-07-18): dynamics L1-L9 (Hanson dynamics course L1/16/23/26/13/28/31
+  + ED relative-acceleration + Khan rotational KE), dynamics L11 + physics-1
+  L11 cross-listed MIT 8.03 Lec 1 SHM (reinforcement precedent), physics-1
+  L10 Khan rigid-system rotational energy. Dynamics L10 (rotor balancing)
+  stays continue-hunt per owner. physics-1 now 11/11; dynamics 10/11;
+  embeds 86. Discarded at gate: John Wolbeck SHM (unapproved channel).
+  NEXT: Wave D proposals (strength + materials-2 via Efficient Engineer +
+  Hanson MoM playlist PLRqDfxcafc21wlI3E56IkDmRJ-33apMjv). QUEUED FOR NEXT PASS (owner-approved as
   queued): physics-1 L10 (rigid-body kinetics — Hanson Dynamics
   playlist), L11 (SHM — Less Boring Lectures); drawing-cad L1–L6,L8–L11
   (Husam's Mech Vision scoping + Ala Hijazi Arabic supplemental).
