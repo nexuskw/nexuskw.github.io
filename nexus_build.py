@@ -756,11 +756,12 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
 <div class="pagehead">
   <p class="kicker"><span class="n">CURRICULUM</span>4 years · 8 semesters</p>
   <h1>48 courses. {total} lessons. One pathway.</h1>
-  <p class="sub">The full degree-shaped map, rebuilt for a maintenance engineer entering
-  manufacturing. Every lesson already has its own page — scope, sources, and checkpoint
-  questions — and full teaching depth is rolling out course by course, tracked honestly
-  below. The catalog normalizes toward 528 lessons (6 classes × 11 lessons per semester)
-  as authored content, never as padding.</p>
+  <p class="sub">The complete B.S.-shaped map — from foundational mathematics and physics
+  to Industry 4.0 — covering every core mechanical-engineering discipline and role. Every
+  lesson already has its own page — scope, sources, and checkpoint questions — and full
+  teaching depth is rolling out course by course, tracked honestly below. The catalog
+  normalizes toward 528 lessons (6 classes × 11 lessons per semester) as authored
+  content, never as padding.</p>
   <div class="tracker">
     <p class="small"><b>{depth} of {total}</b> lessons at full teaching depth · {pct}% —
     updated with every build. The rest are in production, in queue order.</p>
@@ -778,8 +779,8 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
 <div class="catch"><b>Depth you can audit.</b> Every claim on this page is recomputed from the content at build time.</div>
 <section class="part tight"><div class="wide">{''.join(parts)}</div></section>"""
     nx_page("curriculum/index.html", "Curriculum — Nexus Institute of Technology",
-            f"48 courses, {total} lessons: the maintenance-to-manufacturing map, "
-            f"{depth} lessons at full interactive depth.",
+            f"48 courses, {total} lessons: the complete mechanical-engineering map "
+            f"from first principles to Industry 4.0; {depth} at full depth.",
             body, prefix, "curriculum")
     return total, depth
 
@@ -787,9 +788,9 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
 def build_static_pages():
     mission = fragment("pages/mission.html")
     nx_page("index.html",
-            "Nexus Institute of Technology — mission",
-            "Free bilingual engineering curriculum: a maintenance engineer's "
-            "pathway into manufacturing. 48 courses, 522 lessons, interactive quizzes.",
+            "Nexus Institute of Technology — Learn Mechanical Engineering from Scratch to Industry 4.0",
+            "A complete, free, bilingual B.S.-shaped mechanical engineering "
+            "curriculum for anyone — from zero background to Industry 4.0.",
             mission, "", "home",
             menu=[("#premise", "The premise", "الفكرة", False, None),
                   ("#method", "How content is built", "طريقة البناء", False, None),

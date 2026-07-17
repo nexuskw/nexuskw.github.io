@@ -132,6 +132,27 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
+- APPROVALS RECEIVED (owner, 2026-07-17 PM): (1) v5 Academic Shield logo
+  APPROVED; (2) shell/UI/colors APPROVED; (3) 522→528 strict 6×11
+  normalization APPROVED (execute in the NEXT session — 9 courses have 12
+  lessons, 15 have 10; net +6); (4) Phase-2 order APPROVED (Year 1 content
+  first). MISSION COPY REWRITTEN & DEPLOYED (owner's verbatim copy): hero
+  "Learn Mechanical Engineering from Scratch to Industry 4.0."; audience =
+  ANYONE, zero background; Two Doors = Complete Academic Curriculum +
+  Modern Applications & Industry 4.0; integrity floor unchanged. SCOPE
+  RULES (binding for ALL future content): the platform covers ALL
+  mechanical-engineering roles (design, operations, maintenance, planning,
+  thermal systems, fluid dynamics) — never manufacturing-only; Industry
+  4.0/PLC/SCADA/automation integrated as modern extensions; NO company
+  names in examples or text (existing named applied-cases and the Career
+  page await a Phase-2 rewrite decision). BILINGUAL RULE (binding): AR
+  version translates EVERYTHING (UI, cards, lesson content, worked
+  solutions, quiz explanations) into formal Arabic EXCEPT numbers,
+  equations, math symbols, proper nouns, and core technical terms, which
+  stay English/original — with flawless bidi via <span dir="ltr"> (or
+  <bdi>) isolation so mixed lines never break or flip punctuation.
+  Handoff document issued to the owner for the next session; its pending
+  tasks: execute 528 normalization, then Phase 2 Year-1 content.
 - PHASE GATES REINSTATED (owner, 2026-07-17 PM — supersedes the zero-approval
   rollout where they conflict): NO content generation until the owner approves
   the Phase-1 design + logo. Phase 1 (SHIPPED, awaiting approval) = branding,

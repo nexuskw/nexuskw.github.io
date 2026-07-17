@@ -1,7 +1,7 @@
 {
   "name": "Nexus Institute of Technology",
   "short_name": "Nexus Tech",
-  "description": "Free bilingual engineering curriculum: maintenance to manufacturing. 48 courses, 522 lessons, interactive quizzes.",
+  "description": "Learn Mechanical Engineering from scratch to Industry 4.0 — a complete, free, bilingual curriculum for anyone.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
