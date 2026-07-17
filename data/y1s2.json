@@ -116,7 +116,12 @@
           "preview": [
             "What physical quantity do eigenvalues become in vibrating systems?",
             "Why do eigenvectors define directions the system 'prefers'?"
-          ]
+          ],
+          "video": {
+            "id": "PFDu9oVAE-g",
+            "title": "Eigenvectors and Eigenvalues — Essence of Linear Algebra, Chapter 14",
+            "channel": "3Blue1Brown"
+          }
         },
         {
           "n": 8,
