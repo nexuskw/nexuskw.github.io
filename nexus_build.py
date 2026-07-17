@@ -389,11 +389,29 @@ def library_tab(les, course):
     cards_html = (f'<h3>Course-level courseware — verified links</h3>'
                   f'<div class="vids">{"".join(cards)}</div>') if cards else ""
 
+    # E2 — Supplemental/Arabic Resources (owner hierarchy rule, 2026-07-18):
+    # link cards ONLY, never the primary frame; renders only when approved
+    # resources exist in the lesson's "arabic" list.
+    arabic_html = ""
+    ar_items = les.get("arabic") or []
+    if ar_items:
+        rows = "".join(
+            f'<li><a href="{esc(a["url"])}" target="_blank" rel="noopener" dir="ltr">'
+            f'{esc(a["title"])}</a> <span class="src">{esc(a.get("channel", ""))}</span>'
+            f'{("<p class=" + chr(34) + "small" + chr(34) + ">" + esc(a["note"]) + "</p>") if a.get("note") else ""}</li>'
+            for a in ar_items)
+        arabic_html = (f'<div class="lib-block lib-arabic">'
+                       f'<h3 data-ar="مصادر تكميلية بالعربية">Supplemental/Arabic Resources</h3>'
+                       f'<p class="small">Deep-understanding supplements in Arabic — the primary '
+                       f'lesson video above remains the technical reference.</p>'
+                       f'<ul class="plain">{rows}</ul></div>')
+
     return f"""
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>
   {video}
 </div>
+{arabic_html}
 <div class="lib-block lib-books">
   <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — {src_html}</p>

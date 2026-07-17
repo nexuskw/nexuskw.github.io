@@ -424,3 +424,8 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
   letter-spacing:.08em;text-transform:uppercase;color:var(--nx-amber-d);margin:0 0 10px}
 .career-block p{margin:8px 0}
 .career-block ul{margin:8px 0 8px 22px}
+
+/* ---------- E2: supplemental/Arabic resources (links only, never primary) ---------- */
+.lib-arabic{border-inline-start:4px solid var(--nx-teal-d)}
+.lib-arabic ul.plain li{margin:10px 0}
+.lib-arabic .src{font-family:var(--sans);font-size:12px;color:var(--nx-muted);margin-inline-start:8px}
