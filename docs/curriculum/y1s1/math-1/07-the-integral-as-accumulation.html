@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2bc218145f">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -54,7 +54,7 @@
     <h1>The integral as accumulation</h1>
     <p class="sub">Riemann sums to the definite integral. Accumulated flow from a rate curve, energy from a power trace. The Fundamental Theorem as the bridge between rates and totals.</p>
   </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/7">Mark as complete</button>
@@ -88,6 +88,28 @@ totalizer can be checked against two readings of a cumulative register.</p>
 transferred. Area between inflow and outflow curves = inventory change. When the curve is
 data rather than formula, the integral is done numerically — trapezoids on historian samples —
 which is Lesson 9's business. The concept is identical: total = area.</p>
+
+<h3>04 · Setting up an integral — the working method</h3>
+<p>Every accumulation problem is set up the same way, and the setup is where the marks are
+won or lost. <em>Identify the rate</em> — the quantity per time (or per length, per angle)
+being accumulated — and write its units down. <em>Fix the interval:</em> the start and end of
+the accumulation, in the rate's own time variable. <em>Integrate, and check the units of the
+result:</em> a rate in m³/h integrated over hours must land in m³, and if it doesn't, the
+setup — not the arithmetic — is wrong. Then exploit the Fundamental Theorem in both
+directions. Given a formula, find an antiderivative and evaluate at the ends. Given a
+cumulative register — a totalizer, an energy meter, an odometer — the theorem says the
+accumulation over any window is simply the difference of two readings: engineering's most
+underrated free lunch.</p>
+<p>Sketch first, always. A rough graph of the rate shows whether the answer should be near
+the peak-times-width rectangle or well under it, whether any region runs negative, and where
+the accumulation concentrates. The sketch is the estimate, the integral is the precision, and
+disagreement between them is the error alarm that catches transposed limits and dropped
+signs before they reach a report.</p>
+<p>One caution completes the method: an integral answers exactly the question its limits ask,
+no more. A total over a shift says nothing about which hour did the accumulating, and a net
+accumulation of zero can hide furious movement in both directions. Keep the question and the
+interval welded together when you present the number, and totals stop being ambushed by
+follow-up questions.</p>
 <p><strong>Closing.</strong> Integrals accumulate rates into totals; the Fundamental Theorem
 makes them computable from antiderivatives; and the plant's totalizers, energy meters, and
 inventory balances are integrals with tag numbers.</p>
@@ -95,38 +117,42 @@ inventory balances are integrals with tag numbers.</p>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
-<li><b>The derivative</b> (Lesson 3) — equation (2) runs it backwards.</li>
+<li><b>The derivative</b> (Lesson 3) — the Fundamental Theorem runs it backwards.</li>
 <li><b>Limits of sums</b> (Lesson 2) — the rectangle stack converges by the same logic.</li>
 <li><b>Power rule</b> (Lesson 4) — reversed: \( \int x^n dx = x^{n+1}/(n{+}1) + C,\ n\neq -1 \).</li>
 </ul>
 <h4>Glossary</h4>
-<ul class="plain">
-<li><b>Definite integral</b> — a number: net accumulation between two limits.</li>
-<li><b>Antiderivative</b> — a function whose derivative is the integrand; unique up to \( +C \).</li>
-<li><b>Integrand</b> — the rate being accumulated.</li>
-<li><b>Totalizer</b> — an instrument computing equation (1) in real time.</li>
-</ul>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Definite integral</td><td>\( V = \int_0^T Q(t)\,dt \)</td><td>Totals from rates: volume from flow, energy from power, distance from speed.</td></tr>
+<tr><td>Antiderivative</td><td>\( F' = f \)</td><td>The function you evaluate at the ends; unique up to a constant.</td></tr>
+<tr><td>Fundamental Theorem</td><td>\( \int_a^b f\,dt = F(b) - F(a) \)</td><td>Computing accumulations without rectangles — and auditing totalizers from two register readings.</td></tr>
+<tr><td>Average from a register</td><td>\( \bar{f} = \tfrac{F(b)-F(a)}{b-a} \)</td><td>Turning cumulative meter readings into honest average rates.</td></tr>
+<tr><td>Net accumulation</td><td>signed area</td><td>Flows that reverse: the integral counts backflow negative, as inventory demands.</td></tr>
+<tr><td>Unit check on integrals</td><td>rate units × time units</td><td>m³/h over hours must land in m³ — the setup test that precedes arithmetic.</td></tr>
+</tbody></table></div>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
-<h4>Worked example 1 — volume from a ramping flow</h4>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Volume from a ramping flow</b></p>
 <p><b>Problem.</b> During a transfer, flow ramps as \( Q(t) = 20 + 4t \) m³/h (\( t \) in
-hours) for six hours. <b>Find:</b> the total volume moved.</p>
-<p><b>Solution.</b> (1) \( V = \int_0^6 (20+4t)\,dt \).
+hours) for six hours. <b>Find:</b> the total volume moved.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( V = \int_0^6 (20+4t)\,dt \).
 (2) Antiderivative: \( 20t + 2t^2 \).
 (3) Evaluate: \( (120 + 72) - 0 = 192\ \mathrm{m^3} \).</p>
 <p><b>Answer:</b> 192 m³. <b>Sanity check:</b> average flow is \( (20+44)/2 = 32\ \mathrm{m^3/h} \)
-over 6 h → 192 m³. The trapezoid agrees with the antiderivative, as it must for a linear ramp.</p>
-<h4>Worked example 2 — energy from a power trend</h4>
+over 6 h → 192 m³. The trapezoid agrees with the antiderivative, as it must for a linear ramp.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Energy from a power trend</b></p>
 <p><b>Problem.</b> A compressor's electrical demand across a shift is modeled
 \( P(t) = 250 - 10t + t^2 \) kW over \( 0 \le t \le 8 \) h. <b>Find:</b> the energy consumed
-and the average power.</p>
-<p><b>Solution.</b> (1) \( E = \int_0^8 (250 - 10t + t^2)\,dt = \left[250t - 5t^2 + t^3/3\right]_0^8 \).
+and the average power.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( E = \int_0^8 (250 - 10t + t^2)\,dt = \left[250t - 5t^2 + t^3/3\right]_0^8 \).
 (2) \( = 2000 - 320 + 170.7 = 1850.7\ \mathrm{kWh} \).
 (3) Average power \( = E/8 = 231.3\ \mathrm{kW} \).</p>
 <p><b>Answer:</b> ≈1851 kWh; average ≈231 kW. <b>Sanity check:</b> the parabola dips mid-shift
 (minimum \( P(5) = 225 \) kW) and ends at \( P(8)=234 \); an average of 231 kW sits sensibly
-between the minimum and the endpoints.</p>
-</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+between the minimum and the endpoints.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Auditing a week from two register readings</b></p>
+<p><b>Problem.</b> A water totalizer — a cumulative register, i.e. an antiderivative of flow — read 10,450 m³ on Monday 08:00 and 12,730 m³ on Friday 08:00 (96 hours later). <b>Find:</b> the volume consumed and the true average flow for the period, and name the theorem doing the work.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) By the Fundamental Theorem, consumption over the window is the register difference: \( 12{,}730 - 10{,}450 = 2{,}280\ \mathrm{m^3} \) — no flow curve needed.
+(2) True average flow: \( 2{,}280/96 = 23.75\ \mathrm{m^3/h} \).
+(3) The register <em>is</em> \( F(t) \) with \( F' = Q \); two readings evaluate \( \int Q\,dt \) exactly, whatever the flow did in between.</p>
+<p><b>Answer:</b> 2,280 m³; 23.75 m³/h average.
+<b>Sanity check:</b> a line that idles nights could still spike far above 23.75 by day — the average from registers is exact as an average, and silent about peaks; that distinction is the next lesson's business.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>During a controlled draw-down, a tank's outflow falls linearly as \( Q(t) = 50 - 4t \ \mathrm{m^3/h} \) for \( 0 \le t \le 6 \) h. What total volume leaves the tank during the six hours?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 300\ \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 156\ \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( 228\ \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 288\ \mathrm{m^3} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Volume is the accumulated rate: \( \int_0^6 (50-4t)\,dt = \left[50t - 2t^2\right]_0^6 = 300 - 72 = 228\ \mathrm{m^3} \). The distractor 156 m³ comes from the classic antiderivative slip of writing \( 50t - 4t^2 \), forgetting to divide by the new power when reversing the power rule. The distractor 300 m³ multiplies the initial rate by the duration as if the flow never declined, ignoring that the integrand changes over the interval.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A pump motor's electrical demand over a 4-hour run is modeled by \( P(t) = 120 + 30t - 3t^2 \) kW. What is the average power drawn over the run?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 656\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 164\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 156\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 192\ \mathrm{kW} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Energy is the area under the power curve: \( E = \int_0^4 (120 + 30t - 3t^2)\,dt = \left[120t + 15t^2 - t^3\right]_0^4 = 656\ \mathrm{kWh} \), and the average power is that total divided by the interval, \( 656/4 = 164\ \mathrm{kW} \). Choosing 656 confuses the integral (kWh) with its average (kW) — a unit slip that forgets the division by the 4 h duration. The distractor 156 kW is the endpoint average \( (P(0)+P(4))/2 = (120+192)/2 \), which only equals the true average when the curve is linear; this parabola bulges above its chord.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Evaluate \( \displaystyle\int_1^3 (2t + 1)\,dt \).</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>10</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>14</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>22</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The antiderivative is \( t^2 + t \); evaluating, \( (9 + 3) - (1 + 1) = 10 \). Answering 14 forgets to subtract the lower-end value — the most common definite-integral slip; 22 is the integrand's value at \( t=3 \) times the width, treating a changing rate as constant at its end value. The average-rate check: the integrand runs from 3 to 7, averaging 5 over width 2 — exactly 10.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Historian tags record a tank's inflow \( Q_{\text{in}}(t) \) and outflow \( Q_{\text{out}}(t) \), both in \( \mathrm{m^3/h} \). What physical quantity does \( \int_0^T \big[ Q_{\text{in}}(t) - Q_{\text{out}}(t) \big]\,dt \) equal?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The change in stored volume between \( t=0 \) and \( t=T \), in \( \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The tank's absolute liquid volume at \( t=T \), in \( \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The instantaneous net inflow at \( t=T \), in \( \mathrm{m^3/h} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The average net inflow rate over the interval, in \( \mathrm{m^3/h} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The integrand \( Q_{\text{in}} - Q_{\text{out}} \) is the net rate of accumulation, so by the Fundamental Theorem its definite integral over \( [0,T] \) is the net volume added — the inventory change \( V(T) - V(0) \), in \( \mathrm{m^3} \). It is not the absolute volume at \( t=T \): that classic error forgets the initial inventory \( V(0) \), which the definite integral cannot see. The remaining options confuse the integral with its integrand (a rate at one instant) or with the average rate, which would require dividing the integral by \( T \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>During a filter backflush, a line's flow \( Q(t) \) runs negative for part of an interval. What does \( \int Q\,dt \) over that interval report?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The net volume delivered, with backflow counted negative</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The gross volume that moved in either direction</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Zero — integrals of negative regions are discarded</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The average flow rate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The definite integral is signed area: forward flow accumulates positive, reverse flow negative, and the result is net delivery — which is exactly what an inventory balance needs. Gross movement would require integrating \( |Q| \), a different (and occasionally also useful) quantity. Discarding negative regions is not a convention mathematics offers, and an average is the integral <em>divided by</em> the width, not the integral itself.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the invoice audit.</b> You arrive at a monthly utilities meeting where a
 neighboring consumer disputes the demineralized-water charge: "our line only draws 30 m³/h."
 The historian's flow trend says the line ramps hard every startup. You export the week's
@@ -171,6 +197,6 @@ trend chart attached.</p>
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+<script src="../../../assets/nx/nexus.js?v=2bc218145f"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2bc218145f">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -54,7 +54,7 @@
     <h1>First-order differential equations</h1>
     <p class="sub">Separable and linear first-order ODEs. Tank mixing, Newton cooling, and first-order sensor lag solved end to end. Time constants as the physical meaning of the solution.</p>
   </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/10">Mark as complete</button>
@@ -87,6 +87,28 @@ equilibria (here \( T = T_\infty \)). The sign of the rate tells direction of tr
 sets speed. The coefficient \( 1/\tau \) is the speed of the whole approach — measure it from
 data and you know the system's tempo. Engineers <em>read</em> ODEs more often than they solve
 them; the solving builds the reading instinct.</p>
+
+<h3>04 · From balance statement to equation — the modeling method</h3>
+<p>First-order models are not found; they are written, and the writing follows one template.
+<em>State the balance:</em> rate of change of the stored quantity equals rate in minus rate
+out. <em>Express each rate in the state variable:</em> outflow proportional to level, heat
+loss proportional to excess temperature, contaminant leaving at concentration times flow.
+<em>Divide through</em> until the equation reads \( \dot{y} = -(y - y_\infty)/\tau \),
+and read \( \tau \) directly from the coefficients — \( V/Q \) for a flushed tank,
+thermal mass over loss coefficient for a cooling body. The physics enters in the rates; the
+mathematics is the same three lines every time.</p>
+<p>Respect the sign conventions and the model's edges. A negative rate coefficient decays
+toward equilibrium; a positive one runs away, and recognizing which you have written is a
+stability judgment made before any solving. Step inputs — a heater switching on, a setpoint
+moving — reuse the same solution with the roles renamed: the response climbs
+\( 1 - e^{-t/\tau} \) toward its new destination. And when the data refuses the model —
+curved semilog plots, delayed starts — the honest conclusion is a second time constant or a
+deadtime, not a forced fit. Write what the balance supports; report what the data shows.</p>
+<p>This template is the most reused page in the course. The same three lines will reappear
+as the RC circuit in the electrical course, the thermal soak in heat transfer, the flushed
+volume in fluid mechanics, and the instrument lag in controls — identical mathematics under
+different nouns. Learn to see the balance statement through the surface vocabulary and every
+one of those courses starts a lesson ahead.</p>
 <p><strong>Closing.</strong> First-order ODEs encode self-referential change; separation
 solves the classics; initial conditions select the one real trajectory among the many
 possible.</p>
@@ -94,42 +116,45 @@ possible.</p>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
-<li><b>Integration</b> (Lessons 7–8) — both sides of (2) are integrals.</li>
+<li><b>Integration</b> (Lessons 7–8) — both sides of the solution are integrals.</li>
 <li><b>Log/exponential inversion</b> (Lesson 5) — un-logging produces the exponential form.</li>
 <li><b>Derivative-as-rate</b> (Lesson 3) — the equation's left side is a trend slope.</li>
 </ul>
 <h4>Glossary</h4>
-<ul class="plain">
-<li><b>ODE</b> — equation containing a function and its derivatives.</li>
-<li><b>Separable</b> — variables can be isolated on opposite sides.</li>
-<li><b>Initial condition</b> — the known starting point pinning the unique solution.</li>
-<li><b>Equilibrium</b> — where the rate is zero and the system rests.</li>
-<li><b>First-order system</b> — dynamics fully described by one \( \tau \).</li>
-</ul>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>First-order ODE</td><td>\( \tfrac{dT}{dt} = -\tfrac{T - T_\infty}{\tau} \)</td><td>Self-referential change: thermal soak, tank flush, filter loading, instrument response.</td></tr>
+<tr><td>The balance template</td><td>\( \dot{y} = \text{rate in} - \text{rate out} \)</td><td>Writing the model before solving it; physics enters through the rates.</td></tr>
+<tr><td>Separation</td><td>\( \int\tfrac{dT}{T-T_\infty} = -\int\tfrac{dt}{\tau} \)</td><td>The solving move for separable equations.</td></tr>
+<tr><td>Initial condition</td><td>\( T(0) = T_0 \)</td><td>Pins the one real trajectory out of the solution family.</td></tr>
+<tr><td>Equilibrium</td><td>set the rate to zero</td><td>Where the system rests — and the destination the solution approaches.</td></tr>
+<tr><td>Step response</td><td>\( 1 - e^{-t/\tau} \)</td><td>Approach to a new level after an input switches.</td></tr>
+<tr><td>Reading \( \tau \) from physics</td><td>\( \tau = V/Q \), etc.</td><td>The time constant is built from the balance's own coefficients.</td></tr>
+</tbody></table></div>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
-<h4>Worked example 1 — flushing a tank clean</h4>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Flushing a tank clean</b></p>
 <p><b>Problem.</b> A 10 m³ well-mixed tank of contaminated water (concentration \( C_0 \)) is
 flushed with clean water at 0.5 m³/min, overflowing at the same rate. <b>Find:</b> \( C(t) \)
-and the time to reach 10% of \( C_0 \).</p>
-<p><b>Solution.</b> (1) Mass balance: \( V\frac{dC}{dt} = -QC \Rightarrow \frac{dC}{dt} = -\frac{Q}{V}C = -0.05\,C \) (per minute).
+and the time to reach 10% of \( C_0 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Mass balance: \( V\frac{dC}{dt} = -QC \Rightarrow \frac{dC}{dt} = -\frac{Q}{V}C = -0.05\,C \) (per minute).
 (2) Separate and solve: \( C = C_0 e^{-0.05t} \).
 (3) Set \( 0.1 = e^{-0.05t} \Rightarrow t = \ln 10 / 0.05 = 46.1\ \mathrm{min} \).</p>
 <p><b>Answer:</b> \( C(t)=C_0e^{-0.05t} \); ≈46 minutes to 10%.
 <b>Sanity check:</b> \( \tau = V/Q = 20 \) min; 10% requires \( \ln 10 = 2.30 \) time
-constants → 46 min. Two roads, one number.</p>
-<h4>Worked example 2 — time constant from two data points</h4>
+constants → 46 min. Two roads, one number.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Time constant from two data points</b></p>
 <p><b>Problem.</b> A motor winding, tripped at \( t=0 \), reads 95 °C at \( t=10 \) min and
 65 °C at \( t=30 \) min; ambient is 35 °C. Assuming first-order cooling, <b>find</b> \( \tau \)
-and the temperature at \( t=60 \) min.</p>
-<p><b>Solution.</b> (1) Excess temperatures: 60 °C and 30 °C — halved in 20 minutes.
+and the temperature at \( t=60 \) min.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Excess temperatures: 60 °C and 30 °C — halved in 20 minutes.
 (2) Half-life relation: \( t_{1/2} = \tau\ln 2 \Rightarrow \tau = 20/0.693 = 28.9\ \mathrm{min} \).
 (3) At \( t=60 \): excess \( = 60 \cdot e^{-(60-10)/28.9} = 60\,e^{-1.732} = 60 \times 0.177 = 10.6 \) °C
 → \( T = 45.6\ \mathrm{°C} \).</p>
 <p><b>Answer:</b> \( \tau \approx 29 \) min; ≈46 °C an hour after trip.
 <b>Sanity check:</b> from 30 min to 60 min is ~one half-life plus a bit: 30 °C excess → ~10.6 °C.
-Consistent with halving each 20 minutes.</p>
-</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+Consistent with halving each 20 minutes.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Heating toward an asymptote</b></p>
+<p><b>Problem.</b> A motor winding heats toward a steady temperature rise of 80 K above ambient with time constant \( \tau = 40 \) min after a loaded start, following \( \theta(t) = 80\,(1 - e^{-t/\tau}) \). <b>Find:</b> when the rise reaches 60 K, and the rise after one hour.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( 60 = 80(1 - e^{-t/40}) \Rightarrow e^{-t/40} = 0.25 \Rightarrow t = 40\ln 4 = 55.4\ \mathrm{min} \).
+(2) At \( t = 60 \): \( \theta = 80(1 - e^{-1.5}) = 80(1 - 0.223) = 62.1\ \mathrm{K} \).</p>
+<p><b>Answer:</b> 60 K at ≈55 min; ≈62 K after an hour.
+<b>Sanity check:</b> 60 K is 75% of the step, and 75% completion should take about \( 1.4\tau \) \( (\ln 4 = 1.386) \) — 55 minutes on a 40-minute time constant. The step response is the cooling curve read upward: same equation, destination above instead of below.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A temperature sensor behaves as a first-order system with time constant \( \tau = 4\ \mathrm{s} \). At \( t = 0 \) it is plunged from one steady bath into another, a step change in its input. How long until the reading has completed 95% of the step?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>4.0 s</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>8.0 s</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>12.0 s</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>20.0 s</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The unfinished fraction of the step decays as \( e^{-t/\tau} \), so 95% completion requires \( e^{-t/\tau} = 0.05 \), giving \( t = \tau\ln 20 \approx 3\tau = 12\ \mathrm{s} \). Choosing 4.0 s commits the classic error of reading \( \tau \) itself as the settling time; one time constant completes only 63.2% of the step. The 20 s choice applies the five-time-constant criterion, which corresponds to 99.3%, stricter than what was asked.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>After a trip, a pump casing's excess temperature above ambient is observed to halve every 15 minutes. Assuming first-order (Newton) cooling, what is the time constant \( \tau \)?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>15.0 min</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>21.6 min</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>10.4 min</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>30.0 min</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>For a first-order decay the half-life satisfies \( t_{1/2} = \tau\ln 2 \), so \( \tau = 15/\ln 2 \approx 21.6\ \mathrm{min} \). Taking \( \tau = 15 \) min equates the half-life with the time constant — the classic slip, since one time constant leaves \( e^{-1} \approx 36.8\% \) of the excess, not 50%. The 10.4 min choice inverts the relation by computing \( 15 \times \ln 2 \) instead of dividing by it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A body cools per \( \dfrac{dT}{dt} = -\dfrac{T - 25}{10} \) (°C, minutes). At the instant \( T = 45 \) °C, what is the cooling rate?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>−2.0 °C/min</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>+2.0 °C/min</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>−4.5 °C/min</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>−0.5 °C/min</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Substitute directly: \( dT/dt = -(45 - 25)/10 = -2.0 \) °C/min — a 20-degree excess divided by a 10-minute time constant, falling. The positive option drops the sign that makes it cooling; −4.5 divides the full temperature 45 by 10, forgetting that the equation runs on the <em>excess</em> over ambient; −0.5 inverts excess and time constant. Reading rates straight off the ODE, no solving, is the skill this equation rewards.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>For the cooling equation \( \frac{dT}{dt} = -\frac{T - T_\infty}{\tau} \), what does setting the rate to zero identify, and how does the solution behave with respect to it?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The equilibrium \( T = T_\infty \), which the solution approaches asymptotically but never reaches in finite time.</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The time \( t = \tau \) at which the temperature exactly reaches \( T_\infty \).</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The initial condition \( T_0 \), which pins the unique trajectory among the family of solutions.</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The half-life of the decay, equal to \( \tau\ln 2 \).</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Zeroing the rate gives \( T = T_\infty \), the equilibrium: because the rate shrinks in proportion to the remaining excess, the trajectory decays exponentially toward it and never crosses or reaches it in finite time. The second choice commits the classic error of treating \( \tau \) as an arrival time — at \( t = \tau \) only about 63% of the excess has decayed. The initial condition comes from a measured starting point, not from zeroing the rate; it selects which trajectory occurs, not where trajectories rest.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The general solution of a first-order ODE is a family of curves. What does the initial condition do?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Selects the single trajectory the real system follows</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Sets the equilibrium value</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Determines the time constant</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Removes the exponential term</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The equation fixes the <em>shape</em> of all possible histories; the initial condition picks the one that passes through the known starting state — that is why every real prediction needs a measured starting point. The equilibrium and the time constant are properties of the equation itself (its coefficients), not of where you start; and the exponential term is the transient, removed only by waiting, not by initial conditions.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — when can we megger it?</b> You arrive after a 400 kW motor trip; electrical
 wants winding temperature below 50 °C before insulation-resistance testing, and production
 wants the answer <em>now</em>. Two thermocouple readings, the half-life trick from worked
@@ -174,6 +199,6 @@ afternoon.</p>
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+<script src="../../../assets/nx/nexus.js?v=2bc218145f"></script>
 </body>
 </html>

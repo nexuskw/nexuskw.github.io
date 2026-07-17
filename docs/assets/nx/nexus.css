@@ -416,3 +416,11 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
   .plan article{flex-direction:column;gap:6px}
   .nx-hero{padding:26px 20px}
 }
+
+/* ---------- course-page career module (companies allowed ONLY here) ---------- */
+.career-block{border:1px solid var(--nx-line);border-left:4px solid var(--nx-amber);
+  border-radius:14px;background:#fffdf7;padding:20px 24px;margin:26px 0;max-width:860px}
+.career-block .tag{display:inline-block;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--nx-amber-d);margin:0 0 10px}
+.career-block p{margin:8px 0}
+.career-block ul{margin:8px 0 8px 22px}

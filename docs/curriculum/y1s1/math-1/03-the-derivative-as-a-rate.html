@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2bc218145f">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -54,7 +54,7 @@
     <h1>The derivative as a rate</h1>
     <p class="sub">Definition from first principles, then the derivative as velocity, heat-up rate, and wear rate. Differentiability versus continuity. Reading slopes off real trend data.</p>
   </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/3">Mark as complete</button>
@@ -88,6 +88,24 @@ next lesson) gives \( T'(t) = 0.8 + 0.1t \): the heating <em>accelerates</em>, b
 itself grows. Set \( T'(t) \) against an alarm rate and you get a time-to-act, not just a
 number: solve \( 0.8+0.1t = 2.5 \) → \( t = 17\ \mathrm{h} \). The derivative converts a curve
 into a deadline.</p>
+
+<h3>04 · Computing derivatives from data — the working method</h3>
+<p>Real trends arrive as samples, not formulas, so the working derivative is a finite
+difference. From the two latest points you can only form the <em>forward-looking secant</em>
+\( (f_{now} - f_{prev})/\Delta t \); mid-record, prefer the <em>central difference</em>
+\( (f_{i+1} - f_{i-1})/(2\Delta t) \), which cancels the first layer of error and tracks
+the true tangent far better on smooth data. Three disciplines make the estimates
+trustworthy. <em>State the units</em> — a slope is always something per something, and writing
+mm/s per week forces the physical meaning into view. <em>Respect noise:</em> differentiation
+amplifies it, so difference over intervals long enough for the real change to dominate the
+scatter; a derivative computed from two noisy readings an hour apart is an opinion, not a
+measurement. <em>Distinguish model from data:</em> when a curve has been fitted, differentiate
+the model symbolically and use the data-side difference as its check — when the two disagree
+badly, the fit, the data, or the machine has changed, and every one of those is worth
+knowing.</p>
+<p>Then read the result the way 2 taught: the value says where the machine is, the derivative
+says where it is going, and the difference between those two sentences is the difference
+between recording a number and making a decision.</p>
 <p><strong>Closing.</strong> The derivative is a limit of average rates, it carries units, and
 on the plant floor it is the difference between watching a number and reading its intent.</p>
 </div></section>
@@ -99,35 +117,39 @@ on the plant floor it is the difference between watching a number and reading it
 <li><b>Function notation</b> (Lesson 1) — \( T'(t) \) is itself a new function of time.</li>
 </ul>
 <h4>Glossary</h4>
-<ul class="plain">
-<li><b>Derivative</b> — instantaneous rate of change; slope of the tangent line.</li>
-<li><b>Tangent line</b> — the straight line that best mimics the curve at one point.</li>
-<li><b>Secant slope</b> — average rate across an interval; the derivative's approximation.</li>
-<li><b>Differentiable</b> — smooth enough to own a slope (no corners, no jumps).</li>
-</ul>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Derivative</td><td>\( \tfrac{dT}{dt} = \lim_{\Delta t\to 0}\tfrac{\Delta T}{\Delta t} \)</td><td>The instantaneous rate; the slope of the trend at one instant, always with units.</td></tr>
+<tr><td>Secant (average) rate</td><td>\( \Delta T/\Delta t \)</td><td>What two spot readings give; the derivative's finite approximation.</td></tr>
+<tr><td>Forward difference</td><td>\( (f_{i+1} - f_i)/h \)</td><td>Rate from the latest two samples — the only choice at the record's live edge.</td></tr>
+<tr><td>Central difference</td><td>\( (f_{i+1} - f_{i-1})/(2h) \)</td><td>The better mid-record estimate on smooth data; first-order errors cancel.</td></tr>
+<tr><td>Rate-to-deadline</td><td>solve \( f'(t) = \text{limit} \)</td><td>Turning an alarm rate into a time-to-act.</td></tr>
+<tr><td>Differentiability</td><td>no corners, no jumps</td><td>Knowing where a slope exists at all; trend corners mark regime changes.</td></tr>
+</tbody></table></div>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
-<h4>Worked example 1 — time-to-alarm from a fitted trend</h4>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Time-to-alarm from a fitted trend</b></p>
 <p><b>Problem.</b> A gearbox housing temperature trend fits
 \( T(t) = 40 + 0.8t + 0.05t^2 \) (°C, \(t\) in hours since the shift began). Site practice
 flags any heating rate above 2.5 °C/h. <b>Find:</b> the rate at \( t=10\ \mathrm{h} \) and the
-time the rate limit is reached.</p>
-<p><b>Solution.</b> (1) Differentiate: \( T'(t) = 0.8 + 0.1t \).
+time the rate limit is reached.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Differentiate: \( T'(t) = 0.8 + 0.1t \).
 (2) At \( t=10 \): \( T'(10) = 0.8 + 1.0 = 1.8\ \mathrm{°C/h} \) — under the limit.
 (3) Set \( 0.8 + 0.1t = 2.5 \Rightarrow t = 17\ \mathrm{h} \).</p>
 <p><b>Answer:</b> 1.8 °C/h now; the 2.5 °C/h threshold arrives at \( t = 17\ \mathrm{h} \).
 <b>Sanity check:</b> the rate grows 0.1 °C/h every hour; from 1.8 at \(t=10\), seven more hours
-adds 0.7 → 2.5. Consistent.</p>
-<h4>Worked example 2 — filling rate from level</h4>
+adds 0.7 → 2.5. Consistent.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Filling rate from level</b></p>
 <p><b>Problem.</b> A vertical cylindrical tank, diameter 3.0 m, shows level rising at
-0.40 m per minute. <b>Find:</b> the inflow in m³/h.</p>
-<p><b>Solution.</b> (1) \( V = A h \) with \( A = \pi D^2/4 = \pi (3.0)^2/4 = 7.07\ \mathrm{m^2} \).
+0.40 m per minute. <b>Find:</b> the inflow in m³/h.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( V = A h \) with \( A = \pi D^2/4 = \pi (3.0)^2/4 = 7.07\ \mathrm{m^2} \).
 (2) Chain of rates: \( \dot V = A \, \dot h = 7.07 \times 0.40 = 2.83\ \mathrm{m^3/min} \).
 (3) Convert: \( 2.83 \times 60 = 170\ \mathrm{m^3/h} \).</p>
 <p><b>Answer:</b> ≈170 m³/h. <b>Sanity check:</b> the tank gains 24 m³ every 10 minutes —
 about 3.4 m of level per hour, which a 3 m-diameter receiving tank plausibly does during
-transfer. Units chain cleanly: m² × m/min → m³/min.</p>
-</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+transfer. Units chain cleanly: m² × m/min → m³/min.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>A derivative from historian samples</b></p>
+<p><b>Problem.</b> A vibration trend is sampled weekly: \( V = 2.0,\ 2.3,\ 2.9 \) mm/s at \( t = 0, 1, 2 \) weeks. <b>Find:</b> the rate of change at \( t = 1 \) week by forward difference and by central difference, with units, and state which estimate to trust on a smooth trend.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Forward difference: \( (2.9 - 2.3)/1 = 0.60 \) mm/s per week.
+(2) Central difference: \( (2.9 - 2.0)/2 = 0.45 \) mm/s per week.
+(3) On smooth data the central difference is the better tangent estimate — its first-order errors cancel; the forward difference looks half a step into the future and overstates a rising, accelerating trend.</p>
+<p><b>Answer:</b> forward 0.60, central 0.45 mm/s per week; prefer the central estimate mid-record.
+<b>Sanity check:</b> the weekly increments are 0.3 then 0.6 — the instantaneous rate at \( t=1 \) should sit between them, and 0.45 does.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A machine's vibration trend has been fitted as \( V(t) = 1.2 + 0.03t^2 \) (mm/s, with \( t \) in weeks since installation). What is the instantaneous rate of change of vibration at \( t = 5 \) weeks?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>0.30 mm/s per week</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>0.15 mm/s per week</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1.95 mm/s per week</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.06 mm/s per week</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Differentiating gives \( V'(t) = 0.06t \), so \( V'(5) = 0.30 \) mm/s per week. The distractor 0.15 comes from dropping the factor of 2 when differentiating \( t^2 \), and 1.95 is the value \( V(5) \) itself — confusing where the trend is with how fast it is moving. Answering 0.06 means the derivative was formed correctly but never evaluated at \( t = 5 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A pump bearing's temperature follows the fitted trend \( T(t) = 35 + 1.2t + 0.04t^2 \) (°C, \( t \) in hours since start-up). Site practice requires intervention once the heating rate reaches 3.0 °C/h. At what time does the rate reach that limit?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( t = 22.5 \) h</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( t = 45 \) h</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( t = 37.5 \) h</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( t = 75 \) h</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The rate is \( T'(t) = 1.2 + 0.08t \); setting \( 1.2 + 0.08t = 3.0 \) gives \( t = 1.8/0.08 = 22.5 \) h — the derivative turns the curve into a deadline. The distractor 45 h comes from differentiating \( 0.04t^2 \) as \( 0.04t \) (dropping the factor of 2), and 37.5 h comes from dividing 3.0 by 0.08 without first subtracting the constant rate term 1.2 °C/h.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A bearing temperature \( T(t) \) is logged with \( T \) in °C and \( t \) in hours. What are the units of \( T'(t) \)?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>°C</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>°C/h</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>h/°C</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It is dimensionless</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The derivative is a limit of \( \Delta T/\Delta t \), so its units are the ratio of the units: °C per hour. A derivative always carries units, and stating them is not pedantry — it is what turns "the trend is 1.8" into the actionable "the housing is heating at 1.8 °C every hour." Answering °C confuses the rate with the reading; dimensionless confuses mathematics with the pure-number world it models.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A recorded trend is continuous at \( t = t_0 \) but shows a sharp corner there, like \( |t - t_0| \)-shaped behaviour after a sudden load change. Which statement is correct?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The function is continuous at \( t_0 \) but not differentiable there: the one-sided secant slopes converge to different values, so no single tangent slope exists.</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Continuity at \( t_0 \) guarantees differentiability at \( t_0 \), so the derivative must exist.</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The function is differentiable at \( t_0 \) but cannot be continuous there.</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The derivative at \( t_0 \) exists and equals the average of the left-hand and right-hand slopes.</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>At a corner the limit defining the derivative fails: the left and right difference quotients approach different values, yet the function value has no jump — continuous but not differentiable. The classic error is reversing the implication: differentiability implies continuity, never the converse. Averaging the two one-sided slopes is a tempting repair, but the defining limit simply does not exist, so no derivative can be assigned.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Between \( t = 2 \) h and \( t = 6 \) h a trend rises from 10 to 22 units — an average rate of 3 units/h. What can be said about the instantaneous rate at \( t = 4 \) h?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>It is exactly 3 units/h</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>It is at least 3 units/h</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>It cannot be determined from the average alone</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It is zero, since 4 h is the midpoint</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>An average over an interval constrains nothing at any particular interior instant: the trend could be rising at 6 units/h at \( t=4 \) and crawling elsewhere, or vice versa. (The mean value theorem promises the instantaneous rate equals 3 <em>somewhere</em> in the interval — but not at any point you get to choose.) Reading an interval average as a point value is the classic trend-review error this lesson exists to retire.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — two identical numbers, one work order.</b> You arrive for the monthly route
 at a cable plant's drawing line and both gearboxes read 3.9 mm/s. The history tells them
 apart: unit A has sat between 3.7 and 4.0 for two years (\( dV/dt \approx 0 \)); unit B was at
@@ -173,6 +195,6 @@ moving.</p>
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+<script src="../../../assets/nx/nexus.js?v=2bc218145f"></script>
 </body>
 </html>

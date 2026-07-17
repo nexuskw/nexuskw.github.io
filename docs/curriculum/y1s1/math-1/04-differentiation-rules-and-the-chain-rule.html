@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2bc218145f">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -54,7 +54,7 @@
     <h1>Differentiation rules and the chain rule</h1>
     <p class="sub">Product, quotient, and chain rules with mechanical fluency as the goal. Implicit differentiation. The chain rule as the engine behind every related-rates problem in plant contexts.</p>
   </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/4">Mark as complete</button>
@@ -89,6 +89,29 @@ chain of dependencies and multiply the local sensitivities.</p>
 speed increase costs ≈6% more power ((1.02)³ = 1.061 exactly). This is why slowing a fan or
 pump slightly is the cheapest energy project in any plant — the cube works for you on the way
 down.</p>
+
+<h3>04 · Choosing the rule — structure before symbols</h3>
+<p>Differentiation errors rarely come from forgetting a rule; they come from misreading the
+<em>structure</em> of the expression. So classify before you differentiate. Is the expression
+a sum of powers? The power rule handles each term independently — after rewriting roots and
+reciprocals as powers, \( \sqrt{x} = x^{1/2} \), \( 1/x = x^{-1} \). Is it two varying
+quantities multiplied — force times velocity, pressure times flow? That is a genuine product:
+product rule. A ratio with the variable in the denominator? Quotient rule, with the
+subtraction order fixed. A function <em>of</em> a function — something raised to a power,
+an exponential of an expression? Chain rule, differentiating outer times inner, working from
+the outside in.</p>
+<p>For the power laws that fill engineering — \( P = kN^3 \), \( \Delta P = kQ^2 \) —
+logarithmic differentiation earns its keep: take logs, differentiate, and relative rates
+appear directly, \( dP/P = n\,dN/N \). That one line is the professional's sensitivity
+language: percent out per percent in. Keep the honest distinction from 3 visible — the
+relative-rate figure is a first-order estimate, exact only in the limit; for large changes,
+compute the ratio exactly and let the linear estimate serve as its sanity check.</p>
+<p>Finally, make numerical verification a reflex. Any symbolic derivative can be audited in
+ten seconds: evaluate the function at \( x \) and at \( x + 0.001 \), divide the difference
+by 0.001, and compare with the formula's prediction. Agreement to three figures means the
+algebra survived; disagreement means a dropped inner derivative or a sign error is hiding in
+the work. Professionals check their derivatives the way welders check their fit-up — before
+the error is buried under everything built on top of it.</p>
 <p><strong>Closing.</strong> Rules (1)–(2) mechanize differentiation; the chain rule (3) walks
 rates through cause-and-effect; relative rates turn calculus into percentage talk that
 managers act on.</p>
@@ -101,32 +124,36 @@ managers act on.</p>
 <li><b>Composite functions</b> — recognizing \( f(g(x)) \) before differentiating it.</li>
 </ul>
 <h4>Glossary</h4>
-<ul class="plain">
-<li><b>Product/quotient rule</b> — derivatives of combined effects; equation (2).</li>
-<li><b>Chain rule</b> — derivative through nested dependence; equation (3).</li>
-<li><b>Sensitivity</b> — output change per unit input change; a derivative with a job.</li>
-<li><b>Relative (log) sensitivity</b> — percent-per-percent; \( d\ln y / d\ln x \).</li>
-</ul>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Power rule</td><td>\( (x^n)' = n\,x^{n-1} \)</td><td>Sums of powers — after rewriting roots and reciprocals as powers.</td></tr>
+<tr><td>Product rule</td><td>\( (uv)' = u'v + uv' \)</td><td>Two varying factors multiplied: force × velocity, pressure × flow.</td></tr>
+<tr><td>Quotient rule</td><td>\( (u/v)' = (u'v - uv')/v^2 \)</td><td>Ratios with the variable below the line; the subtraction order is fixed.</td></tr>
+<tr><td>Chain rule</td><td>\( \tfrac{dy}{dx} = \tfrac{dy}{du}\cdot\tfrac{du}{dx} \)</td><td>Nested dependence; rates multiply along the cause chain.</td></tr>
+<tr><td>Relative sensitivity</td><td>\( \tfrac{dP}{P} = n\,\tfrac{dN}{N} \) for \( P = kN^n \)</td><td>Percent-per-percent talk; affinity-law estimates and energy arguments.</td></tr>
+<tr><td>Exact vs first-order</td><td>\( (1+r)^n \) vs \( 1+nr \)</td><td>Deciding when the linear estimate is honest enough — and checking it when it isn't.</td></tr>
+</tbody></table></div>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
-<h4>Worked example 1 — chain rule, straight up</h4>
-<p><b>Problem.</b> \( y = (3x^2+2)^4 \). <b>Find:</b> \( y'(1) \).</p>
-<p><b>Solution.</b> (1) Outer: \( \frac{d}{du}u^4 = 4u^3 \) with \( u = 3x^2+2 \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Chain rule, straight up</b></p>
+<p><b>Problem.</b> \( y = (3x^2+2)^4 \). <b>Find:</b> \( y'(1) \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Outer: \( \frac{d}{du}u^4 = 4u^3 \) with \( u = 3x^2+2 \).
 (2) Inner: \( u' = 6x \). (3) Chain: \( y' = 4(3x^2+2)^3 \cdot 6x = 24x(3x^2+2)^3 \).
 (4) At \( x=1 \): \( 24 \times 5^3 = 24 \times 125 = 3000 \).</p>
 <p><b>Answer:</b> 3000. <b>Sanity check:</b> numerically, \( y(1.001) - y(1) \approx
-628.0\!-\!625 = 3.0 \) over \( \Delta x = 0.001 \) → slope ≈ 3000. Confirmed.</p>
-<h4>Worked example 2 — the affinity-law energy argument</h4>
+628.0\!-\!625 = 3.0 \) over \( \Delta x = 0.001 \) → slope ≈ 3000. Confirmed.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The affinity-law energy argument</b></p>
 <p><b>Problem.</b> A 90 kW cooling fan runs at fixed speed with dampers throttling. A VFD
 retrofit would slow it 10%. Using the fan law \( P = kN^3 \), <b>find</b> the approximate and
-exact power saving.</p>
-<p><b>Solution.</b> (1) Relative rates: \( dP/P = 3\,dN/N = 3 \times (-10\%) = -30\% \)
+exact power saving.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Relative rates: \( dP/P = 3\,dN/N = 3 \times (-10\%) = -30\% \)
 (first-order estimate). (2) Exact: \( (0.9)^3 = 0.729 \) → 27.1% saving.
 (3) Power: \( 90 \times 0.271 = 24.4\ \mathrm{kW} \) saved continuously.</p>
 <p><b>Answer:</b> ≈24 kW (exact 27.1%, linear estimate 30%). <b>Sanity check:</b> the linear
 estimate overshoots because the cube curve bends — for a 10% change the two agree within a few
-points, exactly what a first-order method promises.</p>
-</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+points, exactly what a first-order method promises.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Power through the product rule</b></p>
+<p><b>Problem.</b> During a controlled winch lower-away, cable tension falls as \( F(t) = 200 - 5t \) N while payout speed rises as \( v(t) = 2 + 0.3t \) m/s. Mechanical power is \( P = Fv \). <b>Find:</b> \( P'(10) \) and interpret its sign.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Product rule: \( P' = F'v + Fv' = (-5)(2 + 0.3t) + (200 - 5t)(0.3) \).
+(2) At \( t = 10 \): \( (-5)(5) + (150)(0.3) = -25 + 45 = +20 \) W/s.
+(3) Interpretation: tension is falling, but the speed growth outweighs it — power is still rising at 20 watts per second.</p>
+<p><b>Answer:</b> \( P'(10) = +20 \) W/s; power increasing.
+<b>Sanity check:</b> \( P(10) = 150 \times 5 = 750 \) W and \( P(11) = 145 \times 5.3 = 768.5 \) W — a rise of 18.5 W over the next second, consistent with a +20 W/s instantaneous rate that is itself easing off.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Let \( y = (2x^3 + 1)^5 \). Compute \( y'(1) \).</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>405</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>2430</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>648</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>7290</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>By the chain rule, the outer derivative is \( 5u^4 \) with \( u = 2x^3 + 1 \) and the inner derivative is \( 6x^2 \), so \( y' = 30x^2(2x^3+1)^4 \), which at \( x = 1 \) gives \( 30 \times 3^4 = 2430 \). The distractor 405 is the classic error of differentiating only the outer power and forgetting to multiply by the inner derivative \( 6x^2 \). Writing the outer derivative as \( 5u^5 \) instead of \( 5u^4 \) — failing to reduce the exponent — produces 7290.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>For differentiable functions \( u(x) \) and \( v(x) \) with \( v(x) \neq 0 \), which expression equals \( \left( \dfrac{u}{v} \right)' \)?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( \dfrac{u v' - u' v}{v^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \dfrac{u'}{v'} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( \dfrac{u' v - u v'}{v^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \dfrac{u' v + u v'}{v^2} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The quotient rule is \( (u/v)' = (u'v - uv')/v^2 \): the term with the differentiated numerator comes first, and the subtraction order is fixed. Reversing the numerator to \( uv' - u'v \) is the classic sign error and yields exactly the negative of the true derivative. The plus-sign version transplants the product-rule pattern where it does not apply, and \( u'/v' \) — differentiating top and bottom separately — already fails on a case as simple as \( x/x^2 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Let \( f(x) = 4x^{3/2} \). What is \( f'(9) \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>18</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>12</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>162</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>108</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Rewrite and apply the power rule: \( f'(x) = 4 \cdot \tfrac{3}{2}x^{1/2} = 6\sqrt{x} \), so \( f'(9) = 6 \times 3 = 18 \). Choosing 12 drops the \( 3/2 \) exponent factor; 162 forgets to lower the power (using \( x^{3/2} \) instead of \( x^{1/2} \)); 108 is \( f(9) \) itself — the value-versus-slope confusion. The power rule covers roots the moment you write them as fractional powers.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A centrifugal pump absorbs shaft power according to the affinity law \( P = kN^3 \), where \( N \) is rotational speed. A variable-frequency drive slows the pump by 8%. What is the <em>exact</em> percentage reduction in absorbed power?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>8.0%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>15.4%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>24.0%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>22.1%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The exact power ratio is \( (0.92)^3 = 0.7787 \), so the saving is \( 1 - 0.7787 = 22.1\% \). The relative-rate estimate \( dP/P = 3\,dN/N = 24\% \) is only a first-order linearization; quoting it as the exact value is the classic error behind that distractor, and it overshoots because the cubic curve bends. Using the square law (which governs head, \( \propto N^2 \)) instead of the cube law for power gives 15.4%, while assuming power simply proportional to speed gives 8%.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Tank level responds to volume as \( dL/dV = 0.14 \) m per m³, and volume grows at \( dV/dt = 2.5 \) m³/min. How fast is level rising?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>0.35 m/min</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>17.9 m/min</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>2.64 m/min</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.056 m/min</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The chain rule multiplies rates along the dependency chain: \( dL/dt = (dL/dV)(dV/dt) = 0.14 \times 2.5 = 0.35 \) m/min. Dividing (17.9) or adding (2.64) the sensitivities are the classic chain-rule confusions; 0.056 inverts one factor. When causes chain — valve to flow, flow to volume, volume to level — their local sensitivities multiply, which is the entire content of equation (3).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — selling the VFD with one line of calculus.</b> You arrive at an energy review
 where a utilities fan farm runs throttled year-round. Management wants payback numbers, not
 mathematics. You write one line on the whiteboard — <em>power moves three percent for every
@@ -170,6 +197,6 @@ what equation (3) already promised. The retrofit gets scoped that week.</p>
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+<script src="../../../assets/nx/nexus.js?v=2bc218145f"></script>
 </body>
 </html>

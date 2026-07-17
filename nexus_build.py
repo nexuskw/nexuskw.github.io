@@ -679,6 +679,13 @@ def build_course_page(sem, course, prefix, tabs_all):
     cards = video_cards(course)
     vids = (f'<h3>Open courseware for this course</h3><div class="vids">'
             f'{"".join(cards)}</div>') if cards else ""
+    # Career module — the ONLY place company names are permitted (owner rule
+    # 2026-07-17: academic tabs strictly company-free; career/employment
+    # content may and should name real local, regional, and global employers).
+    career = (f'<div class="career-block"><span class="tag">Career outlook — '
+              f'where this course pays</span>{course["career"]}'
+              f'<p class="small"><a href="{prefix}career/index.html">'
+              f'Full career playbook →</a></p></div>') if course.get("career") else ""
     n_core = sum(1 for l in course["lessons"] if l.get("core60"))
     n_depth = sum(1 for l in course["lessons"] if lesson_depth(l, tabs_all))
     n_quiz = sum(1 for l in course["lessons"]
@@ -717,6 +724,7 @@ def build_course_page(sem, course, prefix, tabs_all):
     <div class="lessons">{''.join(rows)}</div>
     <ul class="plain small">{taught}</ul>
     {vids}
+    {career}
   </div>
 </section>"""
     nx_page(f"curriculum/{sem['id']}/{course['id']}/index.html",

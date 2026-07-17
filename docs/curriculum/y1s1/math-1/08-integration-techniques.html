@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2bc218145f">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -54,7 +54,7 @@
     <h1>Integration techniques</h1>
     <p class="sub">Substitution, integration by parts, and simple partial fractions. Choosing a technique by recognizing structure. Numerical fallback when no closed form exists.</p>
   </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/8">Mark as complete</button>
@@ -87,6 +87,30 @@ try substitution; try parts; recognize a table form; otherwise integrate <em>num
 — trapezoids or Simpson on sampled data — and say so. A numerically honest answer beats a
 heroic symbolic detour every time. Software does symbolic work well; your job is to set the
 integral up correctly and sanity-check its output.</p>
+
+<h3>04 · Choosing the technique — a decision procedure</h3>
+<p>Integration is pattern recognition with a fallback ladder, and the ladder has exactly four
+rungs. <em>Rung one: is the derivative of an inner function sitting beside it?</em> If the
+integrand contains \( g(x) \) inside another function and \( g'(x) \) — up to a constant —
+as a factor, substitution finishes it in one line. Train the eye on the constant: in
+\( \int x\,e^{x^2}dx \), the \( x \) outside is \( \tfrac12 \) of the needed
+\( 2x \), and the half simply rides along. <em>Rung two: a genuine product of unrelated
+factors</em> — polynomial times exponential, polynomial times sine — goes to parts, choosing
+\( u \) as the factor that simplifies when differentiated. <em>Rung three: recognize a
+table form</em> and write the answer. <em>Rung four: integrate numerically</em> — trapezoids
+on the samples you have — and say so plainly.</p>
+<p>Two habits turn technique into reliability. Verify every antiderivative by
+differentiating it — ten seconds that catch dropped halves and sign slips before they
+propagate. And when limits are involved in a substitution, transform them with the variable
+so the evaluation happens in \( u \)-space and nothing needs converting back. The
+techniques are few; the discipline around them is what makes the answers dependable.</p>
+<p>Know also what the ladder is for. In professional work, symbolic software integrates
+faster than any human — but it cannot decide whether the integral was set up correctly,
+whether the limits mean what the question meant, or whether the answer's magnitude is
+plausible. The techniques you practice here build exactly that judgment: someone who has
+integrated by hand recognizes a wrong machine answer on sight, the way a machinist who has
+cut threads manually reads a bad CNC part at a glance. Learn the moves to own the judgment,
+then delegate the labor freely.</p>
 <p><strong>Closing.</strong> Substitution reverses the chain rule, parts reverses the product
 rule, and numerical integration is the licensed fallback — not a defeat.</p>
 </div></section>
@@ -98,32 +122,35 @@ rule, and numerical integration is the licensed fallback — not a defeat.</p>
 <li><b>Exponentials</b> (Lesson 5) — \( \int e^{kt}dt = e^{kt}/k + C \) appears constantly.</li>
 </ul>
 <h4>Glossary</h4>
-<ul class="plain">
-<li><b>Substitution</b> — change of variable matching the chain rule's pattern.</li>
-<li><b>Integration by parts</b> — equation (2); trades one integral for a simpler one.</li>
-<li><b>Table form</b> — a memorized standard integral.</li>
-<li><b>Numerical integration</b> — trapezoid/Simpson sums on data; the honest fallback.</li>
-</ul>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Substitution</td><td>\( u = g(x),\ du = g'(x)\,dx \)</td><td>The inner function's derivative sits beside it, up to a constant.</td></tr>
+<tr><td>Integration by parts</td><td>\( \int u\,dv = uv - \int v\,du \)</td><td>Genuine products: polynomial × exponential or sine; pick \( u \) to simplify.</td></tr>
+<tr><td>Limits under substitution</td><td>\( x{=}a \to u{=}g(a) \)</td><td>Transform the limits with the variable and never convert back.</td></tr>
+<tr><td>Table form</td><td>memorized standards</td><td>Recognize before deriving; most plant integrals are three patterns.</td></tr>
+<tr><td>Trapezoid rule</td><td>\( \sum \tfrac{f_i + f_{i+1}}{2}\,\Delta t \)</td><td>Sampled data — the licensed, honest fallback.</td></tr>
+<tr><td>Verify by differentiating</td><td>\( \tfrac{d}{dx}(\text{answer}) \stackrel{?}{=} \text{integrand} \)</td><td>The ten-second audit every antiderivative deserves.</td></tr>
+</tbody></table></div>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
-<h4>Worked example 1 — substitution with limits</h4>
-<p><b>Problem.</b> Evaluate \( \displaystyle\int_0^2 x\,(x^2+1)^3\,dx \).</p>
-<p><b>Solution.</b> (1) \( u = x^2+1 \), \( du = 2x\,dx \); limits map \( x{=}0 \to u{=}1 \),
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Substitution with limits</b></p>
+<p><b>Problem.</b> Evaluate \( \displaystyle\int_0^2 x\,(x^2+1)^3\,dx \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( u = x^2+1 \), \( du = 2x\,dx \); limits map \( x{=}0 \to u{=}1 \),
 \( x{=}2 \to u{=}5 \).
 (2) Integral becomes \( \tfrac12 \int_1^5 u^3 du = \tfrac12 \cdot \frac{u^4}{4}\Big|_1^5 \).
 (3) \( = \frac{625 - 1}{8} = 78 \).</p>
 <p><b>Answer:</b> 78. <b>Sanity check:</b> the integrand at \( x=2 \) is \( 2 \times 125 = 250 \),
-at 0 it's 0; a rough average of ~40 over width 2 gives ~80 — same neighborhood as 78.</p>
-<h4>Worked example 2 — parts on a decaying transient</h4>
+at 0 it's 0; a rough average of ~40 over width 2 gives ~80 — same neighborhood as 78.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Parts on a decaying transient</b></p>
 <p><b>Problem.</b> A quantity accumulates as \( \int_0^2 t\,e^{-t}\,dt \) (dimensionless
-model of energy delivered by a decaying pulse). <b>Find:</b> its value.</p>
-<p><b>Solution.</b> (1) Parts with \( u = t,\ dv = e^{-t}dt \Rightarrow du = dt,\ v = -e^{-t} \).
+model of energy delivered by a decaying pulse). <b>Find:</b> its value.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Parts with \( u = t,\ dv = e^{-t}dt \Rightarrow du = dt,\ v = -e^{-t} \).
 (2) \( \int t e^{-t} dt = -t e^{-t} + \int e^{-t} dt = -t e^{-t} - e^{-t} \).
 (3) Evaluate 0→2: \( \left[-(t+1)e^{-t}\right]_0^2 = -(3)(0.1353) + 1 = 1 - 0.406 = 0.594 \).</p>
 <p><b>Answer:</b> ≈0.594. <b>Sanity check:</b> the full integral to infinity equals 1 exactly;
 by \( t=2 \) (two time constants) most of the pulse has landed — 59% here, with the tail's
-remainder consistent with \( (t+1)e^{-t} \) at \( t=2 \) being 0.406.</p>
-</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+remainder consistent with \( (t+1)e^{-t} \) at \( t=2 \) being 0.406.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Integrating data that has no formula</b></p>
+<p><b>Problem.</b> A flow is sampled every 15 minutes: 40, 52, 60, 54, 42 m³/h. <b>Find:</b> the volume transferred over the hour by the trapezoid rule.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Step \( h = 0.25 \) h. Trapezoid rule: \( V = h\left[\tfrac{f_0 + f_4}{2} + f_1 + f_2 + f_3\right] \).
+(2) \( V = 0.25\left[\tfrac{40+42}{2} + 52 + 60 + 54\right] = 0.25\,(41 + 166) = 51.75\ \mathrm{m^3} \).</p>
+<p><b>Answer:</b> ≈51.8 m³.
+<b>Sanity check:</b> the flow averaged roughly 50 m³/h over one hour, so ~50 m³ is the expected neighborhood; the trapezoid answer sits just above it because the curve spends more time near its 60 m³/h crest than at its ends. This is rung four of the technique ladder — used openly, it is not an approximation of last resort but the standard tool for sampled data.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Evaluate \( \displaystyle\int_0^2 \frac{x}{x^2+1}\,dx \).</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( \ln 5 \approx 1.609 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \arctan 2 \approx 1.107 \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( \tfrac{1}{2}\ln 5 \approx 0.805 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \tfrac{1}{2}\ln 3 \approx 0.549 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Set \( u = x^2+1 \), so \( du = 2x\,dx \) and the limits map to \( u=1 \) and \( u=5 \), giving \( \tfrac12\int_1^5 \frac{du}{u} = \tfrac12\ln 5 \). The answer \( \ln 5 \) is the most common substitution slip: dropping the factor \( \tfrac12 \) that \( du = 2x\,dx \) forces. \( \arctan 2 \) comes from pattern-matching the table form \( \int dx/(x^2+1) \) while ignoring the \( x \) in the numerator, and \( \tfrac12\ln 3 \) results from converting the upper limit as \( 2+1 \) instead of \( 2^2+1 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Using integration by parts, evaluate \( \displaystyle\int_0^1 x\,e^{x}\,dx \).</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( e - 1 \approx 1.718 \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 1 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \tfrac{e}{2} \approx 1.359 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 2e - 1 \approx 4.437 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Take \( u = x \), \( dv = e^x dx \), so \( \int x e^x dx = x e^x - \int e^x dx = (x-1)e^x \); evaluating from 0 to 1 gives \( 0 - (-1) = 1 \). The value \( e/2 \) is the classic error of integrating the two factors independently as \( (x^2/2)e^x \) — integration has no product rule, which is exactly why parts exists. \( 2e-1 \) follows from a sign slip in the parts formula (writing \( uv + \int v\,du \)), and \( e-1 \) is \( \int_0^1 e^x dx \) alone, i.e., forgetting the boundary term \( uv \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>What is \( \displaystyle\int e^{3t}\,dt \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \tfrac{1}{3}e^{3t} + C \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 3e^{3t} + C \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( e^{3t} + C \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( t\,e^{3t} + C \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Differentiating \( \tfrac13 e^{3t} \) returns \( e^{3t} \) — the inner derivative 3 must be divided away, not multiplied in. Choosing \( 3e^{3t} \) applies the chain rule in the forward direction, the classic inversion error; the ten-second audit — differentiate your answer — catches it instantly. The \( t\,e^{3t} \) option imports a factor that only appears when integrating products <em>by parts</em>, not plain exponentials.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Each integrand below is a polynomial factor times an exponential or composite factor. For which integral does substitution alone fail, making integration by parts the required technique?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( \displaystyle\int x\,e^{x^2}\,dx \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \displaystyle\int \frac{2x}{x^2+1}\,dx \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \displaystyle\int x^2\,e^{x^3}\,dx \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\( \displaystyle\int x\,e^{3x}\,dx \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Substitution works only when the derivative of the inner function sits beside it: in \( \int x e^{x^2} dx \), \( \int x^2 e^{x^3} dx \), and \( \int 2x/(x^2+1)\,dx \) the polynomial factor is, up to a constant, the derivative of the inner function, so a \( u \)-substitution finishes each in one line. In \( \int x e^{3x} dx \) the inner function \( 3x \) has constant derivative, so the leftover \( x \) cannot be absorbed into \( du \); the integrand is a genuine product and parts applies. The classic error runs the other way: seeing \( x \) times an exponential in \( \int x e^{x^2} dx \) and launching into parts, which only produces a harder integral.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Which is \( \displaystyle\int 2x\cos(x^2)\,dx \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \sin(x^2) + C \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \cos(x^3/3) + C \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 2\sin(x^2) + C \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( -\sin(x^2) + C \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The derivative of the inner function \( x^2 \) is \( 2x \), sitting right there as a factor — substitution territory: \( u = x^2 \) gives \( \int\cos u\,du = \sin u + C = \sin(x^2) + C \). Check by differentiating: \( \tfrac{d}{dx}\sin(x^2) = 2x\cos(x^2) \) ✓. The \( \cos(x^3/3) \) option "integrates the inside," a move calculus never licenses; the sign-flipped option confuses the sine and cosine derivative pair.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the totalizer that lied politely.</b> You arrive to commission a batching
 skid whose vendor totalizer disagrees with the tank dip by 4% every batch. The vendor's
 firmware integrates flow with coarse rectangles at a slow scan; the batch flow rises and falls
@@ -169,6 +196,6 @@ arithmetic.</p>
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+<script src="../../../assets/nx/nexus.js?v=2bc218145f"></script>
 </body>
 </html>

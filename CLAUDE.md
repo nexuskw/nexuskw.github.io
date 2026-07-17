@@ -142,12 +142,41 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Consequence: the Career page rewrite question is resolved (keep/expand
   real companies there); the 44 older lessons + 8 lecture fragments with
   company-named applied cases still need the ACADEMIC scrub in Phase 2.
-- PHASE-2 CONTENT GATE (owner, 2026-07-17 PM — supersedes continuous
-  no-approval rollout for lesson content): NO lesson content generation
-  until the owner approves the proposed 48-class Curriculum Map
-  (university-grade structure adapted from MIT/ASU/Caltech/Texas A&M
-  BSME curricula; strict prerequisite sequencing; Industry 4.0 integrated
-  in Years 3-4). Map proposal delivered for review first.
+- CURRICULUM MAP APPROVED & EXECUTED (owner, 2026-07-17 PM; commit
+  a3d12da): university-grade 48-class structure researched from
+  MIT/ASU/Caltech/TAMU BSME catalogs. NEW: physics-1 (PHY 107, Y1S1,
+  8.01SC-modeled) and math-3 (MTH 207, Y2S1, DiffEq+LinAlg, 18.03-modeled),
+  full 11-lesson syllabi authored, preview arithmetic machine-verified.
+  MERGED: production-planning+lean-six-sigma → production-lean (PPL 405,
+  Y4S1); asset-integrity+pressure-equipment → pressure-integrity (PAI 453,
+  Y4S2) — 22→11 lesson selections, overlapping stubs fused, scopes kept.
+  MOVED (12): mfg-1→y1s2, mfg-2→y2s1, thermo-2→y2s2, metrology→y2s2,
+  plc-1→y3s1, safety→y3s1, vibrations→y3s1 (now BEFORE controls, TAMU
+  MEEN 363→364 pattern), controls-1→y3s2 (retitled "System Dynamics &
+  Control I"), plc-2→y3s2, maintenance-fundamentals→y3s2, robotics→y4s1.
+  Grid invariant intact: 48×11=528. Casting content moved intact with
+  mfg-1 (fragment ids are semester-agnostic; coverage stayed 52/528).
+- CAREER MODULE MECHANISM (owner Phase-2 rule, 2026-07-17 PM): per-course
+  "Career outlook" block on the COURSE page (course dict "career" HTML
+  field; renderer + .career-block CSS live). This is the ONLY place company
+  names may appear — academic tabs stay company-free (verified by scan in
+  the content pipeline). BROAD-SPECTRUM ROTATION (binding): rotate sectors
+  per course from {Construction/Real Estate, FMCG/Food, Infrastructure/
+  Utilities, Automotive/Heavy Equipment, Specialized Mfg, Global OEM},
+  always mixing local Kuwaiti / regional / global employers, tailored to
+  the course. USED SO FAR: math-1 = Construction (Mabanee) + FMCG (KDD) +
+  Global OEM (Siemens). Next courses must rotate to unused sectors.
+- CHECKPOINT Y1S1C1 (MTH 101 math-1) EN CORE DONE (2026-07-17 PM): all 11
+  lessons migrated to the strict architecture — lectures expanded to
+  500-1000 words with "working method" sections; foundations converted to
+  glossary TABLES (Term|Equation|When to use); Examples and Quiz = 3 solve
+  + 5 submit-graded MC per lesson (88 items: 22 legacy solves converted,
+  11 new solves, 33 drafts re-verified from journal, 22 new MCs — ALL
+  numeric answers machine-verified pre-write; drafts for drawing-cad remain
+  unverified in drafts/). Company-free scan of academic content PASS.
+  STILL OWED for full Y1S1C1: Arabic lesson bodies (honest AR notice still
+  shows), Library curation (video/texts/certs — placeholder renders).
+  Sector rotation and quiz pipeline are the template for Y1S1C2 onward.
 
 - 528 NORMALIZATION EXECUTED (2026-07-17, owner-approved): the catalog is now a
   strict 6×11 grid — 48 courses × 11 lessons = 528, verified at build

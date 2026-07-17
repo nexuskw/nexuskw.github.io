@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2bc218145f">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -54,7 +54,7 @@
     <h1>Applications: areas, volumes, work, and averages</h1>
     <p class="sub">Solids of revolution for vessels and shafts. Work integrals for pumping and lifting. Mean value of a fluctuating signal — the first meeting with RMS thinking.</p>
   </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/9">Mark as complete</button>
@@ -88,6 +88,28 @@ RMS tracks energy, and energy does the damage.</p>
 depth \( y \) has weight \( \rho g A\,dy \) and must rise a different height. Summing layers
 is an integral, executed in the Worked Examples tab for a real tank. The same layer-summing pattern
 computes hydrostatic forces on gates and centroids of plates — one method, many billables.</p>
+
+<h3>04 · Choosing the right average — a field guide</h3>
+<p>Three different averages answer three different questions, and choosing the wrong one is a
+quiet, expensive error. The <em>plain mean</em> — equation (1) — answers "how much per unit
+time on the invoice": billing, throughput, duty totals. The <em>RMS</em> — equation (2) —
+answers "what steady level would heat, stress, or wear the same": electrical heating,
+vibration severity, fatigue-relevant loading, because damage physics runs on squares. The
+<em>peak</em> answers "will it survive the worst instant": trips, relief sizing, insulation.
+A signal has all three numbers at once, and the crest factor — peak over RMS — is the single
+figure that says how far apart they live: near 1.4 for a clean sine, climbing whenever
+impacts and spikes enter, which is why analysts watch it as an early bearing-damage flag.</p>
+<p>On sampled data the integrals become sums without changing meaning: mean the samples for
+equation (1), mean the squares and take the root for equation (2), weighting by interval when
+the sampling is uneven. For work-by-layers problems, the recipe is mechanical: draw the
+layer, write its weight, write its travel distance as a function of position, integrate over
+the geometry — then check against the centroid shortcut, which agrees every time the geometry
+is uniform and catches the setup when it isn't.</p>
+<p>The same layer-summing pattern prices hydrostatic force on a gate, the metal in a
+tapered column, and the moment of a distributed load — one method, many invoices. What
+changes between problems is only what each layer carries: weight, pressure, or load per
+metre. Master the pattern once, in the tank problem, and every later course that says
+"integrate over the geometry" is asking for a rerun.</p>
 <p><strong>Closing.</strong> Integrals define honest averages (1), energy-true averages (2),
 and path-dependent work — three tools that turn "roughly" into "defensibly."</p>
 </div></section>
@@ -99,33 +121,37 @@ and path-dependent work — three tools that turn "roughly" into "defensibly."</
 <li><b>Density and weight</b> — \( \rho g \) converts volume layers to newtons.</li>
 </ul>
 <h4>Glossary</h4>
-<ul class="plain">
-<li><b>Mean value</b> — equation (1); area divided by width.</li>
-<li><b>RMS</b> — root-mean-square; the amplitude that matches DC heating.</li>
-<li><b>Crest factor</b> — peak ÷ RMS; impulsive signals announce themselves here.</li>
-<li><b>Work</b> — \( \int F\,dx \); force through distance, layer by layer.</li>
-</ul>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Mean value</td><td>\( \bar f = \tfrac{1}{b-a}\int_a^b f\,dt \)</td><td>Billing, throughput, duty — "how much per unit time," honestly.</td></tr>
+<tr><td>RMS</td><td>\( \sqrt{\tfrac{1}{T}\int_0^T f^2\,dt} \); sine: \( A/\sqrt2 \)</td><td>Heating, vibration severity, fatigue — damage physics runs on squares.</td></tr>
+<tr><td>Crest factor</td><td>peak ÷ RMS</td><td>Impulsiveness flag: ≈1.4 for a sine, climbing as impacts appear.</td></tr>
+<tr><td>Discrete forms</td><td>mean of samples; \( \sqrt{\text{mean of squares}} \)</td><td>The same averages on logged data, interval-weighted when sampling is uneven.</td></tr>
+<tr><td>Work by layers</td><td>\( W = \rho g A \int (H - y)\,dy \)</td><td>Pumping and hydrostatic problems; check with the centroid shortcut.</td></tr>
+<tr><td>Peak</td><td>\( \max |f| \)</td><td>Survival of the worst instant: trips, relief, insulation.</td></tr>
+</tbody></table></div>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
-<h4>Worked example 1 — RMS of a sine, derived</h4>
-<p><b>Problem.</b> Show \( f_{rms} = A/\sqrt2 \) for \( f = A\sin\omega t \) over one period.</p>
-<p><b>Solution.</b> (1) \( f^2 = A^2\sin^2\omega t = \frac{A^2}{2}(1 - \cos 2\omega t) \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>RMS of a sine, derived</b></p>
+<p><b>Problem.</b> Show \( f_{rms} = A/\sqrt2 \) for \( f = A\sin\omega t \) over one period.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( f^2 = A^2\sin^2\omega t = \frac{A^2}{2}(1 - \cos 2\omega t) \).
 (2) The cosine term integrates to zero over a full period, so
 \( \frac{1}{T}\int_0^T f^2 dt = \frac{A^2}{2} \).
 (3) Square root: \( f_{rms} = A/\sqrt2 \approx 0.707A \).</p>
 <p><b>Answer:</b> \( A/\sqrt2 \). <b>Sanity check:</b> 230 V RMS × √2 = 325 V peak — the
-familiar mains numbers reproduce.</p>
-<h4>Worked example 2 — emptying a tank over the rim</h4>
+familiar mains numbers reproduce.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Emptying a tank over the rim</b></p>
 <p><b>Problem.</b> A vertical cylindrical water tank, radius 1.5 m, holds 4.0 m of water.
-<b>Find:</b> the minimum work to pump the entire contents over the rim (at the 4.0 m level).</p>
-<p><b>Solution.</b> (1) Layer at height \( y \) (from the bottom), thickness \( dy \):
+<b>Find:</b> the minimum work to pump the entire contents over the rim (at the 4.0 m level).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Layer at height \( y \) (from the bottom), thickness \( dy \):
 volume \( A\,dy \) with \( A = \pi(1.5)^2 = 7.07\ \mathrm{m^2} \); lift height \( (4-y) \).
 (2) \( W = \rho g A \int_0^4 (4-y)\,dy = 1000 \times 9.81 \times 7.07 \times \left[4y - \tfrac{y^2}{2}\right]_0^4 \).
 (3) Bracket: \( 16 - 8 = 8 \). So \( W = 69{,}300 \times 8 = 555\ \mathrm{kJ} \).</p>
 <p><b>Answer:</b> ≈555 kJ (≈0.154 kWh). <b>Sanity check:</b> total mass 28.3 t lifted an
 average of 2 m: \( 28{,}300 \times 9.81 \times 2 = 555\ \mathrm{kJ} \) — the centroid shortcut
-confirms the integral exactly.</p>
-</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+confirms the integral exactly.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Mean versus RMS on a duty cycle</b></p>
+<p><b>Problem.</b> A motor draws 40 A for 2 s, then 10 A for 8 s, repeating every 10 s. <b>Find:</b> the mean current and the RMS current, and state which one sizes the motor thermally.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Mean: \( (40 \times 2 + 10 \times 8)/10 = 160/10 = 16\ \mathrm{A} \).
+(2) RMS: mean of squares \( = (40^2 \times 2 + 10^2 \times 8)/10 = (3200 + 800)/10 = 400 \), so \( I_{rms} = 20\ \mathrm{A} \).
+(3) Heating goes as \( I^2R \), so the 20 A figure — not 16 A — is the thermally equivalent steady current.</p>
+<p><b>Answer:</b> mean 16 A, RMS 20 A; thermal sizing uses RMS.
+<b>Sanity check:</b> RMS ≥ mean always, with equality only for constant signals; a motor sized on the 16 A average would run 56% hot on an \( I^2 \) basis \( (400/256 = 1.56) \) — the exact mistake the RMS concept exists to prevent.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A reactor jacket temperature follows \( T(t) = 20 + 4t - t^2 \) (in Celsius, with \( t \) in hours) over a 3-hour batch, \( 0 \le t \le 3 \). What is the true mean temperature of the batch?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>21.5 °C</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>23.75 °C</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>23.0 °C</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>69.0 °C</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The mean value is \( \bar T = \frac{1}{3}\int_0^3 (20 + 4t - t^2)\,dt = \frac{1}{3}\left[20t + 2t^2 - \tfrac{t^3}{3}\right]_0^3 = \frac{69}{3} = 23.0\ ^\circ\mathrm{C} \). Averaging only the start and end readings gives 21.5 °C — the spot-reading shortcut the lecture warns against, which misses everything between the samples. Choosing 69 °C is the integral itself, forgetting to divide by the interval width \( b-a \); 23.75 °C is a single reading at the midpoint, another form of spot sampling.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A vertical cylindrical tank of radius 1.0 m holds water (\( \rho = 1000\ \mathrm{kg/m^3} \)) to a depth of 3.0 m. Taking \( g = 9.81\ \mathrm{m/s^2} \), what is the minimum work required to pump the entire contents over the rim at the 3.0 m level?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>277 kJ</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>139 kJ</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>14.1 kJ</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>46 kJ</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>A layer at height \( y \) has weight \( \rho g A\,dy \) with \( A = \pi(1.0)^2 \) and must rise \( (3-y) \), so \( W = \rho g A \int_0^3 (3-y)\,dy = 1000 \times 9.81 \times \pi \times 4.5 \approx 139\ \mathrm{kJ} \). The centroid shortcut confirms it: 9.42 t of water rising 1.5 m gives the same 139 kJ. Choosing 277 kJ lifts the whole mass through the full 3.0 m instead of the centroid height — the classic error of ignoring that each layer travels a different distance; 14.1 kJ drops \( g \), leaving mass-metres rather than joules.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>What is the mean value of \( f(t) = 6t^2 \) over \( [0, 2] \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>16</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>24</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>4</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \bar f = \tfrac{1}{2}\int_0^2 6t^2 dt = \tfrac{1}{2}\left[2t^3\right]_0^2 = \tfrac{16}{2} = 8 \). Answering 16 is the integral without dividing by the width — a total, not an average; 24 is the endpoint value \( f(2) \), the spot-reading error; 4 halves the correct answer by dividing twice. Mean value is always integral over width: the two operations are inseparable.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Why does the RMS value, rather than the plain time-average, represent the heating effect of an AC current in a resistor?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Instantaneous dissipation scales as the square of the current, and the plain mean of a symmetric sinusoid over a cycle is zero, so only the mean of the squared signal tracks the energy delivered.</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The RMS of any waveform equals its peak divided by \( \sqrt{2} \), which makes it directly comparable to a DC value.</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>RMS equals the mean of the absolute value of the current, which is the quantity a heating element responds to.</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>RMS is always larger than the plain mean, so it builds a conservative safety margin into thermal ratings.</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Power in a resistor is \( i^2 R \), so the physically meaningful average must be taken on \( i^2 \); the square root then restores current units, giving the DC-equivalent amplitude that produces the same heating. The \( \sqrt{2} \) relation in the second choice is the classic overgeneralisation — peak divided by \( \sqrt{2} \) holds only for pure sinusoids, and the crest factor of other waveforms differs. The third choice confuses RMS with the rectified (mean-absolute) average, a distinct and generally smaller quantity.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Which signal has a crest factor of exactly \( \sqrt{2} \approx 1.41 \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>A pure sinusoid</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>A constant (DC) signal</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>A square wave</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>An impulsive signal with sharp spikes</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>For a sine, peak \( = A \) and RMS \( = A/\sqrt2 \), so peak/RMS \( = \sqrt2 \). A constant and a square wave both have RMS equal to their peak — crest factor 1 — while impulsive signals push the ratio well above 2, which is precisely why a rising crest factor on a bearing's vibration flags early impact-type damage while the RMS still looks calm. Crest factor is the one number that says how "spiky" a signal is.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the average that wasn't.</b> You arrive at a demand-charge dispute: the
 utility bills on average kW over each 15-minute window, and the plant's spreadsheet — three
 manual readings a shift — says the plant never crosses the contract limit. The historian's
@@ -169,6 +195,6 @@ is an opinion. The plant reschedules two big starts and the penalty disappears n
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+<script src="../../../assets/nx/nexus.js?v=2bc218145f"></script>
 </body>
 </html>

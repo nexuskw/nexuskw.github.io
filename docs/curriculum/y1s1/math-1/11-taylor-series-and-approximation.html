@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2bc218145f">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -54,7 +54,7 @@
     <h1>Taylor series and approximation</h1>
     <p class="sub">Linear and quadratic approximation of functions near an operating point. Where sin θ ≈ θ comes from and when it lies. Error terms as an engineering honesty clause.</p>
   </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/11">Mark as complete</button>
@@ -88,6 +88,28 @@ error: truncating after \( \theta \) leaves \( \sim\theta^3/6 \). Professional h
 the operating range, evaluate the first dropped term at the range's edge, and write both down.
 That habit is what separates "we linearized about 50% flow" from hand-waving — and it is
 exactly how instrument nonlinearity specs and control-model validity limits are written.</p>
+
+<h3>04 · Building a linearization you can defend</h3>
+<p>Linearization is a contract with three clauses, written in this order. <em>Choose the
+operating point deliberately</em> — the flow, load, or angle the system actually lives at —
+because the model is exact there and degrades with distance. <em>Compute the two numbers:</em>
+the function's value and its derivative at that point; the tangent model is just
+\( f(a) + f'(a)(x-a) \), a straight line wearing the local slope. <em>Price the error
+before anyone asks:</em> evaluate the first dropped term, \( \tfrac12 f''(a)(x-a)^2 \), at
+the edge of the range you intend to use, and write both the range and the error into the
+work. A linearization delivered with its validity range and worst-case error is engineering;
+delivered bare, it is a hope with a slope.</p>
+<p>The quadratic error growth is the practical lever: halve the excursion and the error
+quarters, which is why tight-range instruments tolerate linear scaling that wide-range ones
+cannot. Run the contract in reverse to audit existing systems — find where a legacy scaling
+block or control model was linearized, evaluate the dropped term at today's operating range,
+and you have a defensible number for how much the old approximation now costs. The habit
+generalizes: every model is an approximation; professionals differ only in whether the error
+is priced.</p>
+<p>Carry that sentence out of the course. Instrument linearity specifications, control-model
+validity ranges, and datasheet accuracy classes are all Taylor-series contracts written by
+someone else — read them by asking where the expansion point sits and how far the promised
+range strays from it. The engineer who can price an approximation can also audit one.</p>
 <p><strong>Closing.</strong> Taylor series turn smooth functions into local polynomials;
 linearization is its two-term truncation; the first dropped term prices the honesty of the
 approximation. This lesson closes the course by naming the approximation culture the whole
@@ -96,39 +118,43 @@ curriculum will use.</p>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
-<li><b>Derivatives of all orders</b> (Lessons 3–5) — coefficients of (1) are derivatives at a point.</li>
+<li><b>Derivatives of all orders</b> (Lessons 3–5) — the series' coefficients are derivatives at a point.</li>
 <li><b>Factorials and powers</b> — the series' bookkeeping.</li>
-<li><b>Radians</b> (Lesson 2) — (2) is a radian-only privilege.</li>
+<li><b>Radians</b> (Lesson 2) — the small-angle set is a radian-only privilege.</li>
 </ul>
 <h4>Glossary</h4>
-<ul class="plain">
-<li><b>Taylor series</b> — the local polynomial replica of a smooth function.</li>
-<li><b>Linearization</b> — first-order truncation; tangent-line model.</li>
-<li><b>Truncation error</b> — the tail you dropped; sized by the first dropped term.</li>
-<li><b>Operating point</b> — the \( a \) around which the plant model is expanded.</li>
-</ul>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Taylor series</td><td>\( f(a) + f'(a)(x{-}a) + \tfrac{f''(a)}{2}(x{-}a)^2 + \cdots \)</td><td>The local polynomial replica of any smooth function.</td></tr>
+<tr><td>Linearization</td><td>\( f(a) + f'(a)(x{-}a) \)</td><td>Small-deviation models about a chosen operating point.</td></tr>
+<tr><td>First dropped term</td><td>\( \tfrac12 f''(a)(x{-}a)^2 \)</td><td>Pricing the truncation error at the edge of the working range.</td></tr>
+<tr><td>Quadratic error growth</td><td>error \( \propto (x{-}a)^2 \)</td><td>Halve the excursion, quarter the error — the range-setting lever.</td></tr>
+<tr><td>Small-angle set</td><td>\( \sin\theta \approx \theta,\ \cos\theta \approx 1 - \tfrac{\theta^2}{2},\ e^x \approx 1 + x \)</td><td>Quick estimates — always with the range stated.</td></tr>
+<tr><td>Operating point</td><td>the \( a \) in the expansion</td><td>Where the model is exact; choose it where the system lives.</td></tr>
+</tbody></table></div>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
-<h4>Worked example 1 — pricing the small-angle lie</h4>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Pricing the small-angle lie</b></p>
 <p><b>Problem.</b> A pendulum-style level float swings ±12°. The controls model uses
 \( \sin\theta \approx \theta \). <b>Find:</b> the worst-case percentage error of that model
-across the swing.</p>
-<p><b>Solution.</b> (1) \( 12° = 0.2094 \) rad; \( \sin(0.2094) = 0.20791 \).
+across the swing.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( 12° = 0.2094 \) rad; \( \sin(0.2094) = 0.20791 \).
 (2) Error \( = (0.2094 - 0.20791)/0.20791 = 0.72\% \).
 (3) First-dropped-term estimate: \( \theta^3/6 = 0.00153 \) → \( 0.00153/0.2079 = 0.74\% \) —
 the bound predicts the actual error almost exactly.</p>
 <p><b>Answer:</b> ≤0.75% across the swing — negligible against a ±2% level transmitter.
 <b>Sanity check:</b> error grows with \( \theta^2 \) relative terms; at 24° it would be ~3% —
-still quotable, but now worth stating.</p>
-<h4>Worked example 2 — quick exponential estimates</h4>
+still quotable, but now worth stating.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Quick exponential estimates</b></p>
 <p><b>Problem.</b> Estimate \( e^{0.1} \) with two and three terms of (2), against the true
-1.10517.</p>
-<p><b>Solution.</b> (1) Two terms: \( 1 + 0.1 = 1.1 \) — error 0.47%.
+1.10517.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Two terms: \( 1 + 0.1 = 1.1 \) — error 0.47%.
 (2) Three terms: \( 1 + 0.1 + 0.005 = 1.105 \) — error 0.015%.</p>
 <p><b>Answer:</b> 1.1 (coarse), 1.105 (fine). <b>Sanity check:</b> next term \( x^3/6 =
 0.000167 \) predicts the residual error of the three-term estimate — matches the 0.00017
-shortfall exactly.</p>
-</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+shortfall exactly.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Linearizing a square-root scaling block</b></p>
+<p><b>Problem.</b> A flow computer infers flow from differential pressure as \( Q = 5\sqrt{\Delta P} \) (m³/h with \( \Delta P \) in kPa). A legacy block linearizes about the normal operating point \( \Delta P_0 = 16 \) kPa. <b>Find:</b> the linearized model, its prediction at 20 kPa, and the percentage error there.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Value: \( Q(16) = 5 \times 4 = 20 \). Slope: \( Q'(\Delta P) = \tfrac{5}{2\sqrt{\Delta P}} \), so \( Q'(16) = 5/8 = 0.625 \).
+(2) Model: \( Q \approx 20 + 0.625\,(\Delta P - 16) \). At 20 kPa: \( 20 + 0.625 \times 4 = 22.5 \).
+(3) True: \( 5\sqrt{20} = 22.36 \). Error: \( (22.5 - 22.36)/22.36 = 0.62\% \).</p>
+<p><b>Answer:</b> \( Q \approx 20 + 0.625(\Delta P - 16) \); 22.5 vs 22.36 m³/h; ≈0.6% high.
+<b>Sanity check:</b> the square root curves downward \( (f'' < 0) \), so the tangent must over-predict above the operating point — the sign of the error was known before the arithmetic. Double the excursion to 8 kPa and the error should roughly quadruple: the quadratic growth clause of the linearization contract.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A process variable follows \( f(x) = \sqrt{1+x} \). Using the linearization of \( f \) about \( x = 0 \), estimate \( \sqrt{1.06} \).</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0.97</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>1.03</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1.06</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1.12</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Since \( f'(x) = 1/(2\sqrt{1+x}) \), the linearization is \( f(0) + f'(0)\,x = 1 + x/2 \), which at \( x = 0.06 \) gives 1.03 — within 0.05% of the true 1.02956. Choosing 1.06 is the classic slip of dropping the derivative factor and writing \( \sqrt{1+x} \approx 1 + x \); 1.12 comes from confusing the derivative of \( \sqrt{x} \) with that of \( x^2 \) and using slope 2. The option 0.97 applies the correct slope with the wrong sign.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The small-angle model \( \sin\theta \approx \theta \) is applied at \( \theta = 0.3 \) rad. Using the first dropped term of the Taylor series, estimate the relative error of the model at this angle.</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>9%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>4.5%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>1.5%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.45%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The first dropped term is \( \theta^3/6 = 0.0045 \); dividing by \( \theta = 0.3 \) gives a relative error of \( \theta^2/6 = 0.015 \), i.e. 1.5%, which matches the actual error of 1.52% almost exactly. Answering 4.5% swaps in the cosine series' \( \theta^2/2 \) error coefficient — a classic formula swap between the two small-angle expansions. Quoting 0.45% mistakes the absolute error 0.0045 for the percentage itself, skipping the division by \( \theta \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Using two terms of the cosine series, estimate \( \cos(0.2\ \mathrm{rad}) \).</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>0.980</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>0.960</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1.020</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.800</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \cos\theta \approx 1 - \theta^2/2 = 1 - 0.02 = 0.980 \), against a true value 0.98007 — four-figure agreement from one subtraction. Choosing 0.960 uses \( \theta^2 \) without the half; 1.020 flips the sign, forgetting cosine <em>falls</em> from 1; 0.800 subtracts \( \theta \) itself, importing the sine pattern into the cosine series. The small-angle set is three separate formulas — mixing their patterns is the classic error.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A control model is built by linearizing a smooth plant characteristic \( f(x) \) about the operating point \( x = a \). Which statement about the model's truncation error is correct?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>It is zero at \( x = a \) and grows approximately like the quadratic term \( \tfrac{1}{2}f''(a)(x-a)^2 \), so doubling the deviation from \( a \) roughly quadruples the error.</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>It grows linearly with \( x - a \), so doubling the deviation from \( a \) doubles the error.</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>It is a fixed percentage of the reading throughout the instrument's range.</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It vanishes wherever \( f \) is continuous, because the tangent line then coincides with the curve.</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The first dropped term \( \tfrac{1}{2}f''(a)(x-a)^2 \) prices the truncation error, and its quadratic dependence on \( x - a \) means doubling the excursion from the operating point roughly quadruples the error. The linear-growth option is the classic misreading of a first-order model as having first-order error. The fixed-percentage option confuses truncation error with a gain-style instrument specification, and continuity alone guarantees nothing — the tangent line matches the curve only at \( a \) itself.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The approximation \( e^x \approx 1 + x \) gives 2 at \( x = 1 \), while \( e^1 = 2.718 \) — an error of 26%. Why does the same formula work beautifully at \( x = 0.05 \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The dropped terms scale as \( x^2/2 \) and higher powers, so shrinking \( x \) collapses the error rapidly</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The exponential is only defined for small arguments</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Rounding happens to cancel at small \( x \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It doesn't — the percentage error is the same at every \( x \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The first dropped term is \( x^2/2 \): at \( x = 1 \) that is 0.5 — a quarter of the true value — while at \( x = 0.05 \) it is 0.00125, about 0.12%. Truncation error is governed by the first term you dropped, and its power-of-\( x \) scaling is why "small" is the operative word in every small-signal model. Nothing cancels by luck, the exponential is defined everywhere, and the error is emphatically not scale-free — pricing it at the range edge is the whole discipline.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the transmitter that was "linear enough."</b> You arrive at a metering
 review: a DP flow transmitter infers flow from \( Q \propto \sqrt{\Delta P} \), but the legacy
 scaling block linearized the square root around 70% of range. Below 30% flow the plant has
@@ -173,6 +199,6 @@ notepad. Approximations are fine; unpriced approximations are not.</p>
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+<script src="../../../assets/nx/nexus.js?v=2bc218145f"></script>
 </body>
 </html>

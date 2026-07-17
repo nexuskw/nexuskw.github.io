@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2bc218145f">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -54,7 +54,7 @@
     <h1>Functions, units, and engineering magnitudes</h1>
     <p class="sub">What a function is when its argument is a temperature or a flow rate. Unit discipline and dimensional homogeneity as the first error-check every engineer owns. Orders of magnitude and sanity estimates.</p>
   </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.01 Single Variable Calculus</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/1">Mark as complete</button>
@@ -89,6 +89,22 @@ a 100 m³/h pump moves \(\sim\)28 L/s; a kilowatt is ten 100 W lamps; a bar is
 \(\sim\)10 m of water column. On the plant floor this means you can smell a wrong answer:
 if a small transfer pump computes to 300 kW, the arithmetic is wrong before you re-check it —
 the machine on the skid is the size of a suitcase, and suitcases don't dissipate 300 kW.</p>
+
+<h3>04 · The unit-check working method</h3>
+<p>Knowing that units must balance is not the same as having a method. Use this three-step
+protocol on every equation you meet, in this course and every one after it. <em>Step one:</em>
+write the equation symbolically and substitute <em>units</em>, not numbers — run the algebra on
+the units alone and confirm both sides match, exactly as equation (1) did for pump power.
+<em>Step two:</em> convert every input to base SI before any arithmetic: flows to m³/s,
+pressures to Pa, lengths to m. Most real-world calculation errors are unit errors, and most
+unit errors happen when kPa meets Pa or m³/h meets m³/s in the same line. <em>Step three:</em>
+after computing, translate the answer back into the working units of the trade — kW, bar,
+m³/h — and test it against an order-of-magnitude estimate before you write it down.</p>
+<p>Two traps deserve names. The <em>gauge trap:</em> gauge and absolute pressure differ by one
+atmosphere, and equations built on absolute pressure quietly fail when fed gauge readings.
+The <em>prefix trap:</em> a dropped factor of 1000 from k, M, or m survives every later step
+and grows more embarrassing the longer it lives. Scientific notation is the antidote — write
+\( 2.5\times10^5 \) Pa and exponents stay visible and checkable.</p>
 <p><strong>Closing.</strong> Units are algebra, functions are machine behavior, and
 order-of-magnitude sense is the cheapest error detector you will ever own. Every lesson that
 follows leans on all three.</p>
@@ -101,35 +117,39 @@ follows leans on all three.</p>
 <li><b>Scientific notation</b> — \( 3.2\times10^4 \) beats 32000 for error-catching.</li>
 </ul>
 <h4>Glossary</h4>
-<ul class="plain">
-<li><b>Dimension</b> — the physical kind of a quantity (length, mass, time), independent of unit chosen.</li>
-<li><b>Unit</b> — the agreed measure of a dimension (metre, kilogram, second).</li>
-<li><b>Domain</b> — input values for which a function is physically and mathematically defined.</li>
-<li><b>Order of magnitude</b> — the nearest power of ten; the currency of estimation.</li>
-<li><b>Dimensional homogeneity</b> — the law that all terms of a physical equation share dimensions.</li>
-</ul>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Dimensional homogeneity</td><td>\( [\mathrm{LHS}] = [\mathrm{RHS}] \)</td><td>Run on every equation before numbers go in; both sides must carry identical dimensions.</td></tr>
+<tr><td>Hydraulic power</td><td>\( P = \rho g Q H \)</td><td>Turning a pump duty (flow, head) into watts — with \( Q \) in m³/s, never m³/h.</td></tr>
+<tr><td>Pressure head</td><td>\( h = P/(\rho g) \)</td><td>Translating a pressure into a liquid column and back; 1 bar ≈ 10.2 m of water.</td></tr>
+<tr><td>Unit conversion</td><td>\( 1\ \mathrm{bar} = 100\ \mathrm{kPa} = 10^5\ \mathrm{Pa} \)</td><td>Moving between gauge readings, datasheets, and SI calculations without a factor-of-1000 slip.</td></tr>
+<tr><td>Function and domain</td><td>\( H = H(Q),\ Q \ge 0 \)</td><td>Reading curves as machine behavior; respect where the curve is physically forbidden.</td></tr>
+<tr><td>Order of magnitude</td><td>\( \sim 10^n \)</td><td>The first sanity screen of any computed answer — suitcase-sized machines don't dissipate megawatts.</td></tr>
+<tr><td>Dimensionless argument</td><td>\( \sin(\cdot),\ \ln(\cdot),\ e^{(\cdot)} \)</td><td>Whatever sits inside these functions must be a pure number.</td></tr>
+</tbody></table></div>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
-<h4>Worked example 1 — hydraulic and shaft power</h4>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Hydraulic and shaft power</b></p>
 <p><b>Problem.</b> A cooling-water pump at a Gulf petrochemical utility area delivers
 \( Q = 120\ \mathrm{m^3/h} \) of water against a total head \( H = 42\ \mathrm{m} \).
 Pump efficiency is 65%. <b>Given:</b> \( \rho = 1000\ \mathrm{kg/m^3},\ g = 9.81\ \mathrm{m/s^2} \).
-<b>Find:</b> hydraulic power and shaft power.</p>
-<p><b>Solution.</b> (1) Convert flow: \( Q = 120/3600 = 0.0333\ \mathrm{m^3/s} \).
+<b>Find:</b> hydraulic power and shaft power.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Convert flow: \( Q = 120/3600 = 0.0333\ \mathrm{m^3/s} \).
 (2) Hydraulic power: \( P_h = \rho g Q H = 1000 \times 9.81 \times 0.0333 \times 42 = 13.7\ \mathrm{kW} \).
 (3) Shaft power: \( P_s = P_h/\eta = 13.7/0.65 = 21.1\ \mathrm{kW} \).</p>
 <p><b>Answer:</b> \( P_h \approx 13.7\ \mathrm{kW},\ P_s \approx 21.1\ \mathrm{kW} \).
 <b>Sanity check:</b> a 22 kW motor frame on a 120 m³/h duty is entirely ordinary — had we
-forgotten the 3600, we'd have gotten 49 MW, a power-station number.</p>
-<h4>Worked example 2 — unit conversion under pressure</h4>
+forgotten the 3600, we'd have gotten 49 MW, a power-station number.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Unit conversion under pressure</b></p>
 <p><b>Problem.</b> A compressed-air header reads 6.0 bar(g). <b>Find:</b> the gauge pressure in
-kPa and psi, and the approximate equivalent water column.</p>
-<p><b>Solution.</b> (1) \( 6.0\ \mathrm{bar} = 600\ \mathrm{kPa} \).
+kPa and psi, and the approximate equivalent water column.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( 6.0\ \mathrm{bar} = 600\ \mathrm{kPa} \).
 (2) \( 600 \times 0.145 = 87\ \mathrm{psi} \).
 (3) Water column: \( h = P/\rho g = 600{,}000 / (1000 \times 9.81) = 61.2\ \mathrm{m} \).</p>
 <p><b>Answer:</b> 600 kPa ≈ 87 psi ≈ 61 m H₂O. <b>Sanity check:</b> the 10 m-per-bar rule
-gives 60 m — our exact figure lands within 2%.</p>
-</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+gives 60 m — our exact figure lands within 2%.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Scaling a transmitter signal</b></p>
+<p><b>Problem.</b> A level transmitter on a 2.5 m measuring range outputs a linear 4–20 mA signal: 0 m maps to 4 mA, 2.5 m maps to 20 mA. <b>Find:</b> the function \( L(I) \) converting current to level, the level at a reading of 11.2 mA, and the function's physical domain.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The span is 16 mA for 2.5 m, so \( L(I) = 2.5\,\dfrac{I - 4}{16} \) metres, with \( I \) in mA.
+(2) At \( I = 11.2 \): \( L = 2.5 \times 7.2/16 = 1.125\ \mathrm{m} \).
+(3) Domain: \( 4 \le I \le 20 \) mA — readings below 4 mA are not levels but fault signals, which is precisely why the live-zero convention exists.</p>
+<p><b>Answer:</b> \( L(I) = 2.5(I-4)/16 \); 1.125 m at 11.2 mA; domain 4–20 mA.
+<b>Sanity check:</b> 11.2 mA sits at \( 7.2/16 = 45\% \) of the current span, and 45% of 2.5 m is 1.125 m — the function agrees with the proportion.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A transfer pump delivers \( Q = 90\ \mathrm{m^3/h} \) of water (\( \rho = 1000\ \mathrm{kg/m^3} \)) against a total head \( H = 25\ \mathrm{m} \), with pump efficiency \( \eta = 75\% \). Taking \( g = 9.81\ \mathrm{m/s^2} \), what shaft power must the motor supply?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 4.6\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 6.1\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( 8.2\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 29.4\ \mathrm{MW} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Convert the flow first: \( Q = 90/3600 = 0.025\ \mathrm{m^3/s} \), so the hydraulic power is \( P_h = \rho g Q H = 1000 \times 9.81 \times 0.025 \times 25 = 6.13\ \mathrm{kW} \), and the shaft power is \( P_s = P_h/\eta = 6.13/0.75 = 8.2\ \mathrm{kW} \). Efficiency divides rather than multiplies: the motor must supply more power than the water receives, which eliminates 4.6 kW (the classic multiply-by-\( \eta \) error) and 6.1 kW (efficiency ignored). The 29.4 MW figure comes from leaving \( Q \) in \( \mathrm{m^3/h} \) — an order-of-magnitude check rejects it at once, since a small transfer pump is not a power station.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A tank cooling curve is modelled as \( T(t) = T_\infty + (T_0 - T_\infty)\,e^{-t/\tau} \), where \( t \) is time in seconds. What does dimensional homogeneity require of the constant \( \tau \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \tau \) must carry units of seconds, so that the exponent \( t/\tau \) is dimensionless</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \tau \) must carry units of kelvin, to match the temperatures in the equation</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \tau \) must be a pure number, since constants in physical equations are dimensionless</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \tau \) may carry any units, because the exponential function converts them automatically</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The argument of \( e^x \) — like those of \( \sin \) and \( \ln \) — must be dimensionless, so \( \tau \) must share the dimension of \( t \): time. The kelvin answer commits the classic error of matching the constant to the equation's output units instead of to the argument it sits inside; the temperature dimensions are already balanced by the prefactor \( (T_0 - T_\infty) \). No function absorbs units, and constants in physical equations routinely carry dimensions — homogeneity is checked term by term and argument by argument.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A water pump moves \( 100\ \mathrm{m^3/h} \) against 30 m of head, with pump efficiency around 70%. Which shaft-power magnitude is plausible?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>about 120 W</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>about 12 kW</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>about 120 kW</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>about 1.2 MW</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Hydraulic power is \( \rho g Q H = 1000 \times 9.81 \times (100/3600) \times 30 \approx 8.2\ \mathrm{kW} \); dividing by the 0.70 efficiency gives ≈12 kW of shaft power. The 120 W and 1.2 MW answers are the classic unit slips — forgetting the 3600 in the flow conversion moves the result by exactly these factors. Order-of-magnitude sense is the fastest error detector: a pump this size is a two-person lift, not a power-station item.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A chilled-water line gauge reads \( 250\ \mathrm{kPa} \). Using \( \rho = 1000\ \mathrm{kg/m^3} \) and \( g = 9.81\ \mathrm{m/s^2} \), what height of water column does this pressure correspond to?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 25.5\ \mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 0.025\ \mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 2.55\ \mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 250\ \mathrm{m} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Convert to base units before substituting: \( h = P/(\rho g) = 250000/(1000 \times 9.81) = 25.5\ \mathrm{m} \). The rule of thumb that 1 bar is roughly 10 m of water confirms it: 250 kPa is 2.5 bar, hence about 25 m. The 0.025 m answer is the classic slip of feeding kPa into an SI formula without converting to Pa, and 250 m follows from misconverting 250 kPa into 25 bar — both fail the order-of-magnitude sanity check for a building chilled-water loop.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>An energy report lists a consumption of 3.6 MJ. What is that in kilowatt-hours?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>1.0 kWh</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>3.6 kWh</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0.36 kWh</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>60 kWh</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>One kilowatt-hour is 1000 W sustained for 3600 s: \( 1000 \times 3600 = 3.6\times10^6\ \mathrm{J} = 3.6\ \mathrm{MJ} \) — so 3.6 MJ is exactly 1.0 kWh. Choosing 3.6 kWh treats MJ and kWh as the same unit with different labels, the classic energy-billing slip; the two differ by precisely the 3600 seconds in an hour.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette 1 — the suspicious kilowatt.</b> You arrive at a pump house during an energy
 audit and the datasheet claims a 15 kW motor delivers 260 m³/h at 35 m. Equation (1) says the
 water alone needs \( 1000 \times 9.81 \times 0.0722 \times 35 \approx 24.8\ \mathrm{kW} \) —
@@ -177,6 +197,6 @@ design basis). The catch costs one email now instead of a rework order later.</p
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+<script src="../../../assets/nx/nexus.js?v=2bc218145f"></script>
 </body>
 </html>
