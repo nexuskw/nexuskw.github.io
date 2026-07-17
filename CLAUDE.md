@@ -132,6 +132,33 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
+- NEXUS IS THE PLATFORM (owner EXECUTION OVERRIDE, 2026-07-17 — supersedes
+  the stage gates and the "separate platform" plan): the live site at
+  https://nexuskw.github.io/ IS Nexus Institute of Technology, replacing the
+  Sun Devil Factory chrome. DEPLOY GENERATOR: `python3 nexus_build.py`
+  (build.py is retained ONLY as the data/helper layer nexus_build.py imports
+  — never deploy from build.py; it emits the retired SDF chrome).
+  Platform rules (binding): centered brand + Mission | Curriculum | Career
+  Paths pipe nav; FOUR tabs per lesson (Foundations | Lecture | Worked
+  Examples | Library) — Kuwait floor content lives inside Worked Examples as
+  "Applied case" blocks; zero "§" anywhere (nx_text() transform + build
+  assertion); zero photography — original vector illustrations only (ILLOS
+  in nexus_build.py, one motif per course; photo figures in Tier-1 fragments
+  auto-convert to .fieldnote blocks keeping only the original NOTICE text);
+  EN/AR bilingual chrome with RTL toggle (localStorage nx-lang), Mission +
+  Career fully Arabic (content/pages/mission.html embeds both languages;
+  career-ar.html is the Arabic career page); installable PWA (manifest +
+  sw.js + icons, generated from nexus/logo.svg); honest completion tracker
+  on the curriculum page, recomputed every build; library embeds are
+  native-English YouTube only — NPTEL never embeds (text links only).
+  CONTINUOUS ROLLOUT (owner order, zero approvals): every session author the
+  next courses to full 4-tab depth (EN + AR lesson content) in queue order
+  until 528/528; report coverage after every course. 522→528 normalization
+  happens by AUTHORING the missing lessons (6 courses are short), never by
+  padding. Coverage at handoff: 52/522 (10%) at full depth. RETROFIT still
+  owed: math-1 + drawing-cad to 5-problem quiz format; then computing, then
+  y1s2 onward. Arabic lesson content ships with each newly authored course.
+
 - NEXUS INSTITUTE OF TECHNOLOGY (2026-07-13): a SEPARATE platform (owner
   decision — does NOT replace the live ASU site). Staged rebuild lives in
   nexus/ (Stage 1 design system approved-pending: metallic planetary-gear

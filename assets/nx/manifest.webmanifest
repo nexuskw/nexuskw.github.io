@@ -1,0 +1,18 @@
+{
+  "name": "Nexus Institute of Technology",
+  "short_name": "Nexus Tech",
+  "description": "Free bilingual engineering curriculum: maintenance to manufacturing. 48 courses, 522 lessons, interactive quizzes.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FBFBF9",
+  "theme_color": "#0E1626",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "assets/nx/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/nx/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/nx/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/nx/logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

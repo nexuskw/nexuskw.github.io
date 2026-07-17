@@ -1,71 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" data-root="../../../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Parametric CAD: assemblies and drawings — Engineering Drawing &amp; CAD — Sun Devil Factory</title>
+<meta name="theme-color" content="#0E1626">
+<title>Parametric CAD: assemblies and drawings — Engineering Drawing &amp; CAD — Nexus Institute of Technology</title>
 <meta name="description" content="Mates and degrees of freedom in assemblies. Generating dimensioned drawings from models. Bills of materials and balloon callouts — the bridge to spare">
-<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=958016f0cd">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-<header class="hd">
-  <a class="wordmark" href="../../../index.html">Sun <svg class="fork" viewBox="1.8 0 18.4 30" aria-hidden="true" focusable="false"><path d="M11,0 L13.1,3.2 L13.1,13 L8.9,13 L8.9,3.2 Z"/><path d="M3,1.4 C1.8,4.6 2.1,8.6 3.9,11.5 C4.6,12.5 5.5,13 6.5,13 L8.6,13 C6.8,11.4 5.7,8.9 5.4,5.9 C5.3,4.3 5.1,2.7 3,1.4 Z"/><path d="M19,1.4 C20.2,4.6 19.9,8.6 18.1,11.5 C17.4,12.5 16.5,13 15.5,13 L13.4,13 C15.2,11.4 16.3,8.9 16.6,5.9 C16.7,4.3 16.9,2.7 19,1.4 Z"/><rect x="3.2" y="13" width="15.6" height="2.6"/><rect x="8.5" y="15.6" width="5" height="1.9"/><rect x="9.6" y="15.6" width="2.8" height="14.4"/></svg> Devil <span>Factory</span></a>
-  <nav aria-label="Site">
-    <a href="../../../index.html">Start Here</a>
-    <a href="../../../curriculum/index.html" class="on">Curriculum</a>
-    <a href="../../../career/index.html">Career</a>
+<header class="nx-head">
+  <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  <a href="../../../index.html"><img class="nx-logo" src="../../../assets/nx/logo.svg"
+     alt="Nexus Institute of Technology — planetary-gear emblem"></a>
+  <h1><a href="../../../index.html"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</a></h1>
+  <div class="lang-ar" style="font-size:15px;font-weight:700;margin-top:4px">معهد نيكسس للتكنولوجيا</div>
+  <nav class="topnav" aria-label="Site">
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a><span class="pipe"> | </span>
+    <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a><span class="pipe"> | </span>
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
   </nav>
 </header>
-<main>
-<div class="withside"><aside class="sidenav"><p class="sn-title">Curriculum</p><details open><summary>Year 1 · Semester 1</summary><ul><li><a href="../../../curriculum/y1s1/math-1/index.html">MTH 101 · Engineering Mathematics I</a></li><li class="sn-cur"><a href="../../../curriculum/y1s1/drawing-cad/index.html">DRW 102 · Engineering Drawing &amp; CAD</a><ul><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/01-why-drawings-rule-the-plant.html">01 · Why drawings rule the plant</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/02-projection-theory-and-orthographic-views.html">02 · Projection theory and orthographic views</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/03-isometric-and-pictorial-views.html">03 · Isometric and pictorial views</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/04-sections-and-conventions.html">04 · Sections and conventions</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/05-dimensioning-practice.html">05 · Dimensioning practice</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/06-tolerances-fits-and-limits.html">06 · Tolerances, fits, and limits</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/07-gd-t-essentials.html">07 · GD&amp;T essentials</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/08-fasteners-welds-and-surface-symbols.html">08 · Fasteners, welds, and surface symbols</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/09-parametric-cad-parts.html">09 · Parametric CAD: parts</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/10-parametric-cad-assemblies-and-drawings.html">10 · Parametric CAD: assemblies and drawings</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/drawing-cad/11-reading-plant-drawings.html">11 · Reading plant drawings</a></li></ul></li><li><a href="../../../curriculum/y1s1/statics/index.html">STA 103 · Engineering Statics</a></li><li><a href="../../../curriculum/y1s1/materials-1/index.html">MAT 104 · Materials Science I</a></li><li><a href="../../../curriculum/y1s1/mfg-processes-1/index.html">MFG 105 · Manufacturing Processes I — Casting &amp; Bulk Forming</a></li><li><a href="../../../curriculum/y1s1/computing/index.html">CMP 106 · Engineering Computing</a></li></ul></details><details><summary>Year 1 · Semester 2</summary><ul><li><a href="../../../curriculum/y1s2/math-2/index.html">MTH 151 · Engineering Mathematics II</a></li><li><a href="../../../curriculum/y1s2/dynamics/index.html">DYN 152 · Engineering Dynamics</a></li><li><a href="../../../curriculum/y1s2/materials-2/index.html">MAT 153 · Materials Science II</a></li><li><a href="../../../curriculum/y1s2/mfg-processes-2/index.html">MFG 154 · Manufacturing Processes II — Machining &amp; Joining</a></li><li><a href="../../../curriculum/y1s2/thermo-1/index.html">THM 155 · Thermodynamics I</a></li><li><a href="../../../curriculum/y1s2/electrical/index.html">ELE 156 · Electrical Fundamentals for Mechanical Engineers</a></li></ul></details><details><summary>Year 2 · Semester 1</summary><ul><li><a href="../../../curriculum/y2s1/strength/index.html">SOM 201 · Strength of Materials</a></li><li><a href="../../../curriculum/y2s1/thermo-2/index.html">THM 202 · Thermodynamics II — Cycles &amp; Utilities</a></li><li><a href="../../../curriculum/y2s1/fluids/index.html">FLD 203 · Fluid Mechanics</a></li><li><a href="../../../curriculum/y2s1/metrology/index.html">MET 204 · Metrology &amp; Quality Control</a></li><li><a href="../../../curriculum/y2s1/electronics-sensors/index.html">ELX 205 · Electronics &amp; Sensors</a></li><li><a href="../../../curriculum/y2s1/statistics/index.html">STS 206 · Engineering Statistics</a></li></ul></details><details><summary>Year 2 · Semester 2</summary><ul><li><a href="../../../curriculum/y2s2/machine-design-1/index.html">MDN 251 · Machine Design I</a></li><li><a href="../../../curriculum/y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery</a></li><li><a href="../../../curriculum/y2s2/heat-transfer/index.html">HTX 253 · Heat Transfer</a></li><li><a href="../../../curriculum/y2s2/mfg-processes-3/index.html">MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</a></li><li><a href="../../../curriculum/y2s2/plc-1/index.html">PLC 255 · PLC Fundamentals I</a></li><li><a href="../../../curriculum/y2s2/safety/index.html">SAF 256 · Industrial Safety</a></li></ul></details><details><summary>Year 3 · Semester 1</summary><ul><li><a href="../../../curriculum/y3s1/machine-design-2/index.html">MDN 301 · Machine Design II — Machine Elements</a></li><li><a href="../../../curriculum/y3s1/controls-1/index.html">CTL 302 · Control Systems I</a></li><li><a href="../../../curriculum/y3s1/plc-2/index.html">PLC 303 · PLC II &amp; Industrial Networks</a></li><li><a href="../../../curriculum/y3s1/hydraulics-pneumatics/index.html">HYD 304 · Hydraulics &amp; Pneumatics</a></li><li><a href="../../../curriculum/y3s1/welding-ndt/index.html">WLD 305 · Welding Engineering &amp; NDT</a></li><li><a href="../../../curriculum/y3s1/maintenance-fundamentals/index.html">MNT 306 · Maintenance Engineering Fundamentals</a></li></ul></details><details><summary>Year 3 · Semester 2</summary><ul><li><a href="../../../curriculum/y3s2/vibrations/index.html">VIB 351 · Mechanical Vibrations</a></li><li><a href="../../../curriculum/y3s2/instrumentation/index.html">INS 352 · Instrumentation &amp; Process Control</a></li><li><a href="../../../curriculum/y3s2/robotics/index.html">ROB 353 · Industrial Robotics</a></li><li><a href="../../../curriculum/y3s2/reliability-1/index.html">REL 354 · Reliability Engineering I</a></li><li><a href="../../../curriculum/y3s2/corrosion/index.html">COR 355 · Corrosion &amp; Degradation</a></li><li><a href="../../../curriculum/y3s2/production-planning/index.html">PPC 356 · Production Planning &amp; Control</a></li></ul></details><details><summary>Year 4 · Semester 1</summary><ul><li><a href="../../../curriculum/y4s1/rotating-equipment/index.html">RTE 401 · Rotating Equipment</a></li><li><a href="../../../curriculum/y4s1/asset-integrity/index.html">AIM 402 · Asset Integrity Management</a></li><li><a href="../../../curriculum/y4s1/condition-monitoring/index.html">CDM 403 · Condition Monitoring &amp; Predictive Maintenance</a></li><li><a href="../../../curriculum/y4s1/scada-iiot/index.html">SCA 404 · SCADA, DCS &amp; IIoT</a></li><li><a href="../../../curriculum/y4s1/lean-six-sigma/index.html">LSS 405 · Lean &amp; Six Sigma</a></li><li><a href="../../../curriculum/y4s1/engineering-economics/index.html">ECO 406 · Engineering Economics &amp; Project Management</a></li></ul></details><details><summary>Year 4 · Semester 2</summary><ul><li><a href="../../../curriculum/y4s2/smart-manufacturing/index.html">SMF 451 · Smart Manufacturing &amp; Digital Twin</a></li><li><a href="../../../curriculum/y4s2/maintenance-planning/index.html">MPL 452 · Maintenance Planning, Turnarounds &amp; CMMS</a></li><li><a href="../../../curriculum/y4s2/pressure-equipment/index.html">PEP 453 · Pressure Equipment &amp; Piping</a></li><li><a href="../../../curriculum/y4s2/hse/index.html">HSE 454 · HSE for Industrial Operations</a></li><li><a href="../../../curriculum/y4s2/reliability-2/index.html">REL 455 · Reliability Engineering II</a></li><li><a href="../../../curriculum/y4s2/capstone/index.html">CAP 456 · Capstone — Integrated Plant Project</a></li></ul></details></aside><div class="main-col">
-<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<div class="sidemenu" id="sideMenu"><button type="button" data-ar="الأقسام">Sections</button><div class="panel"><p data-ar="الأقسام">Sections</p><a href="#t-foundations" data-ar="الأسس" data-tab="t-foundations">Foundations</a><a href="#t-lecture" data-ar="المحاضرة" data-tab="t-lecture">Lecture</a><a href="#t-examples" data-ar="أمثلة محلولة" data-tab="t-examples">Worked Examples</a><a href="#t-library" data-ar="المكتبة" data-tab="t-library">Library</a><a href="index.html" data-ar="كل الدروس">All lessons · DRW 102</a><a href="01-why-drawings-rule-the-plant.html" class="sub">01 · Why drawings rule the plant</a><a href="02-projection-theory-and-orthographic-views.html" class="sub">02 · Projection theory and orthographic views</a><a href="03-isometric-and-pictorial-views.html" class="sub">03 · Isometric and pictorial views</a><a href="04-sections-and-conventions.html" class="sub">04 · Sections and conventions</a><a href="05-dimensioning-practice.html" class="sub">05 · Dimensioning practice</a><a href="06-tolerances-fits-and-limits.html" class="sub">06 · Tolerances, fits, and limits</a><a href="07-gd-t-essentials.html" class="sub">07 · GD&amp;T essentials</a><a href="08-fasteners-welds-and-surface-symbols.html" class="sub">08 · Fasteners, welds, and surface symbols</a><a href="09-parametric-cad-parts.html" class="sub">09 · Parametric CAD: parts</a><a href="10-parametric-cad-assemblies-and-drawings.html" class="sub">10 · Parametric CAD: assemblies and drawings</a><a href="11-reading-plant-drawings.html" class="sub">11 · Reading plant drawings</a></div></div>
+<main class="wrap">
+
+<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
 <a href="index.html">DRW 102 · Engineering Drawing &amp; CAD</a> /
 <span>Lesson 10</span></nav>
 
-<div class="hero lesson">
-  <img src="../../../assets/img/machining.jpg" alt="Turning a workpiece on an engine lathe">
-  <div class="hero-inner">
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M24 96 L60 24 L96 96 Z"/><path d="M50 74 L70 74 L60 54 Z"/><circle cx="94" cy="30" r="12"/><line x1="94" y1="24" x2="94" y2="36"/><circle cx="60" cy="88" r="4" class="amb"/></svg></div>
+  <div class="txt">
     <p class="eyebrow">DRW 102 · LESSON 10 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Parametric CAD: assemblies and drawings</h1>
     <p class="sub">Mates and degrees of freedom in assemblies. Generating dimensioned drawings from models. Bills of materials and balloon callouts — the bridge to spare-parts thinking.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
-  <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
 </div>
-<div class="corechip"></div>
+<div></div>
+<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button class="on" data-tab="t-lecture">Lecture</button>
-  <button data-tab="t-foundations">Foundations</button>
-  <button data-tab="t-examples">Worked Examples</button>
-  <button data-tab="t-kuwait">Kuwait Floor</button>
-  <button data-tab="t-library">Library</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
+  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do assembly mates remove, and what should remain free?</li><li>Why do balloons and BOM line numbers matter to a storeroom?</li></ul></div><div class="measure">
-<h3>§1 · Assemblies — constraints as kinematics</h3>
-<p>An assembly model positions parts with <em>mates</em>: coincident faces, concentric axes,
-distance offsets. Every mate removes degrees of freedom; the art is removing exactly the
-right ones. A shaft concentric to a bore and seated on a shoulder should still spin — leave
-that freedom alive and the model tells you how the machine moves; over-constrain it and the
-model fights itself with warnings that mean nothing and hide the one that does.</p>
-<h3>§2 · The BOM is the assembly's ledger</h3>
-<p>The bill of materials — item numbers ballooned on the drawing, quantities, part numbers,
-materials — is what stores, procurement, and the fitter actually consume. Balloon 7 on the
-exploded view <em>is</em> line 7 in the table <em>is</em> the box on the shelf. Structure
-matters: sub-assemblies roll up (a bearing unit is one line here, four lines in its own BOM),
-and phantom items (bulk grease, thread-locker) appear where policy puts them. A drawing whose
-balloons and BOM disagree is a stores error factory.</p>
-<h3>§3 · Drawings from models — still a craft</h3>
-<p>CAD auto-generates views, but choosing them is still Lesson 2's judgment: which section
-shows the fits, where the BOM table sits, which dimensions the fitter needs at the machine
-(coupling gap, seal compression, bolt torque table). Auto-ballooning follows assembly
-structure; verify it — a regenerated drawing can renumber balloons silently between
-revisions, and a fitter working from memory of "item 3" will draw the wrong part.</p>
-<p><strong>Closing.</strong> Mates encode kinematics, BOMs encode logistics, and the assembly
-drawing binds them for the person with the spanner. Model the motion, audit the balloons.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
 <li><b>Part modeling</b> (Lesson 9) — assemblies consume disciplined parts.</li>
@@ -80,7 +65,30 @@ drawing binds them for the person with the spanner. Model the motion, audit the 
 <li><b>Interference check</b> — the assembly's clash audit before metal exists.</li>
 </ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do assembly mates remove, and what should remain free?</li><li>Why do balloons and BOM line numbers matter to a storeroom?</li></ul></div><div class="measure">
+<h3>01 · Assemblies — constraints as kinematics</h3>
+<p>An assembly model positions parts with <em>mates</em>: coincident faces, concentric axes,
+distance offsets. Every mate removes degrees of freedom; the art is removing exactly the
+right ones. A shaft concentric to a bore and seated on a shoulder should still spin — leave
+that freedom alive and the model tells you how the machine moves; over-constrain it and the
+model fights itself with warnings that mean nothing and hide the one that does.</p>
+<h3>02 · The BOM is the assembly's ledger</h3>
+<p>The bill of materials — item numbers ballooned on the drawing, quantities, part numbers,
+materials — is what stores, procurement, and the fitter actually consume. Balloon 7 on the
+exploded view <em>is</em> line 7 in the table <em>is</em> the box on the shelf. Structure
+matters: sub-assemblies roll up (a bearing unit is one line here, four lines in its own BOM),
+and phantom items (bulk grease, thread-locker) appear where policy puts them. A drawing whose
+balloons and BOM disagree is a stores error factory.</p>
+<h3>03 · Drawings from models — still a craft</h3>
+<p>CAD auto-generates views, but choosing them is still Lesson 2's judgment: which section
+shows the fits, where the BOM table sits, which dimensions the fitter needs at the machine
+(coupling gap, seal compression, bolt torque table). Auto-ballooning follows assembly
+structure; verify it — a regenerated drawing can renumber balloons silently between
+revisions, and a fitter working from memory of "item 3" will draw the wrong part.</p>
+<p><strong>Closing.</strong> Mates encode kinematics, BOMs encode logistics, and the assembly
+drawing binds them for the person with the spanner. Model the motion, audit the balloons.</p>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure">
 <h4>Worked example 1 — count the freedoms</h4>
 <p><b>Problem.</b> A pump shaft is mated into an assembly: concentric to the bearing bore,
 face-coincident at the shaft shoulder. <b>Find:</b> the remaining degrees of freedom, and
@@ -105,8 +113,7 @@ stores cross-references by part number, never balloon.</p>
 <p><b>Answer:</b> renumbered balloons + part-number-blind ordering; enforce part-number
 ordering and renumbering notes. <b>Sanity check:</b> the failure needs no bad actor — two
 correct documents, one missing sentence.</p>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the 2 a.m. wrong seal.</b> You arrive the morning after a night crew rebuilt
 a filler gearbox with "item 9 per the wall drawing" — an uncontrolled Rev F print (Lesson 1's
 ghost returns) whose numbering Rev G had shifted. The machine ran eight hours before the
@@ -114,40 +121,30 @@ too-narrow seal let go. Root cause is boring and structural: balloon-ordering cu
 uncontrolled print. The fix package: register-only prints in the shop, part-number ordering
 policy, and a BOM audit of the five most-rebuilt assets. Nobody gets named; the system does.</p>
 </div></section>
-<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing and Computer Graphics</p>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — verified links above and course-level courseware below are the study path.</p>
+  <ul class="plain small"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
+  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
 </div>
 <div class="wide"></div></section>
-<nav class="prevnext"><a href="09-parametric-cad-parts.html">← 09 · Parametric CAD: parts</a><a href="index.html">All lessons · DRW 102</a><a href="11-reading-plant-drawings.html">11 · Reading plant drawings →</a></nav></div></div>
+<nav class="prevnext"><a href="09-parametric-cad-parts.html">← 09 · Parametric CAD: parts</a><a href="index.html" data-ar="كل الدروس · DRW 102">All lessons · DRW 102</a><a href="11-reading-plant-drawings.html">11 · Reading plant drawings →</a></nav>
 </main>
-<footer>
-  <div class="inner">
-    
-    <div class="cols">
-      <div>
-        <h5>The pathway</h5>
-        A maintenance engineer's route into manufacturing:<br>
-        Reliability · Asset Integrity · Production/Operations · Maintenance Planning
-      </div>
-      <div>
-        <h5>Site</h5>
-        <a href="../../../index.html">Start here</a><br>
-        <a href="../../../curriculum/index.html">Curriculum — 48 courses</a><br>
-        <a href="../../../career/index.html">Career strategy</a>
-      </div>
-      <div>
-        <h5>Kuwait industry context</h5>
-        Kuwait Steel · Gulf Cable · Kirby Building Systems · EQUATE · KDD / Petra · HEISCO
-      </div>
-    </div>
-    <div class="mark"><span class="mn">Sun</span> <svg class="fork" viewBox="1.8 0 18.4 30" aria-hidden="true" focusable="false"><path d="M11,0 L13.1,3.2 L13.1,13 L8.9,13 L8.9,3.2 Z"/><path d="M3,1.4 C1.8,4.6 2.1,8.6 3.9,11.5 C4.6,12.5 5.5,13 6.5,13 L8.6,13 C6.8,11.4 5.7,8.9 5.4,5.9 C5.3,4.3 5.1,2.7 3,1.4 Z"/><path d="M19,1.4 C20.2,4.6 19.9,8.6 18.1,11.5 C17.4,12.5 16.5,13 15.5,13 L13.4,13 C15.2,11.4 16.3,8.9 16.6,5.9 C16.7,4.3 16.9,2.7 19,1.4 Z"/><rect x="3.2" y="13" width="15.6" height="2.6"/><rect x="8.5" y="15.6" width="5" height="1.9"/><rect x="9.6" y="15.6" width="2.8" height="14.4"/></svg> <span class="mn">Devil</span> Factory</div>
-    <p class="fine">Educational material. Worked-example values are pedagogical; representative
-    industrial figures are labeled as such and are not published operating data of any named
-    company. Photography is openly licensed; credits on each image and in the repository.</p>
-  </div>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
+    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free bilingual engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+  <p class="lang-ar">تعليم هندسي مجاني ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
+  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
+  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
+<script src="../../../assets/nx/nexus.js?v=958016f0cd"></script>
 </body>
 </html>

@@ -1,53 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" data-root="../../../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PdM strategy and P–F economics — Condition Monitoring &amp; Predictive Maintenance — Sun Devil Factory</title>
+<meta name="theme-color" content="#0E1626">
+<title>PdM strategy and P–F economics — Condition Monitoring &amp; Predictive Maintenance — Nexus Institute of Technology</title>
 <meta name="description" content="Condition monitoring justified from the P–F curve: detection windows, inspection intervals at a fraction of P–F, and the money mathematics of caught-e">
-<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=958016f0cd">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-<header class="hd">
-  <a class="wordmark" href="../../../index.html">Sun <svg class="fork" viewBox="1.8 0 18.4 30" aria-hidden="true" focusable="false"><path d="M11,0 L13.1,3.2 L13.1,13 L8.9,13 L8.9,3.2 Z"/><path d="M3,1.4 C1.8,4.6 2.1,8.6 3.9,11.5 C4.6,12.5 5.5,13 6.5,13 L8.6,13 C6.8,11.4 5.7,8.9 5.4,5.9 C5.3,4.3 5.1,2.7 3,1.4 Z"/><path d="M19,1.4 C20.2,4.6 19.9,8.6 18.1,11.5 C17.4,12.5 16.5,13 15.5,13 L13.4,13 C15.2,11.4 16.3,8.9 16.6,5.9 C16.7,4.3 16.9,2.7 19,1.4 Z"/><rect x="3.2" y="13" width="15.6" height="2.6"/><rect x="8.5" y="15.6" width="5" height="1.9"/><rect x="9.6" y="15.6" width="2.8" height="14.4"/></svg> Devil <span>Factory</span></a>
-  <nav aria-label="Site">
-    <a href="../../../index.html">Start Here</a>
-    <a href="../../../curriculum/index.html" class="on">Curriculum</a>
-    <a href="../../../career/index.html">Career</a>
+<header class="nx-head">
+  <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  <a href="../../../index.html"><img class="nx-logo" src="../../../assets/nx/logo.svg"
+     alt="Nexus Institute of Technology — planetary-gear emblem"></a>
+  <h1><a href="../../../index.html"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</a></h1>
+  <div class="lang-ar" style="font-size:15px;font-weight:700;margin-top:4px">معهد نيكسس للتكنولوجيا</div>
+  <nav class="topnav" aria-label="Site">
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a><span class="pipe"> | </span>
+    <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a><span class="pipe"> | </span>
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
   </nav>
 </header>
-<main>
-<div class="withside"><aside class="sidenav"><p class="sn-title">Curriculum</p><details><summary>Year 1 · Semester 1</summary><ul><li><a href="../../../curriculum/y1s1/math-1/index.html">MTH 101 · Engineering Mathematics I</a></li><li><a href="../../../curriculum/y1s1/drawing-cad/index.html">DRW 102 · Engineering Drawing &amp; CAD</a></li><li><a href="../../../curriculum/y1s1/statics/index.html">STA 103 · Engineering Statics</a></li><li><a href="../../../curriculum/y1s1/materials-1/index.html">MAT 104 · Materials Science I</a></li><li><a href="../../../curriculum/y1s1/mfg-processes-1/index.html">MFG 105 · Manufacturing Processes I — Casting &amp; Bulk Forming</a></li><li><a href="../../../curriculum/y1s1/computing/index.html">CMP 106 · Engineering Computing</a></li></ul></details><details><summary>Year 1 · Semester 2</summary><ul><li><a href="../../../curriculum/y1s2/math-2/index.html">MTH 151 · Engineering Mathematics II</a></li><li><a href="../../../curriculum/y1s2/dynamics/index.html">DYN 152 · Engineering Dynamics</a></li><li><a href="../../../curriculum/y1s2/materials-2/index.html">MAT 153 · Materials Science II</a></li><li><a href="../../../curriculum/y1s2/mfg-processes-2/index.html">MFG 154 · Manufacturing Processes II — Machining &amp; Joining</a></li><li><a href="../../../curriculum/y1s2/thermo-1/index.html">THM 155 · Thermodynamics I</a></li><li><a href="../../../curriculum/y1s2/electrical/index.html">ELE 156 · Electrical Fundamentals for Mechanical Engineers</a></li></ul></details><details><summary>Year 2 · Semester 1</summary><ul><li><a href="../../../curriculum/y2s1/strength/index.html">SOM 201 · Strength of Materials</a></li><li><a href="../../../curriculum/y2s1/thermo-2/index.html">THM 202 · Thermodynamics II — Cycles &amp; Utilities</a></li><li><a href="../../../curriculum/y2s1/fluids/index.html">FLD 203 · Fluid Mechanics</a></li><li><a href="../../../curriculum/y2s1/metrology/index.html">MET 204 · Metrology &amp; Quality Control</a></li><li><a href="../../../curriculum/y2s1/electronics-sensors/index.html">ELX 205 · Electronics &amp; Sensors</a></li><li><a href="../../../curriculum/y2s1/statistics/index.html">STS 206 · Engineering Statistics</a></li></ul></details><details><summary>Year 2 · Semester 2</summary><ul><li><a href="../../../curriculum/y2s2/machine-design-1/index.html">MDN 251 · Machine Design I</a></li><li><a href="../../../curriculum/y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery</a></li><li><a href="../../../curriculum/y2s2/heat-transfer/index.html">HTX 253 · Heat Transfer</a></li><li><a href="../../../curriculum/y2s2/mfg-processes-3/index.html">MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</a></li><li><a href="../../../curriculum/y2s2/plc-1/index.html">PLC 255 · PLC Fundamentals I</a></li><li><a href="../../../curriculum/y2s2/safety/index.html">SAF 256 · Industrial Safety</a></li></ul></details><details><summary>Year 3 · Semester 1</summary><ul><li><a href="../../../curriculum/y3s1/machine-design-2/index.html">MDN 301 · Machine Design II — Machine Elements</a></li><li><a href="../../../curriculum/y3s1/controls-1/index.html">CTL 302 · Control Systems I</a></li><li><a href="../../../curriculum/y3s1/plc-2/index.html">PLC 303 · PLC II &amp; Industrial Networks</a></li><li><a href="../../../curriculum/y3s1/hydraulics-pneumatics/index.html">HYD 304 · Hydraulics &amp; Pneumatics</a></li><li><a href="../../../curriculum/y3s1/welding-ndt/index.html">WLD 305 · Welding Engineering &amp; NDT</a></li><li><a href="../../../curriculum/y3s1/maintenance-fundamentals/index.html">MNT 306 · Maintenance Engineering Fundamentals</a></li></ul></details><details><summary>Year 3 · Semester 2</summary><ul><li><a href="../../../curriculum/y3s2/vibrations/index.html">VIB 351 · Mechanical Vibrations</a></li><li><a href="../../../curriculum/y3s2/instrumentation/index.html">INS 352 · Instrumentation &amp; Process Control</a></li><li><a href="../../../curriculum/y3s2/robotics/index.html">ROB 353 · Industrial Robotics</a></li><li><a href="../../../curriculum/y3s2/reliability-1/index.html">REL 354 · Reliability Engineering I</a></li><li><a href="../../../curriculum/y3s2/corrosion/index.html">COR 355 · Corrosion &amp; Degradation</a></li><li><a href="../../../curriculum/y3s2/production-planning/index.html">PPC 356 · Production Planning &amp; Control</a></li></ul></details><details open><summary>Year 4 · Semester 1</summary><ul><li><a href="../../../curriculum/y4s1/rotating-equipment/index.html">RTE 401 · Rotating Equipment</a></li><li><a href="../../../curriculum/y4s1/asset-integrity/index.html">AIM 402 · Asset Integrity Management</a></li><li class="sn-cur"><a href="../../../curriculum/y4s1/condition-monitoring/index.html">CDM 403 · Condition Monitoring &amp; Predictive Maintenance</a><ul><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/01-pdm-strategy-and-p-f-economics.html">01 · PdM strategy and P–F economics</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/02-vibration-fundamentals-for-analysts.html">02 · Vibration fundamentals for analysts</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/03-measurement-and-the-fft.html">03 · Measurement and the FFT</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/04-spectrum-analysis-i-unbalance-misalignment-looseness.html">04 · Spectrum analysis I: unbalance, misalignment, looseness</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/05-spectrum-analysis-ii-bearings-and-gears.html">05 · Spectrum analysis II: bearings and gears</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/06-infrared-thermography.html">06 · Infrared thermography</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/07-oil-analysis-and-wear-debris.html">07 · Oil analysis and wear debris</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/08-ultrasound-mca-and-building-routes.html">08 · Ultrasound, MCA, and building routes</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/09-online-monitoring-and-protection-systems.html">09 · Online monitoring and protection systems</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/10-diagnostics-case-marathon.html">10 · Diagnostics case marathon</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/11-pdm-data-management-and-trending.html">11 · PdM data management and trending</a></li><li class="sn-les"><a href="../../../curriculum/y4s1/condition-monitoring/12-pdm-program-design-project.html">12 · PdM program design project</a></li></ul></li><li><a href="../../../curriculum/y4s1/scada-iiot/index.html">SCA 404 · SCADA, DCS &amp; IIoT</a></li><li><a href="../../../curriculum/y4s1/lean-six-sigma/index.html">LSS 405 · Lean &amp; Six Sigma</a></li><li><a href="../../../curriculum/y4s1/engineering-economics/index.html">ECO 406 · Engineering Economics &amp; Project Management</a></li></ul></details><details><summary>Year 4 · Semester 2</summary><ul><li><a href="../../../curriculum/y4s2/smart-manufacturing/index.html">SMF 451 · Smart Manufacturing &amp; Digital Twin</a></li><li><a href="../../../curriculum/y4s2/maintenance-planning/index.html">MPL 452 · Maintenance Planning, Turnarounds &amp; CMMS</a></li><li><a href="../../../curriculum/y4s2/pressure-equipment/index.html">PEP 453 · Pressure Equipment &amp; Piping</a></li><li><a href="../../../curriculum/y4s2/hse/index.html">HSE 454 · HSE for Industrial Operations</a></li><li><a href="../../../curriculum/y4s2/reliability-2/index.html">REL 455 · Reliability Engineering II</a></li><li><a href="../../../curriculum/y4s2/capstone/index.html">CAP 456 · Capstone — Integrated Plant Project</a></li></ul></details></aside><div class="main-col">
-<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<div class="sidemenu" id="sideMenu"><button type="button" data-ar="الأقسام">Sections</button><div class="panel"><p data-ar="الأقسام">Sections</p><a href="#t-foundations" data-ar="الأسس" data-tab="t-foundations">Foundations</a><a href="#t-lecture" data-ar="المحاضرة" data-tab="t-lecture">Lecture</a><a href="#t-examples" data-ar="أمثلة محلولة" data-tab="t-examples">Worked Examples</a><a href="#t-library" data-ar="المكتبة" data-tab="t-library">Library</a><a href="index.html" data-ar="كل الدروس">All lessons · CDM 403</a><a href="01-pdm-strategy-and-p-f-economics.html" class="sub">01 · PdM strategy and P–F economics</a><a href="02-vibration-fundamentals-for-analysts.html" class="sub">02 · Vibration fundamentals for analysts</a><a href="03-measurement-and-the-fft.html" class="sub">03 · Measurement and the FFT</a><a href="04-spectrum-analysis-i-unbalance-misalignment-looseness.html" class="sub">04 · Spectrum analysis I: unbalance, misalignment, looseness</a><a href="05-spectrum-analysis-ii-bearings-and-gears.html" class="sub">05 · Spectrum analysis II: bearings and gears</a><a href="06-infrared-thermography.html" class="sub">06 · Infrared thermography</a><a href="07-oil-analysis-and-wear-debris.html" class="sub">07 · Oil analysis and wear debris</a><a href="08-ultrasound-mca-and-building-routes.html" class="sub">08 · Ultrasound, MCA, and building routes</a><a href="09-online-monitoring-and-protection-systems.html" class="sub">09 · Online monitoring and protection systems</a><a href="10-diagnostics-case-marathon.html" class="sub">10 · Diagnostics case marathon</a><a href="11-pdm-data-management-and-trending.html" class="sub">11 · PdM data management and trending</a><a href="12-pdm-program-design-project.html" class="sub">12 · PdM program design project</a></div></div>
+<main class="wrap">
+
+<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
 <a href="index.html">CDM 403 · Condition Monitoring &amp; Predictive Maintenance</a> /
 <span>Lesson 01</span></nav>
 
-<div class="hero lesson">
-  <img src="../../../assets/img/eaf-tapping.jpg" alt="White-hot steel tapped from a 35-ton electric furnace">
-  <div class="hero-inner">
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><line x1="14" y1="60" x2="106" y2="60" stroke-dasharray="3 7"/><path d="M14 60 C 22 26, 34 26, 42 60 S 60 96, 70 60 S 86 30, 94 52"/><rect x="98" y="44" width="6" height="16" class="amb" stroke="none"/><rect x="88" y="88" width="6" height="14" class="amb" stroke="none"/><rect x="76" y="94" width="6" height="8" class="amb" stroke="none"/><line x1="70" y1="102" x2="106" y2="102"/></svg></div>
+  <div class="txt">
     <p class="eyebrow">CDM 403 · LESSON 01 OF 12 · YEAR 4 · SEMESTER 1</p>
     <h1>PdM strategy and P–F economics</h1>
     <p class="sub">Condition monitoring justified from the P–F curve: detection windows, inspection intervals at a fraction of P–F, and the money mathematics of caught-early versus run-to-wreck. Technology-to-failure-mode mapping as the program design act. The strategy lesson that keeps PdM from becoming gadget collecting.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>NPTEL: Mechanical Vibrations</b></div><div>Assessment<b>3 checkpoint questions</b></div></div>
   </div>
-  <div class="hero-credit">Photo: Alfred T. Palmer, U.S. OWI — public domain (Library of Congress)</div>
+  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>NPTEL: Mechanical Vibrations</b></div><div>Assessment<b>3 checkpoint questions</b></div></div>
 </div>
-<div class="corechip"><span class="badge t2">CORE 60 · D1</span></div>
+<div><span class="badge amber">CORE 60 · D1</span></div>
+<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button class="on" data-tab="t-lecture">Lecture</button>
-  <button data-tab="t-foundations">Foundations</button>
-  <button data-tab="t-examples">Worked Examples</button>
-  <button data-tab="t-kuwait">Kuwait Floor</button>
-  <button data-tab="t-library">Library</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
+  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>A failure mode has a 4-month P–F interval: make the economic case for a monthly route.</li><li>Match technologies to failure modes: bearing spall, misalignment, hot electrical joint, degraded oil.</li><li>Why is owning an analyzer not the same as having a PdM program? Name the missing pieces.</li></ul></div>
-  <p class="queued-note">This is a Core 60 lesson — its study guide is queued and will replace this skeleton.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
 <div class="measure">
   
   <p>This lesson belongs to <b>CDM 403 · Condition Monitoring &amp; Predictive Maintenance</b>
@@ -55,49 +58,39 @@
   <ul class="plain"><li>NPTEL: Mechanical Vibrations (prerequisite); ISO 18436-aligned practice content</li><li><a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></li></ul>
   <p class="small">Course context: Reading machines before they fail: PdM strategy on P–F economics, vibration analysis from sensor to spectrum diagnosis, thermography, oil analysis, and ultrasound — all eight Core-60 lessons, the vibration analyst's foundation.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>A failure mode has a 4-month P–F interval: make the economic case for a monthly route.</li><li>Match technologies to failure modes: bearing spall, misalignment, hot electrical joint, degraded oil.</li><li>Why is owning an analyzer not the same as having a PdM program? Name the missing pieces.</li></ul></div><p class="queued-note">This is a Core 60 lesson — its full study guide is in production and will replace this page's skeleton.</p></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2>
 <div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
+  <p>The five-problem interactive quiz for this lesson is in production. Until
+  it lands, use the lesson's checkpoint questions as practice prompts —
+  attempt them from the cited source before reading on:</p>
   <div class="preview"><b>Practice prompts — solutions not yet published:</b>
   <ul><li>A failure mode has a 4-month P–F interval: make the economic case for a monthly route.</li><li>Match technologies to failure modes: bearing spall, misalignment, hot electrical joint, degraded oil.</li><li>Why is owning an analyzer not the same as having a PdM program? Name the missing pieces.</li></ul></div>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
-<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a>; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li>NPTEL: Mechanical Vibrations (prerequisite); ISO 18436-aligned practice content</li><li><a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></li></ul>
   <figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/DUznmZvSQOU" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body) — lecture videos" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body) — lecture videos </figcaption></figure>
 </div>
 <div class="wide"></div></section>
-<nav class="prevnext"><a href="index.html">All lessons · CDM 403</a><a href="02-vibration-fundamentals-for-analysts.html">02 · Vibration fundamentals for analysts →</a></nav></div></div>
+<nav class="prevnext"><a href="index.html" data-ar="كل الدروس · CDM 403">All lessons · CDM 403</a><a href="02-vibration-fundamentals-for-analysts.html">02 · Vibration fundamentals for analysts →</a></nav>
 </main>
-<footer>
-  <div class="inner">
-    
-    <div class="cols">
-      <div>
-        <h5>The pathway</h5>
-        A maintenance engineer's route into manufacturing:<br>
-        Reliability · Asset Integrity · Production/Operations · Maintenance Planning
-      </div>
-      <div>
-        <h5>Site</h5>
-        <a href="../../../index.html">Start here</a><br>
-        <a href="../../../curriculum/index.html">Curriculum — 48 courses</a><br>
-        <a href="../../../career/index.html">Career strategy</a>
-      </div>
-      <div>
-        <h5>Kuwait industry context</h5>
-        Kuwait Steel · Gulf Cable · Kirby Building Systems · EQUATE · KDD / Petra · HEISCO
-      </div>
-    </div>
-    <div class="mark"><span class="mn">Sun</span> <svg class="fork" viewBox="1.8 0 18.4 30" aria-hidden="true" focusable="false"><path d="M11,0 L13.1,3.2 L13.1,13 L8.9,13 L8.9,3.2 Z"/><path d="M3,1.4 C1.8,4.6 2.1,8.6 3.9,11.5 C4.6,12.5 5.5,13 6.5,13 L8.6,13 C6.8,11.4 5.7,8.9 5.4,5.9 C5.3,4.3 5.1,2.7 3,1.4 Z"/><path d="M19,1.4 C20.2,4.6 19.9,8.6 18.1,11.5 C17.4,12.5 16.5,13 15.5,13 L13.4,13 C15.2,11.4 16.3,8.9 16.6,5.9 C16.7,4.3 16.9,2.7 19,1.4 Z"/><rect x="3.2" y="13" width="15.6" height="2.6"/><rect x="8.5" y="15.6" width="5" height="1.9"/><rect x="9.6" y="15.6" width="2.8" height="14.4"/></svg> <span class="mn">Devil</span> Factory</div>
-    <p class="fine">Educational material. Worked-example values are pedagogical; representative
-    industrial figures are labeled as such and are not published operating data of any named
-    company. Photography is openly licensed; credits on each image and in the repository.</p>
-  </div>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
+    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free bilingual engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+  <p class="lang-ar">تعليم هندسي مجاني ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
+  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
+  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
+<script src="../../../assets/nx/nexus.js?v=958016f0cd"></script>
 </body>
 </html>

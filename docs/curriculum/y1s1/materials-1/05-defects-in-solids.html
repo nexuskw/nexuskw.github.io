@@ -1,58 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" data-root="../../../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Defects in solids — Materials Science I — Sun Devil Factory</title>
+<meta name="theme-color" content="#0E1626">
+<title>Defects in solids — Materials Science I — Nexus Institute of Technology</title>
 <meta name="description" content="Vacancies, interstitials, and substitutional atoms; dislocations edge and screw; grain boundaries. The defect population as the true design variable. ">
-<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=958016f0cd">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-<header class="hd">
-  <a class="wordmark" href="../../../index.html">Sun <svg class="fork" viewBox="1.8 0 18.4 30" aria-hidden="true" focusable="false"><path d="M11,0 L13.1,3.2 L13.1,13 L8.9,13 L8.9,3.2 Z"/><path d="M3,1.4 C1.8,4.6 2.1,8.6 3.9,11.5 C4.6,12.5 5.5,13 6.5,13 L8.6,13 C6.8,11.4 5.7,8.9 5.4,5.9 C5.3,4.3 5.1,2.7 3,1.4 Z"/><path d="M19,1.4 C20.2,4.6 19.9,8.6 18.1,11.5 C17.4,12.5 16.5,13 15.5,13 L13.4,13 C15.2,11.4 16.3,8.9 16.6,5.9 C16.7,4.3 16.9,2.7 19,1.4 Z"/><rect x="3.2" y="13" width="15.6" height="2.6"/><rect x="8.5" y="15.6" width="5" height="1.9"/><rect x="9.6" y="15.6" width="2.8" height="14.4"/></svg> Devil <span>Factory</span></a>
-  <nav aria-label="Site">
-    <a href="../../../index.html">Start Here</a>
-    <a href="../../../curriculum/index.html" class="on">Curriculum</a>
-    <a href="../../../career/index.html">Career</a>
+<header class="nx-head">
+  <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  <a href="../../../index.html"><img class="nx-logo" src="../../../assets/nx/logo.svg"
+     alt="Nexus Institute of Technology — planetary-gear emblem"></a>
+  <h1><a href="../../../index.html"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</a></h1>
+  <div class="lang-ar" style="font-size:15px;font-weight:700;margin-top:4px">معهد نيكسس للتكنولوجيا</div>
+  <nav class="topnav" aria-label="Site">
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a><span class="pipe"> | </span>
+    <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a><span class="pipe"> | </span>
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
   </nav>
 </header>
-<main>
-<div class="withside"><aside class="sidenav"><p class="sn-title">Curriculum</p><details open><summary>Year 1 · Semester 1</summary><ul><li><a href="../../../curriculum/y1s1/math-1/index.html">MTH 101 · Engineering Mathematics I</a></li><li><a href="../../../curriculum/y1s1/drawing-cad/index.html">DRW 102 · Engineering Drawing &amp; CAD</a></li><li><a href="../../../curriculum/y1s1/statics/index.html">STA 103 · Engineering Statics</a></li><li class="sn-cur"><a href="../../../curriculum/y1s1/materials-1/index.html">MAT 104 · Materials Science I</a><ul><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/01-why-materials-fail-the-plant.html">01 · Why materials fail the plant</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/02-atomic-bonding.html">02 · Atomic bonding</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/03-crystal-structures.html">03 · Crystal structures</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/04-crystallographic-directions-and-planes.html">04 · Crystallographic directions and planes</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/05-defects-in-solids.html">05 · Defects in solids</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/06-diffusion.html">06 · Diffusion</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/07-mechanical-properties-i-elasticity-and-the-tension-test.html">07 · Mechanical properties I: elasticity and the tension test</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/08-mechanical-properties-ii-hardness-and-toughness.html">08 · Mechanical properties II: hardness and toughness</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/09-dislocations-and-strengthening.html">09 · Dislocations and strengthening</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/10-recovery-recrystallization-and-grain-growth.html">10 · Recovery, recrystallization, and grain growth</a></li><li class="sn-les"><a href="../../../curriculum/y1s1/materials-1/11-solidification-and-cast-structure.html">11 · Solidification and cast structure</a></li></ul></li><li><a href="../../../curriculum/y1s1/mfg-processes-1/index.html">MFG 105 · Manufacturing Processes I — Casting &amp; Bulk Forming</a></li><li><a href="../../../curriculum/y1s1/computing/index.html">CMP 106 · Engineering Computing</a></li></ul></details><details><summary>Year 1 · Semester 2</summary><ul><li><a href="../../../curriculum/y1s2/math-2/index.html">MTH 151 · Engineering Mathematics II</a></li><li><a href="../../../curriculum/y1s2/dynamics/index.html">DYN 152 · Engineering Dynamics</a></li><li><a href="../../../curriculum/y1s2/materials-2/index.html">MAT 153 · Materials Science II</a></li><li><a href="../../../curriculum/y1s2/mfg-processes-2/index.html">MFG 154 · Manufacturing Processes II — Machining &amp; Joining</a></li><li><a href="../../../curriculum/y1s2/thermo-1/index.html">THM 155 · Thermodynamics I</a></li><li><a href="../../../curriculum/y1s2/electrical/index.html">ELE 156 · Electrical Fundamentals for Mechanical Engineers</a></li></ul></details><details><summary>Year 2 · Semester 1</summary><ul><li><a href="../../../curriculum/y2s1/strength/index.html">SOM 201 · Strength of Materials</a></li><li><a href="../../../curriculum/y2s1/thermo-2/index.html">THM 202 · Thermodynamics II — Cycles &amp; Utilities</a></li><li><a href="../../../curriculum/y2s1/fluids/index.html">FLD 203 · Fluid Mechanics</a></li><li><a href="../../../curriculum/y2s1/metrology/index.html">MET 204 · Metrology &amp; Quality Control</a></li><li><a href="../../../curriculum/y2s1/electronics-sensors/index.html">ELX 205 · Electronics &amp; Sensors</a></li><li><a href="../../../curriculum/y2s1/statistics/index.html">STS 206 · Engineering Statistics</a></li></ul></details><details><summary>Year 2 · Semester 2</summary><ul><li><a href="../../../curriculum/y2s2/machine-design-1/index.html">MDN 251 · Machine Design I</a></li><li><a href="../../../curriculum/y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery</a></li><li><a href="../../../curriculum/y2s2/heat-transfer/index.html">HTX 253 · Heat Transfer</a></li><li><a href="../../../curriculum/y2s2/mfg-processes-3/index.html">MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</a></li><li><a href="../../../curriculum/y2s2/plc-1/index.html">PLC 255 · PLC Fundamentals I</a></li><li><a href="../../../curriculum/y2s2/safety/index.html">SAF 256 · Industrial Safety</a></li></ul></details><details><summary>Year 3 · Semester 1</summary><ul><li><a href="../../../curriculum/y3s1/machine-design-2/index.html">MDN 301 · Machine Design II — Machine Elements</a></li><li><a href="../../../curriculum/y3s1/controls-1/index.html">CTL 302 · Control Systems I</a></li><li><a href="../../../curriculum/y3s1/plc-2/index.html">PLC 303 · PLC II &amp; Industrial Networks</a></li><li><a href="../../../curriculum/y3s1/hydraulics-pneumatics/index.html">HYD 304 · Hydraulics &amp; Pneumatics</a></li><li><a href="../../../curriculum/y3s1/welding-ndt/index.html">WLD 305 · Welding Engineering &amp; NDT</a></li><li><a href="../../../curriculum/y3s1/maintenance-fundamentals/index.html">MNT 306 · Maintenance Engineering Fundamentals</a></li></ul></details><details><summary>Year 3 · Semester 2</summary><ul><li><a href="../../../curriculum/y3s2/vibrations/index.html">VIB 351 · Mechanical Vibrations</a></li><li><a href="../../../curriculum/y3s2/instrumentation/index.html">INS 352 · Instrumentation &amp; Process Control</a></li><li><a href="../../../curriculum/y3s2/robotics/index.html">ROB 353 · Industrial Robotics</a></li><li><a href="../../../curriculum/y3s2/reliability-1/index.html">REL 354 · Reliability Engineering I</a></li><li><a href="../../../curriculum/y3s2/corrosion/index.html">COR 355 · Corrosion &amp; Degradation</a></li><li><a href="../../../curriculum/y3s2/production-planning/index.html">PPC 356 · Production Planning &amp; Control</a></li></ul></details><details><summary>Year 4 · Semester 1</summary><ul><li><a href="../../../curriculum/y4s1/rotating-equipment/index.html">RTE 401 · Rotating Equipment</a></li><li><a href="../../../curriculum/y4s1/asset-integrity/index.html">AIM 402 · Asset Integrity Management</a></li><li><a href="../../../curriculum/y4s1/condition-monitoring/index.html">CDM 403 · Condition Monitoring &amp; Predictive Maintenance</a></li><li><a href="../../../curriculum/y4s1/scada-iiot/index.html">SCA 404 · SCADA, DCS &amp; IIoT</a></li><li><a href="../../../curriculum/y4s1/lean-six-sigma/index.html">LSS 405 · Lean &amp; Six Sigma</a></li><li><a href="../../../curriculum/y4s1/engineering-economics/index.html">ECO 406 · Engineering Economics &amp; Project Management</a></li></ul></details><details><summary>Year 4 · Semester 2</summary><ul><li><a href="../../../curriculum/y4s2/smart-manufacturing/index.html">SMF 451 · Smart Manufacturing &amp; Digital Twin</a></li><li><a href="../../../curriculum/y4s2/maintenance-planning/index.html">MPL 452 · Maintenance Planning, Turnarounds &amp; CMMS</a></li><li><a href="../../../curriculum/y4s2/pressure-equipment/index.html">PEP 453 · Pressure Equipment &amp; Piping</a></li><li><a href="../../../curriculum/y4s2/hse/index.html">HSE 454 · HSE for Industrial Operations</a></li><li><a href="../../../curriculum/y4s2/reliability-2/index.html">REL 455 · Reliability Engineering II</a></li><li><a href="../../../curriculum/y4s2/capstone/index.html">CAP 456 · Capstone — Integrated Plant Project</a></li></ul></details></aside><div class="main-col">
-<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<div class="sidemenu" id="sideMenu"><button type="button" data-ar="الأقسام">Sections</button><div class="panel"><p data-ar="الأقسام">Sections</p><a href="#t-foundations" data-ar="الأسس" data-tab="t-foundations">Foundations</a><a href="#t-lecture" data-ar="المحاضرة" data-tab="t-lecture">Lecture</a><a href="#t-examples" data-ar="أمثلة محلولة" data-tab="t-examples">Worked Examples</a><a href="#t-library" data-ar="المكتبة" data-tab="t-library">Library</a><a href="index.html" data-ar="كل الدروس">All lessons · MAT 104</a><a href="01-why-materials-fail-the-plant.html" class="sub">01 · Why materials fail the plant</a><a href="02-atomic-bonding.html" class="sub">02 · Atomic bonding</a><a href="03-crystal-structures.html" class="sub">03 · Crystal structures</a><a href="04-crystallographic-directions-and-planes.html" class="sub">04 · Crystallographic directions and planes</a><a href="05-defects-in-solids.html" class="sub">05 · Defects in solids</a><a href="06-diffusion.html" class="sub">06 · Diffusion</a><a href="07-mechanical-properties-i-elasticity-and-the-tension-test.html" class="sub">07 · Mechanical properties I: elasticity and the tension test</a><a href="08-mechanical-properties-ii-hardness-and-toughness.html" class="sub">08 · Mechanical properties II: hardness and toughness</a><a href="09-dislocations-and-strengthening.html" class="sub">09 · Dislocations and strengthening</a><a href="10-recovery-recrystallization-and-grain-growth.html" class="sub">10 · Recovery, recrystallization, and grain growth</a><a href="11-solidification-and-cast-structure.html" class="sub">11 · Solidification and cast structure</a></div></div>
+<main class="wrap">
+
+<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
 <a href="index.html">MAT 104 · Materials Science I</a> /
 <span>Lesson 05</span></nav>
 
-<div class="hero lesson">
-  <img src="../../../assets/img/billet-cutting.jpg" alt="Gas torch cutting a red-hot steel billet">
-  <div class="hero-inner">
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="7"/><circle cx="90" cy="30" r="7"/><circle cx="30" cy="90" r="7"/><circle cx="90" cy="90" r="7"/><circle cx="60" cy="60" r="8" class="amb"/><line x1="37" y1="30" x2="83" y2="30"/><line x1="37" y1="90" x2="83" y2="90"/><line x1="30" y1="37" x2="30" y2="83"/><line x1="90" y1="37" x2="90" y2="83"/><line x1="36" y1="36" x2="52" y2="52"/><line x1="84" y1="36" x2="68" y2="52"/><line x1="36" y1="84" x2="52" y2="68"/><line x1="84" y1="84" x2="68" y2="68"/></svg></div>
+  <div class="txt">
     <p class="eyebrow">MAT 104 · LESSON 05 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Defects in solids</h1>
     <p class="sub">Vacancies, interstitials, and substitutional atoms; dislocations edge and screw; grain boundaries. The defect population as the true design variable. Perfect crystals are a textbook fiction — usefully so.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
-  <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
 </div>
-<div class="corechip"></div>
+<div></div>
+<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button class="on" data-tab="t-lecture">Lecture</button>
-  <button data-tab="t-foundations">Foundations</button>
-  <button data-tab="t-examples">Worked Examples</button>
-  <button data-tab="t-kuwait">Kuwait Floor</button>
-  <button data-tab="t-library">Library</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
+  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why are dislocations, not perfect lattices, the reason metals deform at realistic stresses?</li><li>Name the point, line, and planar defects and one property each controls.</li></ul></div><div class="measure">
-<h3>§1 · The perfect crystal is a useful fiction</h3>
-<p>Every real crystal is defective, and the defects are not blemishes on the theory — they <em>are</em> the theory of real behavior. By dimensionality: <b>point defects</b> — vacancies (missing atoms), interstitials (atoms squeezed into gaps), and substitutional or interstitial solute atoms; <b>line defects</b> — dislocations, edge and screw; <b>planar defects</b> — grain boundaries, twin boundaries, free surfaces. Each class controls a different family of properties, and the rest of this course is largely the story of engineering their populations.</p>
-<h3>§2 · Vacancies obey thermodynamics</h3>
-<p>Vacancies are not accidents; equilibrium demands them. Their fraction rises exponentially with temperature:</p>
-\[ \frac{N_v}{N} = \exp\!\left(-\frac{Q_v}{kT}\right) \tag{1} \]
-<p>Near the melting point roughly one site in ten thousand is empty; at room temperature the fraction is astronomically smaller. This matters because vacancies are diffusion's vehicle — atoms move mainly by hopping into adjacent empty sites — so (1) is the deep reason every diffusion-controlled process in Lesson 6 accelerates exponentially with temperature.</p>
-<h3>§3 · Dislocations: why metals are a thousand times weaker than they should be</h3>
-<p>Shearing a perfect crystal means breaking every bond across a plane simultaneously — the theoretical strength, orders of magnitude above anything measured. A dislocation breaks the bonds <em>one row at a time</em>, like moving a carpet by running a wrinkle across it rather than dragging the whole rug. Metals deform at realistic stresses because dislocations exist; they strengthen when we obstruct dislocation motion — with solutes, boundaries, and other dislocations, the entire agenda of Lesson 9. Grain boundaries, meanwhile, are both obstacles (strength) and fast-diffusion highways (creep, corrosion sensitivity): planar defects always charge rent both ways.</p>
-<p><strong>Closing.</strong> Point defects carry diffusion, line defects carry plasticity, planar defects referee both. "Defect" is the field's least fortunate word — these are the control knobs.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
 <li><b>Crystal structures</b> (Lesson 3) — a defect is defined against the perfect cell.</li>
@@ -67,7 +65,17 @@
 <li><b>Burgers vector</b> — the slip step one dislocation pass produces.</li>
 <li><b>Grain boundary</b> — interface between differently oriented crystals.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Vacancy census</b></p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why are dislocations, not perfect lattices, the reason metals deform at realistic stresses?</li><li>Name the point, line, and planar defects and one property each controls.</li></ul></div><div class="measure">
+<h3>01 · The perfect crystal is a useful fiction</h3>
+<p>Every real crystal is defective, and the defects are not blemishes on the theory — they <em>are</em> the theory of real behavior. By dimensionality: <b>point defects</b> — vacancies (missing atoms), interstitials (atoms squeezed into gaps), and substitutional or interstitial solute atoms; <b>line defects</b> — dislocations, edge and screw; <b>planar defects</b> — grain boundaries, twin boundaries, free surfaces. Each class controls a different family of properties, and the rest of this course is largely the story of engineering their populations.</p>
+<h3>02 · Vacancies obey thermodynamics</h3>
+<p>Vacancies are not accidents; equilibrium demands them. Their fraction rises exponentially with temperature:</p>
+\[ \frac{N_v}{N} = \exp\!\left(-\frac{Q_v}{kT}\right) \tag{1} \]
+<p>Near the melting point roughly one site in ten thousand is empty; at room temperature the fraction is astronomically smaller. This matters because vacancies are diffusion's vehicle — atoms move mainly by hopping into adjacent empty sites — so (1) is the deep reason every diffusion-controlled process in Lesson 6 accelerates exponentially with temperature.</p>
+<h3>03 · Dislocations: why metals are a thousand times weaker than they should be</h3>
+<p>Shearing a perfect crystal means breaking every bond across a plane simultaneously — the theoretical strength, orders of magnitude above anything measured. A dislocation breaks the bonds <em>one row at a time</em>, like moving a carpet by running a wrinkle across it rather than dragging the whole rug. Metals deform at realistic stresses because dislocations exist; they strengthen when we obstruct dislocation motion — with solutes, boundaries, and other dislocations, the entire agenda of Lesson 9. Grain boundaries, meanwhile, are both obstacles (strength) and fast-diffusion highways (creep, corrosion sensitivity): planar defects always charge rent both ways.</p>
+<p><strong>Closing.</strong> Point defects carry diffusion, line defects carry plasticity, planar defects referee both. "Defect" is the field's least fortunate word — these are the control knobs.</p></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Vacancy census</b></p>
 <p><b>Problem.</b> For a metal with vacancy formation energy \( Q_v = 0.9\ \mathrm{eV} \) (representative), compare the equilibrium vacancy fraction at 1000 K and at 500 K. \( k = 8.62 \times 10^{-5}\ \mathrm{eV/K} \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) At 1000 K: \( N_v/N = \exp[-0.9/(8.62 \times 10^{-5} \times 1000)] = e^{-10.44} = 2.9 \times 10^{-5} \).
 (2) At 500 K: \( N_v/N = e^{-20.88} = 8.5 \times 10^{-10} \).
 (3) Ratio: \( \approx 34{,}000 \times \) more vacancies at the higher temperature.</p>
@@ -76,43 +84,32 @@
 <p><b>Problem.</b> Cartridge brass is 70 wt% Cu, 30 wt% Zn (\( A_{Cu} = 63.55 \), \( A_{Zn} = 65.38\ \mathrm{g/mol} \)). <b>Find:</b> the composition in atom percent.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Per 100 g: \( n_{Cu} = 70/63.55 = 1.101\ \mathrm{mol} \); \( n_{Zn} = 30/65.38 = 0.459\ \mathrm{mol} \).
 (2) \( at\%\ Cu = \dfrac{1.101}{1.101 + 0.459} \times 100 = 70.6\% \); \( at\%\ Zn = 29.4\% \).</p>
 <p><b>Answer:</b> 70.6 at% Cu, 29.4 at% Zn.
-<b>Sanity check:</b> copper and zinc have nearly equal atomic masses, so weight and atom percent nearly coincide — the conversion only bites when masses differ strongly (carbon in iron: 0.4 wt% C is ~1.8 at%). Knowing when the distinction matters is the actual skill.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>With \( Q_v = 0.9 \) eV at 1000 K (\( k = 8.62 \times 10^{-5} \) eV/K), the vacancy fraction is about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 3 \times 10^{-5} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 3 \times 10^{-2} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 10^{-9} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.9 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \exp[-0.9/(8.62\times10^{-5} \times 1000)] = e^{-10.4} \approx 2.9 \times 10^{-5} \) — roughly one site in 34,000 empty. \( 10^{-9} \) is the 500 K answer: the exponential's steepness is the whole point.</p></div></div></div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<b>Sanity check:</b> copper and zinc have nearly equal atomic masses, so weight and atom percent nearly coincide — the conversion only bites when masses differ strongly (carbon in iron: 0.4 wt% C is ~1.8 at%). Knowing when the distinction matters is the actual skill.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>With \( Q_v = 0.9 \) eV at 1000 K (\( k = 8.62 \times 10^{-5} \) eV/K), the vacancy fraction is about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 3 \times 10^{-5} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 3 \times 10^{-2} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 10^{-9} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.9 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \exp[-0.9/(8.62\times10^{-5} \times 1000)] = e^{-10.4} \approx 2.9 \times 10^{-5} \) — roughly one site in 34,000 empty. \( 10^{-9} \) is the 500 K answer: the exponential's steepness is the whole point.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — two kinds of defect, one inspection report.</b> You arrive at a HEISCO fabrication shop as an NDT crew sentences a weld: porosity beyond code, cut it out. On the same bench sits the metallurgical irony of Lesson 5 — the sound weld metal beside the pores is itself a carnival of defects: vacancies from solidification, dislocations by the billion from thermal contraction, fresh grain boundaries everywhere (figures representative). Those defects are why the weld metal has useful strength and ductility at all. NDT polices macro-defects; materials science engineers micro-defects. Same word, opposite verdicts — and an engineer should keep the two ledgers straight.</p></div></section>
-<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 4</p>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — verified links above and course-level courseware below are the study path.</p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
+  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
 </div>
 <div class="wide"></div></section>
-<nav class="prevnext"><a href="04-crystallographic-directions-and-planes.html">← 04 · Crystallographic directions and planes</a><a href="index.html">All lessons · MAT 104</a><a href="06-diffusion.html">06 · Diffusion →</a></nav></div></div>
+<nav class="prevnext"><a href="04-crystallographic-directions-and-planes.html">← 04 · Crystallographic directions and planes</a><a href="index.html" data-ar="كل الدروس · MAT 104">All lessons · MAT 104</a><a href="06-diffusion.html">06 · Diffusion →</a></nav>
 </main>
-<footer>
-  <div class="inner">
-    
-    <div class="cols">
-      <div>
-        <h5>The pathway</h5>
-        A maintenance engineer's route into manufacturing:<br>
-        Reliability · Asset Integrity · Production/Operations · Maintenance Planning
-      </div>
-      <div>
-        <h5>Site</h5>
-        <a href="../../../index.html">Start here</a><br>
-        <a href="../../../curriculum/index.html">Curriculum — 48 courses</a><br>
-        <a href="../../../career/index.html">Career strategy</a>
-      </div>
-      <div>
-        <h5>Kuwait industry context</h5>
-        Kuwait Steel · Gulf Cable · Kirby Building Systems · EQUATE · KDD / Petra · HEISCO
-      </div>
-    </div>
-    <div class="mark"><span class="mn">Sun</span> <svg class="fork" viewBox="1.8 0 18.4 30" aria-hidden="true" focusable="false"><path d="M11,0 L13.1,3.2 L13.1,13 L8.9,13 L8.9,3.2 Z"/><path d="M3,1.4 C1.8,4.6 2.1,8.6 3.9,11.5 C4.6,12.5 5.5,13 6.5,13 L8.6,13 C6.8,11.4 5.7,8.9 5.4,5.9 C5.3,4.3 5.1,2.7 3,1.4 Z"/><path d="M19,1.4 C20.2,4.6 19.9,8.6 18.1,11.5 C17.4,12.5 16.5,13 15.5,13 L13.4,13 C15.2,11.4 16.3,8.9 16.6,5.9 C16.7,4.3 16.9,2.7 19,1.4 Z"/><rect x="3.2" y="13" width="15.6" height="2.6"/><rect x="8.5" y="15.6" width="5" height="1.9"/><rect x="9.6" y="15.6" width="2.8" height="14.4"/></svg> <span class="mn">Devil</span> Factory</div>
-    <p class="fine">Educational material. Worked-example values are pedagogical; representative
-    industrial figures are labeled as such and are not published operating data of any named
-    company. Photography is openly licensed; credits on each image and in the repository.</p>
-  </div>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
+    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free bilingual engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+  <p class="lang-ar">تعليم هندسي مجاني ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
+  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
+  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
+<script src="../../../assets/nx/nexus.js?v=958016f0cd"></script>
 </body>
 </html>
