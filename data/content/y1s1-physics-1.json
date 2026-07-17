@@ -322,5 +322,329 @@
     "solution": "<p>\\( a = F/m \\): 30/3 = 10 and 30/6 = 5 m/s² — acceleration inversely proportional to mass at fixed force. This inverse relationship IS inertia quantified, and it scales to every sizing decision where a drive must accelerate a load: double the tooling mass and the same motor delivers half the acceleration, before friction says a word.</p>"
    }
   ]
+ },
+ "5": {
+  "lecture": "\n<h3>§1 · Friction joins the diagram</h3>\n<p>Newton's laws meet real surfaces through friction, and the rules carry over from statics\nwith one upgrade: motion. Static friction adapts — it supplies exactly what equilibrium\ndemands, up to the ceiling \\( \\mu_s N \\) — while kinetic friction, once sliding begins,\nholds the steady lower value \\( \\mu_k N \\). The normal force is never assumed: on an\nincline it is \\( mg\\cos\\theta \\), under a downward push it grows, under an angled pull\nit shrinks, and every friction calculation begins by solving for \\( N \\) from the\nperpendicular equation. The incline is the standard stage: gravity resolves into\n\\( mg\\sin\\theta \\) along the slope and \\( mg\\cos\\theta \\) into it, and the contest\nbetween \\( mg\\sin\\theta \\) and \\( \\mu_s mg\\cos\\theta \\) — that is, between\n\\( \\tan\\theta \\) and \\( \\mu_s \\) — decides whether anything moves at all.</p>\n<h3>§2 · Ropes, pulleys, and shared fates</h3>\n<p>An ideal rope is inextensible and massless: it transmits one tension throughout its\nlength, and it forces connected bodies to share one acceleration magnitude. Those two facts\nturn multi-body problems into systems of simple equations — one second law per body, plus\nthe constraint. An ideal pulley redirects the rope without changing its tension; the\nhanging-mass-drags-sliding-mass arrangement is the archetype, and its logic reappears in\nevery counterweight, hoist, and tensioning system built since.</p>\n<h3>§3 · Friction as the transmitter of motion</h3>\n<p>Friction does not only resist motion — it CAUSES most of it. A box accelerates with its\nconveyor belt only because static friction drags it along; the maximum acceleration friction\ncan transmit is \\( a_{max} = \\mu_s g \\), and a belt that accelerates harder leaves its\ncargo sliding behind. The same ceiling governs tires on tarmac and shoes on floors: traction\nis static friction employed, and the μ-times-g budget is the hard limit on every start and\nevery stop that relies on it.</p>\n<h3>§4 · The applying-Newton working method</h3>\n<p>The procedure composes everything so far. Draw the free body; solve the perpendicular\naxis first to capture \\( N \\); decide the friction regime honestly — compute the force\nequilibrium would require, compare with \\( \\mu_s N \\), and only then choose static\n(adaptive, at the required value) or kinetic (fixed, at \\( \\mu_k N \\), opposing the\nsliding). Align one axis with the acceleration, write the second law per axis, add the\nrope constraint when bodies connect, and count equations against unknowns before solving.\nAudit with limits: set \\( \\mu = 0 \\) and the answer must collapse to the frictionless\ncase; set \\( a = 0 \\) and it must collapse to statics. The regime decision is where the\nmarks — and the real machines — are won or lost: assuming sliding when the part actually\ngrips, or grip when it actually slides, produces answers that are precisely and confidently\nwrong. When in doubt, solve both regimes and let the comparison with the ceiling name the\ntruth — two short calculations beat one plausible guess every time.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>The second law by axis</b> (Lesson 4) — the engine this lesson feeds.</li>\n<li><b>Friction fundamentals</b> (Statics) — adaptive static ceiling, fixed kinetic value.</li>\n<li><b>Incline components</b> — \\( mg\\sin\\theta \\) along, \\( mg\\cos\\theta \\) into the slope.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Static friction</td><td>\\( F_s \\le \\mu_s N \\)</td><td>Adaptive grip before sliding; equality only at the slip threshold.</td></tr>\n<tr><td>Kinetic friction</td><td>\\( F_k = \\mu_k N \\)</td><td>Fixed drag once sliding; always below the static ceiling.</td></tr>\n<tr><td>Normal on an incline</td><td>\\( N = mg\\cos\\theta \\)</td><td>Never assume N = W off the horizontal.</td></tr>\n<tr><td>Slide condition</td><td>\\( \\tan\\theta > \\mu_s \\)</td><td>The incline holds or releases on this comparison alone.</td></tr>\n<tr><td>Rope constraint</td><td>one tension, one acceleration magnitude</td><td>Ideal cords make multi-body systems solvable.</td></tr>\n<tr><td>Traction ceiling</td><td>\\( a_{max} = \\mu_s g \\)</td><td>The most acceleration friction can transmit — belts, tires, shoes.</td></tr>\n<tr><td>Limit audits</td><td>\\( \\mu \\to 0 \\), \\( a \\to 0 \\)</td><td>Answers must collapse to frictionless and static cases.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Holds or slides?</b></p>\n<p><b>Problem.</b> A 60 kg crate rests on a 20° ramp with \\( \\mu_s = 0.50 \\). <b>Find:</b> whether it holds, the actual friction force, and the margin against sliding.</p>",
+    "solution": "<p><b>Solution.</b> (1) Required to hold: \\( mg\\sin 20° = 588.6 \\times 0.342 = 201\\ \\mathrm{N} \\).\n(2) Available ceiling: \\( \\mu_s mg\\cos 20° = 0.5 \\times 588.6 \\times 0.940 = 277\\ \\mathrm{N} \\).\n(3) 201 < 277 → holds; actual friction = 201 N (the required value); margin = 277/201 = 1.38.</p>\n<p><b>Answer:</b> holds, with friction at 201 N and a 38% reserve.\n<b>Sanity check:</b> the comparison reduces to \\( \\tan 20° = 0.364 \\) versus \\( \\mu_s = 0.50 \\) — same verdict in one line; the ramp would release this crate at \\( \\tan^{-1}(0.5) = 26.6° \\), a number worth computing before anyone tilts anything further.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The table-and-hanger system</b></p>\n<p><b>Problem.</b> A 12 kg block on a smooth table is tied by a cord over an ideal pulley to a hanging 6 kg block. <b>Find:</b> the system acceleration and the cord tension.</p>",
+    "solution": "<p><b>Solution.</b> (1) System view (both bodies, one rope): driving force = hanging weight = \\( 6 \\times 9.81 = 58.9\\ \\mathrm{N} \\); total mass 18 kg → \\( a = 58.9/18 = 3.27\\ \\mathrm{m/s^2} \\).\n(2) Isolate the table block — tension is its only horizontal force: \\( T = 12 \\times 3.27 = 39.2\\ \\mathrm{N} \\).</p>\n<p><b>Answer:</b> \\( 3.27\\ \\mathrm{m/s^2} \\); \\( T \\approx 39\\ \\mathrm{N} \\).\n<b>Sanity check:</b> \\( T \\) must sit between zero and the hanging weight (58.9 N) — it does; and the hanging block's own ledger closes: \\( 58.9 - 39.2 = 19.7 = 6 \\times 3.27 \\) ✓. The counterweight logic of every hoist starts exactly here.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Will the box ride the belt?</b></p>\n<p><b>Problem.</b> A conveyor accelerates at \\( 3.0\\ \\mathrm{m/s^2} \\). The box it carries has \\( \\mu_s = 0.25 \\) against the belt. <b>Find:</b> whether the box keeps up, and the friction coefficient that would be needed.</p>",
+    "solution": "<p><b>Solution.</b> (1) Friction is the only horizontal force ON the box; its ceiling delivers at most \\( a_{max} = \\mu_s g = 0.25 \\times 9.81 = 2.45\\ \\mathrm{m/s^2} \\).\n(2) \\( 2.45 < 3.0 \\) → the box cannot keep up; it slides backward relative to the belt.\n(3) Required: \\( \\mu_s \\ge a/g = 3.0/9.81 = 0.31 \\).</p>\n<p><b>Answer:</b> it slips; the belt-box pair would need \\( \\mu_s \\ge 0.31 \\).\n<b>Sanity check:</b> once slipping, kinetic friction (lower still) takes over and the lag worsens — which is why belt ramps and indexing conveyors publish acceleration limits, and why the fix is gentler ramps or grippier belting, not wishful thinking.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A crate sits on a 15° ramp. The normal force from the ramp is:</p>",
+    "choices": [
+     "\\( mg\\cos 15° \\) — less than the weight",
+     "\\( mg \\) — always",
+     "\\( mg\\sin 15° \\)",
+     "Zero unless it slides"
+    ],
+    "answer": 0,
+    "solution": "<p>The ramp pushes perpendicular to its own surface, and only the into-slope component of gravity loads it: \\( N = mg\\cos\\theta \\). Assuming \\( N = mg \\) off the horizontal quietly inflates every friction ceiling computed from it — the most common incline error. The along-slope component \\( mg\\sin\\theta \\) is the sliding drive, a different actor entirely.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Once an object breaks free and slides, the friction force typically:</p>",
+    "choices": [
+     "Drops to the lower kinetic value \\( \\mu_k N \\)",
+     "Rises above the static ceiling",
+     "Stays exactly at \\( \\mu_s N \\)",
+     "Vanishes"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mu_k < \\mu_s \\) for nearly all dry pairs, so breaking free brings a force DROP — the lurch when a stuck skid finally moves, and the reason wheels that lock (sliding) stop cars worse than wheels that keep rolling (static contact). The static value is a ceiling that applies only up to the instant of release, not during the slide.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In an ideal rope over an ideal pulley, the tension is:</p>",
+    "choices": [
+     "The same everywhere along the rope",
+     "Larger on the heavier side",
+     "Zero at the pulley",
+     "Proportional to rope length"
+    ],
+    "answer": 0,
+    "solution": "<p>Massless rope + frictionless pulley = one tension throughout; the pulley redirects the force without taxing it. A tension difference across a real pulley belongs to pulley friction and rope mass — refinements later courses price. The single-tension idealization is what lets one symbol T close a two-body problem, and it is accurate to a few percent on decent hardware.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An indexing table must accelerate parts at \\( 4\\ \\mathrm{m/s^2} \\) using friction alone. The minimum \\( \\mu_s \\) is about:</p>",
+    "choices": [
+     "0.41",
+     "0.25",
+     "4.0",
+     "0.10"
+    ],
+    "answer": 0,
+    "solution": "<p>Friction must supply \\( ma \\), and its ceiling is \\( \\mu_s mg \\): \\( \\mu_s \\ge a/g = 4/9.81 = 0.41 \\). Mass cancels — heavier parts need no more coefficient, only more force, which friction automatically scales. Answering 4.0 confuses the acceleration with the coefficient; 0.25 would cap the table at 2.45 m/s². This one-line check sizes every friction-driven transfer in automation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Anti-lock braking keeps wheels rolling rather than skidding because:</p>",
+    "choices": [
+     "Rolling contact uses the higher static friction; skidding drops to kinetic",
+     "Rolling tires have no friction",
+     "Kinetic friction exceeds static",
+     "It reduces the car's weight"
+    ],
+    "answer": 0,
+    "solution": "<p>A rolling tire's contact patch is momentarily stationary on the road — static friction, the higher ceiling. Lock the wheel and the patch slides — kinetic, lower, and steering vanishes with the grip differential. The same physics governs machine spindles, clutch engagement, and web handling: keep the contact static and you keep both the force ceiling and the control.</p>"
+   }
+  ]
+ },
+ "6": {
+  "lecture": "\n<h3>§1 · Work: force through distance, honestly counted</h3>\n<p>Work is energy in transit by force: \\( W = Fd\\cos\\theta \\) — only the component of\nforce ALONG the motion counts, and the dot product of Lesson 1 was built for exactly this\naccounting. Force perpendicular to motion does nothing (the normal force on a rolling cart,\nthe centripetal pull of a curve); force opposing motion does negative work, withdrawing\nenergy (friction, always); and a force with no motion under it does no work at all, however\nhard it strains — the crane holding a load stationary spends money, not joules. The unit is\nthe joule, one newton-metre, and keeping work's sign honest is keeping the energy books\nbalanced.</p>\n<h3>§2 · Kinetic energy and the theorem that shortcuts dynamics</h3>\n<p>A moving mass carries kinetic energy \\( KE = \\tfrac12 mv^2 \\), and the work–energy\ntheorem states the exchange rate: the NET work done on a body equals its change in kinetic\nenergy, \\( W_{net} = \\Delta KE \\). The theorem is a derived consequence of\n\\( F = ma \\), but as a tool it routinely beats its parent: it needs no timeline, no\nacceleration bookkeeping — just states, before and after. The \\( v^2 \\) matters more than\nany other exponent in safety engineering: doubling speed quadruples the energy to be\nabsorbed, which is why impact severity, braking distances, and guard designs all scale on\nthe square of speed.</p>\n<h3>§3 · Power: the rate that sizes machines</h3>\n<p>Machines are bought by the rate they can move energy: power, \\( P = W/t \\), in watts —\njoules per second. For a force moving at speed, \\( P = Fv \\); for a hoist lifting steadily,\n\\( P = mgv \\); and the same energy delivered faster demands proportionally more machine.\nThe kilowatt-hour on the invoice is a unit of ENERGY (a kilowatt sustained for an hour,\n3.6 MJ), and keeping power and energy distinct — the rate versus the total — is the\nfirst literacy test of every utilities conversation.</p>\n<h3>§4 · The energy-accounting working method</h3>\n<p>Solve energy problems as an audit, not a story. Choose the system and the interval —\ninitial state, final state. List every force that acts, and classify: does it do positive\nwork, negative work, or none (perpendicular or unmoving)? Write the theorem,\n\\( W_{net} = \\Delta KE \\), with each work term signed, and solve for the unknown. Audit\nby units (joules throughout, watts only when time enters) and by sign sense: a body that\nsped up must have received positive net work; one that slowed must have paid energy out\nsomewhere the ledger can point to. The method's power is its indifference to detail —\nit never asks HOW the velocity varied in between — and its discipline is completeness:\na force forgotten is energy silently created or destroyed, which nature forbids and\nexaminers notice. Run the classification aloud on every new problem — works, opposes,\nignores — until the sorting is reflex; the next lesson adds stored energy to the same\nledger, and the audit habit carries over unchanged.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Dot product</b> (Lesson 1) — work is its flagship application.</li>\n<li><b>Second law</b> (Lesson 4) — the theorem is its integral along the path.</li>\n<li><b>Kinematics</b> (Lesson 2) — states and speeds, before and after.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Work</td><td>\\( W = Fd\\cos\\theta \\)</td><td>Force through distance, along-motion component only; signed.</td></tr>\n<tr><td>Kinetic energy</td><td>\\( KE = \\tfrac12 mv^2 \\)</td><td>The energy of motion; the \\( v^2 \\) drives all impact scaling.</td></tr>\n<tr><td>Work–energy theorem</td><td>\\( W_{net} = \\Delta KE \\)</td><td>State-to-state shortcut past acceleration bookkeeping.</td></tr>\n<tr><td>Zero-work forces</td><td>\\( \\perp \\) to motion, or no motion</td><td>Normal forces, centripetal pulls, static holds — effort without joules.</td></tr>\n<tr><td>Power</td><td>\\( P = W/t = Fv \\)</td><td>The rate that sizes motors, hoists, and drives.</td></tr>\n<tr><td>Hoist power</td><td>\\( P = mgv \\)</td><td>Steady lifting; the crane-sizing one-liner.</td></tr>\n<tr><td>Kilowatt-hour</td><td>\\( 1\\ \\mathrm{kWh} = 3.6\\ \\mathrm{MJ} \\)</td><td>Energy on the invoice; power is the rate, energy is the bill.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Work at an angle</b></p>\n<p><b>Problem.</b> A tow rope pulls a skid 12 m across a floor with 250 N at 30° above horizontal. <b>Find:</b> the work done by the rope.</p>",
+    "solution": "<p><b>Solution.</b> (1) Only the along-floor component works: \\( W = Fd\\cos\\theta = 250 \\times 12 \\times \\cos 30° \\).\n(2) \\( W = 250 \\times 12 \\times 0.866 = 2600\\ \\mathrm{J} \\).</p>\n<p><b>Answer:</b> ≈2.6 kJ.\n<b>Sanity check:</b> the vertical component (125 N) does no work on the horizontal travel — it lightens the skid on the floor instead, quietly reducing friction's negative work: the same decomposition doing two different jobs in one pull.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Energy to speed up a vehicle</b></p>\n<p><b>Problem.</b> A 1500 kg utility vehicle accelerates from 15 m/s to 25 m/s. <b>Find:</b> the net work required, by the work–energy theorem.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( W_{net} = \\Delta KE = \\tfrac12 m(v^2 - v_0^2) \\).\n(2) \\( = 0.5 \\times 1500 \\times (625 - 225) = 750 \\times 400 = 300{,}000\\ \\mathrm{J} = 300\\ \\mathrm{kJ} \\).</p>\n<p><b>Answer:</b> 300 kJ.\n<b>Sanity check:</b> note the asymmetry the square creates — the same vehicle going 0→10 m/s needs only 75 kJ; the higher the speed, the costlier each further m/s. No timeline was needed: the theorem prices the change of state and ignores the journey, which is exactly its advantage over \\( F = ma \\) here.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Sizing the hoist motor</b></p>\n<p><b>Problem.</b> A hoist raises a 400 kg load at a steady 0.8 m/s. <b>Find:</b> the power delivered to the load, and the motor size with an overall efficiency of 75%.</p>",
+    "solution": "<p><b>Solution.</b> (1) Steady lift: \\( P = mgv = 400 \\times 9.81 \\times 0.8 = 3.14\\ \\mathrm{kW} \\).\n(2) Motor input: \\( 3.14/0.75 = 4.2\\ \\mathrm{kW} \\) — a 4-to-5 kW frame.</p>\n<p><b>Answer:</b> ≈3.1 kW to the load; ≈4.2 kW at the motor.\n<b>Sanity check:</b> steady speed means zero net work on the load's kinetic energy — the motor's entire output goes into potential energy at rate \\( mgv \\) plus losses; double the speed and the same load demands double the motor, which is why hoist speed is a purchased quantity.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Friction acting on a sliding crate does:</p>",
+    "choices": [
+     "Negative work — it withdraws kinetic energy",
+     "Positive work",
+     "No work",
+     "Work only if the crate accelerates"
+    ],
+    "answer": 0,
+    "solution": "<p>Friction on a slider points opposite the motion: \\( \\cos 180° = -1 \\), so its work is negative — energy leaves the crate's motion budget (becoming heat, Lesson 7's accounting). The sign is the physics: negative work is how the ledger records energy withdrawn. Only static friction that PREVENTS sliding under a rolling or gripped contact can do zero or even positive work — a subtlety the belt problems of Lesson 5 already met.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Doubling a vehicle's speed multiplies its kinetic energy by:</p>",
+    "choices": [
+     "4",
+     "2",
+     "8",
+     "\\( \\sqrt{2} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( KE \\propto v^2 \\): twice the speed, four times the energy — four times the braking work, the impact severity, the guard absorption. This square is the most consequential exponent in industrial safety, and it is why speed limits on forklifts and cranes are energy statements wearing traffic clothing. Eight belongs to \\( v^3 \\) (a POWER scaling, for fans and pumps — a different law for a different quantity).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>One watt equals:</p>",
+    "choices": [
+     "One joule per second",
+     "One newton per metre",
+     "One joule",
+     "One kilogram-metre"
+    ],
+    "answer": 0,
+    "solution": "<p>Power is the RATE of energy flow: \\( \\mathrm{W = J/s} \\). A joule alone is energy with no rate; N/m is a stiffness. The distinction runs the plant's economics: motors are sized in kW (rate capability), the utility bills kWh (energy delivered) — and conflating the two is the classic first error of every energy meeting this course inoculates against.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A cart rolls at constant speed across a level floor. The work done by the normal force from the floor is:</p>",
+    "choices": [
+     "Zero — it acts perpendicular to the motion",
+     "Positive",
+     "Negative",
+     "Equal to the weight times distance"
+    ],
+    "answer": 0,
+    "solution": "<p>The normal force points vertically while the motion runs horizontally: \\( \\cos 90° = 0 \\), no work — however far the cart travels and however heavy it is. Weight-times-distance would apply to LIFTING through that distance, a different geometry. Perpendicular forces steer and support but never pay into or out of the kinetic-energy account.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The kinetic energy of a 2 kg part moving at 3 m/s is:</p>",
+    "choices": [
+     "9 J",
+     "6 J",
+     "18 J",
+     "3 J"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( KE = \\tfrac12 mv^2 = 0.5 \\times 2 \\times 9 = 9\\ \\mathrm{J} \\). Forgetting the half (18) and forgetting the square (6, from \\( \\tfrac12 \\times 2 \\times 3 \\)) are the two standard slips, and both are unit-invisible — the audit that catches them is recomputing with the formula spoken aloud. Nine joules is also a dropped-from-half-a-metre energy: small numbers, but the same arithmetic prices crane loads.</p>"
+   }
+  ]
+ },
+ "7": {
+  "lecture": "\n<h3>§1 · Stored work: potential energy</h3>\n<p>Some forces give back what work puts in. Lift a mass and gravity stores the effort:\npotential energy \\( PE = mgh \\), recoverable in full on the way down. Compress or stretch\na spring and it banks \\( PE = \\tfrac12 kx^2 \\). Forces with this repayment property —\ngravity, springs — are conservative: the work they do depends only on endpoints, not on the\npath, and that is what makes a stored-energy bookkeeping possible at all. The reference\nheight for \\( mgh \\) is yours to choose; only DIFFERENCES in potential energy ever enter\nthe physics, so the floor, the bench, or sea level serve equally, provided the choice is\nmade once and kept.</p>\n<h3>§2 · Conservation: the ledger balances</h3>\n<p>When only conservative forces do work, mechanical energy is conserved:\n\\( KE_1 + PE_1 = KE_2 + PE_2 \\). Height converts to speed and back without loss — the\nfalling pallet, the swinging hammer, the cam follower riding its profile. The equation\nanswers speed-from-height questions in one line: \\( v = \\sqrt{2gh} \\) for a drop from\nrest, with mass canceling entirely — a heavy tool and a light one arrive at the same speed,\nthough not, as the momentum lesson will insist, with the same consequences.</p>\n<h3>§3 · When friction joins: the ledger still balances</h3>\n<p>Friction does not break energy accounting; it opens a new account. With friction acting,\n\\( KE_1 + PE_1 = KE_2 + PE_2 + E_{lost} \\), where the loss term — friction force times\nsliding distance — leaves the mechanical books and arrives as heat. The equation turns\nobserved shortfalls into measurements: a crate that arrives slower than the frictionless\nprediction has told you exactly how much energy friction collected en route. Nothing\ndisappears; it changes accounts, and the engineer's job is reading which account.</p>\n<h3>§4 · The conservation working method</h3>\n<p>Choose two states — where the question starts and where it asks. Set the height\nreference and declare it. Write the full ledger for each state: kinetic, gravitational,\nspring if present. Ask the gatekeeper question — does anything non-conservative do work\nbetween the states? If no, equate the ledgers; if yes, add the loss term and route it\nhonestly. Solve, then audit: mass should cancel in pure gravity problems (if it doesn't,\na term is misplaced); speeds must come from energy DIFFERENCES, never absolute heights; and\nthe frictionless answer should always bound the frictional one. The method's reach is its\nreward: trajectory shape, path curvature, and time all drop out of the accounting, which is\nwhy energy methods solve in one line what force methods solve in a page — whenever the\nquestion asks about states rather than histories.</p>\n<p>The ledger habit is also a diagnostic instrument in the field: measure the arrival speed\na machine element actually achieves, compare with the frictionless prediction, and the\nshortfall prices the losses without a single coefficient measured. Energy accounting reads\nmachines the way the trend-reading of the mathematics course read signals — by what the\nbooks say is missing.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Work and the theorem</b> (Lesson 6) — potential energy is work pre-paid.</li>\n<li><b>Free fall</b> (Lesson 2) — \\( v = \\sqrt{2gh} \\) should already feel familiar.</li>\n<li><b>Sign discipline</b> — energy gained somewhere is energy paid from somewhere.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Gravitational PE</td><td>\\( PE = mgh \\)</td><td>Stored lift; only differences matter — declare the reference once.</td></tr>\n<tr><td>Spring PE</td><td>\\( PE = \\tfrac12 kx^2 \\)</td><td>Banked compression or stretch; x from the free length.</td></tr>\n<tr><td>Conservative force</td><td>path-independent work</td><td>Gravity and springs repay in full; friction does not qualify.</td></tr>\n<tr><td>Conservation</td><td>\\( KE_1 + PE_1 = KE_2 + PE_2 \\)</td><td>No non-conservative work between states.</td></tr>\n<tr><td>Speed from height</td><td>\\( v = \\sqrt{2gh} \\)</td><td>Drop from rest; mass cancels.</td></tr>\n<tr><td>With losses</td><td>\\( E_1 = E_2 + F_f d \\)</td><td>Friction's collection routed to heat, explicitly.</td></tr>\n<tr><td>Audit rules</td><td>mass cancels (pure gravity); frictionless bounds frictional</td><td>The two checks that catch misplaced terms.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Speed at the bottom of a drop</b></p>\n<p><b>Problem.</b> A pallet slips from a rack and falls 2.5 m. <b>Find:</b> its impact speed, and show the mass does not matter.</p>",
+    "solution": "<p><b>Solution.</b> (1) Conservation, drop from rest: \\( mgh = \\tfrac12 mv^2 \\).\n(2) Mass cancels: \\( v = \\sqrt{2gh} = \\sqrt{2 \\times 9.81 \\times 2.5} = 7.0\\ \\mathrm{m/s} \\).</p>\n<p><b>Answer:</b> ≈7 m/s (25 km/h), any mass.\n<b>Sanity check:</b> mass cancels in the SPEED — but not in the energy: a 50 kg pallet arrives with 1.2 kJ, a 500 kg one with 12 kJ, at the same 7 m/s. Same velocity, tenfold consequence — the distinction the momentum lesson formalizes next.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The drop hammer's exchange</b></p>\n<p><b>Problem.</b> A 5 kg hammer head is raised 1.2 m and released to swing to its lowest point. <b>Find:</b> its speed and kinetic energy at the bottom, ignoring pivot losses.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( v = \\sqrt{2gh} = \\sqrt{2 \\times 9.81 \\times 1.2} = 4.85\\ \\mathrm{m/s} \\).\n(2) \\( KE = \\tfrac12 \\times 5 \\times 4.85^2 = 58.9\\ \\mathrm{J} \\) — exactly the \\( mgh = 5 \\times 9.81 \\times 1.2 \\) invested.</p>\n<p><b>Answer:</b> ≈4.9 m/s carrying ≈59 J.\n<b>Sanity check:</b> the path — arc, ramp, or free drop — never entered the calculation; conservative forces pay by endpoints only. That path-independence is why energy methods dispatch swinging and sliding problems that force methods turn into geometry exercises.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>What friction collected on the ramp</b></p>\n<p><b>Problem.</b> A 20 kg crate leaves the top of a 3.0 m-high ramp from rest and arrives at the bottom at 5.0 m/s. <b>Find:</b> the energy lost to friction and the fraction of the invested energy it represents.</p>",
+    "solution": "<p><b>Solution.</b> (1) Invested: \\( mgh = 20 \\times 9.81 \\times 3.0 = 589\\ \\mathrm{J} \\).\n(2) Delivered: \\( \\tfrac12 mv^2 = 0.5 \\times 20 \\times 25 = 250\\ \\mathrm{J} \\).\n(3) Lost: \\( 589 - 250 = 339\\ \\mathrm{J} \\) — 58% of the investment, now heat in the ramp surface.</p>\n<p><b>Answer:</b> ≈339 J (58%) to friction.\n<b>Sanity check:</b> the frictionless arrival would have been \\( \\sqrt{2 \\times 9.81 \\times 3} = 7.7\\ \\mathrm{m/s} \\); the observed 5.0 m/s < 7.7 respects the bound, and the shortfall MEASURED the friction without a single coefficient — the ledger used as an instrument.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Choosing where \\( h = 0 \\) sits for gravitational potential energy:</p>",
+    "choices": [
+     "Is free — only PE differences enter the physics",
+     "Must be the lowest point in the problem",
+     "Must be sea level",
+     "Changes the final speeds computed"
+    ],
+    "answer": 0,
+    "solution": "<p>PE is defined up to a constant: shift the reference and every state's PE shifts equally, leaving all DIFFERENCES — and therefore all speeds and forces — untouched. Any convenient level works, provided it is declared once and never moved mid-problem; moving it mid-ledger is the bookkeeping error that creates energy from nothing. Convention favors the lowest point purely for tidy positive numbers.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Mechanical energy \\( (KE + PE) \\) is conserved when:</p>",
+    "choices": [
+     "Only conservative forces (gravity, springs) do work",
+     "The object moves slowly",
+     "No forces act at all",
+     "The path is straight"
+    ],
+    "answer": 0,
+    "solution": "<p>Conservation is a property of WHICH forces do work, not of speed or path shape: gravity and springs repay in full; friction and drag divert energy to heat and break the mechanical ledger (though never the universal one). 'No forces' is unnecessarily strong — forces that do zero work, like normals, are harmless. The gatekeeper question of the working method is exactly this classification.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A spring of stiffness \\( k = 800\\ \\mathrm{N/m} \\) is compressed 50 mm. The stored energy is:</p>",
+    "choices": [
+     "1.0 J",
+     "40 J",
+     "20 J",
+     "2.0 J"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( PE = \\tfrac12 kx^2 = 0.5 \\times 800 \\times (0.05)^2 = 1.0\\ \\mathrm{J} \\) — with x in METRES; feeding millimetres unconverted inflates the answer by \\( 10^6 \\). Choosing 40 forgets the square (\\( \\tfrac12 kx \\) is a force-flavored hybrid, 20 N, not an energy); 20 forgets the half. Small spring energies still snap fingers: 1 J released in milliseconds is a hundred-watt event.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A crate slides to rest on a level floor. Its kinetic energy has:</p>",
+    "choices": [
+     "Become heat at the sliding interface",
+     "Been destroyed",
+     "Become potential energy",
+     "Returned to the motor"
+    ],
+    "answer": 0,
+    "solution": "<p>Friction's negative work routes the energy to thermal accounts — the interface warms by exactly the kinetic energy spent. Nothing is destroyed (nature forbids it), no height changed (no PE), and energy does not flow backward up a drivetrain uninvited. The heat is usually too diffuse to notice — but brakes, clutches, and dragging belts make the same accounting vivid and occasionally expensive.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An object dropped from height \\( h \\) passes the half-height point at what fraction of its final speed?</p>",
+    "choices": [
+     "\\( 1/\\sqrt{2} \\approx 71\\% \\)",
+     "50%",
+     "25%",
+     "90%"
+    ],
+    "answer": 0,
+    "solution": "<p>Speed goes as the square root of height fallen: at \\( h/2 \\), \\( v = \\sqrt{2g(h/2)} = \\sqrt{gh} \\), against a final \\( \\sqrt{2gh} \\) — ratio \\( 1/\\sqrt{2} \\). Half the DROP buys 71% of the speed (and half the energy). The intuition that speed accrues linearly with height is the error; the square root front-loads the gain, exactly as the braking-distance square did in reverse.</p>"
+   }
+  ]
+ },
+ "8": {
+  "lecture": "\n<h3>§1 · Momentum: motion's currency</h3>\n<p>Momentum, \\( \\mathbf{p} = m\\mathbf{v} \\), is the quantity of motion — a vector, in\nkilogram-metres per second. Newton's second law in its original and most general form says\nforce is the RATE of change of momentum: \\( \\mathbf{F} = d\\mathbf{p}/dt \\). Integrated\nover a contact, this becomes the impulse–momentum theorem:\n\\( \\mathbf{F}\\Delta t = \\Delta\\mathbf{p} \\) — the product of force and its duration\nequals the momentum change it produces. The product is the point: the same momentum change\ncan be bought with a large force briefly or a small force at leisure, and nearly all impact\nengineering — packaging, bumpers, crash padding, soft-landing programs — is the deliberate\npurchase of more \\( \\Delta t \\) to shrink \\( F \\).</p>\n<h3>§2 · Conservation: the system keeps its total</h3>\n<p>When no net EXTERNAL force acts on a system, its total momentum cannot change — the\ninternal pushes and pulls cancel in third-law pairs. Collisions, couplings, and separations\nall obey it: \\( m_1v_1 + m_2v_2 \\) before equals the same sum after, signs carried by\ndirection. The law holds regardless of how violent, brief, or lossy the interaction is —\nwhich is what makes it the collision analyst's first equation, written before anything is\nknown about the forces themselves.</p>\n<h3>§3 · Collisions: what momentum keeps, energy may lose</h3>\n<p>Momentum is conserved in every collision; kinetic energy is not. A perfectly INELASTIC\ncollision — the bodies couple and move together — conserves momentum while converting the\nmaximum possible kinetic energy to deformation and heat. An ELASTIC collision conserves\nboth, an idealization that hard steel balls and billiards approach. Real impacts live\nbetween the limits. The two conservation questions are therefore always asked separately,\nand the energy shortfall in a sticking collision is not an error — it is the crumple, the\ndent, and the noise, priced exactly.</p>\n<h3>§4 · The impulse–momentum working method</h3>\n<p>Define the system so the interesting forces become internal — both carts, hammer plus\npile — and check that external forces are absent, negligible, or perpendicular during the\nbrief event. Declare the positive direction and carry every velocity's sign. Write momentum\nconservation across the event; solve; then, if energies matter, audit the kinetic-energy\nbooks separately and route any loss honestly to deformation and heat. For contact-force\nquestions, use the theorem in its \\( F = \\Delta p/\\Delta t \\) form and respect its\nsensitivity: halving the stopping time doubles the average force, which is why hard\nsurfaces break what padded ones spare. The method's discipline is the system boundary —\ndrawn well, the messy contact forces never need computing at all; drawn badly, nothing\nconserves and everything confuses.</p>\n<p>Momentum and energy together complete the collision toolkit: momentum answers the\nvelocities, energy names the damage, and the pair of audits — run separately, never\nmerged — resolves every impact question this course will pose. The dynamics course will\nadd rotation to both ledgers; the bookkeeping discipline installed here is the part that\ndoes not change.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Second and third laws</b> (Lesson 4) — conservation is their joint consequence.</li>\n<li><b>Vectors and signs</b> (Lesson 1) — momentum is direction-carrying.</li>\n<li><b>Kinetic energy</b> (Lesson 6) — the second, separate audit in collisions.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Momentum</td><td>\\( \\mathbf{p} = m\\mathbf{v} \\)</td><td>The motion currency; vector, kg·m/s.</td></tr>\n<tr><td>Impulse–momentum theorem</td><td>\\( F\\,\\Delta t = \\Delta p \\)</td><td>Trading force against time at fixed momentum change.</td></tr>\n<tr><td>Conservation</td><td>\\( \\Sigma p \\) constant, no net external force</td><td>Collisions, couplings, separations — the first equation written.</td></tr>\n<tr><td>Perfectly inelastic</td><td>bodies couple; max KE loss</td><td>Coupling wagons, catching parts, sticking impacts.</td></tr>\n<tr><td>Elastic</td><td>momentum AND KE conserved</td><td>The hard-ball idealization; real impacts sit between.</td></tr>\n<tr><td>Impact force estimate</td><td>\\( F = \\Delta p/\\Delta t \\)</td><td>Why stopping time, not speed alone, decides damage.</td></tr>\n<tr><td>System boundary</td><td>choose so contact forces are internal</td><td>The move that makes the messy forces irrelevant.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The price of a hard stop</b></p>\n<p><b>Problem.</b> A 0.5 kg part arrives at 4 m/s and must be stopped. <b>Find:</b> the average force if it stops in 0.02 s (rigid stop) versus 0.2 s (cushioned stop).</p>",
+    "solution": "<p><b>Solution.</b> (1) Momentum to remove: \\( \\Delta p = 0.5 \\times 4 = 2.0\\ \\mathrm{kg\\,m/s} \\).\n(2) Rigid: \\( F = 2.0/0.02 = 100\\ \\mathrm{N} \\).\n(3) Cushioned: \\( F = 2.0/0.2 = 10\\ \\mathrm{N} \\).</p>\n<p><b>Answer:</b> 100 N versus 10 N — tenfold softer for tenfold longer.\n<b>Sanity check:</b> the product \\( F\\Delta t \\) is identical (2.0 N·s) in both cases — the momentum bill must be paid in full; only the installment plan changes. Every bumper, dashpot, and packaging foam is this calculation cast in hardware.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Coupling on the line</b></p>\n<p><b>Problem.</b> A 5 kg carrier moving at 4 m/s couples into an identical stationary carrier. <b>Find:</b> the common speed after coupling, and the kinetic energy lost.</p>",
+    "solution": "<p><b>Solution.</b> (1) Momentum: \\( 5 \\times 4 + 5 \\times 0 = 10\\,v \\Rightarrow v = 2.0\\ \\mathrm{m/s} \\).\n(2) KE before: \\( \\tfrac12 \\times 5 \\times 16 = 40\\ \\mathrm{J} \\); after: \\( \\tfrac12 \\times 10 \\times 4 = 20\\ \\mathrm{J} \\).\n(3) Lost: 20 J — exactly half, to the coupling's clunk, flex, and heat.</p>\n<p><b>Answer:</b> 2 m/s; 50% of the kinetic energy gone.\n<b>Sanity check:</b> equal masses coupling always halve the speed and the kinetic energy — momentum conserved, energy honestly not. The energy did not err; it bought the permanent coupling, and the accounting names its price.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Recoil of the free trolley</b></p>\n<p><b>Problem.</b> A 200 kg unbraked trolley carries a 20 kg component. The component is ejected horizontally at 3 m/s (relative to ground). <b>Find:</b> the trolley's recoil velocity.</p>",
+    "solution": "<p><b>Solution.</b> (1) System momentum before: zero.\n(2) After: \\( 20 \\times 3 + 180 \\times v = 0 \\Rightarrow v = -60/180 = -0.33\\ \\mathrm{m/s} \\).\n(3) The 180 kg remainder recoils at 0.33 m/s opposite the ejection.</p>\n<p><b>Answer:</b> ≈0.33 m/s backward.\n<b>Sanity check:</b> momentum magnitudes match — \\( 20 \\times 3 = 60 = 180 \\times 0.33 \\) — and the mass ratio (9:1) appears inverted in the speed ratio, as conservation demands. Every launcher, ejector, and pusher mechanism on an unsecured base rehearses this arithmetic; brakes exist because of it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Total momentum of a system is conserved when:</p>",
+    "choices": [
+     "No net external force acts on the system",
+     "No friction exists anywhere",
+     "The collision is elastic",
+     "The bodies are rigid"
+    ],
+    "answer": 0,
+    "solution": "<p>Conservation follows from Newton's laws whenever external forces sum to zero — internal forces, however violent, cancel in third-law pairs. Elasticity governs the ENERGY question, not the momentum one; rigidity and friction are red herrings at the system level (friction internal to the system is internal). Drawing the boundary so the big forces are internal is the entire craft.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Impulse equals:</p>",
+    "choices": [
+     "The area under the force–time curve",
+     "Force divided by time",
+     "The slope of the momentum curve",
+     "Mass times acceleration"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( J = \\int F\\,dt \\) — force accumulated over its duration, equal to the momentum change it delivers. Force-over-time is a rate, not an accumulation; slope-of-momentum IS force (the differential form); and \\( ma \\) is instantaneous force, one integral short of impulse. The area reading matters practically: load-cell traces of impacts are integrated to exactly this quantity.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Padded surfaces reduce impact damage because they:</p>",
+    "choices": [
+     "Extend the stopping time, lowering the force for the same momentum change",
+     "Reduce the momentum to be removed",
+     "Absorb momentum permanently",
+     "Make the object lighter"
+    ],
+    "answer": 0,
+    "solution": "<p>The momentum bill \\( \\Delta p \\) is fixed by mass and speed; padding stretches \\( \\Delta t \\), and \\( F = \\Delta p/\\Delta t \\) falls proportionally. Momentum is not absorbed or shrunk — it is transferred at a gentler rate. Crumple zones, dock bumpers, and foam packaging are all \\( \\Delta t \\)-merchants, selling time to buy down force.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a perfectly inelastic collision, which is conserved?</p>",
+    "choices": [
+     "Momentum only — kinetic energy takes its maximum loss",
+     "Both momentum and kinetic energy",
+     "Kinetic energy only",
+     "Neither"
+    ],
+    "answer": 0,
+    "solution": "<p>Sticking together is the maximum-KE-loss outcome compatible with momentum conservation; the missing energy became deformation, heat, and sound. Both-conserved defines the ELASTIC limit — the other end of the spectrum. Momentum survives every collision without exception; energy's fate depends on the hardware, which is why the two audits are always run separately.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A 1000 kg cart at 2 m/s and a 2000 kg cart at 1 m/s have:</p>",
+    "choices": [
+     "Equal momenta but different kinetic energies",
+     "Equal kinetic energies",
+     "Equal momenta and energies",
+     "Nothing comparable"
+    ],
+    "answer": 0,
+    "solution": "<p>Momenta: \\( 1000\\times2 = 2000\\times1 = 2000\\ \\mathrm{kg\\,m/s} \\) — equal. Energies: \\( \\tfrac12\\times1000\\times4 = 2000\\ \\mathrm{J} \\) versus \\( \\tfrac12\\times2000\\times1 = 1000\\ \\mathrm{J} \\) — the faster cart carries double. Momentum scales with v, energy with \\( v^2 \\): two different currencies, and collisions settle accounts in both. The distinction is the entire reason Lessons 6 and 8 are separate lessons.</p>"
+   }
+  ]
  }
 }

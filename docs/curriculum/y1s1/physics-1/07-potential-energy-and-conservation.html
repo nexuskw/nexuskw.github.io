@@ -54,7 +54,7 @@
     <h1>Potential energy and conservation</h1>
     <p class="sub">Conservative forces and potential energy; mechanical energy conservation, and exactly where friction breaks it. Energy accounting as the engineer's first audit tool — losses always go somewhere, and the somewhere is billable.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/7">Mark as complete</button>
@@ -67,23 +67,81 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>From what height must a 2 kg part fall to hit 7 m/s? (≈2.5 m)</li><li>When is mechanical energy not conserved, and where does the difference go?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>PHY 107 · Engineering Physics I — Mechanics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotation, and first oscillations — the physical foundation under statics, dynamics, thermodynamics, and vibrations.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>From what height must a 2 kg part fall to hit 7 m/s? (≈2.5 m)</li><li>When is mechanical energy not conserved, and where does the difference go?</li></ul></div><div class="measure">
+<h3>01 · Stored work: potential energy</h3>
+<p>Some forces give back what work puts in. Lift a mass and gravity stores the effort:
+potential energy \( PE = mgh \), recoverable in full on the way down. Compress or stretch
+a spring and it banks \( PE = \tfrac12 kx^2 \). Forces with this repayment property —
+gravity, springs — are conservative: the work they do depends only on endpoints, not on the
+path, and that is what makes a stored-energy bookkeeping possible at all. The reference
+height for \( mgh \) is yours to choose; only DIFFERENCES in potential energy ever enter
+the physics, so the floor, the bench, or sea level serve equally, provided the choice is
+made once and kept.</p>
+<h3>02 · Conservation: the ledger balances</h3>
+<p>When only conservative forces do work, mechanical energy is conserved:
+\( KE_1 + PE_1 = KE_2 + PE_2 \). Height converts to speed and back without loss — the
+falling pallet, the swinging hammer, the cam follower riding its profile. The equation
+answers speed-from-height questions in one line: \( v = \sqrt{2gh} \) for a drop from
+rest, with mass canceling entirely — a heavy tool and a light one arrive at the same speed,
+though not, as the momentum lesson will insist, with the same consequences.</p>
+<h3>03 · When friction joins: the ledger still balances</h3>
+<p>Friction does not break energy accounting; it opens a new account. With friction acting,
+\( KE_1 + PE_1 = KE_2 + PE_2 + E_{lost} \), where the loss term — friction force times
+sliding distance — leaves the mechanical books and arrives as heat. The equation turns
+observed shortfalls into measurements: a crate that arrives slower than the frictionless
+prediction has told you exactly how much energy friction collected en route. Nothing
+disappears; it changes accounts, and the engineer's job is reading which account.</p>
+<h3>04 · The conservation working method</h3>
+<p>Choose two states — where the question starts and where it asks. Set the height
+reference and declare it. Write the full ledger for each state: kinetic, gravitational,
+spring if present. Ask the gatekeeper question — does anything non-conservative do work
+between the states? If no, equate the ledgers; if yes, add the loss term and route it
+honestly. Solve, then audit: mass should cancel in pure gravity problems (if it doesn't,
+a term is misplaced); speeds must come from energy DIFFERENCES, never absolute heights; and
+the frictionless answer should always bound the frictional one. The method's reach is its
+reward: trajectory shape, path curvature, and time all drop out of the accounting, which is
+why energy methods solve in one line what force methods solve in a page — whenever the
+question asks about states rather than histories.</p>
+<p>The ledger habit is also a diagnostic instrument in the field: measure the arrival speed
+a machine element actually achieves, compare with the frictionless prediction, and the
+shortfall prices the losses without a single coefficient measured. Energy accounting reads
+machines the way the trend-reading of the mathematics course read signals — by what the
+books say is missing.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>From what height must a 2 kg part fall to hit 7 m/s? (≈2.5 m)</li><li>When is mechanical energy not conserved, and where does the difference go?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Work and the theorem</b> (Lesson 6) — potential energy is work pre-paid.</li>
+<li><b>Free fall</b> (Lesson 2) — \( v = \sqrt{2gh} \) should already feel familiar.</li>
+<li><b>Sign discipline</b> — energy gained somewhere is energy paid from somewhere.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Gravitational PE</td><td>\( PE = mgh \)</td><td>Stored lift; only differences matter — declare the reference once.</td></tr>
+<tr><td>Spring PE</td><td>\( PE = \tfrac12 kx^2 \)</td><td>Banked compression or stretch; x from the free length.</td></tr>
+<tr><td>Conservative force</td><td>path-independent work</td><td>Gravity and springs repay in full; friction does not qualify.</td></tr>
+<tr><td>Conservation</td><td>\( KE_1 + PE_1 = KE_2 + PE_2 \)</td><td>No non-conservative work between states.</td></tr>
+<tr><td>Speed from height</td><td>\( v = \sqrt{2gh} \)</td><td>Drop from rest; mass cancels.</td></tr>
+<tr><td>With losses</td><td>\( E_1 = E_2 + F_f d \)</td><td>Friction's collection routed to heat, explicitly.</td></tr>
+<tr><td>Audit rules</td><td>mass cancels (pure gravity); frictionless bounds frictional</td><td>The two checks that catch misplaced terms.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Speed at the bottom of a drop</b></p>
+<p><b>Problem.</b> A pallet slips from a rack and falls 2.5 m. <b>Find:</b> its impact speed, and show the mass does not matter.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Conservation, drop from rest: \( mgh = \tfrac12 mv^2 \).
+(2) Mass cancels: \( v = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 2.5} = 7.0\ \mathrm{m/s} \).</p>
+<p><b>Answer:</b> ≈7 m/s (25 km/h), any mass.
+<b>Sanity check:</b> mass cancels in the SPEED — but not in the energy: a 50 kg pallet arrives with 1.2 kJ, a 500 kg one with 12 kJ, at the same 7 m/s. Same velocity, tenfold consequence — the distinction the momentum lesson formalizes next.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The drop hammer's exchange</b></p>
+<p><b>Problem.</b> A 5 kg hammer head is raised 1.2 m and released to swing to its lowest point. <b>Find:</b> its speed and kinetic energy at the bottom, ignoring pivot losses.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( v = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 1.2} = 4.85\ \mathrm{m/s} \).
+(2) \( KE = \tfrac12 \times 5 \times 4.85^2 = 58.9\ \mathrm{J} \) — exactly the \( mgh = 5 \times 9.81 \times 1.2 \) invested.</p>
+<p><b>Answer:</b> ≈4.9 m/s carrying ≈59 J.
+<b>Sanity check:</b> the path — arc, ramp, or free drop — never entered the calculation; conservative forces pay by endpoints only. That path-independence is why energy methods dispatch swinging and sliding problems that force methods turn into geometry exercises.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>What friction collected on the ramp</b></p>
+<p><b>Problem.</b> A 20 kg crate leaves the top of a 3.0 m-high ramp from rest and arrives at the bottom at 5.0 m/s. <b>Find:</b> the energy lost to friction and the fraction of the invested energy it represents.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Invested: \( mgh = 20 \times 9.81 \times 3.0 = 589\ \mathrm{J} \).
+(2) Delivered: \( \tfrac12 mv^2 = 0.5 \times 20 \times 25 = 250\ \mathrm{J} \).
+(3) Lost: \( 589 - 250 = 339\ \mathrm{J} \) — 58% of the investment, now heat in the ramp surface.</p>
+<p><b>Answer:</b> ≈339 J (58%) to friction.
+<b>Sanity check:</b> the frictionless arrival would have been \( \sqrt{2 \times 9.81 \times 3} = 7.7\ \mathrm{m/s} \); the observed 5.0 m/s < 7.7 respects the bound, and the shortfall MEASURED the friction without a single coefficient — the ledger used as an instrument.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Choosing where \( h = 0 \) sits for gravitational potential energy:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Is free — only PE differences enter the physics</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Must be the lowest point in the problem</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Must be sea level</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Changes the final speeds computed</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>PE is defined up to a constant: shift the reference and every state's PE shifts equally, leaving all DIFFERENCES — and therefore all speeds and forces — untouched. Any convenient level works, provided it is declared once and never moved mid-problem; moving it mid-ledger is the bookkeeping error that creates energy from nothing. Convention favors the lowest point purely for tidy positive numbers.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Mechanical energy \( (KE + PE) \) is conserved when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Only conservative forces (gravity, springs) do work</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The object moves slowly</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>No forces act at all</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The path is straight</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Conservation is a property of WHICH forces do work, not of speed or path shape: gravity and springs repay in full; friction and drag divert energy to heat and break the mechanical ledger (though never the universal one). 'No forces' is unnecessarily strong — forces that do zero work, like normals, are harmless. The gatekeeper question of the working method is exactly this classification.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A spring of stiffness \( k = 800\ \mathrm{N/m} \) is compressed 50 mm. The stored energy is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>1.0 J</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>40 J</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>20 J</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>2.0 J</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( PE = \tfrac12 kx^2 = 0.5 \times 800 \times (0.05)^2 = 1.0\ \mathrm{J} \) — with x in METRES; feeding millimetres unconverted inflates the answer by \( 10^6 \). Choosing 40 forgets the square (\( \tfrac12 kx \) is a force-flavored hybrid, 20 N, not an energy); 20 forgets the half. Small spring energies still snap fingers: 1 J released in milliseconds is a hundred-watt event.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A crate slides to rest on a level floor. Its kinetic energy has:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Become heat at the sliding interface</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Been destroyed</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Become potential energy</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Returned to the motor</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Friction's negative work routes the energy to thermal accounts — the interface warms by exactly the kinetic energy spent. Nothing is destroyed (nature forbids it), no height changed (no PE), and energy does not flow backward up a drivetrain uninvited. The heat is usually too diffuse to notice — but brakes, clutches, and dragging belts make the same accounting vivid and occasionally expensive.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>An object dropped from height \( h \) passes the half-height point at what fraction of its final speed?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 1/\sqrt{2} \approx 71\% \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>50%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>25%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>90%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Speed goes as the square root of height fallen: at \( h/2 \), \( v = \sqrt{2g(h/2)} = \sqrt{gh} \), against a final \( \sqrt{2gh} \) — ratio \( 1/\sqrt{2} \). Half the DROP buys 71% of the speed (and half the energy). The intuition that speed accrues linearly with height is the error; the square root front-loads the gain, exactly as the braking-distance square did in reverse.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>
