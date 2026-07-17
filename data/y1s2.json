@@ -403,172 +403,6 @@
       ]
     },
     {
-      "id": "mfg-processes-2",
-      "code": "MFG 154",
-      "title": "Manufacturing Processes II — Machining & Joining",
-      "summary": "Chips and joints: machining theory and its operations, grinding, and the welding processes — the removal and joining half of the process world, with Kirby's fabrication lines as the standing example.",
-      "taught_from": [
-        "Groover, Fundamentals of Modern Manufacturing (Wiley) — machining & joining chapters",
-        "Kalpakjian & Schmid, Manufacturing Engineering and Technology (Pearson)",
-        "Black & Kohser, DeGarmo's Materials and Processes in Manufacturing (Wiley)"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Theory of metal machining",
-          "tier": 2,
-          "core60": "A9",
-          "scope": "Orthogonal cutting model: shear plane, chip formation, cutting forces, and the Merchant relation. Cutting temperature and where tool wear comes from. Taylor tool-life equation with its exponents read as economics.",
-          "src": "Groover, Ch. 21",
-          "preview": [
-            "Cutting at 200 m/min gives 30 min of tool life; with Taylor exponent n = 0.25, evaluate the constant C = vTⁿ.",
-            "Where does most of the cutting energy end up, and why does that cap cutting speed?",
-            "If tool–chip friction falls, what does the Merchant relation predict for the shear angle and cutting force?"
-          ]
-        },
-        {
-          "n": 2,
-          "t": "Cutting tools and fluids",
-          "tier": 3,
-          "scope": "Tool materials from HSS to coated carbides and ceramics; wear modes — flank, crater, notch. Insert geometry and grades read from a catalog. Cutting fluids and their delivery, with health notes.",
-          "src": "Groover, cutting-tool chapter; Kalpakjian & Schmid",
-          "preview": [
-            "Flank wear versus crater wear: where does each live and what drives it?",
-            "What do coating layers on a carbide insert actually do?"
-          ]
-        },
-        {
-          "n": 3,
-          "t": "Turning, milling, and drilling",
-          "tier": 2,
-          "core60": "A10",
-          "scope": "The core operations with their speeds-and-feeds arithmetic: material removal rate, machining time, and power. Workholding logic. One condensed worked example runs a job from print to cycle estimate.",
-          "src": "Groover, Ch. 22",
-          "preview": [
-            "Compute MRR for turning at v = 150 m/min, f = 0.3 mm/rev, depth 3 mm.",
-            "How long is one 300 mm turning pass at 0.3 mm/rev and 800 rpm?",
-            "Why does chip evacuation dominate deep-hole drilling in a way milling never sees?"
-          ]
-        },
-        {
-          "n": 4,
-          "t": "Machine tools and CNC basics",
-          "tier": 3,
-          "scope": "Lathe and machining-center anatomy; axes and coordinate systems. What G-code programs actually command. Accuracy, repeatability, and backlash as machine-health quantities a maintenance engineer owns.",
-          "src": "Groover, CNC sections; Kalpakjian & Schmid",
-          "preview": [
-            "What do accuracy, repeatability, and backlash each mean for a CNC axis?",
-            "Why does climb versus conventional milling change finish and force?"
-          ]
-        },
-        {
-          "n": 5,
-          "t": "Grinding and abrasive processes",
-          "tier": 2,
-          "core60": "A11",
-          "scope": "Abrasive mechanics: grain depth of cut, specific energy, and why grinding burns parts when abused. Wheel designation decoded. Surface and cylindrical grinding with dressing and balancing practice.",
-          "src": "Groover, Ch. 25",
-          "preview": [
-            "Why can grinding burn or crack a surface that turning would leave unharmed?",
-            "In a wheel marked A60KV, what do the A, the 60, and the K each specify?",
-            "What does dressing restore, and what workpiece symptom says it is overdue?"
-          ]
-        },
-        {
-          "n": 6,
-          "t": "Surface finish and integrity",
-          "tier": 3,
-          "scope": "Ra and Rz defined and measured; finish versus process capability charts. Residual stresses from machining and grinding. Why a ground bearing journal's finish is a reliability parameter.",
-          "src": "Groover, surface chapters; Kalpakjian & Schmid",
-          "preview": [
-            "Ra versus Rz: what does each capture about a surface?",
-            "Why can grinding leave tensile residual stress, and who cares?"
-          ]
-        },
-        {
-          "n": 7,
-          "t": "Nontraditional machining",
-          "tier": 3,
-          "scope": "EDM, wire EDM, ECM, laser and abrasive-waterjet cutting. Where conventional cutting cannot go: hardened dies, delicate profiles. Selection by material, feature, and tolerance.",
-          "src": "Groover, nontraditional processes chapter",
-          "preview": [
-            "Why does EDM ignore hardness, and what does it demand instead?",
-            "Pick a process for a hardened die cavity's sharp internal corner."
-          ]
-        },
-        {
-          "n": 8,
-          "t": "Welding processes I — arc processes",
-          "tier": 2,
-          "core60": "A12",
-          "scope": "SMAW, GMAW, FCAW, GTAW, SAW: how each arc works, its consumables, positions, and typical defects. Heat input defined and computed. The process lineup on Kirby's structural fabrication floor.",
-          "src": "Groover, welding chapters; Kalpakjian & Schmid",
-          "kuwait": "Kirby Building Systems",
-          "preview": [
-            "Compute heat input for 25 V, 200 A at 5 mm/s travel.",
-            "For structural work outdoors in wind, which arc process displaces GMAW and why?",
-            "Why is GTAW the default for open root passes despite its deposition rate?"
-          ]
-        },
-        {
-          "n": 9,
-          "t": "Welding II, thermal cutting, and joint preparation",
-          "tier": 3,
-          "scope": "Resistance spot and seam welding; oxyfuel, friction, and explosion welding in outline; brazing and soldering distinguished properly from welding. Thermal cutting — oxyfuel, plasma, and laser — with kerf and heat-affected edges. Joint types, edge preparation geometry, and fit-up as the quiet variable behind weld quality.",
-          "src": "Groover, welding chapters; Kalpakjian & Schmid; Black & Kohser",
-          "preview": [
-            "Resistance spot welding: what generates the heat, and where?",
-            "What does poor fit-up do to a weld's defect odds?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Mechanical joining",
-          "tier": 3,
-          "scope": "Bolted joints: preload, torque–tension, and why gasketed flanges leak when torqued wrong. Riveting and adhesive bonding in outline. The maintenance view: joints are made to be remade.",
-          "src": "Groover, assembly chapters; Kalpakjian & Schmid",
-          "preview": [
-            "Why does bolt preload, not bolt strength, decide a joint's fatigue life?",
-            "What does a gasket actually seal against, mechanically?"
-          ]
-        },
-        {
-          "n": 11,
-          "t": "Additive manufacturing first contact",
-          "tier": 3,
-          "scope": "The AM process families in one pass: PBF, DED, FDM, binder jetting. Where AM already earns keep: jigs, obsolete spares, prototypes. Honest limits — surface, properties, qualification.",
-          "src": "Groover, additive manufacturing chapter",
-          "preview": [
-            "Where does AM already earn its keep in a maintenance organization?",
-            "Why do printed load-bearing parts face a qualification problem?"
-          ]
-        }
-      ],
-      "videos": [
-        {
-          "title": "SME — machining and joining process videos",
-          "url": "https://www.youtube.com/channel/UCiEiOeFUl4Ytrv63Udugckg",
-          "src": "SME (Society of Manufacturing Engineers)",
-          "tag": "PROFESSIONAL BODY · CLEAR NARRATION · VERIFIED",
-          "note": "Clearly narrated process explainers: machining, grinding, and welding — watch alongside each lesson."
-        },
-        {
-          "title": "Manufacturing Processes II — IIT Kharagpur",
-          "url": "https://nptel.ac.in/courses/112105126",
-          "src": "NPTEL",
-          "tag": "ALTERNATIVE · ENABLE CAPTIONS",
-          "note": "Machining-focused lecture series: cutting mechanics, tools, and grinding."
-        },
-        {
-          "title": "Manufacturing lectures by Eng. Mahmoud Marzouk",
-          "url": "https://www.youtube.com/@Marzouk-Tutorials",
-          "src": "YouTube — independent educator",
-          "tag": "IN ARABIC — ALTERNATIVE · VERIFIED",
-          "note": "Arabic-language manufacturing-processes lectures (casting, forming, sheet metal). English sources above remain the primary path."
-        }
-      ]
-    },
-    {
       "id": "thermo-1",
       "code": "THM 155",
       "title": "Thermodynamics I",
@@ -830,6 +664,198 @@
           "preview": [
             "What makes insulation resistance a trend, not a pass/fail number?",
             "Where does the mechanical scope end at a motor terminal box — and why?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mfg-processes-1",
+      "code": "MFG 105",
+      "title": "Manufacturing Processes I — Casting & Bulk Forming",
+      "summary": "Liquid metal to near-net shape: the plant taxonomy, casting physics taught at full lecture depth, continuous casting, and the bulk deformation family — rolling, forging, extrusion, drawing — with Kuwait Steel and Gulf Cable as the standing examples.",
+      "taught_from": [
+        "Groover, Fundamentals of Modern Manufacturing (Wiley) — casting & forming chapters",
+        "Kalpakjian & Schmid, Manufacturing Engineering and Technology (Pearson)",
+        "Flemings, Solidification Processing (McGraw-Hill, 1974)",
+        "ASM Handbook, Volume 15: Casting"
+      ],
+      "videos": [
+        {
+          "title": "SME — manufacturing process video library",
+          "url": "https://www.youtube.com/channel/UCiEiOeFUl4Ytrv63Udugckg",
+          "src": "SME (Society of Manufacturing Engineers)",
+          "tag": "PROFESSIONAL BODY · CLEAR NARRATION · VERIFIED",
+          "note": "Short, clearly narrated explainers of casting, forming, and joining processes — the fastest visual companion to this course."
+        },
+        {
+          "title": "2.008 Design and Manufacturing II",
+          "url": "https://ocw.mit.edu/courses/2-008-design-and-manufacturing-ii-spring-2025/",
+          "src": "MIT OpenCourseWare",
+          "tag": "COURSE MATERIALS · VERIFIED LIVE",
+          "note": "MIT's manufacturing-processes course: lecture notes, labs, and exams (no lecture videos in this edition)."
+        },
+        {
+          "title": "Fundamentals of Manufacturing Processes — IIT Roorkee",
+          "url": "https://nptel.ac.in/courses/112107219",
+          "src": "NPTEL",
+          "tag": "ALTERNATIVE · ENABLE CAPTIONS",
+          "note": "Complete lecture-video series covering casting, forming, and joining at exactly this course's level."
+        },
+        {
+          "title": "Manufacturing lectures by Eng. Mahmoud Marzouk",
+          "url": "https://www.youtube.com/@Marzouk-Tutorials",
+          "src": "YouTube — independent educator",
+          "tag": "IN ARABIC — ALTERNATIVE · VERIFIED",
+          "note": "Arabic-language manufacturing-processes lectures (casting, forming, sheet metal). English sources above remain the primary path."
+        }
+      ],
+      "lessons": [
+        {
+          "n": 1,
+          "t": "The manufacturing plant: process taxonomy and material flow",
+          "tier": 2,
+          "core60": "A1",
+          "content": "y1s1-mp1-01",
+          "scope": "Every manufacturing operation sorted into a working taxonomy — casting, forming, machining, joining, finishing, assembly — and the material flow of a real plant traced end to end. The map the rest of the curriculum hangs on.",
+          "src": "Groover, Ch. 1; Kalpakjian & Schmid, General Introduction",
+          "preview": [
+            "Which two process families shape most of the world's metal by tonnage — and where does machining actually sit?",
+            "Classify every step of rebar production, scrap to bundled bar, into the six-family taxonomy.",
+            "Primary versus secondary shaping: define both with one example of each from a cable plant."
+          ]
+        },
+        {
+          "n": 2,
+          "t": "Metal casting I — solidification, gating, and riser design",
+          "tier": 1,
+          "core60": "A2",
+          "content": "y1s1-mp1-02",
+          "scope": "The full lecture: pouring energy balance, Bernoulli-derived gating design, Chvorinov's rule derived from mold heat conduction, shrinkage regimes, and riser sizing — with worked examples carried through in units.",
+          "src": "Groover, Ch. 10; Flemings; Çengel & Ghajar, Ch. 4",
+          "kuwait": "Kuwait Steel",
+          "preview": [
+            "A casting has V/A = 2.0 cm and Cₘ = 2.5 min/cm²: how long until it is fully solid?",
+            "The free metal surface sits 250 mm above the sprue base: what is the base velocity by Torricelli?",
+            "Why must a riser out-modulus its casting, and what design margin did our worked example use?"
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Metal casting II — practice, quality, and defects",
+          "tier": 1,
+          "core60": "A3",
+          "content": "y1s1-mp1-03",
+          "scope": "From theory to the foundry floor: patterns and allowances, molding sand behavior, fluidity, and the defect families — gas porosity via Sievert's law, shrinkage porosity, hot tears, sand defects — each tied to its physical cause and its inspection method.",
+          "src": "Groover, Ch. 10–11; Campbell, Complete Casting Handbook; ASM Handbook Vol. 15",
+          "kuwait": "HEISCO",
+          "preview": [
+            "Halving the hydrogen partial pressure over a melt cuts dissolved hydrogen by what factor — and why not one-half?",
+            "Smooth spherical pores near the surface versus a jagged void in a thick boss: name each family and its matching fix.",
+            "A 9,000 cm³ steel casting shrinks 3% on solidification; the riser feeds 14% of its own volume. Minimum riser volume?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "Continuous casting of steel",
+          "tier": 2,
+          "core60": "A4",
+          "content": "y1s1-mp1-04",
+          "scope": "The billet caster as a permanent-mold casting process running at steady state: shell growth, metallurgical length, breakout risk, and quality issues from rhomboidity to pinholes. Kuwait Steel's core process.",
+          "src": "The Making, Shaping and Treating of Steel (AISE); Groover, Ch. 11",
+          "kuwait": "Kuwait Steel",
+          "preview": [
+            "A 140 mm square billet cast with K = 26 mm/min^½: minutes until the core is solid?",
+            "At 2.4 m/min casting speed, roughly how far below the mold must the torch cut — and why no closer?",
+            "Why is casting speed not a free productivity knob? Name both penalties."
+          ]
+        },
+        {
+          "n": 5,
+          "t": "Casting processes survey: sand to die casting",
+          "tier": 3,
+          "scope": "Shell, investment, permanent mold, and die casting compared on tolerance, finish, section thickness, and economics. Expendable versus permanent molds as the organizing split. Choosing a casting route for a given part and volume.",
+          "src": "Groover, Ch. 11; Kalpakjian & Schmid, casting chapters",
+          "preview": [
+            "Rank sand, investment, and die casting by tolerance and by tooling cost — what pattern emerges?",
+            "Why does volume decide between expendable and permanent molds?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Fundamentals of metal forming and workability",
+          "tier": 3,
+          "scope": "Flow stress and the flow curve; hot, warm, and cold working defined by homologous temperature. Strain-rate sensitivity in hot work, and friction and lubrication at the die interface — the tax every forming process pays. Workability limits and the defect families they guard — edge cracking, center bursts (chevrons), laps, and surface defects — read as process diagnostics, not random events.",
+          "src": "Groover, Ch. 18–19; Kalpakjian & Schmid, forming fundamentals",
+          "preview": [
+            "Define hot working by homologous temperature, and name its two big gifts.",
+            "Chevron cracks in a drawn bar: what process condition produces them?"
+          ]
+        },
+        {
+          "n": 7,
+          "t": "Rolling of metals",
+          "tier": 2,
+          "core60": "A5",
+          "content": "y1s1-mp1-07",
+          "scope": "Flat and shape rolling from draft and bite condition through roll force and torque estimates. Hot rolling of billets into rebar as run at Kuwait Steel's mill. Rolled-product defects and their upstream causes.",
+          "src": "Groover, Ch. 19; The Making, Shaping and Treating of Steel (AISE)",
+          "kuwait": "Kuwait Steel",
+          "preview": [
+            "With μ = 0.25 and 350 mm radius rolls, what is the maximum draft in a single pass?",
+            "Compute the contact length for Δh = 6 mm on 300 mm radius rolls.",
+            "Rolling needs the friction that other forming processes fight — why?"
+          ]
+        },
+        {
+          "n": 8,
+          "t": "Forging",
+          "tier": 2,
+          "core60": "A6",
+          "content": "y1s1-mp1-08",
+          "scope": "Open-die and impression-die forging; upsetting analysis with friction; flash, draft, and forging loads. Grain flow as forging's signature advantage. What a forged flange or valve body buys over a casting.",
+          "src": "Groover, Ch. 19; Kalpakjian & Schmid, forging chapter",
+          "kuwait": "HEISCO",
+          "preview": [
+            "What true strain does upsetting from 80 mm to 50 mm impose?",
+            "For K = 600 MPa and n = 0.2 at ε = 0.47, what flow stress must the press overcome before friction?",
+            "What does grain flow buy in a forged crane hook — and in which loading direction?"
+          ]
+        },
+        {
+          "n": 9,
+          "t": "Extrusion and wire drawing",
+          "tier": 2,
+          "core60": "A7",
+          "content": "y1s1-mp1-09",
+          "scope": "Direct and indirect extrusion; extrusion ratio and pressure estimates. Wire drawing through dies in tandem — reduction per pass, drawing stress, and why the wire must not yield in the drawn section. Gulf Cable's conductor line as the standing example.",
+          "src": "Groover, Ch. 19; Kalpakjian & Schmid, extrusion & drawing chapters",
+          "kuwait": "Gulf Cable",
+          "preview": [
+            "What is the extrusion ratio when a 100 mm billet becomes a 25 mm rod?",
+            "Why is a 60% area reduction impossible in one wire-drawing pass even with a perfect, frictionless die?",
+            "A pass gives draw stress 60 MPa on wire whose exit flow stress is 160 MPa: safe or failing, and by what criterion?"
+          ]
+        },
+        {
+          "n": 10,
+          "t": "Powder metallurgy",
+          "tier": 3,
+          "scope": "Powder production, compaction, and sintering. Density as the controlling quality variable. Where PM wins: small complex parts at volume, porous bearings, and hard-to-melt materials.",
+          "src": "Groover, powder metallurgy chapter; Kalpakjian & Schmid",
+          "preview": [
+            "Why is density the master quality variable of powder metallurgy?",
+            "Where does PM beat machining economically, and why?"
+          ]
+        },
+        {
+          "n": 11,
+          "t": "Process selection and cost fundamentals",
+          "tier": 3,
+          "scope": "Choosing among casting, forming, and machining for a given geometry, alloy, tolerance, and volume. Fixed versus variable cost and the break-even volume between processes. Near-net-shape thinking as an economic argument.",
+          "src": "Groover, process selection discussions; Kalpakjian & Schmid",
+          "preview": [
+            "Set up the break-even volume between a die-cast and a machined part.",
+            "What does near-net-shape actually save — material, energy, or machining time?"
           ]
         }
       ]

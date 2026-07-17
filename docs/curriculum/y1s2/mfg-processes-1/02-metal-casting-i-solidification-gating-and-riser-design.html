@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0E1626">
+<title>Metal casting I — solidification, gating, and riser design — Manufacturing Processes I — Casting &amp; Bulk Forming — Nexus Institute of Technology</title>
+<meta name="description" content="The full lecture: pouring energy balance, Bernoulli-derived gating design, Chvorinov's rule derived from mold heat conduction, shrinkage regimes, and ">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s2/mfg-processes-1/2">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
+      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
+      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MFG 105 · Manufacturing Processes I — Casting &amp; Bulk Forming</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-the-manufacturing-plant-process-taxonomy-and-material-flow.html" class="ol" data-key="y1s2/mfg-processes-1/1"><span class="tick"></span><span>01 · The manufacturing plant: process taxonomy and material flow</span></a><a href="02-metal-casting-i-solidification-gating-and-riser-design.html" class="ol cur" data-key="y1s2/mfg-processes-1/2"><span class="tick"></span><span>02 · Metal casting I — solidification, gating, and riser design</span></a><a href="03-metal-casting-ii-practice-quality-and-defects.html" class="ol" data-key="y1s2/mfg-processes-1/3"><span class="tick"></span><span>03 · Metal casting II — practice, quality, and defects</span></a><a href="04-continuous-casting-of-steel.html" class="ol" data-key="y1s2/mfg-processes-1/4"><span class="tick"></span><span>04 · Continuous casting of steel</span></a><a href="05-casting-processes-survey-sand-to-die-casting.html" class="ol" data-key="y1s2/mfg-processes-1/5"><span class="tick"></span><span>05 · Casting processes survey: sand to die casting</span></a><a href="06-fundamentals-of-metal-forming-and-workability.html" class="ol" data-key="y1s2/mfg-processes-1/6"><span class="tick"></span><span>06 · Fundamentals of metal forming and workability</span></a><a href="07-rolling-of-metals.html" class="ol" data-key="y1s2/mfg-processes-1/7"><span class="tick"></span><span>07 · Rolling of metals</span></a><a href="08-forging.html" class="ol" data-key="y1s2/mfg-processes-1/8"><span class="tick"></span><span>08 · Forging</span></a><a href="09-extrusion-and-wire-drawing.html" class="ol" data-key="y1s2/mfg-processes-1/9"><span class="tick"></span><span>09 · Extrusion and wire drawing</span></a><a href="10-powder-metallurgy.html" class="ol" data-key="y1s2/mfg-processes-1/10"><span class="tick"></span><span>10 · Powder metallurgy</span></a><a href="11-process-selection-and-cost-fundamentals.html" class="ol" data-key="y1s2/mfg-processes-1/11"><span class="tick"></span><span>11 · Process selection and cost fundamentals</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
+<a href="index.html">MFG 105</a> /
+<span>Lesson 02 of 11</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M30 26 L54 26 L50 54 L34 54 Z"/><line x1="54" y1="30" x2="66" y2="30"/><path d="M42 54 L42 66" class="amb" stroke="none" fill="none"/><line x1="42" y1="58" x2="42" y2="72"/><rect x="26" y="76" width="34" height="24" rx="3"/><line x1="70" y1="88" x2="98" y2="88"/><line x1="78" y1="76" x2="98" y2="76"/><circle cx="88" cy="100" r="5" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">MFG 105 · LESSON 02 OF 11 · YEAR 1 · SEMESTER 2</p>
+    <h1>Metal casting I — solidification, gating, and riser design</h1>
+    <p class="sub">The full lecture: pouring energy balance, Bernoulli-derived gating design, Chvorinov's rule derived from mold heat conduction, shrinkage regimes, and riser sizing — with worked examples carried through in units.</p>
+  </div>
+  <div class="meta"><div>Format<b>Full lecture · ~90 min</b></div><div>Primary text<b>Groover, Fundamentals of Modern Manufacturin</b></div><div>Assessment<b>2 worked boards + hidden-answer check</b></div></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s2/mfg-processes-1/2">Mark as complete</button>
+  <span class="badge amber">CORE 60 · A2</span>
+</div>
+<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
+  <button data-tab="t-library" data-ar="المكتبة">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A casting has V/A = 2.0 cm and Cₘ = 2.5 min/cm²: how long until it is fully solid?</li><li>The free metal surface sits 250 mm above the sprue base: what is the base velocity by Torricelli?</li><li>Why must a riser out-modulus its casting, and what design margin did our worked example use?</li></ul></div>
+
+
+<!-- ======================= ORIENTATION ======================= -->
+<section class="part" id="lecture">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">00</span>Before we start</p>
+    <h2>What this lecture is, and how to work through it</h2>
+    <p class="lead">This is the class as I teach it, not a summary of it. Read with a pencil. Every equation on this page is either derived in front of you or explicitly sourced to the textbook it comes from — if you hit a step you cannot reproduce, stop and reproduce it before moving on.</p>
+    <p>The page runs in one direction: first the fundamentals you already own (01), then the theory built on them (02–05), then two problems worked at full length exactly as they would appear on the board (06), then the errors that cost students marks every semester (07), a problem for you (08), and finally where this physics lives on a Kuwaiti factory floor (09).</p>
+    <h3>What you will be able to do after this lecture</h3>
+    <ol class="objectives">
+      <li>Compute the total heat that must be removed from a melt — superheat plus latent heat — and state the assumptions behind the calculation.</li>
+      <li>Derive the base-of-sprue velocity from Bernoulli's equation and size a tapered sprue so it does not aspirate air.</li>
+      <li>Derive Chvorinov's rule from one-dimensional conduction into a sand mold, and state precisely when its exponent n = 2 fails.</li>
+      <li>Distinguish the three shrinkage regimes and identify which one risers compensate and which one the patternmaker compensates.</li>
+      <li>Design a cylindrical riser that solidifies after the casting it feeds, and evaluate the yield penalty it imposes.</li>
+      <li>Apply the same solidification law to a continuous billet caster: shell thickness at mold exit and metallurgical length.</li>
+    </ol>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ======================= FOUNDATIONS ======================= -->
+<section class="part" id="foundations">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">01</span>Foundations layer</p>
+    <h2>What this course stands on</h2>
+    <p class="lead">Casting is not a new subject. It is three subjects you have already passed, pointed at liquid metal. Before any specialized content, be honest with yourself about the four dependencies below — the refreshers that follow exist for the two that most commonly go soft over the summer.</p>
+  </div>
+  <div class="wide rv">
+    <div class="dep-grid">
+      <div class="dep">
+        <h4>Thermodynamics</h4>
+        <p>Energy balances on a closed system; sensible heat versus latent heat; specific heat of solid and liquid phases.</p>
+        <span class="use">Used in 02 — pouring energy</span>
+      </div>
+      <div class="dep">
+        <h4>Fluid Mechanics</h4>
+        <p>Bernoulli's equation along a streamline; continuity; Reynolds number and the laminar–turbulent transition.</p>
+        <span class="use">Used in 03 — gating design</span>
+      </div>
+      <div class="dep">
+        <h4>Heat Transfer</h4>
+        <p>Fourier's law; transient conduction; the semi-infinite solid solution.</p>
+        <span class="use">Used in 04 — Chvorinov's rule</span>
+      </div>
+      <div class="dep">
+        <h4>Materials Science</h4>
+        <p>Phase diagrams; liquidus and solidus; nucleation and growth; dendritic structure.</p>
+        <span class="use">Used in 04 — freezing morphology</span>
+      </div>
+    </div>
+    <p class="small" style="margin-top:18px">Statics, strength of materials, and machine design are <em>not</em> load-bearing in this lecture — they return in Lecture 4 (mold and core loading) and in Casting Defects (Lecture 2).</p>
+  </div>
+
+  <div class="measure">
+    <div class="refresher rv">
+      <span class="tag">Refresher — not new material</span>
+      <h4>R1 · Sensible heat and latent heat (Thermodynamics I)</h4>
+      <p>Raising the temperature of a phase costs <em>sensible</em> heat, proportional to the temperature change: <span class="eq" style="font-size:16px">Q = m·C·ΔT</span>, where C is the specific heat of that phase. Changing phase at constant temperature costs <em>latent</em> heat: <span class="eq" style="font-size:16px">Q = m·H<sub>f</sub></span>, where H<sub>f</sub> is the heat of fusion. The two are separate line items in any energy balance, and C is different for the solid and the liquid — C<sub>s</sub> and C<sub>l</sub> are not interchangeable. That is the entire refresher; if the distinction feels vague, reread Çengel &amp; Boles before continuing.</p>
+    </div>
+    <div class="refresher rv">
+      <span class="tag">Refresher — not new material</span>
+      <h4>R2 · Bernoulli and continuity (Fluid Mechanics I)</h4>
+      <p>For steady, incompressible, frictionless flow along a streamline, mechanical energy per unit weight is conserved:</p>
+      <div class="eqrow"><span class="eq"><span class="fr"><span class="nu">p<sub>1</sub></span><span class="de">ρg</span></span> + <span class="fr"><span class="nu">v<sub>1</sub><sup>2</sup></span><span class="de">2g</span></span> + z<sub>1</sub> <b>=</b> <span class="fr"><span class="nu">p<sub>2</sub></span><span class="de">ρg</span></span> + <span class="fr"><span class="nu">v<sub>2</sub><sup>2</sup></span><span class="de">2g</span></span> + z<sub>2</sub></span><span class="eqnum">(R2.1)</span></div>
+      <p>and mass conservation in a duct of varying section is <span class="eq" style="font-size:16px">Q = A<sub>1</sub>v<sub>1</sub> = A<sub>2</sub>v<sub>2</sub></span>. Every gating equation in 03 is these two lines and nothing else.</p>
+    </div>
+    <div class="refresher rv">
+      <span class="tag">Refresher — not new material</span>
+      <h4>R3 · Transient conduction into a semi-infinite solid (Heat Transfer I)</h4>
+      <p>When the surface of a thick body initially at T<sub>0</sub> is suddenly held at T<sub>s</sub>, heat soaks inward and the surface heat flux decays with time as</p>
+      <div class="eqrow"><span class="eq">q(t) <b>=</b> <span class="fr"><span class="nu">k (T<sub>s</sub> − T<sub>0</sub>)</span><span class="de"><span class="rt">√<span class="rd">π α t</span></span></span></span></span><span class="eqnum">(R3.1)</span></div>
+      <p>where k is the body's conductivity and α = k/ρc its diffusivity. The full error-function derivation of (R3.1) belongs to Heat Transfer — see Çengel &amp; Ghajar, Ch. 4, "Transient Heat Conduction in Semi-Infinite Solids." We take the result as sourced and will <em>use</em> it, honestly, in 04. Note the physics it encodes: the flux falls as 1/√t because the already-heated layer of mold acts as a growing thermal resistance.</p>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ======================= PART 1 ======================= -->
+<section class="part">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">02</span>The process, and the price of admission</p>
+    <h2>Casting is a controlled thermal collapse</h2>
+    <p class="lead">A casting process is any process in which metal is melted, poured into a cavity shaped like the part, and allowed to solidify. It is the oldest manufacturing process we still run at industrial scale, and it survives because nothing else produces complex internal geometry in one operation at that cost.</p>
+    <p>Classify every casting process by what happens to the mold. <em>Expendable-mold</em> processes — green-sand casting, shell molding, investment casting — destroy the mold to retrieve the part; the mold is cheap, the geometry freedom is high, the surface finish is moderate. <em>Permanent-mold</em> processes — die casting, gravity permanent mold, and, at the scale of a steel plant, continuous casting — reuse a metal mold; tooling is expensive, so the economics demand volume. Groover's Ch. 10–11 carry the full taxonomy; this lecture develops the physics common to all of them, using sand casting as the vehicle because its assumptions are cleanest.</p>
+    <p>The thermal arc of the process is the syllabus of this lecture in one sentence: we pay energy to superheat a melt (02), spend that superheat transporting metal through a gating system before it freezes in the channels (03), then extract all of it back out through the mold wall, latent heat included, at a rate the mold controls (04) — and the volume deficit left behind by that extraction is the riser's problem (05).</p>
+
+    <h3>The pouring energy balance</h3>
+    <p>Start from refresher R1 and simply walk the metal up the temperature axis. To take a mass m = ρV of metal from room temperature T<sub>0</sub> to a pouring temperature T<sub>p</sub> above its freezing point T<sub>m</sub>, you pay three line items in sequence: sensible heat in the solid from T<sub>0</sub> to T<sub>m</sub>, latent heat of fusion at T<sub>m</sub>, and sensible heat in the liquid from T<sub>m</sub> to T<sub>p</sub>. Summing them is the derivation:</p>
+    <div class="keybox">
+      <span class="cap">Total heat to reach pouring temperature</span>
+      <div class="eqrow"><span class="eq">H <b>=</b> ρ V <b>[</b> C<sub>s</sub>(T<sub>m</sub> − T<sub>0</sub>) + H<sub>f</sub> + C<sub>l</sub>(T<sub>p</sub> − T<sub>m</sub>) <b>]</b></span><span class="eqnum">(1)</span></div>
+    </div>
+    <div class="assume">
+      <div><span>Assumption</span><span>C<sub>s</sub> and C<sub>l</sub> are treated as constants over their temperature ranges. Real specific heats drift with temperature; for wide ranges (steel: ~25 °C to ~1600 °C) use mean values or enthalpy tables.</span></div>
+      <div><span>Assumption</span><span>A single melting point T<sub>m</sub>. True for pure metals and eutectics only — an alloy melts across a liquidus–solidus range, and (1) becomes an approximation with T<sub>m</sub> taken mid-range.</span></div>
+      <div><span>Limit</span><span>(1) is the heat into the <em>metal</em>. Furnace energy consumption is far higher: refractory losses, slag, radiation. (1) sets the floor, not the bill.</span></div>
+    </div>
+    <p>The difference T<sub>p</sub> − T<sub>m</sub> is the <em>superheat</em> — the only thermal budget the metal has for its journey through ladle, sprue, and runner. Every degree lost in transit is a degree closer to freezing in the wrong place, which is the defect called a <em>cold shut</em> or <em>misrun</em>. This equation and its use here follow Groover, <em>Fundamentals of Modern Manufacturing</em>, Ch. 10.</p>
+  </div>
+
+  <div class="fieldnote"><b>Field note</b> — — how close the ladle lip sits to the pouring basin. Free-fall height feeds directly into stream velocity, and velocity is the enemy: it entrains air and erodes the mold. The pourer is managing Bernoulli's equation by hand.</div>
+</section>
+<hr class="rule">
+
+<!-- ======================= PART 3 GATING ======================= -->
+<section class="part">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">03</span>Getting metal into the cavity</p>
+    <h2>Gating: Bernoulli with consequences</h2>
+    <p class="lead">The gating system — pouring basin, sprue, runner, gates — has one job: deliver the melt to the cavity before superheat runs out, without turbulence tearing air and oxide into the stream. Both requirements are set by two equations you already own.</p>
+
+    <h3>Velocity at the sprue base — derived</h3>
+    <p>Apply Bernoulli (R2.1) along a streamline from the free surface of metal in the pouring basin (station 1) to the base of the sprue (station 2). Three honest observations kill six terms: both stations are essentially at atmospheric pressure (the mold cavity vents through the sand), so p<sub>1</sub> = p<sub>2</sub>; the basin is kept topped up, so the free surface barely moves and v<sub>1</sub> ≈ 0; and we measure elevation downward from the free surface, so z<sub>1</sub> − z<sub>2</sub> = h. What survives is</p>
+    <div class="eqrow"><span class="eq"><span class="fr"><span class="nu">v<sub>2</sub><sup>2</sup></span><span class="de">2g</span></span> <b>=</b> h&nbsp;&nbsp;&nbsp;<b>⟹</b>&nbsp;&nbsp;&nbsp;v <b>=</b> <span class="rt">√<span class="rd">2 g h</span></span></span><span class="eqnum">(2)</span></div>
+    <p>— Torricelli's theorem, with h the vertical head from the <em>free metal surface</em> to the point in question, not the length of the sprue. Volumetric flow follows from continuity, and fill time from the cavity volume:</p>
+    <div class="eqrow"><span class="eq">Q <b>=</b> A·v ,&nbsp;&nbsp;&nbsp;&nbsp;t<sub>fill</sub> <b>=</b> <span class="fr"><span class="nu">V<sub>cavity</sub></span><span class="de">Q</span></span></span><span class="eqnum">(3)</span></div>
+
+    <h3>Why sprues are tapered — derived</h3>
+    <p>Here is the trap in (2): velocity <em>increases</em> with depth. A falling stream obeys continuity, so as v grows, the stream's own cross-section must shrink — the jet necks down. If the sprue walls are parallel, the metal pulls away from them partway down and the gap aspirates air and mold gas straight into the melt. The fix is to shape the sprue like the jet. Continuity between the sprue top (head h<sub>t</sub>) and base (head h<sub>b</sub>), with (2) substituted for each velocity:</p>
+    <div class="eqrow"><span class="eq">A<sub>t</sub><span class="rt">√<span class="rd">2 g h<sub>t</sub></span></span> <b>=</b> A<sub>b</sub><span class="rt">√<span class="rd">2 g h<sub>b</sub></span></span>&nbsp;&nbsp;&nbsp;<b>⟹</b>&nbsp;&nbsp;&nbsp;<span class="fr"><span class="nu">A<sub>t</sub></span><span class="de">A<sub>b</sub></span></span> <b>=</b> <span class="rt">√<span class="rd">h<sub>b</sub> / h<sub>t</sub></span></span></span><span class="eqnum">(4)</span></div>
+    <p>The area ratio is fixed by the head ratio alone. That is the entire theory of the tapered sprue — one line of algebra that removes a whole defect family.</p>
+
+    <div class="diagram rv">
+      <svg viewBox="0 0 760 400" role="img" aria-label="Cross-section of a sand mold gating system showing pouring basin, tapered sprue, runner, gate, cavity and riser, with head heights labeled">
+        <rect x="40" y="60" width="680" height="310" fill="#ece7db"/>
+        <rect x="40" y="60" width="680" height="310" fill="none" stroke="#c8c2b4" stroke-width="1.5"/>
+        <!-- basin -->
+        <path d="M80,60 L80,105 L185,105 L185,60" fill="#fff" stroke="#41464c" stroke-width="1.5"/>
+        <rect x="80" y="78" width="105" height="27" fill="#c2571f" opacity=".9"/>
+        <!-- tapered sprue -->
+        <path d="M120,105 L131,255 L149,255 L160,105 Z" fill="#c2571f" stroke="#41464c" stroke-width="1.5"/>
+        <!-- runner -->
+        <rect x="131" y="255" width="330" height="34" fill="#c2571f" stroke="#41464c" stroke-width="1.5"/>
+        <!-- gate up -->
+        <rect x="405" y="222" width="34" height="36" fill="#c2571f" stroke="#41464c" stroke-width="1.5"/>
+        <!-- cavity (joined to riser) -->
+        <rect x="370" y="150" width="242" height="74" fill="#c2571f" stroke="#41464c" stroke-width="1.5"/>
+        <!-- riser -->
+        <rect x="610" y="88" width="52" height="136" fill="#c2571f" stroke="#41464c" stroke-width="1.5"/>
+        <rect x="611" y="151" width="50" height="72" fill="#c2571f" stroke="none"/>
+        <path d="M610,88 L610,60 M662,88 L662,60" stroke="#41464c" stroke-width="1.5" fill="none"/>
+        <!-- head dimensions -->
+        <line x1="240" y1="78" x2="240" y2="105" stroke="#181a1d" stroke-width="1"/>
+        <line x1="234" y1="78" x2="246" y2="78" stroke="#181a1d" stroke-width="1"/>
+        <line x1="234" y1="105" x2="246" y2="105" stroke="#181a1d" stroke-width="1"/>
+        <text x="252" y="97" class="dmath">h<tspan baseline-shift="sub" font-size="10">t</tspan></text>
+        <line x1="300" y1="78" x2="300" y2="272" stroke="#181a1d" stroke-width="1"/>
+        <line x1="294" y1="78" x2="306" y2="78" stroke="#181a1d" stroke-width="1"/>
+        <line x1="294" y1="272" x2="306" y2="272" stroke="#181a1d" stroke-width="1"/>
+        <text x="308" y="185" class="dmath">h<tspan baseline-shift="sub" font-size="10">b</tspan></text>
+        <!-- labels -->
+        <text x="84" y="52" class="dlabel">Pouring basin (kept full: v₁ ≈ 0)</text>
+        <text x="60" y="200" class="dlabel">Tapered</text>
+        <text x="60" y="216" class="dlabel">sprue</text>
+        <text x="230" y="310" class="dlabel">Runner</text>
+        <text x="452" y="248" class="dlabel">Gate</text>
+        <text x="430" y="192" class="dlabel" fill="#fff" style="fill:#fff">Mold cavity</text>
+        <text x="600" y="52" class="dlabel">Open riser</text>
+        <text x="52" y="352" class="dlabel-s">Green-sand mold (drag + cope, parting line omitted for clarity)</text>
+        <text x="586" y="248" class="dlabel-s">feeds shrinkage (05)</text>
+      </svg>
+      <figcaption><span class="what">Diagram 1 — The gating system in cross-section.</span> Heads h<sub>t</sub> and h<sub>b</sub> are measured from the free metal surface in the basin, never from the sprue top. The sprue taper follows equation (4); the riser is 05's subject.</figcaption>
+    </div>
+
+    <h3>The honesty clause: friction and turbulence</h3>
+    <p>Equation (2) is frictionless. Real gating systems lose head to wall friction and direction changes, so practice multiplies Q by an efficiency factor (0.85–0.90 for simple systems, lower for complex ones — Groover, Ch. 10). More important is <em>which regime</em> the flow is in. Check the Reynolds number, ρvD/μ, at the sprue base: for liquid metals it lands in the tens of thousands — fully turbulent. You cannot laminarize a foundry pour; you can only manage it: streamlined transitions, no sharp corners, gates sized to slow the stream before it enters the cavity, and ceramic foam filters that both screen dross and straighten the flow. Liquid aluminum oxidizes on contact with air in milliseconds, and every fold of that oxide skin swallowed by a turbulent stream becomes a crack-initiating <em>bifilm</em> inside the finished part.</p>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ======================= PART 4 SOLIDIFICATION ======================= -->
+<section class="part">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">04</span>Freezing</p>
+    <h2>Solidification, and the one equation that runs the foundry</h2>
+    <p class="lead">Once the cavity is full, the problem changes character completely: from momentum transport to heat extraction. The rate at which the mold can pull heat out of the metal decides the microstructure, the defect population, and — through Chvorinov's rule — the entire geometry of risering.</p>
+
+    <h3>How metals actually freeze</h3>
+    <p>A pure metal freezes at a single temperature T<sub>m</sub>. On a cooling curve the melt first sheds superheat, then <em>undercools</em> slightly below T<sub>m</sub> — solid cannot form without nuclei, and nucleation needs a thermodynamic push — then snaps back to T<sub>m</sub> as latent heat release balances extraction, and holds a plateau until the last liquid is gone. An alloy has no plateau: freezing begins at the liquidus T<sub>L</sub> and ends at the solidus T<sub>S</sub>, and between them solid and liquid coexist in a slushy region called the <em>mushy zone</em>. Growth in that zone is dendritic — solid advances as branched trees, and the last liquid to freeze is trapped between dendrite arms, enriched in solute (this is microsegregation, and it is why cast structures are chemically inhomogeneous at the scale of micrometres). The framework is Callister's Ch. 9–10 phase-diagram material put in motion; the authoritative treatment is Flemings, <em>Solidification Processing</em>.</p>
+
+    <div class="diagram rv">
+      <svg viewBox="0 0 760 330" role="img" aria-label="Two cooling curves: pure metal with a freezing plateau and undercooling dip, and an alloy freezing across a liquidus to solidus range">
+        <!-- left panel: pure metal -->
+        <line x1="60" y1="30" x2="60" y2="270" stroke="#41464c" stroke-width="1.2"/>
+        <line x1="60" y1="270" x2="350" y2="270" stroke="#41464c" stroke-width="1.2"/>
+        <text x="42" y="26" class="dlabel">T</text>
+        <text x="340" y="288" class="dlabel">t</text>
+        <path d="M62,52 C110,120 120,138 138,146 L146,158 C150,148 152,146 158,146 L262,146 C300,190 320,228 344,252" fill="none" stroke="#b0521c" stroke-width="2.2"/>
+        <line x1="60" y1="146" x2="350" y2="146" stroke="#9aa0a7" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="66" y="140" class="dlabel-s">T<tspan dy="3" font-size="8">m</tspan></text>
+        <text x="150" y="176" class="dlabel-s">undercooling → nucleation</text>
+        <text x="178" y="136" class="dlabel-s">plateau: latent heat release</text>
+        <text x="86" y="66" class="dlabel-s">superheat</text>
+        <text x="110" y="308" class="dlabel">Pure metal</text>
+        <!-- right panel: alloy -->
+        <line x1="440" y1="30" x2="440" y2="270" stroke="#41464c" stroke-width="1.2"/>
+        <line x1="440" y1="270" x2="730" y2="270" stroke="#41464c" stroke-width="1.2"/>
+        <text x="422" y="26" class="dlabel">T</text>
+        <text x="720" y="288" class="dlabel">t</text>
+        <path d="M442,52 C490,110 500,124 516,132 C560,152 600,166 640,188 C680,216 700,236 724,256" fill="none" stroke="#b0521c" stroke-width="2.2"/>
+        <line x1="440" y1="132" x2="730" y2="132" stroke="#9aa0a7" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="440" y1="188" x2="730" y2="188" stroke="#9aa0a7" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="560" y="124" class="dlabel-s">T<tspan dy="3" font-size="8">L</tspan><tspan dy="-3"> (liquidus)</tspan></text>
+        <text x="446" y="206" class="dlabel-s">T<tspan dy="3" font-size="8">S</tspan><tspan dy="-3"> (solidus)</tspan></text>
+        <text x="450" y="156" class="dlabel-s">mushy zone —</text>
+        <text x="450" y="172" class="dlabel-s">dendritic growth</text>
+        <text x="490" y="308" class="dlabel">Alloy (freezing range T<tspan dy="3" font-size="9">L</tspan><tspan dy="-3"> − T</tspan><tspan dy="3" font-size="9">S</tspan><tspan dy="-3">)</tspan></text>
+      </svg>
+      <figcaption><span class="what">Diagram 2 — Cooling curves.</span> Left: pure metal — a true plateau at T<sub>m</sub>, entered after a small undercooling dip. Right: alloy — no plateau, a sloped freezing range. The wider the range, the mushier the freezing and the harder the casting is to feed.</figcaption>
+    </div>
+
+    <h3>Chvorinov's rule — derived, not asserted</h3>
+    <p>Now the question that riser design hangs on: <em>how long does a casting take to freeze?</em> For a sand mold the answer has a clean derivation, because sand is such a poor conductor that the mold — not the metal, not the interface — is the bottleneck. Everything else in the heat path is fast by comparison. That single physical judgment (mold-controlled freezing) is the engine of the whole result.</p>
+    <p><em>Setup.</em> Treat the mold wall as a semi-infinite solid, initially at T<sub>0</sub>, whose surface jumps to the metal's freezing temperature T<sub>m</sub> at the instant of pouring and stays there while freezing proceeds (the plateau of Diagram 2 justifies this). Refresher R3 then hands us the instantaneous heat flux out through every unit area of mold–metal interface — equation (R3.1) with T<sub>s</sub> = T<sub>m</sub>.</p>
+    <p><em>Step 1 — total heat through the wall.</em> Integrate the flux over time to get cumulative heat extracted per unit interface area:</p>
+    <div class="eqrow"><span class="eq"><span class="fr"><span class="nu">Q</span><span class="de">A</span></span> <b>=</b> <span style="font-size:24px">∫</span><sub>0</sub><sup>t</sup> <span class="fr"><span class="nu">k (T<sub>m</sub> − T<sub>0</sub>)</span><span class="de"><span class="rt">√<span class="rd">π α τ</span></span></span></span> dτ <b>=</b> <span class="fr"><span class="nu">2 k (T<sub>m</sub> − T<sub>0</sub>)</span><span class="de"><span class="rt">√<span class="rd">π α</span></span></span></span> <span class="rt">√<span class="rd">t</span></span></span><span class="eqnum">(5)</span></div>
+    <p><em>Step 2 — heat the metal must surrender.</em> Per unit volume, the melt gives up its remaining superheat plus all of its latent heat: ρ<sub>m</sub>[C<sub>l</sub>(T<sub>p</sub> − T<sub>m</sub>) + H<sub>f</sub>]. Call the bracket ΔH′. The casting's total bill is ρ<sub>m</sub> ΔH′ V.</p>
+    <p><em>Step 3 — balance.</em> Freezing is complete at the time t<sub>s</sub> when the wall has passed the whole bill. Set ρ<sub>m</sub> ΔH′ V equal to (5) times the interface area A and solve for t<sub>s</sub>:</p>
+    <div class="eqrow"><span class="eq">t<sub>s</sub> <b>=</b> <span class="fr"><span class="nu">π</span><span class="de">4</span></span> <b>[</b><span class="fr"><span class="nu">ρ<sub>m</sub> ΔH′</span><span class="de">T<sub>m</sub> − T<sub>0</sub></span></span><b>]</b><sup>2</sup> <span class="fr"><span class="nu">1</span><span class="de">k ρ c</span></span> <b>(</b><span class="fr"><span class="nu">V</span><span class="de">A</span></span><b>)</b><sup>2</sup></span><span class="eqnum">(6)</span></div>
+    <p>where k, ρ, c are <em>mold</em> properties (α = k/ρc was substituted). Every term in the front factor is a property of the metal–mold pair, fixed once you choose an alloy, a sand, and a pouring practice. Collapse it into one constant and you have the working form:</p>
+    <div class="keybox">
+      <span class="cap">Chvorinov's rule (1940)</span>
+      <div class="eqrow"><span class="eq">TST <b>=</b> C<sub>m</sub> <b>(</b><span class="fr"><span class="nu">V</span><span class="de">A</span></span><b>)</b><sup>n</sup> ,&nbsp;&nbsp;&nbsp; n ≈ 2 for sand molds</span><span class="eqnum">(7)</span></div>
+    </div>
+    <p>TST is total solidification time; V/A — volume over cooling surface area — is the casting's <em>modulus</em>. The rule's power is comparative: you almost never compute C<sub>m</sub> from (6)'s front factor. You measure it once, from a test casting poured in the same sand with the same alloy, and then (7) ranks every shape you care about. Thick, chunky regions (high V/A) freeze last; thin fins and edges (low V/A) freeze first. Directional solidification — freezing that marches from the extremities toward a feeder — is engineered by manipulating exactly this ratio.</p>
+    <div class="assume">
+      <div><span>Assumption</span><span>Mold-controlled heat flow. Valid for sand and other insulating molds. In a water-cooled metal die the <em>interface and metal</em> resistances dominate instead, and n drifts toward 1 — Chvorinov with n = 2 will mislead you in die casting.</span></div>
+      <div><span>Assumption</span><span>Semi-infinite mold: the heated layer never reaches the flask wall. Fails for thin mold sections between two cavities, which saturate and slow their cooling.</span></div>
+      <div><span>Assumption</span><span>Planar interface at uniform T<sub>m</sub>; edges and corners ignored. Corners are shared by two or three heat-flow directions and freeze faster than (7) predicts — the practical fix is judgment, or simulation (Lecture 11: casting simulation in Industry 4.0 workflows).</span></div>
+    </div>
+
+    <div class="diagram rv">
+      <svg viewBox="0 0 760 300" role="img" aria-label="Semi-infinite mold model: solidifying casting on the left, temperature profile decaying into the sand mold on the right, heat flux arrows crossing the interface">
+        <rect x="60" y="50" width="160" height="200" fill="#c2571f"/>
+        <rect x="72" y="62" width="26" height="176" fill="#e8dfd2" opacity=".85"/>
+        <rect x="204" y="62" width="16" height="176" fill="#e8dfd2" opacity=".85"/>
+        <rect x="220" y="50" width="480" height="200" fill="#ece7db"/>
+        <line x1="220" y1="50" x2="220" y2="250" stroke="#181a1d" stroke-width="2"/>
+        <!-- flux arrows -->
+        <g stroke="#b0521c" stroke-width="2" fill="none">
+          <path d="M232,90 L296,90 M288,84 L296,90 L288,96"/>
+          <path d="M232,150 L296,150 M288,144 L296,150 L288,156"/>
+          <path d="M232,210 L296,210 M288,204 L296,210 L288,216"/>
+        </g>
+        <!-- temperature profile -->
+        <path d="M220,90 C300,96 360,150 470,196 C540,222 620,232 700,236" fill="none" stroke="#41464c" stroke-width="2"/>
+        <line x1="220" y1="90" x2="700" y2="90" stroke="#9aa0a7" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="220" y1="236" x2="700" y2="236" stroke="#9aa0a7" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="706" y="94" class="dmath">T<tspan baseline-shift="sub" font-size="10">m</tspan></text>
+        <text x="706" y="240" class="dmath">T<tspan baseline-shift="sub" font-size="10">0</tspan></text>
+        <text x="92" y="40" class="dlabel">Casting (freezing)</text>
+        <text x="300" y="40" class="dlabel">Sand mold — semi-infinite, diffusivity α</text>
+        <text x="104" y="155" class="dlabel" style="fill:#fff">liquid</text>
+        <text x="238" y="76" class="dlabel-s">q(t) ∝ 1/√t</text>
+        <text x="400" y="225" class="dlabel-s">T(x, t) soaking inward</text>
+        <text x="74" y="270" class="dlabel-s">pale bands: solid shell growing from the walls inward</text>
+      </svg>
+      <figcaption><span class="what">Diagram 3 — The model behind equation (6).</span> Heat leaves the freezing metal only through the interface; the mold's heated layer deepens with time, throttling the flux as 1/√t. Meanwhile the solid shell grows inward from every mold wall — the casting freezes from the outside in.</figcaption>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ======================= PART 5 SHRINKAGE + RISERS ======================= -->
+<section class="part">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">05</span>Paying the volume debt</p>
+    <h2>Shrinkage, and the riser that covers it</h2>
+    <p class="lead">Metal contracts three separate times on the way from pouring temperature to room temperature, and the three contractions are compensated by three different people. Confusing them is the most reliable way to fail this course's exam — and to scrap castings professionally.</p>
+    <ul class="plain">
+      <li><strong>Liquid contraction</strong> (T<sub>p</sub> → T<sub>m</sub>): the melt shrinks as it sheds superheat. Cheap to fix — the gating system simply supplies a little more liquid while everything is still fluid.</li>
+      <li><strong>Solidification shrinkage</strong> (at T<sub>m</sub>): the liquid→solid density jump. For aluminum roughly 6–7 % by volume; for low-carbon steel roughly 2.5–3 %; gray cast iron is the famous exception, expanding slightly as low-density graphite flakes form. (Representative values — Groover Ch. 10 tabulates them by alloy.) This is the contraction that carves shrinkage cavities and porosity into the last regions to freeze, and <em>this is the riser's job</em>.</li>
+      <li><strong>Solid contraction</strong> (T<sub>m</sub> → room temperature): plain thermal contraction of the solid part. No liquid exists to feed it — instead the <em>patternmaker</em> builds the part oversize by the shrinkage allowance (order of 1–2 % linear, alloy-specific) so it contracts down onto the drawing.</li>
+    </ul>
+    <h3>Riser design logic</h3>
+    <p>A riser is a sacrificial reservoir of liquid connected to the casting. While the casting solidifies and its volume deficit opens up, the riser must still be liquid, and must stay liquid <em>longer</em> than everything it feeds — otherwise the pipe of shrinkage forms in the part instead of in the riser. Chvorinov turns that sentence into arithmetic:</p>
+    <div class="keybox">
+      <span class="cap">Riser requirement (design rule used in Groover's worked examples)</span>
+      <div class="eqrow"><span class="eq">TST<sub>riser</sub> <b>=</b> 1.25 × TST<sub>casting</sub>&nbsp;&nbsp;&nbsp;<b>⟹</b>&nbsp;&nbsp;&nbsp;<b>(</b>V/A<b>)</b><sub>riser</sub> <b>=</b> <span class="rt">√<span class="rd">1.25</span></span> <b>(</b>V/A<b>)</b><sub>casting</sub></span><span class="eqnum">(8)</span></div>
+    </div>
+    <p>The 25 % margin covers what the model ignores (connection geometry, corner effects, C<sub>m</sub> scatter). The geometry problem is then: choose a riser shape whose modulus meets (8) with the least wasted metal. Since a sphere maximizes V/A it is the thermally ideal riser — and an impractical one to mold and cut off, which is why practice settles on cylinders with height comparable to diameter. Every gram in the riser is remelted, so riser design is ultimately an economics problem: <em>casting yield</em> — part weight over total poured weight — is a line item the melt shop lives by.</p>
+  </div>
+</section>
+
+<!-- ======================= WORKED EXAMPLES ======================= -->
+<div id="examples">
+<div class="board rv">
+  <div class="inner">
+    <p class="kicker"><span class="n">06·A</span>Worked example — on the board</p>
+    <h3>Example 1 · Gating an aluminum casting</h3>
+    <p>An aluminum casting of cavity volume 1,200 cm³ is gravity-poured. The sprue is 200 mm long, and the pouring basin holds the free metal surface 50 mm above the sprue entrance. The sprue base cross-section is 2.5 cm². Find the velocity at the sprue base, the flow rate, the mold fill time, the sprue top area that prevents aspiration, and the flow regime.</p>
+    <div class="given"><b>GIVEN</b> &nbsp;V = 1,200 cm³ · sprue L = 200 mm · basin head = 50 mm · A<sub>b</sub> = 2.5 cm²<br><b>PROPERTIES</b> &nbsp;liquid Al near 700 °C: ρ ≈ 2,380 kg/m³, μ ≈ 1.3×10⁻³ Pa·s (handbook values)<br><b>ASSUME</b> &nbsp;frictionless flow (eq. 2), basin kept full (v₁ ≈ 0), cavity vented (atmospheric at both stations)</div>
+
+    <div class="step">
+      <div class="no">S1</div>
+      <div>
+        <h5>Establish the head — from the free surface, not the sprue top</h5>
+        <p>The streamline starts at the basin's free surface. Head at the sprue base is basin depth plus sprue length:</p>
+        <div class="work">h_b = 0.050 m + 0.200 m = <span class="res">0.250 m</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S2</div>
+      <div>
+        <h5>Velocity at the sprue base — equation (2)</h5>
+        <div class="work">v_b = √(2 · 9.81 m/s² · 0.250 m) = √(4.905 m²/s²) = <span class="res">2.21 m/s</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S3</div>
+      <div>
+        <h5>Flow rate — continuity, equation (3)</h5>
+        <div class="work">Q = A_b · v_b = (2.5×10⁻⁴ m²)(2.21 m/s) = 5.54×10⁻⁴ m³/s = <span class="res">554 cm³/s</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S4</div>
+      <div>
+        <h5>Mold fill time</h5>
+        <div class="work">t_fill = V / Q = 1,200 cm³ / 554 cm³/s = <span class="res">2.17 s</span>&nbsp;&nbsp;<span class="cm">— the melt's superheat must survive 2.2 s of transit; it will.</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S5</div>
+      <div>
+        <h5>Sprue top area — anti-aspiration taper, equation (4)</h5>
+        <p>Head at the sprue top is the basin depth alone, h_t = 0.050 m:</p>
+        <div class="work">A_t / A_b = √(h_b / h_t) = √(0.250 / 0.050) = √5 = 2.24<br>A_t = 2.24 × 2.5 cm² = <span class="res">5.6 cm²</span>&nbsp;&nbsp;<span class="cm">— the sprue narrows from 5.6 to 2.5 cm² over its length</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S6</div>
+      <div>
+        <h5>Flow regime — Reynolds number at the base</h5>
+        <p>Equivalent diameter of the 2.5 cm² base section: D = √(4A/π) = √(4 · 2.5×10⁻⁴/π) = 0.0178 m.</p>
+        <div class="work">Re = ρ v D / μ = (2,380)(2.21)(0.0178) / (1.3×10⁻³) ≈ <span class="res">7.2×10⁴</span>&nbsp;&nbsp;<span class="cm">— fully turbulent (transition ~2,300)</span></div>
+      </div>
+    </div>
+    <div class="verdict"><b>Engineering read-out</b>At Re ≈ 72,000 this pour is violently turbulent no matter how elegant the taper. The taper prevents <em>aspiration</em>; it does not prevent <em>surface turbulence</em>. A real aluminum gating design would now add a ceramic foam filter after the sprue base and enlarge the gates to slow the stream below the ~0.5 m/s oxide-entrainment threshold before metal enters the cavity.</div>
+  </div>
+</div>
+
+<div class="board rv" style="margin-top:0;border-top:1px solid var(--board-line)">
+  <div class="inner">
+    <p class="kicker"><span class="n">06·B</span>Worked example — on the board</p>
+    <h3>Example 2 · Sizing a riser by Chvorinov's rule</h3>
+    <p>A low-carbon-steel plate casting, 600 mm × 300 mm × 60 mm, is poured in green sand. A test casting poured under identical conditions established the mold constant C<sub>m</sub> = 2.0 min/cm² (with n = 2). Design a cylindrical side riser with H = 1.5 D that satisfies the 25 % rule, and evaluate what it costs in yield.</p>
+    <div class="given"><b>GIVEN</b> &nbsp;plate 60 × 30 × 6 cm · C_m = 2.0 min/cm² · n = 2 · riser H = 1.5 D · rule: TST_r = 1.25 TST_c<br><b>ASSUME</b> &nbsp;riser cools on all surfaces (conservative is the opposite — see S5); plate cools on all six faces</div>
+
+    <div class="step">
+      <div class="no">S1</div>
+      <div>
+        <h5>Modulus of the casting</h5>
+        <div class="work">V_c = 60 × 30 × 6 = 10,800 cm³<br>A_c = 2(60·30) + 2(60·6) + 2(30·6) = 3,600 + 720 + 360 = 4,680 cm²<br>(V/A)_c = 10,800 / 4,680 = <span class="res">2.31 cm</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S2</div>
+      <div>
+        <h5>Solidification time of the casting — equation (7)</h5>
+        <div class="work">TST_c = 2.0 min/cm² × (2.31 cm)² = 2.0 × 5.33 = <span class="res">10.7 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S3</div>
+      <div>
+        <h5>Required riser modulus — equation (8)</h5>
+        <div class="work">TST_r = 1.25 × 10.7 = 13.3 min<br>(V/A)_r = √(TST_r / C_m) = √(13.3 / 2.0) = √6.66 = <span class="res">2.58 cm</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S4</div>
+      <div>
+        <h5>Translate modulus into cylinder dimensions</h5>
+        <p>For a cylinder with H = 1.5 D, cooling on side, top and bottom:</p>
+        <div class="work">V_r = (πD²/4)(1.5D) = 1.178 D³<br>A_r = πD(1.5D) + 2(πD²/4) = 1.5πD² + 0.5πD² = 2πD² = 6.283 D²<br>(V/A)_r = 1.178 D³ / 6.283 D² = 0.1875 D<br><br>0.1875 D = 2.58 cm &nbsp;⟹&nbsp; D = <span class="res">13.8 cm</span> , &nbsp;H = 1.5 D = <span class="res">20.6 cm</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S5</div>
+      <div>
+        <h5>Sanity checks — the part no one skips twice</h5>
+        <p>Units: modulus in cm, C<sub>m</sub> in min/cm², TST in minutes — consistent. Direction: (V/A)_r = 2.58 &gt; 2.31 = (V/A)_c, so the riser does freeze last. Conservatism: a side riser shares its connection area with the casting, which <em>removes</em> cooling surface from A_r and makes the real riser freeze even later than computed — the error is on the safe side. The same argument warns you never to count a surface as "cooling" when it sits against an already-hot neighbor.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="no">S6</div>
+      <div>
+        <h5>The yield bill</h5>
+        <div class="work">V_r = 1.178 × (13.8)³ ≈ 3,090 cm³<br>yield (ignoring gating) = 10,800 / (10,800 + 3,090) = <span class="res">77.8 %</span>&nbsp;&nbsp;<span class="cm">— 22 % of every heat is remelted riser</span></div>
+      </div>
+    </div>
+    <div class="verdict"><b>Engineering read-out</b>A fifth of the poured steel exists only to be sawed off and remelted. This is why foundries spend money on exothermic riser sleeves (they raise the riser's effective TST without raising its volume) and why the melt shop tracks casting yield as a first-class KPI. Thermal correctness and economic sanity are the same calculation run twice.</div>
+  </div>
+</div>
+</div>
+
+<!-- ======================= MISCONCEPTIONS ======================= -->
+<section class="part">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">07</span>Where students lose marks</p>
+    <h2>Standing misconceptions, addressed directly</h2>
+    <div class="miscon">
+      <article>
+        <div class="wrong">"h in v = √2gh is the sprue length."</div>
+        <div class="right">h is the vertical distance from the <em>free metal surface</em> to the station you are evaluating. If the basin holds 50 mm of metal above a 200 mm sprue, the base sees 250 mm of head. Measure from the wrong datum and every downstream number — velocity, flow rate, fill time, taper ratio — inherits the error. Example 1, step S1 exists because of this mistake.</div>
+      </article>
+      <article>
+        <div class="wrong">"A bigger riser always freezes later."</div>
+        <div class="right">Chvorinov ranks shapes by V/A, not by V. A tall thin riser can hold <em>more</em> volume than a compact one and still freeze <em>first</em>, because it exposes disproportionate surface. When you enlarge a riser, check what happened to its modulus, not its mass. (The sphere wins precisely because it hides the most volume behind the least surface.)</div>
+      </article>
+      <article>
+        <div class="wrong">"The pattern's shrinkage allowance takes care of shrinkage."</div>
+        <div class="right">It takes care of <em>solid</em> contraction only — the part shrinking after it is already solid. Solidification shrinkage, the liquid→solid volume jump, happens while liquid still exists and must be fed by liquid, i.e., by the riser. Two different contractions, two different compensations, two different people responsible. Exam questions are written to catch exactly this conflation.</div>
+      </article>
+      <article>
+        <div class="wrong">"n = 2 is part of Chvorinov's rule."</div>
+        <div class="right">n = 2 is part of the <em>sand-mold derivation</em> — it came from the 1/√t flux of a semi-infinite insulating mold (04, Step 1). In permanent molds and die casting, interface and metal-side resistances take over and n falls toward 1. Carrying n = 2 into a die-casting calculation is not a small error; it changes the ranking of which sections freeze first.</div>
+      </article>
+      <article>
+        <div class="wrong">"Pour faster — it can only help against misruns."</div>
+        <div class="right">Faster pouring buys superheat margin and costs oxide entrainment, mold erosion, and gas pickup, because velocity is already deep in the turbulent regime (Example 1: Re ≈ 7×10⁴). The gating designer's actual instrument is geometry — taper, gate area, filters — not enthusiasm at the ladle. "As fast as necessary, as slow as possible" is the shop version of this trade-off.</div>
+      </article>
+    </div>
+
+    <div class="check rv">
+      <div class="q">
+        <span class="tag">Check your understanding — attempt before revealing</span>
+        <p style="margin:0 0 6px"><strong>A cube and a sphere of the same alloy are poured into the same sand at the same time. Both have volume 512 cm³ (the cube is 8 cm on a side). The mold constant is C<sub>m</sub> = 1.8 min/cm², n = 2.</strong></p>
+        <p style="margin:0">Which solidifies last, and by how much? Compute both total solidification times. Then answer the design question hiding inside: what does this say about where a shrinkage cavity would form if the two were connected by a short bar?</p>
+      </div>
+      <button type="button" id="revealBtn" aria-expanded="false" aria-controls="answerPanel">Reveal worked answer</button>
+      <div class="a" id="answerPanel" role="region" aria-label="Worked answer">
+        <p><strong>Cube:</strong> V = 512 cm³, A = 6·(8 cm)² = 384 cm², so V/A = 1.33 cm and TST = 1.8 × (1.33)² = <strong>3.2 min</strong>.</p>
+        <p><strong>Sphere:</strong> r = (3V/4π)<sup>1/3</sup> = (3·512/4π)<sup>1/3</sup> = 4.96 cm. A = 4πr² = 309 cm². V/A = r/3 = 1.65 cm — note the elegant general result: a sphere's modulus is always r/3. TST = 1.8 × (1.65)² = <strong>4.9 min</strong>.</p>
+        <p><strong>The sphere solidifies last, by about 1.7 minutes — more than 50 % longer — despite identical volume, alloy, and mold.</strong> Surface area is the whole story: the sphere exposes 309 cm² against the cube's 384 cm².</p>
+        <p style="margin-bottom:0"><strong>Design reading:</strong> connect them with a bar and the pair freezes directionally: cube first, bar next (check its own modulus), sphere last. The sphere therefore acts as the riser, and the shrinkage cavity forms <em>in the sphere</em>, not the cube — which is precisely why risers are compact, chunky shapes and why (8) demanded the riser out-modulus the casting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ======================= KUWAIT ======================= -->
+<section class="part" id="kuwait">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">08</span>Kuwait floor</p>
+    <h2>The same equations, running around the clock at Kuwait Steel</h2>
+    <p class="lead">Everything above was developed on a sand mold, but the highest-tonnage casting operation in Kuwait is a permanent-mold process: the continuous billet caster at Kuwait Steel (United Steel Industrial Company), where scrap is melted in an electric-arc furnace, refined at a ladle furnace, and cast into square billets that feed the rolling mill for construction rebar.</p>
+  </div>
+  <div class="wide rv">
+    <div class="kw-flow">
+      <div><b>EAF melt shop</b><span>Scrap charge melted by electric arc; equation (1)'s energy bill, paid in megawatt-hours.</span></div>
+      <div><b>Ladle furnace</b><span>Chemistry trim and temperature control — superheat is set here, deliberately, in degrees.</span></div>
+      <div><b>Tundish</b><span>Buffer reservoir; steady head above the mold — a pouring basin the size of a truck, doing v₁ ≈ 0's job.</span></div>
+      <div><b>Water-cooled Cu mold</b><span>Oscillating copper mold freezes a thin shell; mold-side control, the n → 1 world of 07.</span></div>
+      <div><b>Spray zones</b><span>Secondary cooling grows the shell as the strand curves toward horizontal.</span></div>
+      <div><b>Torch cutoff</b><span>Only past the metallurgical length — where the core is finally solid — can the strand be cut.</span></div>
+    </div>
+  </div>
+  <div class="measure rv">
+    <h3>Shell growth is Chvorinov's cousin</h3>
+    <p>Inside the caster, solidification runs continuously: a solid skin forms against the water-cooled copper mold and thickens as the strand travels. The same 1/√t heat-flow physics that gave us equation (6) gives the shell-growth law used across the continuous-casting literature:</p>
+    <div class="eqrow"><span class="eq">δ <b>=</b> K <span class="rt">√<span class="rd">t</span></span></span><span class="eqnum">(9)</span></div>
+    <p>with δ the shell thickness and K a solidification constant (for water-cooled billet and slab casters, typically quoted in the range 25–30 mm/min<sup>½</sup>). The strand is fully solid when δ reaches the billet's half-thickness d/2, and since the strand moves at casting speed v, that happens a fixed <em>distance</em> from the mold — the metallurgical length:</p>
+    <div class="keybox">
+      <span class="cap">Metallurgical length</span>
+      <div class="eqrow"><span class="eq">L<sub>m</sub> <b>=</b> v · t<sub>full</sub> <b>=</b> v <b>(</b><span class="fr"><span class="nu">d</span><span class="de">2K</span></span><b>)</b><sup>2</sup></span><span class="eqnum">(10)</span></div>
+    </div>
+    <p>Run the numbers for a 130 mm square billet — <em>representative values for billet casters of this class, not published Kuwait Steel operating data</em> — with K = 27 mm/min<sup>½</sup> and casting speed v = 2.6 m/min:</p>
+    <div class="work" style="color:var(--ink);border:1px solid var(--line);padding:20px 24px;font-size:13.5px;background:#f4f3ee">t_full = (65 mm / 27 mm·min⁻½)² = (2.41)² = 5.8 min &nbsp;&nbsp;⟹&nbsp;&nbsp; L_m = 2.6 m/min × 5.8 min ≈ <b style="color:var(--ember)">15 m</b><br>shell at mold exit (0.8 m mold): t = 0.8/2.6 = 0.31 min &nbsp;⟹&nbsp; δ = 27√0.31 ≈ <b style="color:var(--ember)">15 mm</b></div>
+    <p>Read those two numbers the way the plant does. Fifteen metres of strand — through the mold, down the curve, past the straightener — still has liquid steel in its core; the torch is not allowed to exist before that point. And at the mold exit, the entire ferrostatic head of that liquid core is carried by a 15 mm skin. Push casting speed from 2.6 to 3.4 m/min and the exit shell thins to about 13 mm — this is why casting speed is not a free productivity knob, and why a <em>breakout</em> (shell rupture, liquid steel over the machine) is among the most feared events in a melt shop.</p>
+    <p>This is also where this course touches the four roles this curriculum aims at. The <em>reliability engineer</em> owns the mold-oscillator and spray-system health that keep (9)'s K stable; the <em>asset-integrity engineer</em> owns the mold copper and segment rollers that contain the liquid core; the <em>production engineer</em> trades casting speed against breakout risk using exactly equation (10); the <em>maintenance planner</em> schedules mold and segment changes against the wear that silently degrades K. One equation, four job descriptions.</p>
+  </div>
+
+  <div class="fieldnote"><b>Field note</b> — — the vertical stack: ladle → tundish → mold is gravity gating, 03 scaled up ten-thousand-fold. The shrouds between vessels do the same job as a tapered sprue: keep the falling stream sealed from air.</div>
+
+  <div class="wide rv">
+    <div class="diagram">
+      <svg viewBox="0 0 760 470" role="img" aria-label="Schematic of a continuous billet caster: ladle, tundish, oscillating mold, curved strand with support rollers and spray cooling, straightener, torch cutoff, and cut billet, with the metallurgical length marked">
+        <!-- ladle -->
+        <path d="M120,28 L188,28 L178,86 L130,86 Z" fill="#ece7db" stroke="#41464c" stroke-width="1.5"/>
+        <rect x="149" y="86" width="10" height="22" fill="#c2571f"/>
+        <text x="200" y="52" class="dlabel">Ladle</text>
+        <!-- tundish -->
+        <path d="M96,108 L212,108 L202,150 L106,150 Z" fill="#ece7db" stroke="#41464c" stroke-width="1.5"/>
+        <rect x="149" y="150" width="10" height="20" fill="#c2571f"/>
+        <text x="224" y="132" class="dlabel">Tundish (steady head)</text>
+        <!-- mold -->
+        <rect x="136" y="170" width="36" height="66" fill="#dfe3e6" stroke="#41464c" stroke-width="1.5"/>
+        <rect x="146" y="170" width="16" height="66" fill="#c2571f"/>
+        <text x="184" y="196" class="dlabel">Cu mold, water-cooled,</text>
+        <text x="184" y="212" class="dlabel">oscillating</text>
+        <!-- strand curve: from (154,236) curving to horizontal at y=400 -->
+        <path d="M154,236 C154,330 200,392 330,400 L560,400" fill="none" stroke="#c2571f" stroke-width="22" stroke-linecap="butt"/>
+        <path d="M154,236 C154,330 200,392 330,400 L560,400" fill="none" stroke="#e8933c" stroke-width="9" stroke-linecap="butt" pathLength="100" stroke-dasharray="76 24"/>
+        <!-- cooled tail -->
+        <path d="M470,400 L560,400" fill="none" stroke="#8a6a54" stroke-width="22"/>
+        <!-- cut billet -->
+        <rect x="596" y="389" width="120" height="22" fill="#6f5a49" stroke="#41464c" stroke-width="1"/>
+        <text x="596" y="436" class="dlabel">Cut billet</text>
+        <!-- rollers -->
+        <g fill="#fbfbf9" stroke="#41464c" stroke-width="1.3">
+          <circle cx="132" cy="280" r="9"/><circle cx="176" cy="280" r="9"/>
+          <circle cx="142" cy="330" r="9"/><circle cx="186" cy="326" r="9"/>
+          <circle cx="168" cy="372" r="9"/><circle cx="206" cy="356" r="9"/>
+          <circle cx="230" cy="398" r="9"/><circle cx="248" cy="376" r="9"/>
+          <circle cx="300" cy="410" r="9"/><circle cx="300" cy="386" r="9"/>
+        </g>
+        <text x="60" y="312" class="dlabel-s">spray</text>
+        <text x="60" y="326" class="dlabel-s">cooling</text>
+        <!-- straightener -->
+        <text x="330" y="368" class="dlabel">Straightener / withdrawal</text>
+        <!-- torch -->
+        <line x1="560" y1="372" x2="560" y2="428" stroke="#b0521c" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="540" y="360" class="dlabel">Torch cutoff</text>
+        <!-- liquid core label -->
+        <text x="218" y="300" class="dlabel-s">bright core: still liquid — shell δ = K√t growing</text>
+        <!-- metallurgical length bracket -->
+        <path d="M154,452 L154,458 L470,458 L470,452" fill="none" stroke="#181a1d" stroke-width="1.2"/>
+        <text x="240" y="450" class="dmath">metallurgical length L<tspan baseline-shift="sub" font-size="10">m</tspan> ≈ 15 m (liquid core persists)</text>
+      </svg>
+      <figcaption><span class="what">Diagram 4 — Continuous billet casting, schematic.</span> The strand leaves the mold with a ~15 mm solid skin over a liquid core, and is fully solid only ~15 m later. Every roller, spray nozzle, and the torch position are placed by equations (9) and (10).</figcaption>
+    </div>
+  </div>
+
+  <div class="fieldnote"><b>Field note</b> — — the billet is cut while glowing but fully solid. The torch station's position on a caster is not a layout convenience; it is a solved inequality — downstream of L<sub>m</sub>, always.</div>
+</section>
+<hr class="rule">
+
+<!-- ======================= VIDEO ======================= -->
+<section class="part">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">09</span>Watch the process</p>
+    <h2>See what the equations describe</h2>
+    <p>Three publicly available videos, each verified at the time of writing. Watch the sand-casting video before Example 1 makes full sense to you; watch the continuous-casting pair after 08.</p>
+  </div>
+  <div class="wide rv">
+    <div class="vids">
+      <a class="vid" href="https://www.youtube.com/watch?v=x1grQqJqqUg" target="_blank" rel="noopener">
+        <span class="vtag">SAND CASTING · WORKSHOP DEMONSTRATION</span>
+        <h4>Sand Casting Process: All Steps Explained and Demonstrated in a Workshop Experiment</h4>
+        <p>Pattern, cope-and-drag molding, gating, pour, and shakeout — the full 02–03 sequence performed on a bench.</p>
+        <span class="src">YouTube · dharmesh barodiya</span>
+      </a>
+      <a class="vid" href="https://www.youtube.com/watch?v=d-72gc6I-_E" target="_blank" rel="noopener">
+        <span class="vtag">CONTINUOUS CASTING · INDUSTRY TRAINING FILM</span>
+        <h4>Steelmaking: Continuous Casting</h4>
+        <p>From the Corus BCSA training pack — tundish practice, mold oscillation, and secondary cooling as taught to plant operators.</p>
+        <span class="src">YouTube · CorusBCSATraining</span>
+      </a>
+      <a class="vid" href="https://www.youtube.com/watch?v=l_DUJWsSulI" target="_blank" rel="noopener">
+        <span class="vtag">CONTINUOUS CASTING · ANIMATED EXPLAINER</span>
+        <h4>Continuous Casting: How Massive Steel Slabs Are Made From Liquid Metal</h4>
+        <p>An animated walk down the strand — useful for visualizing the liquid core and metallurgical length of equation (10).</p>
+        <span class="src">YouTube · AlJazari</span>
+      </a>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ======================= LIBRARY ======================= -->
+<section class="part" id="library">
+  <div class="measure rv">
+    <p class="kicker"><span class="n">10</span>Reference library</p>
+    <h2>Where this lecture's theory actually lives</h2>
+    <p class="lead">These are the books this discipline is taught from internationally. The lecture's framework is drawn from them — chapter mappings below. Editions cited are ones I can verify; several titles have newer editions, and any recent edition serves.</p>
+    <div class="lib">
+      <article>
+        <div class="idx">B1</div>
+        <div>
+          <h4>Fundamentals of Modern Manufacturing: Materials, Processes, and Systems</h4>
+          <p class="who">Mikell P. Groover — 5th ed., Wiley</p>
+          <p class="map"><b>Maps to</b> — Ch. 10 (Fundamentals of Metal Casting: eqs. 1, 2, 7, 8 and the worked-example style of 06) and Ch. 11 (Metal Casting Processes). The course's primary text.</p>
+        </div>
+      </article>
+      <article>
+        <div class="idx">B2</div>
+        <div>
+          <h4>Manufacturing Engineering and Technology</h4>
+          <p class="who">Serope Kalpakjian &amp; Steven R. Schmid — 7th ed., Pearson</p>
+          <p class="map"><b>Maps to</b> — Part II, Ch. 10–12: fluid flow in gating, fluidity testing, riser practice, and continuous casting. Stronger than B1 on industrial practice; read its treatment of defects before Lecture 2.</p>
+        </div>
+      </article>
+      <article>
+        <div class="idx">B3</div>
+        <div>
+          <h4>Solidification Processing</h4>
+          <p class="who">Merton C. Flemings — McGraw-Hill, 1974</p>
+          <p class="map"><b>Maps to</b> — the rigorous version of 04: heat-flow-controlled solidification, the full mathematics behind equations (5)–(6), dendritic growth and segregation. The graduate-level authority; consult, don't cram.</p>
+        </div>
+      </article>
+      <article>
+        <div class="idx">B4</div>
+        <div>
+          <h4>Materials Science and Engineering: An Introduction</h4>
+          <p class="who">William D. Callister Jr. &amp; David G. Rethwisch — 10th ed., Wiley</p>
+          <p class="map"><b>Maps to</b> — Ch. 9–10: phase diagrams, liquidus/solidus, nucleation and growth kinetics — the foundations layer behind Diagram 2's cooling curves.</p>
+        </div>
+      </article>
+      <article>
+        <div class="idx">B5</div>
+        <div>
+          <h4>Heat and Mass Transfer: Fundamentals and Applications</h4>
+          <p class="who">Yunus A. Çengel &amp; Afshin J. Ghajar — 5th ed., McGraw-Hill</p>
+          <p class="map"><b>Maps to</b> — Ch. 4, transient conduction in semi-infinite solids: the sourced result (R3.1) on which the Chvorinov derivation stands.</p>
+        </div>
+      </article>
+      <article>
+        <div class="idx">B6</div>
+        <div>
+          <h4>ASM Handbook, Volume 15: Casting</h4>
+          <p class="who">ASM International</p>
+          <p class="map"><b>Maps to</b> — everything at industrial depth: alloy-specific shrinkage data, riser sleeve practice, continuous casting technology. The handbook you will meet on the shelf of every serious foundry and melt shop, Kuwait included.</p>
+        </div>
+      </article>
+    </div>
+    <p class="small" style="margin-top:26px">Photography credits — hero: Alfred T. Palmer, U.S. OWI, public domain (Library of Congress); sand pour: Sm faysal, CC BY-SA 4.0, Wikimedia Commons; caster interior: Jet Lowe, HAER, public domain (Library of Congress); billet cutting: GenFM31, CC BY-SA 4.0, Wikimedia Commons. CC BY-SA images are reused here under their license terms with attribution.</p>
+  </div>
+</section>
+
+</section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
+<div class="measure">
+  <p>This lesson's foundations layer — prerequisite refreshers and dependency map — is embedded in the lecture itself: open the <b>Lecture</b> tab.</p>
+  <p>This lesson belongs to <b>MFG 105 · Manufacturing Processes I — Casting &amp; Bulk Forming</b>
+  (Year 1 · Semester 2). It stands on the course's primary texts:</p>
+  <ul class="plain"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — casting &amp; forming chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li><li><a href="https://openlibrary.org/works/OL7199330W" title="Flemings — Solidification Processing (Open Library)" target="_blank" rel="noopener">Flemings</a>, Solidification Processing (McGraw-Hill, 1974)</li><li><a href="https://openlibrary.org/works/OL16920478W" title="ASM Handbook, Volume 15: Casting (Open Library)" target="_blank" rel="noopener">ASM Handbook, Volume 15</a>: Casting</li></ul>
+  <p class="small">Course context: Liquid metal to near-net shape: the plant taxonomy, casting physics taught at full lecture depth, continuous casting, and the bulk deformation family — rolling, forging, extrusion, drawing — with Kuwait Steel and Gulf Cable as the standing examples.</p>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure"><p>The worked examples for this lesson are written into the lecture as whiteboard boards — open the <b>Lecture</b> tab and scroll to the dark board sections. Each carries given data, numbered steps with units, and an engineering read-out.</p></div><div class="applied"><span class="tag">Applied case</span><p>This lesson's factory-floor application is written into the <b>Lecture</b> tab — anchor company: <b>Kuwait Steel</b>.</p></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Ch. 10; <a href="https://openlibrary.org/works/OL7199330W" title="Flemings — Solidification Processing (Open Library)" target="_blank" rel="noopener">Flemings</a>; <a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Ch. 4</p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — casting &amp; forming chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li><li><a href="https://openlibrary.org/works/OL7199330W" title="Flemings — Solidification Processing (Open Library)" target="_blank" rel="noopener">Flemings</a>, Solidification Processing (McGraw-Hill, 1974)</li><li><a href="https://openlibrary.org/works/OL16920478W" title="ASM Handbook, Volume 15: Casting (Open Library)" target="_blank" rel="noopener">ASM Handbook, Volume 15</a>: Casting</li></ul>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
+</div>
+<div class="wide"><h3>Course-level courseware — verified links</h3><div class="vids">
+<a class="vid" href="https://www.youtube.com/channel/UCiEiOeFUl4Ytrv63Udugckg" target="_blank" rel="noopener">
+  <span class="vtag">PROFESSIONAL BODY · CLEAR NARRATION · VERIFIED</span>
+  <h4>SME — manufacturing process video library</h4>
+  <p>Short, clearly narrated explainers of casting, forming, and joining processes — the fastest visual companion to this course.</p>
+  <span class="src">SME (Society of Manufacturing Engineers)</span>
+</a>
+<a class="vid" href="https://ocw.mit.edu/courses/2-008-design-and-manufacturing-ii-spring-2025/" target="_blank" rel="noopener">
+  <span class="vtag">COURSE MATERIALS · VERIFIED LIVE</span>
+  <h4>2.008 Design and Manufacturing II</h4>
+  <p>MIT's manufacturing-processes course: lecture notes, labs, and exams (no lecture videos in this edition).</p>
+  <span class="src">MIT OpenCourseWare</span>
+</a>
+<a class="vid" href="https://nptel.ac.in/courses/112107219" target="_blank" rel="noopener">
+  <span class="vtag">ALTERNATIVE · ENABLE CAPTIONS</span>
+  <h4>Fundamentals of Manufacturing Processes — IIT Roorkee</h4>
+  <p>Complete lecture-video series covering casting, forming, and joining at exactly this course's level.</p>
+  <span class="src">NPTEL</span>
+</a>
+<a class="vid" href="https://www.youtube.com/@Marzouk-Tutorials" target="_blank" rel="noopener">
+  <span class="vtag">IN ARABIC — ALTERNATIVE · VERIFIED</span>
+  <h4>Manufacturing lectures by Eng. Mahmoud Marzouk</h4>
+  <p>Arabic-language manufacturing-processes lectures (casting, forming, sheet metal). English sources above remain the primary path.</p>
+  <span class="src">YouTube — independent educator</span>
+</a></div></div></section>
+<nav class="prevnext"><a href="01-the-manufacturing-plant-process-taxonomy-and-material-flow.html">← 01 · The manufacturing plant: process taxonomy and material flow</a><a href="index.html" data-ar="كل الدروس · MFG 105">All lessons · MFG 105</a><a href="03-metal-casting-ii-practice-quality-and-defects.html">03 · Metal casting II — practice, quality, and defects →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
+    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free bilingual engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+  <p class="lang-ar">تعليم هندسي مجاني ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
+  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
+  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
+</footer>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+</body>
+</html>

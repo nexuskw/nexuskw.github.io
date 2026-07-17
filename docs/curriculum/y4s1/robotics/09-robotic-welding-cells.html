@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0E1626">
+<title>Robotic welding cells — Industrial Robotics — Nexus Institute of Technology</title>
+<meta name="description" content="Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural w">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y4s1/robotics/9">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
+      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
+      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">ROB 353 · Industrial Robotics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-robot-anatomy-and-types.html" class="ol" data-key="y4s1/robotics/1"><span class="tick"></span><span>01 · Robot anatomy and types</span></a><a href="02-kinematics-fundamentals.html" class="ol" data-key="y4s1/robotics/2"><span class="tick"></span><span>02 · Kinematics fundamentals</span></a><a href="03-drives-encoders-and-calibration.html" class="ol" data-key="y4s1/robotics/3"><span class="tick"></span><span>03 · Drives, encoders, and calibration</span></a><a href="04-end-effectors-and-tooling.html" class="ol" data-key="y4s1/robotics/4"><span class="tick"></span><span>04 · End effectors and tooling</span></a><a href="05-programming-and-teaching.html" class="ol" data-key="y4s1/robotics/5"><span class="tick"></span><span>05 · Programming and teaching</span></a><a href="06-robot-safety-systems.html" class="ol" data-key="y4s1/robotics/6"><span class="tick"></span><span>06 · Robot safety systems</span></a><a href="07-palletizing-and-material-handling-cells.html" class="ol" data-key="y4s1/robotics/7"><span class="tick"></span><span>07 · Palletizing and material-handling cells</span></a><a href="08-machine-tending-and-assembly-cells.html" class="ol" data-key="y4s1/robotics/8"><span class="tick"></span><span>08 · Machine tending and assembly cells</span></a><a href="09-robotic-welding-cells.html" class="ol cur" data-key="y4s1/robotics/9"><span class="tick"></span><span>09 · Robotic welding cells</span></a><a href="10-cell-integration.html" class="ol" data-key="y4s1/robotics/10"><span class="tick"></span><span>10 · Cell integration</span></a><a href="11-robot-maintenance-and-diagnostics.html" class="ol" data-key="y4s1/robotics/11"><span class="tick"></span><span>11 · Robot maintenance and diagnostics</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
+<a href="index.html">ROB 353</a> /
+<span>Lesson 09 of 11</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="92" width="40" height="12" rx="4"/><line x1="38" y1="92" x2="38" y2="66"/><line x1="38" y1="66" x2="66" y2="42"/><line x1="66" y1="42" x2="92" y2="52"/><circle cx="38" cy="66" r="6" class="amb"/><circle cx="66" cy="42" r="6" class="amb"/><path d="M92 44 L102 40 M92 60 L102 64"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">ROB 353 · LESSON 09 OF 11 · YEAR 4 · SEMESTER 1</p>
+    <h1>Robotic welding cells</h1>
+    <p class="sub">Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural work of the Kirby kind.</p>
+  </div>
+  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>NPTEL: Industrial Robotics</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y4s1/robotics/9">Mark as complete</button>
+  
+</div>
+<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
+  <button data-tab="t-library" data-ar="المكتبة">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does a positioner add to a welding cell's reach and quality?</li><li>Why is TCP calibration the weld path's foundation?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
+<div class="measure">
+  
+  <p>This lesson belongs to <b>ROB 353 · Industrial Robotics</b>
+  (Year 4 · Semester 1). It stands on the course's primary texts:</p>
+  <ul class="plain"><li>NPTEL: Industrial Robotics (nptel.ac.in)</li></ul>
+  <p class="small">Course context: Robots as production equipment: kinematics enough to reason, plus the practical layer — end effectors, safety systems, palletizing and welding cells, and what a robot cell demands from maintenance.</p>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
+<div class="measure">
+  <p>The five-problem interactive quiz for this lesson is in production. Until
+  it lands, use the lesson's checkpoint questions as practice prompts —
+  attempt them from the cited source before reading on:</p>
+  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
+  <ul><li>What does a positioner add to a welding cell's reach and quality?</li><li>Why is TCP calibration the weld path's foundation?</li></ul></div>
+</div><div class="applied"><span class="tag">Applied case</span><p>Industry anchor for this lesson: <b>Kirby Building Systems</b>. The full applied case is written when this lesson reaches full depth; the <a href="../../../career/index.html">Career Paths page</a> maps what Kirby Building Systems runs and which roles touch this topic.</p></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+  <ul class="plain small"><li>NPTEL: Industrial Robotics (nptel.ac.in)</li></ul>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="08-machine-tending-and-assembly-cells.html">← 08 · Machine tending and assembly cells</a><a href="index.html" data-ar="كل الدروس · ROB 353">All lessons · ROB 353</a><a href="10-cell-integration.html">10 · Cell integration →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
+    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free bilingual engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+  <p class="lang-ar">تعليم هندسي مجاني ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
+  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
+  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
+</footer>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+</body>
+</html>

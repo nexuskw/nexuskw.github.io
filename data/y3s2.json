@@ -3,134 +3,135 @@
   "title": "Year 3 · Semester 2",
   "courses": [
     {
-      "id": "vibrations",
-      "code": "VIB 351",
-      "title": "Mechanical Vibrations",
-      "summary": "The theory under the analyzer screen: free and forced vibration, damping, multi-degree systems, rotor basics, and isolation — taught so Year 4's condition-monitoring course lands on solid mathematics.",
+      "id": "controls-1",
+      "code": "CTL 302",
+      "title": "System Dynamics & Control I",
+      "summary": "Feedback made quantitative: modeling, transfer functions, stability, root locus, frequency response, and the PID controller — the theory under every temperature loop and speed governor in the plant.",
       "taught_from": [
-        "NPTEL: Mechanical Vibrations (nptel.ac.in)",
-        "MIT OCW 2.003 materials"
+        "Ogata-tradition control theory via MIT OCW 2.04A Systems and Controls (ocw.mit.edu)",
+        "NPTEL: Control Engineering"
       ],
       "lessons": [
         {
           "n": 1,
-          "t": "The single degree of freedom system",
+          "t": "Dynamic modeling of physical systems",
           "tier": 3,
-          "scope": "Equation of motion from Newton and from energy. Natural frequency's dependence on stiffness and mass — and on nothing else. The model that explains half of all machine vibration behavior.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "Mechanical, thermal, and fluid systems reduced to ODEs. Analogies across domains made explicit. The model as a decision about what to ignore.",
+          "src": "MIT OCW 2.04A; NPTEL: Control Engineering",
           "preview": [
-            "Why does natural frequency depend on k and m and nothing else?",
-            "Write the SDOF equation of motion from Newton — where does each term come from?"
+            "Model a heated tank as first order: what are its gain and time constant physically?",
+            "What did your model deliberately ignore, and when does that bite?"
           ]
         },
         {
           "n": 2,
-          "t": "Damped free vibration",
+          "t": "Laplace transfer functions",
           "tier": 3,
-          "scope": "Viscous damping and the three response regimes. Logarithmic decrement measured from a bump test. Damping ratio as the machine's shock absorber rating.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "From ODE to transfer function; poles and zeros as the system's anatomy. Block-diagram algebra. The s-plane as a map of behavior.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "Extract damping ratio from successive peak amplitudes — what's the method called?",
-            "What separates the three damping regimes physically?"
+            "What do poles and zeros each shape in a response?",
+            "Reduce a feedback loop's block diagram to one transfer function: what's the formula?"
           ]
         },
         {
           "n": 3,
-          "t": "Harmonically forced vibration",
+          "t": "First- and second-order responses",
           "tier": 3,
-          "scope": "The frequency response function derived: amplitude and phase versus forcing frequency. Resonance quantified by Q. Why passing through resonance on run-up is survivable but dwelling is not.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "Time constants, damping ratio, natural frequency, and the step-response vocabulary: rise time, overshoot, settling. Reading system character from a trend chart. The response shapes every operator recognizes without naming.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "Why does dwelling at resonance destroy what a run-up pass-through survives?",
-            "What does Q measure about a resonance?"
+            "Estimate damping ratio from 25% overshoot — roughly what value?",
+            "Why does rise time trade against overshoot?"
           ]
         },
         {
           "n": 4,
-          "t": "Rotating unbalance and whirl",
+          "t": "Closed-loop behavior and steady-state error",
           "tier": 3,
-          "scope": "Unbalance forcing derived from eccentric mass; response above and below critical speed. The phase flip through resonance. First contact with rotor dynamics language.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "Feedback's gifts: disturbance rejection and desensitization — and its price: potential instability. Error constants and system type. Why integral action exists.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "Above its critical speed, where does a rotor's mass center ride, and why is that calmer?",
-            "What does the 180° phase flip through a critical tell an analyst?"
+            "Why does feedback reject disturbances but risk instability?",
+            "Which system type removes steady-state error to a step?"
           ]
         },
         {
           "n": 5,
-          "t": "Support motion and transmissibility",
+          "t": "Stability: Routh–Hurwitz",
           "tier": 3,
-          "scope": "Base-excited systems and force transmissibility derived. The isolation region above √2 times natural frequency. Why soft mounts protect and when they betray.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "The stability question posed algebraically. Routh arrays and parameter ranges for stability. Gain limits computed before anything oscillates in the field.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "Why does isolation only begin above √2 times the natural frequency?",
-            "When does adding damping worsen isolation?"
+            "What question does Routh–Hurwitz answer without solving roots?",
+            "Find the gain range for stability: what does the array's first column do?"
           ]
         },
         {
           "n": 6,
-          "t": "Vibration isolation design",
+          "t": "Root locus",
           "tier": 3,
-          "scope": "Isolator selection: static deflection, natural frequency, damping trade-offs. Inertia blocks and their sizing logic. A compressor installation isolated on paper.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "Pole migration with gain drawn by rule. Design by pole placement on the locus. Seeing why more gain destabilizes — graphically, permanently.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "Why does isolator static deflection encode its natural frequency?",
-            "What does an inertia block actually add?"
+            "Why does increasing gain drive poles toward instability on a locus?",
+            "What do asymptotes of the root locus tell you?"
           ]
         },
         {
           "n": 7,
-          "t": "Two degrees of freedom and mode shapes",
+          "t": "Frequency response and Bode plots",
           "tier": 3,
-          "scope": "Coupled equations, natural frequencies, and mode shapes solved via the eigenproblem promised in Math II. Beating between close modes. The concept structure for all modal analysis.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "Sinusoidal steady state; magnitude and phase plots constructed from asymptotes. Gain and phase margins as robustness currency. The frequency view that unifies control and vibration analysis.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "What is a mode shape, in one sentence?",
-            "Why do two close natural frequencies produce beating?"
+            "Read gain and phase margin off a Bode plot: what does each protect?",
+            "Why does the frequency view unify control and vibration thinking?"
           ]
         },
         {
           "n": 8,
-          "t": "Multi-DOF and continuous systems in outline",
+          "t": "PID control",
           "tier": 3,
-          "scope": "Modal superposition as the organizing idea. Beam and shaft natural frequencies from standard results. Why long rotors have families of criticals.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "P, I, and D actions each derived from a need; tuning by Ziegler–Nichols and by informed iteration. Integral windup and derivative noise handled practically. The controller that runs 90% of industry.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "What does modal superposition claim about complex vibration?",
-            "Why do long rotors have families of critical speeds?"
+            "What does integral action remove and what does it risk?",
+            "Why does derivative action hate noisy sensors?"
           ]
         },
         {
           "n": 9,
-          "t": "Torsional vibration",
+          "t": "Practical loop hardware",
           "tier": 3,
-          "scope": "Shaft-train torsional models; natural frequencies of two- and three-inertia systems. Excitation from VFDs and reciprocating machines. The invisible vibration that breaks couplings.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "Actuators, positioners, and valve characteristics inside the loop. Deadband, stiction, and hysteresis as control killers. Loop problems that masquerade as tuning problems.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "Why is torsional vibration invisible to casing measurements?",
-            "What excites torsional modes in VFD-driven trains?"
+            "What do stiction and deadband do to a well-tuned loop?",
+            "Why can a valve problem masquerade as a tuning problem?"
           ]
         },
         {
           "n": 10,
-          "t": "Measurement preview: sensors and signals",
+          "t": "Discrete-time and digital control basics",
           "tier": 3,
-          "scope": "Accelerometer, velocity, and displacement measurement physics; integration between them. Mounting effects on usable frequency range. The hardware bridge to Year 4's analysis course.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "Sampling in the loop; the PLC/DCS as a discrete controller. Scan-rate effects on stability margins. Enough discrete theory to respect the digital reality.",
+          "src": "NPTEL: Control Engineering",
           "preview": [
-            "Why does accelerometer mounting set the usable frequency ceiling?",
-            "Integrating acceleration to velocity: what does it amplify?"
+            "What does sampling too slowly do to stability margins?",
+            "Why does a PLC PID need anti-windup on output limits?"
           ]
         },
         {
           "n": 11,
-          "t": "Field vibration phenomena tour",
+          "t": "Case studies in machine control",
           "tier": 3,
-          "scope": "Resonance, beats, looseness nonlinearity, and self-excited whirl shown as measured signatures. Each tied back to its lesson's mathematics. The course's theory validated against plant reality.",
-          "src": "NPTEL: Mechanical Vibrations; video: Mobius Institute — vibration",
+          "scope": "Speed, tension, and temperature loops from real machinery contexts — an extruder barrel and a winder analyzed. Loop interaction previewed. Control theory attached to hardware nameplates.",
+          "src": "NPTEL: Control Engineering",
+          "kuwait": "Gulf Cable",
           "preview": [
-            "Match beats, looseness, and whirl to their measured signatures.",
-            "Which lesson's mathematics explains each signature you saw?"
+            "In the extruder temperature case, what made the loop slow — process or tuning?",
+            "Which loop of the winder interacts with tension, and how?"
           ]
         }
       ]
@@ -272,135 +273,268 @@
       ]
     },
     {
-      "id": "robotics",
-      "code": "ROB 353",
-      "title": "Industrial Robotics",
-      "summary": "Robots as production equipment: kinematics enough to reason, plus the practical layer — end effectors, safety systems, palletizing and welding cells, and what a robot cell demands from maintenance.",
+      "id": "plc-2",
+      "code": "PLC 303",
+      "title": "PLC II & Industrial Networks",
+      "summary": "Beyond single-rack thinking: structured programming, analog and PID in the PLC, fieldbuses and industrial Ethernet, drives integration, and the networked architecture of a modern line.",
       "taught_from": [
-        "NPTEL: Industrial Robotics (nptel.ac.in)"
+        "NPTEL: Industrial Automation and Control (nptel.ac.in)"
       ],
       "lessons": [
         {
           "n": 1,
-          "t": "Robot anatomy and types",
+          "t": "Structured programming and IEC languages",
           "tier": 3,
-          "scope": "Articulated, SCARA, delta, and cartesian architectures with their sweet spots. Axes, envelopes, and payload ratings read from datasheets. Repeatability versus accuracy — the specification that matters.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "Function blocks, structured text, and sequential function charts beside ladder. Choosing a language per task. Code organization for machines with modes.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "Repeatability versus accuracy: which does a robot datasheet promise?",
-            "Match SCARA, delta, and articulated arms to their natural tasks."
+            "Pick a language per task: sequence, math block, interlock — and justify.",
+            "What does a function block encapsulate that ladder rungs scatter?"
           ]
         },
         {
           "n": 2,
-          "t": "Kinematics fundamentals",
+          "t": "State machines for sequential control",
           "tier": 3,
-          "scope": "Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mathematics to respect the controller.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "Modes, states, and transitions designed before coding. Auto/manual/maintenance mode architecture. The pattern that makes complex machines debuggable.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "What is a singularity, and why does the wrist flip near one?",
-            "Forward versus inverse kinematics: which is the hard direction, and why?"
+            "Design states for auto/manual/maintenance: what transitions need guarding?",
+            "Why do state machines make faults recoverable?"
           ]
         },
         {
           "n": 3,
-          "t": "Drives, encoders, and calibration",
+          "t": "Analog processing and PID in the PLC",
           "tier": 3,
-          "scope": "Servo axes, gearing, and absolute encoders; mastering and calibration procedures. Backlash and its symptoms in path quality. The maintenance anatomy of an arm.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "Scaling, filtering, and alarm limits on analog channels. The PLC PID instruction configured and tuned. Temperature and flow loops closed in logic.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "Why do absolute encoders remove homing?",
-            "What does mastering restore after a crash?"
+            "Why filter an analog input, and what does over-filtering cost?",
+            "Configure PID in the PLC: which three parameters first?"
           ]
         },
         {
           "n": 4,
-          "t": "End effectors and tooling",
+          "t": "Industrial networks I: fieldbus fundamentals",
           "tier": 3,
-          "scope": "Grippers — pneumatic, servo, vacuum, magnetic — matched to product. Tool changers and dress packs, the wear items nobody budgets. Payload and center-of-gravity arithmetic.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "Why networks replaced point wiring; topology, addressing, and determinism. Modbus RTU/TCP as the lingua franca. Reading a network architecture drawing.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "Why does payload include the gripper and its cable dress?",
-            "Vacuum versus servo gripper: pick per product and defend."
+            "What does determinism mean on a fieldbus?",
+            "Why did Modbus survive forty years?"
           ]
         },
         {
           "n": 5,
-          "t": "Programming and teaching",
+          "t": "Industrial networks II: industrial Ethernet",
           "tier": 3,
-          "scope": "Jogging, frames, and point teaching; motion types and speed/approximation trade-offs. Program structure for cells with variants. Offline programming in outline.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "EtherNet/IP and PROFINET in outline; switches, VLANs, and segmentation for machine networks. Diagnostics from port LEDs to managed-switch counters. When the 'PLC fault' is a network fault.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "What does motion blending (approximation) trade for cycle time?",
-            "Why teach frames instead of points?"
+            "What do managed-switch diagnostics reveal that ping cannot?",
+            "Why segment machine networks from office networks?"
           ]
         },
         {
           "n": 6,
-          "t": "Robot safety systems",
+          "t": "VFDs and motion integration",
           "tier": 3,
-          "scope": "Guarding, light curtains, and safety-rated monitored stops; collaborative modes with their real limits. Risk assessment for a cell. Safety as the cell's first design input.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "Drive parameters, control words, and status words over the network. Speed and torque references from logic. Commissioning a networked drive without folklore.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "What does a safety-rated monitored stop guarantee?",
-            "Why are collaborative speeds so low in practice?"
+            "What do control and status words exchange with a drive?",
+            "Commission a networked VFD: which parameters are non-negotiable?"
           ]
         },
         {
           "n": 7,
-          "t": "Palletizing and material-handling cells",
+          "t": "Data handling and recipes",
           "tier": 3,
-          "scope": "End-of-line palletizing patterns and cycle-time budgets. Conveyor tracking basics. The robot cell most likely to appear at the end of a KDD-style packaging line.",
-          "src": "NPTEL: Industrial Robotics",
-          "kuwait": "KDD / Petra",
+          "scope": "Arrays, structures, and recipe management for product changeovers. Batch parameters downloaded safely. Production data captured at source for OEE.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "What makes palletizing patterns a solved problem — and mixed cases not?",
-            "Why does conveyor tracking need an encoder?"
+            "Why do recipes beat hand-entered setpoints at changeover?",
+            "What data should logic capture at the moment of a fault?"
           ]
         },
         {
           "n": 8,
-          "t": "Machine tending and assembly cells",
+          "t": "HMI design for operators",
           "tier": 3,
-          "scope": "Robots loading machine tools: door, chuck, and cycle-start interlocks, with the machine as the cell's real master. Part presentation — trays, bowl feeders, and vision in outline — as the make-or-break engineering. Assembly tasks: insertion, torque, and the compliance problem rigid parts pose.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "Screen hierarchy and navigation designed around the operator's tasks, not the tag database. High-performance HMI principles: gray backgrounds, analog context, and alarms that stand out because nothing else shouts. Binding displays to PLC data and testing the interface against abnormal situations, not just the happy path.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "Why is part presentation usually harder engineering than the robot motion itself?",
-            "What interlocks must exist before a robot reaches into a CNC machine?"
+            "Why do high-performance HMIs keep most of the screen gray?",
+            "What should an overview screen let an operator judge in five seconds?"
           ]
         },
         {
           "n": 9,
-          "t": "Robotic welding cells",
+          "t": "Alarm management and diagnostics design",
           "tier": 3,
-          "scope": "Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural work of the Kirby kind.",
-          "src": "NPTEL: Industrial Robotics",
-          "kuwait": "Kirby Building Systems",
+          "scope": "Alarm philosophy applied in logic: priority, deadband, and state-based suppression. First-out capture for trips. Designing the diagnostics you will want during the outage.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "What does a positioner add to a welding cell's reach and quality?",
-            "Why is TCP calibration the weld path's foundation?"
+            "Design first-out capture for a trip chain: what does it answer?",
+            "Which alarms deserve priority 1, and what does that imply for the rest?"
           ]
         },
         {
           "n": 10,
-          "t": "Cell integration",
+          "t": "OT cybersecurity basics",
           "tier": 3,
-          "scope": "The robot inside the PLC's state machine: handshakes, permissives, and fault recovery paths. Peripheral devices and fixturing. Cycle-time analysis against the line's takt.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "Why plant networks are attacked and how they are segmented, patched, and backed up. Remote access done with adult supervision. The maintenance engineer's cyber hygiene responsibilities.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "Design the PLC–robot handshake for a jam: who recovers whom?",
-            "Why does fixturing rank above the robot in cell accuracy?"
+            "Name three OT-security practices a maintenance engineer owns.",
+            "Why is remote vendor access both necessary and dangerous?"
           ]
         },
         {
           "n": 11,
-          "t": "Robot maintenance and diagnostics",
+          "t": "Integration project: a two-station line",
           "tier": 3,
-          "scope": "Preventive tasks: lubrication, belts, batteries, dress-pack inspection. Error logs and drift trends as early warnings. What a robot's reliability program looks like on paper.",
-          "src": "NPTEL: Industrial Robotics",
+          "scope": "Two PLC stations, one network, shared interlocks, one HMI: specify, program, and fault-test the pair. Handshake design under failure conditions. The systems view PLC I could not yet teach.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
           "preview": [
-            "Which preventive tasks keep an arm's accuracy — name three.",
-            "What do error logs trend before failures announce themselves?"
+            "In the two-station project, what handshake failure did you design against?",
+            "Why does the HMI show line state, not just device state?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maintenance-fundamentals",
+      "code": "MNT 306",
+      "title": "Maintenance Engineering Fundamentals",
+      "summary": "The discipline you came from, rebuilt as engineering: failure behavior over time, the P–F interval, maintenance strategy types, and the vocabulary — availability, MTBF, criticality — used precisely instead of loosely.",
+      "taught_from": [
+        "NPTEL: Maintenance and reliability-related engineering courses (nptel.ac.in)",
+        "Practitioner curriculum structured against the SMRP CMRP body-of-knowledge domains (framework, not a textbook)"
+      ],
+      "lessons": [
+        {
+          "n": 1,
+          "t": "Why equipment fails",
+          "tier": 3,
+          "scope": "Failure as a process, not an event: load versus capability over time. Failure modes, mechanisms, and causes distinguished rigorously. The language that makes failure discussable.",
+          "src": "SMRP CMRP framework; NPTEL maintenance courses",
+          "preview": [
+            "Failure mode versus mechanism versus cause: sort a seized bearing into all three.",
+            "Why is 'load exceeded capability' the universal failure sentence?"
+          ]
+        },
+        {
+          "n": 2,
+          "t": "Failure patterns and the P–F curve",
+          "tier": 2,
+          "core60": "C1",
+          "scope": "The six classic failure patterns and the uncomfortable evidence that most failures are not age-related. The P–F curve derived as a concept: potential failure, functional failure, and the inspection window between them. The single most consequential diagram in modern maintenance.",
+          "src": "SMRP CMRP framework; RCM literature as surveyed in NPTEL reliability courses",
+          "preview": [
+            "Classic studies found most failure modes are not age-related: what does that do to time-based overhauls?",
+            "Define P and F on the P–F curve, and state the rule for a legitimate inspection interval between them.",
+            "A defect is detectable ~3 months before functional failure: what is the longest defensible monitoring interval?"
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Maintenance strategy types",
+          "tier": 3,
+          "scope": "Run-to-failure, time-based, condition-based, and proactive strategies — each legitimate somewhere. Strategy selection by failure pattern and consequence. Why 'more PM' is not a strategy.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Match each strategy to the failure pattern it suits.",
+            "Why is run-to-failure a legitimate strategy and not neglect?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "Reliability vocabulary with numbers",
+          "tier": 3,
+          "scope": "MTBF, MTTR, availability, and utilization defined with equations and abused-examples. Inherent versus operational availability. Calculating them from real work-order data, including the data's lies.",
+          "src": "SMRP CMRP framework; NPTEL reliability courses",
+          "preview": [
+            "Compute availability from MTBF 400 h and MTTR 8 h.",
+            "Inherent versus operational availability: what does the gap contain?"
+          ]
+        },
+        {
+          "n": 5,
+          "t": "Criticality analysis",
+          "tier": 3,
+          "scope": "Ranking equipment by consequence and likelihood; criticality matrices built honestly. The 10% of assets that deserve 60% of engineering attention. Criticality as the master key to every later prioritization.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Build a criticality matrix: which axes, and who scores?",
+            "Why does criticality drive every later prioritization?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Preventive maintenance engineering",
+          "tier": 3,
+          "scope": "PM tasks written against failure modes, not habits. Intervals from failure data and P–F logic. The PM review: deleting tasks as a legitimate outcome.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Write a PM task against a specific failure mode — what makes it effective?",
+            "Why is deleting PMs sometimes the right outcome of a review?"
+          ]
+        },
+        {
+          "n": 7,
+          "t": "Lubrication fundamentals",
+          "tier": 3,
+          "scope": "Lubrication regimes from journal-bearing theory; grease versus oil decisions. Selection, storage, and contamination control. Lubrication as the cheapest reliability program in the plant.",
+          "src": "NPTEL tribology-related content; SMRP framework",
+          "preview": [
+            "Which lubrication regime protects at startup, and why is startup the danger?",
+            "Grease versus oil: name two deciding factors."
+          ]
+        },
+        {
+          "n": 8,
+          "t": "Precision maintenance practices",
+          "tier": 3,
+          "scope": "Alignment, balancing, fastener torque, and installation standards as failure-prevention engineering. The craftsmanship–reliability link quantified where possible. Why 'fitted and ran' is not a completion standard.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Why does precision alignment extend seal and bearing life?",
+            "What does 'fitted and ran' fail to verify?"
+          ]
+        },
+        {
+          "n": 9,
+          "t": "Operator care and autonomous maintenance",
+          "tier": 3,
+          "scope": "CLAIR-style operator tasks: clean, lubricate, adjust, inspect, report. The operations–maintenance interface designed, not fought over. TPM origins acknowledged without the cult.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Which operator tasks genuinely prevent failures?",
+            "Why does the operations–maintenance interface need design, not goodwill?"
+          ]
+        },
+        {
+          "n": 10,
+          "t": "Maintenance economics",
+          "tier": 3,
+          "scope": "Cost of downtime versus cost of maintenance; direct, indirect, and consequence costs. The optimum that moves with criticality. Making a maintenance budget argument management can audit.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Which downtime costs never appear on the maintenance budget?",
+            "Why does the maintenance optimum move with criticality?"
+          ]
+        },
+        {
+          "n": 11,
+          "t": "The maintenance function in the organization",
+          "tier": 3,
+          "scope": "Roles: technician, planner, supervisor, reliability engineer — who owns what. Centralized versus area maintenance. Where the transitioning maintenance engineer's experience already maps onto this course's language.",
+          "src": "SMRP CMRP framework",
+          "preview": [
+            "Map your current maintenance experience onto the roles in this lesson.",
+            "Which role owns strategy, and which owns this week's schedule?"
           ]
         }
       ]
@@ -679,140 +813,6 @@
           "preview": [
             "Where do you place corrosion coupons for a truthful rate?",
             "Turn a corrosion rate into remaining life: what arithmetic and what caveats?"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "production-planning",
-      "code": "PPC 356",
-      "title": "Production Planning & Control",
-      "summary": "The factory's calendar: forecasting, capacity, scheduling, inventory, and MRP — how production commitments are made and kept, and where maintenance windows must be fought for inside them.",
-      "taught_from": [
-        "NPTEL: Production and Operations Management-family courses (nptel.ac.in)",
-        "Groover, production systems chapters"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Production systems and layouts",
-          "tier": 3,
-          "scope": "Job shop, batch, line, and continuous production with their planning personalities. Layout types and material flow. Where each Kuwait anchor plant sits on this spectrum.",
-          "src": "Groover, production systems chapters",
-          "preview": [
-            "Place the six anchor plants on the job-shop-to-continuous spectrum.",
-            "What does layout type do to material travel?"
-          ]
-        },
-        {
-          "n": 2,
-          "t": "Demand forecasting",
-          "tier": 3,
-          "scope": "Moving averages and exponential smoothing with error tracking. Seasonality in outline. Forecasts as inputs to be doubted, not truths.",
-          "src": "NPTEL: Production and Operations Management",
-          "preview": [
-            "Why does exponential smoothing chase less than a short moving average?",
-            "What does tracking signal warn about a forecast?"
-          ]
-        },
-        {
-          "n": 3,
-          "t": "Capacity and takt",
-          "tier": 3,
-          "scope": "Design versus effective capacity; utilization and efficiency separated. Takt time computed and confronted with cycle times. Bottleneck identification as the first act of scheduling.",
-          "src": "NPTEL: Production and Operations Management",
-          "preview": [
-            "Compute takt for 4,800 units in two 8-h shifts.",
-            "Why does the bottleneck define capacity regardless of averages?"
-          ]
-        },
-        {
-          "n": 4,
-          "t": "Aggregate planning and MPS",
-          "tier": 3,
-          "scope": "Level versus chase strategies costed. The master production schedule as the plant's promise ledger. Frozen zones and why they exist.",
-          "src": "NPTEL: Production and Operations Management",
-          "preview": [
-            "Level versus chase: what does each cost in a dairy's demand cycle?",
-            "What does a frozen zone protect?"
-          ]
-        },
-        {
-          "n": 5,
-          "t": "Inventory management",
-          "tier": 3,
-          "scope": "EOQ derived and then handled with care; safety stock from service levels; ABC classification. Holding-cost honesty. The same mathematics that will price spare parts in Year 4.",
-          "src": "NPTEL: Production and Operations Management",
-          "preview": [
-            "Derive EOQ's logic without the formula: what balances?",
-            "Why does ABC classification concentrate attention?"
-          ]
-        },
-        {
-          "n": 6,
-          "t": "MRP and ERP logic",
-          "tier": 3,
-          "scope": "Bills of materials, lead-time offsetting, and the MRP explosion worked by hand once. ERP as MRP grown up. Data accuracy as the system's oxygen.",
-          "src": "NPTEL: Production and Operations Management",
-          "preview": [
-            "Explode a two-level BOM by hand: what offsets apply?",
-            "Why does inventory accuracy gate MRP's usefulness?"
-          ]
-        },
-        {
-          "n": 7,
-          "t": "Shop-floor scheduling",
-          "tier": 3,
-          "scope": "Dispatching rules and their trade-offs; Gantt logic and finite capacity. Sequence-dependent setups — the changeover matrix. Why the schedule is always wrong and still necessary.",
-          "src": "NPTEL: Production and Operations Management",
-          "preview": [
-            "Compare SPT and EDD dispatching on lateness.",
-            "Why do sequence-dependent setups wreck naive schedules?"
-          ]
-        },
-        {
-          "n": 8,
-          "t": "Line balancing",
-          "tier": 3,
-          "scope": "Precedence diagrams, station assignment, and balance efficiency. Rebalancing for demand changes. The packaging-line application: staffing a KDD-style line to takt.",
-          "src": "Groover, assembly-line chapters",
-          "kuwait": "KDD / Petra",
-          "preview": [
-            "Balance a 5-station line: what does efficiency measure?",
-            "Where does rebalancing come from when demand shifts?"
-          ]
-        },
-        {
-          "n": 9,
-          "t": "Maintenance in the production plan",
-          "tier": 3,
-          "scope": "Planned windows, opportunistic maintenance, and shutdown coordination as scheduling problems. The production–maintenance negotiation formalized. Availability commitments read from both sides of the table.",
-          "src": "NPTEL: Production and Operations Management; SMRP framework",
-          "preview": [
-            "Why are maintenance windows a scheduling negotiation, not a request?",
-            "What does opportunistic maintenance require from planning?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Performance measurement",
-          "tier": 3,
-          "scope": "Schedule adherence, throughput, WIP, and lead time as a coherent measure set. Little's law derived and used. The metrics OEE will join in Year 4.",
-          "src": "NPTEL: Production and Operations Management",
-          "preview": [
-            "State Little's law and one plant use.",
-            "Why does WIP hide problems?"
-          ]
-        },
-        {
-          "n": 11,
-          "t": "Planning case study",
-          "tier": 3,
-          "scope": "A multi-product line planned through one quarter: forecast, MPS, MRP run, schedule, and a maintenance-window negotiation. Deliverables in planner's formats. The course's tools used as one system.",
-          "src": "NPTEL: Production and Operations Management",
-          "preview": [
-            "In the case, what broke first: forecast, capacity, or schedule?",
-            "Which maintenance window did you defend, and with what argument?"
           ]
         }
       ]

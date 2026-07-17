@@ -3,6 +3,138 @@
   "title": "Year 2 · Semester 1",
   "courses": [
     {
+      "id": "math-3",
+      "code": "MTH 207",
+      "title": "Engineering Mathematics III — Differential Equations & Linear Algebra",
+      "summary": "The mathematics of dynamic systems: first- and second-order differential equations, Laplace transforms, and the matrix language of coupled systems — the toolset vibrations, controls, and heat transfer stand on.",
+      "taught_from": [
+        "MIT OCW 18.03 Differential Equations (ocw.mit.edu)"
+      ],
+      "lessons": [
+        {
+          "n": 1,
+          "t": "First-order equations revisited: separable and linear",
+          "tier": 3,
+          "scope": "Separable equations recapped from the calculus course, then the linear first-order equation solved with the integrating factor, derived rather than decreed. Solution families and the initial condition that picks one. The course's working vocabulary set in one lesson.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)",
+            "What exactly does the integrating factor multiply away?"
+          ]
+        },
+        {
+          "n": 2,
+          "t": "Modeling with first-order equations",
+          "tier": 3,
+          "scope": "Mixing tanks, thermal soak, and RC circuits: one balance statement each, and the same equation three times. Time constants read directly from coefficients. Steady state as the equation's destination, transient as its journey.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Write the ODE for a 5 m³ well-mixed tank flushed at 0.25 m³/min, and read off τ. (20 min)",
+            "Why do a cooling casting and a discharging capacitor share one mathematics?"
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Second-order equations: the homogeneous story",
+          "tier": 3,
+          "scope": "The characteristic equation turns a differential equation into algebra. Overdamped, critically damped, and underdamped responses classified by the discriminant. Why the damping ratio will become the vibration engineer's favorite number.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Classify y'' + 4y' + 3y = 0 by its roots. (−1 and −3: overdamped)",
+            "What does a complex-conjugate root pair mean physically?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "Nonhomogeneous equations and forced response",
+          "tier": 3,
+          "scope": "Undetermined coefficients for constant, ramp, and sinusoidal forcing. The structure theorem: general solution = homogeneous + particular. Transient versus steady-state response — the vocabulary the controls course inherits whole.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Why does the transient die out while the forced response persists?",
+            "What particular-solution form do you try for a constant force input?"
+          ]
+        },
+        {
+          "n": 5,
+          "t": "Free and forced oscillations",
+          "tier": 3,
+          "scope": "The mass–spring–damper equation solved end to end. Resonance: why amplitude grows when forcing approaches the natural frequency, and why machines care at one-times running speed. Beats in brief.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Compute ωn for m = 4 kg, k = 10 kN/m. (50 rad/s)",
+            "What limits the resonant amplitude in a real machine?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Laplace transforms I",
+          "tier": 3,
+          "scope": "The transform defined and a working table built by direct integration. Transforms of derivatives: calculus becomes algebra, and initial conditions walk in automatically. Linearity as the property that makes the method industrial.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "What is the transform of e^(−3t)? (1/(s+3))",
+            "How do initial conditions enter a transformed equation without extra work?"
+          ]
+        },
+        {
+          "n": 7,
+          "t": "Laplace transforms II: solving problems",
+          "tier": 3,
+          "scope": "Inverse transforms by partial fractions; step inputs and switched forcing handled cleanly. Initial-value problems solved entirely in the s-domain. The transfer-function idea planted for the controls course.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Invert 6/(s(s+3)). (2 − 2e^(−3t))",
+            "What does dividing by s do to a signal in the time domain?"
+          ]
+        },
+        {
+          "n": 8,
+          "t": "Systems of equations: the matrix view",
+          "tier": 3,
+          "scope": "Coupled tanks and coupled masses written as x' = Ax. Why coupled dynamics needs matrices rather than more calculus. The eigenvalue preview: a system's tempo hides in A itself.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Write the two-tank mixing problem as a matrix equation.",
+            "What plays the characteristic equation's role for a system of equations?"
+          ]
+        },
+        {
+          "n": 9,
+          "t": "Matrices and linear systems",
+          "tier": 3,
+          "scope": "Gaussian elimination, rank, and solvability; determinants at working strength. The numerical caution: ill-conditioned systems amplify data noise, and engineering data is never clean. Where matrix solving hides inside every simulation tool.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Solve a 3×3 system by elimination, tracking each pivot.",
+            "What does a near-zero determinant warn you about the answer?"
+          ]
+        },
+        {
+          "n": 10,
+          "t": "Eigenvalues and eigenvectors",
+          "tier": 3,
+          "scope": "Eigenvalues computed for 2×2 and 3×3 matrices; eigenvalues as the system's tempo — decay rates and oscillation frequencies — and eigenvectors as its mode shapes. The modal language of the vibrations course is born here.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Find the eigenvalues of [[2,1],[1,2]]. (1 and 3)",
+            "Why do the signs of eigenvalues decide stability?"
+          ]
+        },
+        {
+          "n": 11,
+          "t": "Numerical solution of differential equations",
+          "tier": 3,
+          "scope": "Euler's method and Runge–Kutta; step size traded against accuracy and stability, observed live on the cooling equation. When numerical solution is the only honest route — and how to distrust it productively. Closes the loop with the computing course.",
+          "src": "MIT OCW 18.03",
+          "preview": [
+            "Take two Euler steps of y' = −y, y(0) = 1, h = 0.5. (0.25)",
+            "Why can too large a step make a stable equation explode numerically?"
+          ]
+        }
+      ]
+    },
+    {
       "id": "strength",
       "code": "SOM 201",
       "title": "Strength of Materials",
@@ -133,143 +265,6 @@
           "preview": [
             "Why does a keyway multiply nominal stress, and by roughly how much order-wise?",
             "What does notch sensitivity add to the geometric Kt story?"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "thermo-2",
-      "code": "THM 202",
-      "title": "Thermodynamics II — Cycles & Utilities",
-      "summary": "The plant utilities course wearing a thermodynamics badge: steam cycles, gas turbines, refrigeration, compressed air, and psychrometrics — sized, audited, and read from the utility deck of a real factory.",
-      "taught_from": [
-        "NPTEL: Applied Thermodynamics (nptel.ac.in)",
-        "Çengel-tradition cycle analysis via MIT OCW 2.005/2.006 materials"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Rankine cycle",
-          "tier": 3,
-          "scope": "The ideal Rankine cycle on T–s coordinates with each device audited by the steady-flow energy equation. Efficiency levers: pressure, superheat, condenser vacuum. The backbone of every steam utility system.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "Trace steam through the four Rankine devices on a T–s diagram.",
-            "Why does condenser vacuum matter so much to cycle efficiency?"
-          ]
-        },
-        {
-          "n": 2,
-          "t": "Real steam cycles: reheat, regeneration, losses",
-          "tier": 3,
-          "scope": "Reheat and feedwater heating and why plants pay for them. Component irreversibilities located on the h–s diagram. Heat rate as the operator's efficiency language.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "What does reheat buy besides efficiency?",
-            "Why does feedwater heating raise cycle efficiency at all?"
-          ]
-        },
-        {
-          "n": 3,
-          "t": "Industrial steam systems",
-          "tier": 2,
-          "core60": "B8",
-          "scope": "Boilers, headers, PRVs, steam traps, and condensate return as one thermodynamic system. Steam quality, flash steam, and trap failure modes costed with the SFEE. The utilities lesson KDD-scale food plants and EQUATE-scale process plants both live by.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "kuwait": "KDD / Petra",
-          "preview": [
-            "A trap fails open on a 10 bar header: name the two distinct loss mechanisms it creates.",
-            "Why is hot condensate worth far more returned than its water value alone?",
-            "Explain flash steam: why does condensate partially vaporize crossing into low pressure?"
-          ]
-        },
-        {
-          "n": 4,
-          "t": "Gas turbines and Brayton cycle",
-          "tier": 3,
-          "scope": "Brayton cycle with real component efficiencies. Pressure ratio trade-offs; intercooling and regeneration in outline. The prime mover behind Gulf power and large compression trains.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "Why does gas-turbine efficiency climb with pressure ratio — and what stops it?",
-            "What fraction-scale of turbine work does the compressor consume, and why does it matter?"
-          ]
-        },
-        {
-          "n": 5,
-          "t": "Vapor-compression refrigeration",
-          "tier": 3,
-          "scope": "The refrigeration cycle on P–h coordinates; COP computed from enthalpies. Superheat and subcooling as health indicators. Chillers and cold stores — refrigeration as a food plant's beating heart.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "kuwait": "KDD / Petra",
-          "preview": [
-            "Read a refrigeration cycle on P–h: where are the four processes?",
-            "Why do superheat and subcooling numbers diagnose charge and health?"
-          ]
-        },
-        {
-          "n": 6,
-          "t": "Psychrometrics and HVAC loads",
-          "tier": 3,
-          "scope": "Moist-air properties and the psychrometric chart worked fluently. Cooling-and-dehumidification processes traced. Gulf-summer design conditions and what they do to equipment ratings.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "What two properties fix a moist-air state on the psychrometric chart?",
-            "Why does Gulf summer humidity punish cooling coils twice?"
-          ]
-        },
-        {
-          "n": 7,
-          "t": "Cooling towers and cooling water systems",
-          "tier": 3,
-          "scope": "Evaporative cooling read straight off the psychrometric chart: range, approach, and why wet-bulb temperature sets the floor. Cycles of concentration, makeup, and blowdown arithmetic. The condenser cooling loop as the plant's other utility — sized, fouled, and chemically managed.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "Why can a cooling tower cool water below the ambient dry-bulb temperature?",
-            "What does raising cycles of concentration save, and what does it risk?"
-          ]
-        },
-        {
-          "n": 8,
-          "t": "Compressed air systems",
-          "tier": 3,
-          "scope": "Compression work, multistaging, and intercooling derived and priced. Receivers, dryers, and dew point. Leak economics — why compressed air is the plant's most expensive utility per joule.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "Why does multistaging with intercooling approach isothermal compression?",
-            "Price a 1 mm leak conceptually: what makes compressed air so expensive?"
-          ]
-        },
-        {
-          "n": 9,
-          "t": "Combustion fundamentals",
-          "tier": 3,
-          "scope": "Stoichiometry, excess air, and flue-gas analysis. Heating values and combustion efficiency from stack measurements. Boiler tuning as applied chemistry.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "What does excess air do for combustion and against efficiency?",
-            "Which flue-gas measurements reveal a burner running rich?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Exergy analysis of utilities",
-          "tier": 3,
-          "scope": "Second-law accounting applied to boilers, heat exchangers, and throttles. Exergy destruction rankings as an audit's priority list. Where the utility bill actually leaks.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "Why is a throttle an exergy bonfire while being energy-neutral?",
-            "Rank boiler, exchanger, throttle by typical exergy destruction."
-          ]
-        },
-        {
-          "n": 11,
-          "t": "Utility system audit project",
-          "tier": 3,
-          "scope": "A guided paper audit of a representative factory utility deck: steam, air, chilled water. Balances closed, losses ranked, fixes proposed with payback estimates. The Tier-2 utilities lesson practiced end to end.",
-          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
-          "preview": [
-            "Which three utility systems does a factory audit balance first, and why?",
-            "What makes a payback claim from a utility audit credible?"
           ]
         }
       ]
@@ -409,134 +404,134 @@
       ]
     },
     {
-      "id": "metrology",
-      "code": "MET 204",
-      "title": "Metrology & Quality Control",
-      "summary": "Measurement you can defend: instruments, uncertainty, calibration, GD&T verification, and the SPC toolkit — the quality half of a production engineer's day job.",
+      "id": "statistics",
+      "code": "STS 206",
+      "title": "Engineering Statistics",
+      "summary": "Data with judgment: probability, distributions, estimation, hypothesis tests, and regression — the quiet prerequisite under SPC, Weibull analysis, measurement uncertainty, and every reliability claim you will ever audit.",
       "taught_from": [
-        "NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)",
-        "Groover, inspection & quality chapters"
+        "MIT OCW 18.05 Introduction to Probability and Statistics (ocw.mit.edu)",
+        "NPTEL: Probability and Statistics"
       ],
       "lessons": [
         {
           "n": 1,
-          "t": "Measurement fundamentals",
+          "t": "Describing data",
           "tier": 3,
-          "scope": "Accuracy, precision, resolution, and bias untangled for good. Traceability chains to national standards. The vocabulary that makes calibration certificates readable.",
-          "src": "NPTEL: Metrology",
+          "scope": "Location, spread, and shape; histograms and box plots that don't lie. Outliers treated as evidence, not embarrassment. Plant data pathologies previewed.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Accuracy versus precision: sketch the four target patterns.",
-            "What does traceability connect your caliper to?"
+            "Mean versus median on skewed repair times: which tells the truer story?",
+            "What does a box plot show that a bar of averages hides?"
           ]
         },
         {
           "n": 2,
-          "t": "Dimensional instruments",
+          "t": "Probability rules",
           "tier": 3,
-          "scope": "Calipers, micrometers, dial indicators, gauge blocks, and comparators — use, care, and abuse. Abbe error and why instrument geometry matters. Temperature effects at the micron level.",
-          "src": "NPTEL: Metrology",
+          "scope": "Sample spaces, independence, and conditional probability. Bayes' theorem worked on an inspection-alarm example. The base-rate trap that fools test results everywhere.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Why does Abbe error make a caliper worse than a micrometer?",
-            "What does 20 °C have to do with a certified gauge block?"
+            "Bayes in one line: why do false alarms dominate rare-event detection?",
+            "Independence: what does assuming it wrongly do to risk estimates?"
           ]
         },
         {
           "n": 3,
-          "t": "Uncertainty and calibration",
+          "t": "Discrete distributions",
           "tier": 3,
-          "scope": "Uncertainty budgets built from type A and B components. Calibration intervals and out-of-tolerance investigations. A micrometer calibration worked end to end.",
-          "src": "NPTEL: Metrology",
+          "scope": "Binomial and Poisson models with their assumptions audited. Defect counts and rare-event arrivals. When the Poisson approximation earns its keep.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Type A versus Type B uncertainty: what distinguishes them?",
-            "Out-of-tolerance found at calibration: what must the investigation cover?"
+            "When is Poisson the right model for failure counts?",
+            "What assumptions does a binomial defect model make?"
           ]
         },
         {
           "n": 4,
-          "t": "Form, fits, and GD&T verification",
+          "t": "Continuous distributions",
           "tier": 3,
-          "scope": "Measuring flatness, roundness, and runout — the rotating-equipment repair set. Verifying position with datums. CMM measurement in outline.",
-          "src": "NPTEL: Metrology; Groover inspection chapters",
+          "scope": "The normal distribution and its z-arithmetic; lognormal for repair times; exponential for memoryless failure. Choosing a model from data shape and physics. The exponential's constant hazard flagged for Reliability I.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Measure runout on a shaft: setup, instrument, and what the number means.",
-            "What does a datum system add to a position check?"
+            "Why are repair times often lognormal?",
+            "What does the exponential's memoryless property claim — and when is it false?"
           ]
         },
         {
           "n": 5,
-          "t": "Limit gauging and Taylor's principle",
+          "t": "Sampling distributions and the CLT",
           "tier": 3,
-          "scope": "Limits and fits recalled from the drawing course, then verified the shop-floor way: GO/NO-GO limit gauges designed with gauge-maker's tolerance. Taylor's principle — why the GO gauge must check the whole feature while the NO-GO checks point by point. Where attribute gauging beats measurement, and where it hides trouble.",
-          "src": "NPTEL: Metrology",
+          "scope": "Why averages behave better than individuals. Standard error and the central limit theorem demonstrated numerically. The statistical footing under control charts.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Why must a GO gauge check the whole feature while the NO-GO checks point by point?",
-            "Gauge-maker's tolerance sits inside the work tolerance: who does that protect?"
+            "Why do averages of n samples scatter less by √n?",
+            "What does the CLT let you assume about sample means?"
           ]
         },
         {
           "n": 6,
-          "t": "Surface texture measurement",
+          "t": "Estimation and confidence intervals",
           "tier": 3,
-          "scope": "Ra, Rz, and the stylus trace read properly. Cutoffs and filtering honestly explained. Finish specs matched to gaskets, seals, and bearing seats.",
-          "src": "NPTEL: Metrology",
+          "scope": "Point estimates and confidence intervals for means and proportions. Interpretation without the classic misreadings. Sample-size arithmetic before the test campaign, not after.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Why does cutoff length change a measured Ra?",
-            "Match a finish spec to a mechanical-seal face versus a painted guard."
+            "Interpret a 95% confidence interval without the classic misreading.",
+            "Why compute sample size before the test campaign?"
           ]
         },
         {
           "n": 7,
-          "t": "Statistical process control I",
+          "t": "Hypothesis testing",
           "tier": 3,
-          "scope": "Variation: common versus special cause — the distinction all of SPC rests on. X̄–R charts built and read. Control limits versus specification limits, never confused again.",
-          "src": "Groover, quality chapters; NPTEL",
+          "scope": "Null logic, p-values, and both error types with plant-decision stakes. One- and two-sample t-tests. 'Statistically significant' versus 'operationally meaningful' — a distinction with budget consequences.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Common versus special cause: why does the response differ?",
-            "Why are control limits never the same thing as spec limits?"
+            "What do Type I and Type II errors cost in a plant decision?",
+            "Statistically significant but operationally meaningless: give an example."
           ]
         },
         {
           "n": 8,
-          "t": "Statistical process control II and capability",
+          "t": "Regression",
           "tier": 3,
-          "scope": "Attribute charts in brief; capability indices Cp and Cpk computed and abused-proofed. What Cpk = 1.33 actually promises. Capability studies as pre-production gatekeeping.",
-          "src": "Groover, quality chapters; NPTEL",
+          "scope": "Least squares fitting with residual diagnostics. Interpretation of slope, intercept, and R² without overclaiming. Degradation trends and calibration curves as the working examples.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Cp = 1.8 but Cpk = 0.7: what is the process doing?",
-            "What does Cpk = 1.33 promise in defect terms, roughly?"
+            "What pattern in residuals invalidates a straight-line fit?",
+            "Why does R² alone never justify a model?"
           ]
         },
         {
           "n": 9,
-          "t": "Acceptance sampling",
+          "t": "Design of experiments first contact",
           "tier": 3,
-          "scope": "Sampling plans, OC curves, and the risks each party carries. AQL semantics without the folklore. Where sampling makes sense and where 100% inspection is owed.",
-          "src": "Groover, quality chapters",
+          "scope": "One factor at a time versus factorial thinking. Main effects and interactions read from a 2² experiment. The efficiency argument that Lean Six Sigma will later monetize.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "What do producer's and consumer's risk mean on an OC curve?",
-            "When is 100% inspection actually owed?"
+            "What is an interaction, and why does one-factor-at-a-time miss it?",
+            "Read main effects from a 2² experiment table."
           ]
         },
         {
           "n": 10,
-          "t": "Gauge R&R and measurement systems",
+          "t": "Reliability statistics preview",
           "tier": 3,
-          "scope": "Repeatability and reproducibility studies: can the gauge see the tolerance? %GRR computed and judged. The study that should precede every SPC deployment and rarely does.",
-          "src": "NPTEL: Metrology",
+          "scope": "Censored data — the defining feature of failure records. Hazard and survival functions introduced gently. The bridge lesson into Weibull analysis in Reliability I.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "%GRR at 35%: what does that verdict mean for your SPC plans?",
-            "Repeatability versus reproducibility: whose variation is each?"
+            "What is censored data, and why do failure logs teem with it?",
+            "Hazard versus failure rate: what does each function describe?"
           ]
         },
         {
           "n": 11,
-          "t": "Quality systems and audits",
+          "t": "Statistical malpractice and honest reporting",
           "tier": 3,
-          "scope": "ISO 9001 logic: say it, do it, prove it. Nonconformance, CAPA, and audit trails. Where quality systems touch maintenance records — more often than either side admits.",
-          "src": "NPTEL: Metrology and Quality Control",
+          "scope": "P-hacking, survivorship bias, and cherry-picked baselines — recognized and named. Uncertainty statements as professional obligation. How to present data to management without lying by chart.",
+          "src": "MIT OCW 18.05",
           "preview": [
-            "Say-do-prove: map ISO 9001's logic onto a calibration program.",
-            "Where do maintenance records enter a quality audit?"
+            "Name two chart crimes that flatter a KPI.",
+            "What must an honest uncertainty statement accompany?"
           ]
         }
       ]
@@ -678,135 +673,168 @@
       ]
     },
     {
-      "id": "statistics",
-      "code": "STS 206",
-      "title": "Engineering Statistics",
-      "summary": "Data with judgment: probability, distributions, estimation, hypothesis tests, and regression — the quiet prerequisite under SPC, Weibull analysis, measurement uncertainty, and every reliability claim you will ever audit.",
+      "id": "mfg-processes-2",
+      "code": "MFG 154",
+      "title": "Manufacturing Processes II — Machining & Joining",
+      "summary": "Chips and joints: machining theory and its operations, grinding, and the welding processes — the removal and joining half of the process world, with Kirby's fabrication lines as the standing example.",
       "taught_from": [
-        "MIT OCW 18.05 Introduction to Probability and Statistics (ocw.mit.edu)",
-        "NPTEL: Probability and Statistics"
+        "Groover, Fundamentals of Modern Manufacturing (Wiley) — machining & joining chapters",
+        "Kalpakjian & Schmid, Manufacturing Engineering and Technology (Pearson)",
+        "Black & Kohser, DeGarmo's Materials and Processes in Manufacturing (Wiley)"
       ],
       "lessons": [
         {
           "n": 1,
-          "t": "Describing data",
-          "tier": 3,
-          "scope": "Location, spread, and shape; histograms and box plots that don't lie. Outliers treated as evidence, not embarrassment. Plant data pathologies previewed.",
-          "src": "MIT OCW 18.05",
+          "t": "Theory of metal machining",
+          "tier": 2,
+          "core60": "A9",
+          "scope": "Orthogonal cutting model: shear plane, chip formation, cutting forces, and the Merchant relation. Cutting temperature and where tool wear comes from. Taylor tool-life equation with its exponents read as economics.",
+          "src": "Groover, Ch. 21",
           "preview": [
-            "Mean versus median on skewed repair times: which tells the truer story?",
-            "What does a box plot show that a bar of averages hides?"
+            "Cutting at 200 m/min gives 30 min of tool life; with Taylor exponent n = 0.25, evaluate the constant C = vTⁿ.",
+            "Where does most of the cutting energy end up, and why does that cap cutting speed?",
+            "If tool–chip friction falls, what does the Merchant relation predict for the shear angle and cutting force?"
           ]
         },
         {
           "n": 2,
-          "t": "Probability rules",
+          "t": "Cutting tools and fluids",
           "tier": 3,
-          "scope": "Sample spaces, independence, and conditional probability. Bayes' theorem worked on an inspection-alarm example. The base-rate trap that fools test results everywhere.",
-          "src": "MIT OCW 18.05",
+          "scope": "Tool materials from HSS to coated carbides and ceramics; wear modes — flank, crater, notch. Insert geometry and grades read from a catalog. Cutting fluids and their delivery, with health notes.",
+          "src": "Groover, cutting-tool chapter; Kalpakjian & Schmid",
           "preview": [
-            "Bayes in one line: why do false alarms dominate rare-event detection?",
-            "Independence: what does assuming it wrongly do to risk estimates?"
+            "Flank wear versus crater wear: where does each live and what drives it?",
+            "What do coating layers on a carbide insert actually do?"
           ]
         },
         {
           "n": 3,
-          "t": "Discrete distributions",
-          "tier": 3,
-          "scope": "Binomial and Poisson models with their assumptions audited. Defect counts and rare-event arrivals. When the Poisson approximation earns its keep.",
-          "src": "MIT OCW 18.05",
+          "t": "Turning, milling, and drilling",
+          "tier": 2,
+          "core60": "A10",
+          "scope": "The core operations with their speeds-and-feeds arithmetic: material removal rate, machining time, and power. Workholding logic. One condensed worked example runs a job from print to cycle estimate.",
+          "src": "Groover, Ch. 22",
           "preview": [
-            "When is Poisson the right model for failure counts?",
-            "What assumptions does a binomial defect model make?"
+            "Compute MRR for turning at v = 150 m/min, f = 0.3 mm/rev, depth 3 mm.",
+            "How long is one 300 mm turning pass at 0.3 mm/rev and 800 rpm?",
+            "Why does chip evacuation dominate deep-hole drilling in a way milling never sees?"
           ]
         },
         {
           "n": 4,
-          "t": "Continuous distributions",
+          "t": "Machine tools and CNC basics",
           "tier": 3,
-          "scope": "The normal distribution and its z-arithmetic; lognormal for repair times; exponential for memoryless failure. Choosing a model from data shape and physics. The exponential's constant hazard flagged for Reliability I.",
-          "src": "MIT OCW 18.05",
+          "scope": "Lathe and machining-center anatomy; axes and coordinate systems. What G-code programs actually command. Accuracy, repeatability, and backlash as machine-health quantities a maintenance engineer owns.",
+          "src": "Groover, CNC sections; Kalpakjian & Schmid",
           "preview": [
-            "Why are repair times often lognormal?",
-            "What does the exponential's memoryless property claim — and when is it false?"
+            "What do accuracy, repeatability, and backlash each mean for a CNC axis?",
+            "Why does climb versus conventional milling change finish and force?"
           ]
         },
         {
           "n": 5,
-          "t": "Sampling distributions and the CLT",
-          "tier": 3,
-          "scope": "Why averages behave better than individuals. Standard error and the central limit theorem demonstrated numerically. The statistical footing under control charts.",
-          "src": "MIT OCW 18.05",
+          "t": "Grinding and abrasive processes",
+          "tier": 2,
+          "core60": "A11",
+          "scope": "Abrasive mechanics: grain depth of cut, specific energy, and why grinding burns parts when abused. Wheel designation decoded. Surface and cylindrical grinding with dressing and balancing practice.",
+          "src": "Groover, Ch. 25",
           "preview": [
-            "Why do averages of n samples scatter less by √n?",
-            "What does the CLT let you assume about sample means?"
+            "Why can grinding burn or crack a surface that turning would leave unharmed?",
+            "In a wheel marked A60KV, what do the A, the 60, and the K each specify?",
+            "What does dressing restore, and what workpiece symptom says it is overdue?"
           ]
         },
         {
           "n": 6,
-          "t": "Estimation and confidence intervals",
+          "t": "Surface finish and integrity",
           "tier": 3,
-          "scope": "Point estimates and confidence intervals for means and proportions. Interpretation without the classic misreadings. Sample-size arithmetic before the test campaign, not after.",
-          "src": "MIT OCW 18.05",
+          "scope": "Ra and Rz defined and measured; finish versus process capability charts. Residual stresses from machining and grinding. Why a ground bearing journal's finish is a reliability parameter.",
+          "src": "Groover, surface chapters; Kalpakjian & Schmid",
           "preview": [
-            "Interpret a 95% confidence interval without the classic misreading.",
-            "Why compute sample size before the test campaign?"
+            "Ra versus Rz: what does each capture about a surface?",
+            "Why can grinding leave tensile residual stress, and who cares?"
           ]
         },
         {
           "n": 7,
-          "t": "Hypothesis testing",
+          "t": "Nontraditional machining",
           "tier": 3,
-          "scope": "Null logic, p-values, and both error types with plant-decision stakes. One- and two-sample t-tests. 'Statistically significant' versus 'operationally meaningful' — a distinction with budget consequences.",
-          "src": "MIT OCW 18.05",
+          "scope": "EDM, wire EDM, ECM, laser and abrasive-waterjet cutting. Where conventional cutting cannot go: hardened dies, delicate profiles. Selection by material, feature, and tolerance.",
+          "src": "Groover, nontraditional processes chapter",
           "preview": [
-            "What do Type I and Type II errors cost in a plant decision?",
-            "Statistically significant but operationally meaningless: give an example."
+            "Why does EDM ignore hardness, and what does it demand instead?",
+            "Pick a process for a hardened die cavity's sharp internal corner."
           ]
         },
         {
           "n": 8,
-          "t": "Regression",
-          "tier": 3,
-          "scope": "Least squares fitting with residual diagnostics. Interpretation of slope, intercept, and R² without overclaiming. Degradation trends and calibration curves as the working examples.",
-          "src": "MIT OCW 18.05",
+          "t": "Welding processes I — arc processes",
+          "tier": 2,
+          "core60": "A12",
+          "scope": "SMAW, GMAW, FCAW, GTAW, SAW: how each arc works, its consumables, positions, and typical defects. Heat input defined and computed. The process lineup on Kirby's structural fabrication floor.",
+          "src": "Groover, welding chapters; Kalpakjian & Schmid",
+          "kuwait": "Kirby Building Systems",
           "preview": [
-            "What pattern in residuals invalidates a straight-line fit?",
-            "Why does R² alone never justify a model?"
+            "Compute heat input for 25 V, 200 A at 5 mm/s travel.",
+            "For structural work outdoors in wind, which arc process displaces GMAW and why?",
+            "Why is GTAW the default for open root passes despite its deposition rate?"
           ]
         },
         {
           "n": 9,
-          "t": "Design of experiments first contact",
+          "t": "Welding II, thermal cutting, and joint preparation",
           "tier": 3,
-          "scope": "One factor at a time versus factorial thinking. Main effects and interactions read from a 2² experiment. The efficiency argument that Lean Six Sigma will later monetize.",
-          "src": "MIT OCW 18.05",
+          "scope": "Resistance spot and seam welding; oxyfuel, friction, and explosion welding in outline; brazing and soldering distinguished properly from welding. Thermal cutting — oxyfuel, plasma, and laser — with kerf and heat-affected edges. Joint types, edge preparation geometry, and fit-up as the quiet variable behind weld quality.",
+          "src": "Groover, welding chapters; Kalpakjian & Schmid; Black & Kohser",
           "preview": [
-            "What is an interaction, and why does one-factor-at-a-time miss it?",
-            "Read main effects from a 2² experiment table."
+            "Resistance spot welding: what generates the heat, and where?",
+            "What does poor fit-up do to a weld's defect odds?"
           ]
         },
         {
           "n": 10,
-          "t": "Reliability statistics preview",
+          "t": "Mechanical joining",
           "tier": 3,
-          "scope": "Censored data — the defining feature of failure records. Hazard and survival functions introduced gently. The bridge lesson into Weibull analysis in Reliability I.",
-          "src": "MIT OCW 18.05",
+          "scope": "Bolted joints: preload, torque–tension, and why gasketed flanges leak when torqued wrong. Riveting and adhesive bonding in outline. The maintenance view: joints are made to be remade.",
+          "src": "Groover, assembly chapters; Kalpakjian & Schmid",
           "preview": [
-            "What is censored data, and why do failure logs teem with it?",
-            "Hazard versus failure rate: what does each function describe?"
+            "Why does bolt preload, not bolt strength, decide a joint's fatigue life?",
+            "What does a gasket actually seal against, mechanically?"
           ]
         },
         {
           "n": 11,
-          "t": "Statistical malpractice and honest reporting",
+          "t": "Additive manufacturing first contact",
           "tier": 3,
-          "scope": "P-hacking, survivorship bias, and cherry-picked baselines — recognized and named. Uncertainty statements as professional obligation. How to present data to management without lying by chart.",
-          "src": "MIT OCW 18.05",
+          "scope": "The AM process families in one pass: PBF, DED, FDM, binder jetting. Where AM already earns keep: jigs, obsolete spares, prototypes. Honest limits — surface, properties, qualification.",
+          "src": "Groover, additive manufacturing chapter",
           "preview": [
-            "Name two chart crimes that flatter a KPI.",
-            "What must an honest uncertainty statement accompany?"
+            "Where does AM already earn its keep in a maintenance organization?",
+            "Why do printed load-bearing parts face a qualification problem?"
           ]
+        }
+      ],
+      "videos": [
+        {
+          "title": "SME — machining and joining process videos",
+          "url": "https://www.youtube.com/channel/UCiEiOeFUl4Ytrv63Udugckg",
+          "src": "SME (Society of Manufacturing Engineers)",
+          "tag": "PROFESSIONAL BODY · CLEAR NARRATION · VERIFIED",
+          "note": "Clearly narrated process explainers: machining, grinding, and welding — watch alongside each lesson."
+        },
+        {
+          "title": "Manufacturing Processes II — IIT Kharagpur",
+          "url": "https://nptel.ac.in/courses/112105126",
+          "src": "NPTEL",
+          "tag": "ALTERNATIVE · ENABLE CAPTIONS",
+          "note": "Machining-focused lecture series: cutting mechanics, tools, and grinding."
+        },
+        {
+          "title": "Manufacturing lectures by Eng. Mahmoud Marzouk",
+          "url": "https://www.youtube.com/@Marzouk-Tutorials",
+          "src": "YouTube — independent educator",
+          "tag": "IN ARABIC — ALTERNATIVE · VERIFIED",
+          "note": "Arabic-language manufacturing-processes lectures (casting, forming, sheet metal). English sources above remain the primary path."
         }
       ]
     }

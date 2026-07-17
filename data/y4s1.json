@@ -158,141 +158,6 @@
       ]
     },
     {
-      "id": "asset-integrity",
-      "code": "AIM 402",
-      "title": "Asset Integrity Management",
-      "summary": "Keeping contained energy contained: integrity management systems, risk-based inspection, fitness-for-service thinking, and the inspection programs for static equipment — the asset integrity engineer's course.",
-      "taught_from": [
-        "Callister & Rethwisch, Ch. 8, 17 (failure & corrosion foundations)",
-        "NPTEL: reliability and corrosion course content (nptel.ac.in)"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "What asset integrity means",
-          "tier": 3,
-          "scope": "Integrity as the discipline over static equipment: vessels, piping, tanks, relief systems. Loss-of-containment consequence logic. The role's boundaries against maintenance and inspection functions.",
-          "src": "NPTEL reliability content; industry framework survey",
-          "preview": [
-            "What equipment classes does integrity own, and what consequence unites them?",
-            "Where does integrity end and maintenance begin?"
-          ]
-        },
-        {
-          "n": 2,
-          "t": "Damage mechanisms inventory",
-          "tier": 3,
-          "scope": "The degradation bestiary organized for static equipment: thinning, cracking, embrittlement, mechanical damage. Susceptibility mapped from process conditions. The corrosion course operationalized into an integrity register.",
-          "src": "Callister & Rethwisch, Ch. 17",
-          "preview": [
-            "Sort thinning, cracking, and embrittlement by inspectability.",
-            "Why does susceptibility mapping precede any inspection plan?"
-          ]
-        },
-        {
-          "n": 3,
-          "t": "Inspection methods for static equipment",
-          "tier": 3,
-          "scope": "Visual, UT thickness, shear-wave, and profile radiography deployed on vessels and piping. CML selection — where to measure so the data means something. Inspection effectiveness graded honestly.",
-          "src": "NPTEL NDT-related content",
-          "preview": [
-            "Why does CML selection decide whether thickness data means anything?",
-            "What does inspection effectiveness grading admit about methods?"
-          ]
-        },
-        {
-          "n": 4,
-          "t": "Risk-based inspection",
-          "tier": 3,
-          "scope": "Probability and consequence of failure combined into inspection priority. Interval setting from remaining life and confidence. RBI as budget allocation defended with arithmetic.",
-          "src": "NPTEL reliability content",
-          "preview": [
-            "What two axes drive RBI priority, and what data feeds each?",
-            "How does RBI defend an interval extension to a regulator?"
-          ]
-        },
-        {
-          "n": 5,
-          "t": "Fitness for service thinking",
-          "tier": 3,
-          "scope": "The engineering question behind FFS: is the flawed equipment safe to run, and for how long? Corrosion allowance and minimum thickness logic; crack-like flaws flagged to specialists. When to call the assessment versus replace.",
-          "src": "Callister & Rethwisch, Ch. 8",
-          "preview": [
-            "What question does FFS answer that inspection cannot?",
-            "When does a wall-thinning finding demand assessment versus rerate versus replace?"
-          ]
-        },
-        {
-          "n": 6,
-          "t": "Pressure relief system integrity",
-          "tier": 3,
-          "scope": "Relief philosophy: every credible overpressure case owns a device. PSV testing intervals and pre-test capture of as-found condition. The protective systems audit trail regulators read first.",
-          "src": "NPTEL process safety content",
-          "preview": [
-            "Why must every credible overpressure case map to a device?",
-            "What does as-found PSV test data feed?"
-          ]
-        },
-        {
-          "n": 7,
-          "t": "Piping integrity",
-          "tier": 3,
-          "scope": "Piping classes, circuits, and injection-point programs; dead legs and small-bore vulnerability. Support and vibration walkdowns. Piping as the plant's largest and least-loved asset.",
-          "src": "NPTEL content; Callister & Rethwisch, Ch. 17",
-          "kuwait": "EQUATE",
-          "preview": [
-            "Why are dead legs disproportionately dangerous?",
-            "What makes small-bore connections a fatigue problem?"
-          ]
-        },
-        {
-          "n": 8,
-          "t": "Storage tank integrity",
-          "tier": 3,
-          "scope": "Atmospheric tank anatomy: shell, bottom, roof; settlement and corrosion patterns. Internal inspection logic and intervals. Floor scanning and the repair decisions it triggers.",
-          "src": "NPTEL content",
-          "preview": [
-            "Why does tank bottom corrosion hide from external inspection?",
-            "What triggers an internal tank inspection?"
-          ]
-        },
-        {
-          "n": 9,
-          "t": "Corrosion under insulation programs",
-          "tier": 3,
-          "scope": "CUI's mechanism, temperature bands, and moisture pathways. Inspection strategies from stripping to screening. The Gulf coastal plant's standing CUI battle, budgeted properly.",
-          "src": "Callister & Rethwisch, Ch. 17",
-          "kuwait": "EQUATE",
-          "preview": [
-            "Name CUI's moisture pathways and the design details that feed them.",
-            "Why does screening precede stripping in CUI programs?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Integrity data and KPIs",
-          "tier": 3,
-          "scope": "Thickness data management, corrosion-rate calculation, and remaining-life projections. Overdue-inspection and temporary-repair KPIs. The integrity dashboard a plant manager should demand.",
-          "src": "NPTEL reliability content",
-          "preview": [
-            "Turn thickness history into a corrosion rate: what checks the number?",
-            "Which integrity KPIs would a plant manager read weekly?"
-          ]
-        },
-        {
-          "n": 11,
-          "t": "Integrity management system project",
-          "tier": 3,
-          "scope": "For a small unit: damage-mechanism register, CML plan, inspection schedule, and KPI set assembled into one integrity plan. The document set of the asset integrity engineer's first 90 days.",
-          "src": "Course synthesis",
-          "preview": [
-            "In the unit plan, which damage mechanism dominated the register?",
-            "What did the KPI set watch that inspection alone would miss?"
-          ]
-        }
-      ]
-    },
-    {
       "id": "condition-monitoring",
       "code": "CDM 403",
       "title": "Condition Monitoring & Predictive Maintenance",
@@ -442,6 +307,140 @@
       ]
     },
     {
+      "id": "robotics",
+      "code": "ROB 353",
+      "title": "Industrial Robotics",
+      "summary": "Robots as production equipment: kinematics enough to reason, plus the practical layer — end effectors, safety systems, palletizing and welding cells, and what a robot cell demands from maintenance.",
+      "taught_from": [
+        "NPTEL: Industrial Robotics (nptel.ac.in)"
+      ],
+      "lessons": [
+        {
+          "n": 1,
+          "t": "Robot anatomy and types",
+          "tier": 3,
+          "scope": "Articulated, SCARA, delta, and cartesian architectures with their sweet spots. Axes, envelopes, and payload ratings read from datasheets. Repeatability versus accuracy — the specification that matters.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Repeatability versus accuracy: which does a robot datasheet promise?",
+            "Match SCARA, delta, and articulated arms to their natural tasks."
+          ]
+        },
+        {
+          "n": 2,
+          "t": "Kinematics fundamentals",
+          "tier": 3,
+          "scope": "Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mathematics to respect the controller.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "What is a singularity, and why does the wrist flip near one?",
+            "Forward versus inverse kinematics: which is the hard direction, and why?"
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Drives, encoders, and calibration",
+          "tier": 3,
+          "scope": "Servo axes, gearing, and absolute encoders; mastering and calibration procedures. Backlash and its symptoms in path quality. The maintenance anatomy of an arm.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Why do absolute encoders remove homing?",
+            "What does mastering restore after a crash?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "End effectors and tooling",
+          "tier": 3,
+          "scope": "Grippers — pneumatic, servo, vacuum, magnetic — matched to product. Tool changers and dress packs, the wear items nobody budgets. Payload and center-of-gravity arithmetic.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Why does payload include the gripper and its cable dress?",
+            "Vacuum versus servo gripper: pick per product and defend."
+          ]
+        },
+        {
+          "n": 5,
+          "t": "Programming and teaching",
+          "tier": 3,
+          "scope": "Jogging, frames, and point teaching; motion types and speed/approximation trade-offs. Program structure for cells with variants. Offline programming in outline.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "What does motion blending (approximation) trade for cycle time?",
+            "Why teach frames instead of points?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Robot safety systems",
+          "tier": 3,
+          "scope": "Guarding, light curtains, and safety-rated monitored stops; collaborative modes with their real limits. Risk assessment for a cell. Safety as the cell's first design input.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "What does a safety-rated monitored stop guarantee?",
+            "Why are collaborative speeds so low in practice?"
+          ]
+        },
+        {
+          "n": 7,
+          "t": "Palletizing and material-handling cells",
+          "tier": 3,
+          "scope": "End-of-line palletizing patterns and cycle-time budgets. Conveyor tracking basics. The robot cell most likely to appear at the end of a KDD-style packaging line.",
+          "src": "NPTEL: Industrial Robotics",
+          "kuwait": "KDD / Petra",
+          "preview": [
+            "What makes palletizing patterns a solved problem — and mixed cases not?",
+            "Why does conveyor tracking need an encoder?"
+          ]
+        },
+        {
+          "n": 8,
+          "t": "Machine tending and assembly cells",
+          "tier": 3,
+          "scope": "Robots loading machine tools: door, chuck, and cycle-start interlocks, with the machine as the cell's real master. Part presentation — trays, bowl feeders, and vision in outline — as the make-or-break engineering. Assembly tasks: insertion, torque, and the compliance problem rigid parts pose.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Why is part presentation usually harder engineering than the robot motion itself?",
+            "What interlocks must exist before a robot reaches into a CNC machine?"
+          ]
+        },
+        {
+          "n": 9,
+          "t": "Robotic welding cells",
+          "tier": 3,
+          "scope": "Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural work of the Kirby kind.",
+          "src": "NPTEL: Industrial Robotics",
+          "kuwait": "Kirby Building Systems",
+          "preview": [
+            "What does a positioner add to a welding cell's reach and quality?",
+            "Why is TCP calibration the weld path's foundation?"
+          ]
+        },
+        {
+          "n": 10,
+          "t": "Cell integration",
+          "tier": 3,
+          "scope": "The robot inside the PLC's state machine: handshakes, permissives, and fault recovery paths. Peripheral devices and fixturing. Cycle-time analysis against the line's takt.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Design the PLC–robot handshake for a jam: who recovers whom?",
+            "Why does fixturing rank above the robot in cell accuracy?"
+          ]
+        },
+        {
+          "n": 11,
+          "t": "Robot maintenance and diagnostics",
+          "tier": 3,
+          "scope": "Preventive tasks: lubrication, belts, batteries, dress-pack inspection. Error logs and drift trends as early warnings. What a robot's reliability program looks like on paper.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Which preventive tasks keep an arm's accuracy — name three.",
+            "What do error logs trend before failures announce themselves?"
+          ]
+        }
+      ]
+    },
+    {
       "id": "scada-iiot",
       "code": "SCA 404",
       "title": "SCADA, DCS & IIoT",
@@ -578,140 +577,6 @@
       ]
     },
     {
-      "id": "lean-six-sigma",
-      "code": "LSS 405",
-      "title": "Lean & Six Sigma",
-      "summary": "Waste and variation hunted systematically: value-stream thinking, flow and pull, SMED, and the DMAIC toolkit — the production engineer's improvement operating system, statistics included.",
-      "taught_from": [
-        "NPTEL: quality and operations management courses (nptel.ac.in)",
-        "Engineering Statistics (STS 206) as prerequisite"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Lean's logic",
-          "tier": 3,
-          "scope": "Value versus waste; the seven wastes spotted on a real line walk. Flow interrupted as the master symptom. Lean as engineering, stripped of ceremony.",
-          "src": "NPTEL operations management content",
-          "preview": [
-            "Name the seven wastes with one maintenance-shop example each.",
-            "Why is flow interruption the master symptom?"
-          ]
-        },
-        {
-          "n": 2,
-          "t": "Value stream mapping",
-          "tier": 3,
-          "scope": "Current-state mapping with data boxes and lead-time ladders. Future-state design rules. The map as an argument for specific, dated changes.",
-          "src": "NPTEL operations management content",
-          "preview": [
-            "What belongs in a data box on a current-state map?",
-            "Why does the lead-time ladder embarrass most processes?"
-          ]
-        },
-        {
-          "n": 3,
-          "t": "Flow, pull, and kanban",
-          "tier": 3,
-          "scope": "Batch-size effects derived from Little's law; supermarkets and kanban loops sized. Push versus pull honestly compared. Where pull fails: long changeovers and unstable processes.",
-          "src": "NPTEL operations management content",
-          "preview": [
-            "What does Little's law say about batch size and lead time?",
-            "When does pull genuinely fail?"
-          ]
-        },
-        {
-          "n": 4,
-          "t": "SMED: changeover reduction",
-          "tier": 3,
-          "scope": "Internal versus external setup separated, then converted. Video-study method. Changeover time as capacity: the filling-line flavor change worked as the example.",
-          "src": "NPTEL operations management content",
-          "kuwait": "KDD / Petra",
-          "preview": [
-            "Internal versus external setup: give two conversions on a filling line.",
-            "Why does changeover time equal capacity?"
-          ]
-        },
-        {
-          "n": 5,
-          "t": "5S and visual management",
-          "tier": 3,
-          "scope": "Workplace organization as failure prevention, not housekeeping theater. Visual controls that surface abnormality in seconds. The maintenance-shop 5S case: tools, spares, and shadow boards.",
-          "src": "NPTEL operations management content",
-          "preview": [
-            "What does 5S prevent, mechanically, in a maintenance shop?",
-            "What makes a visual control actually visual?"
-          ]
-        },
-        {
-          "n": 6,
-          "t": "DMAIC: Define and Measure",
-          "tier": 3,
-          "scope": "Problem statements with baselines and scope; measurement-system checks before data is trusted — gauge R&R recalled. Process capability as the Measure phase's verdict. Projects chartered so they can fail honestly.",
-          "src": "NPTEL quality content; STS 206 foundations",
-          "preview": [
-            "What must a charter's baseline contain before Measure starts?",
-            "Why does gauge R&R precede data collection?"
-          ]
-        },
-        {
-          "n": 7,
-          "t": "DMAIC: Analyze",
-          "tier": 3,
-          "scope": "Root-cause candidates from fishbones and stratification; hypothesis tests separating signal from noise. Regression on process data. The statistics course earning its keep.",
-          "src": "NPTEL quality content; STS 206 foundations",
-          "preview": [
-            "Stratify downtime by shift and product: what pattern would implicate process, not people?",
-            "Which test compares two shifts' means honestly?"
-          ]
-        },
-        {
-          "n": 8,
-          "t": "DMAIC: Improve and Control",
-          "tier": 3,
-          "scope": "Solutions tested by experiment where stakes justify it; error-proofing over exhortation. Control plans and response plans that outlive the project team. The handover that decides whether gains persist.",
-          "src": "NPTEL quality content",
-          "preview": [
-            "Error-proofing versus retraining: why does one persist?",
-            "What does a control plan hand to the process owner?"
-          ]
-        },
-        {
-          "n": 9,
-          "t": "Design of experiments in practice",
-          "tier": 3,
-          "scope": "Two-level factorials run on a process; effects and interactions computed and plotted. Blocking and randomization as insurance. A sealing-parameter experiment worked end to end.",
-          "src": "NPTEL quality content; STS 206",
-          "preview": [
-            "Design a 2² experiment on sealing: factors, response, and blocking.",
-            "What does randomization insure against?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Lean maintenance",
-          "tier": 3,
-          "scope": "Wrench-time study as the maintenance value-stream map; travel, waiting, and parts-chasing quantified. Kitting and planning as waste removal. The improvement lens turned on the maintenance function itself.",
-          "src": "SMRP framework; NPTEL operations content",
-          "preview": [
-            "What does a wrench-time study typically find, and what absorbs the hours?",
-            "Which lean tool attacks parts-chasing directly?"
-          ]
-        },
-        {
-          "n": 11,
-          "t": "Improvement project simulation",
-          "tier": 3,
-          "scope": "A guided DMAIC on a provided dataset: charter to control plan with tollgate reviews. Statistical tools used where they earn their place. The portfolio artifact for interviews.",
-          "src": "Course synthesis",
-          "preview": [
-            "In the simulation, which tollgate nearly killed the project, and why?",
-            "What survived to the control plan?"
-          ]
-        }
-      ]
-    },
-    {
       "id": "engineering-economics",
       "code": "ECO 406",
       "title": "Engineering Economics & Project Management",
@@ -839,6 +704,142 @@
           "preview": [
             "In your business case, which assumption moved NPV most?",
             "What implementation risk did you price, and how?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "production-lean",
+      "code": "PPL 405",
+      "title": "Production Planning & Lean Six Sigma",
+      "summary": "Running and improving the production system in one course: capacity, master scheduling, MRP/ERP, and shop-floor scheduling from the planning tradition; value streams, flow, SMED, 5S, and DMAIC from the lean and Six Sigma tradition.",
+      "taught_from": [
+        "Engineering Statistics (STS 206) as prerequisite",
+        "Groover, production systems chapters",
+        "NPTEL: Production and Operations Management-family courses (nptel.ac.in)",
+        "NPTEL: quality and operations management courses (nptel.ac.in)"
+      ],
+      "lessons": [
+        {
+          "n": 1,
+          "t": "Production systems and layouts",
+          "tier": 3,
+          "scope": "Job shop, batch, line, and continuous production with their planning personalities. Layout types and material flow. Where each Kuwait anchor plant sits on this spectrum.",
+          "src": "Groover, production systems chapters",
+          "preview": [
+            "Place the six anchor plants on the job-shop-to-continuous spectrum.",
+            "What does layout type do to material travel?"
+          ]
+        },
+        {
+          "n": 2,
+          "t": "Capacity and takt",
+          "tier": 3,
+          "scope": "Design versus effective capacity; utilization and efficiency separated. Takt time computed and confronted with cycle times. Bottleneck identification as the first act of scheduling.",
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Compute takt for 4,800 units in two 8-h shifts.",
+            "Why does the bottleneck define capacity regardless of averages?"
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Aggregate planning and MPS",
+          "tier": 3,
+          "scope": "Level versus chase strategies costed. The master production schedule as the plant's promise ledger. Frozen zones and why they exist.",
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Level versus chase: what does each cost in a dairy's demand cycle?",
+            "What does a frozen zone protect?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "MRP and ERP logic",
+          "tier": 3,
+          "scope": "Bills of materials, lead-time offsetting, and the MRP explosion worked by hand once. ERP as MRP grown up. Data accuracy as the system's oxygen.",
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Explode a two-level BOM by hand: what offsets apply?",
+            "Why does inventory accuracy gate MRP's usefulness?"
+          ]
+        },
+        {
+          "n": 5,
+          "t": "Shop-floor scheduling",
+          "tier": 3,
+          "scope": "Dispatching rules and their trade-offs; Gantt logic and finite capacity. Sequence-dependent setups — the changeover matrix. Why the schedule is always wrong and still necessary.",
+          "src": "NPTEL: Production and Operations Management",
+          "preview": [
+            "Compare SPT and EDD dispatching on lateness.",
+            "Why do sequence-dependent setups wreck naive schedules?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Lean's logic",
+          "tier": 3,
+          "scope": "Value versus waste; the seven wastes spotted on a real line walk. Flow interrupted as the master symptom. Lean as engineering, stripped of ceremony.",
+          "src": "NPTEL operations management content",
+          "preview": [
+            "Name the seven wastes with one maintenance-shop example each.",
+            "Why is flow interruption the master symptom?"
+          ]
+        },
+        {
+          "n": 7,
+          "t": "Value stream mapping, flow, and pull",
+          "tier": 3,
+          "scope": "Current-state mapping with data boxes and lead-time ladders. Future-state design rules. The map as an argument for specific, dated changes. Batch-size effects derived from Little's law; supermarkets and kanban loops sized. Push versus pull honestly compared. Where pull fails: long changeovers and unstable processes.",
+          "src": "NPTEL operations management content",
+          "preview": [
+            "What belongs in a data box on a current-state map?",
+            "What does Little's law say about batch size and lead time?"
+          ]
+        },
+        {
+          "n": 8,
+          "t": "SMED, 5S, and visual management",
+          "tier": 3,
+          "scope": "Internal versus external setup separated, then converted. Video-study method. Changeover time as capacity: the filling-line flavor change worked as the example. Workplace organization as failure prevention, not housekeeping theater. Visual controls that surface abnormality in seconds. The maintenance-shop 5S case: tools, spares, and shadow boards.",
+          "src": "NPTEL operations management content",
+          "kuwait": "KDD / Petra",
+          "preview": [
+            "Internal versus external setup: give two conversions on a filling line.",
+            "What does 5S prevent, mechanically, in a maintenance shop?"
+          ]
+        },
+        {
+          "n": 9,
+          "t": "DMAIC I: Define, Measure, Analyze",
+          "tier": 3,
+          "scope": "Problem statements with baselines and scope; measurement-system checks before data is trusted — gauge R&R recalled. Process capability as the Measure phase's verdict. Projects chartered so they can fail honestly. Root-cause candidates from fishbones and stratification; hypothesis tests separating signal from noise. Regression on process data. The statistics course earning its keep.",
+          "src": "NPTEL quality content; STS 206 foundations",
+          "preview": [
+            "What must a charter's baseline contain before Measure starts?",
+            "Stratify downtime by shift and product: what pattern would implicate process, not people?"
+          ]
+        },
+        {
+          "n": 10,
+          "t": "DMAIC: Improve and Control",
+          "tier": 3,
+          "scope": "Solutions tested by experiment where stakes justify it; error-proofing over exhortation. Control plans and response plans that outlive the project team. The handover that decides whether gains persist.",
+          "src": "NPTEL quality content",
+          "preview": [
+            "Error-proofing versus retraining: why does one persist?",
+            "What does a control plan hand to the process owner?"
+          ]
+        },
+        {
+          "n": 11,
+          "t": "Improvement project simulation",
+          "tier": 3,
+          "scope": "A guided DMAIC on a provided dataset: charter to control plan with tollgate reviews. Statistical tools used where they earn their place. The portfolio artifact for interviews.",
+          "src": "Course synthesis",
+          "preview": [
+            "In the simulation, which tollgate nearly killed the project, and why?",
+            "What survived to the control plan?"
           ]
         }
       ]

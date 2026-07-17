@@ -135,6 +135,138 @@
       ]
     },
     {
+      "id": "physics-1",
+      "code": "PHY 107",
+      "title": "Engineering Physics I — Mechanics",
+      "summary": "Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotation, and first oscillations — the physical foundation under statics, dynamics, thermodynamics, and vibrations.",
+      "taught_from": [
+        "MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)"
+      ],
+      "lessons": [
+        {
+          "n": 1,
+          "t": "Measurement, units, and vectors",
+          "tier": 3,
+          "scope": "Physical quantities and SI base units; significant figures and estimation discipline. Vectors made operational: components, addition, dot and cross products in physical language. The toolkit every mechanics course after this one assumes.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "Decompose a 100 N force at 37° above horizontal into components — the operation statics repeats daily.",
+            "Why is torque a vector while temperature is not?"
+          ]
+        },
+        {
+          "n": 2,
+          "t": "Kinematics in one dimension",
+          "tier": 3,
+          "scope": "Position, velocity, and acceleration defined as derivatives of motion, hand in hand with the calculus course. Motion graphs read fluently: slopes and areas carrying physical meaning. The constant-acceleration equations derived, not memorized.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "A hoist accelerates from rest at 0.5 m/s²: how far does it travel in 6 s? (9 m)",
+            "What does the area under a velocity–time graph mean physically?"
+          ]
+        },
+        {
+          "n": 3,
+          "t": "Kinematics in two dimensions",
+          "tier": 3,
+          "scope": "Projectile motion as two independent one-dimensional motions running on a shared clock. Relative velocity and moving reference frames. Where 2-D kinematics lives in machinery: belt speeds, transfer trajectories, parts leaving conveyors.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "A part leaves a horizontal conveyor at 2 m/s from 1.25 m height: how far out does it land? (≈1.0 m)",
+            "Why don't the horizontal and vertical motions of a projectile interfere?"
+          ]
+        },
+        {
+          "n": 4,
+          "t": "Newton's laws of motion",
+          "tier": 3,
+          "scope": "The three laws stated precisely and read as engineering: equilibrium, F = ma, and action–reaction pairs that never act on the same body. Mass distinguished from weight for good. Free-body diagrams as the discipline statics will industrialize.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "What is the weight of a 50 kg motor, and why is 'kg' not a force? (≈490 N)",
+            "Why is a free-body diagram drawn for one body at a time?"
+          ]
+        },
+        {
+          "n": 5,
+          "t": "Applying Newton's laws",
+          "tier": 3,
+          "scope": "Friction, static and kinetic, with its adaptive character; inclined planes; tension and pulleys. Multi-body problems solved with paired free-body diagrams. The physics behind holding brakes, belt slip, and why inclined conveyors have a maximum angle.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "A crate sits on a 20° incline with μs = 0.30: does it stay? (No — tan 20° = 0.36 > 0.30)",
+            "Why does static friction adjust to the load while kinetic friction does not?"
+          ]
+        },
+        {
+          "n": 6,
+          "t": "Work and energy",
+          "tier": 3,
+          "scope": "Work as force through distance, with the sign conventions that matter. Kinetic energy and the work–energy theorem derived from F = ma. Power as the rate of doing work — the bridge to every kilowatt on a nameplate.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "How much work does it take to raise a 200 kg load 12 m against gravity? (≈23.5 kJ)",
+            "What computation does the work–energy theorem let you skip entirely?"
+          ]
+        },
+        {
+          "n": 7,
+          "t": "Potential energy and conservation",
+          "tier": 3,
+          "scope": "Conservative forces and potential energy; mechanical energy conservation, and exactly where friction breaks it. Energy accounting as the engineer's first audit tool — losses always go somewhere, and the somewhere is billable.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "From what height must a 2 kg part fall to hit 7 m/s? (≈2.5 m)",
+            "When is mechanical energy not conserved, and where does the difference go?"
+          ]
+        },
+        {
+          "n": 8,
+          "t": "Momentum, impulse, and collisions",
+          "tier": 3,
+          "scope": "The impulse–momentum theorem; conservation of momentum where external forces vanish; elastic and inelastic collisions distinguished by what happens to kinetic energy. Impact loading: why dropped loads and hammer blows produce forces far beyond their weights.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "Two 5 kg carts collide and stick, one moving at 4 m/s: final speed? (2 m/s)",
+            "Why does extending the stopping time reduce the impact force?"
+          ]
+        },
+        {
+          "n": 9,
+          "t": "Rotation I: kinematics and torque",
+          "tier": 3,
+          "scope": "Angular position, velocity, and acceleration; the rolling connection v = ωr. Torque defined properly and computed about real axes; moment of inertia as rotational mass. RPM fluency — the native unit of the machine floor.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "Convert 1450 rpm to rad/s. (≈152)",
+            "Why does the same force produce different torques at different radii?"
+          ]
+        },
+        {
+          "n": 10,
+          "t": "Rotation II: dynamics and angular momentum",
+          "tier": 3,
+          "scope": "Newton's second law for rotation, τ = Iα, with rotational work and kinetic energy. Angular momentum and its conservation. Flywheels as kinetic-energy banks — the physics the machinery course will engineer into presses and compressors.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "Why does a flywheel's stored energy grow with the square of its speed?",
+            "A wheel spins down under constant friction torque: what does the linear speed-time trace look like?"
+          ]
+        },
+        {
+          "n": 11,
+          "t": "Oscillations first contact",
+          "tier": 3,
+          "scope": "Simple harmonic motion: the spring–mass system and the pendulum, with period formulas derived from F = ma. Natural frequency as a machine's fingerprint — the seed the vibrations course will grow. Waves in outline: propagation, frequency, wavelength.",
+          "src": "MIT OCW 8.01SC",
+          "preview": [
+            "A 2 kg mass hangs on an 800 N/m spring: natural frequency? (≈3.2 Hz)",
+            "Why does a pendulum's period not care about its mass?"
+          ]
+        }
+      ]
+    },
+    {
       "id": "drawing-cad",
       "code": "DRW 102",
       "title": "Engineering Drawing & CAD",
@@ -526,198 +658,6 @@
           "preview": [
             "Why do castings show chill, columnar, and equiaxed zones?",
             "Where does microsegregation live, and why does it survive solidification?"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "mfg-processes-1",
-      "code": "MFG 105",
-      "title": "Manufacturing Processes I — Casting & Bulk Forming",
-      "summary": "Liquid metal to near-net shape: the plant taxonomy, casting physics taught at full lecture depth, continuous casting, and the bulk deformation family — rolling, forging, extrusion, drawing — with Kuwait Steel and Gulf Cable as the standing examples.",
-      "taught_from": [
-        "Groover, Fundamentals of Modern Manufacturing (Wiley) — casting & forming chapters",
-        "Kalpakjian & Schmid, Manufacturing Engineering and Technology (Pearson)",
-        "Flemings, Solidification Processing (McGraw-Hill, 1974)",
-        "ASM Handbook, Volume 15: Casting"
-      ],
-      "videos": [
-        {
-          "title": "SME — manufacturing process video library",
-          "url": "https://www.youtube.com/channel/UCiEiOeFUl4Ytrv63Udugckg",
-          "src": "SME (Society of Manufacturing Engineers)",
-          "tag": "PROFESSIONAL BODY · CLEAR NARRATION · VERIFIED",
-          "note": "Short, clearly narrated explainers of casting, forming, and joining processes — the fastest visual companion to this course."
-        },
-        {
-          "title": "2.008 Design and Manufacturing II",
-          "url": "https://ocw.mit.edu/courses/2-008-design-and-manufacturing-ii-spring-2025/",
-          "src": "MIT OpenCourseWare",
-          "tag": "COURSE MATERIALS · VERIFIED LIVE",
-          "note": "MIT's manufacturing-processes course: lecture notes, labs, and exams (no lecture videos in this edition)."
-        },
-        {
-          "title": "Fundamentals of Manufacturing Processes — IIT Roorkee",
-          "url": "https://nptel.ac.in/courses/112107219",
-          "src": "NPTEL",
-          "tag": "ALTERNATIVE · ENABLE CAPTIONS",
-          "note": "Complete lecture-video series covering casting, forming, and joining at exactly this course's level."
-        },
-        {
-          "title": "Manufacturing lectures by Eng. Mahmoud Marzouk",
-          "url": "https://www.youtube.com/@Marzouk-Tutorials",
-          "src": "YouTube — independent educator",
-          "tag": "IN ARABIC — ALTERNATIVE · VERIFIED",
-          "note": "Arabic-language manufacturing-processes lectures (casting, forming, sheet metal). English sources above remain the primary path."
-        }
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "The manufacturing plant: process taxonomy and material flow",
-          "tier": 2,
-          "core60": "A1",
-          "content": "y1s1-mp1-01",
-          "scope": "Every manufacturing operation sorted into a working taxonomy — casting, forming, machining, joining, finishing, assembly — and the material flow of a real plant traced end to end. The map the rest of the curriculum hangs on.",
-          "src": "Groover, Ch. 1; Kalpakjian & Schmid, General Introduction",
-          "preview": [
-            "Which two process families shape most of the world's metal by tonnage — and where does machining actually sit?",
-            "Classify every step of rebar production, scrap to bundled bar, into the six-family taxonomy.",
-            "Primary versus secondary shaping: define both with one example of each from a cable plant."
-          ]
-        },
-        {
-          "n": 2,
-          "t": "Metal casting I — solidification, gating, and riser design",
-          "tier": 1,
-          "core60": "A2",
-          "content": "y1s1-mp1-02",
-          "scope": "The full lecture: pouring energy balance, Bernoulli-derived gating design, Chvorinov's rule derived from mold heat conduction, shrinkage regimes, and riser sizing — with worked examples carried through in units.",
-          "src": "Groover, Ch. 10; Flemings; Çengel & Ghajar, Ch. 4",
-          "kuwait": "Kuwait Steel",
-          "preview": [
-            "A casting has V/A = 2.0 cm and Cₘ = 2.5 min/cm²: how long until it is fully solid?",
-            "The free metal surface sits 250 mm above the sprue base: what is the base velocity by Torricelli?",
-            "Why must a riser out-modulus its casting, and what design margin did our worked example use?"
-          ]
-        },
-        {
-          "n": 3,
-          "t": "Metal casting II — practice, quality, and defects",
-          "tier": 1,
-          "core60": "A3",
-          "content": "y1s1-mp1-03",
-          "scope": "From theory to the foundry floor: patterns and allowances, molding sand behavior, fluidity, and the defect families — gas porosity via Sievert's law, shrinkage porosity, hot tears, sand defects — each tied to its physical cause and its inspection method.",
-          "src": "Groover, Ch. 10–11; Campbell, Complete Casting Handbook; ASM Handbook Vol. 15",
-          "kuwait": "HEISCO",
-          "preview": [
-            "Halving the hydrogen partial pressure over a melt cuts dissolved hydrogen by what factor — and why not one-half?",
-            "Smooth spherical pores near the surface versus a jagged void in a thick boss: name each family and its matching fix.",
-            "A 9,000 cm³ steel casting shrinks 3% on solidification; the riser feeds 14% of its own volume. Minimum riser volume?"
-          ]
-        },
-        {
-          "n": 4,
-          "t": "Continuous casting of steel",
-          "tier": 2,
-          "core60": "A4",
-          "content": "y1s1-mp1-04",
-          "scope": "The billet caster as a permanent-mold casting process running at steady state: shell growth, metallurgical length, breakout risk, and quality issues from rhomboidity to pinholes. Kuwait Steel's core process.",
-          "src": "The Making, Shaping and Treating of Steel (AISE); Groover, Ch. 11",
-          "kuwait": "Kuwait Steel",
-          "preview": [
-            "A 140 mm square billet cast with K = 26 mm/min^½: minutes until the core is solid?",
-            "At 2.4 m/min casting speed, roughly how far below the mold must the torch cut — and why no closer?",
-            "Why is casting speed not a free productivity knob? Name both penalties."
-          ]
-        },
-        {
-          "n": 5,
-          "t": "Casting processes survey: sand to die casting",
-          "tier": 3,
-          "scope": "Shell, investment, permanent mold, and die casting compared on tolerance, finish, section thickness, and economics. Expendable versus permanent molds as the organizing split. Choosing a casting route for a given part and volume.",
-          "src": "Groover, Ch. 11; Kalpakjian & Schmid, casting chapters",
-          "preview": [
-            "Rank sand, investment, and die casting by tolerance and by tooling cost — what pattern emerges?",
-            "Why does volume decide between expendable and permanent molds?"
-          ]
-        },
-        {
-          "n": 6,
-          "t": "Fundamentals of metal forming and workability",
-          "tier": 3,
-          "scope": "Flow stress and the flow curve; hot, warm, and cold working defined by homologous temperature. Strain-rate sensitivity in hot work, and friction and lubrication at the die interface — the tax every forming process pays. Workability limits and the defect families they guard — edge cracking, center bursts (chevrons), laps, and surface defects — read as process diagnostics, not random events.",
-          "src": "Groover, Ch. 18–19; Kalpakjian & Schmid, forming fundamentals",
-          "preview": [
-            "Define hot working by homologous temperature, and name its two big gifts.",
-            "Chevron cracks in a drawn bar: what process condition produces them?"
-          ]
-        },
-        {
-          "n": 7,
-          "t": "Rolling of metals",
-          "tier": 2,
-          "core60": "A5",
-          "content": "y1s1-mp1-07",
-          "scope": "Flat and shape rolling from draft and bite condition through roll force and torque estimates. Hot rolling of billets into rebar as run at Kuwait Steel's mill. Rolled-product defects and their upstream causes.",
-          "src": "Groover, Ch. 19; The Making, Shaping and Treating of Steel (AISE)",
-          "kuwait": "Kuwait Steel",
-          "preview": [
-            "With μ = 0.25 and 350 mm radius rolls, what is the maximum draft in a single pass?",
-            "Compute the contact length for Δh = 6 mm on 300 mm radius rolls.",
-            "Rolling needs the friction that other forming processes fight — why?"
-          ]
-        },
-        {
-          "n": 8,
-          "t": "Forging",
-          "tier": 2,
-          "core60": "A6",
-          "content": "y1s1-mp1-08",
-          "scope": "Open-die and impression-die forging; upsetting analysis with friction; flash, draft, and forging loads. Grain flow as forging's signature advantage. What a forged flange or valve body buys over a casting.",
-          "src": "Groover, Ch. 19; Kalpakjian & Schmid, forging chapter",
-          "kuwait": "HEISCO",
-          "preview": [
-            "What true strain does upsetting from 80 mm to 50 mm impose?",
-            "For K = 600 MPa and n = 0.2 at ε = 0.47, what flow stress must the press overcome before friction?",
-            "What does grain flow buy in a forged crane hook — and in which loading direction?"
-          ]
-        },
-        {
-          "n": 9,
-          "t": "Extrusion and wire drawing",
-          "tier": 2,
-          "core60": "A7",
-          "content": "y1s1-mp1-09",
-          "scope": "Direct and indirect extrusion; extrusion ratio and pressure estimates. Wire drawing through dies in tandem — reduction per pass, drawing stress, and why the wire must not yield in the drawn section. Gulf Cable's conductor line as the standing example.",
-          "src": "Groover, Ch. 19; Kalpakjian & Schmid, extrusion & drawing chapters",
-          "kuwait": "Gulf Cable",
-          "preview": [
-            "What is the extrusion ratio when a 100 mm billet becomes a 25 mm rod?",
-            "Why is a 60% area reduction impossible in one wire-drawing pass even with a perfect, frictionless die?",
-            "A pass gives draw stress 60 MPa on wire whose exit flow stress is 160 MPa: safe or failing, and by what criterion?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Powder metallurgy",
-          "tier": 3,
-          "scope": "Powder production, compaction, and sintering. Density as the controlling quality variable. Where PM wins: small complex parts at volume, porous bearings, and hard-to-melt materials.",
-          "src": "Groover, powder metallurgy chapter; Kalpakjian & Schmid",
-          "preview": [
-            "Why is density the master quality variable of powder metallurgy?",
-            "Where does PM beat machining economically, and why?"
-          ]
-        },
-        {
-          "n": 11,
-          "t": "Process selection and cost fundamentals",
-          "tier": 3,
-          "scope": "Choosing among casting, forming, and machining for a given geometry, alloy, tolerance, and volume. Fixed versus variable cost and the break-even volume between processes. Near-net-shape thinking as an economic argument.",
-          "src": "Groover, process selection discussions; Kalpakjian & Schmid",
-          "preview": [
-            "Set up the break-even volume between a die-cast and a machined part.",
-            "What does near-net-shape actually save — material, energy, or machining time?"
           ]
         }
       ]

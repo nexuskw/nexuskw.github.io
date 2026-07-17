@@ -132,6 +132,23 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
+- COMPANY-NAMES RULE v2 (owner, 2026-07-17 PM — supersedes the blanket ban):
+  (a) ACADEMIC content (lessons, lectures, examples, quizzes, foundations):
+  STRICTLY NO specific company names — industrial examples stay universal,
+  objective, representative. (b) CAREER PATHS & EMPLOYMENT section: real,
+  specific company names are ALLOWED AND ENCOURAGED (Kuwait companies such
+  as EQUATE, Kuwait Steel, KDD, and global industrial firms) for job
+  placements, career trajectories, CV building, interview preparation.
+  Consequence: the Career page rewrite question is resolved (keep/expand
+  real companies there); the 44 older lessons + 8 lecture fragments with
+  company-named applied cases still need the ACADEMIC scrub in Phase 2.
+- PHASE-2 CONTENT GATE (owner, 2026-07-17 PM — supersedes continuous
+  no-approval rollout for lesson content): NO lesson content generation
+  until the owner approves the proposed 48-class Curriculum Map
+  (university-grade structure adapted from MIT/ASU/Caltech/Texas A&M
+  BSME curricula; strict prerequisite sequencing; Industry 4.0 integrated
+  in Years 3-4). Map proposal delivered for review first.
+
 - 528 NORMALIZATION EXECUTED (2026-07-17, owner-approved): the catalog is now a
   strict 6×11 grid — 48 courses × 11 lessons = 528, verified at build
   (coverage 52/528 = 10%). Actions: (a) MOVES — reliability-1 "Reliability

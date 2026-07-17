@@ -289,24 +289,26 @@
       ]
     },
     {
-      "id": "pressure-equipment",
-      "code": "PEP 453",
-      "title": "Pressure Equipment & Piping",
-      "summary": "The hardware that holds the pressure: vessel and piping construction logic, materials and joints revisited at code level, flanges and gaskets, relief devices, and inspection/repair thinking for static equipment.",
+      "id": "pressure-integrity",
+      "code": "PAI 453",
+      "title": "Pressure Equipment & Asset Integrity",
+      "summary": "Static equipment from design intent to end of life: vessels, piping, joints, and relief systems, then the integrity discipline that keeps them safe — damage mechanisms, inspection programs, risk-based inspection, and fitness-for-service.",
       "taught_from": [
-        "Strength of Materials (SOM 201) foundations",
-        "NPTEL: pressure vessel and piping-related courses (nptel.ac.in)"
+        "Callister & Rethwisch, Ch. 8, 17 (failure & corrosion foundations)",
+        "NPTEL: pressure vessel and piping-related courses (nptel.ac.in)",
+        "NPTEL: reliability and corrosion course content (nptel.ac.in)",
+        "Strength of Materials (SOM 201) foundations"
       ],
       "lessons": [
         {
           "n": 1,
-          "t": "Pressure equipment taxonomy",
+          "t": "Pressure equipment and the integrity discipline",
           "tier": 3,
-          "scope": "Vessels, exchangers, boilers, piping, and tanks as regulated equipment classes. Design-code logic in outline: allowable stress and joint efficiency concepts. Why codes exist — written after explosions.",
-          "src": "NPTEL pressure vessel content; SOM 201 foundations",
+          "scope": "Vessels, exchangers, boilers, piping, and tanks as regulated equipment classes. Design-code logic in outline: allowable stress and joint efficiency concepts. Why codes exist — written after explosions. Integrity as the discipline over static equipment: vessels, piping, tanks, relief systems. Loss-of-containment consequence logic. The role's boundaries against maintenance and inspection functions.",
+          "src": "NPTEL pressure vessel content; SOM 201 foundations; NPTEL reliability content; industry framework survey",
           "preview": [
             "Why do pressure codes exist — what pattern preceded them?",
-            "What does joint efficiency discount, and why?"
+            "What equipment classes does integrity own, and what consequence unites them?"
           ]
         },
         {
@@ -322,92 +324,93 @@
         },
         {
           "n": 3,
-          "t": "Piping systems and layout",
+          "t": "Piping systems and their integrity",
           "tier": 3,
-          "scope": "Pipe schedules, fittings, and specs; flexibility and thermal expansion loops from the thermal-stress lesson. Supports: shoes, guides, hangers, springs. Reading a piping isometric fluently.",
-          "src": "NPTEL piping content",
+          "scope": "Pipe schedules, fittings, and specs; flexibility and thermal expansion loops from the thermal-stress lesson. Supports: shoes, guides, hangers, springs. Reading a piping isometric fluently. Piping classes, circuits, and injection-point programs; dead legs and small-bore vulnerability. Support and vibration walkdowns. Piping as the plant's largest and least-loved asset.",
+          "src": "NPTEL piping content; NPTEL content; Callister & Rethwisch, Ch. 17",
           "preview": [
             "Why do expansion loops exist, and what do they trade?",
-            "Read a piping isometric: what three things do you check first?"
-          ]
+            "Why are dead legs disproportionately dangerous?"
+          ],
+          "kuwait": "EQUATE"
         },
         {
           "n": 4,
-          "t": "Flanged joints and gaskets",
+          "t": "Flanged joints, gaskets, and valves",
           "tier": 3,
-          "scope": "Flange classes and facings; gasket selection and seating stress from the bolted-joint lesson. Controlled bolting: sequence, lubrication, and torque versus tension. Why flanges leak in January and how to stop it.",
-          "src": "MDN 251 foundations; NPTEL piping content",
+          "scope": "Flange classes and facings; gasket selection and seating stress from the bolted-joint lesson. Controlled bolting: sequence, lubrication, and torque versus tension. Why flanges leak in January and how to stop it. Gate, globe, check, ball, and butterfly internals; stem sealing and packing. Valve selection by service. Maintenance-relevant failure modes: passing, seizing, packing leaks.",
+          "src": "MDN 251 foundations; NPTEL piping content; NPTEL piping content",
           "preview": [
             "Why does bolt-up sequence matter on a flange?",
-            "What does gasket seating stress require of the bolts?"
+            "Gate versus globe: which throttles, which isolates, and why?"
           ]
         },
         {
           "n": 5,
-          "t": "Valves as pressure equipment",
+          "t": "Damage mechanisms inventory",
           "tier": 3,
-          "scope": "Gate, globe, check, ball, and butterfly internals; stem sealing and packing. Valve selection by service. Maintenance-relevant failure modes: passing, seizing, packing leaks.",
-          "src": "NPTEL piping content",
+          "scope": "The degradation bestiary organized for static equipment: thinning, cracking, embrittlement, mechanical damage. Susceptibility mapped from process conditions. The corrosion course operationalized into an integrity register.",
+          "src": "Callister & Rethwisch, Ch. 17",
           "preview": [
-            "Gate versus globe: which throttles, which isolates, and why?",
-            "What does packing seal, and what tells you it's failing?"
+            "Sort thinning, cracking, and embrittlement by inspectability.",
+            "Why does susceptibility mapping precede any inspection plan?"
           ]
         },
         {
           "n": 6,
-          "t": "Overpressure protection",
+          "t": "Overpressure protection and relief integrity",
           "tier": 3,
-          "scope": "Relief scenarios and device types: spring PSVs, pilot-operated, rupture discs. Set pressure, accumulation, and backpressure concepts. Installation sins: inlet losses and isolated relief paths.",
+          "scope": "Relief scenarios and device types: spring PSVs, pilot-operated, rupture discs. Set pressure, accumulation, and backpressure concepts. Installation sins: inlet losses and isolated relief paths. Relief philosophy: every credible overpressure case owns a device. PSV testing intervals and pre-test capture of as-found condition. The protective systems audit trail regulators read first.",
           "src": "NPTEL process safety content",
           "preview": [
             "Set pressure, accumulation, backpressure: define each in one line.",
-            "Name two installation sins that disable a healthy PSV."
+            "Why must every credible overpressure case map to a device?"
           ]
         },
         {
           "n": 7,
-          "t": "Fabrication and welding at code level",
+          "t": "Inspection: methods and in-service programs",
           "tier": 3,
-          "scope": "The WPS/PQR system recalled under vessel and piping rules; NDT extents and hydrotest logic. Traceability from mill certificate to weld map. The fabrication paper trail HEISCO-scale shops live by.",
-          "src": "WLD 305 foundations",
-          "kuwait": "HEISCO",
+          "scope": "Visual, UT thickness, shear-wave, and profile radiography deployed on vessels and piping. CML selection — where to measure so the data means something. Inspection effectiveness graded honestly. Thickness surveys, CML programs, and inspection intervals from the asset-integrity course specialized to vessels and piping. Internal inspection findings and their dispositions. The inspector–engineer interface in practice.",
+          "src": "NPTEL NDT-related content; AIM 402 foundations",
           "preview": [
-            "What traceability chain links a weld to its mill certificate?",
-            "What does hydrotest prove, and what does it not?"
+            "Why does CML selection decide whether thickness data means anything?",
+            "Why do CMLs live where they live on a piping circuit?"
           ]
         },
         {
           "n": 8,
-          "t": "In-service inspection",
+          "t": "Risk-based inspection",
           "tier": 3,
-          "scope": "Thickness surveys, CML programs, and inspection intervals from the asset-integrity course specialized to vessels and piping. Internal inspection findings and their dispositions. The inspector–engineer interface in practice.",
-          "src": "AIM 402 foundations",
+          "scope": "Probability and consequence of failure combined into inspection priority. Interval setting from remaining life and confidence. RBI as budget allocation defended with arithmetic.",
+          "src": "NPTEL reliability content",
           "preview": [
-            "Why do CMLs live where they live on a piping circuit?",
-            "What disposition options follow an internal inspection finding?"
+            "What two axes drive RBI priority, and what data feeds each?",
+            "How does RBI defend an interval extension to a regulator?"
           ]
         },
         {
           "n": 9,
-          "t": "Repairs and alterations",
+          "t": "Fitness for service, repairs, and alterations",
           "tier": 3,
-          "scope": "Temporary repairs — clamps, wraps — with expiry dates that must be honored; weld repairs and their qualification. Rerating logic in outline. Management of change for pressure equipment.",
-          "src": "NPTEL content; AIM 402 foundations",
+          "scope": "The engineering question behind FFS: is the flawed equipment safe to run, and for how long? Corrosion allowance and minimum thickness logic; crack-like flaws flagged to specialists. When to call the assessment versus replace. Temporary repairs — clamps, wraps — with expiry dates that must be honored; weld repairs and their qualification. Rerating logic in outline. Management of change for pressure equipment.",
+          "src": "Callister & Rethwisch, Ch. 8; NPTEL content; AIM 402 foundations",
           "preview": [
-            "Why do temporary repairs carry expiry dates?",
-            "What does MOC review before a rerate?"
+            "What question does FFS answer that inspection cannot?",
+            "Why do temporary repairs carry expiry dates?"
           ]
         },
         {
           "n": 10,
-          "t": "Failure case studies",
+          "t": "Storage tanks and corrosion under insulation",
           "tier": 3,
-          "scope": "Classic vessel and piping failures dissected: brittle fracture, CUI ruptures, dead-leg corrosion, relief-path isolation. Each traced through the lessons that would have prevented it. Institutional memory as curriculum.",
-          "src": "Course synthesis",
+          "scope": "Atmospheric tank anatomy: shell, bottom, roof; settlement and corrosion patterns. Internal inspection logic and intervals. Floor scanning and the repair decisions it triggers. CUI's mechanism, temperature bands, and moisture pathways. Inspection strategies from stripping to screening. The Gulf coastal plant's standing CUI battle, budgeted properly.",
+          "src": "NPTEL content; Callister & Rethwisch, Ch. 17",
           "preview": [
-            "Pick one classic failure and name the lesson that would have prevented it.",
-            "What made brittle fracture disasters a temperature story?"
-          ]
+            "Why does tank bottom corrosion hide from external inspection?",
+            "Name CUI's moisture pathways and the design details that feed them."
+          ],
+          "kuwait": "EQUATE"
         },
         {
           "n": 11,
