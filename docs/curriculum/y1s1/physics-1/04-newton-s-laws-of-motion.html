@@ -54,7 +54,7 @@
     <h1>Newton's laws of motion</h1>
     <p class="sub">The three laws stated precisely and read as engineering: equilibrium, F = ma, and action–reaction pairs that never act on the same body. Mass distinguished from weight for good. Free-body diagrams as the discipline statics will industrialize.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/4">Mark as complete</button>
@@ -67,23 +67,79 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What is the weight of a 50 kg motor, and why is 'kg' not a force? (≈490 N)</li><li>Why is a free-body diagram drawn for one body at a time?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>PHY 107 · Engineering Physics I — Mechanics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotation, and first oscillations — the physical foundation under statics, dynamics, thermodynamics, and vibrations.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What is the weight of a 50 kg motor, and why is 'kg' not a force? (≈490 N)</li><li>Why is a free-body diagram drawn for one body at a time?</li></ul></div><div class="measure">
+<h3>01 · The three laws, stated for work</h3>
+<p>Newton's laws are the constitution of mechanics, and each earns a working translation.
+<em>First law:</em> a body's velocity is constant unless a net force acts — so anything at
+rest OR cruising steadily has balanced forces, and the interesting engineering question is
+always "balanced by what?" <em>Second law:</em> \( \mathbf{F}_{net} = m\mathbf{a} \) —
+the net force, the vector sum of everything acting, produces acceleration in its own
+direction, scaled inversely by the mass. <em>Third law:</em> forces come in pairs, equal and
+opposite, acting on DIFFERENT bodies — the floor pushes the crate up exactly as hard as the
+crate pushes the floor down, and the pair never meets on one free-body diagram. The third
+law is bookkeeping; the second is the engine; the first is the second at
+\( \mathbf{a} = 0 \), which is the entire statics course in four symbols.</p>
+<h3>02 · Mass versus weight, permanently</h3>
+<p>Mass measures inertia — the reluctance to accelerate — in kilograms, identical everywhere
+in the universe. Weight is the gravitational FORCE on that mass, \( W = mg \), in newtons,
+local to the gravity that produces it. The distinction stops being pedantry the moment
+anything accelerates vertically: in a lift accelerating upward, the floor must push harder
+than \( mg \) — the scale reads more — and in a dropping lift it reads less, while the
+mass never changes. Load cells, crane scales, and accelerating machinery all live on this
+distinction.</p>
+<h3>03 · Using the second law on systems</h3>
+<p>\( F = ma \) applies to any body you choose to isolate — a whole train of carts or any
+single cart within it. The professional trick is choosing wisely: the whole system hides
+internal forces and yields the acceleration cheaply; a single member exposes the internal
+force you actually want. Solve the system for \( a \), then isolate one piece and let its
+own second law reveal the coupling force. Connected bodies share the acceleration magnitude
+whenever their connection is inextensible — the rope constraint that makes multi-body
+problems solvable at all.</p>
+<h3>04 · The second-law working method</h3>
+<p>The procedure is Lesson 3's FBD checklist with one upgrade: the right side of the
+equation is no longer zero. Draw the free body. Choose axes — align one with the
+acceleration when its direction is known, and the algebra thanks you. Write
+\( \Sigma F_x = ma_x \) and \( \Sigma F_y = ma_y \) with the sign table. Solve
+symbolically, substitute, and audit: units (newtons throughout), limits (set \( a = 0 \)
+and the answer must collapse to the statics result), and magnitude sense (accelerations of
+industrial machinery are typically fractions of \( g \); an answer of \( 40\ \mathrm{m/s^2} \)
+for a forklift is a flag, not a finding). When several bodies connect, write one second law
+per body plus the constraint, and count equations against unknowns before solving —
+exactly the bookkeeping the statics course taught, now with motion.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What is the weight of a 50 kg motor, and why is 'kg' not a force? (≈490 N)</li><li>Why is a free-body diagram drawn for one body at a time?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Free-body diagrams</b> (Statics, Lesson 3 there) — the isolation discipline, unchanged.</li>
+<li><b>Vector components</b> (Lesson 1) — the second law is applied by axis.</li>
+<li><b>Kinematics</b> (Lessons 2–3) — a found here feeds the motion equations there.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>First law</td><td>\( \mathbf{F}_{net} = 0 \Leftrightarrow \mathbf{v} \) constant</td><td>Rest AND steady cruise are the same condition: balanced forces.</td></tr>
+<tr><td>Second law</td><td>\( \mathbf{F}_{net} = m\mathbf{a} \)</td><td>The engine: net force, by axis, equals mass times acceleration.</td></tr>
+<tr><td>Third law</td><td>pairs on DIFFERENT bodies</td><td>Bookkeeping across bodies; never both partners on one FBD.</td></tr>
+<tr><td>Mass</td><td>kg — inertia</td><td>Universal; the m in every equation.</td></tr>
+<tr><td>Weight</td><td>\( W = mg \) — a force</td><td>Local; what scales, cranes, and floors actually feel.</td></tr>
+<tr><td>Apparent weight</td><td>\( N = m(g + a) \) accelerating up</td><td>Lifts, hoists, and load cells under vertical acceleration.</td></tr>
+<tr><td>System vs member</td><td>isolate whole OR part</td><td>Whole hides internal forces; the part exposes the one you want.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Force to accelerate a load</b></p>
+<p><b>Problem.</b> A tug moves a 1200 kg trailer from rest with a required acceleration of \( 1.5\ \mathrm{m/s^2} \) on level ground (rolling resistance neglected). <b>Find:</b> the required drawbar force, and the speed after 4 s.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( F = ma = 1200 \times 1.5 = 1800\ \mathrm{N} \).
+(2) Kinematics inherits the a: \( v = at = 1.5 \times 4 = 6.0\ \mathrm{m/s} \).</p>
+<p><b>Answer:</b> 1.8 kN; 6 m/s.
+<b>Sanity check:</b> the force is about 15% of the trailer's 11.8 kN weight — a plausible drawbar figure; and the audit limit works: at \( a = 0 \) the required force collapses to zero, exactly as a frictionless statics problem demands.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The scale in the lift</b></p>
+<p><b>Problem.</b> An 80 kg technician stands on a scale in a service lift accelerating upward at \( 2.0\ \mathrm{m/s^2} \). <b>Find:</b> the scale reading (the normal force), and the reading in free fall.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Second law, up positive: \( N - mg = ma \Rightarrow N = m(g + a) = 80 \times 11.81 = 945\ \mathrm{N} \).
+(2) Free fall \( (a = -g) \): \( N = m(g - g) = 0 \) — the scale reads nothing.</p>
+<p><b>Answer:</b> ≈945 N (as if 96 kg); zero in free fall.
+<b>Sanity check:</b> the reading exceeds the true 785 N weight by exactly \( ma = 160\ \mathrm{N} \) — the extra push the floor must supply to accelerate the technician. Load cells under moving loads misread for precisely this reason; the correction is this equation.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>The coupling force in a two-cart train</b></p>
+<p><b>Problem.</b> A 10 kg cart towing a 4 kg cart is pulled by 60 N on a smooth floor. <b>Find:</b> the acceleration of the train and the tension in the coupling.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Whole system: \( a = F/m_{total} = 60/14 = 4.29\ \mathrm{m/s^2} \).
+(2) Isolate the trailing cart — the coupling is its only horizontal force: \( T = m_2 a = 4 \times 4.29 = 17.1\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( 4.3\ \mathrm{m/s^2} \); ≈17 N in the coupling.
+<b>Sanity check:</b> the coupling carries \( 4/14 = 28.6\% \) of the applied force — exactly the trailing cart's share of the total mass. The system view found a cheaply; the member view exposed T: the two-step method in its standard form.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A pallet slides across a smooth floor at constant velocity. The net force on it is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Zero</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>In the direction of motion</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Opposite the motion</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Equal to its weight</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Constant velocity IS the first-law condition: net force zero — motion needs no force to continue, only to change. The push-to-keep-moving intuition (Aristotle's) survives in everyday friction-filled life but fails the moment friction leaves. Vertically, weight and the normal force cancel as part of that zero. This question separates physics from folk physics in one line.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A crate weighs 981 N on Earth. On a moon base where \( g = 1.62\ \mathrm{m/s^2} \), its mass is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>100 kg — mass does not change</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>16.2 kg</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>981 kg</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>162 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Mass is the invariant: \( m = W/g = 981/9.81 = 100\ \mathrm{kg} \) everywhere in the universe. Its moon WEIGHT would be \( 100 \times 1.62 = 162\ \mathrm{N} \) — a force, hence not an answer to a mass question (and kilograms, not newtons, is the mass unit). Inertia travels with the crate; the scale reading stays home with the gravity.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A net force of 500 N acts on a 250 kg trolley. Its acceleration is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 2\ \mathrm{m/s^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 0.5\ \mathrm{m/s^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 125{,}000\ \mathrm{m/s^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 250\ \mathrm{m/s^2} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( a = F/m = 500/250 = 2\ \mathrm{m/s^2} \). Inverting the division (0.5) and multiplying instead (125,000) are the arithmetic traps; the physics trap is forgetting that F must be the NET force — if friction claimed 100 N of the 500, the answer would drop accordingly. Second-law arithmetic is trivial; assembling the net force is the actual work.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A tractor pulls a loaded sled. The sled pulls back on the tractor (third law). The pair can still accelerate because:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The paired forces act on different bodies — each body answers only to the forces on itself</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The tractor's force is slightly larger</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The third law fails during acceleration</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Friction cancels the reaction</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Third-law partners never meet on one free body: the sled's pull-back acts on the TRACTOR, whose own budget also includes ground traction — and the tractor accelerates if traction beats pull-back. The sled, on ITS ledger, feels the forward pull and accelerates too. The 'equal forces should cancel' paradox dissolves the moment each body keeps its own books — which is what FBDs are for.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The same 30 N force is applied in turn to a 3 kg part and a 6 kg part. The accelerations compare as:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>10 vs 5 m/s² — halved mass ratio, doubled acceleration</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Equal — same force, same acceleration</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>5 vs 10 m/s²</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Cannot compare without weights</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( a = F/m \): 30/3 = 10 and 30/6 = 5 m/s² — acceleration inversely proportional to mass at fixed force. This inverse relationship IS inertia quantified, and it scales to every sizing decision where a drive must accelerate a load: double the tooling mass and the same motor delivers half the acceleration, before friction says a word.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

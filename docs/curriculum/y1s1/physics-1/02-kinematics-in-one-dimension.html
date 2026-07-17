@@ -54,7 +54,7 @@
     <h1>Kinematics in one dimension</h1>
     <p class="sub">Position, velocity, and acceleration defined as derivatives of motion, hand in hand with the calculus course. Motion graphs read fluently: slopes and areas carrying physical meaning. The constant-acceleration equations derived, not memorized.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/2">Mark as complete</button>
@@ -67,23 +67,78 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>A hoist accelerates from rest at 0.5 m/s²: how far does it travel in 6 s? (9 m)</li><li>What does the area under a velocity–time graph mean physically?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>PHY 107 · Engineering Physics I — Mechanics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotation, and first oscillations — the physical foundation under statics, dynamics, thermodynamics, and vibrations.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A hoist accelerates from rest at 0.5 m/s²: how far does it travel in 6 s? (9 m)</li><li>What does the area under a velocity–time graph mean physically?</li></ul></div><div class="measure">
+<h3>01 · The three siblings: position, velocity, acceleration</h3>
+<p>Kinematics describes motion without asking why it happens, and its entire vocabulary is
+three quantities chained by calculus. Position \( x(t) \) says where; velocity
+\( v = dx/dt \) says how fast where is changing; acceleration \( a = dv/dt \) says how
+fast how-fast is changing. The chain runs both directions: differentiate to go from position
+toward acceleration, integrate to come back — and the mathematics course's slogan that
+"slopes and areas are inverses" becomes physical here. On a velocity–time graph, the slope
+at any instant is the acceleration and the area under the curve is the displacement; an
+engineer who can read those two facts off a trend owns most of kinematics.</p>
+<h3>02 · The constant-acceleration toolkit</h3>
+<p>When acceleration is constant — winch starts, braking runs, free fall — integration
+yields the standard kit: \( v = v_0 + at \), \( x = v_0t + \tfrac12 at^2 \), and the
+time-free combination \( v^2 = v_0^2 + 2ax \). Derive them once from the definitions and
+they stop being formulas to memorize and become consequences to trust. Each answers its own
+question — the first about speed at a time, the second about distance in a time, the third
+about speed after a distance — and choosing the one whose variables match the givens is the
+entire selection skill. Free fall is the same kit with \( a = g = 9.81\ \mathrm{m/s^2} \)
+downward, air resistance ignored until a later course chooses to price it.</p>
+<h3>03 · Signs carry the physics</h3>
+<p>One axis, declared positive in one direction, governs every sign in the problem.
+Velocity opposite the axis is negative; acceleration opposite the VELOCITY is braking, but
+acceleration opposite the AXIS is just negative — the two statements differ, and conflating
+them is the classic kinematics error. A car moving in +x while slowing has negative
+acceleration; the same car reversing and speeding up ALSO has negative acceleration. The
+sign belongs to the axis, not to the feeling of speeding up or slowing down.</p>
+<h3>04 · The kinematics working method</h3>
+<p>Solve every problem the same way. Draw the axis and mark positive. List the knowns and
+the wanted symbolically — \( v_0, v, a, t, x \) — and strike what the problem doesn't
+mention. Pick the ONE equation containing exactly the knowns and the wanted; if none fits,
+the problem has two phases, so split it where the acceleration changes and chain the phases,
+the final state of one becoming the initial state of the next. Solve symbolically first,
+substitute numbers last, and audit twice: units through every line, and magnitude against
+experience — a forklift does not brake at \( 40\ \mathrm{m/s^2} \), and an answer
+claiming so is a decimal slip announcing itself. The two-phase discipline matters most:
+most real motions — lift, travel, lower; accelerate, cruise, brake — are chains of simple
+segments, and the method scales to any chain length without changing shape.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>A hoist accelerates from rest at 0.5 m/s²: how far does it travel in 6 s? (9 m)</li><li>What does the area under a velocity–time graph mean physically?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Vectors and axes</b> (Lesson 1) — signs come from the declared axis.</li>
+<li><b>Derivatives and areas</b> (Math I, concurrent) — slope and area read off graphs.</li>
+<li><b>Unit discipline</b> (Lesson 1) — m, m/s, m/s² kept straight throughout.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Velocity</td><td>\( v = dx/dt \)</td><td>The slope of position–time; instantaneous, signed.</td></tr>
+<tr><td>Acceleration</td><td>\( a = dv/dt \)</td><td>The slope of velocity–time; braking is a opposite v, not 'negative'.</td></tr>
+<tr><td>Speed at a time</td><td>\( v = v_0 + at \)</td><td>Constant a; knowns include time.</td></tr>
+<tr><td>Distance in a time</td><td>\( x = v_0t + \tfrac12 at^2 \)</td><td>Constant a; displacement from a clock reading.</td></tr>
+<tr><td>Speed after a distance</td><td>\( v^2 = v_0^2 + 2ax \)</td><td>Constant a with no time given — the time-free workhorse.</td></tr>
+<tr><td>Free fall</td><td>\( a = g = 9.81\ \mathrm{m/s^2} \) down</td><td>Dropped and thrown objects, air resistance ignored.</td></tr>
+<tr><td>Graph reading</td><td>slope of v–t = a; area = Δx</td><td>Trend literacy — half of kinematics without an equation.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>The hoist start</b></p>
+<p><b>Problem.</b> A hoist accelerates a load from rest at a constant \( 0.5\ \mathrm{m/s^2} \) for 6 s. <b>Find:</b> the final speed and the distance risen.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( v = v_0 + at = 0 + 0.5 \times 6 = 3.0\ \mathrm{m/s} \).
+(2) \( x = v_0t + \tfrac12 at^2 = 0 + 0.5 \times 0.5 \times 36 = 9.0\ \mathrm{m} \).</p>
+<p><b>Answer:</b> 3 m/s after 9 m of travel.
+<b>Sanity check:</b> average velocity from rest to 3 m/s is 1.5 m/s; over 6 s that is 9 m — the area-under-the-graph reading (a triangle: ½ × 6 × 3) confirming the formula exactly.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Braking distance</b></p>
+<p><b>Problem.</b> A vehicle traveling at 20 m/s brakes at a constant \( 4\ \mathrm{m/s^2} \). <b>Find:</b> the time to stop and the stopping distance.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Time: \( 0 = 20 - 4t \Rightarrow t = 5\ \mathrm{s} \).
+(2) Distance (time-free check): \( 0 = 20^2 - 2 \times 4 \times x \Rightarrow x = 400/8 = 50\ \mathrm{m} \).</p>
+<p><b>Answer:</b> 5 s; 50 m.
+<b>Sanity check:</b> average speed while braking is 10 m/s for 5 s → 50 m ✓. Note the scaling buried here: stopping distance goes as \( v^2 \) — doubling speed quadruples the distance, the single most safety-relevant equation in kinematics.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>A two-phase travel</b></p>
+<p><b>Problem.</b> An automated cart accelerates from rest at \( 2\ \mathrm{m/s^2} \) for 5 s, then holds its speed for 10 s. <b>Find:</b> the total distance covered.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Phase 1: \( v = 2 \times 5 = 10\ \mathrm{m/s} \); \( x_1 = \tfrac12 \times 2 \times 25 = 25\ \mathrm{m} \).
+(2) Phase 2 (constant speed): \( x_2 = 10 \times 10 = 100\ \mathrm{m} \).
+(3) Total: \( 125\ \mathrm{m} \).</p>
+<p><b>Answer:</b> 125 m.
+<b>Sanity check:</b> the v–t graph is a triangle (area 25) followed by a rectangle (area 100) — the areas ARE the distances, and chaining phases at the speed handoff (10 m/s ends phase 1, begins phase 2) is the working method in miniature.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>On a velocity–time graph, the area under the curve represents:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Displacement</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Acceleration</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Average speed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Jerk</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Integrating velocity over time accumulates displacement — area under v–t is distance traveled (signed). Acceleration is the SLOPE of the same graph, one derivative up; average speed is total area over total time. Slope-versus-area on the v–t graph is the compact summary of all of kinematics, and this question is its passport check.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A machine slide starts from rest and accelerates at \( 2\ \mathrm{m/s^2} \) over 16 m. Its final speed is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>8 m/s</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>32 m/s</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>5.7 m/s</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>16 m/s</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>No time is given, so the time-free equation applies: \( v^2 = 0 + 2 \times 2 \times 16 = 64 \Rightarrow v = 8\ \mathrm{m/s} \). Multiplying a by distance (32) or halving things by instinct produces the distractors. Equation selection by matching knowns — here \( a, x \), no \( t \) — is the entire skill this item drills.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A wrench is dropped from a platform and falls for 2 s. Ignoring air resistance, it has fallen about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>19.6 m</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>9.8 m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>39.2 m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>4.9 m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( x = \tfrac12 g t^2 = 0.5 \times 9.81 \times 4 = 19.6\ \mathrm{m} \) — roughly a six-story drop, which is why dropped-object prevention is a permit topic. Using \( gt \) (19.6 m/s) computes the SPEED, not the distance — the classic mix; 4.9 m is one second's fall. The square in \( t^2 \) means the second second does three times the damage of the first.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A cart moves in the +x direction while slowing down. Its acceleration is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Directed in −x</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Directed in +x</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Zero</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Vertical</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Slowing means the velocity (in +x) is being eaten away — the rate of change of velocity points against it: −x. "Deceleration" is not a separate quantity with its own rules; it is ordinary acceleration whose direction opposes the velocity. Attaching the sign to the axis rather than to the sensation of slowing is the discipline that keeps two-phase problems honest.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The slope of a position–time graph at an instant gives:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The velocity at that instant</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The acceleration</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The average speed for the trip</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The distance so far</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( v = dx/dt \): slope of position–time is instantaneous velocity — steep means fast, flat means stopped, downhill means moving backward. Acceleration lives one graph over (slope of v–t), and averages need whole intervals, not instants. Reading motion graphs at sight transfers directly to reading machine-axis traces and historian trends later.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

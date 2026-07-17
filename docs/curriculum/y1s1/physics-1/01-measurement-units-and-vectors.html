@@ -54,7 +54,7 @@
     <h1>Measurement, units, and vectors</h1>
     <p class="sub">Physical quantities and SI base units; significant figures and estimation discipline. Vectors made operational: components, addition, dot and cross products in physical language. The toolkit every mechanics course after this one assumes.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/1">Mark as complete</button>
@@ -67,23 +67,84 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Decompose a 100 N force at 37° above horizontal into components — the operation statics repeats daily.</li><li>Why is torque a vector while temperature is not?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>PHY 107 · Engineering Physics I — Mechanics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotation, and first oscillations — the physical foundation under statics, dynamics, thermodynamics, and vibrations.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Decompose a 100 N force at 37° above horizontal into components — the operation statics repeats daily.</li><li>Why is torque a vector while temperature is not?</li></ul></div><div class="measure">
+<h3>01 · Measurement is a contract</h3>
+<p>Physics begins where opinion ends: at measurement. A physical quantity is a number, a
+unit, and an uncertainty, and all three are part of the value. The SI system supplies seven
+base units, of which mechanics uses three — the metre, the kilogram, and the second — and
+builds everything else from them: newtons are \( \mathrm{kg\,m/s^2} \), joules are
+newton-metres, watts are joules per second. Because derived units are built by algebra, they
+can be CHECKED by algebra — both sides of any physical equation must carry identical units,
+and an equation that fails this test is wrong before any numbers enter. Significant figures
+carry the honesty further: a value written as 4.80 m promises more than 4.8 m does, and the
+professional habit is to promise no more than the instrument delivered.</p>
+<h3>02 · Vectors carry direction</h3>
+<p>Some quantities are complete as bare numbers — temperature, mass, energy. Mechanics'
+central quantities are not: force, velocity, acceleration, and displacement all point, and a
+number without its direction is half a fact. A vector is specified either by magnitude and
+angle or by components on chosen axes, and the two descriptions convert through the triangle:
+\( A_x = A\cos\theta \), \( A_y = A\sin\theta \), with
+\( A = \sqrt{A_x^2 + A_y^2} \) returning the magnitude. Addition happens component by
+component — never magnitude by magnitude — which is the single most consequential sentence
+in this lesson: two 100 N forces can sum to anything from 0 to 200 N depending on their
+directions.</p>
+<h3>03 · Two products, two meanings</h3>
+<p>Vectors multiply in two distinct ways, each answering a physical question. The dot
+product, \( \mathbf{A}\cdot\mathbf{B} = AB\cos\theta = A_xB_x + A_yB_y + A_zB_z \),
+measures alignment and produces a scalar — work is force dotted with displacement, and a
+force at right angles to motion does none. The cross product,
+\( |\mathbf{A}\times\mathbf{B}| = AB\sin\theta \), measures turning capacity and
+produces a vector along the axis of turn — torque is position crossed with force, the
+right-hand rule assigning its sense. Choosing the wrong product is not a small error; it is
+answering a different question.</p>
+<h3>04 · The component working method</h3>
+<p>Every vector calculation in this course runs one procedure. Choose axes deliberately and
+draw them. Resolve every vector into components with a small sign table, committing each
+sine and cosine once, visibly. Do all arithmetic on components. Recompose at the end —
+magnitude from Pythagoras, direction from the arctangent WITH a quadrant check from the
+component signs, because the calculator's arctangent is wrong half the time on its own.
+Then run the two audits: units on both sides of every line, and magnitude inside the
+possible band (never more than the sum of the parts, never less than their difference).
+The method is mechanical on purpose — statics, dynamics, and every field theory after them
+will run it thousands of times, and a procedure executed identically is a procedure whose
+errors are findable. Speed comes later and automatically; correctness is the habit being
+installed here.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Decompose a 100 N force at 37° above horizontal into components — the operation statics repeats daily.</li><li>Why is torque a vector while temperature is not?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Trigonometry</b> — sine, cosine, tangent on right triangles, fluently.</li>
+<li><b>Calculus I (concurrent)</b> — derivatives arrive in Lesson 2; only algebra is needed here.</li>
+<li><b>Scientific notation</b> — powers of ten as the language of scale.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>SI base trio (mechanics)</td><td>m, kg, s</td><td>Every mechanical quantity is built from these three.</td></tr>
+<tr><td>Derived units</td><td>\( \mathrm{N = kg\,m/s^2},\ \mathrm{J = N\,m},\ \mathrm{W = J/s} \)</td><td>Unit algebra — and the free correctness check on every equation.</td></tr>
+<tr><td>Vector components</td><td>\( A_x = A\cos\theta,\ A_y = A\sin\theta \)</td><td>Splitting a vector onto working axes; the reverse of Pythagoras + arctangent.</td></tr>
+<tr><td>Vector addition</td><td>component by component</td><td>Never add magnitudes unless the vectors are collinear.</td></tr>
+<tr><td>Dot product</td><td>\( \mathbf{A}\cdot\mathbf{B} = AB\cos\theta \)</td><td>Alignment questions: work, power, projections. Result is a scalar.</td></tr>
+<tr><td>Cross product</td><td>\( |\mathbf{A}\times\mathbf{B}| = AB\sin\theta \)</td><td>Turning questions: torque, angular momentum. Result is a vector (right-hand rule).</td></tr>
+<tr><td>Significant figures</td><td>promise ≤ instrument</td><td>Reporting honesty; the decimal places are part of the claim.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Resolving a pull</b></p>
+<p><b>Problem.</b> A cable pulls a skid with 100 N at 37° above the horizontal. <b>Find:</b> the horizontal and vertical components, and verify by recomposition.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( F_x = 100\cos 37° = 79.9\ \mathrm{N} \).
+(2) \( F_y = 100\sin 37° = 60.2\ \mathrm{N} \).
+(3) Recompose: \( \sqrt{79.9^2 + 60.2^2} = 100.0\ \mathrm{N} \) ✓ and \( \tan^{-1}(60.2/79.9) = 37.0° \) ✓.</p>
+<p><b>Answer:</b> \( (79.9,\ 60.2)\ \mathrm{N} \).
+<b>Sanity check:</b> below 45°, the horizontal component must be the larger of the two — it is; and the recomposition returning exactly the inputs certifies the arithmetic loop closed.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Work as a dot product</b></p>
+<p><b>Problem.</b> A force \( \mathbf{F} = (300, 150)\ \mathrm{N} \) acts on a trolley that displaces \( \mathbf{d} = (2, -1)\ \mathrm{m} \). <b>Find:</b> the work done.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( W = \mathbf{F}\cdot\mathbf{d} = F_xd_x + F_yd_y = 300\times2 + 150\times(-1) \).
+(2) \( W = 600 - 150 = 450\ \mathrm{J} \).</p>
+<p><b>Answer:</b> 450 J.
+<b>Sanity check:</b> the negative contribution is physical — the vertical force component points up while the vertical displacement is down, so that pair FIGHTS the motion and subtracts. The dot product bookkeeps help and hindrance automatically; that is its job.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Torque as a cross product</b></p>
+<p><b>Problem.</b> A force of 250 N acts vertically (+y) at the end of a horizontal arm \( \mathbf{r} = (0.4, 0, 0)\ \mathrm{m} \) from a pivot. <b>Find:</b> the torque vector.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \boldsymbol{\tau} = \mathbf{r}\times\mathbf{F} \); with \( \mathbf{r} \) along x and \( \mathbf{F} \) along y, the result points along z (right-hand rule).
+(2) Magnitude: \( rF\sin 90° = 0.4 \times 250 = 100\ \mathrm{N\,m} \).
+(3) \( \boldsymbol{\tau} = (0, 0, 100)\ \mathrm{N\,m} \) — counterclockwise seen from +z.</p>
+<p><b>Answer:</b> 100 N·m about +z.
+<b>Sanity check:</b> force perpendicular to arm is the maximum-torque geometry \( (\sin 90° = 1) \); any other angle would deliver less, and a force ALONG the arm would deliver zero — the cross product encodes the wrench-handle intuition exactly.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Which of these quantities is a scalar?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Work</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Force</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Velocity</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Torque</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Work is energy — a magnitude with no direction, born of a dot product, which always outputs scalars. Force and velocity point by definition, and torque points along its axis of turn (a cross-product output). The scalar/vector sorting matters operationally: scalars add like numbers; vectors must go through components.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The unit vector in the direction of \( (3, 4) \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( (0.6, 0.8) \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( (3, 4) \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( (0.75, 1.0) \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( (1, 1) \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The magnitude is \( \sqrt{3^2+4^2} = 5 \); dividing each component by it gives \( (0.6, 0.8) \), whose own magnitude is exactly 1 — the definition of a unit vector. Leaving the vector undivided keeps its length 5; dividing by the wrong number (4) or normalizing by eye produces the other traps. Unit vectors carry pure direction, ready to be scaled by any magnitude.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Two vectors are perpendicular. Their dot product is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Zero</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The product of their magnitudes</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Negative, always</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Undefined</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \mathbf{A}\cdot\mathbf{B} = AB\cos 90° = 0 \): the dot product measures alignment, and perpendicular vectors share none. The product of magnitudes would require full alignment \( (\cos 0° = 1) \). Physically this is why a force at right angles to motion does no work — the centripetal force of Lesson 3's curves, working hard and doing zero joules.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A motor is labeled "10 kg". Its weight — the force the crane feels — is about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>98 N</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>10 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>10 kg-force is a force already</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( W = mg = 10 \times 9.81 = 98\ \mathrm{N} \). Kilograms measure mass; newtons measure force, and the two differ by \( g \). The colloquial "kilogram-force" survives on old gauges but is not an SI unit and invites exactly this confusion — rigging calculations, spring selections, and load cells all live in newtons, and the conversion habit starts here.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The magnitude of the vector \( (6, 8) \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>10</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>14</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>7</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>48</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \sqrt{6^2 + 8^2} = \sqrt{100} = 10 \) — the 3-4-5 triangle scaled by two. Adding components (14) treats perpendicular parts as collinear — the cardinal vector sin; multiplying them (48) computes an area, not a length. The Pythagorean recomposition is half of the component method's closing audit, worth making reflexive now.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

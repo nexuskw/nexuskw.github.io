@@ -1,0 +1,326 @@
+{
+ "1": {
+  "lecture": "\n<h3>§1 · Measurement is a contract</h3>\n<p>Physics begins where opinion ends: at measurement. A physical quantity is a number, a\nunit, and an uncertainty, and all three are part of the value. The SI system supplies seven\nbase units, of which mechanics uses three — the metre, the kilogram, and the second — and\nbuilds everything else from them: newtons are \\( \\mathrm{kg\\,m/s^2} \\), joules are\nnewton-metres, watts are joules per second. Because derived units are built by algebra, they\ncan be CHECKED by algebra — both sides of any physical equation must carry identical units,\nand an equation that fails this test is wrong before any numbers enter. Significant figures\ncarry the honesty further: a value written as 4.80 m promises more than 4.8 m does, and the\nprofessional habit is to promise no more than the instrument delivered.</p>\n<h3>§2 · Vectors carry direction</h3>\n<p>Some quantities are complete as bare numbers — temperature, mass, energy. Mechanics'\ncentral quantities are not: force, velocity, acceleration, and displacement all point, and a\nnumber without its direction is half a fact. A vector is specified either by magnitude and\nangle or by components on chosen axes, and the two descriptions convert through the triangle:\n\\( A_x = A\\cos\\theta \\), \\( A_y = A\\sin\\theta \\), with\n\\( A = \\sqrt{A_x^2 + A_y^2} \\) returning the magnitude. Addition happens component by\ncomponent — never magnitude by magnitude — which is the single most consequential sentence\nin this lesson: two 100 N forces can sum to anything from 0 to 200 N depending on their\ndirections.</p>\n<h3>§3 · Two products, two meanings</h3>\n<p>Vectors multiply in two distinct ways, each answering a physical question. The dot\nproduct, \\( \\mathbf{A}\\cdot\\mathbf{B} = AB\\cos\\theta = A_xB_x + A_yB_y + A_zB_z \\),\nmeasures alignment and produces a scalar — work is force dotted with displacement, and a\nforce at right angles to motion does none. The cross product,\n\\( |\\mathbf{A}\\times\\mathbf{B}| = AB\\sin\\theta \\), measures turning capacity and\nproduces a vector along the axis of turn — torque is position crossed with force, the\nright-hand rule assigning its sense. Choosing the wrong product is not a small error; it is\nanswering a different question.</p>\n<h3>§4 · The component working method</h3>\n<p>Every vector calculation in this course runs one procedure. Choose axes deliberately and\ndraw them. Resolve every vector into components with a small sign table, committing each\nsine and cosine once, visibly. Do all arithmetic on components. Recompose at the end —\nmagnitude from Pythagoras, direction from the arctangent WITH a quadrant check from the\ncomponent signs, because the calculator's arctangent is wrong half the time on its own.\nThen run the two audits: units on both sides of every line, and magnitude inside the\npossible band (never more than the sum of the parts, never less than their difference).\nThe method is mechanical on purpose — statics, dynamics, and every field theory after them\nwill run it thousands of times, and a procedure executed identically is a procedure whose\nerrors are findable. Speed comes later and automatically; correctness is the habit being\ninstalled here.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Trigonometry</b> — sine, cosine, tangent on right triangles, fluently.</li>\n<li><b>Calculus I (concurrent)</b> — derivatives arrive in Lesson 2; only algebra is needed here.</li>\n<li><b>Scientific notation</b> — powers of ten as the language of scale.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>SI base trio (mechanics)</td><td>m, kg, s</td><td>Every mechanical quantity is built from these three.</td></tr>\n<tr><td>Derived units</td><td>\\( \\mathrm{N = kg\\,m/s^2},\\ \\mathrm{J = N\\,m},\\ \\mathrm{W = J/s} \\)</td><td>Unit algebra — and the free correctness check on every equation.</td></tr>\n<tr><td>Vector components</td><td>\\( A_x = A\\cos\\theta,\\ A_y = A\\sin\\theta \\)</td><td>Splitting a vector onto working axes; the reverse of Pythagoras + arctangent.</td></tr>\n<tr><td>Vector addition</td><td>component by component</td><td>Never add magnitudes unless the vectors are collinear.</td></tr>\n<tr><td>Dot product</td><td>\\( \\mathbf{A}\\cdot\\mathbf{B} = AB\\cos\\theta \\)</td><td>Alignment questions: work, power, projections. Result is a scalar.</td></tr>\n<tr><td>Cross product</td><td>\\( |\\mathbf{A}\\times\\mathbf{B}| = AB\\sin\\theta \\)</td><td>Turning questions: torque, angular momentum. Result is a vector (right-hand rule).</td></tr>\n<tr><td>Significant figures</td><td>promise ≤ instrument</td><td>Reporting honesty; the decimal places are part of the claim.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Resolving a pull</b></p>\n<p><b>Problem.</b> A cable pulls a skid with 100 N at 37° above the horizontal. <b>Find:</b> the horizontal and vertical components, and verify by recomposition.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( F_x = 100\\cos 37° = 79.9\\ \\mathrm{N} \\).\n(2) \\( F_y = 100\\sin 37° = 60.2\\ \\mathrm{N} \\).\n(3) Recompose: \\( \\sqrt{79.9^2 + 60.2^2} = 100.0\\ \\mathrm{N} \\) ✓ and \\( \\tan^{-1}(60.2/79.9) = 37.0° \\) ✓.</p>\n<p><b>Answer:</b> \\( (79.9,\\ 60.2)\\ \\mathrm{N} \\).\n<b>Sanity check:</b> below 45°, the horizontal component must be the larger of the two — it is; and the recomposition returning exactly the inputs certifies the arithmetic loop closed.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Work as a dot product</b></p>\n<p><b>Problem.</b> A force \\( \\mathbf{F} = (300, 150)\\ \\mathrm{N} \\) acts on a trolley that displaces \\( \\mathbf{d} = (2, -1)\\ \\mathrm{m} \\). <b>Find:</b> the work done.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( W = \\mathbf{F}\\cdot\\mathbf{d} = F_xd_x + F_yd_y = 300\\times2 + 150\\times(-1) \\).\n(2) \\( W = 600 - 150 = 450\\ \\mathrm{J} \\).</p>\n<p><b>Answer:</b> 450 J.\n<b>Sanity check:</b> the negative contribution is physical — the vertical force component points up while the vertical displacement is down, so that pair FIGHTS the motion and subtracts. The dot product bookkeeps help and hindrance automatically; that is its job.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Torque as a cross product</b></p>\n<p><b>Problem.</b> A force of 250 N acts vertically (+y) at the end of a horizontal arm \\( \\mathbf{r} = (0.4, 0, 0)\\ \\mathrm{m} \\) from a pivot. <b>Find:</b> the torque vector.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( \\boldsymbol{\\tau} = \\mathbf{r}\\times\\mathbf{F} \\); with \\( \\mathbf{r} \\) along x and \\( \\mathbf{F} \\) along y, the result points along z (right-hand rule).\n(2) Magnitude: \\( rF\\sin 90° = 0.4 \\times 250 = 100\\ \\mathrm{N\\,m} \\).\n(3) \\( \\boldsymbol{\\tau} = (0, 0, 100)\\ \\mathrm{N\\,m} \\) — counterclockwise seen from +z.</p>\n<p><b>Answer:</b> 100 N·m about +z.\n<b>Sanity check:</b> force perpendicular to arm is the maximum-torque geometry \\( (\\sin 90° = 1) \\); any other angle would deliver less, and a force ALONG the arm would deliver zero — the cross product encodes the wrench-handle intuition exactly.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which of these quantities is a scalar?</p>",
+    "choices": [
+     "Work",
+     "Force",
+     "Velocity",
+     "Torque"
+    ],
+    "answer": 0,
+    "solution": "<p>Work is energy — a magnitude with no direction, born of a dot product, which always outputs scalars. Force and velocity point by definition, and torque points along its axis of turn (a cross-product output). The scalar/vector sorting matters operationally: scalars add like numbers; vectors must go through components.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The unit vector in the direction of \\( (3, 4) \\) is:</p>",
+    "choices": [
+     "\\( (0.6, 0.8) \\)",
+     "\\( (3, 4) \\)",
+     "\\( (0.75, 1.0) \\)",
+     "\\( (1, 1) \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The magnitude is \\( \\sqrt{3^2+4^2} = 5 \\); dividing each component by it gives \\( (0.6, 0.8) \\), whose own magnitude is exactly 1 — the definition of a unit vector. Leaving the vector undivided keeps its length 5; dividing by the wrong number (4) or normalizing by eye produces the other traps. Unit vectors carry pure direction, ready to be scaled by any magnitude.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two vectors are perpendicular. Their dot product is:</p>",
+    "choices": [
+     "Zero",
+     "The product of their magnitudes",
+     "Negative, always",
+     "Undefined"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mathbf{A}\\cdot\\mathbf{B} = AB\\cos 90° = 0 \\): the dot product measures alignment, and perpendicular vectors share none. The product of magnitudes would require full alignment \\( (\\cos 0° = 1) \\). Physically this is why a force at right angles to motion does no work — the centripetal force of Lesson 3's curves, working hard and doing zero joules.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A motor is labeled \"10 kg\". Its weight — the force the crane feels — is about:</p>",
+    "choices": [
+     "98 N",
+     "10 N",
+     "10 kg-force is a force already",
+     "1 N"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( W = mg = 10 \\times 9.81 = 98\\ \\mathrm{N} \\). Kilograms measure mass; newtons measure force, and the two differ by \\( g \\). The colloquial \"kilogram-force\" survives on old gauges but is not an SI unit and invites exactly this confusion — rigging calculations, spring selections, and load cells all live in newtons, and the conversion habit starts here.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The magnitude of the vector \\( (6, 8) \\) is:</p>",
+    "choices": [
+     "10",
+     "14",
+     "7",
+     "48"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10 \\) — the 3-4-5 triangle scaled by two. Adding components (14) treats perpendicular parts as collinear — the cardinal vector sin; multiplying them (48) computes an area, not a length. The Pythagorean recomposition is half of the component method's closing audit, worth making reflexive now.</p>"
+   }
+  ]
+ },
+ "2": {
+  "lecture": "\n<h3>§1 · The three siblings: position, velocity, acceleration</h3>\n<p>Kinematics describes motion without asking why it happens, and its entire vocabulary is\nthree quantities chained by calculus. Position \\( x(t) \\) says where; velocity\n\\( v = dx/dt \\) says how fast where is changing; acceleration \\( a = dv/dt \\) says how\nfast how-fast is changing. The chain runs both directions: differentiate to go from position\ntoward acceleration, integrate to come back — and the mathematics course's slogan that\n\"slopes and areas are inverses\" becomes physical here. On a velocity–time graph, the slope\nat any instant is the acceleration and the area under the curve is the displacement; an\nengineer who can read those two facts off a trend owns most of kinematics.</p>\n<h3>§2 · The constant-acceleration toolkit</h3>\n<p>When acceleration is constant — winch starts, braking runs, free fall — integration\nyields the standard kit: \\( v = v_0 + at \\), \\( x = v_0t + \\tfrac12 at^2 \\), and the\ntime-free combination \\( v^2 = v_0^2 + 2ax \\). Derive them once from the definitions and\nthey stop being formulas to memorize and become consequences to trust. Each answers its own\nquestion — the first about speed at a time, the second about distance in a time, the third\nabout speed after a distance — and choosing the one whose variables match the givens is the\nentire selection skill. Free fall is the same kit with \\( a = g = 9.81\\ \\mathrm{m/s^2} \\)\ndownward, air resistance ignored until a later course chooses to price it.</p>\n<h3>§3 · Signs carry the physics</h3>\n<p>One axis, declared positive in one direction, governs every sign in the problem.\nVelocity opposite the axis is negative; acceleration opposite the VELOCITY is braking, but\nacceleration opposite the AXIS is just negative — the two statements differ, and conflating\nthem is the classic kinematics error. A car moving in +x while slowing has negative\nacceleration; the same car reversing and speeding up ALSO has negative acceleration. The\nsign belongs to the axis, not to the feeling of speeding up or slowing down.</p>\n<h3>§4 · The kinematics working method</h3>\n<p>Solve every problem the same way. Draw the axis and mark positive. List the knowns and\nthe wanted symbolically — \\( v_0, v, a, t, x \\) — and strike what the problem doesn't\nmention. Pick the ONE equation containing exactly the knowns and the wanted; if none fits,\nthe problem has two phases, so split it where the acceleration changes and chain the phases,\nthe final state of one becoming the initial state of the next. Solve symbolically first,\nsubstitute numbers last, and audit twice: units through every line, and magnitude against\nexperience — a forklift does not brake at \\( 40\\ \\mathrm{m/s^2} \\), and an answer\nclaiming so is a decimal slip announcing itself. The two-phase discipline matters most:\nmost real motions — lift, travel, lower; accelerate, cruise, brake — are chains of simple\nsegments, and the method scales to any chain length without changing shape.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Vectors and axes</b> (Lesson 1) — signs come from the declared axis.</li>\n<li><b>Derivatives and areas</b> (Math I, concurrent) — slope and area read off graphs.</li>\n<li><b>Unit discipline</b> (Lesson 1) — m, m/s, m/s² kept straight throughout.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Velocity</td><td>\\( v = dx/dt \\)</td><td>The slope of position–time; instantaneous, signed.</td></tr>\n<tr><td>Acceleration</td><td>\\( a = dv/dt \\)</td><td>The slope of velocity–time; braking is a opposite v, not 'negative'.</td></tr>\n<tr><td>Speed at a time</td><td>\\( v = v_0 + at \\)</td><td>Constant a; knowns include time.</td></tr>\n<tr><td>Distance in a time</td><td>\\( x = v_0t + \\tfrac12 at^2 \\)</td><td>Constant a; displacement from a clock reading.</td></tr>\n<tr><td>Speed after a distance</td><td>\\( v^2 = v_0^2 + 2ax \\)</td><td>Constant a with no time given — the time-free workhorse.</td></tr>\n<tr><td>Free fall</td><td>\\( a = g = 9.81\\ \\mathrm{m/s^2} \\) down</td><td>Dropped and thrown objects, air resistance ignored.</td></tr>\n<tr><td>Graph reading</td><td>slope of v–t = a; area = Δx</td><td>Trend literacy — half of kinematics without an equation.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The hoist start</b></p>\n<p><b>Problem.</b> A hoist accelerates a load from rest at a constant \\( 0.5\\ \\mathrm{m/s^2} \\) for 6 s. <b>Find:</b> the final speed and the distance risen.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( v = v_0 + at = 0 + 0.5 \\times 6 = 3.0\\ \\mathrm{m/s} \\).\n(2) \\( x = v_0t + \\tfrac12 at^2 = 0 + 0.5 \\times 0.5 \\times 36 = 9.0\\ \\mathrm{m} \\).</p>\n<p><b>Answer:</b> 3 m/s after 9 m of travel.\n<b>Sanity check:</b> average velocity from rest to 3 m/s is 1.5 m/s; over 6 s that is 9 m — the area-under-the-graph reading (a triangle: ½ × 6 × 3) confirming the formula exactly.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Braking distance</b></p>\n<p><b>Problem.</b> A vehicle traveling at 20 m/s brakes at a constant \\( 4\\ \\mathrm{m/s^2} \\). <b>Find:</b> the time to stop and the stopping distance.</p>",
+    "solution": "<p><b>Solution.</b> (1) Time: \\( 0 = 20 - 4t \\Rightarrow t = 5\\ \\mathrm{s} \\).\n(2) Distance (time-free check): \\( 0 = 20^2 - 2 \\times 4 \\times x \\Rightarrow x = 400/8 = 50\\ \\mathrm{m} \\).</p>\n<p><b>Answer:</b> 5 s; 50 m.\n<b>Sanity check:</b> average speed while braking is 10 m/s for 5 s → 50 m ✓. Note the scaling buried here: stopping distance goes as \\( v^2 \\) — doubling speed quadruples the distance, the single most safety-relevant equation in kinematics.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>A two-phase travel</b></p>\n<p><b>Problem.</b> An automated cart accelerates from rest at \\( 2\\ \\mathrm{m/s^2} \\) for 5 s, then holds its speed for 10 s. <b>Find:</b> the total distance covered.</p>",
+    "solution": "<p><b>Solution.</b> (1) Phase 1: \\( v = 2 \\times 5 = 10\\ \\mathrm{m/s} \\); \\( x_1 = \\tfrac12 \\times 2 \\times 25 = 25\\ \\mathrm{m} \\).\n(2) Phase 2 (constant speed): \\( x_2 = 10 \\times 10 = 100\\ \\mathrm{m} \\).\n(3) Total: \\( 125\\ \\mathrm{m} \\).</p>\n<p><b>Answer:</b> 125 m.\n<b>Sanity check:</b> the v–t graph is a triangle (area 25) followed by a rectangle (area 100) — the areas ARE the distances, and chaining phases at the speed handoff (10 m/s ends phase 1, begins phase 2) is the working method in miniature.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>On a velocity–time graph, the area under the curve represents:</p>",
+    "choices": [
+     "Displacement",
+     "Acceleration",
+     "Average speed",
+     "Jerk"
+    ],
+    "answer": 0,
+    "solution": "<p>Integrating velocity over time accumulates displacement — area under v–t is distance traveled (signed). Acceleration is the SLOPE of the same graph, one derivative up; average speed is total area over total time. Slope-versus-area on the v–t graph is the compact summary of all of kinematics, and this question is its passport check.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A machine slide starts from rest and accelerates at \\( 2\\ \\mathrm{m/s^2} \\) over 16 m. Its final speed is:</p>",
+    "choices": [
+     "8 m/s",
+     "32 m/s",
+     "5.7 m/s",
+     "16 m/s"
+    ],
+    "answer": 0,
+    "solution": "<p>No time is given, so the time-free equation applies: \\( v^2 = 0 + 2 \\times 2 \\times 16 = 64 \\Rightarrow v = 8\\ \\mathrm{m/s} \\). Multiplying a by distance (32) or halving things by instinct produces the distractors. Equation selection by matching knowns — here \\( a, x \\), no \\( t \\) — is the entire skill this item drills.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A wrench is dropped from a platform and falls for 2 s. Ignoring air resistance, it has fallen about:</p>",
+    "choices": [
+     "19.6 m",
+     "9.8 m",
+     "39.2 m",
+     "4.9 m"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( x = \\tfrac12 g t^2 = 0.5 \\times 9.81 \\times 4 = 19.6\\ \\mathrm{m} \\) — roughly a six-story drop, which is why dropped-object prevention is a permit topic. Using \\( gt \\) (19.6 m/s) computes the SPEED, not the distance — the classic mix; 4.9 m is one second's fall. The square in \\( t^2 \\) means the second second does three times the damage of the first.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A cart moves in the +x direction while slowing down. Its acceleration is:</p>",
+    "choices": [
+     "Directed in −x",
+     "Directed in +x",
+     "Zero",
+     "Vertical"
+    ],
+    "answer": 0,
+    "solution": "<p>Slowing means the velocity (in +x) is being eaten away — the rate of change of velocity points against it: −x. \"Deceleration\" is not a separate quantity with its own rules; it is ordinary acceleration whose direction opposes the velocity. Attaching the sign to the axis rather than to the sensation of slowing is the discipline that keeps two-phase problems honest.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The slope of a position–time graph at an instant gives:</p>",
+    "choices": [
+     "The velocity at that instant",
+     "The acceleration",
+     "The average speed for the trip",
+     "The distance so far"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( v = dx/dt \\): slope of position–time is instantaneous velocity — steep means fast, flat means stopped, downhill means moving backward. Acceleration lives one graph over (slope of v–t), and averages need whole intervals, not instants. Reading motion graphs at sight transfers directly to reading machine-axis traces and historian trends later.</p>"
+   }
+  ]
+ },
+ "3": {
+  "lecture": "\n<h3>§1 · Two motions sharing one clock</h3>\n<p>The deepest fact of two-dimensional motion is independence: the horizontal and vertical\nmotions of a projectile do not consult each other. Gravity acts only vertically, so the\nhorizontal velocity is untouched — constant from launch to landing — while the vertical\nmotion is ordinary free fall. The only thing the two share is the clock. Every projectile\nproblem therefore splits into two one-dimensional problems solved with Lesson 2's toolkit,\njoined by the time variable: usually the vertical motion sets the time (how long until it\nlands?) and the horizontal motion spends it (how far did it get?).</p>\n<h3>§2 · The projectile's arithmetic</h3>\n<p>Launched horizontally from height \\( h \\) with speed \\( v_0 \\): the fall time is\n\\( t = \\sqrt{2h/g} \\) — identical to a dropped object, regardless of \\( v_0 \\) — and\nthe reach is \\( x = v_0 t \\). Launched at angle \\( \\theta \\): the initial velocity\nsplits into \\( v_0\\cos\\theta \\) horizontal and \\( v_0\\sin\\theta \\) vertical, the\napex arrives when the vertical velocity runs out, and the level-ground range is\n\\( R = v_0^2 \\sin 2\\theta / g \\), maximized at 45°. At the apex the vertical velocity\nis zero but the horizontal velocity is untouched — the projectile is still moving, a fact\nthe classic \"zero velocity at the top\" error forgets.</p>\n<h3>§3 · Relative motion: velocities add like vectors</h3>\n<p>Velocity is always measured relative to a frame, and frames stack by vector addition:\nthe velocity of A relative to ground equals A relative to B plus B relative to ground. A\nworker walking at 1.0 m/s against a conveyor doing 1.5 m/s moves at 0.5 m/s over the floor;\na part carried on a moving belt leaves the belt end with the belt's velocity as its\ninheritance. In one dimension this is signed addition; in two, components — nothing new,\njust Lesson 1's machinery applied to velocities.</p>\n<h3>§4 · The two-column working method</h3>\n<p>Solve every 2-D motion with two columns and one clock. Write the horizontal column:\nconstant velocity, \\( x = v_x t \\), nothing else. Write the vertical column: free fall\nwith the full constant-acceleration kit. Identify which column the question interrogates\nand which column supplies the time, and pass \\( t \\) between them explicitly. Keep signs\nby one declared axis pair (right and up positive is conventional), and audit at the seams:\nthe landing condition is a VERTICAL statement (height reaches zero), the reach is a\nHORIZONTAL one, and mixing the columns — using the launch speed where a component belongs —\nis the error the layout exists to prevent. The same two-column habit will return, upgraded,\nas normal-and-tangential components in the dynamics course; learning its discipline now on\nprojectiles is the cheap rehearsal.</p>\n<p>The applications are nearer than they look: discharge trajectories off conveyor heads set\nguard and bin positions, falling-object times set interlock reaction budgets, and every\n\"how far can it reach\" safety question — spray, jet, or dropped tool — is a projectile\nproblem wearing overalls. The two columns answer all of them.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>1-D kinematics</b> (Lesson 2) — the constant-acceleration kit, fluently.</li>\n<li><b>Vector components</b> (Lesson 1) — splitting a launch velocity by angle.</li>\n<li><b>The shared-clock idea</b> — time is the only variable both axes see.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Independence principle</td><td>gravity touches only the vertical</td><td>The license to split any 2-D problem into two 1-D columns.</td></tr>\n<tr><td>Horizontal column</td><td>\\( x = v_x t \\), \\( v_x \\) constant</td><td>No horizontal force → no horizontal acceleration.</td></tr>\n<tr><td>Fall time from height</td><td>\\( t = \\sqrt{2h/g} \\)</td><td>Horizontal launch or plain drop — same clock either way.</td></tr>\n<tr><td>Velocity split</td><td>\\( v_x = v_0\\cos\\theta,\\ v_y = v_0\\sin\\theta \\)</td><td>Angled launches; the components live separate lives after this line.</td></tr>\n<tr><td>Level-ground range</td><td>\\( R = v_0^2\\sin 2\\theta/g \\)</td><td>Quick reach estimates; maximum at 45°.</td></tr>\n<tr><td>Apex condition</td><td>\\( v_y = 0 \\), \\( v_x \\) unchanged</td><td>The top of the arc — moving horizontally, not stopped.</td></tr>\n<tr><td>Relative velocity</td><td>\\( \\mathbf{v}_{A/G} = \\mathbf{v}_{A/B} + \\mathbf{v}_{B/G} \\)</td><td>Belts, streams, moving platforms — frames stack by vector addition.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Off the end of the conveyor</b></p>\n<p><b>Problem.</b> A part leaves a horizontal conveyor at 2.0 m/s, 1.25 m above the floor. <b>Find:</b> the flight time and where it lands, measured from the conveyor end.</p>",
+    "solution": "<p><b>Solution.</b> (1) Vertical column sets the clock: \\( t = \\sqrt{2h/g} = \\sqrt{2 \\times 1.25/9.81} = 0.505\\ \\mathrm{s} \\).\n(2) Horizontal column spends it: \\( x = v_x t = 2.0 \\times 0.505 = 1.01\\ \\mathrm{m} \\).</p>\n<p><b>Answer:</b> ≈0.5 s; ≈1.0 m out.\n<b>Sanity check:</b> the fall time is exactly a dropped part's — belt speed cannot buy hang time, only reach. Doubling the belt speed doubles the landing distance but changes the flight time not at all: the independence principle, priced in numbers a guard designer can use.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The 45° maximum</b></p>\n<p><b>Problem.</b> A material-testing launcher fires at 20 m/s on level ground. <b>Find:</b> the maximum range and the angle that achieves it.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( R = v_0^2\\sin 2\\theta/g \\), maximized where \\( \\sin 2\\theta = 1 \\), i.e. \\( \\theta = 45° \\).\n(2) \\( R_{max} = 20^2/9.81 = 40.8\\ \\mathrm{m} \\).</p>\n<p><b>Answer:</b> ≈41 m at 45°.\n<b>Sanity check:</b> range scales as \\( v_0^2 \\) — a 10% speed increase buys 21% more reach — and the \\( \\sin 2\\theta \\) symmetry means 30° and 60° land in the same place, a fact worth knowing whenever a spray, jet, or thrown object's reach is being bounded for safety.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Walking against the belt</b></p>\n<p><b>Problem.</b> A maintenance worker walks at 1.0 m/s toward the tail of a conveyor that carries them forward at 1.5 m/s. <b>Find:</b> the worker's velocity over the floor, and their displacement after 8 s.</p>",
+    "solution": "<p><b>Solution.</b> (1) Frames stack: \\( v_{worker/ground} = v_{worker/belt} + v_{belt/ground} = -1.0 + 1.5 = +0.5\\ \\mathrm{m/s} \\).\n(2) Displacement: \\( 0.5 \\times 8 = 4.0\\ \\mathrm{m} \\) forward.</p>\n<p><b>Answer:</b> 0.5 m/s forward; 4 m in 8 s.\n<b>Sanity check:</b> walking exactly at belt speed would hold position (0 m/s), and walking slower than the belt must still drift forward — the signed addition delivers both limits correctly, which is the entire content of relative velocity in one dimension.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>During projectile flight (no air resistance), the horizontal velocity:</p>",
+    "choices": [
+     "Stays constant",
+     "Decreases steadily",
+     "Increases steadily",
+     "Falls to zero at the apex"
+    ],
+    "answer": 0,
+    "solution": "<p>No horizontal force acts, so no horizontal acceleration exists: \\( v_x \\) at landing equals \\( v_x \\) at launch. Gravity spends itself entirely on the vertical column. The apex-stop intuition confuses the vertical component (which does reach zero there) with the whole velocity — the projectile is moving fastest horizontally precisely when it looks momentarily 'paused' at the top.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two identical parts leave a table edge at the same instant — one dropped, one sliding off horizontally at 3 m/s. Which lands first?</p>",
+    "choices": [
+     "They land together",
+     "The dropped one",
+     "The sliding one",
+     "Depends on their masses"
+    ],
+    "answer": 0,
+    "solution": "<p>Both fall the same height under the same vertical physics; the slider's horizontal speed buys distance, not time. This is the independence principle in its purest test form — and the classic demonstration that the vertical clock cannot be bribed horizontally. Mass cancels out of free fall entirely, a fact Newton's laws will formalize next lesson.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A part must fall 4.9 m from a chute to a bin. Its flight time is about:</p>",
+    "choices": [
+     "1.0 s",
+     "0.5 s",
+     "2.0 s",
+     "4.9 s"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( t = \\sqrt{2h/g} = \\sqrt{2 \\times 4.9/9.81} = 1.0\\ \\mathrm{s} \\). The square root is the working surprise: quadrupling the height only doubles the time. Numbers like this size catch-guards and interlock timings — one second of flight is one second for a light curtain to react, and the calculation is exactly this one line.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>At the apex of its arc, a projectile launched at an angle has:</p>",
+    "choices": [
+     "Zero vertical velocity and unchanged horizontal velocity",
+     "Zero total velocity",
+     "Zero acceleration",
+     "Maximum speed"
+    ],
+    "answer": 0,
+    "solution": "<p>The vertical component has been spent \\( (v_y = 0) \\) while the horizontal component never changes — so the projectile moves horizontally at the top, at its MINIMUM (not zero, not maximum) speed. Gravity still acts: acceleration at the apex is the same \\( g \\) as everywhere else. Three classic errors, one question.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A box rides a conveyor moving 2 m/s and slides off its end. At the instant it leaves, the box's horizontal velocity is:</p>",
+    "choices": [
+     "2 m/s — it inherits the belt's velocity",
+     "Zero — it left the belt",
+     "Depends on its weight",
+     "Equal to g"
+    ],
+    "answer": 0,
+    "solution": "<p>Velocity belongs to the object, not the surface: leaving the belt removes the belt's FORCE, not the velocity already possessed. The box begins its projectile life at the belt's speed — which is why discharge trajectories, guard distances, and bin placements are computed from belt speed. Weight decides nothing here, and \\( g \\) is an acceleration, not a velocity.</p>"
+   }
+  ]
+ },
+ "4": {
+  "lecture": "\n<h3>§1 · The three laws, stated for work</h3>\n<p>Newton's laws are the constitution of mechanics, and each earns a working translation.\n<em>First law:</em> a body's velocity is constant unless a net force acts — so anything at\nrest OR cruising steadily has balanced forces, and the interesting engineering question is\nalways \"balanced by what?\" <em>Second law:</em> \\( \\mathbf{F}_{net} = m\\mathbf{a} \\) —\nthe net force, the vector sum of everything acting, produces acceleration in its own\ndirection, scaled inversely by the mass. <em>Third law:</em> forces come in pairs, equal and\nopposite, acting on DIFFERENT bodies — the floor pushes the crate up exactly as hard as the\ncrate pushes the floor down, and the pair never meets on one free-body diagram. The third\nlaw is bookkeeping; the second is the engine; the first is the second at\n\\( \\mathbf{a} = 0 \\), which is the entire statics course in four symbols.</p>\n<h3>§2 · Mass versus weight, permanently</h3>\n<p>Mass measures inertia — the reluctance to accelerate — in kilograms, identical everywhere\nin the universe. Weight is the gravitational FORCE on that mass, \\( W = mg \\), in newtons,\nlocal to the gravity that produces it. The distinction stops being pedantry the moment\nanything accelerates vertically: in a lift accelerating upward, the floor must push harder\nthan \\( mg \\) — the scale reads more — and in a dropping lift it reads less, while the\nmass never changes. Load cells, crane scales, and accelerating machinery all live on this\ndistinction.</p>\n<h3>§3 · Using the second law on systems</h3>\n<p>\\( F = ma \\) applies to any body you choose to isolate — a whole train of carts or any\nsingle cart within it. The professional trick is choosing wisely: the whole system hides\ninternal forces and yields the acceleration cheaply; a single member exposes the internal\nforce you actually want. Solve the system for \\( a \\), then isolate one piece and let its\nown second law reveal the coupling force. Connected bodies share the acceleration magnitude\nwhenever their connection is inextensible — the rope constraint that makes multi-body\nproblems solvable at all.</p>\n<h3>§4 · The second-law working method</h3>\n<p>The procedure is Lesson 3's FBD checklist with one upgrade: the right side of the\nequation is no longer zero. Draw the free body. Choose axes — align one with the\nacceleration when its direction is known, and the algebra thanks you. Write\n\\( \\Sigma F_x = ma_x \\) and \\( \\Sigma F_y = ma_y \\) with the sign table. Solve\nsymbolically, substitute, and audit: units (newtons throughout), limits (set \\( a = 0 \\)\nand the answer must collapse to the statics result), and magnitude sense (accelerations of\nindustrial machinery are typically fractions of \\( g \\); an answer of \\( 40\\ \\mathrm{m/s^2} \\)\nfor a forklift is a flag, not a finding). When several bodies connect, write one second law\nper body plus the constraint, and count equations against unknowns before solving —\nexactly the bookkeeping the statics course taught, now with motion.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Free-body diagrams</b> (Statics, Lesson 3 there) — the isolation discipline, unchanged.</li>\n<li><b>Vector components</b> (Lesson 1) — the second law is applied by axis.</li>\n<li><b>Kinematics</b> (Lessons 2–3) — a found here feeds the motion equations there.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>First law</td><td>\\( \\mathbf{F}_{net} = 0 \\Leftrightarrow \\mathbf{v} \\) constant</td><td>Rest AND steady cruise are the same condition: balanced forces.</td></tr>\n<tr><td>Second law</td><td>\\( \\mathbf{F}_{net} = m\\mathbf{a} \\)</td><td>The engine: net force, by axis, equals mass times acceleration.</td></tr>\n<tr><td>Third law</td><td>pairs on DIFFERENT bodies</td><td>Bookkeeping across bodies; never both partners on one FBD.</td></tr>\n<tr><td>Mass</td><td>kg — inertia</td><td>Universal; the m in every equation.</td></tr>\n<tr><td>Weight</td><td>\\( W = mg \\) — a force</td><td>Local; what scales, cranes, and floors actually feel.</td></tr>\n<tr><td>Apparent weight</td><td>\\( N = m(g + a) \\) accelerating up</td><td>Lifts, hoists, and load cells under vertical acceleration.</td></tr>\n<tr><td>System vs member</td><td>isolate whole OR part</td><td>Whole hides internal forces; the part exposes the one you want.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Force to accelerate a load</b></p>\n<p><b>Problem.</b> A tug moves a 1200 kg trailer from rest with a required acceleration of \\( 1.5\\ \\mathrm{m/s^2} \\) on level ground (rolling resistance neglected). <b>Find:</b> the required drawbar force, and the speed after 4 s.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( F = ma = 1200 \\times 1.5 = 1800\\ \\mathrm{N} \\).\n(2) Kinematics inherits the a: \\( v = at = 1.5 \\times 4 = 6.0\\ \\mathrm{m/s} \\).</p>\n<p><b>Answer:</b> 1.8 kN; 6 m/s.\n<b>Sanity check:</b> the force is about 15% of the trailer's 11.8 kN weight — a plausible drawbar figure; and the audit limit works: at \\( a = 0 \\) the required force collapses to zero, exactly as a frictionless statics problem demands.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The scale in the lift</b></p>\n<p><b>Problem.</b> An 80 kg technician stands on a scale in a service lift accelerating upward at \\( 2.0\\ \\mathrm{m/s^2} \\). <b>Find:</b> the scale reading (the normal force), and the reading in free fall.</p>",
+    "solution": "<p><b>Solution.</b> (1) Second law, up positive: \\( N - mg = ma \\Rightarrow N = m(g + a) = 80 \\times 11.81 = 945\\ \\mathrm{N} \\).\n(2) Free fall \\( (a = -g) \\): \\( N = m(g - g) = 0 \\) — the scale reads nothing.</p>\n<p><b>Answer:</b> ≈945 N (as if 96 kg); zero in free fall.\n<b>Sanity check:</b> the reading exceeds the true 785 N weight by exactly \\( ma = 160\\ \\mathrm{N} \\) — the extra push the floor must supply to accelerate the technician. Load cells under moving loads misread for precisely this reason; the correction is this equation.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The coupling force in a two-cart train</b></p>\n<p><b>Problem.</b> A 10 kg cart towing a 4 kg cart is pulled by 60 N on a smooth floor. <b>Find:</b> the acceleration of the train and the tension in the coupling.</p>",
+    "solution": "<p><b>Solution.</b> (1) Whole system: \\( a = F/m_{total} = 60/14 = 4.29\\ \\mathrm{m/s^2} \\).\n(2) Isolate the trailing cart — the coupling is its only horizontal force: \\( T = m_2 a = 4 \\times 4.29 = 17.1\\ \\mathrm{N} \\).</p>\n<p><b>Answer:</b> \\( 4.3\\ \\mathrm{m/s^2} \\); ≈17 N in the coupling.\n<b>Sanity check:</b> the coupling carries \\( 4/14 = 28.6\\% \\) of the applied force — exactly the trailing cart's share of the total mass. The system view found a cheaply; the member view exposed T: the two-step method in its standard form.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A pallet slides across a smooth floor at constant velocity. The net force on it is:</p>",
+    "choices": [
+     "Zero",
+     "In the direction of motion",
+     "Opposite the motion",
+     "Equal to its weight"
+    ],
+    "answer": 0,
+    "solution": "<p>Constant velocity IS the first-law condition: net force zero — motion needs no force to continue, only to change. The push-to-keep-moving intuition (Aristotle's) survives in everyday friction-filled life but fails the moment friction leaves. Vertically, weight and the normal force cancel as part of that zero. This question separates physics from folk physics in one line.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A crate weighs 981 N on Earth. On a moon base where \\( g = 1.62\\ \\mathrm{m/s^2} \\), its mass is:</p>",
+    "choices": [
+     "100 kg — mass does not change",
+     "16.2 kg",
+     "981 kg",
+     "162 N"
+    ],
+    "answer": 0,
+    "solution": "<p>Mass is the invariant: \\( m = W/g = 981/9.81 = 100\\ \\mathrm{kg} \\) everywhere in the universe. Its moon WEIGHT would be \\( 100 \\times 1.62 = 162\\ \\mathrm{N} \\) — a force, hence not an answer to a mass question (and kilograms, not newtons, is the mass unit). Inertia travels with the crate; the scale reading stays home with the gravity.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A net force of 500 N acts on a 250 kg trolley. Its acceleration is:</p>",
+    "choices": [
+     "\\( 2\\ \\mathrm{m/s^2} \\)",
+     "\\( 0.5\\ \\mathrm{m/s^2} \\)",
+     "\\( 125{,}000\\ \\mathrm{m/s^2} \\)",
+     "\\( 250\\ \\mathrm{m/s^2} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( a = F/m = 500/250 = 2\\ \\mathrm{m/s^2} \\). Inverting the division (0.5) and multiplying instead (125,000) are the arithmetic traps; the physics trap is forgetting that F must be the NET force — if friction claimed 100 N of the 500, the answer would drop accordingly. Second-law arithmetic is trivial; assembling the net force is the actual work.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A tractor pulls a loaded sled. The sled pulls back on the tractor (third law). The pair can still accelerate because:</p>",
+    "choices": [
+     "The paired forces act on different bodies — each body answers only to the forces on itself",
+     "The tractor's force is slightly larger",
+     "The third law fails during acceleration",
+     "Friction cancels the reaction"
+    ],
+    "answer": 0,
+    "solution": "<p>Third-law partners never meet on one free body: the sled's pull-back acts on the TRACTOR, whose own budget also includes ground traction — and the tractor accelerates if traction beats pull-back. The sled, on ITS ledger, feels the forward pull and accelerates too. The 'equal forces should cancel' paradox dissolves the moment each body keeps its own books — which is what FBDs are for.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The same 30 N force is applied in turn to a 3 kg part and a 6 kg part. The accelerations compare as:</p>",
+    "choices": [
+     "10 vs 5 m/s² — halved mass ratio, doubled acceleration",
+     "Equal — same force, same acceleration",
+     "5 vs 10 m/s²",
+     "Cannot compare without weights"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( a = F/m \\): 30/3 = 10 and 30/6 = 5 m/s² — acceleration inversely proportional to mass at fixed force. This inverse relationship IS inertia quantified, and it scales to every sizing decision where a drive must accelerate a load: double the tooling mass and the same motor delivers half the acceleration, before friction says a word.</p>"
+   }
+  ]
+ }
+}
