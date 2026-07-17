@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 04 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Crystallographic directions and planes</h1>
     <p class="sub">Miller indices for directions and planes. Close-packed planes and slip systems. Anisotropy: why rolled plate has direction-dependent properties.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -42,28 +42,45 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>What makes close-packed planes the natural slip planes?</li><li>Why does rolled plate have direction-dependent properties?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MAT 104 · Materials Science I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">Course context: Atoms to microstructure: bonding, crystal structures, defects, diffusion, and mechanical behavior — the vocabulary in which every later conversation about steels, failure, and heat treatment is conducted.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What makes close-packed planes the natural slip planes?</li><li>Why does rolled plate have direction-dependent properties?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What makes close-packed planes the natural slip planes?</li><li>Why does rolled plate have direction-dependent properties?</li></ul></div><div class="measure">
+<h3>§1 · Naming directions and planes</h3>
+<p>Crystals are anisotropic objects, so we need coordinates. <b>Directions</b> [uvw]: take the vector's components along the cell axes, clear fractions to smallest integers, wrap in square brackets, mark negatives with an overbar. <b>Planes</b> (hkl), the Miller indices: take the plane's intercepts on the axes in units of the lattice parameters, invert them, clear fractions, wrap in parentheses — an intercept at infinity (plane parallel to an axis) inverts to a clean zero. Families of equivalent directions and planes get angle and brace brackets: ⟨110⟩, {111}.</p>
+<h3>§2 · Why these labels earn their keep</h3>
+<p>Slip — plastic deformation — happens on the densest planes along the densest directions, because those are the paths where atoms ride over each other with the least protest. In FCC that means {111} planes and ⟨110⟩ directions: 12 combinations, the slip systems that make copper and aluminum so obligingly ductile. Linear and planar densities (atoms per length, per area) are the quantitative versions, and computing them is how the claim "close-packed = slip-prone" stops being a slogan.</p>
+<h3>§3 · Anisotropy leaves the lab</h3>
+<p>A single crystal's modulus can differ by a factor of two between directions. Polycrystals average this out — <em>unless processing lines the grains up</em>. Rolling does exactly that: plate develops a crystallographic texture plus elongated grains and aligned inclusions, so strength, ductility, and especially toughness differ between the rolling direction and the transverse. Standards respond by specifying test-bar orientation, and fabricators respond — or should — by orienting bends relative to the rolling direction. The Miller machinery of §1 is the language in which all of this is written.</p>
+<p><strong>Closing.</strong> Directions in brackets, planes in parentheses, slip on the close-packed combinations, and rolled products carrying their processing history as directionality. The labels are dry; what they index is not.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Unit cells</b> (Lesson 3) — indices live on the cell's axes.</li>
+<li><b>Vector components</b> — reading a direction as steps along three axes.</li>
+<li><b>Reciprocals and fraction-clearing</b> — the Miller recipe's arithmetic.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>[uvw]</b> — a crystallographic direction; ⟨uvw⟩ its equivalent family.</li>
+<li><b>(hkl)</b> — Miller indices of a plane; {hkl} the family.</li>
+<li><b>Linear/planar density</b> — atoms per unit length along a direction / per area on a plane.</li>
+<li><b>Slip system</b> — a close-packed plane paired with a close-packed direction in it.</li>
+<li><b>Texture</b> — a preferred grain orientation imprinted by processing.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — indexing a direction and a plane</h4>
+<p><b>Problem.</b> (a) Index the direction from the origin to the point \( (1, \tfrac{1}{2}, 1) \) in cell coordinates. (b) Index the plane with intercepts \( x = \tfrac{1}{2} \), \( y = 1 \), \( z = \infty \).</p>
+<p><b>Solution.</b> (a) Components \( (1, \tfrac{1}{2}, 1) \); clear fractions ×2 → [212].
+(b) Reciprocals: \( 1/\tfrac{1}{2} = 2 \), \( 1/1 = 1 \), \( 1/\infty = 0 \) → (210).</p>
+<p><b>Answer:</b> [212] and (210).
+<b>Sanity check:</b> (210) is parallel to the z-axis — its zero third index says so directly; a plane's zero always marks the axis it never meets. ✓</p>
+<h4>Worked example 2 — linear density along ⟨110⟩ in copper</h4>
+<p><b>Problem.</b> Copper is FCC with \( R = 0.128\ \mathrm{nm} \). <b>Find:</b> the linear density of atoms along [110].</p>
+<p><b>Solution.</b> (1) [110] runs along a face diagonal — in FCC, the close-packed direction where atoms touch continuously.
+(2) The face diagonal has length \( 4R \) and passes through 2 atom diameters' worth of centers: corner atom (½) + face atom (1) + corner atom (½) = 2 atoms.
+(3) \( LD = \dfrac{2}{4R} = \dfrac{1}{2R} = \dfrac{1}{0.256\ \mathrm{nm}} = 3.91\ \mathrm{atoms/nm} \).</p>
+<p><b>Answer:</b> 3.91 atoms/nm — the maximum possible for copper: atoms in contact the whole way.
+<b>Sanity check:</b> no direction can pack tighter than touching spheres, so every other direction in the crystal must come out below 3.91 — [100], for instance, carries \( 1/a = 2.76 \) atoms/nm. Slip picks the 3.91 highway, not the 2.76 side road.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the bend that cracked across the grain.</b> You arrive at a Kirby press-brake station where identical flange bends crack on one batch of plate but only when the bend line runs parallel to the rolling direction (figures representative). The plate is anisotropic: rolling elongated its grains and strung out its inclusions, so bending <em>across</em> the grain flow stretches strong material while bending <em>along</em> it opens the weak, delaminating direction. The shop fix is layout discipline — mark the rolling direction on every sheet and orient bends across it — which is Lesson 4's anisotropy translated into chalk lines.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 3</p>

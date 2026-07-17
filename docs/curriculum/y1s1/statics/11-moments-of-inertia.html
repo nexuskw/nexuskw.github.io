@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 11 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Moments of inertia</h1>
     <p class="sub">Second moment of area by integration and parallel-axis theorem. Composite sections used in structural tables. The property that will set bending stress in Strength of Materials.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,51 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>What does the parallel-axis theorem add, and when must you use it?</li><li>Why does an I-beam's shape maximize second moment for its area?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>STA 103 · Engineering Statics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What does the parallel-axis theorem add, and when must you use it?</li><li>Why does an I-beam's shape maximize second moment for its area?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does the parallel-axis theorem add, and when must you use it?</li><li>Why does an I-beam's shape maximize second moment for its area?</li></ul></div><div class="measure">
+<h3>§1 · The second moment: area times distance squared</h3>
+<p>The second moment of area about the x-axis is</p>
+\[ I_x = \int y^2\, dA \tag{1} \]
+<p>Distance enters <em>squared</em>: area far from the axis counts disproportionately. For the workhorse rectangle about its own centroid, \( I = bh^3/12 \) — the cubed depth is the single most consequential exponent in structural engineering. \( I \) is not inertia in the dynamic sense; it is a purely geometric measure of how a section's area is deployed against bending.</p>
+<h3>§2 · The parallel-axis theorem</h3>
+<p>Centroidal values are tabulated; real composite parts sit away from the composite centroid. The transfer rule:</p>
+\[ I = \bar{I} + A d^2 \tag{2} \]
+<p>adds \( Ad^2 \) for a part whose own centroid lies distance \( d \) from the axis in question. Two habits keep it honest: the theorem transfers only <em>from</em> a centroidal axis (never between two non-centroidal axes directly), and in composite work the \( Ad^2 \) terms usually dwarf the parts' own \( \bar{I} \) — flanges of an I-beam earn their keep almost entirely through \( Ad^2 \).</p>
+<h3>§3 · Why sections look the way they do</h3>
+<p>An I-beam is the parallel-axis theorem drawn in steel: put most of the area in two flanges far from the neutral axis (huge \( d \)), keep a thin web to hold them apart and carry shear. §Worked Examples computes a small I-section at \( I = 4.49 \times 10^6\ \mathrm{mm^4} \) — then shows a solid square of the <em>same area</em> manages only \( 0.65 \times 10^6 \): the shape, not the steel, is doing seven times the work. Strength of Materials will divide bending moment by exactly this \( I \) to get stress; every section table you will ever open is a catalog of this one integral.</p>
+<p><strong>Closing.</strong> \( y^2 \) rewards distance, \( bh^3/12 \) rewards depth, and \( Ad^2 \) explains the I-beam. Statics ends by manufacturing the geometric property that strength calculations spend.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Centroids</b> (Lesson 10) — the composite centroid must be located before any \( d \) is measured.</li>
+<li><b>Composite bookkeeping</b> (Lesson 10) — the same table grows two more columns.</li>
+<li><b>Integration</b> — (1) is evaluated once for the rectangle; after that, tables and transfer.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Second moment of area \( I \)</b> — \( \int y^2 dA \); resistance of a section's geometry to bending, mm⁴.</li>
+<li><b>Centroidal axis</b> — axis through the section's centroid; the reference for tables.</li>
+<li><b>Parallel-axis theorem</b> — \( I = \bar{I} + Ad^2 \), transfer from centroidal axis only.</li>
+<li><b>Neutral axis</b> — the unstressed fiber in bending; coincides with the centroidal axis for simple bending.</li>
+<li><b>Section modulus</b> — \( S = I/c \); one division away, and Strength of Materials' favorite number.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — I-section by composite parts</h4>
+<p><b>Problem.</b> An I-section: two flanges 100 × 10 mm (top and bottom), web 10 × 80 mm, overall depth 100 mm, symmetric. <b>Find:</b> \( I \) about the horizontal centroidal axis.</p>
+<p><b>Solution.</b> (1) Symmetry puts the centroid at mid-depth; each flange centroid sits \( d = 45\ \mathrm{mm} \) away.
+(2) One flange: \( \bar{I} = \dfrac{100 \times 10^3}{12} = 8333\ \mathrm{mm^4} \); \( Ad^2 = 1000 \times 45^2 = 2\,025\,000\ \mathrm{mm^4} \).
+(3) Web (centroid on the axis, no transfer): \( \dfrac{10 \times 80^3}{12} = 426\,667\ \mathrm{mm^4} \).
+(4) Total: \( I = 2(8333 + 2\,025\,000) + 426\,667 = 4.49 \times 10^6\ \mathrm{mm^4} \).</p>
+<p><b>Answer:</b> \( I \approx 4.49 \times 10^6\ \mathrm{mm^4} \).
+<b>Sanity check:</b> the flanges' own \( \bar{I} \) (8,333 each) is 0.4% of their \( Ad^2 \) — the transfer term carries the section, as §2 promised.</p>
+<h4>Worked example 2 — same steel, different shape</h4>
+<p><b>Problem.</b> Reshape the I-section's area (\( A = 2 \times 1000 + 800 = 2800\ \mathrm{mm^2} \)) into a solid square. <b>Find:</b> its \( I \) and the comparison.</p>
+<p><b>Solution.</b> (1) Square side: \( s = \sqrt{2800} = 52.9\ \mathrm{mm} \).
+(2) \( I = \dfrac{s^4}{12} = \dfrac{52.9^4}{12} = 0.653 \times 10^6\ \mathrm{mm^4} \).
+(3) Ratio: \( 4.49/0.653 = 6.9 \).</p>
+<p><b>Answer:</b> the I-shape is ~6.9× stiffer in bending than a square of identical area.
+<b>Sanity check:</b> identical steel tonnage, sevenfold performance difference — pure geometry. This single ratio is why rolled sections exist, why racks are built from I-beams and channels, and why "add more steel" is the wrong first answer to a deflection problem.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the purlin that sagged and the catalog that fixed it.</b> You arrive at a Kirby building retrofit where new cable trays load roof purlins beyond their original duty, and mid-span deflection is visible by eye (figures representative). The instinct on the floor is a heavier purlin; the catalog answer is a <em>deeper</em> one — \( I \) grows with depth cubed, so a modest depth increase outperforms a large weight increase. The engineer's comparison table is worked example 2 with real section numbers: same steel budget, different deployment of area, and the deflection problem disappears into \( bh^3/12 \).</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>

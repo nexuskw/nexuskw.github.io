@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 06 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Trusses</h1>
     <p class="sub">Method of joints and method of sections. Zero-force members by inspection. Reading a pipe-rack or roof truss as a load path, not a picture.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,48 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>How do you spot a zero-force member by inspection?</li><li>Method of sections: when does it beat method of joints, and why?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>STA 103 · Engineering Statics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>How do you spot a zero-force member by inspection?</li><li>Method of sections: when does it beat method of joints, and why?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>How do you spot a zero-force member by inspection?</li><li>Method of sections: when does it beat method of joints, and why?</li></ul></div><div class="measure">
+<h3>§1 · A truss is a set of two-force members</h3>
+<p>The truss idealization: straight members, frictionless pin joints, loads applied only at joints. Every member is then a two-force member — pure tension or pure compression along its axis. That single assumption converts a structure into bookkeeping: find each member's axial force and its sense. Real gusset-plated, bolted trusses are not pinned, but the idealization prices member forces remarkably well and is the standard first analysis of any roof truss or braced rack.</p>
+<h3>§2 · Method of joints, method of sections</h3>
+<p>The <b>method of joints</b> isolates one pin at a time and applies particle equilibrium — two equations per joint, so start at a joint with at most two unknowns (usually a support) and walk the structure. The <b>method of sections</b> cuts clean through up to three members and treats one whole side as a rigid body; a moment taken about the intersection of two cut members isolates the third in a single line. Joints when you want everything; sections when you want <em>one</em> member deep inside the span without solving half the truss to reach it.</p>
+<h3>§3 · Zero-force members and reading the load path</h3>
+<p>At an unloaded joint of two non-collinear members, both are zero-force; at an unloaded joint of three members where two are collinear, the third is zero-force. Spotting these by inspection prunes the work — and teaches the deeper habit: a truss is a <em>load path</em>. Follow the applied load through diagonals and chords to the supports and the force pattern (top chord compression, bottom chord tension in a simply supported truss under gravity load) stops being memorized and starts being seen.</p>
+<p><strong>Closing.</strong> Two-force members, joints for the census, sections for the surgical strike, zero-force members pruned on sight. A truss drawing is a picture of forces waiting to be read.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Particle equilibrium</b> (Lesson 4) — a joint is exactly that problem, repeated.</li>
+<li><b>Rigid-body equilibrium</b> (Lesson 5) — support reactions come first; sections use \( \Sigma M \).</li>
+<li><b>Two-force members</b> (Lesson 5) — the fact that makes the whole idealization work.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Truss</b> — pin-jointed assembly of two-force members, loaded at joints.</li>
+<li><b>Chord</b> — top or bottom longitudinal member line.</li>
+<li><b>Method of joints</b> — particle equilibrium applied joint by joint.</li>
+<li><b>Method of sections</b> — a cut through ≤3 members analyzed as a rigid body.</li>
+<li><b>Zero-force member</b> — carries nothing under the given load case; still needed for stability and other cases.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — method of joints on a triangular truss</h4>
+<p><b>Problem.</b> A symmetric triangular truss spans 4 m with apex height 1.5 m; a 10 kN load hangs at the apex. <b>Find:</b> the forces in a sloping member and the bottom chord.</p>
+<p><b>Solution.</b> (1) By symmetry each support carries 5 kN.
+(2) Slope angle: \( \theta = \tan^{-1}(1.5/2) = 36.87^\circ \).
+(3) Joint at left support — vertical: \( F_{slope}\sin\theta = 5 \Rightarrow F_{slope} = 5/0.6 = 8.33\ \mathrm{kN} \), pushing into the joint: <em>compression</em>.
+(4) Horizontal: \( F_{chord} = F_{slope}\cos\theta = 8.33 \times 0.8 = 6.67\ \mathrm{kN} \), pulling: <em>tension</em>.</p>
+<p><b>Answer:</b> sloping members 8.33 kN (C); bottom chord 6.67 kN (T).
+<b>Sanity check:</b> the sloped member must exceed the 5 kN vertical it carries (only its sine works vertically): 8.33 &gt; 5. ✓ Flatter trusses drive both numbers up — why shallow roofs need heavier members.</p>
+<h4>Worked example 2 — one member by sections</h4>
+<p><b>Problem.</b> A parallel-chord truss: span 8 m, height 2 m, four 2 m panels, 4 kN at each of the three interior bottom-chord joints. <b>Find:</b> the bottom-chord force in the second panel.</p>
+<p><b>Solution.</b> (1) Reactions: total 12 kN, symmetric, \( R = 6\ \mathrm{kN} \) each.
+(2) Cut vertically through the second panel (between \( x = 2 \) and \( x = 4 \) m); keep the left portion.
+(3) Moment about the <em>top</em> joint at \( x = 2\ \mathrm{m} \) (height 2 m) — the cut top chord and diagonal pass through it, vanishing from the equation. The 4 kN load at \( x = 2 \) also has zero arm.
+(4) \( \Sigma M = 0 \): \( F_{BC} \times 2 = 6 \times 2 \Rightarrow F_{BC} = 6\ \mathrm{kN} \) (tension).</p>
+<p><b>Answer:</b> 6 kN, tension.
+<b>Sanity check:</b> one cut, one moment equation, one member — against walking three joints to reach the same number. Sections earn their keep exactly here.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — reading the brace, not the drawing.</b> You arrive at a Kirby pre-engineered building bay where a fitter asks whether a wind-bay diagonal can be dropped to pass a duct. The frame drawing shows geometry; Lesson 6 reads it as a load path: under lateral load that diagonal is the tension path to the foundation, and several adjacent members are zero-force <em>only because</em> it is there (figures representative). Remove it and the zero-force members inherit work they were never sized for. The duct moves; the diagonal stays. The decision took a joint sketch, not software.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>

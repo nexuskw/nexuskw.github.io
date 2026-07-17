@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 07 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Frames and machines</h1>
     <p class="sub">Multi-member structures with internal pins. Dismembering frames correctly — action and reaction at every pin. Mechanical advantage of linkages and clamps.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,48 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why must frames be dismembered at pins with action–reaction pairs?</li><li>What is mechanical advantage in a toggle clamp, statically speaking?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>STA 103 · Engineering Statics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why must frames be dismembered at pins with action–reaction pairs?</li><li>What is mechanical advantage in a toggle clamp, statically speaking?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why must frames be dismembered at pins with action–reaction pairs?</li><li>What is mechanical advantage in a toggle clamp, statically speaking?</li></ul></div><div class="measure">
+<h3>§1 · Frames are not trusses</h3>
+<p>A frame contains at least one <em>multi-force member</em> — a member loaded at three or more points, or loaded between its pins. Its members carry shear and bending, not just axial force, so the truss shortcut (force along the member) is off the table except for any genuine two-force members hiding inside. Identify those first: every one you spot replaces two unknowns with one.</p>
+<h3>§2 · Dismember at the pins — and pay Newton his due</h3>
+<p>The method is systematic: draw an FBD of the whole frame for the external reactions, then <em>dismember</em> — separate the members at their connecting pins and draw each member alone. At every pin, the force one member exerts on the other appears on both diagrams, equal and opposite. The classic error is drawing pin components in inconsistent directions on the two sides, which silently violates \( \Sigma F = 0 \) for the pin itself. Adopt a convention, draw the action–reaction pair explicitly, and let negative answers correct your guesses.</p>
+<h3>§3 · Machines: frames that multiply force</h3>
+<p>A machine is a frame with moving parts designed to transmit and transform force — pliers, clamps, linkages, toggles. The same dismemberment analysis yields the <em>mechanical advantage</em>: output force per input force, set by the lever arms. A toggle clamp near its dead-center position multiplies force enormously because the geometry sends the output arm toward zero — the reason a modest hand force can hold a workpiece against machining loads. §Worked Examples runs a gripping tool and a loaded two-member frame.</p>
+<p><strong>Closing.</strong> Spot the two-force members, dismember at pins with honest action–reaction pairs, and read machines as frames whose geometry is doing force arithmetic. Statics of frames is Newton's third law made procedural.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Rigid-body equilibrium</b> (Lesson 5) — applied member by member.</li>
+<li><b>Two-force member recognition</b> (Lesson 5) — the frame analyst's first move.</li>
+<li><b>Truss thinking</b> (Lesson 6) — to see when it does <em>not</em> apply.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Frame</b> — structure with at least one multi-force member.</li>
+<li><b>Machine</b> — frame with moving parts, built to transmit/transform force.</li>
+<li><b>Multi-force member</b> — carries loads at 3+ points; sees shear and bending.</li>
+<li><b>Action–reaction pair</b> — equal, opposite pin forces on the two joined members.</li>
+<li><b>Mechanical advantage</b> — output force ÷ input force.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — gripping tool</h4>
+<p><b>Problem.</b> A gripping tool's handles are squeezed with 150 N at 200 mm from the pivot pin; the jaws grip at 40 mm on the other side of the pivot. <b>Find:</b> the jaw force and mechanical advantage.</p>
+<p><b>Solution.</b> (1) FBD of one handle-jaw lever about the pivot.
+(2) \( \Sigma M_{pivot} = 0 \): \( 150 \times 200 = F_{jaw} \times 40 \).
+(3) \( F_{jaw} = 30000/40 = 750\ \mathrm{N} \).
+(4) \( MA = 750/150 = 5 \) — equal to the arm ratio \( 200/40 \).</p>
+<p><b>Answer:</b> 750 N grip; mechanical advantage 5.
+<b>Sanity check:</b> arms ratio 5:1 must give force ratio 5:1 — the lever law in its plainest form; the pivot pin itself carries \( 150 + 750 = 900\ \mathrm{N} \), the largest force in the tool, which is why pivot pins wear first.</p>
+<h4>Worked example 2 — two-member frame under a side load</h4>
+<p><b>Problem.</b> Members AC and BC are pinned together at C \( (2, 3)\ \mathrm{m} \), with A \( (0,0) \) pinned and B \( (4,0) \) on a roller. A 6 kN horizontal force pushes at C. <b>Find:</b> reactions and member forces.</p>
+<p><b>Solution.</b> (1) Whole frame, \( \Sigma M_A = 0 \): \( B_y \times 4 - 6 \times 3 = 0 \Rightarrow B_y = 4.5\ \mathrm{kN} \) up.
+(2) \( \Sigma F_y = 0 \Rightarrow A_y = -4.5\ \mathrm{kN} \) (i.e., 4.5 kN down); \( \Sigma F_x = 0 \Rightarrow A_x = -6\ \mathrm{kN} \) (opposing the push).
+(3) Both members are two-force (loaded only at their end pins). At C, resolve along the member directions: each member's axis has length \( \sqrt{2^2+3^2} = 3.61\ \mathrm{m} \).
+(4) Solving joint C: \( F_{AC} = 5.41\ \mathrm{kN} \) tension, \( F_{BC} = 5.41\ \mathrm{kN} \) compression.</p>
+<p><b>Answer:</b> \( A = (6.0, 4.5)\ \mathrm{kN} \) resisting, \( B_y = 4.5\ \mathrm{kN} \); \( |F_{AC}| = |F_{BC}| = 5.41\ \mathrm{kN} \), tension and compression respectively.
+<b>Sanity check:</b> the side push tries to topple the frame toward B: the windward member (AC) stretches, the leeward (BC) squashes — signs agree with the picture.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the toggle clamp that holds a filling line's pace.</b> You arrive at a KDD filling hall where a container-clamping fixture must hold product steady through a fill-and-cap cycle. The fixture is a toggle linkage: a small pneumatic cylinder input, links near dead-center at clamp, and a holding force many times the cylinder's output (figures representative). When a batch of misformed containers starts slipping, the maintenance question is Lesson 7's: has linkage wear moved the toggle geometry off dead-center, collapsing the mechanical advantage? A pin-by-pin dismemberment — not a bigger cylinder — locates the worn joint.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>

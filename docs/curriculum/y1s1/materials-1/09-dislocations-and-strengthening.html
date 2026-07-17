@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 09 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Dislocations and strengthening</h1>
     <p class="sub">Slip as dislocation motion. Strengthening by grain refinement, solid solution, strain hardening, and precipitates — all as obstacles to dislocations. Why 'harder' usually costs 'tougher'.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -42,28 +42,46 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Explain grain-boundary strengthening in one sentence about dislocations.</li><li>Why does strain hardening raise strength but cost ductility?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MAT 104 · Materials Science I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">Course context: Atoms to microstructure: bonding, crystal structures, defects, diffusion, and mechanical behavior — the vocabulary in which every later conversation about steels, failure, and heat treatment is conducted.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Explain grain-boundary strengthening in one sentence about dislocations.</li><li>Why does strain hardening raise strength but cost ductility?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Explain grain-boundary strengthening in one sentence about dislocations.</li><li>Why does strain hardening raise strength but cost ductility?</li></ul></div><div class="measure">
+<h3>§1 · One enemy, many obstacles</h3>
+<p>Plastic flow is dislocation traffic (Lesson 5), so <em>all</em> strengthening is one strategy: obstruct the traffic. Every industrial method is a different obstacle wearing a different price tag — and each purchase of strength is paid for, almost always, in ductility. Four mechanisms cover the metallurgy you will meet in practice.</p>
+<h3>§2 · The four mechanisms</h3>
+<p><b>Grain refinement.</b> A boundary forces slip to renegotiate direction; more boundaries, more negotiations. Quantitatively, the Hall–Petch relation:</p>
+\[ \sigma_y = \sigma_0 + k_y\, d^{-1/2} \tag{1} \]
+<p>— fine grains strengthen, and (uniquely among the four) usually improve toughness too, which is why fine grain is the closest metallurgy comes to a free lunch. <b>Solid solution.</b> Solute atoms strain the lattice locally; dislocations wade through the strain fields. Every alloying addition does some of this. <b>Strain hardening.</b> Deform the metal and dislocations multiply until they obstruct each other — quantified by percent cold work, spent by every rolling pass and drawing die. <b>Precipitation.</b> Fine second-phase particles force dislocations to cut or bow around them; the strongest aluminum alloys and nickel superalloys live here.</p>
+<h3>§3 · Choosing among them</h3>
+<p>The mechanisms stack — a drawn, alloyed, fine-grained wire uses three at once — but they differ in temperature stability (strain hardening anneals away; precipitates coarsen), in cost, and in what they do to toughness and conductivity. A copper conductor is the cautionary tale: solutes that strengthen it also scatter electrons, so cable copper is strengthened by drawing, not doping. §Worked Examples prices mechanism one with real Hall–Petch constants and mechanism three on a drawn rod.</p>
+<p><strong>Closing.</strong> Strength is obstructed dislocation motion — by boundaries, solutes, tangles, or particles. Name the obstacle in any datasheet's "condition" column and you have read the alloy's biography.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Dislocations as strength's agent</b> (Lesson 5) — obstacles only make sense against traffic.</li>
+<li><b>Yield strength</b> (Lesson 7) — the number every mechanism moves.</li>
+<li><b>Solute atoms</b> (Lesson 5) — substitutional and interstitial, now weaponized.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Hall–Petch relation</b> — \( \sigma_y = \sigma_0 + k_y d^{-1/2} \); fine grain, higher yield.</li>
+<li><b>Solid-solution strengthening</b> — solute strain fields impeding dislocations.</li>
+<li><b>Strain (work) hardening</b> — dislocation multiplication by cold deformation.</li>
+<li><b>%CW</b> — percent cold work, \( (A_0 - A_d)/A_0 \times 100 \).</li>
+<li><b>Precipitation hardening</b> — fine particles as dislocation obstacles.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — Hall–Petch, priced in microns</h4>
+<p><b>Problem.</b> For 70/30 brass, \( \sigma_0 = 70\ \mathrm{MPa} \), \( k_y = 0.74\ \mathrm{MPa \cdot m^{1/2}} \) (representative constants, Callister &amp; Rethwisch). <b>Find:</b> yield strength at grain sizes 25 µm and 8 µm.</p>
+<p><b>Solution.</b> (1) \( d = 25\ \mathrm{\mu m} = 2.5 \times 10^{-5}\ \mathrm{m} \): \( d^{-1/2} = 200\ \mathrm{m^{-1/2}} \); \( \sigma_y = 70 + 0.74 \times 200 = 218\ \mathrm{MPa} \).
+(2) \( d = 8\ \mathrm{\mu m} \): \( d^{-1/2} = 354 \); \( \sigma_y = 70 + 0.74 \times 354 = 332\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> 218 → 332 MPa: a 3× grain refinement buys ~50% more yield strength.
+<b>Sanity check:</b> the square root means returns diminish — the next 50% costs refining toward the micron scale, which is why Hall–Petch is a strategy, not an infinite staircase.</p>
+<h4>Worked example 2 — cold work in a drawing die</h4>
+<p><b>Problem.</b> A rod is drawn from 10 mm to 8 mm diameter. <b>Find:</b> the percent cold work.</p>
+<p><b>Solution.</b> (1) Areas scale with diameter squared: \( A_0 \propto 100 \), \( A_d \propto 64 \).
+(2) \( \%CW = \dfrac{100 - 64}{100} \times 100 = 36\% \).</p>
+<p><b>Answer:</b> 36% cold work.
+<b>Sanity check:</b> a 20% diameter reduction is a 36% area reduction — area, not diameter, is what the dislocation population responds to. At this level of cold work a brass or copper would show markedly higher strength and visibly less tensile ductility; whether that is product or problem depends on whether an anneal comes next — Lesson 10's question.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — strength you can watch accumulating.</b> You arrive at a Gulf Cable drawing line where copper rod enters at one diameter and leaves several dies later markedly thinner, stiffer, and springier — strain hardening in real time, worked example 2 running continuously (figures representative). The wire must end soft for stranding and conductivity, yet every die pass hardens it: the line therefore alternates drawing with annealing, spending Lesson 9's mechanism and Lesson 10's cure in a scheduled rhythm. The process engineer's die schedule is, in effect, a %CW budget — spent, cleared, and spent again.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 7</p>

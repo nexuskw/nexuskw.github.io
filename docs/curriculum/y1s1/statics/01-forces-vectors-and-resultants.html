@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 01 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Forces, vectors, and resultants</h1>
     <p class="sub">Force as a vector; components and resultants in 2-D and 3-D. Units and the weight–mass distinction that still catches graduates. Resolving cable and strut forces.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,48 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is weight not mass, and where does the confusion bite in bolt-load calculations?</li><li>Resolve a 10 kN cable force at 30° to horizontal into components.</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>STA 103 · Engineering Statics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why is weight not mass, and where does the confusion bite in bolt-load calculations?</li><li>Resolve a 10 kN cable force at 30° to horizontal into components.</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is weight not mass, and where does the confusion bite in bolt-load calculations?</li><li>Resolve a 10 kN cable force at 30° to horizontal into components.</li></ul></div><div class="measure">
+<h3>§1 · Force is a vector, and the arrow is the contract</h3>
+<p>A force has magnitude, direction, and a point of application — drop any of the three and the analysis is fiction. In 2-D we work in components: a force \( F \) at angle \( \theta \) above the horizontal carries \( F_x = F\cos\theta \) and \( F_y = F\sin\theta \). The reverse trip is just as routine:</p>
+\[ R = \sqrt{R_x^2 + R_y^2}, \qquad \theta = \tan^{-1}\!\frac{R_y}{R_x} \tag{1} \]
+<p>Resultants are found by summing components, never by adding magnitudes — two 10 kN forces can combine to anything from 0 to 20 kN depending on their directions.</p>
+<h3>§2 · Weight is not mass</h3>
+<p>Mass is the amount of matter, in kilograms; weight is the gravitational <em>force</em> on that mass, \( W = mg \) with \( g = 9.81\ \mathrm{m/s^2} \), in newtons. A 250 kg motor does not load its sling with "250 kg" — it loads it with \( 250 \times 9.81 = 2452.5\ \mathrm{N} \approx 2.45\ \mathrm{kN} \). Bolt-load calculations, sling charts, and pressure-area checks all fail the same way when someone feeds a mass where a force belongs. Carry units through every line; they are the cheapest error detector you will ever own.</p>
+<h3>§3 · Cables and struts resolve the same way</h3>
+<p>A taut cable pulls along its own axis; a straight two-force strut pushes or pulls along its axis. Both therefore hand you a force whose <em>direction is known from geometry</em> — only the magnitude is unknown. Resolving such members into components is the mechanical habit this whole course is built on, and §Worked Examples drills it on a crane cable and a motor lift.</p>
+<p><strong>Closing.</strong> Components in, resultant out, units carried, weight computed from mass — four small disciplines that remove most of the errors this course will otherwise spend weeks catching.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Trigonometry</b> — sine, cosine, tangent on right triangles, fluently and without a diagram panic.</li>
+<li><b>SI units</b> — newtons, kilograms, and the prefix ladder (kN, MPa come soon).</li>
+<li><b>Vector idea</b> — a quantity with direction; formal vector algebra is built here, not assumed.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Force</b> — an action that tends to move or deform a body; a vector, in newtons.</li>
+<li><b>Component</b> — the projection of a force on an axis, \( F\cos\theta \) or \( F\sin\theta \).</li>
+<li><b>Resultant</b> — the single force equivalent to a set of forces; found by summing components.</li>
+<li><b>Weight</b> — the force \( W = mg \); never interchangeable with mass.</li>
+<li><b>Line of action</b> — the infinite line along which a force acts.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — resolving a cable force</h4>
+<p><b>Problem.</b> A crane cable applies \( F = 10\ \mathrm{kN} \) to a padeye, at \( 30^\circ \) above the horizontal. <b>Find:</b> the horizontal and vertical components.</p>
+<p><b>Solution.</b> (1) \( F_x = 10\cos 30^\circ = 8.66\ \mathrm{kN} \).
+(2) \( F_y = 10\sin 30^\circ = 5.00\ \mathrm{kN} \).
+(3) Check by recomposition: \( \sqrt{8.66^2 + 5.00^2} = 10.0\ \mathrm{kN} \) — the original magnitude returns.</p>
+<p><b>Answer:</b> \( F_x = 8.66\ \mathrm{kN} \), \( F_y = 5.00\ \mathrm{kN} \).
+<b>Sanity check:</b> at \( 30^\circ \) the force leans closer to horizontal than vertical, so \( F_x > F_y \) — as computed.</p>
+<h4>Worked example 2 — weight, then sling tension</h4>
+<p><b>Problem.</b> A 250 kg motor hangs from two identical sling legs, each at \( 60^\circ \) above the horizontal. <b>Find:</b> the weight and the tension per leg.</p>
+<p><b>Solution.</b> (1) Weight: \( W = mg = 250 \times 9.81 = 2452.5\ \mathrm{N} \).
+(2) Vertical equilibrium, two legs sharing symmetrically: \( 2T\sin 60^\circ = W \).
+(3) \( T = 2452.5 / (2 \times 0.866) = 1416\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( W \approx 2.45\ \mathrm{kN} \); each leg carries \( \approx 1.42\ \mathrm{kN} \).
+<b>Sanity check:</b> each leg carries more than \( W/2 = 1226\ \mathrm{N} \) because only the vertical component of the leg tension supports load — flattening the legs toward horizontal would drive \( T \) higher still, which is why rigging charts penalize shallow sling angles.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the scale reads kilograms, the sling feels newtons.</b> You arrive at a scrap bay where the crane's load cell shows 4,800 on its display and a new engineer writes "4,800 N" into a lift plan for an electric-arc-furnace charge at Kuwait Steel. The display is calibrated in kilograms; the sling load is \( 4800 \times 9.81 \approx 47.1\ \mathrm{kN} \) (figures representative). One unit slip understates the rigging load by a factor of ten. The fix costs one line — \( W = mg \), units written beside every number — which is precisely Lesson 1 doing its job on a real lift.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>

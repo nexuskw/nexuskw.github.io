@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 07 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Mechanical properties I: elasticity and the tension test</h1>
     <p class="sub">Engineering stress and strain; modulus, yield, UTS, ductility from the tensile curve. True versus engineering quantities. The tension test as the industry's reference experiment.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -42,28 +42,48 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>From a tensile curve, extract modulus, yield, UTS, and ductility — where does each live?</li><li>Why does true stress keep rising while engineering stress falls after necking?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MAT 104 · Materials Science I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">Course context: Atoms to microstructure: bonding, crystal structures, defects, diffusion, and mechanical behavior — the vocabulary in which every later conversation about steels, failure, and heat treatment is conducted.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>From a tensile curve, extract modulus, yield, UTS, and ductility — where does each live?</li><li>Why does true stress keep rising while engineering stress falls after necking?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>From a tensile curve, extract modulus, yield, UTS, and ductility — where does each live?</li><li>Why does true stress keep rising while engineering stress falls after necking?</li></ul></div><div class="measure">
+<h3>§1 · One test to rule them</h3>
+<p>Pull a standard bar to fracture, record load and elongation, and normalize away the geometry: engineering stress \( \sigma = F/A_0 \), engineering strain \( \epsilon = \Delta L/L_0 \), both referred to <em>original</em> dimensions. The resulting curve is the most quoted document in mechanical engineering, and four numbers summarize it: the elastic modulus \( E \) (initial slope, Hooke's law \( \sigma = E\epsilon \)); the yield strength \( \sigma_y \) (0.2% offset, where permanent set begins); the ultimate tensile strength (the curve's peak); and ductility, as percent elongation or reduction of area.</p>
+<h3>§2 · What each number is for</h3>
+<p>\( E \) is a bonding property — recall Lesson 2's well curvature — essentially untouchable by heat treatment: all steels share ~200 GPa. \( \sigma_y \) is the designer's boundary; machines are sized so working stress stays below it with margin. UTS matters for what happens beyond intent — overload margins and, through empirical correlations, hardness checks. Ductility is the forgiveness budget: the plastic reserve that lets a part yield locally, redistribute, and warn before it breaks.</p>
+<h3>§3 · True stress, and the necking illusion</h3>
+<p>Past the UTS the engineering curve droops — but the material is not softening. Necking has begun: area shrinks locally, and dividing load by the <em>original</em> area hides it. True stress \( \sigma_T = F/A \) (instantaneous area) keeps rising to fracture; with volume constancy the conversions in the plastic range are</p>
+\[ \sigma_T = \sigma(1+\epsilon), \qquad \epsilon_T = \ln(1+\epsilon) \tag{1} \]
+<p>Metal forming lives on true quantities — a rolling pass or a drawing die sees real areas, not test-report conventions. §Worked Examples extracts all four report numbers from raw data, then converts a point through (1).</p>
+<p><strong>Closing.</strong> One bar, one pull, four numbers, and one conversion that keeps the story honest after necking. Every mill certificate you will ever read is this lesson in tabular form.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Bond-energy wells</b> (Lesson 2) — modulus is bond stiffness, macroscopically read.</li>
+<li><b>Dislocations</b> (Lesson 5) — yield is the stress where they begin to run.</li>
+<li><b>Stress units</b> — MPa fluency: 1 MPa = 1 N/mm².</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Engineering stress/strain</b> — load and stretch over original dimensions.</li>
+<li><b>Yield strength (0.2% offset)</b> — onset of measurable permanent deformation.</li>
+<li><b>UTS</b> — peak engineering stress; necking begins here.</li>
+<li><b>Ductility (%EL, %RA)</b> — plastic strain accumulated by fracture.</li>
+<li><b>True stress/strain</b> — instantaneous-area quantities; equation (1).</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — reading the test</h4>
+<p><b>Problem.</b> A standard bar, \( d_0 = 12.8\ \mathrm{mm} \), \( L_0 = 50.8\ \mathrm{mm} \): elastic point (150 MPa at \( \epsilon = 0.00075 \)); yield load 35 kN; final gauge length 60.14 mm. <b>Find:</b> \( E \), \( \sigma_y \), %EL.</p>
+<p><b>Solution.</b> (1) \( A_0 = \pi(12.8)^2/4 = 128.7\ \mathrm{mm^2} \).
+(2) \( E = 150/0.00075 = 200\,000\ \mathrm{MPa} = 200\ \mathrm{GPa} \).
+(3) \( \sigma_y = 35\,000/128.7 = 272\ \mathrm{MPa} \).
+(4) \( \%EL = \dfrac{60.14 - 50.8}{50.8} \times 100 = 18.4\% \).</p>
+<p><b>Answer:</b> \( E = 200\ \mathrm{GPa} \), \( \sigma_y = 272\ \mathrm{MPa} \), %EL = 18.4 — a garden-variety structural steel.
+<b>Sanity check:</b> \( E \) landing on 200 GPa flags the material as steel before anyone reads the cert header; a result of 70 GPa would have said aluminum, whatever the paperwork claimed.</p>
+<h4>Worked example 2 — engineering to true</h4>
+<p><b>Problem.</b> At its UTS a specimen shows engineering stress 400 MPa at engineering strain 0.15. <b>Find:</b> the true stress and true strain (uniform deformation, volume constant).</p>
+<p><b>Solution.</b> (1) \( \sigma_T = \sigma(1+\epsilon) = 400 \times 1.15 = 460\ \mathrm{MPa} \).
+(2) \( \epsilon_T = \ln(1.15) = 0.140 \).</p>
+<p><b>Answer:</b> 460 MPa at true strain 0.140.
+<b>Sanity check:</b> true stress exceeds engineering (the bar is thinner than \( A_0 \) pretends) while true strain trails engineering — both inequalities always hold in tension, a two-second validity test on any converted data point.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the certificate is a tensile curve in a table.</b> You arrive at a Kirby receiving inspection where a plate delivery's mill certificate lists yield 355 MPa, UTS 510 MPa, elongation 22% (figures representative). Lesson 7 is the decoder: those three numbers are the tensile curve compressed for shipping. The estimator reads 355 for design margin, the press-brake foreman reads 22% for bendability, and the welding engineer reads the yield-to-UTS gap as work-hardening reserve. One test in a distant mill, one table, three trades making decisions from it — which is why certs are checked against the order, not filed unread.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 6</p>

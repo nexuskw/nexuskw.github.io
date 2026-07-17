@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 09 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Friction</h1>
     <p class="sub">Dry friction, impending motion, and the friction cone. Wedges, screws, and belt friction — the capstan equation derived. Why belt tension ratios govern conveyor drives.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,52 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Derive the direction of impending motion's friction force on a wedge being driven.</li><li>Why does belt tension ratio grow exponentially with wrap angle?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>STA 103 · Engineering Statics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Derive the direction of impending motion's friction force on a wedge being driven.</li><li>Why does belt tension ratio grow exponentially with wrap angle?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Derive the direction of impending motion's friction force on a wedge being driven.</li><li>Why does belt tension ratio grow exponentially with wrap angle?</li></ul></div><div class="measure">
+<h3>§1 · Dry friction and the threshold</h3>
+<p>A stationary block resists sliding with whatever friction force equilibrium demands — up to a ceiling:</p>
+\[ F \le \mu_s N \tag{1} \]
+<p>Equality holds only at <em>impending motion</em>; below it, friction is found from equilibrium, not from (1). Once sliding starts, kinetic friction \( \mu_k N \) (with \( \mu_k < \mu_s \)) takes over — which is why things lurch. The resultant of \( N \) and limiting \( F \) leans at the friction angle \( \phi = \tan^{-1}\mu_s \) from the normal; the cone it sweeps contains every possible contact reaction. If the applied load's line falls inside the cone, no sliding — geometry answering a force question.</p>
+<h3>§2 · Wedges and screws</h3>
+<p>A wedge is friction's canonical machine: driving it must beat friction on <em>both</em> faces, and the friction directions always oppose the impending relative motion — set them by asking "which way does each surface slide?" before writing equations. A power screw is a wedge wrapped around a cylinder: the thread's helix angle plays the wedge angle, and self-locking (the jack that holds under load) occurs when the friction angle exceeds the helix angle. Every jack, clamp, and threaded fastener trades on this.</p>
+<h3>§3 · Belt friction: the exponential surprise</h3>
+<p>A belt or rope wrapped on a drum can hold a large tension with a small one. Integrating the friction on each element of wrap gives the capstan equation:</p>
+\[ \frac{T_2}{T_1} = e^{\mu \beta} \tag{2} \]
+<p>with \( \beta \) the wrap angle in radians. The ratio is <em>exponential</em> in wrap — each added turn multiplies. Three turns of rope on a bollard hold a ship; the same law sets how much power a conveyor drive pulley can transmit before the belt slips.</p>
+<p><strong>Closing.</strong> Friction is an inequality until motion impends; wedges and screws are friction geometrized; and wrap buys holding power exponentially. Get the impending-motion direction right and the rest is bookkeeping.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Equilibrium with inequalities in mind</b> (Lesson 5) — friction saturates; it is not always \( \mu N \).</li>
+<li><b>FBD discipline</b> (Lesson 3) — friction direction set by impending motion, drawn before solving.</li>
+<li><b>Exponentials</b> — the capstan equation lives on \( e^{\mu\beta} \).</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Static friction coefficient \( \mu_s \)</b> — sets the sliding threshold \( \mu_s N \).</li>
+<li><b>Impending motion</b> — the verge of sliding; friction at its ceiling.</li>
+<li><b>Friction angle \( \phi \)</b> — \( \tan^{-1}\mu_s \); the reaction cone's half-angle.</li>
+<li><b>Self-locking</b> — a screw or wedge that holds position without external effort.</li>
+<li><b>Wrap angle \( \beta \)</b> — belt contact arc, in radians, in \( T_2/T_1 = e^{\mu\beta} \).</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — dragging a crate, and why angle helps</h4>
+<p><b>Problem.</b> An 80 kg crate sits on a floor with \( \mu_s = 0.35 \). <b>Find:</b> the horizontal force to start it moving, and the force if pulling at \( 20^\circ \) above horizontal.</p>
+<p><b>Solution.</b> (1) \( W = 80 \times 9.81 = 784.8\ \mathrm{N} \).
+(2) Horizontal pull: \( P = \mu_s W = 0.35 \times 784.8 = 274.7\ \mathrm{N} \).
+(3) Angled pull: the vertical component unloads the floor. \( N = W - P\sin 20^\circ \), and impending motion demands \( P\cos 20^\circ = \mu_s N \).
+(4) \( P = \dfrac{\mu_s W}{\cos 20^\circ + \mu_s \sin 20^\circ} = \dfrac{274.7}{0.940 + 0.120} = 259.3\ \mathrm{N} \).</p>
+<p><b>Answer:</b> 274.7 N flat; 259.3 N at 20° — about 6% less.
+<b>Sanity check:</b> lifting-while-pulling reduces \( N \), hence friction; too steep an angle wastes pull on lift instead of advance, so an optimum angle exists (it equals the friction angle, \( \tan^{-1}0.35 \approx 19.3^\circ \) — our 20° is nearly optimal).</p>
+<h4>Worked example 2 — conveyor drive pulley</h4>
+<p><b>Problem.</b> A belt wraps a drive pulley \( 180^\circ \) with \( \mu = 0.3 \); the slack side runs at \( T_1 = 1.2\ \mathrm{kN} \). <b>Find:</b> the maximum tight-side tension and transmittable belt pull before slip.</p>
+<p><b>Solution.</b> (1) Wrap: \( \beta = \pi\ \mathrm{rad} \).
+(2) Capstan: \( T_2/T_1 = e^{0.3\pi} = 2.566 \).
+(3) \( T_2 = 1.2 \times 2.566 = 3.08\ \mathrm{kN} \).
+(4) Transmittable pull: \( T_2 - T_1 = 1.88\ \mathrm{kN} \).</p>
+<p><b>Answer:</b> \( T_2 = 3.08\ \mathrm{kN} \); usable pull 1.88 kN.
+<b>Sanity check:</b> increase wrap to \( 270^\circ \) (snub pulley): ratio \( e^{0.3 \times 4.71} = 4.11 \) — the exponential means modest extra wrap buys disproportionate capacity, which is exactly why snub pulleys exist.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the capstan that is literally called a capstan.</b> You arrive at a Gulf Cable drawing line where wire is hauled through dies by motor-driven capstan drums — the machine's name is the equation's name. Tension into the die must stay controlled: too little grip and the wire slips and scores; the fix on the floor is more wrap, because \( T_2/T_1 = e^{\mu\beta} \) grows exponentially with each added turn (figures representative). When a worn drum surface drops \( \mu \), the symptom — slip at the same wrap — walks straight out of Lesson 9's derivation.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>

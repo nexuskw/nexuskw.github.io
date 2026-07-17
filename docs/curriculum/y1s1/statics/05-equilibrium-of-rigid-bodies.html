@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 05 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Equilibrium of rigid bodies</h1>
     <p class="sub">The full ΣF = 0, ΣM = 0 toolkit. Two- and three-force members as shortcuts. Statically determinate versus indeterminate — and why the distinction matters later.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,50 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a two-force member carry load only along its axis?</li><li>Statically determinate versus indeterminate: what changes in how you must solve?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>STA 103 · Engineering Statics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why does a two-force member carry load only along its axis?</li><li>Statically determinate versus indeterminate: what changes in how you must solve?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a two-force member carry load only along its axis?</li><li>Statically determinate versus indeterminate: what changes in how you must solve?</li></ul></div><div class="measure">
+<h3>§1 · The full toolkit</h3>
+<p>A rigid body in plane equilibrium obeys three independent equations:</p>
+\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0, \qquad \Sigma M_O = 0 \tag{1} \]
+<p>with the moment point \( O \) yours to choose — and choosing it <em>on</em> an unknown force's line of action removes that unknown from the equation. The craft of rigid-body statics is mostly the craft of choosing moment points that make equations fall apart into one-unknown pieces.</p>
+<h3>§2 · Two- and three-force members</h3>
+<p>A member loaded at exactly two points carries force only along the line joining them — anything else would leave an unbalanced moment. Recognizing a two-force member converts a two-component unknown into a single magnitude along a known direction, which is a large discount. A three-force member's forces must be concurrent (or all parallel); that fact locates unknown directions geometrically. Both shortcuts come from \( \Sigma M = 0 \) applied with intent.</p>
+<h3>§3 · Determinate or not</h3>
+<p>Three equations solve three unknowns. A beam on a pin and a roller (3 unknowns) is <em>statically determinate</em>: statics alone finishes it. Add a second pin (4 unknowns) and equilibrium no longer decides how the supports share — the structure is <em>statically indeterminate</em>, and the answer depends on stiffness, which is Strength of Materials' opening business. Recognizing indeterminacy early saves you from hunting for a fourth equation that does not exist.</p>
+<p><strong>Closing.</strong> Three equations, moment points chosen to kill unknowns, two-force members spotted on sight, and the determinacy count run before solving. That is rigid-body statics in one paragraph; the rest is practice.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>FBDs and support menus</b> (Lesson 3) — reactions drawn correctly is the entry fee.</li>
+<li><b>Moments and Varignon</b> (Lesson 2) — \( \Sigma M_O = 0 \) is the workhorse equation.</li>
+<li><b>Particle equilibrium</b> (Lesson 4) — the force-balance half of the toolkit.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Rigid body</b> — a body whose deformation is negligible for the force analysis.</li>
+<li><b>Two-force member</b> — loaded at two points only; force lies along the joining line.</li>
+<li><b>Three-force member</b> — its three forces are concurrent or parallel.</li>
+<li><b>Statically determinate</b> — unknowns solvable by equilibrium alone.</li>
+<li><b>Statically indeterminate</b> — more unknowns than equilibrium equations; stiffness decides.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — beam with mixed loading</h4>
+<p><b>Problem.</b> A 6 m beam, pin at A (left), roller at B (right), carries a uniform load of 2 kN/m across its full length plus a 5 kN point load 2 m from A. <b>Find:</b> the reactions.</p>
+<p><b>Solution.</b> (1) Replace the UDL by its resultant: \( 2 \times 6 = 12\ \mathrm{kN} \) at midspan (3 m).
+(2) \( \Sigma M_A = 0 \): \( 6R_B - 12(3) - 5(2) = 0 \Rightarrow R_B = 46/6 = 7.67\ \mathrm{kN} \).
+(3) \( \Sigma F_y = 0 \): \( R_A = 12 + 5 - 7.67 = 9.33\ \mathrm{kN} \).
+(4) Check with \( \Sigma M_B \): \( 9.33 \times 6 - 12 \times 3 - 5 \times 4 = 56 - 36 - 20 = 0 \). ✓</p>
+<p><b>Answer:</b> \( R_A = 9.33\ \mathrm{kN} \), \( R_B = 7.67\ \mathrm{kN} \).
+<b>Sanity check:</b> the point load sits toward A, so A carries the larger share; totals sum to 17 kN, the whole applied load. ✓</p>
+<h4>Worked example 2 — the two-force strut discount</h4>
+<p><b>Problem.</b> A horizontal arm is pinned to a wall at A and carries 4 kN down at its 2 m free end. A strut, pinned at the arm 1.2 m from A and to the wall below, props it at \( 45^\circ \). <b>Find:</b> the strut force and pin reactions at A.</p>
+<p><b>Solution.</b> (1) The strut is a two-force member: its force \( T \) acts along its \( 45^\circ \) axis — one unknown, not two.
+(2) \( \Sigma M_A = 0 \): \( T\sin 45^\circ \times 1.2 = 4 \times 2 \Rightarrow T = 9.43\ \mathrm{kN} \) (compression — it props).
+(3) \( \Sigma F_x = 0 \): \( A_x = T\cos 45^\circ = 6.67\ \mathrm{kN} \), directed toward the wall.
+(4) \( \Sigma F_y = 0 \): \( A_y = 4 - T\sin 45^\circ = 4 - 6.67 = -2.67\ \mathrm{kN} \) — the pin actually pulls the arm <em>down</em>.</p>
+<p><b>Answer:</b> strut 9.43 kN (compression); at A: 6.67 kN horizontal, 2.67 kN downward.
+<b>Sanity check:</b> the strut's vertical push (6.67 kN) exceeds the 4 kN load, so the pin must hold the arm down — a sign the arithmetic predicted and the negative \( A_y \) confirmed.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the rack beam that had four supports on paper and three in fact.</b> You arrive at a Kirby-fabricated pipe-rack beam bearing on four columns. Survey shows one bearing shimmed proud and a neighbor daylight-gapped: the beam is statically indeterminate, and fit-up — not the load table — decided how the columns share (figures representative). Lesson 5's determinacy count is the diagnostic: four vertical unknowns, three equations, so equilibrium alone never fixed the shares. The rectification is mechanical — re-shim to bearing — but the explanation of <em>why</em> a gap formed at all is this lesson's closing paragraph.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>

@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 08 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Mechanical properties II: hardness and toughness</h1>
     <p class="sub">Hardness scales — Brinell, Vickers, Rockwell — and their conversions and abuses. Impact energy and the ductile-brittle transition. Hardness as the maintenance engineer's field instrument.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -42,28 +42,48 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is hardness a proxy for strength, and when does the proxy break?</li><li>What does the ductile–brittle transition mean for winter impact loads?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MAT 104 · Materials Science I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">Course context: Atoms to microstructure: bonding, crystal structures, defects, diffusion, and mechanical behavior — the vocabulary in which every later conversation about steels, failure, and heat treatment is conducted.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why is hardness a proxy for strength, and when does the proxy break?</li><li>What does the ductile–brittle transition mean for winter impact loads?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is hardness a proxy for strength, and when does the proxy break?</li><li>What does the ductile–brittle transition mean for winter impact loads?</li></ul></div><div class="measure">
+<h3>§1 · Hardness: the field's favorite proxy</h3>
+<p>Hardness is resistance to localized plastic indentation — push a standard indenter with a standard load, measure the dent. <b>Brinell</b> (10 mm ball, the impression's diameter), <b>Vickers</b> (diamond pyramid, works from foils to carbides on one scale), <b>Rockwell</b> (depth-based, direct-reading, the production floor's default). Conversions between scales are empirical, tabulated, and alloy-specific — treat cross-scale comparisons as estimates, not measurements.</p>
+<h3>§2 · Why hardness tracks strength — and when it lies</h3>
+<p>An indentation is a small, constrained plasticity experiment, so hardness rides the same dislocation resistance as yield strength. For steels the workhorse correlation is</p>
+\[ UTS\ (\mathrm{MPa}) \approx 3.45 \times HB \tag{1} \]
+<p>good enough to audit a heat treatment without cutting the part — which is precisely how the field uses it. The proxy lies when the assumptions break: heavily cold-worked surfaces, decarburized skins, coarse multi-phase structures sampled by a small indenter, or non-ferrous alloys wearing a steel correlation. Hardness answers "what is the strength <em>here, at this spot</em>" — sometimes that locality is the feature, sometimes the trap.</p>
+<h3>§3 · Toughness, and the transition that sank ships</h3>
+<p>Strength says what stress a material bears; toughness says what <em>energy</em> it absorbs breaking — measured crudely and usefully by the Charpy impact test: a notched bar, a swinging pendulum, joules read off the follower. BCC steels hold an unpleasant surprise: impact energy collapses below a <em>ductile–brittle transition temperature</em>, Lesson 3's thermally-assisted slip arriving as fracture. Liberty ships cracked in cold seas on exactly this physics. FCC metals — austenitic stainless, aluminum, copper — have no transition, which is why cryogenic plant is built from them.</p>
+<p><strong>Closing.</strong> Hardness is portable strength, within its correlation's jurisdiction; Charpy is energy accounting with a notch. Between them they answer the floor's two commonest questions: is it hard enough, and will it shatter when the weather turns.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Tensile properties</b> (Lesson 7) — hardness borrows meaning from strength.</li>
+<li><b>Crystal structures</b> (Lesson 3) — BCC vs FCC decides who has a transition.</li>
+<li><b>Plastic deformation</b> (Lesson 5) — an indent is dislocation work in miniature.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Brinell / Vickers / Rockwell</b> — ball-area, pyramid-area, and depth hardness scales.</li>
+<li><b>Toughness</b> — energy to fracture; area under the stress–strain curve, or Charpy joules.</li>
+<li><b>Charpy test</b> — pendulum impact on a notched bar; energy absorbed in J.</li>
+<li><b>DBTT</b> — ductile–brittle transition temperature of BCC metals.</li>
+<li><b>Upper/lower shelf</b> — the tough and brittle plateaus flanking the transition.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — Brinell number to strength estimate</h4>
+<p><b>Problem.</b> A 10 mm ball under 3000 kgf leaves a 4.0 mm impression on a steel shaft. <b>Find:</b> HB and the estimated UTS.</p>
+<p><b>Solution.</b> (1) \( HB = \dfrac{2P}{\pi D \left( D - \sqrt{D^2 - d^2} \right)} = \dfrac{2 \times 3000}{\pi \times 10 \, (10 - \sqrt{100 - 16})} \).
+(2) \( \sqrt{84} = 9.165 \); denominator \( = \pi \times 10 \times 0.835 = 26.2 \).
+(3) \( HB = 6000/26.2 = 229 \).
+(4) Strength estimate, (1) of the lecture: \( UTS \approx 3.45 \times 229 = 790\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> HB 229; UTS ≈ 790 MPa.
+<b>Sanity check:</b> HB 229 sits in the plausible band for quenched-and-tempered shafting; had the dent been 2 mm (HB &gt; 900) or 8 mm (HB ≈ 50) the arithmetic itself would be flagging a bad test, not a remarkable material.</p>
+<h4>Worked example 2 — placing a transition temperature</h4>
+<p><b>Problem.</b> Charpy results for a structural steel (representative): upper shelf 120 J, lower shelf 5 J. Using the mean-shelf criterion, what energy defines the transition, and how is the DBTT then read?</p>
+<p><b>Solution.</b> (1) Mean-shelf energy: \( (120 + 5)/2 = 62.5\ \mathrm{J} \).
+(2) The DBTT is the temperature at which the fitted energy–temperature curve crosses 62.5 J; specifications alternatively fix an absolute floor (e.g., 27 J) at a stated service temperature.</p>
+<p><b>Answer:</b> 62.5 J crossing defines DBTT by the averaging method.
+<b>Sanity check:</b> both criteria exist because the transition is a band, not a line — a curve crossing 62.5 J at −20 °C can still fail a "27 J at −40 °C" purchase clause. Reading which criterion a spec invokes is half the job.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the tester in the toolbag.</b> You arrive at a HEISCO repair bay where a pump shaft has been weld-overlaid and remachined. Before it ships, a portable hardness tester walks the repair: parent metal, overlay, and — the spot that matters — the heat-affected zone beside the weld, where fast cooling can leave a hard, brittle band (figures representative). Three dents, thirty seconds, and equation (1) turns them into strength estimates no one had to cut the shaft to get. When the HAZ reads far above the parent bar, the shaft goes back for a tempering cycle — a decision made entirely by Lesson 8's proxy.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 6</p>

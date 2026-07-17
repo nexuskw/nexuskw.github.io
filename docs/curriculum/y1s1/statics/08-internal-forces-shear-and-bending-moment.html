@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 08 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Internal forces: shear and bending moment</h1>
     <p class="sub">Cutting a beam and exposing N, V, M. Shear and moment diagrams for point and distributed loads. The diagrams as the input strength-of-materials will demand.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,50 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>What sign convention makes shear and moment diagrams consistent?</li><li>Where is bending moment maximum when shear crosses zero — and why?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>STA 103 · Engineering Statics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What sign convention makes shear and moment diagrams consistent?</li><li>Where is bending moment maximum when shear crosses zero — and why?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What sign convention makes shear and moment diagrams consistent?</li><li>Where is bending moment maximum when shear crosses zero — and why?</li></ul></div><div class="measure">
+<h3>§1 · Cut the beam, expose the invisible</h3>
+<p>External reactions are only half the story; design needs the forces <em>inside</em> the member. Cut a beam at any section and, on the exposed face, three internal resultants restore equilibrium: normal force \( N \), shear force \( V \), and bending moment \( M \). Sign convention (keep it for life): positive shear rotates the element clockwise; positive moment sags the beam — compression on top, tension on the bottom. The convention is arbitrary; consistency is not.</p>
+<h3>§2 · Diagrams, and the calculus that draws them</h3>
+<p>Shear and moment vary along the span, so we plot them. Two differential relations do most of the drawing:</p>
+\[ \frac{dV}{dx} = -w(x), \qquad \frac{dM}{dx} = V \tag{1} \]
+<p>Between point loads, \( V \) is constant and \( M \) runs straight; under a uniform load, \( V \) slopes linearly and \( M \) curves parabolically. A point load steps \( V \); a couple steps \( M \). And the operational headline: <em>the bending moment is extremal where the shear crosses zero</em> — because \( dM/dx = V = 0 \) there. That is where beams break, and where you look first.</p>
+<h3>§3 · Why these diagrams are the product</h3>
+<p>Strength of Materials will convert \( M \) into bending stress and \( V \) into shear stress; every beam, shaft, and rack girder calculation starts from these two plots. Drawing them is not an academic exercise before the real work — for the structural side of plant engineering, the diagram <em>is</em> the deliverable that the stress check consumes. §Worked Examples builds both canonical cases: the central point load and the uniform load.</p>
+<p><strong>Closing.</strong> Cut, expose \( N, V, M \), plot with the two differential relations, and read the maximum moment where shear crosses zero. Beams are analyzed exactly once you can draw these two pictures without hesitation.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Support reactions</b> (Lessons 3, 5) — computed before any cut is made.</li>
+<li><b>Equilibrium of a cut body</b> (Lesson 5) — the exposed section is just another FBD.</li>
+<li><b>Basic calculus</b> — slopes and areas connect \( w \), \( V \), and \( M \).</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Shear force \( V \)</b> — internal transverse force at a section.</li>
+<li><b>Bending moment \( M \)</b> — internal moment at a section; sagging positive.</li>
+<li><b>Shear diagram</b> — \( V(x) \) along the span; steps at point loads.</li>
+<li><b>Moment diagram</b> — \( M(x) \); slope equals shear; extremal where \( V = 0 \).</li>
+<li><b>UDL</b> — uniformly distributed load, in kN/m.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — central point load</h4>
+<p><b>Problem.</b> Simply supported beam, span \( L = 4\ \mathrm{m} \), point load \( P = 8\ \mathrm{kN} \) at midspan. <b>Find:</b> the shear and moment diagrams and the maximum moment.</p>
+<p><b>Solution.</b> (1) Reactions: symmetric, \( R = 4\ \mathrm{kN} \) each.
+(2) Shear: \( V = +4\ \mathrm{kN} \) from A to midspan, stepping down by 8 to \( -4\ \mathrm{kN} \) to B.
+(3) Moment: rises linearly (slope 4) to midspan, falls linearly after.
+(4) \( M_{max} = 4 \times 2 = 8\ \mathrm{kN\cdot m} \) — matching \( PL/4 = 8 \times 4/4 \).</p>
+<p><b>Answer:</b> \( V_{max} = 4\ \mathrm{kN} \), \( M_{max} = 8\ \mathrm{kN\cdot m} \) at midspan.
+<b>Sanity check:</b> \( M \) peaks exactly where \( V \) crosses zero (the load point). Diagram closes to zero at both ends — free ends carry no moment. ✓</p>
+<h4>Worked example 2 — uniform load</h4>
+<p><b>Problem.</b> Simply supported beam, \( L = 6\ \mathrm{m} \), UDL \( w = 3\ \mathrm{kN/m} \). <b>Find:</b> diagrams and \( M_{max} \).</p>
+<p><b>Solution.</b> (1) Reactions: \( R = wL/2 = 9\ \mathrm{kN} \) each.
+(2) Shear: \( V(x) = 9 - 3x \) — linear, zero at \( x = 3\ \mathrm{m} \).
+(3) Moment: parabolic, \( M(x) = 9x - 1.5x^2 \).
+(4) \( M_{max} = M(3) = 27 - 13.5 = 13.5\ \mathrm{kN\cdot m} \) — matching \( wL^2/8 = 3 \times 36/8 \).</p>
+<p><b>Answer:</b> \( V_{max} = 9\ \mathrm{kN} \) at the supports; \( M_{max} = 13.5\ \mathrm{kN\cdot m} \) at midspan.
+<b>Sanity check:</b> shear crosses zero at midspan by symmetry, and the parabola peaks there. The two formulas \( PL/4 \) and \( wL^2/8 \) are worth memorizing — they bound most quick beam checks you will ever do standing up.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the liquid-filled span.</b> You arrive at a piping review at EQUATE where a line's support span was set when the service was gas; a process change now runs it liquid-full, multiplying the weight per metre (figures representative). The pipe between supports is Lesson 8's beam under a UDL: \( M_{max} = wL^2/8 \) at mid-span, growing with the <em>square</em> of span. The review question — add a support or accept the sag — is answered by exactly this diagram: double the weight doubles the moment, but halving the span quarters it. The support goes in at the shear-zero point's worst span.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>

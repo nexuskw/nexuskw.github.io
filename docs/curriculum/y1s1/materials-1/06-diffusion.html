@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 06 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Diffusion</h1>
     <p class="sub">Fick's first and second laws with the physical picture of jumping atoms. Temperature dependence through the Arrhenius form. Carburizing depth as a worked application — the √Dt scaling that recurs everywhere.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -42,28 +42,52 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does case-hardening depth scale with √(Dt)?</li><li>What does the Arrhenius form say about doubling temperature versus doubling time?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
-</div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MAT 104 · Materials Science I</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">Course context: Atoms to microstructure: bonding, crystal structures, defects, diffusion, and mechanical behavior — the vocabulary in which every later conversation about steels, failure, and heat treatment is conducted.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why does case-hardening depth scale with √(Dt)?</li><li>What does the Arrhenius form say about doubling temperature versus doubling time?</li></ul></div>
-</div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does case-hardening depth scale with √(Dt)?</li><li>What does the Arrhenius form say about doubling temperature versus doubling time?</li></ul></div><div class="measure">
+<h3>§1 · Fick's laws, with atoms attached</h3>
+<p>Diffusion is atoms hopping site to site, biased downhill in concentration. Steady state is Fick's first law, \( J = -D\, dC/dx \): flux proportional to gradient, \( D \) the diffusion coefficient. Transient cases — the plant's usual reality — obey Fick's second law:</p>
+\[ \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2} \tag{1} \]
+<p>whose solutions for a surface held at constant concentration follow the error function. The engineering headline hiding in those solutions: any characteristic penetration depth scales as</p>
+\[ x \sim \sqrt{Dt} \tag{2} \]
+<p>Double the depth costs <em>four times</em> the time. That square root governs carburizing, decarburizing, homogenization, and every soak-time argument you will ever have with a furnace schedule.</p>
+<h3>§2 · Temperature is the big lever</h3>
+<p>The diffusion coefficient is Arrhenius:</p>
+\[ D = D_0 \exp\!\left(-\frac{Q_d}{RT}\right) \tag{3} \]
+<p>with activation energy \( Q_d \) set by the migration mechanism — interstitials like carbon in iron dart between gaps cheaply; substitutional atoms must wait for vacancies and pay more. Because \( T \) sits in an exponential, modest temperature moves swamp heroic time extensions: in §Worked Examples, 200 K of extra furnace temperature buys a factor of ~19 in \( D \), which no affordable soak time matches.</p>
+<h3>§3 · Reading processes through (2) and (3)</h3>
+<p>Case-hardening a gear: carbon in from the surface, case depth by \( \sqrt{Dt} \), temperature chosen high enough for speed but below distortion limits. Homogenizing a segregated casting: the same mathematics with the dendrite arm spacing as the distance to erase. Even degradation reads this way — hydrogen charging into a weld, carburization of furnace tubes — diffusion is one mathematics wearing many overalls.</p>
+<p><strong>Closing.</strong> Gradient drives, \( \sqrt{Dt} \) paces, Arrhenius accelerates. Three relations, and most furnace-floor arithmetic is already in hand.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Vacancies</b> (Lesson 5) — the vehicles of substitutional diffusion; their census sets the pace.</li>
+<li><b>Interstitial sites</b> (Lesson 5) — carbon's fast lanes through iron.</li>
+<li><b>Exponentials and derivatives</b> — Arrhenius plots and concentration gradients.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Flux \( J \)</b> — atoms crossing unit area per unit time.</li>
+<li><b>Diffusion coefficient \( D \)</b> — mobility; Arrhenius in temperature.</li>
+<li><b>Fick's first / second law</b> — steady-state / transient diffusion.</li>
+<li><b>Case depth</b> — hardened skin thickness; scales as \( \sqrt{Dt} \).</li>
+<li><b>Activation energy \( Q_d \)</b> — the exponential's price of migration.</li>
+</ul></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — case depth and the square root's tax</h4>
+<p><b>Problem.</b> Carburizing at 950 °C with \( D \approx 1.6 \times 10^{-11}\ \mathrm{m^2/s} \) (representative for carbon in austenite). <b>Find:</b> the \( \sqrt{Dt} \) penetration scale after 4 h, and the time to double it.</p>
+<p><b>Solution.</b> (1) \( t = 4 \times 3600 = 14\,400\ \mathrm{s} \).
+(2) \( \sqrt{Dt} = \sqrt{1.6 \times 10^{-11} \times 14\,400} = \sqrt{2.30 \times 10^{-7}} = 4.8 \times 10^{-4}\ \mathrm{m} \approx 0.48\ \mathrm{mm} \).
+(3) Doubling depth requires \( 4t \): 16 h.</p>
+<p><b>Answer:</b> ≈0.5 mm scale at 4 h; 16 h to reach ≈1 mm.
+<b>Sanity check:</b> the second half-millimetre costs three times what the first did — the \( \sqrt{t} \) law is why deep cases are expensive and why specifications state case depth with tolerance, not ambition.</p>
+<h4>Worked example 2 — what 200 K buys</h4>
+<p><b>Problem.</b> Carbon in FCC iron: \( D_0 = 2.3 \times 10^{-5}\ \mathrm{m^2/s} \), \( Q_d = 148\ \mathrm{kJ/mol} \) (Callister &amp; Rethwisch). <b>Find:</b> \( D \) at 1000 K and 1200 K.</p>
+<p><b>Solution.</b> (1) \( D_{1000} = 2.3 \times 10^{-5} \exp[-148\,000/(8.314 \times 1000)] = 4.3 \times 10^{-13}\ \mathrm{m^2/s} \).
+(2) \( D_{1200} = 2.3 \times 10^{-5} \exp[-148\,000/(8.314 \times 1200)] = 8.3 \times 10^{-12}\ \mathrm{m^2/s} \).
+(3) Ratio: ≈19×.</p>
+<p><b>Answer:</b> a 200 K raise multiplies \( D \) by ~19.
+<b>Sanity check:</b> to match that with time at 1000 K you would need a 19× longer soak — days for hours. Temperature is the lever; time is the fine adjustment. (Distortion and grain growth are the counter-forces that keep furnaces from simply running hotter.)</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the replacement gear's thin skin.</b> You arrive at an EQUATE machine shop reviewing a failed spare: a case-hardened gear that pitted in months where the original ran years. Hardness traverse tells the story — the replacement's case reads 0.3 mm where the drawing calls for 0.8–1.0 mm (figures representative). Someone bought case depth with a short furnace cycle, and \( \sqrt{Dt} \) does not negotiate: half the depth means a quarter of the time, and the Hertzian contact stresses below the thin case found soft core. The purchasing lesson is Lesson 6: case depth is furnace hours, and certificates should say so.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 5</p>
