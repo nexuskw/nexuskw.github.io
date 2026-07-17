@@ -54,7 +54,7 @@
     <h1>Lists, dictionaries, and files</h1>
     <p class="sub">Collections for measurement sets and equipment records. Reading and writing CSV files — the lingua franca of plant data exports. Cleaning real, messy data defensively.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/6">Mark as complete</button>
@@ -67,23 +67,88 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is CSV the lingua franca of plant data, and what are its traps?</li><li>Dict versus list for an equipment register: which and why?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>CMP 106 · Engineering Computing</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is CSV the lingua franca of plant data, and what are its traps?</li><li>Dict versus list for an equipment register: which and why?</li></ul></div><div class="measure">
+<h3>01 · Lists: ordered data with a name</h3>
+<p>Engineering data arrives in sequences — readings over a route, temperatures over a
+shift — and the list is Python's sequence: <code>readings = [2.1, 4.5, 3.2]</code>,
+ordered, indexable, growable. Indexing starts at ZERO — <code>readings[0]</code> is the
+first item — and negative indices count from the end, <code>readings[-1]</code> being the
+latest reading, an idiom worth owning immediately. Slices carve subranges
+(<code>readings[1:3]</code> yields items 1 and 2 — the stop index is excluded, mirroring
+range), <code>append</code> grows the list in place, and the built-ins <code>len, sum,
+min, max</code> answer the first questions any dataset is asked. The list comprehension
+compresses the transform loop to a phrase — <code>[x * 0.746 for x in hp_values]</code> —
+and reads like the sentence it implements.</p>
+<h3>02 · Dictionaries: records with named fields</h3>
+<p>Where lists order items, dictionaries name them: <code>pump = {"tag": "P-101",
+"power_kw": 11.5}</code> is an equipment record whose fields are looked up by key —
+<code>pump["power_kw"]</code> — not by position. Adding a field is one assignment;
+asking whether one exists is <code>"tag" in pump</code>. The two structures compose into
+the universal data shape of plant work: a LIST of DICTIONARIES — one dict per equipment
+item, one list per fleet — which is exactly what a CSV file of records becomes the moment
+Python reads it.</p>
+<h3>03 · Files: where real data lives</h3>
+<p>The CSV — comma-separated values, one record per line — is the lingua franca of every
+historian export, test-bench log, and maintenance system dump. Reading one is three
+idioms stacked: iterate the file line by line, <code>split(",")</code> each line into
+fields, and convert numeric fields with <code>float()</code> at the border, exactly as
+Lesson 2 demanded. The <code>with open(...) as f:</code> form opens the file and
+guarantees it closes. Everything after the read is Lessons 3–4: loops, accumulators, and
+functions, now fed by real data instead of typed constants.</p>
+<h3>04 · The data-structure working method</h3>
+<p>Choose the structure by the question the data answers. Ordered measurements → list;
+named fields of one thing → dict; a fleet of records → list of dicts; and when you catch
+yourself tracking parallel lists (tags in one, powers in another), that is the signal the
+records want to be dicts. Convert types at the file border, never downstream. Trust the
+built-ins before writing loops — <code>sum, max, len</code> are tested code you did not
+have to write. And hand-trace list operations on a three-item example before applying
+them to thirty thousand rows, exactly as the loop lesson traced its accumulators: the
+small case proves the pattern, the large case merely repeats it.</p>
+<p>One caution as datasets grow: a structure choice made casually at three records
+becomes architecture at thirty thousand. The list-of-dicts shape scales gracefully
+because every operation this course teaches — loops, comprehensions, filters,
+summaries — walks it unchanged; ad-hoc shapes (nested lists of mixed meaning, parallel
+lists) accumulate special cases until the script is mostly exceptions. Choose the boring,
+regular shape early and the analysis lessons ahead inherit clean footing.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why is CSV the lingua franca of plant data, and what are its traps?</li><li>Dict versus list for an equipment register: which and why?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Loops and accumulators</b> (Lesson 3) — now walking real collections.</li>
+<li><b>Type conversion at borders</b> (Lesson 2) — float() on every numeric field.</li>
+<li><b>Functions</b> (Lesson 4) — file-readers and summarizers with names.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>List</td><td>\( \texttt{[2.1, 4.5, 3.2]} \)</td><td>Ordered, growable sequences of measurements.</td></tr>
+<tr><td>Zero-based index</td><td>\( \texttt{a[0]} \) first, \( \texttt{a[-1]} \) last</td><td>The counting convention behind every off-by-one.</td></tr>
+<tr><td>Slice</td><td>\( \texttt{a[1:3]} \) — stop excluded</td><td>Subranges; start included, stop excluded, like range.</td></tr>
+<tr><td>Comprehension</td><td>\( \texttt{[f(x) for x in xs]} \)</td><td>The transform loop as a readable phrase.</td></tr>
+<tr><td>Dictionary</td><td>\( \texttt{\{"tag": "P-101"\}} \)</td><td>Named fields, looked up by key — the record.</td></tr>
+<tr><td>List of dicts</td><td>one dict per record</td><td>The fleet shape; what CSVs become in memory.</td></tr>
+<tr><td>CSV reading</td><td>\( \texttt{split(",")} \) + \( \texttt{float()} \)</td><td>Line → fields → numbers, converted at the border.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>The route list, operated</b></p>
+<p><b>Problem.</b> Trace: start with <code>readings = [2.1, 4.5, 3.2]</code>; append 5.0; report the last element, the maximum, and the length.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) After <code>readings.append(5.0)</code>: <code>[2.1, 4.5, 3.2, 5.0]</code>.
+(2) <code>readings[-1]</code> → 5.0 (the newest); <code>max(readings)</code> → 5.0; <code>len(readings)</code> → 4.</p>
+<p><b>Answer:</b> 5.0, 5.0, 4.
+<b>Sanity check:</b> the newest reading happening to BE the maximum is the vibration-route bad news pattern — and <code>readings[-1] == max(readings)</code> is exactly the one-line trend alarm a later script will build from these three idioms. Small operations, real diagnostics.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>An equipment record that grows</b></p>
+<p><b>Problem.</b> Build the record <code>pump = {"tag": "P-101", "power_kw": 11.5}</code>; add a field <code>"status": "running"</code>; read the power; and show the fleet shape for two pumps.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Add: <code>pump["status"] = "running"</code> — dicts grow by assignment.
+(2) Read: <code>pump["power_kw"]</code> → 11.5.
+(3) Fleet: <code>fleet = [{"tag": "P-101", "power_kw": 11.5}, {"tag": "P-102", "power_kw": 7.5}]</code> — a list of dicts, iterated as <code>for pump in fleet:</code>.</p>
+<p><b>Answer:</b> field added, 11.5 read, fleet as list-of-dicts.
+<b>Sanity check:</b> the alternative — parallel lists of tags and powers — breaks the moment one list is sorted or filtered without the other; the record keeps each pump's facts fused. This shape IS the maintenance database row, and recognizing it is the lesson.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Reading the export</b></p>
+<p><b>Problem.</b> A file contains two lines: <code>P-101,11.5</code> and <code>P-102,7.5</code>. Script the total power and trace it.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) <code>total = 0.0</code>
+<code>with open("pumps.csv") as f:</code>
+<code>    for line in f:</code>
+<code>        fields = line.split(",")</code>
+<code>        total += float(fields[1])</code>
+(2) Trace: 0.0 + 11.5 = 11.5; 11.5 + 7.5 = 19.0.</p>
+<p><b>Answer:</b> 19.0 kW total.
+<b>Sanity check:</b> every piece is a prior lesson — the with-open border, the split into fields, the float() conversion (without which <code>+=</code> would crash on a string), the accumulator. File processing is not a new skill; it is the old skills fed by a file, which is why the course built them first.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>For <code>a = [10, 20, 30, 40]</code>, the value of <code>a[1]</code> is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>20</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>10</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>30</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>An error</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Zero-based indexing: a[0] is 10, so a[1] is 20 — the SECOND item. The 1-counting instinct from everyday life is the source of most beginner index errors, and range(n)'s 0-to-n−1 convention (Lesson 3) was designed to match this exactly: <code>a[i] for i in range(len(a))</code> touches every element with no off-by-one anywhere.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The idiomatic way to read the LAST element of list <code>a</code> is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span><code>a[-1]</code></span></button><button type="button" class="quiz-choice"><span class="key">B</span><span><code>a[len(a)]</code></span></button><button type="button" class="quiz-choice"><span class="key">C</span><span><code>a[end]</code></span></button><button type="button" class="quiz-choice"><span class="key">D</span><span><code>a.last()</code></span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Negative indices count from the end: a[-1] is the last, a[-2] the one before. <code>a[len(a)]</code> is one PAST the end — an IndexError, and the classic fencepost slip (the valid last index is len(a)−1). The other forms belong to other languages. For time-ordered data, a[-1] is 'the latest reading' — an idiom used daily.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p><code>[x * 2 for x in [1, 2, 3]]</code> evaluates to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>[2, 4, 6]</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>[1, 2, 3, 1, 2, 3]</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>[1, 4, 9]</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>12</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The comprehension applies the expression to each element: doubles, collected in order. Repetition ([1,2,3,1,2,3]) is what <code>[1,2,3] * 2</code> does — the list-level operator, a different animal; squares would need <code>x ** 2</code>. Comprehensions are the transform loop compressed to a readable phrase, and they appear in nearly every data script from here on.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Field values pulled from a CSV line by <code>split(",")</code> arrive as:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Strings — numeric fields need float() before arithmetic</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Numbers, automatically</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Floats if they contain a decimal point</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Whatever type the file declares</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Files are text; split returns strings, whatever they resemble — and <code>"11.5" + "7.5"</code> concatenates to "11.57.5" rather than adding. CSV declares no types; nothing converts automatically. The border-conversion rule of Lesson 2 exists precisely for this moment: float() each numeric field at the read, and the interior of the script stays safely numeric.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Tracking pump tags in one list and their powers in a parallel list becomes fragile because:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Sorting or filtering one list without the other silently misaligns every record</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Lists cannot hold strings and floats</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>It uses too much memory</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Dictionaries are faster</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Parallel lists are coupled by nothing but hope: one sort, one filter, one insertion applied to only one of them, and every tag points at the wrong power — silently. The list-of-dicts shape fuses each record's fields so they travel together through any operation. Memory and speed are irrelevant at this scale; integrity is the argument, and it is decisive.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

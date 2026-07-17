@@ -54,7 +54,7 @@
     <h1>Arrays and numerical work</h1>
     <p class="sub">NumPy arrays for vectorized calculation over whole datasets. Elementwise operations, aggregation, and broadcasting. A vibration record processed without a single explicit loop.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/7">Mark as complete</button>
@@ -67,23 +67,86 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does vectorization replace, and why is it faster and clearer?</li><li>Compute the RMS of an array in one line — conceptually, what happened?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>CMP 106 · Engineering Computing</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does vectorization replace, and why is it faster and clearer?</li><li>Compute the RMS of an array in one line — conceptually, what happened?</li></ul></div><div class="measure">
+<h3>01 · The array idea: operate on all of it</h3>
+<p>Lists process element by element through loops; numerical arrays (NumPy's
+<code>ndarray</code>) operate on whole datasets at once: <code>kw = hp * 0.746</code>
+converts every horsepower value in one expression — vectorization. The gains are two:
+the code READS as the mathematics (one formula, visibly applied to everything), and it
+runs orders of magnitude faster, because the looping happens in optimized machinery
+below. For engineering data — a year of hourly readings is 8,760 numbers, a vibration
+waveform 65,536 — the array is the natural container, and the loop becomes the
+exception rather than the habit.</p>
+<h3>02 · The reductions: from many numbers to a few</h3>
+<p>Analysis usually ends in reductions: <code>mean</code>, <code>std</code>,
+<code>min/max</code>, <code>sum</code> — the descriptive statistics of a dataset in one
+call each. The standard deviation deserves engineering respect: it is the honest width of
+the scatter, the number that turns "about 4.25" into "4.25 ± 0.30", and the seed of
+every control chart the metrology course will draw. Alongside them, <code>argmax</code>
+answers WHERE — the index of the worst reading — which is often the more actionable
+question: not "how bad" but "which machine".</p>
+<h3>03 · Masks: asking questions of data</h3>
+<p>Comparison on an array yields an array of booleans — a mask — and the mask selects:
+<code>readings[readings &gt; 4.0]</code> is every reading above the alarm line, in one
+expression: no loop, no if, no accumulator. Count them with <code>sum</code> of the mask,
+average them, or feed them onward. The idiom — condition, mask, selection — is the
+data-analysis sentence structure, and it compounds: masks combine with
+\( \texttt{\&} \) and \( \texttt{|} \) into compound questions ("above alarm AND
+after the overhaul") that still read as one line.</p>
+<h3>04 · The vectorized working method</h3>
+<p>Reach for the array whenever data is homogeneous and numeric; keep lists for mixed
+records. Write transformations as whole-array expressions and CHECK them on a three-value
+array first — vectorized code is compact enough that a wrong formula corrupts everything
+uniformly, so the small trace matters doubly. Prefer the built-in reductions to
+hand-rolled loops (they are tested code, and faster), and when a reduction's answer
+surprises, look at the mask counts before doubting the data: how many values, how many
+above threshold, how many NaN — the three questions that catch most data-quality issues
+at the door. Then the discipline that spans every lesson: units ride the variable names
+(<code>vel_mm_s</code>), conversions happen once, visibly, at the border, and any result
+consumed downstream gets an assertion pinning a known case. Arrays change the scale of
+what one line does; they change nothing about what makes the line trustworthy.</p>
+<p>The payoff arrives immediately in the lessons ahead: plotting consumes arrays whole,
+curve fitting reduces them to parameters, and simulations generate them by the thousand.
+Vectorized thinking — state the operation once, apply it to everything, summarize with a
+reduction — is also precisely how plant historians and analysis platforms work
+internally, so fluency here reads directly onto the tools the later automation courses
+will operate.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What does vectorization replace, and why is it faster and clearer?</li><li>Compute the RMS of an array in one line — conceptually, what happened?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Lists and loops</b> (Lessons 3, 6) — arrays replace the transform loop.</li>
+<li><b>Statistics vocabulary</b> — mean and standard deviation as scatter's width.</li>
+<li><b>Assertions</b> (Lesson 5) — vectorized code gets pinned like any other.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Array (ndarray)</td><td>homogeneous numeric block</td><td>The natural container for measurements at scale.</td></tr>
+<tr><td>Vectorization</td><td>\( \texttt{kw = hp * 0.746} \)</td><td>One expression, every element; reads as the mathematics.</td></tr>
+<tr><td>Reductions</td><td>\( \texttt{mean, std, min, max, sum} \)</td><td>Whole datasets to summary numbers, one call each.</td></tr>
+<tr><td>Standard deviation</td><td>scatter's honest width</td><td>The ± that belongs beside every reported mean.</td></tr>
+<tr><td>argmax / argmin</td><td>index of the extreme</td><td>WHICH machine, not just how bad.</td></tr>
+<tr><td>Mask</td><td>\( \texttt{a[a > 4.0]} \)</td><td>Condition → boolean array → selection, in one line.</td></tr>
+<tr><td>Compound masks</td><td>\( \texttt{(a>4) \& (t>t0)} \)</td><td>Multi-condition questions that still read as sentences.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Fleet conversion in one line</b></p>
+<p><b>Problem.</b> Motor ratings arrive in horsepower: <code>[10, 25, 50]</code>. Convert the whole set to kW (1 hp = 0.746 kW) vectorized, and state the result.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) <code>hp = np.array([10, 25, 50])</code>; <code>kw = hp * 0.746</code>.
+(2) Result: <code>[7.46, 18.65, 37.3]</code> — every element converted by the one expression.</p>
+<p><b>Answer:</b> [7.46, 18.65, 37.3] kW.
+<b>Sanity check:</b> the same operation on a plain LIST — <code>[10,25,50] * 0.746</code> — is an error, and <code>* 3</code> would have REPEATED the list: the array's element-wise arithmetic is a genuinely different contract, and knowing which container you hold decides what * means.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Mean and scatter of a survey</b></p>
+<p><b>Problem.</b> Four bearing-temperature readings: 4.1, 3.9, 4.3, 4.7 (°C above ambient). <b>Find:</b> the mean and the (population) standard deviation, and report them together.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Mean: \( (4.1+3.9+4.3+4.7)/4 = 4.25 \).
+(2) Deviations: −0.15, −0.35, 0.05, 0.45; squares sum to 0.35; variance \( 0.35/4 = 0.0875 \).
+(3) \( \sigma = \sqrt{0.0875} = 0.30 \). Report: \( 4.25 \pm 0.30 \) °C.</p>
+<p><b>Answer:</b> mean 4.25, σ ≈ 0.30 — "4.25 ± 0.30 °C".
+<b>Sanity check:</b> σ has the data's own units and sits comfortably inside the observed spread (range 0.8) — a σ larger than the range would announce an arithmetic slip. The ± habit turns every reported mean into an honest claim, and the metrology course will build control charts on exactly this number.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>The alarm-line question</b></p>
+<p><b>Problem.</b> Vibration readings <code>[3.2, 5.1, 2.8, 6.0]</code> mm/s; the alert line is 4.0. Using a mask, find how many readings exceed it and their average.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Mask: <code>v &gt; 4.0</code> → <code>[False, True, False, True]</code>.
+(2) Count: 2. Selection: <code>v[v &gt; 4.0]</code> → <code>[5.1, 6.0]</code>.
+(3) Mean of offenders: \( (5.1+6.0)/2 = 5.55\ \mathrm{mm/s} \).</p>
+<p><b>Answer:</b> 2 readings above the line, averaging 5.55 mm/s.
+<b>Sanity check:</b> condition → mask → selection replaced a four-line loop-with-if, and reads as the question itself. Scale it to a year of route data and the same one-liner is a fleet exception report — the entire reason the mask idiom is worth owning.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p><code>np.array([1, 2, 3]) * 2</code> evaluates to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>array([2, 4, 6])</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>[1, 2, 3, 1, 2, 3]</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>An error</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>array([1, 2, 3, 2])</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Arrays do element-wise arithmetic: every value doubles. The repetition answer is what a plain LIST does with * 2 — the container decides the contract, and this pair of behaviors side by side is the cleanest illustration of why. Knowing which type you hold (Lesson 2's discipline, scaled up) is what makes the one-character operator safe.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p><code>argmax</code> returns:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The INDEX of the largest value</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The largest value</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>All values above average</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The last value</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>max answers 'how bad'; argmax answers 'WHERE' — the position, which maps to a machine, a timestamp, a route point. In maintenance data the location is usually the actionable half: <code>tags[np.argmax(vibration)]</code> names the machine to visit. The pairing of a value-question with its index-question runs through all of applied data work.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>The standard deviation of a set of readings tells you:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The typical spread of readings around their mean, in the data's own units</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The largest error</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Whether the mean is correct</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The instrument's accuracy</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>σ is scatter's width — the honest ± beside the mean. It bounds nothing absolutely (readings beyond σ are routine — most data holds ~1/3 of it there), says nothing about BIAS (a precisely wrong instrument scatters tightly around the wrong value), and instrument accuracy is a calibration question. Reporting mean ± σ claims exactly what the data supports, no more.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A vectorized formula applied to 30,000 readings should first be checked by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Running it on a tiny array with a hand-computable answer</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Running it twice on the full data</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Checking that no error is raised</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Trusting NumPy</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Vectorization's power is uniform application — which means a wrong formula corrupts all 30,000 values uniformly and plausibly. The three-value trace with a known answer pins the formula; then scale merely repeats proven arithmetic. Re-running identical wrongness reproduces it identically; absence of errors proves syntax, not sense — the recurring theme every verification lesson has hammered.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>For <code>a = np.array([10, 20, 30, 40])</code>, the slice <code>a[1:3]</code> is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>array([20, 30])</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>array([20, 30, 40])</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>array([10, 20, 30])</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>array([30])</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Same convention as lists and range: start included, stop excluded — indices 1 and 2, values 20 and 30. The consistency across list, range, and array slicing is deliberate: one fencepost rule serves the whole language, and internalizing 'stop is excluded' once retires the off-by-one everywhere at once.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

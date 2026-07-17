@@ -54,7 +54,7 @@
     <h1>Plotting engineering data</h1>
     <p class="sub">Time series, scatter, and log-scale plots with honest axes and units. The plot as an argument, not a decoration. Reproducing a textbook figure from raw numbers.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/8">Mark as complete</button>
@@ -67,23 +67,83 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name three properties of an honest engineering plot.</li><li>When does a log axis reveal what a linear one hides?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>CMP 106 · Engineering Computing</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name three properties of an honest engineering plot.</li><li>When does a log axis reveal what a linear one hides?</li></ul></div><div class="measure">
+<h3>01 · The plot is an argument</h3>
+<p>An engineering plot exists to support a decision, and its anatomy is the argument's
+grammar: axes labeled WITH UNITS (an unlabeled axis is a number with no meaning — the
+chart version of the unit sins every course here prosecutes), a title that states what is
+shown, and a legend when more than one series appears. The choice of plot type is the
+choice of claim: a LINE plot claims continuity — readings ordered in time, trends; a
+SCATTER plot claims only "these pairs were observed" — right for correlation questions
+and unordered data; a BAR chart compares discrete categories — machines, months, failure
+modes. Choosing a line where a scatter belongs invents continuity the data never
+promised; the plot type is the first honesty decision.</p>
+<h3>02 · Scales that reveal</h3>
+<p>Linear axes hide what logarithmic axes reveal. Exponential decay — the cooling curves
+and filter-loading trends of the mathematics course — plots as a curve on linear axes but
+as a STRAIGHT LINE on a semilog (log-y) plot, whose slope reads the time constant:
+plotting \( \ln(T - T_\infty) \) against t was exactly this move, done by hand. Data
+spanning decades of magnitude — vibration spectra, particle counts — needs log scales
+simply to be seen: on a linear axis, the small values flatten into the floor. The
+working question before every plot: does this data live on one scale, or several?</p>
+<h3>03 · Sampling honesty</h3>
+<p>Plotted data was SAMPLED, and sampling has physics. A signal changing faster than half
+the sampling rate does not disappear — it ALIASES, reappearing as a false slow signal:
+a 50 Hz vibration sampled at 60 Hz shows up as a phantom 10 Hz wobble
+(\( |50 - 60| \)). The instrumentation course will formalize Nyquist; the plotting
+lesson's version is the caution: before trusting a surprising slow oscillation in
+sampled data, ask what the sampling rate was. Equally, decimating data for plotting speed
+(every tenth point) is legitimate — STATED; silently, it is how spikes vanish from
+trend reviews.</p>
+<h3>04 · The plotting working method</h3>
+<p>Build every plot in the same order. State the question the plot must answer; choose
+the type by the claim (trend → line, correlation → scatter, comparison → bar); choose
+scales by the data's structure (exponential suspicion → semilog; decades of range →
+log); label axes with quantities AND units; then read the plot yourself before showing
+anyone — does it actually answer the question, and would a skeptic's eye find the axis
+tricks (truncated baselines, cherry-picked windows) that make weak cases look strong?
+The mathematics course called the plot the test of first-order behavior; this lesson
+generalizes: the plot is where data confesses its structure, provided the plotter asks
+honestly. A figure that survives your own skepticism is ready for the morning
+meeting — and a figure that decided a question honestly is worth saving beside the script
+and data that produced it, completing the audit trail this course keeps building.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Name three properties of an honest engineering plot.</li><li>When does a log axis reveal what a linear one hides?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Arrays</b> (Lesson 7) — plots consume them directly.</li>
+<li><b>Semilog reasoning</b> (Math I) — the straightening trick, now automated.</li>
+<li><b>Honest reporting</b> (Lesson 2) — precision and units at the interface.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Line plot</td><td>claims continuity/order</td><td>Time series and trends — data with a meaningful order.</td></tr>
+<tr><td>Scatter plot</td><td>claims only observed pairs</td><td>Correlation questions; unordered measurements.</td></tr>
+<tr><td>Bar chart</td><td>discrete categories</td><td>Machines, months, failure modes — comparisons.</td></tr>
+<tr><td>Axis labels</td><td>quantity AND unit, always</td><td>An unlabeled axis is a meaningless number, plotted.</td></tr>
+<tr><td>Semilog (log-y)</td><td>exponentials → straight lines</td><td>Slope reads the time constant; the straightening move.</td></tr>
+<tr><td>Log-log / log scales</td><td>decades made visible</td><td>Spectra and counts spanning orders of magnitude.</td></tr>
+<tr><td>Aliasing</td><td>\( f_{alias} = |f - f_s| \) (first order)</td><td>Fast signals masquerading as slow ones in sampled data.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Choosing the revealing scale</b></p>
+<p><b>Problem.</b> A casting's cooling data (temperature above ambient vs time) must be tested for first-order behavior and its time constant read graphically. Specify the plot, and what a straight line there proves.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Plot \( \ln(T - T_\infty) \) against t — equivalently, the temperature EXCESS on a semilog (log-y) axis.
+(2) First-order decay \( e^{-t/\tau} \) becomes a straight line of slope \( -1/\tau \); curvature would refute the single-τ model.
+(3) Read τ as the negative reciprocal of the fitted slope.</p>
+<p><b>Answer:</b> semilog plot of the excess; straightness proves first-order; slope gives \( \tau \).
+<b>Sanity check:</b> this is the mathematics course's semilog method, now one plotting call instead of a hand table — same test, same honesty: the plot decides whether the model applies BEFORE the constant is quoted. Scale choice is model testing, not decoration.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Anatomy of a defensible trend plot</b></p>
+<p><b>Problem.</b> Specify the complete labeling for a plot of a week of bearing-vibration readings taken every 4 hours — and the plot type, with justification.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Type: LINE plot — the readings are time-ordered, and the claim is a trend.
+(2) X-axis: "Time (h since Monday 00:00)" — quantity and unit; y-axis: "Vibration velocity (mm/s RMS)".
+(3) Title naming machine and bearing; if a second bearing shares the axes, a legend naming each series.</p>
+<p><b>Answer:</b> labeled line plot, units on both axes, titled and legended.
+<b>Sanity check:</b> strip any one element and a real failure mode appears: no units → is that mm/s or in/s?; no title → whose bearing?; scatter instead of line → the trend claim dissolves into dots. The labeling checklist is cheap; the meeting where a mislabeled chart decided wrongly is not.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>The phantom wobble</b></p>
+<p><b>Problem.</b> A 50 Hz vibration is logged by a system sampling at 60 Hz. <b>Find:</b> the frequency that appears in the data, and state the general caution.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The sampling can only represent signals up to 30 Hz (half of 60).
+(2) The 50 Hz signal aliases to \( |50 - 60| = 10\ \mathrm{Hz} \) — a slow, entirely fictitious wobble.
+(3) Caution: any surprising slow oscillation in sampled data demands the question "what was the sampling rate?" before any diagnosis.</p>
+<p><b>Answer:</b> a phantom 10 Hz signal.
+<b>Sanity check:</b> the alias is not noise — it is a clean, convincing, WRONG signal, which is what makes it dangerous. The instrumentation course formalizes the Nyquist limit; the plotting lesson's duty is the reflex: sampling rate first, diagnosis second.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Every axis of an engineering plot must carry:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The quantity and its unit</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>A logo</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>At least ten tick marks</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>A trend line</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>An axis labeled 'Value' — or nothing — makes the entire figure unfalsifiable: 4.5 of WHAT? The quantity-plus-unit rule is the plotting form of the unit discipline every course here enforces, and reviewers read axes before they read curves. Ticks and trend lines are choices; labels are obligations.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Exponential decay data appears as a straight line on:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>A semilog plot (logarithmic y-axis)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>A linear plot</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>A bar chart</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Any plot, if zoomed</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Taking the log of \( Ae^{-t/\tau} \) gives a line in t with slope \( -1/\tau \) — the semilog axis does the logarithm visually. Zooming a linear plot never straightens a curve; it magnifies it. The straightening test is diagnostic, not cosmetic: straight ⇒ first-order applies; curved ⇒ the model (not the plot) needs revisiting — the mathematics course's rule, automated.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>To show whether bearing temperature correlates with load across 200 unordered spot readings, the right plot is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>A scatter plot of temperature against load</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>A line plot in reading order</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>A bar chart per reading</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>A pie chart</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The question is pairwise association: temperature VERSUS load, each reading one dot — structure (or its absence) appears as a cloud's shape. A line through unordered readings draws meaningless connections; 200 bars is unreadable; pie charts answer share-of-whole questions only. Type follows question — the first choice of the working method.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Plotting only every 10th point of a dense trend for speed is acceptable when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The decimation is stated — silently, it can hide spikes</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Always — plots are illustrative</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Never</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Only for bar charts</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Decimation is a legitimate rendering economy with a failure mode: a one-sample spike — the very event a review hunts — can fall between kept points and vanish. Stated ("plotted at 1/10 resolution; extrema verified separately"), the reader knows the contract; silent, the plot testifies to smoothness it never checked. Honesty here is disclosure, as everywhere.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A bar chart comparing monthly downtime hours should generally have its y-axis:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Starting at zero, so bar heights compare honestly</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Starting just below the smallest value, to show detail</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Logarithmic, always</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Unlabeled, to reduce clutter</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Bar charts encode value as LENGTH, and lengths compare honestly only from a common zero — a truncated baseline turns a 5% difference into a visual 3:1 ratio, the oldest chart trick in the persuasion business. (Line plots may zoom, with axes labeled, since they encode position, not length.) The skeptic's-eye pass of the working method looks for exactly this.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

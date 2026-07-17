@@ -322,5 +322,329 @@
     "solution": "<p>A default argument encodes the usual case without forbidding the unusual: <code>shaft_power(q, h)</code> uses 0.7; <code>shaft_power(q, h, eta=0.82)</code> overrides it. Defaults document typical practice right in the signature — and keep call sites short where the typical applies. The pattern recurs across every engineering library you will ever import.</p>"
    }
   ]
+ },
+ "5": {
+  "lecture": "\n<h3>§1 · Why engineers test code</h3>\n<p>This platform machine-verifies every numeric answer before publishing it; this lesson\nhands you the same discipline for your own scripts. A test is a claim made executable:\nrun the function on a case whose answer you know, and let the computer confirm agreement —\ntoday, tomorrow, and after every future edit. Untested code decays silently: an innocent\nchange to one line shifts a result three functions away, and without tests nobody notices\nuntil the wrong number is in a report. With tests, the same mistake fails loudly in\nseconds, at your desk, before it costs anything.</p>\n<h3>§2 · The assertion: a claim with teeth</h3>\n<p>The core tool is one statement: <code>assert condition, \"message\"</code> — silent when\nthe condition holds, a named failure when it breaks. For engineering functions the pattern\nis the tolerance form from Lesson 2:\n<code>assert abs(area_m2(0.1) - 0.007854) &lt; 1e-6</code> — the hand-checked case\n(a 100 mm circle's \\( \\pi d^2/4 \\)) pinned beside the function it certifies. Three or\nfour assertions per function — a typical case, an edge (zero, the domain boundary), and a\ncase exercising each branch — form a small permanent test suite that reruns in\nmilliseconds. The habit converts \"I checked it once when I wrote it\" into \"it is\nchecked on every run\", which is the difference between a memory and a guarantee.</p>\n<h3>§3 · Exceptions and honest failure</h3>\n<p>Guard clauses (Lesson 3) raise exceptions at broken assumptions; testing meets them\nfrom the other side. A function fed garbage should fail LOUDLY — <code>ValueError</code>\nwith a message naming the violated assumption — never return a plausible wrong number.\nDebugging itself is hypothesis testing, the scientific method at a keyboard: reproduce the\nfailure with the smallest possible input, form a hypothesis about the earliest wrong\nvalue, place a print or assertion just before the suspect line, and bisect until the bug\nhas nowhere to hide. Staring is not a method; bisection is.</p>\n<h3>§4 · The verification working method</h3>\n<p>Adopt the platform's own pipeline at personal scale. Write the function; write its\nhand-checked case as an assertion immediately — while the paper calculation is still on\nthe desk; add the edge-case and branch assertions; keep the whole block at the bottom of\nthe file or in a test script, and run it after EVERY change. When a bug surfaces in use,\nits fix begins by writing the failing case as a new assertion — so the same bug can never\nreturn unannounced. And respect the honest limit: tests prove the presence of agreement\nwith your checked cases, not the absence of all error — which is precisely why the cases\nare chosen with engineering judgment: the typical, the extreme, and the branch nobody\nbelieves will ever run. That judgment is the engineering; the assertions merely keep it\nenforced. A dozen well-chosen assertions guarding a personal library of checked functions\nis a small thing to maintain and a large thing to own: it is the difference between code\nyou wrote and code you can vouch for.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Functions</b> (Lesson 4) — the unit under test.</li>\n<li><b>Tolerance comparison</b> (Lesson 2) — the float-safe assertion form.</li>\n<li><b>Guard clauses</b> (Lesson 3) — loud failure at broken assumptions.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>assert</td><td>\\( \\texttt{assert cond, \"msg\"} \\)</td><td>A claim with teeth: silent if true, named failure if not.</td></tr>\n<tr><td>Tolerance assertion</td><td>\\( \\texttt{assert abs(f(x)-known) < tol} \\)</td><td>The float-safe test against a hand-checked case.</td></tr>\n<tr><td>Edge case</td><td>zero, boundary, empty</td><td>Where functions break first; always among the test cases.</td></tr>\n<tr><td>ValueError</td><td>\\( \\texttt{raise ValueError(...)} \\)</td><td>Refusing garbage loudly instead of returning plausible nonsense.</td></tr>\n<tr><td>Regression test</td><td>yesterday's bug as today's assertion</td><td>Fixed bugs stay fixed, by construction.</td></tr>\n<tr><td>Bisection debugging</td><td>halve the search each probe</td><td>Locating the earliest wrong value systematically.</td></tr>\n<tr><td>Test-first habit</td><td>assertion written with the function</td><td>While the hand-checked case is still on the desk.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Pin the area function</b></p>\n<p><b>Problem.</b> Given <code>def area_m2(d_m): return 3.14159 * d_m**2 / 4</code>, write the tolerance assertion pinning it to the hand-checked case d = 0.1 m, and state whether it passes.</p>",
+    "solution": "<p><b>Solution.</b> (1) Hand check: \\( A = \\pi d^2/4 = \\pi \\times 0.01/4 = 0.007854\\ \\mathrm{m^2} \\).\n(2) Assertion: <code>assert abs(area_m2(0.1) - 0.007854) &lt; 1e-6</code>.\n(3) The function's 5-digit π gives 0.0078540 — inside tolerance: PASSES.</p>\n<p><b>Answer:</b> the assertion passes; the function is pinned.\n<b>Sanity check:</b> the tolerance \\( 10^{-6} \\) was chosen to admit the 5-digit π but reject real errors — a factor-of-4 slip or a missing square lands orders of magnitude away. Tolerances are engineering judgments: tight enough to catch bugs, loose enough to ignore roundoff.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Find the bug by its units</b></p>\n<p><b>Problem.</b> This function claims to return lifting power in watts, but its test fails. Locate the bug and fix it:</p>\n<pre><code>def lift_power_w(mass_kg, height_m, time_s):\n    \"\"\"Average power to lift mass through height in given time.\"\"\"\n    return mass_kg * 9.81 * height_m\n\nassert abs(lift_power_w(400, 12, 60) - 784.8) < 0.1</code></pre>",
+    "solution": "<p><b>Solution.</b> (1) The return line computes \\( mgh \\) — ENERGY (47,088 J), never dividing by time: the units are joules, not watts.\n(2) Fix: <code>return mass_kg * 9.81 * height_m / time_s</code>.\n(3) Check: \\( 400 \\times 9.81 \\times 12/60 = 784.8\\ \\mathrm{W} \\) — the assertion passes.</p>\n<p><b>Answer:</b> missing <code>/ time_s</code>; corrected, the test passes.\n<b>Sanity check:</b> the physics course's energy-versus-power distinction caught a software bug — the failing assertion pointed at it, and the unit audit named it. This is the standard rhythm: the test detects, the engineering diagnoses.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Guard, then prove the guard</b></p>\n<p><b>Problem.</b> Extend <code>shaft_power</code> with a guard against non-positive efficiency, and write the test that PROVES the guard fires.</p>",
+    "solution": "<p><b>Solution.</b> (1) Guard: <code>if eta &lt;= 0: raise ValueError(\"eta must be positive\")</code> as the function's first line.\n(2) Proving it: <code>try:</code> call with <code>eta=0</code>; if no exception arrives, <code>assert False, \"guard did not fire\"</code>; in the <code>except ValueError:</code> branch, pass.\n(3) Now BOTH behaviors are pinned: right answers for good input, loud refusal for bad.</p>\n<p><b>Answer:</b> guard + try/except test, both permanent.\n<b>Sanity check:</b> testing that failure HAPPENS feels odd once — then obvious: the guard is a promised behavior like any other, and an accidental deletion of it should fail the suite. Safety systems are tested by attempting what they must prevent; code guards earn the same respect.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An assertion beside a function buys you, above a one-time manual check:</p>",
+    "choices": [
+     "Automatic re-verification on every future run and edit",
+     "Faster execution",
+     "Protection against all possible bugs",
+     "Shorter code"
+    ],
+    "answer": 0,
+    "solution": "<p>The manual check evaporates the moment it scrolls off screen; the assertion re-executes it forever — especially after edits, when yesterday's correctness is most quietly at risk. Tests never prove the absence of all error (the cases are finite), and they cost lines and microseconds — a spectacular exchange rate for the guarantee they do provide.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The most valuable additional test cases for <code>flow_velocity(q, d)</code> beyond the typical case are:</p>",
+    "choices": [
+     "Edge cases — zero flow, and the smallest/largest realistic diameter",
+     "More typical cases with similar numbers",
+     "Random numbers",
+     "No more are needed"
+    ],
+    "answer": 0,
+    "solution": "<p>Functions break at their edges: zero triggers divisions and log domains, extremes expose unit and overflow assumptions. Five similar mid-range cases re-test the same path five times; edges test the paths that fail in production at 3 a.m. Random inputs without known answers verify nothing — a test needs an expected value to compare against.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Fed an impossible input, a professional calculation function should:</p>",
+    "choices": [
+     "Raise a named exception explaining the violated assumption",
+     "Return 0",
+     "Return its best guess",
+     "Print a warning and continue"
+    ],
+    "answer": 0,
+    "solution": "<p>A returned 0 or guess is a plausible number that travels — into comparisons, reports, decisions — with nothing marking it poisoned. The exception stops the pipeline at the exact border where the assumption broke, with a message naming it. Printed warnings scroll past unread in any automated run. Loud early failure is cheap; quiet wrong numbers compound.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The systematic way to locate a bug in a 40-line calculation is:</p>",
+    "choices": [
+     "Check intermediate values at the midpoint and bisect toward the earliest wrong one",
+     "Reread the whole script repeatedly",
+     "Rewrite it from scratch",
+     "Add try/except around everything"
+    ],
+    "answer": 0,
+    "solution": "<p>Bisection: probe the middle — if values are right there, the bug is downstream; wrong, upstream. Each probe halves the search; 40 lines fall in ~6 probes. Rereading finds what you expect to see (which is how the bug survived writing); rewriting risks a new bug and loses the lesson; blanket try/except SILENCES failures — the opposite of locating them.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>After fixing a bug, the professional final step is:</p>",
+    "choices": [
+     "Add the failing case as a permanent assertion",
+     "Delete the evidence",
+     "Comment out the old code",
+     "Nothing — it's fixed"
+    ],
+    "answer": 0,
+    "solution": "<p>The regression test: the input that exposed the bug becomes a permanent claim, so the same failure can never return unannounced — including via some future 'improvement' that reintroduces it. Commented-out code is noise that rots; 'it's fixed' is true only until the next edit. Suites grow by exactly this route: every scar becomes armor.</p>"
+   }
+  ]
+ },
+ "6": {
+  "lecture": "\n<h3>§1 · Lists: ordered data with a name</h3>\n<p>Engineering data arrives in sequences — readings over a route, temperatures over a\nshift — and the list is Python's sequence: <code>readings = [2.1, 4.5, 3.2]</code>,\nordered, indexable, growable. Indexing starts at ZERO — <code>readings[0]</code> is the\nfirst item — and negative indices count from the end, <code>readings[-1]</code> being the\nlatest reading, an idiom worth owning immediately. Slices carve subranges\n(<code>readings[1:3]</code> yields items 1 and 2 — the stop index is excluded, mirroring\nrange), <code>append</code> grows the list in place, and the built-ins <code>len, sum,\nmin, max</code> answer the first questions any dataset is asked. The list comprehension\ncompresses the transform loop to a phrase — <code>[x * 0.746 for x in hp_values]</code> —\nand reads like the sentence it implements.</p>\n<h3>§2 · Dictionaries: records with named fields</h3>\n<p>Where lists order items, dictionaries name them: <code>pump = {\"tag\": \"P-101\",\n\"power_kw\": 11.5}</code> is an equipment record whose fields are looked up by key —\n<code>pump[\"power_kw\"]</code> — not by position. Adding a field is one assignment;\nasking whether one exists is <code>\"tag\" in pump</code>. The two structures compose into\nthe universal data shape of plant work: a LIST of DICTIONARIES — one dict per equipment\nitem, one list per fleet — which is exactly what a CSV file of records becomes the moment\nPython reads it.</p>\n<h3>§3 · Files: where real data lives</h3>\n<p>The CSV — comma-separated values, one record per line — is the lingua franca of every\nhistorian export, test-bench log, and maintenance system dump. Reading one is three\nidioms stacked: iterate the file line by line, <code>split(\",\")</code> each line into\nfields, and convert numeric fields with <code>float()</code> at the border, exactly as\nLesson 2 demanded. The <code>with open(...) as f:</code> form opens the file and\nguarantees it closes. Everything after the read is Lessons 3–4: loops, accumulators, and\nfunctions, now fed by real data instead of typed constants.</p>\n<h3>§4 · The data-structure working method</h3>\n<p>Choose the structure by the question the data answers. Ordered measurements → list;\nnamed fields of one thing → dict; a fleet of records → list of dicts; and when you catch\nyourself tracking parallel lists (tags in one, powers in another), that is the signal the\nrecords want to be dicts. Convert types at the file border, never downstream. Trust the\nbuilt-ins before writing loops — <code>sum, max, len</code> are tested code you did not\nhave to write. And hand-trace list operations on a three-item example before applying\nthem to thirty thousand rows, exactly as the loop lesson traced its accumulators: the\nsmall case proves the pattern, the large case merely repeats it.</p>\n<p>One caution as datasets grow: a structure choice made casually at three records\nbecomes architecture at thirty thousand. The list-of-dicts shape scales gracefully\nbecause every operation this course teaches — loops, comprehensions, filters,\nsummaries — walks it unchanged; ad-hoc shapes (nested lists of mixed meaning, parallel\nlists) accumulate special cases until the script is mostly exceptions. Choose the boring,\nregular shape early and the analysis lessons ahead inherit clean footing.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Loops and accumulators</b> (Lesson 3) — now walking real collections.</li>\n<li><b>Type conversion at borders</b> (Lesson 2) — float() on every numeric field.</li>\n<li><b>Functions</b> (Lesson 4) — file-readers and summarizers with names.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>List</td><td>\\( \\texttt{[2.1, 4.5, 3.2]} \\)</td><td>Ordered, growable sequences of measurements.</td></tr>\n<tr><td>Zero-based index</td><td>\\( \\texttt{a[0]} \\) first, \\( \\texttt{a[-1]} \\) last</td><td>The counting convention behind every off-by-one.</td></tr>\n<tr><td>Slice</td><td>\\( \\texttt{a[1:3]} \\) — stop excluded</td><td>Subranges; start included, stop excluded, like range.</td></tr>\n<tr><td>Comprehension</td><td>\\( \\texttt{[f(x) for x in xs]} \\)</td><td>The transform loop as a readable phrase.</td></tr>\n<tr><td>Dictionary</td><td>\\( \\texttt{\\{\"tag\": \"P-101\"\\}} \\)</td><td>Named fields, looked up by key — the record.</td></tr>\n<tr><td>List of dicts</td><td>one dict per record</td><td>The fleet shape; what CSVs become in memory.</td></tr>\n<tr><td>CSV reading</td><td>\\( \\texttt{split(\",\")} \\) + \\( \\texttt{float()} \\)</td><td>Line → fields → numbers, converted at the border.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The route list, operated</b></p>\n<p><b>Problem.</b> Trace: start with <code>readings = [2.1, 4.5, 3.2]</code>; append 5.0; report the last element, the maximum, and the length.</p>",
+    "solution": "<p><b>Solution.</b> (1) After <code>readings.append(5.0)</code>: <code>[2.1, 4.5, 3.2, 5.0]</code>.\n(2) <code>readings[-1]</code> → 5.0 (the newest); <code>max(readings)</code> → 5.0; <code>len(readings)</code> → 4.</p>\n<p><b>Answer:</b> 5.0, 5.0, 4.\n<b>Sanity check:</b> the newest reading happening to BE the maximum is the vibration-route bad news pattern — and <code>readings[-1] == max(readings)</code> is exactly the one-line trend alarm a later script will build from these three idioms. Small operations, real diagnostics.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>An equipment record that grows</b></p>\n<p><b>Problem.</b> Build the record <code>pump = {\"tag\": \"P-101\", \"power_kw\": 11.5}</code>; add a field <code>\"status\": \"running\"</code>; read the power; and show the fleet shape for two pumps.</p>",
+    "solution": "<p><b>Solution.</b> (1) Add: <code>pump[\"status\"] = \"running\"</code> — dicts grow by assignment.\n(2) Read: <code>pump[\"power_kw\"]</code> → 11.5.\n(3) Fleet: <code>fleet = [{\"tag\": \"P-101\", \"power_kw\": 11.5}, {\"tag\": \"P-102\", \"power_kw\": 7.5}]</code> — a list of dicts, iterated as <code>for pump in fleet:</code>.</p>\n<p><b>Answer:</b> field added, 11.5 read, fleet as list-of-dicts.\n<b>Sanity check:</b> the alternative — parallel lists of tags and powers — breaks the moment one list is sorted or filtered without the other; the record keeps each pump's facts fused. This shape IS the maintenance database row, and recognizing it is the lesson.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading the export</b></p>\n<p><b>Problem.</b> A file contains two lines: <code>P-101,11.5</code> and <code>P-102,7.5</code>. Script the total power and trace it.</p>",
+    "solution": "<p><b>Solution.</b> (1) <code>total = 0.0</code>\n<code>with open(\"pumps.csv\") as f:</code>\n<code>    for line in f:</code>\n<code>        fields = line.split(\",\")</code>\n<code>        total += float(fields[1])</code>\n(2) Trace: 0.0 + 11.5 = 11.5; 11.5 + 7.5 = 19.0.</p>\n<p><b>Answer:</b> 19.0 kW total.\n<b>Sanity check:</b> every piece is a prior lesson — the with-open border, the split into fields, the float() conversion (without which <code>+=</code> would crash on a string), the accumulator. File processing is not a new skill; it is the old skills fed by a file, which is why the course built them first.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For <code>a = [10, 20, 30, 40]</code>, the value of <code>a[1]</code> is:</p>",
+    "choices": [
+     "20",
+     "10",
+     "30",
+     "An error"
+    ],
+    "answer": 0,
+    "solution": "<p>Zero-based indexing: a[0] is 10, so a[1] is 20 — the SECOND item. The 1-counting instinct from everyday life is the source of most beginner index errors, and range(n)'s 0-to-n−1 convention (Lesson 3) was designed to match this exactly: <code>a[i] for i in range(len(a))</code> touches every element with no off-by-one anywhere.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The idiomatic way to read the LAST element of list <code>a</code> is:</p>",
+    "choices": [
+     "<code>a[-1]</code>",
+     "<code>a[len(a)]</code>",
+     "<code>a[end]</code>",
+     "<code>a.last()</code>"
+    ],
+    "answer": 0,
+    "solution": "<p>Negative indices count from the end: a[-1] is the last, a[-2] the one before. <code>a[len(a)]</code> is one PAST the end — an IndexError, and the classic fencepost slip (the valid last index is len(a)−1). The other forms belong to other languages. For time-ordered data, a[-1] is 'the latest reading' — an idiom used daily.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>[x * 2 for x in [1, 2, 3]]</code> evaluates to:</p>",
+    "choices": [
+     "[2, 4, 6]",
+     "[1, 2, 3, 1, 2, 3]",
+     "[1, 4, 9]",
+     "12"
+    ],
+    "answer": 0,
+    "solution": "<p>The comprehension applies the expression to each element: doubles, collected in order. Repetition ([1,2,3,1,2,3]) is what <code>[1,2,3] * 2</code> does — the list-level operator, a different animal; squares would need <code>x ** 2</code>. Comprehensions are the transform loop compressed to a readable phrase, and they appear in nearly every data script from here on.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Field values pulled from a CSV line by <code>split(\",\")</code> arrive as:</p>",
+    "choices": [
+     "Strings — numeric fields need float() before arithmetic",
+     "Numbers, automatically",
+     "Floats if they contain a decimal point",
+     "Whatever type the file declares"
+    ],
+    "answer": 0,
+    "solution": "<p>Files are text; split returns strings, whatever they resemble — and <code>\"11.5\" + \"7.5\"</code> concatenates to \"11.57.5\" rather than adding. CSV declares no types; nothing converts automatically. The border-conversion rule of Lesson 2 exists precisely for this moment: float() each numeric field at the read, and the interior of the script stays safely numeric.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Tracking pump tags in one list and their powers in a parallel list becomes fragile because:</p>",
+    "choices": [
+     "Sorting or filtering one list without the other silently misaligns every record",
+     "Lists cannot hold strings and floats",
+     "It uses too much memory",
+     "Dictionaries are faster"
+    ],
+    "answer": 0,
+    "solution": "<p>Parallel lists are coupled by nothing but hope: one sort, one filter, one insertion applied to only one of them, and every tag points at the wrong power — silently. The list-of-dicts shape fuses each record's fields so they travel together through any operation. Memory and speed are irrelevant at this scale; integrity is the argument, and it is decisive.</p>"
+   }
+  ]
+ },
+ "7": {
+  "lecture": "\n<h3>§1 · The array idea: operate on all of it</h3>\n<p>Lists process element by element through loops; numerical arrays (NumPy's\n<code>ndarray</code>) operate on whole datasets at once: <code>kw = hp * 0.746</code>\nconverts every horsepower value in one expression — vectorization. The gains are two:\nthe code READS as the mathematics (one formula, visibly applied to everything), and it\nruns orders of magnitude faster, because the looping happens in optimized machinery\nbelow. For engineering data — a year of hourly readings is 8,760 numbers, a vibration\nwaveform 65,536 — the array is the natural container, and the loop becomes the\nexception rather than the habit.</p>\n<h3>§2 · The reductions: from many numbers to a few</h3>\n<p>Analysis usually ends in reductions: <code>mean</code>, <code>std</code>,\n<code>min/max</code>, <code>sum</code> — the descriptive statistics of a dataset in one\ncall each. The standard deviation deserves engineering respect: it is the honest width of\nthe scatter, the number that turns \"about 4.25\" into \"4.25 ± 0.30\", and the seed of\nevery control chart the metrology course will draw. Alongside them, <code>argmax</code>\nanswers WHERE — the index of the worst reading — which is often the more actionable\nquestion: not \"how bad\" but \"which machine\".</p>\n<h3>§3 · Masks: asking questions of data</h3>\n<p>Comparison on an array yields an array of booleans — a mask — and the mask selects:\n<code>readings[readings &gt; 4.0]</code> is every reading above the alarm line, in one\nexpression: no loop, no if, no accumulator. Count them with <code>sum</code> of the mask,\naverage them, or feed them onward. The idiom — condition, mask, selection — is the\ndata-analysis sentence structure, and it compounds: masks combine with\n\\( \\texttt{\\&} \\) and \\( \\texttt{|} \\) into compound questions (\"above alarm AND\nafter the overhaul\") that still read as one line.</p>\n<h3>§4 · The vectorized working method</h3>\n<p>Reach for the array whenever data is homogeneous and numeric; keep lists for mixed\nrecords. Write transformations as whole-array expressions and CHECK them on a three-value\narray first — vectorized code is compact enough that a wrong formula corrupts everything\nuniformly, so the small trace matters doubly. Prefer the built-in reductions to\nhand-rolled loops (they are tested code, and faster), and when a reduction's answer\nsurprises, look at the mask counts before doubting the data: how many values, how many\nabove threshold, how many NaN — the three questions that catch most data-quality issues\nat the door. Then the discipline that spans every lesson: units ride the variable names\n(<code>vel_mm_s</code>), conversions happen once, visibly, at the border, and any result\nconsumed downstream gets an assertion pinning a known case. Arrays change the scale of\nwhat one line does; they change nothing about what makes the line trustworthy.</p>\n<p>The payoff arrives immediately in the lessons ahead: plotting consumes arrays whole,\ncurve fitting reduces them to parameters, and simulations generate them by the thousand.\nVectorized thinking — state the operation once, apply it to everything, summarize with a\nreduction — is also precisely how plant historians and analysis platforms work\ninternally, so fluency here reads directly onto the tools the later automation courses\nwill operate.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Lists and loops</b> (Lessons 3, 6) — arrays replace the transform loop.</li>\n<li><b>Statistics vocabulary</b> — mean and standard deviation as scatter's width.</li>\n<li><b>Assertions</b> (Lesson 5) — vectorized code gets pinned like any other.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Array (ndarray)</td><td>homogeneous numeric block</td><td>The natural container for measurements at scale.</td></tr>\n<tr><td>Vectorization</td><td>\\( \\texttt{kw = hp * 0.746} \\)</td><td>One expression, every element; reads as the mathematics.</td></tr>\n<tr><td>Reductions</td><td>\\( \\texttt{mean, std, min, max, sum} \\)</td><td>Whole datasets to summary numbers, one call each.</td></tr>\n<tr><td>Standard deviation</td><td>scatter's honest width</td><td>The ± that belongs beside every reported mean.</td></tr>\n<tr><td>argmax / argmin</td><td>index of the extreme</td><td>WHICH machine, not just how bad.</td></tr>\n<tr><td>Mask</td><td>\\( \\texttt{a[a > 4.0]} \\)</td><td>Condition → boolean array → selection, in one line.</td></tr>\n<tr><td>Compound masks</td><td>\\( \\texttt{(a>4) \\& (t>t0)} \\)</td><td>Multi-condition questions that still read as sentences.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Fleet conversion in one line</b></p>\n<p><b>Problem.</b> Motor ratings arrive in horsepower: <code>[10, 25, 50]</code>. Convert the whole set to kW (1 hp = 0.746 kW) vectorized, and state the result.</p>",
+    "solution": "<p><b>Solution.</b> (1) <code>hp = np.array([10, 25, 50])</code>; <code>kw = hp * 0.746</code>.\n(2) Result: <code>[7.46, 18.65, 37.3]</code> — every element converted by the one expression.</p>\n<p><b>Answer:</b> [7.46, 18.65, 37.3] kW.\n<b>Sanity check:</b> the same operation on a plain LIST — <code>[10,25,50] * 0.746</code> — is an error, and <code>* 3</code> would have REPEATED the list: the array's element-wise arithmetic is a genuinely different contract, and knowing which container you hold decides what * means.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Mean and scatter of a survey</b></p>\n<p><b>Problem.</b> Four bearing-temperature readings: 4.1, 3.9, 4.3, 4.7 (°C above ambient). <b>Find:</b> the mean and the (population) standard deviation, and report them together.</p>",
+    "solution": "<p><b>Solution.</b> (1) Mean: \\( (4.1+3.9+4.3+4.7)/4 = 4.25 \\).\n(2) Deviations: −0.15, −0.35, 0.05, 0.45; squares sum to 0.35; variance \\( 0.35/4 = 0.0875 \\).\n(3) \\( \\sigma = \\sqrt{0.0875} = 0.30 \\). Report: \\( 4.25 \\pm 0.30 \\) °C.</p>\n<p><b>Answer:</b> mean 4.25, σ ≈ 0.30 — \"4.25 ± 0.30 °C\".\n<b>Sanity check:</b> σ has the data's own units and sits comfortably inside the observed spread (range 0.8) — a σ larger than the range would announce an arithmetic slip. The ± habit turns every reported mean into an honest claim, and the metrology course will build control charts on exactly this number.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The alarm-line question</b></p>\n<p><b>Problem.</b> Vibration readings <code>[3.2, 5.1, 2.8, 6.0]</code> mm/s; the alert line is 4.0. Using a mask, find how many readings exceed it and their average.</p>",
+    "solution": "<p><b>Solution.</b> (1) Mask: <code>v &gt; 4.0</code> → <code>[False, True, False, True]</code>.\n(2) Count: 2. Selection: <code>v[v &gt; 4.0]</code> → <code>[5.1, 6.0]</code>.\n(3) Mean of offenders: \\( (5.1+6.0)/2 = 5.55\\ \\mathrm{mm/s} \\).</p>\n<p><b>Answer:</b> 2 readings above the line, averaging 5.55 mm/s.\n<b>Sanity check:</b> condition → mask → selection replaced a four-line loop-with-if, and reads as the question itself. Scale it to a year of route data and the same one-liner is a fleet exception report — the entire reason the mask idiom is worth owning.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>np.array([1, 2, 3]) * 2</code> evaluates to:</p>",
+    "choices": [
+     "array([2, 4, 6])",
+     "[1, 2, 3, 1, 2, 3]",
+     "An error",
+     "array([1, 2, 3, 2])"
+    ],
+    "answer": 0,
+    "solution": "<p>Arrays do element-wise arithmetic: every value doubles. The repetition answer is what a plain LIST does with * 2 — the container decides the contract, and this pair of behaviors side by side is the cleanest illustration of why. Knowing which type you hold (Lesson 2's discipline, scaled up) is what makes the one-character operator safe.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>argmax</code> returns:</p>",
+    "choices": [
+     "The INDEX of the largest value",
+     "The largest value",
+     "All values above average",
+     "The last value"
+    ],
+    "answer": 0,
+    "solution": "<p>max answers 'how bad'; argmax answers 'WHERE' — the position, which maps to a machine, a timestamp, a route point. In maintenance data the location is usually the actionable half: <code>tags[np.argmax(vibration)]</code> names the machine to visit. The pairing of a value-question with its index-question runs through all of applied data work.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The standard deviation of a set of readings tells you:</p>",
+    "choices": [
+     "The typical spread of readings around their mean, in the data's own units",
+     "The largest error",
+     "Whether the mean is correct",
+     "The instrument's accuracy"
+    ],
+    "answer": 0,
+    "solution": "<p>σ is scatter's width — the honest ± beside the mean. It bounds nothing absolutely (readings beyond σ are routine — most data holds ~1/3 of it there), says nothing about BIAS (a precisely wrong instrument scatters tightly around the wrong value), and instrument accuracy is a calibration question. Reporting mean ± σ claims exactly what the data supports, no more.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A vectorized formula applied to 30,000 readings should first be checked by:</p>",
+    "choices": [
+     "Running it on a tiny array with a hand-computable answer",
+     "Running it twice on the full data",
+     "Checking that no error is raised",
+     "Trusting NumPy"
+    ],
+    "answer": 0,
+    "solution": "<p>Vectorization's power is uniform application — which means a wrong formula corrupts all 30,000 values uniformly and plausibly. The three-value trace with a known answer pins the formula; then scale merely repeats proven arithmetic. Re-running identical wrongness reproduces it identically; absence of errors proves syntax, not sense — the recurring theme every verification lesson has hammered.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For <code>a = np.array([10, 20, 30, 40])</code>, the slice <code>a[1:3]</code> is:</p>",
+    "choices": [
+     "array([20, 30])",
+     "array([20, 30, 40])",
+     "array([10, 20, 30])",
+     "array([30])"
+    ],
+    "answer": 0,
+    "solution": "<p>Same convention as lists and range: start included, stop excluded — indices 1 and 2, values 20 and 30. The consistency across list, range, and array slicing is deliberate: one fencepost rule serves the whole language, and internalizing 'stop is excluded' once retires the off-by-one everywhere at once.</p>"
+   }
+  ]
+ },
+ "8": {
+  "lecture": "\n<h3>§1 · The plot is an argument</h3>\n<p>An engineering plot exists to support a decision, and its anatomy is the argument's\ngrammar: axes labeled WITH UNITS (an unlabeled axis is a number with no meaning — the\nchart version of the unit sins every course here prosecutes), a title that states what is\nshown, and a legend when more than one series appears. The choice of plot type is the\nchoice of claim: a LINE plot claims continuity — readings ordered in time, trends; a\nSCATTER plot claims only \"these pairs were observed\" — right for correlation questions\nand unordered data; a BAR chart compares discrete categories — machines, months, failure\nmodes. Choosing a line where a scatter belongs invents continuity the data never\npromised; the plot type is the first honesty decision.</p>\n<h3>§2 · Scales that reveal</h3>\n<p>Linear axes hide what logarithmic axes reveal. Exponential decay — the cooling curves\nand filter-loading trends of the mathematics course — plots as a curve on linear axes but\nas a STRAIGHT LINE on a semilog (log-y) plot, whose slope reads the time constant:\nplotting \\( \\ln(T - T_\\infty) \\) against t was exactly this move, done by hand. Data\nspanning decades of magnitude — vibration spectra, particle counts — needs log scales\nsimply to be seen: on a linear axis, the small values flatten into the floor. The\nworking question before every plot: does this data live on one scale, or several?</p>\n<h3>§3 · Sampling honesty</h3>\n<p>Plotted data was SAMPLED, and sampling has physics. A signal changing faster than half\nthe sampling rate does not disappear — it ALIASES, reappearing as a false slow signal:\na 50 Hz vibration sampled at 60 Hz shows up as a phantom 10 Hz wobble\n(\\( |50 - 60| \\)). The instrumentation course will formalize Nyquist; the plotting\nlesson's version is the caution: before trusting a surprising slow oscillation in\nsampled data, ask what the sampling rate was. Equally, decimating data for plotting speed\n(every tenth point) is legitimate — STATED; silently, it is how spikes vanish from\ntrend reviews.</p>\n<h3>§4 · The plotting working method</h3>\n<p>Build every plot in the same order. State the question the plot must answer; choose\nthe type by the claim (trend → line, correlation → scatter, comparison → bar); choose\nscales by the data's structure (exponential suspicion → semilog; decades of range →\nlog); label axes with quantities AND units; then read the plot yourself before showing\nanyone — does it actually answer the question, and would a skeptic's eye find the axis\ntricks (truncated baselines, cherry-picked windows) that make weak cases look strong?\nThe mathematics course called the plot the test of first-order behavior; this lesson\ngeneralizes: the plot is where data confesses its structure, provided the plotter asks\nhonestly. A figure that survives your own skepticism is ready for the morning\nmeeting — and a figure that decided a question honestly is worth saving beside the script\nand data that produced it, completing the audit trail this course keeps building.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Arrays</b> (Lesson 7) — plots consume them directly.</li>\n<li><b>Semilog reasoning</b> (Math I) — the straightening trick, now automated.</li>\n<li><b>Honest reporting</b> (Lesson 2) — precision and units at the interface.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Line plot</td><td>claims continuity/order</td><td>Time series and trends — data with a meaningful order.</td></tr>\n<tr><td>Scatter plot</td><td>claims only observed pairs</td><td>Correlation questions; unordered measurements.</td></tr>\n<tr><td>Bar chart</td><td>discrete categories</td><td>Machines, months, failure modes — comparisons.</td></tr>\n<tr><td>Axis labels</td><td>quantity AND unit, always</td><td>An unlabeled axis is a meaningless number, plotted.</td></tr>\n<tr><td>Semilog (log-y)</td><td>exponentials → straight lines</td><td>Slope reads the time constant; the §straightening move.</td></tr>\n<tr><td>Log-log / log scales</td><td>decades made visible</td><td>Spectra and counts spanning orders of magnitude.</td></tr>\n<tr><td>Aliasing</td><td>\\( f_{alias} = |f - f_s| \\) (first order)</td><td>Fast signals masquerading as slow ones in sampled data.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing the revealing scale</b></p>\n<p><b>Problem.</b> A casting's cooling data (temperature above ambient vs time) must be tested for first-order behavior and its time constant read graphically. Specify the plot, and what a straight line there proves.</p>",
+    "solution": "<p><b>Solution.</b> (1) Plot \\( \\ln(T - T_\\infty) \\) against t — equivalently, the temperature EXCESS on a semilog (log-y) axis.\n(2) First-order decay \\( e^{-t/\\tau} \\) becomes a straight line of slope \\( -1/\\tau \\); curvature would refute the single-τ model.\n(3) Read τ as the negative reciprocal of the fitted slope.</p>\n<p><b>Answer:</b> semilog plot of the excess; straightness proves first-order; slope gives \\( \\tau \\).\n<b>Sanity check:</b> this is the mathematics course's semilog method, now one plotting call instead of a hand table — same test, same honesty: the plot decides whether the model applies BEFORE the constant is quoted. Scale choice is model testing, not decoration.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Anatomy of a defensible trend plot</b></p>\n<p><b>Problem.</b> Specify the complete labeling for a plot of a week of bearing-vibration readings taken every 4 hours — and the plot type, with justification.</p>",
+    "solution": "<p><b>Solution.</b> (1) Type: LINE plot — the readings are time-ordered, and the claim is a trend.\n(2) X-axis: \"Time (h since Monday 00:00)\" — quantity and unit; y-axis: \"Vibration velocity (mm/s RMS)\".\n(3) Title naming machine and bearing; if a second bearing shares the axes, a legend naming each series.</p>\n<p><b>Answer:</b> labeled line plot, units on both axes, titled and legended.\n<b>Sanity check:</b> strip any one element and a real failure mode appears: no units → is that mm/s or in/s?; no title → whose bearing?; scatter instead of line → the trend claim dissolves into dots. The labeling checklist is cheap; the meeting where a mislabeled chart decided wrongly is not.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The phantom wobble</b></p>\n<p><b>Problem.</b> A 50 Hz vibration is logged by a system sampling at 60 Hz. <b>Find:</b> the frequency that appears in the data, and state the general caution.</p>",
+    "solution": "<p><b>Solution.</b> (1) The sampling can only represent signals up to 30 Hz (half of 60).\n(2) The 50 Hz signal aliases to \\( |50 - 60| = 10\\ \\mathrm{Hz} \\) — a slow, entirely fictitious wobble.\n(3) Caution: any surprising slow oscillation in sampled data demands the question \"what was the sampling rate?\" before any diagnosis.</p>\n<p><b>Answer:</b> a phantom 10 Hz signal.\n<b>Sanity check:</b> the alias is not noise — it is a clean, convincing, WRONG signal, which is what makes it dangerous. The instrumentation course formalizes the Nyquist limit; the plotting lesson's duty is the reflex: sampling rate first, diagnosis second.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Every axis of an engineering plot must carry:</p>",
+    "choices": [
+     "The quantity and its unit",
+     "A logo",
+     "At least ten tick marks",
+     "A trend line"
+    ],
+    "answer": 0,
+    "solution": "<p>An axis labeled 'Value' — or nothing — makes the entire figure unfalsifiable: 4.5 of WHAT? The quantity-plus-unit rule is the plotting form of the unit discipline every course here enforces, and reviewers read axes before they read curves. Ticks and trend lines are choices; labels are obligations.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Exponential decay data appears as a straight line on:</p>",
+    "choices": [
+     "A semilog plot (logarithmic y-axis)",
+     "A linear plot",
+     "A bar chart",
+     "Any plot, if zoomed"
+    ],
+    "answer": 0,
+    "solution": "<p>Taking the log of \\( Ae^{-t/\\tau} \\) gives a line in t with slope \\( -1/\\tau \\) — the semilog axis does the logarithm visually. Zooming a linear plot never straightens a curve; it magnifies it. The straightening test is diagnostic, not cosmetic: straight ⇒ first-order applies; curved ⇒ the model (not the plot) needs revisiting — the mathematics course's rule, automated.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>To show whether bearing temperature correlates with load across 200 unordered spot readings, the right plot is:</p>",
+    "choices": [
+     "A scatter plot of temperature against load",
+     "A line plot in reading order",
+     "A bar chart per reading",
+     "A pie chart"
+    ],
+    "answer": 0,
+    "solution": "<p>The question is pairwise association: temperature VERSUS load, each reading one dot — structure (or its absence) appears as a cloud's shape. A line through unordered readings draws meaningless connections; 200 bars is unreadable; pie charts answer share-of-whole questions only. Type follows question — the first choice of the working method.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Plotting only every 10th point of a dense trend for speed is acceptable when:</p>",
+    "choices": [
+     "The decimation is stated — silently, it can hide spikes",
+     "Always — plots are illustrative",
+     "Never",
+     "Only for bar charts"
+    ],
+    "answer": 0,
+    "solution": "<p>Decimation is a legitimate rendering economy with a failure mode: a one-sample spike — the very event a review hunts — can fall between kept points and vanish. Stated (\"plotted at 1/10 resolution; extrema verified separately\"), the reader knows the contract; silent, the plot testifies to smoothness it never checked. Honesty here is disclosure, as everywhere.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A bar chart comparing monthly downtime hours should generally have its y-axis:</p>",
+    "choices": [
+     "Starting at zero, so bar heights compare honestly",
+     "Starting just below the smallest value, to show detail",
+     "Logarithmic, always",
+     "Unlabeled, to reduce clutter"
+    ],
+    "answer": 0,
+    "solution": "<p>Bar charts encode value as LENGTH, and lengths compare honestly only from a common zero — a truncated baseline turns a 5% difference into a visual 3:1 ratio, the oldest chart trick in the persuasion business. (Line plots may zoom, with axes labeled, since they encode position, not length.) The skeptic's-eye pass of the working method looks for exactly this.</p>"
+   }
+  ]
  }
 }

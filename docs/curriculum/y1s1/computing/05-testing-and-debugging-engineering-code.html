@@ -54,7 +54,7 @@
     <h1>Testing and debugging engineering code</h1>
     <p class="sub">Assertions and test cases that pin a calculation to a hand-checked answer before it is trusted at scale. Exceptions and guard clauses for bad inputs; unit sanity checks as an executable habit. Debugging as hypothesis testing, not stare-and-hope.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/5">Mark as complete</button>
@@ -67,23 +67,88 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does an assertion buy you that a printed answer doesn't?</li><li>Why should a calculation function be tested against a hand-checked case before scale use?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>CMP 106 · Engineering Computing</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does an assertion buy you that a printed answer doesn't?</li><li>Why should a calculation function be tested against a hand-checked case before scale use?</li></ul></div><div class="measure">
+<h3>01 · Why engineers test code</h3>
+<p>This platform machine-verifies every numeric answer before publishing it; this lesson
+hands you the same discipline for your own scripts. A test is a claim made executable:
+run the function on a case whose answer you know, and let the computer confirm agreement —
+today, tomorrow, and after every future edit. Untested code decays silently: an innocent
+change to one line shifts a result three functions away, and without tests nobody notices
+until the wrong number is in a report. With tests, the same mistake fails loudly in
+seconds, at your desk, before it costs anything.</p>
+<h3>02 · The assertion: a claim with teeth</h3>
+<p>The core tool is one statement: <code>assert condition, "message"</code> — silent when
+the condition holds, a named failure when it breaks. For engineering functions the pattern
+is the tolerance form from Lesson 2:
+<code>assert abs(area_m2(0.1) - 0.007854) &lt; 1e-6</code> — the hand-checked case
+(a 100 mm circle's \( \pi d^2/4 \)) pinned beside the function it certifies. Three or
+four assertions per function — a typical case, an edge (zero, the domain boundary), and a
+case exercising each branch — form a small permanent test suite that reruns in
+milliseconds. The habit converts "I checked it once when I wrote it" into "it is
+checked on every run", which is the difference between a memory and a guarantee.</p>
+<h3>03 · Exceptions and honest failure</h3>
+<p>Guard clauses (Lesson 3) raise exceptions at broken assumptions; testing meets them
+from the other side. A function fed garbage should fail LOUDLY — <code>ValueError</code>
+with a message naming the violated assumption — never return a plausible wrong number.
+Debugging itself is hypothesis testing, the scientific method at a keyboard: reproduce the
+failure with the smallest possible input, form a hypothesis about the earliest wrong
+value, place a print or assertion just before the suspect line, and bisect until the bug
+has nowhere to hide. Staring is not a method; bisection is.</p>
+<h3>04 · The verification working method</h3>
+<p>Adopt the platform's own pipeline at personal scale. Write the function; write its
+hand-checked case as an assertion immediately — while the paper calculation is still on
+the desk; add the edge-case and branch assertions; keep the whole block at the bottom of
+the file or in a test script, and run it after EVERY change. When a bug surfaces in use,
+its fix begins by writing the failing case as a new assertion — so the same bug can never
+return unannounced. And respect the honest limit: tests prove the presence of agreement
+with your checked cases, not the absence of all error — which is precisely why the cases
+are chosen with engineering judgment: the typical, the extreme, and the branch nobody
+believes will ever run. That judgment is the engineering; the assertions merely keep it
+enforced. A dozen well-chosen assertions guarding a personal library of checked functions
+is a small thing to maintain and a large thing to own: it is the difference between code
+you wrote and code you can vouch for.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What does an assertion buy you that a printed answer doesn't?</li><li>Why should a calculation function be tested against a hand-checked case before scale use?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Functions</b> (Lesson 4) — the unit under test.</li>
+<li><b>Tolerance comparison</b> (Lesson 2) — the float-safe assertion form.</li>
+<li><b>Guard clauses</b> (Lesson 3) — loud failure at broken assumptions.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>assert</td><td>\( \texttt{assert cond, "msg"} \)</td><td>A claim with teeth: silent if true, named failure if not.</td></tr>
+<tr><td>Tolerance assertion</td><td>\( \texttt{assert abs(f(x)-known) < tol} \)</td><td>The float-safe test against a hand-checked case.</td></tr>
+<tr><td>Edge case</td><td>zero, boundary, empty</td><td>Where functions break first; always among the test cases.</td></tr>
+<tr><td>ValueError</td><td>\( \texttt{raise ValueError(...)} \)</td><td>Refusing garbage loudly instead of returning plausible nonsense.</td></tr>
+<tr><td>Regression test</td><td>yesterday's bug as today's assertion</td><td>Fixed bugs stay fixed, by construction.</td></tr>
+<tr><td>Bisection debugging</td><td>halve the search each probe</td><td>Locating the earliest wrong value systematically.</td></tr>
+<tr><td>Test-first habit</td><td>assertion written with the function</td><td>While the hand-checked case is still on the desk.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Pin the area function</b></p>
+<p><b>Problem.</b> Given <code>def area_m2(d_m): return 3.14159 * d_m**2 / 4</code>, write the tolerance assertion pinning it to the hand-checked case d = 0.1 m, and state whether it passes.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Hand check: \( A = \pi d^2/4 = \pi \times 0.01/4 = 0.007854\ \mathrm{m^2} \).
+(2) Assertion: <code>assert abs(area_m2(0.1) - 0.007854) &lt; 1e-6</code>.
+(3) The function's 5-digit π gives 0.0078540 — inside tolerance: PASSES.</p>
+<p><b>Answer:</b> the assertion passes; the function is pinned.
+<b>Sanity check:</b> the tolerance \( 10^{-6} \) was chosen to admit the 5-digit π but reject real errors — a factor-of-4 slip or a missing square lands orders of magnitude away. Tolerances are engineering judgments: tight enough to catch bugs, loose enough to ignore roundoff.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Find the bug by its units</b></p>
+<p><b>Problem.</b> This function claims to return lifting power in watts, but its test fails. Locate the bug and fix it:</p>
+<pre><code>def lift_power_w(mass_kg, height_m, time_s):
+    """Average power to lift mass through height in given time."""
+    return mass_kg * 9.81 * height_m
+
+assert abs(lift_power_w(400, 12, 60) - 784.8) < 0.1</code></pre></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The return line computes \( mgh \) — ENERGY (47,088 J), never dividing by time: the units are joules, not watts.
+(2) Fix: <code>return mass_kg * 9.81 * height_m / time_s</code>.
+(3) Check: \( 400 \times 9.81 \times 12/60 = 784.8\ \mathrm{W} \) — the assertion passes.</p>
+<p><b>Answer:</b> missing <code>/ time_s</code>; corrected, the test passes.
+<b>Sanity check:</b> the physics course's energy-versus-power distinction caught a software bug — the failing assertion pointed at it, and the unit audit named it. This is the standard rhythm: the test detects, the engineering diagnoses.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Guard, then prove the guard</b></p>
+<p><b>Problem.</b> Extend <code>shaft_power</code> with a guard against non-positive efficiency, and write the test that PROVES the guard fires.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Guard: <code>if eta &lt;= 0: raise ValueError("eta must be positive")</code> as the function's first line.
+(2) Proving it: <code>try:</code> call with <code>eta=0</code>; if no exception arrives, <code>assert False, "guard did not fire"</code>; in the <code>except ValueError:</code> branch, pass.
+(3) Now BOTH behaviors are pinned: right answers for good input, loud refusal for bad.</p>
+<p><b>Answer:</b> guard + try/except test, both permanent.
+<b>Sanity check:</b> testing that failure HAPPENS feels odd once — then obvious: the guard is a promised behavior like any other, and an accidental deletion of it should fail the suite. Safety systems are tested by attempting what they must prevent; code guards earn the same respect.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>An assertion beside a function buys you, above a one-time manual check:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Automatic re-verification on every future run and edit</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Faster execution</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Protection against all possible bugs</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Shorter code</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The manual check evaporates the moment it scrolls off screen; the assertion re-executes it forever — especially after edits, when yesterday's correctness is most quietly at risk. Tests never prove the absence of all error (the cases are finite), and they cost lines and microseconds — a spectacular exchange rate for the guarantee they do provide.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The most valuable additional test cases for <code>flow_velocity(q, d)</code> beyond the typical case are:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Edge cases — zero flow, and the smallest/largest realistic diameter</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>More typical cases with similar numbers</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Random numbers</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>No more are needed</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Functions break at their edges: zero triggers divisions and log domains, extremes expose unit and overflow assumptions. Five similar mid-range cases re-test the same path five times; edges test the paths that fail in production at 3 a.m. Random inputs without known answers verify nothing — a test needs an expected value to compare against.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Fed an impossible input, a professional calculation function should:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Raise a named exception explaining the violated assumption</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Return 0</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Return its best guess</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Print a warning and continue</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>A returned 0 or guess is a plausible number that travels — into comparisons, reports, decisions — with nothing marking it poisoned. The exception stops the pipeline at the exact border where the assumption broke, with a message naming it. Printed warnings scroll past unread in any automated run. Loud early failure is cheap; quiet wrong numbers compound.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>The systematic way to locate a bug in a 40-line calculation is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Check intermediate values at the midpoint and bisect toward the earliest wrong one</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Reread the whole script repeatedly</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Rewrite it from scratch</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Add try/except around everything</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Bisection: probe the middle — if values are right there, the bug is downstream; wrong, upstream. Each probe halves the search; 40 lines fall in ~6 probes. Rereading finds what you expect to see (which is how the bug survived writing); rewriting risks a new bug and loses the lesson; blanket try/except SILENCES failures — the opposite of locating them.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>After fixing a bug, the professional final step is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Add the failing case as a permanent assertion</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Delete the evidence</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Comment out the old code</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Nothing — it's fixed</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The regression test: the input that exposed the bug becomes a permanent claim, so the same failure can never return unannounced — including via some future 'improvement' that reintroduces it. Commented-out code is noise that rots; 'it's fixed' is true only until the next edit. Suites grow by exactly this route: every scar becomes armor.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>
