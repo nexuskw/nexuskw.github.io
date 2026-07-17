@@ -9,22 +9,25 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=958016f0cd">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
 </head>
 <body>
-<header class="nx-head">
-  <button id="langBtn" class="lang-btn" type="button">العربية</button>
-  <a href="../../../index.html"><img class="nx-logo" src="../../../assets/nx/logo.svg"
-     alt="Nexus Institute of Technology — planetary-gear emblem"></a>
-  <h1><a href="../../../index.html"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</a></h1>
-  <div class="lang-ar" style="font-size:15px;font-weight:700;margin-top:4px">معهد نيكسس للتكنولوجيا</div>
-  <nav class="topnav" aria-label="Site">
-    <a href="../../../index.html" data-ar="الرسالة">Mission</a><span class="pipe"> | </span>
-    <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a><span class="pipe"> | </span>
-    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
-  </nav>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
+      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
+      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  </div>
 </header>
-<div class="sidemenu" id="sideMenu"><button type="button" data-ar="الأقسام">Sections</button><div class="panel"><p data-ar="الأقسام">Sections</p><a href="index.html" data-ar="كل الدروس">All lessons · ELE 156</a><a href="01-charge-current-voltage-and-power.html" class="sub">01 · Charge, current, voltage, and power</a><a href="02-dc-circuit-analysis.html" class="sub">02 · DC circuit analysis</a><a href="03-capacitance-and-inductance.html" class="sub">03 · Capacitance and inductance</a><a href="04-ac-fundamentals-and-phasors.html" class="sub">04 · AC fundamentals and phasors</a><a href="05-ac-power-and-power-factor.html" class="sub">05 · AC power and power factor</a><a href="06-three-phase-systems.html" class="sub">06 · Three-phase systems</a><a href="07-transformers.html" class="sub">07 · Transformers</a><a href="08-the-induction-motor.html" class="sub">08 · The induction motor</a><a href="09-motor-starting-protection-and-vfds.html" class="sub">09 · Motor starting, protection, and VFDs</a><a href="10-electrical-safety-and-measurements.html" class="sub">10 · Electrical safety and measurements</a><a href="../../../curriculum/index.html" data-ar="المنهج">Full curriculum</a></div></div>
+
 <main class="wrap">
 
 <nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
@@ -37,102 +40,118 @@
     <h1>Electrical Fundamentals for Mechanical Engineers</h1>
     <p class="sub">The electrical literacy a plant demands of its mechanical engineers: DC and AC circuits, three-phase power, transformers, and above all the induction motor — starter to nameplate to failure modes.</p>
   </div>
-  <div class="meta"><div>Lessons<b>10</b></div><div>At full depth<b>0 of 10</b></div><div>Core 60<b>—</b></div></div>
+  <div class="metachips"><span class="mchip">10 lessons</span><span class="mchip">0 of 10 at full depth</span></div>
 </div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-charge-current-voltage-and-power.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html" data-ar="المنهج">Full curriculum</a>
+</div>
+<div class="learn"><h3 data-ar="ما الذي ستتعلمه">What you'll learn</h3><div class="learn-grid"><div><span class="ck">✓</span><span>The electrical quantities with water analogies used and then retired.</span></div><div><span class="ck">✓</span><span>Series-parallel reduction, Kirchhoff's laws, and voltage/current dividers.</span></div><div><span class="ck">✓</span><span>Energy storage in fields; V–I relations for C and L.</span></div><div><span class="ck">✓</span><span>Sinusoids, RMS values, and phasor representation.</span></div><div><span class="ck">✓</span><span>Real, reactive, and apparent power; the power triangle.</span></div><div><span class="ck">✓</span><span>Wye and delta connections; line versus phase quantities.</span></div></div></div>
 <section class="part tight">
   <div class="wide">
-    <ul class="plain small"><li>NPTEL: Basic Electrical Technology (nptel.ac.in)</li><li>MIT OCW circuits materials</li></ul>
+    <h3 data-ar="المنهج الدراسي">Syllabus</h3>
     <div class="lessons">
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/1" data-href="01-charge-current-voltage-and-power.html">
+  <span class="tick"></span>
   <div class="no">01</div>
-  <div>
+  <div class="body">
     <h4><a href="01-charge-current-voltage-and-power.html">Charge, current, voltage, and power</a></h4>
     <p class="scope">The electrical quantities with water analogies used and then retired. Ohm's law and power dissipation. Reading a multimeter without folklore.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does power dissipate as I²R, and what does that mean for loose connections?</li><li>What does a multimeter's input impedance protect against?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why does power dissipate as I²R, and what does that mean for loose connections?</li><li>What does a multimeter's input impedance protect against?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/2" data-href="02-dc-circuit-analysis.html">
+  <span class="tick"></span>
   <div class="no">02</div>
-  <div>
+  <div class="body">
     <h4><a href="02-dc-circuit-analysis.html">DC circuit analysis</a></h4>
     <p class="scope">Series-parallel reduction, Kirchhoff's laws, and voltage/current dividers. Practical sources and internal resistance. Battery-fed control circuits as examples.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Two resistors in parallel: why is the result smaller than either?</li><li>What does Kirchhoff's voltage law conserve around a loop?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Two resistors in parallel: why is the result smaller than either?</li><li>What does Kirchhoff's voltage law conserve around a loop?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/3" data-href="03-capacitance-and-inductance.html">
+  <span class="tick"></span>
   <div class="no">03</div>
-  <div>
+  <div class="body">
     <h4><a href="03-capacitance-and-inductance.html">Capacitance and inductance</a></h4>
     <p class="scope">Energy storage in fields; V–I relations for C and L. First-order transients and time constants. Why inductive loads arc switches and need suppression.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does interrupting an inductive circuit draw an arc?</li><li>What does a time constant mean for a motor contactor's coil?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why does interrupting an inductive circuit draw an arc?</li><li>What does a time constant mean for a motor contactor's coil?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/4" data-href="04-ac-fundamentals-and-phasors.html">
+  <span class="tick"></span>
   <div class="no">04</div>
-  <div>
+  <div class="body">
     <h4><a href="04-ac-fundamentals-and-phasors.html">AC fundamentals and phasors</a></h4>
     <p class="scope">Sinusoids, RMS values, and phasor representation. Impedance of R, L, C and series combinations. The 50 Hz world quantified.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is RMS the honest rating for AC quantities?</li><li>What does impedance add to resistance, physically?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why is RMS the honest rating for AC quantities?</li><li>What does impedance add to resistance, physically?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/5" data-href="05-ac-power-and-power-factor.html">
+  <span class="tick"></span>
   <div class="no">05</div>
-  <div>
+  <div class="body">
     <h4><a href="05-ac-power-and-power-factor.html">AC power and power factor</a></h4>
     <p class="scope">Real, reactive, and apparent power; the power triangle. Power factor and why utilities bill for it. Correction capacitors sized in a worked example.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>A plant at power factor 0.7: what is flowing that does no work?</li><li>Size the correction idea: what do capacitors supply locally?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>A plant at power factor 0.7: what is flowing that does no work?</li><li>Size the correction idea: what do capacitors supply locally?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/6" data-href="06-three-phase-systems.html">
+  <span class="tick"></span>
   <div class="no">06</div>
-  <div>
+  <div class="body">
     <h4><a href="06-three-phase-systems.html">Three-phase systems</a></h4>
     <p class="scope">Wye and delta connections; line versus phase quantities. Three-phase power calculation. Why industrial plants are three-phase places.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Line versus phase voltage in a wye system: which ratio connects them?</li><li>Why is three-phase power delivery constant while single-phase pulses?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Line versus phase voltage in a wye system: which ratio connects them?</li><li>Why is three-phase power delivery constant while single-phase pulses?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/7" data-href="07-transformers.html">
+  <span class="tick"></span>
   <div class="no">07</div>
-  <div>
+  <div class="body">
     <h4><a href="07-transformers.html">Transformers</a></h4>
     <p class="scope">Ideal transformer relations and real losses. Nameplate data decoded. Distribution transformers in a plant one-line diagram.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What do the turns do in a transformer, and what stays (nearly) constant?</li><li>Read a transformer nameplate: which two numbers matter first?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What do the turns do in a transformer, and what stays (nearly) constant?</li><li>Read a transformer nameplate: which two numbers matter first?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/8" data-href="08-the-induction-motor.html">
+  <span class="tick"></span>
   <div class="no">08</div>
-  <div>
+  <div class="body">
     <h4><a href="08-the-induction-motor.html">The induction motor</a></h4>
     <p class="scope">Rotating field, slip, and the torque–speed curve. Nameplate literacy: power, current, service factor, insulation class. The machine that drives nearly every pump and fan you will ever maintain.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Define slip, and say why an induction motor cannot run at synchronous speed.</li><li>What does service factor 1.15 actually permit?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Define slip, and say why an induction motor cannot run at synchronous speed.</li><li>What does service factor 1.15 actually permit?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/9" data-href="09-motor-starting-protection-and-vfds.html">
+  <span class="tick"></span>
   <div class="no">09</div>
-  <div>
+  <div class="body">
     <h4><a href="09-motor-starting-protection-and-vfds.html">Motor starting, protection, and VFDs</a></h4>
     <p class="scope">DOL and star-delta starting; overloads and protection classes. Variable-frequency drives in outline: what they do to the torque curve and to bearings. Motor circuit anatomy from MCC to terminal box.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does star-delta starting cut inrush, and what does it cost in torque?</li><li>Name one thing a VFD does to bearings that DOL never did.</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why does star-delta starting cut inrush, and what does it cost in torque?</li><li>Name one thing a VFD does to bearings that DOL never did.</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y1s2/electrical/10" data-href="10-electrical-safety-and-measurements.html">
+  <span class="tick"></span>
   <div class="no">10</div>
-  <div>
+  <div class="body">
     <h4><a href="10-electrical-safety-and-measurements.html">Electrical safety and measurements</a></h4>
     <p class="scope">Shock and arc-flash hazards respected properly; lockout-tagout as a mechanical engineer practices it. Insulation resistance and clamp-meter measurements. The boundary line between mechanical and electrical work scopes.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What makes insulation resistance a trend, not a pass/fail number?</li><li>Where does the mechanical scope end at a motor terminal box — and why?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Basic Electrical Technology</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What makes insulation resistance a trend, not a pass/fail number?</li><li>Where does the mechanical scope end at a motor terminal box — and why?</li></ul></details>
   </div>
 </div></div>
+    <ul class="plain small"><li>NPTEL: Basic Electrical Technology (nptel.ac.in)</li><li>MIT OCW circuits materials</li></ul>
     
   </div>
 </section>
@@ -152,6 +171,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=958016f0cd"></script>
+<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
 </body>
 </html>

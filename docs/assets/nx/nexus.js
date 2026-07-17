@@ -20,6 +20,7 @@
                                         : el.getAttribute('data-en-placeholder'));
     });
     if (btn) btn.textContent = ar ? 'English' : 'العربية';
+    if (typeof renderProgress === 'function') renderProgress();
   }
   var saved = null;
   try { saved = localStorage.getItem(LANG_KEY); } catch (e) {}
@@ -29,6 +30,108 @@
     applyLang(next);
     try { localStorage.setItem(LANG_KEY, next); } catch (e) {}
   });
+
+  /* ---------- completion store (localStorage) ---------- */
+  var DONE_KEY = 'nx-done';
+  function getDone() {
+    try { return JSON.parse(localStorage.getItem(DONE_KEY)) || {}; } catch (e) { return {}; }
+  }
+  function setDone(d) {
+    try { localStorage.setItem(DONE_KEY, JSON.stringify(d)); } catch (e) {}
+  }
+  function isAr() { return document.documentElement.lang === 'ar'; }
+
+  function renderProgress() {
+    var done = getDone();
+
+    // lesson player: outline ticks + progress + complete button
+    var outline = document.getElementById('outline');
+    if (outline) {
+      var links = outline.querySelectorAll('a[data-key]');
+      var n = 0;
+      links.forEach(function (a) {
+        var d = !!done[a.getAttribute('data-key')];
+        a.classList.toggle('done', d);
+        if (d) n++;
+      });
+      var bar = outline.querySelector('.oh .bar i');
+      var ptext = outline.querySelector('.oh .ptext');
+      if (bar) bar.style.width = links.length ? Math.round(100 * n / links.length) + '%' : '0%';
+      if (ptext) ptext.textContent = isAr()
+        ? n + ' من ' + links.length + ' مكتمل'
+        : n + ' of ' + links.length + ' complete';
+    }
+    var btn = document.getElementById('completeBtn');
+    if (btn) {
+      var d = !!done[btn.getAttribute('data-key')];
+      btn.classList.toggle('done', d);
+      btn.textContent = d ? (isAr() ? '✓ مكتمل — إلغاء العلامة' : '✓ Completed — click to undo')
+                          : (isAr() ? 'وضع علامة مكتمل' : 'Mark as complete');
+    }
+
+    // course syllabus ticks + resume button
+    var rows = document.querySelectorAll('.syl[data-key]');
+    if (rows.length) {
+      var firstOpen = null, doneCount = 0;
+      rows.forEach(function (r) {
+        var d = !!done[r.getAttribute('data-key')];
+        r.classList.toggle('done', d);
+        if (d) doneCount++;
+        else if (!firstOpen) firstOpen = r;
+      });
+      var resume = document.getElementById('resumeBtn');
+      if (resume) {
+        var target = firstOpen || rows[0];
+        resume.setAttribute('href', target.getAttribute('data-href'));
+        var no = target.querySelector('.no') ? target.querySelector('.no').textContent : '01';
+        resume.textContent = doneCount === 0
+          ? (isAr() ? 'ابدأ الدرس ' + no : 'Start lesson ' + no)
+          : doneCount === rows.length
+            ? (isAr() ? 'راجع الدرس 01' : 'Review lesson 01')
+            : (isAr() ? 'تابع — الدرس ' + no : 'Resume — lesson ' + no);
+      }
+    }
+
+    // catalog: per-course progress bars
+    document.querySelectorAll('.course-card[data-key]').forEach(function (card) {
+      var key = card.getAttribute('data-key') + '/';
+      var total = parseInt(card.getAttribute('data-n') || '0', 10);
+      var n2 = 0;
+      for (var k in done) if (done[k] && k.indexOf(key) === 0) n2++;
+      var bar2 = card.querySelector('.pbar i');
+      var note = card.querySelector('.pnote');
+      if (bar2) bar2.style.width = total ? Math.round(100 * Math.min(n2, total) / total) + '%' : '0%';
+      if (note) note.textContent = n2
+        ? (isAr() ? n2 + '/' + total + ' مكتمل' : n2 + '/' + total + ' complete')
+        : (isAr() ? 'لم يبدأ بعد' : 'not started');
+    });
+  }
+
+  var cbtn = document.getElementById('completeBtn');
+  if (cbtn) cbtn.addEventListener('click', function () {
+    var d = getDone();
+    var k = cbtn.getAttribute('data-key');
+    if (d[k]) delete d[k]; else d[k] = true;
+    setDone(d);
+    renderProgress();
+  });
+
+  renderProgress();
+
+  /* ---------- catalog semester filter chips ---------- */
+  var chipRow = document.getElementById('semChips');
+  if (chipRow) {
+    chipRow.addEventListener('click', function (e) {
+      var c = e.target.closest('.chip');
+      if (!c) return;
+      chipRow.querySelectorAll('.chip').forEach(function (x) { x.classList.remove('on'); });
+      c.classList.add('on');
+      var sem = c.getAttribute('data-sem');
+      document.querySelectorAll('.course-card[data-sem]').forEach(function (card) {
+        card.hidden = (sem !== 'all' && card.getAttribute('data-sem') !== sem);
+      });
+    });
+  }
 
   /* ---------- side drop-down section menu ---------- */
   var sm = document.getElementById('sideMenu');

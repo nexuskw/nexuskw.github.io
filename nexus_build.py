@@ -215,21 +215,24 @@ NX_PAGE = """<!doctype html>
 <link rel="apple-touch-icon" href="{prefix}assets/nx/icons/icon-192.png">
 <link rel="stylesheet" href="{prefix}assets/nx/nexus.css?v={v}">
 {extra_head}</head>
-<body>
-<header class="nx-head">
-  <button id="langBtn" class="lang-btn" type="button">العربية</button>
-  <a href="{prefix}index.html"><img class="nx-logo" src="{prefix}assets/nx/logo.svg"
-     alt="Nexus Institute of Technology — planetary-gear emblem"></a>
-  <h1><a href="{prefix}index.html"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</a></h1>
-  <div class="lang-ar" style="font-size:15px;font-weight:700;margin-top:4px">{brand_ar}</div>
-  <nav class="topnav" aria-label="Site">
-    <a href="{prefix}index.html"{on_home} data-ar="{ar_mission}">Mission</a><span class="pipe"> | </span>
-    <a href="{prefix}curriculum/index.html"{on_curr} data-ar="{ar_curr}">Curriculum</a><span class="pipe"> | </span>
-    <a href="{prefix}career/index.html"{on_career} data-ar="{ar_career}">Career Paths</a>
-  </nav>
+<body{body_attrs}>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="{prefix}index.html" aria-label="{brand_ar} — Nexus Institute of Technology">
+      <img src="{prefix}assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+    </a>
+    <nav aria-label="Site">
+      <a href="{prefix}index.html"{on_home} data-ar="{ar_mission}">Mission</a>
+      <a href="{prefix}curriculum/index.html"{on_curr} data-ar="{ar_curr}">Curriculum</a>
+      <a href="{prefix}career/index.html"{on_career} data-ar="{ar_career}">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  </div>
 </header>
 {sidemenu}
-<main class="wrap">
+<main{main_class}>
 {body}
 </main>
 <footer class="nx-foot">
@@ -269,13 +272,16 @@ def sidemenu_html(items):
             f'<div class="panel"><p data-ar="{AR["Sections"]}">Sections</p>'
             f'{"".join(rows)}</div></div>')
 
-def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None):
+def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None,
+            wrap=True, body_attrs=""):
     body = nx_text(body)
     html = NX_PAGE.format(
         title=esc(title), desc=esc(desc), prefix=prefix, body=body,
         extra_head=extra_head, v=NX_V, brand_ar=BRAND_AR,
         ar_mission=AR["Mission"], ar_curr=AR["Curriculum"], ar_career=AR["Career Paths"],
         sidemenu=sidemenu_html(menu or []),
+        main_class=' class="wrap"' if wrap else "",
+        body_attrs=body_attrs,
         on_home=' class="on"' if active == "home" else "",
         on_curr=' class="on"' if active == "curriculum" else "",
         on_career=' class="on"' if active == "career" else "",
@@ -520,14 +526,37 @@ def build_lesson_page(sem, course, les, prefix, tabs_all):
               f"{n_q} checkpoint questions" if n_q else "in production")
     first_text = re.split(r"[—(;]", course.get("taught_from", [""])[0])[0].strip()[:44]
 
+    lesson_key = f"{sem['id']}/{course['id']}/{les['n']}"
+    outline_rows = []
+    for l in course["lessons"]:
+        cur = " cur" if l["n"] == les["n"] else ""
+        outline_rows.append(
+            f'<a href="{lesson_page_name(course, l)}" class="ol{cur}" '
+            f'data-key="{sem["id"]}/{course["id"]}/{l["n"]}">'
+            f'<span class="tick"></span><span>{l["n"]:02d} · {esc(l["t"])}</span></a>')
+    outline = f"""
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">{esc(course['code'])} · {esc(course['title'])}</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  {''.join(outline_rows)}
+</aside>"""
+
     body = f"""
+<div class="player">
+{outline}
+<div class="lesson-main">
 <nav class="crumbs"><a href="{prefix}curriculum/index.html" data-ar="{AR['Curriculum']}">Curriculum</a> /
-<a href="index.html">{esc(course['code'])} · {esc(course['title'])}</a> /
-<span>Lesson {les['n']:02d}</span></nav>
+<a href="index.html">{esc(course['code'])}</a> /
+<span>Lesson {les['n']:02d} of {n_total}</span></nav>
 {hero(course, f"{esc(course['code'])} · LESSON {les['n']:02d} OF {n_total} · {esc(sem['title'].upper())}",
       les["t"], les.get("scope", ""),
       [("Format", fmt), ("Primary text", first_text), ("Assessment", assess)])}
-<div>{core_chip}</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="{lesson_key}">Mark as complete</button>
+  {core_chip}
+</div>
 <div class="lang-ar"><div class="ar-note">{AR_LESSON_NOTE}</div></div>
 <div class="tabs" role="tablist">
   <button data-tab="t-foundations" data-ar="{AR['Foundations']}">Foundations</button>
@@ -539,20 +568,15 @@ def build_lesson_page(sem, course, les, prefix, tabs_all):
 <section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="{AR['Lecture']}">Lecture</h2>{lecture}</section>
 <section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="{AR['Worked Examples']}">Worked Examples</h2>{examples}</section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="{AR['Library']}">Library</h2>{library}</section>
-{nav}"""
-
-    menu = [("#t-foundations", "Foundations", AR["Foundations"], False, "t-foundations"),
-            ("#t-lecture", "Lecture", AR["Lecture"], False, "t-lecture"),
-            ("#t-examples", "Worked Examples", AR["Worked Examples"], False, "t-examples"),
-            ("#t-library", "Library", AR["Library"], False, "t-library"),
-            ("index.html", f"All lessons · {esc(course['code'])}", AR["All lessons"], False, None)]
-    menu += [(lesson_page_name(course, l), f'{l["n"]:02d} · {esc(l["t"])}', None, True, None)
-             for l in course["lessons"]]
+{nav}
+</div>
+</div>"""
 
     nx_page(f"curriculum/{sem['id']}/{course['id']}/{name}",
             f"{les['t']} — {course['title']} — Nexus Institute of Technology",
             les.get("scope", "")[:150], body, prefix, "curriculum",
-            extra_head=MATHJAX, menu=menu)
+            extra_head=MATHJAX, wrap=False,
+            body_attrs=f' data-key="{lesson_key}"')
 
 # --------------------------------------------------------- course page ----
 def lesson_depth(les, tabs_all):
@@ -577,16 +601,32 @@ def build_course_page(sem, course, prefix, tabs_all):
         href = lesson_page_name(course, les)
         core = les.get("core60")
         core_note = f' <b>CORE 60 · {esc(core)}</b> ·' if core else ""
+        checkpoints = ""
+        if les.get("preview"):
+            qs = "".join(f"<li>{esc(q)}</li>" for q in les["preview"])
+            checkpoints = (f'<details><summary data-ar="أسئلة التحقق">Checkpoint '
+                           f'questions</summary><ul>{qs}</ul></details>')
         rows.append(f"""
-<div class="lesson-row">
+<div class="syl" data-key="{sem['id']}/{course['id']}/{les['n']}" data-href="{href}">
+  <span class="tick"></span>
   <div class="no">{les['n']:02d}</div>
-  <div>
+  <div class="body">
     <h4><a href="{href}">{esc(les["t"])}</a>{tier_badge(les, tabs_all)}</h4>
     <p class="scope">{esc(les.get("scope", ""))}</p>
-    {preview_block(les)}
     <p class="src"><b>Taught from</b> —{core_note} {legacy.linkify(esc(les.get("src", "")))}</p>
+    {checkpoints}
   </div>
 </div>""")
+
+    # "What you'll learn" — verbatim first sentences of existing scope text
+    learn = []
+    for les in course["lessons"][:6]:
+        first = les.get("scope", "").split(".")[0].strip()
+        if first:
+            learn.append(f'<div><span class="ck">✓</span><span>{esc(first)}.</span></div>')
+    learn_html = (f'<div class="learn"><h3 data-ar="ما الذي ستتعلمه">What you\'ll learn</h3>'
+                  f'<div class="learn-grid">{"".join(learn)}</div></div>') if learn else ""
+
     taught = "".join(f"<li>{legacy.linkify(esc(t))}</li>"
                      for t in course.get("taught_from", []))
     cards = video_cards(course)
@@ -594,28 +634,47 @@ def build_course_page(sem, course, prefix, tabs_all):
             f'{"".join(cards)}</div>') if cards else ""
     n_core = sum(1 for l in course["lessons"] if l.get("core60"))
     n_depth = sum(1 for l in course["lessons"] if lesson_depth(l, tabs_all))
+    n_quiz = sum(1 for l in course["lessons"]
+                 if tabs_all.get(str(l["n"]), {}).get("quiz"))
+    chips = [f"{len(course['lessons'])} lessons",
+             f"{n_depth} of {len(course['lessons'])} at full depth"]
+    if n_quiz:
+        chips.append(f"{n_quiz} interactive quizzes")
+    if n_core:
+        chips.append(f"{n_core} Core-60 lessons")
+    chips_html = "".join(f'<span class="mchip">{esc(c)}</span>' for c in chips)
+
+    hero_html = f"""
+<div class="nx-hero">
+  <div class="bg">{illo(course["id"])}</div>
+  <div class="txt">
+    <p class="eyebrow">{esc(course['code'])} · {esc(sem['title'].upper())}</p>
+    <h1>{esc(course['title'])}</h1>
+    <p class="sub">{esc(course['summary'])}</p>
+  </div>
+  <div class="metachips">{chips_html}</div>
+</div>"""
+
     body = f"""
 <nav class="crumbs"><a href="{prefix}curriculum/index.html" data-ar="{AR['Curriculum']}">Curriculum</a> /
 <span>{esc(course['code'])}</span></nav>
-{hero(course, f"{esc(course['code'])} · {esc(sem['title'].upper())}",
-      course["title"], course["summary"],
-      [("Lessons", str(len(course["lessons"]))),
-       ("At full depth", f"{n_depth} of {len(course['lessons'])}"),
-       ("Core 60", str(n_core) if n_core else "—")])}
+{hero_html}
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="{lesson_page_name(course, course['lessons'][0])}">Start lesson 01</a>
+  <a class="btn btn-ghost" href="{prefix}curriculum/index.html" data-ar="{AR['Curriculum']}">Full curriculum</a>
+</div>
+{learn_html}
 <section class="part tight">
   <div class="wide">
-    <ul class="plain small">{taught}</ul>
+    <h3 data-ar="المنهج الدراسي">Syllabus</h3>
     <div class="lessons">{''.join(rows)}</div>
+    <ul class="plain small">{taught}</ul>
     {vids}
   </div>
 </section>"""
-    menu = [("index.html", f"All lessons · {esc(course['code'])}", AR["All lessons"], False, None)]
-    menu += [(lesson_page_name(course, l), f'{l["n"]:02d} · {esc(l["t"])}', None, True, None)
-             for l in course["lessons"]]
-    menu += [(f"{prefix}curriculum/index.html", "Full curriculum", AR["Curriculum"], False, None)]
     nx_page(f"curriculum/{sem['id']}/{course['id']}/index.html",
             f"{course['title']} — Nexus Institute of Technology",
-            course["summary"][:150], body, prefix, "curriculum", menu=menu)
+            course["summary"][:150], body, prefix, "curriculum")
 
 # ----------------------------------------------------- curriculum index ---
 def build_curriculum_index(sems, tabs_by_course, prefix):
@@ -623,27 +682,29 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
     depth = sum(1 for s in sems for c in s["courses"] for l in c["lessons"]
                 if lesson_depth(l, tabs_by_course[(s["id"], c["id"])]))
     pct = round(100 * depth / total)
-    parts = []
-    for i, sem in enumerate(sems, 1):
-        cards = []
+    cards = []
+    chips = ['<button type="button" class="chip on" data-sem="all" data-ar="الكل">All</button>']
+    for sem in sems:
+        chips.append(f'<button type="button" class="chip" data-sem="{sem["id"]}">'
+                     f'{esc(sem["title"])}</button>')
         for c in sem["courses"]:
             tabs_all = tabs_by_course[(sem["id"], c["id"])]
             n_depth = sum(1 for l in c["lessons"] if lesson_depth(l, tabs_all))
-            depth_txt = (f'<b>complete</b> · ' if n_depth == len(c["lessons"])
+            depth_txt = ('<b>complete</b> · ' if n_depth == len(c["lessons"])
                          else f'<b>{n_depth} built</b> · ' if n_depth else "")
             cards.append(f"""
-<a class="course-card" href="{sem['id']}/{c['id']}/index.html">
+<a class="course-card" href="{sem['id']}/{c['id']}/index.html" data-sem="{sem['id']}"
+   data-key="{sem['id']}/{c['id']}" data-n="{len(c['lessons'])}">
   <span class="cap">{illo(c['id'])}</span>
-  <span class="code">{esc(c['code'])}</span>
+  <span class="code">{esc(c['code'])} · {esc(sem['title'])}</span>
   <h4>{esc(c['title'])}</h4>
   <p>{esc(c['summary'][:110])}…</p>
   <span class="meta">{depth_txt}{len(c['lessons'])} lessons</span>
+  <span class="pbar"><i></i></span>
+  <span class="pnote"></span>
 </a>""")
-        parts.append(f"""
-<div class="sem" id="{sem['id']}">
-  <div class="sem-head"><span class="n">{i:02d}</span><h3>{esc(sem['title'])}</h3></div>
-  <div class="course-grid">{''.join(cards)}</div>
-</div>""")
+    parts = [f'<div class="chips" id="semChips">{"".join(chips)}</div>',
+             f'<div class="course-grid">{"".join(cards)}</div>']
     body = f"""
 <div class="pagehead">
   <p class="kicker"><span class="n">CURRICULUM</span>4 years · 8 semesters</p>
@@ -669,11 +730,10 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
 </div>
 <div class="catch"><b>Depth you can audit.</b> Every claim on this page is recomputed from the content at build time.</div>
 <section class="part tight"><div class="wide">{''.join(parts)}</div></section>"""
-    menu = [(f"#{s['id']}", s["title"], None, False, None) for s in sems]
     nx_page("curriculum/index.html", "Curriculum — Nexus Institute of Technology",
             f"48 courses, {total} lessons: the maintenance-to-manufacturing map, "
             f"{depth} lessons at full interactive depth.",
-            body, prefix, "curriculum", menu=menu)
+            body, prefix, "curriculum")
     return total, depth
 
 # ------------------------------------------------------------- statics ----

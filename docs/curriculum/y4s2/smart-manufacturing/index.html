@@ -9,22 +9,25 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=958016f0cd">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
 </head>
 <body>
-<header class="nx-head">
-  <button id="langBtn" class="lang-btn" type="button">العربية</button>
-  <a href="../../../index.html"><img class="nx-logo" src="../../../assets/nx/logo.svg"
-     alt="Nexus Institute of Technology — planetary-gear emblem"></a>
-  <h1><a href="../../../index.html"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</a></h1>
-  <div class="lang-ar" style="font-size:15px;font-weight:700;margin-top:4px">معهد نيكسس للتكنولوجيا</div>
-  <nav class="topnav" aria-label="Site">
-    <a href="../../../index.html" data-ar="الرسالة">Mission</a><span class="pipe"> | </span>
-    <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a><span class="pipe"> | </span>
-    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
-  </nav>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
+      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
+      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  </div>
 </header>
-<div class="sidemenu" id="sideMenu"><button type="button" data-ar="الأقسام">Sections</button><div class="panel"><p data-ar="الأقسام">Sections</p><a href="index.html" data-ar="كل الدروس">All lessons · SMF 451</a><a href="01-industry-4-0-taxonomy.html" class="sub">01 · Industry 4.0 taxonomy</a><a href="02-manufacturing-data-architecture.html" class="sub">02 · Manufacturing data architecture</a><a href="03-digital-twin-levels.html" class="sub">03 · Digital twin levels</a><a href="04-simulation-of-production-systems.html" class="sub">04 · Simulation of production systems</a><a href="05-predictive-maintenance-analytics.html" class="sub">05 · Predictive maintenance analytics</a><a href="06-machine-vision-and-quality-4-0.html" class="sub">06 · Machine vision and quality 4.0</a><a href="07-additive-and-digital-workflows.html" class="sub">07 · Additive and digital workflows</a><a href="08-cybersecurity-for-smart-plants.html" class="sub">08 · Cybersecurity for smart plants</a><a href="09-economics-of-digitalization.html" class="sub">09 · Economics of digitalization</a><a href="10-smart-manufacturing-case-evaluation.html" class="sub">10 · Smart manufacturing case evaluation</a><a href="../../../curriculum/index.html" data-ar="المنهج">Full curriculum</a></div></div>
+
 <main class="wrap">
 
 <nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
@@ -37,102 +40,118 @@
     <h1>Smart Manufacturing &amp; Digital Twin</h1>
     <p class="sub">Industry 4.0 without the brochure: data architectures, digital-twin levels, simulation, and predictive analytics — evaluated with an engineer's skepticism and a maintenance career's use cases.</p>
   </div>
-  <div class="meta"><div>Lessons<b>10</b></div><div>At full depth<b>0 of 10</b></div><div>Core 60<b>—</b></div></div>
+  <div class="metachips"><span class="mchip">10 lessons</span><span class="mchip">0 of 10 at full depth</span></div>
 </div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-industry-4-0-taxonomy.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html" data-ar="المنهج">Full curriculum</a>
+</div>
+<div class="learn"><h3 data-ar="ما الذي ستتعلمه">What you'll learn</h3><div class="learn-grid"><div><span class="ck">✓</span><span>The technology cluster named and sorted: connectivity, data, analytics, autonomy.</span></div><div><span class="ck">✓</span><span>From sensor to historian to lake: the data pipeline with its quality gates.</span></div><div><span class="ck">✓</span><span>Descriptive, diagnostic, predictive, and prescriptive twins distinguished by what they can answer.</span></div><div><span class="ck">✓</span><span>Discrete-event simulation for lines and buffers; validation against measured cycle data.</span></div><div><span class="ck">✓</span><span>Feature extraction from vibration and process data; models from thresholds to learning methods in outline.</span></div><div><span class="ck">✓</span><span>Cameras, lighting, and defect detection on moving product.</span></div></div></div>
 <section class="part tight">
   <div class="wide">
-    <ul class="plain small"><li>NPTEL: Industry 4.0 and Industrial Internet of Things-family courses (nptel.ac.in)</li></ul>
+    <h3 data-ar="المنهج الدراسي">Syllabus</h3>
     <div class="lessons">
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/1" data-href="01-industry-4-0-taxonomy.html">
+  <span class="tick"></span>
   <div class="no">01</div>
-  <div>
+  <div class="body">
     <h4><a href="01-industry-4-0-taxonomy.html">Industry 4.0 taxonomy</a></h4>
     <p class="scope">The technology cluster named and sorted: connectivity, data, analytics, autonomy. Maturity models used as maps, not scorecards. Separating what is deployed from what is marketed.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Sort connectivity, data, analytics, autonomy: which layer fails first in practice?</li><li>Deployed versus marketed: name one test that separates them.</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0 courses</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Sort connectivity, data, analytics, autonomy: which layer fails first in practice?</li><li>Deployed versus marketed: name one test that separates them.</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/2" data-href="02-manufacturing-data-architecture.html">
+  <span class="tick"></span>
   <div class="no">02</div>
-  <div>
+  <div class="body">
     <h4><a href="02-manufacturing-data-architecture.html">Manufacturing data architecture</a></h4>
     <p class="scope">From sensor to historian to lake: the data pipeline with its quality gates. Context — asset hierarchies and event framing — as the expensive part. Why analytics projects die of data preparation.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does context (hierarchy, event framing) cost more than storage?</li><li>Where do analytics projects actually die, and why?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0 courses</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why does context (hierarchy, event framing) cost more than storage?</li><li>Where do analytics projects actually die, and why?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/3" data-href="03-digital-twin-levels.html">
+  <span class="tick"></span>
   <div class="no">03</div>
-  <div>
+  <div class="body">
     <h4><a href="03-digital-twin-levels.html">Digital twin levels</a></h4>
     <p class="scope">Descriptive, diagnostic, predictive, and prescriptive twins distinguished by what they can answer. Asset versus process twins. An honest inventory of what each level costs to build and keep true.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Distinguish the four twin levels by the question each answers.</li><li>What does keeping a twin true cost, ongoing?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0 courses</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Distinguish the four twin levels by the question each answers.</li><li>What does keeping a twin true cost, ongoing?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/4" data-href="04-simulation-of-production-systems.html">
+  <span class="tick"></span>
   <div class="no">04</div>
-  <div>
+  <div class="body">
     <h4><a href="04-simulation-of-production-systems.html">Simulation of production systems</a></h4>
     <p class="scope">Discrete-event simulation for lines and buffers; validation against measured cycle data. Experiments on the model instead of the plant. The packaging line simulated for a debottlenecking decision.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What validates a discrete-event model before you trust its experiments?</li><li>Why simulate the buffer sizes rather than argue about them?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0 courses</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What validates a discrete-event model before you trust its experiments?</li><li>Why simulate the buffer sizes rather than argue about them?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/5" data-href="05-predictive-maintenance-analytics.html">
+  <span class="tick"></span>
   <div class="no">05</div>
-  <div>
+  <div class="body">
     <h4><a href="05-predictive-maintenance-analytics.html">Predictive maintenance analytics</a></h4>
     <p class="scope">Feature extraction from vibration and process data; models from thresholds to learning methods in outline. Validation against labeled failures — the scarce commodity. Where analytics augments and where it hallucinates.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why are labeled failures the scarce commodity of PdM analytics?</li><li>What can a threshold do that a learned model cannot — and vice versa?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0 courses</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why are labeled failures the scarce commodity of PdM analytics?</li><li>What can a threshold do that a learned model cannot — and vice versa?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/6" data-href="06-machine-vision-and-quality-4-0.html">
+  <span class="tick"></span>
   <div class="no">06</div>
-  <div>
+  <div class="body">
     <h4><a href="06-machine-vision-and-quality-4-0.html">Machine vision and quality 4.0</a></h4>
     <p class="scope">Cameras, lighting, and defect detection on moving product. Classical vision versus learned models. False-reject economics on a high-speed line.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does lighting beat algorithms in machine vision?</li><li>What does a false reject cost on a high-speed line?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0 courses</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why does lighting beat algorithms in machine vision?</li><li>What does a false reject cost on a high-speed line?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/7" data-href="07-additive-and-digital-workflows.html">
+  <span class="tick"></span>
   <div class="no">07</div>
-  <div>
+  <div class="body">
     <h4><a href="07-additive-and-digital-workflows.html">Additive and digital workflows</a></h4>
     <p class="scope">Scan-to-print for obsolete spares; digital part inventories. Qualification questions for load-bearing prints. The maintenance storeroom's digital future, soberly assessed.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What qualification questions gate a printed load-bearing spare?</li><li>Scan-to-print: where does the accuracy chain break?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0; <a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, additive chapter</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What qualification questions gate a printed load-bearing spare?</li><li>Scan-to-print: where does the accuracy chain break?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/8" data-href="08-cybersecurity-for-smart-plants.html">
+  <span class="tick"></span>
   <div class="no">08</div>
-  <div>
+  <div class="body">
     <h4><a href="08-cybersecurity-for-smart-plants.html">Cybersecurity for smart plants</a></h4>
     <p class="scope">Expanded attack surface of connected equipment; segmentation and monitoring revisited at plant scale. Incident response for OT. Security as a precondition, not a feature.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What new attack surface does each connected sensor add?</li><li>Why is OT incident response different from IT's?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0 courses</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What new attack surface does each connected sensor add?</li><li>Why is OT incident response different from IT's?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/9" data-href="09-economics-of-digitalization.html">
+  <span class="tick"></span>
   <div class="no">09</div>
-  <div>
+  <div class="body">
     <h4><a href="09-economics-of-digitalization.html">Economics of digitalization</a></h4>
     <p class="scope">Pilot-to-scale economics; the graveyard of proofs-of-concept explained. Benefits tracked against baselines the finance department accepts. Engineering economics applied to the smartest buzzwords.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why do pilots scale so rarely — name two structural reasons.</li><li>What baseline makes a digitalization benefit auditable?</li></ul></div>
     <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0; ECO 406 foundations</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why do pilots scale so rarely — name two structural reasons.</li><li>What baseline makes a digitalization benefit auditable?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y4s2/smart-manufacturing/10" data-href="10-smart-manufacturing-case-evaluation.html">
+  <span class="tick"></span>
   <div class="no">10</div>
-  <div>
+  <div class="body">
     <h4><a href="10-smart-manufacturing-case-evaluation.html">Smart manufacturing case evaluation</a></h4>
     <p class="scope">Evaluate a vendor's condition-monitoring-plus-analytics proposal for a representative plant: architecture, claims, gaps, and a pilot design with success criteria. The skeptical adoption skill this decade rewards.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>In the vendor evaluation, which claim failed the evidence test?</li><li>What did your pilot design measure that the brochure didn't?</li></ul></div>
     <p class="src"><b>Taught from</b> — Course synthesis</p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>In the vendor evaluation, which claim failed the evidence test?</li><li>What did your pilot design measure that the brochure didn't?</li></ul></details>
   </div>
 </div></div>
+    <ul class="plain small"><li>NPTEL: Industry 4.0 and Industrial Internet of Things-family courses (nptel.ac.in)</li></ul>
     
   </div>
 </section>
@@ -152,6 +171,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=958016f0cd"></script>
+<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
 </body>
 </html>

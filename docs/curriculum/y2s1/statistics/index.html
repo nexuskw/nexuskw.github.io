@@ -9,22 +9,25 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=958016f0cd">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
 </head>
 <body>
-<header class="nx-head">
-  <button id="langBtn" class="lang-btn" type="button">العربية</button>
-  <a href="../../../index.html"><img class="nx-logo" src="../../../assets/nx/logo.svg"
-     alt="Nexus Institute of Technology — planetary-gear emblem"></a>
-  <h1><a href="../../../index.html"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</a></h1>
-  <div class="lang-ar" style="font-size:15px;font-weight:700;margin-top:4px">معهد نيكسس للتكنولوجيا</div>
-  <nav class="topnav" aria-label="Site">
-    <a href="../../../index.html" data-ar="الرسالة">Mission</a><span class="pipe"> | </span>
-    <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a><span class="pipe"> | </span>
-    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
-  </nav>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
+      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
+      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  </div>
 </header>
-<div class="sidemenu" id="sideMenu"><button type="button" data-ar="الأقسام">Sections</button><div class="panel"><p data-ar="الأقسام">Sections</p><a href="index.html" data-ar="كل الدروس">All lessons · STS 206</a><a href="01-describing-data.html" class="sub">01 · Describing data</a><a href="02-probability-rules.html" class="sub">02 · Probability rules</a><a href="03-discrete-distributions.html" class="sub">03 · Discrete distributions</a><a href="04-continuous-distributions.html" class="sub">04 · Continuous distributions</a><a href="05-sampling-distributions-and-the-clt.html" class="sub">05 · Sampling distributions and the CLT</a><a href="06-estimation-and-confidence-intervals.html" class="sub">06 · Estimation and confidence intervals</a><a href="07-hypothesis-testing.html" class="sub">07 · Hypothesis testing</a><a href="08-regression.html" class="sub">08 · Regression</a><a href="09-design-of-experiments-first-contact.html" class="sub">09 · Design of experiments first contact</a><a href="10-reliability-statistics-preview.html" class="sub">10 · Reliability statistics preview</a><a href="11-statistical-malpractice-and-honest-reporting.html" class="sub">11 · Statistical malpractice and honest reporting</a><a href="../../../curriculum/index.html" data-ar="المنهج">Full curriculum</a></div></div>
+
 <main class="wrap">
 
 <nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
@@ -37,111 +40,128 @@
     <h1>Engineering Statistics</h1>
     <p class="sub">Data with judgment: probability, distributions, estimation, hypothesis tests, and regression — the quiet prerequisite under SPC, Weibull analysis, measurement uncertainty, and every reliability claim you will ever audit.</p>
   </div>
-  <div class="meta"><div>Lessons<b>11</b></div><div>At full depth<b>0 of 11</b></div><div>Core 60<b>—</b></div></div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span></div>
 </div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-describing-data.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html" data-ar="المنهج">Full curriculum</a>
+</div>
+<div class="learn"><h3 data-ar="ما الذي ستتعلمه">What you'll learn</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Location, spread, and shape; histograms and box plots that don't lie.</span></div><div><span class="ck">✓</span><span>Sample spaces, independence, and conditional probability.</span></div><div><span class="ck">✓</span><span>Binomial and Poisson models with their assumptions audited.</span></div><div><span class="ck">✓</span><span>The normal distribution and its z-arithmetic; lognormal for repair times; exponential for memoryless failure.</span></div><div><span class="ck">✓</span><span>Why averages behave better than individuals.</span></div><div><span class="ck">✓</span><span>Point estimates and confidence intervals for means and proportions.</span></div></div></div>
 <section class="part tight">
   <div class="wide">
-    <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a> Introduction to Probability and Statistics (ocw.mit.edu)</li><li>NPTEL: Probability and Statistics</li></ul>
+    <h3 data-ar="المنهج الدراسي">Syllabus</h3>
     <div class="lessons">
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/1" data-href="01-describing-data.html">
+  <span class="tick"></span>
   <div class="no">01</div>
-  <div>
+  <div class="body">
     <h4><a href="01-describing-data.html">Describing data</a></h4>
     <p class="scope">Location, spread, and shape; histograms and box plots that don't lie. Outliers treated as evidence, not embarrassment. Plant data pathologies previewed.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Mean versus median on skewed repair times: which tells the truer story?</li><li>What does a box plot show that a bar of averages hides?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Mean versus median on skewed repair times: which tells the truer story?</li><li>What does a box plot show that a bar of averages hides?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/2" data-href="02-probability-rules.html">
+  <span class="tick"></span>
   <div class="no">02</div>
-  <div>
+  <div class="body">
     <h4><a href="02-probability-rules.html">Probability rules</a></h4>
     <p class="scope">Sample spaces, independence, and conditional probability. Bayes' theorem worked on an inspection-alarm example. The base-rate trap that fools test results everywhere.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Bayes in one line: why do false alarms dominate rare-event detection?</li><li>Independence: what does assuming it wrongly do to risk estimates?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Bayes in one line: why do false alarms dominate rare-event detection?</li><li>Independence: what does assuming it wrongly do to risk estimates?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/3" data-href="03-discrete-distributions.html">
+  <span class="tick"></span>
   <div class="no">03</div>
-  <div>
+  <div class="body">
     <h4><a href="03-discrete-distributions.html">Discrete distributions</a></h4>
     <p class="scope">Binomial and Poisson models with their assumptions audited. Defect counts and rare-event arrivals. When the Poisson approximation earns its keep.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>When is Poisson the right model for failure counts?</li><li>What assumptions does a binomial defect model make?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>When is Poisson the right model for failure counts?</li><li>What assumptions does a binomial defect model make?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/4" data-href="04-continuous-distributions.html">
+  <span class="tick"></span>
   <div class="no">04</div>
-  <div>
+  <div class="body">
     <h4><a href="04-continuous-distributions.html">Continuous distributions</a></h4>
     <p class="scope">The normal distribution and its z-arithmetic; lognormal for repair times; exponential for memoryless failure. Choosing a model from data shape and physics. The exponential's constant hazard flagged for Reliability I.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why are repair times often lognormal?</li><li>What does the exponential's memoryless property claim — and when is it false?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why are repair times often lognormal?</li><li>What does the exponential's memoryless property claim — and when is it false?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/5" data-href="05-sampling-distributions-and-the-clt.html">
+  <span class="tick"></span>
   <div class="no">05</div>
-  <div>
+  <div class="body">
     <h4><a href="05-sampling-distributions-and-the-clt.html">Sampling distributions and the CLT</a></h4>
     <p class="scope">Why averages behave better than individuals. Standard error and the central limit theorem demonstrated numerically. The statistical footing under control charts.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why do averages of n samples scatter less by √n?</li><li>What does the CLT let you assume about sample means?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Why do averages of n samples scatter less by √n?</li><li>What does the CLT let you assume about sample means?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/6" data-href="06-estimation-and-confidence-intervals.html">
+  <span class="tick"></span>
   <div class="no">06</div>
-  <div>
+  <div class="body">
     <h4><a href="06-estimation-and-confidence-intervals.html">Estimation and confidence intervals</a></h4>
     <p class="scope">Point estimates and confidence intervals for means and proportions. Interpretation without the classic misreadings. Sample-size arithmetic before the test campaign, not after.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Interpret a 95% confidence interval without the classic misreading.</li><li>Why compute sample size before the test campaign?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Interpret a 95% confidence interval without the classic misreading.</li><li>Why compute sample size before the test campaign?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/7" data-href="07-hypothesis-testing.html">
+  <span class="tick"></span>
   <div class="no">07</div>
-  <div>
+  <div class="body">
     <h4><a href="07-hypothesis-testing.html">Hypothesis testing</a></h4>
     <p class="scope">Null logic, p-values, and both error types with plant-decision stakes. One- and two-sample t-tests. 'Statistically significant' versus 'operationally meaningful' — a distinction with budget consequences.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What do Type I and Type II errors cost in a plant decision?</li><li>Statistically significant but operationally meaningless: give an example.</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What do Type I and Type II errors cost in a plant decision?</li><li>Statistically significant but operationally meaningless: give an example.</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/8" data-href="08-regression.html">
+  <span class="tick"></span>
   <div class="no">08</div>
-  <div>
+  <div class="body">
     <h4><a href="08-regression.html">Regression</a></h4>
     <p class="scope">Least squares fitting with residual diagnostics. Interpretation of slope, intercept, and R² without overclaiming. Degradation trends and calibration curves as the working examples.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What pattern in residuals invalidates a straight-line fit?</li><li>Why does R² alone never justify a model?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What pattern in residuals invalidates a straight-line fit?</li><li>Why does R² alone never justify a model?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/9" data-href="09-design-of-experiments-first-contact.html">
+  <span class="tick"></span>
   <div class="no">09</div>
-  <div>
+  <div class="body">
     <h4><a href="09-design-of-experiments-first-contact.html">Design of experiments first contact</a></h4>
     <p class="scope">One factor at a time versus factorial thinking. Main effects and interactions read from a 2² experiment. The efficiency argument that Lean Six Sigma will later monetize.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What is an interaction, and why does one-factor-at-a-time miss it?</li><li>Read main effects from a 2² experiment table.</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What is an interaction, and why does one-factor-at-a-time miss it?</li><li>Read main effects from a 2² experiment table.</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/10" data-href="10-reliability-statistics-preview.html">
+  <span class="tick"></span>
   <div class="no">10</div>
-  <div>
+  <div class="body">
     <h4><a href="10-reliability-statistics-preview.html">Reliability statistics preview</a></h4>
     <p class="scope">Censored data — the defining feature of failure records. Hazard and survival functions introduced gently. The bridge lesson into Weibull analysis in Reliability I.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>What is censored data, and why do failure logs teem with it?</li><li>Hazard versus failure rate: what does each function describe?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>What is censored data, and why do failure logs teem with it?</li><li>Hazard versus failure rate: what does each function describe?</li></ul></details>
   </div>
 </div>
-<div class="lesson-row">
+<div class="syl" data-key="y2s1/statistics/11" data-href="11-statistical-malpractice-and-honest-reporting.html">
+  <span class="tick"></span>
   <div class="no">11</div>
-  <div>
+  <div class="body">
     <h4><a href="11-statistical-malpractice-and-honest-reporting.html">Statistical malpractice and honest reporting</a></h4>
     <p class="scope">P-hacking, survivorship bias, and cherry-picked baselines — recognized and named. Uncertainty statements as professional obligation. How to present data to management without lying by chart.</p>
-    <div class="preview"><b>After this lesson you can answer:</b><ul><li>Name two chart crimes that flatter a KPI.</li><li>What must an honest uncertainty statement accompany?</li></ul></div>
     <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary data-ar="أسئلة التحقق">Checkpoint questions</summary><ul><li>Name two chart crimes that flatter a KPI.</li><li>What must an honest uncertainty statement accompany?</li></ul></details>
   </div>
 </div></div>
+    <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a> Introduction to Probability and Statistics (ocw.mit.edu)</li><li>NPTEL: Probability and Statistics</li></ul>
     
   </div>
 </section>
@@ -161,6 +181,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=958016f0cd"></script>
+<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
 </body>
 </html>

@@ -21,20 +21,99 @@ a{color:var(--nx-teal-d)}
 a:hover{color:var(--nx-teal-h)}
 .wrap{max-width:1100px;margin:0 auto;padding:0 5vw 70px}
 
-/* ---------- brand header (centered per spec) ---------- */
-.nx-head{text-align:center;padding:26px 0 6px;border-bottom:1px solid var(--nx-line);position:relative}
-.nx-head .nx-logo{width:92px;height:95px;display:inline-block;vertical-align:middle}
-.nx-head h1{font-size:clamp(17px,2.8vw,26px);letter-spacing:.16em;margin:8px 0 0;font-weight:800}
-.nx-head h1 a{color:inherit;text-decoration:none}
-.nx-head h1 .teal{color:var(--nx-teal-d)}
-.topnav{text-align:center;margin:10px 0 14px;font-size:14px;letter-spacing:.06em}
-.topnav a{color:var(--nx-muted);text-decoration:none;padding:0 5px}
-.topnav a.on,.topnav a:hover{color:var(--nx-teal-d);font-weight:600}
-.topnav .pipe{color:var(--nx-line)}
-.lang-btn{position:absolute;top:18px;inset-inline-end:5vw;background:none;border:1.5px solid var(--nx-teal-d);
-  color:var(--nx-teal-d);border-radius:9px;padding:7px 14px;font-family:var(--sans);font-size:13px;
-  font-weight:600;cursor:pointer}
+/* ---------- top app bar (sticky, compact) ---------- */
+.appbar{position:sticky;top:0;z-index:80;background:rgba(251,251,249,.94);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--nx-line)}
+.appbar .in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:0 20px;height:58px}
+.appbar .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--nx-ink);
+  font-weight:800;letter-spacing:.09em;font-size:13.5px;white-space:nowrap}
+.appbar .brand img{width:34px;height:35px}
+.appbar .brand .teal{color:var(--nx-teal-d)}
+.appbar nav{display:flex;gap:2px;margin-inline-start:6px}
+.appbar nav a{color:var(--nx-muted);text-decoration:none;font-size:13.5px;padding:8px 12px;border-radius:8px}
+.appbar nav a.on{color:var(--nx-teal-d);font-weight:700;background:#eef6f2}
+.appbar nav a:hover{color:var(--nx-teal-d)}
+.appbar .spacer{flex:1}
+.lang-btn{background:none;border:1.5px solid var(--nx-teal-d);color:var(--nx-teal-d);border-radius:9px;
+  padding:6px 13px;font-family:var(--sans);font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap}
 .lang-btn:hover{background:var(--nx-teal-d);color:#fff}
+@media(max-width:760px){
+  .appbar .brand .txt{display:none}
+  .appbar nav a{padding:8px 8px;font-size:12.5px}
+}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;border:0;border-radius:9px;padding:11px 20px;font-family:var(--sans);
+  font-size:13.5px;font-weight:600;cursor:pointer;text-decoration:none;text-align:center}
+.btn-primary{background:var(--nx-teal-d);color:#fff}
+.btn-primary:hover{background:var(--nx-teal-h);color:#fff}
+.btn-ghost{background:transparent;color:var(--nx-teal-d);border:1.5px solid var(--nx-teal-d)}
+.btn-ghost:hover{background:#eef6f2}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:20px 0 6px}
+
+/* ---------- learning player (lesson pages) ---------- */
+.player{display:grid;grid-template-columns:300px minmax(0,1fr);gap:32px;align-items:start;
+  max-width:1240px;margin:0 auto;padding:18px 20px 70px}
+.outline{position:sticky;top:74px;max-height:calc(100vh - 92px);overflow:auto;
+  border:1px solid var(--nx-line);border-radius:14px;background:#fff;padding:0 0 8px}
+.outline .oh{padding:14px 16px 12px;border-bottom:1px solid var(--nx-line);margin-bottom:6px}
+.outline .oh a{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--nx-ink);text-decoration:none}
+.outline .oh a:hover{color:var(--nx-teal-d)}
+.outline .oh .bar{height:6px;border-radius:4px;background:#edf0ee;overflow:hidden;margin:10px 0 5px}
+.outline .oh .bar i{display:block;height:100%;background:var(--nx-grad);width:0}
+.outline .oh .ptext{font-family:var(--mono);font-size:11px;color:var(--nx-muted)}
+.outline>a{display:flex;gap:10px;align-items:flex-start;padding:8px 14px;font-family:var(--sans);
+  font-size:12.5px;line-height:1.45;color:var(--nx-ink);text-decoration:none;border-inline-start:3px solid transparent}
+.outline>a:hover{background:#f4f8f6}
+.outline>a.cur{background:#eef6f2;border-inline-start-color:var(--nx-teal-d);font-weight:700}
+.tick{flex:0 0 auto;width:18px;height:18px;border:1.5px solid #ccd3d0;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;line-height:1;
+  color:transparent;background:#fff;margin-top:1px;font-family:var(--sans)}
+.done>.tick,.tick.on{background:var(--nx-teal-d);border-color:var(--nx-teal-d);color:#fff}
+.complete-btn{border-radius:9px;border:1.5px solid var(--nx-teal-d);background:var(--nx-teal-d);color:#fff;
+  padding:10px 18px;font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer}
+.complete-btn:hover{background:var(--nx-teal-h)}
+.complete-btn.done{background:#eef6f2;color:var(--nx-teal-dd);border-color:var(--nx-teal-d)}
+.lesson-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0 4px}
+@media(max-width:940px){
+  .player{display:block;padding:12px 5vw 60px}
+  .outline{position:static;max-height:280px;margin:0 0 20px}
+}
+
+/* ---------- MOOC syllabus (course pages) ---------- */
+.metachips{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;position:relative}
+.mchip{background:rgba(255,255,255,.07);border:1px solid rgba(20,207,160,.4);color:#dffcf3;
+  border-radius:999px;padding:5px 14px;font-size:12px;font-family:var(--sans)}
+.learn{border:1px solid var(--nx-line);border-radius:14px;background:#fff;padding:22px 26px;margin:24px 0}
+.learn h3{margin:0 0 14px;font-size:17px}
+.learn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px 26px}
+.learn-grid div{display:flex;gap:10px;font-size:14px;font-family:var(--serif);color:#2a3038;line-height:1.55}
+.learn-grid .ck{color:var(--nx-teal-d);font-weight:700;font-family:var(--sans)}
+.syl{border:1px solid var(--nx-line);border-radius:14px;background:#fff;margin:14px 0;
+  padding:18px 22px;display:flex;gap:16px;align-items:flex-start}
+.syl .no{font-family:var(--mono);font-size:14px;color:var(--nx-teal-d);font-weight:700;min-width:30px;padding-top:2px}
+.syl .body{flex:1;min-width:0}
+.syl h4{margin:0 0 6px;font-size:16px}
+.syl h4 a{text-decoration:none;color:var(--nx-ink)}
+.syl h4 a:hover{color:var(--nx-teal-d)}
+.syl .scope{margin:0 0 6px;font-size:13.5px;color:#3a414b;font-family:var(--serif)}
+.syl .src{font-size:12px;color:var(--nx-muted);margin:6px 0 0}
+.syl details{margin-top:10px;border-top:1px dashed var(--nx-line);padding-top:8px}
+.syl summary{cursor:pointer;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--nx-teal-d);
+  letter-spacing:.04em;list-style-position:inside}
+.syl details ul{margin:8px 0 2px;padding-inline-start:20px}
+.syl details li{font-size:13.5px;font-family:var(--serif);color:#33373c;margin:4px 0}
+
+/* ---------- catalog (curriculum) ---------- */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 6px}
+.chip{border:1.5px solid var(--nx-line);border-radius:999px;background:#fff;padding:6px 14px;
+  font-size:12.5px;cursor:pointer;color:var(--nx-muted);font-family:var(--sans);font-weight:600}
+.chip.on{border-color:var(--nx-teal-d);color:var(--nx-teal-d);background:#eef6f2}
+.chip:hover{border-color:var(--nx-teal-d)}
+.course-card .pbar{display:block;height:6px;border-radius:4px;background:#edf0ee;margin:12px 16px 0;overflow:hidden}
+.course-card .pbar i{display:block;height:100%;background:var(--nx-grad);width:0}
+.course-card .pnote{font-family:var(--mono);font-size:10.5px;color:var(--nx-muted);margin:5px 16px 0;display:block}
+.course-card[hidden]{display:none}
 
 /* ---------- side drop-down section menu ---------- */
 .sidemenu{position:fixed;top:120px;inset-inline-end:0;z-index:60;font-family:var(--sans)}
