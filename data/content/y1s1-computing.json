@@ -1,0 +1,326 @@
+{
+ "1": {
+  "lecture": "\n<h3>§1 · Why engineers script</h3>\n<p>A spreadsheet hides its logic inside cells; a script lays it out as readable text. That\nsingle difference buys the three things engineering calculation needs most:\n<em>repeatability</em> — run the script tomorrow on new data and the identical logic\nexecutes; <em>auditability</em> — a reviewer reads the calculation top to bottom, every\nassumption visible; and <em>scale</em> — the loop that processes one reading processes a\nmillion without new effort. Spreadsheets remain excellent scratchpads, but the moment a\ncalculation matters, recurs, or grows, the professional tool is a script — and the habit of\nwriting one is what this course installs.</p>\n<h3>§2 · The toolchain, plainly</h3>\n<p>Python is an interpreter: it reads statements and executes them immediately. You can feed\nit lines interactively — the REPL, ideal for trying an idea — or hand it a file of\nstatements, a script, which is the durable product. A script is just text: openable in any\neditor, storable beside the data it processed, and — crucially — diffable, so yesterday's\nversion and today's can be compared line by line. That property makes scripts the natural\ncitizens of version control and the natural evidence in an engineering audit trail.</p>\n<h3>§3 · Anatomy of a calculation script</h3>\n<p>Every calculation script worth keeping has the same skeleton: named inputs at the top,\nwith units in the names or comments (\\( \\texttt{flow\\_m3h = 100} \\)); the computation in\nclear steps, mirroring how you would write it on paper; and output that states units —\n\\( \\texttt{print(f\"shaft power = \\{P/1000:.1f\\} kW\")} \\). Arithmetic operators behave\nas expected, with three worth flagging now: \\( \\texttt{**} \\) is exponentiation,\n\\( \\texttt{/} \\) always returns a decimal, and \\( \\texttt{//} \\) divides and discards\nthe remainder. A pump-power script in this shape is eight lines — and it replaces the\nback-of-envelope forever, because it IS the envelope, kept.</p>\n<h3>§4 · The scripting working method</h3>\n<p>Write scripts the way the mathematics course taught you to check units: as a discipline,\nnot an afterthought. Name variables with their units — ambiguity between bar and kPa has\nsunk more calculations than any syntax error ever will. State inputs once, at the top,\nnever buried mid-logic. Print results WITH units and sensible precision. Keep one\ncalculation per script while learning; later lessons modularize. And before trusting any\nscript, run it against a case you have verified by hand — the machine-verification habit\nthis whole platform practices on you is the habit you are now learning to practice on your\nown code. A script that has never met a hand-checked case is an opinion with syntax.</p>\n<p>Finally, keep scripts with their evidence. Store the script beside the data it\nprocessed and note the date and source of both — the calculation, its inputs, and its\nresult then travel as one reviewable package. Months later, when a result is questioned,\nthe answer is a rerun rather than an archaeology project; and when the data changes, the\nsame package regenerates every downstream number identically. That closed loop — data,\nscript, result, rerunnable — is what engineering computing means by an audit trail.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Order-of-magnitude sense</b> (Math I) — the sanity screen for every output.</li>\n<li><b>Unit discipline</b> (Math I, Physics I) — now encoded in variable names.</li>\n<li><b>No prior programming</b> — the course starts from zero, honestly.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Script</td><td>statements in a file, run top to bottom</td><td>The durable, auditable form of a calculation.</td></tr>\n<tr><td>REPL</td><td>type a line, see the result</td><td>Trying ideas; never the final home of real work.</td></tr>\n<tr><td>Variable</td><td>\\( \\texttt{name = value} \\)</td><td>Named storage; put the unit in the name: \\( \\texttt{head\\_m} \\).</td></tr>\n<tr><td>Operators</td><td>\\( \\texttt{+ - * / // \\%\\ **} \\)</td><td>\\( \\texttt{/} \\) gives decimals; \\( \\texttt{//} \\) floors; \\( \\texttt{**} \\) powers.</td></tr>\n<tr><td>print with f-string</td><td>\\( \\texttt{f\"P = \\{p:.1f\\} kW\"} \\)</td><td>Output that states value, precision, and unit together.</td></tr>\n<tr><td>Comment</td><td>\\( \\texttt{\\#} \\) to end of line</td><td>The why beside the what; assumptions on the record.</td></tr>\n<tr><td>Hand-check rule</td><td>script vs worked case</td><td>No script is trusted before it reproduces a known answer.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Trace the pump-power script</b></p>\n<p><b>Problem.</b> Trace this script and state its output:</p>\n<pre><code>rho = 1000        # kg/m3\ng = 9.81          # m/s2\nflow_m3h = 100\nhead_m = 30\neta = 0.70\nQ = flow_m3h / 3600\nP = rho * g * Q * head_m / eta\nprint(f\"shaft power = {P/1000:.1f} kW\")</code></pre>",
+    "solution": "<p><b>Solution.</b> (1) \\( Q = 100/3600 = 0.02778\\ \\mathrm{m^3/s} \\).\n(2) \\( P = 1000 \\times 9.81 \\times 0.02778 \\times 30 / 0.70 = 11{,}679\\ \\mathrm{W} \\).\n(3) Output: <code>shaft power = 11.7 kW</code>.</p>\n<p><b>Answer:</b> 11.7 kW.\n<b>Sanity check:</b> this is the exact calculation the mathematics course verified by hand — hydraulic 8.2 kW, divided by 0.7. The script is that envelope, kept: change the flow tomorrow and the identical logic reruns, which is the entire argument of §1.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>A conversion worth scripting</b></p>\n<p><b>Problem.</b> Write (and trace for 6.0 barg) a script converting gauge pressure in bar to absolute pressure in kPa: \\( P_{abs} = P_{gauge} \\times 100 + 101.325 \\).</p>",
+    "solution": "<p><b>Solution.</b> (1) <code>p_barg = 6.0</code>; <code>p_kpa_abs = p_barg * 100 + 101.325</code>; <code>print(f\"{p_kpa_abs:.1f} kPa abs\")</code>.\n(2) Trace: \\( 6.0 \\times 100 + 101.325 = 701.3\\ \\mathrm{kPa\\ abs} \\).</p>\n<p><b>Answer:</b> 701.3 kPa absolute.\n<b>Sanity check:</b> the gauge trap from the mathematics course, now armored in code: the script's NAME says barg in and kPa-absolute out, so the assumption travels with the calculation — which is precisely what a cell formula never tells its reader.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The running-cost one-liner</b></p>\n<p><b>Problem.</b> A 15 kW machine runs 16 h/day at an energy price of 0.045 per kWh. Script the daily cost and trace it.</p>",
+    "solution": "<p><b>Solution.</b> (1) <code>cost = 15 * 16 * 0.045</code>.\n(2) \\( 15 \\times 16 = 240\\ \\mathrm{kWh/day} \\); \\( 240 \\times 0.045 = 10.8 \\) per day.</p>\n<p><b>Answer:</b> 10.8 currency units per day — ≈3,940 per year of continuous duty.\n<b>Sanity check:</b> kW times hours gives kWh (energy), times price-per-kWh gives money — the units chain cleanly, and the annualized figure (×365) is the number that turns a motor-efficiency conversation into a business case. Three inputs, one line, permanent tool.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The decisive advantage of a script over a spreadsheet for a recurring engineering calculation is:</p>",
+    "choices": [
+     "The logic is visible, reviewable, and reruns identically on new data",
+     "Scripts cannot contain errors",
+     "Scripts run faster, which is what matters",
+     "Spreadsheets cannot do arithmetic"
+    ],
+    "answer": 0,
+    "solution": "<p>Auditability and repeatability are the engineering virtues: every step readable top to bottom, every rerun identical. Scripts absolutely can contain errors — the hand-check rule exists because of it; speed rarely matters at calculation scale; and spreadsheets compute fine — they just hide the logic in cells where reviewers cannot see it whole.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In Python, <code>7 // 2</code> evaluates to:</p>",
+    "choices": [
+     "3",
+     "3.5",
+     "4",
+     "1"
+    ],
+    "answer": 0,
+    "solution": "<p><code>//</code> is floor division: divide and discard the remainder — 3. Plain <code>/</code> gives 3.5 (always a float); rounding UP would give 4 (that's <code>math.ceil</code>); 1 is the REMAINDER, delivered by <code>%</code>. The three operators split the division jobs among themselves, and mixing them up is the first classic Python slip.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>print(2 ** 3)</code> outputs:</p>",
+    "choices": [
+     "8",
+     "6",
+     "9",
+     "23"
+    ],
+    "answer": 0,
+    "solution": "<p><code>**</code> is exponentiation: \\( 2^3 = 8 \\). The caret <code>^</code> — which many calculators use — means something entirely different in Python (bitwise XOR), and <code>2^3</code> would print 1: a legal expression computing the wrong thing silently, which is exactly the kind of error the hand-check rule is designed to catch.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The best variable name for a flow reading of 100 m³/h is:</p>",
+    "choices": [
+     "<code>flow_m3h</code>",
+     "<code>f</code>",
+     "<code>x1</code>",
+     "<code>data</code>"
+    ],
+    "answer": 0,
+    "solution": "<p>The unit rides in the name, so every later line that touches it knows what it holds — the script equivalent of the mathematics course's unit discipline. Single letters and generic names create the bar-versus-kPa ambiguities that sink calculations; six months later, <code>flow_m3h</code> still explains itself and <code>x1</code> explains nothing.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Before a new calculation script is trusted, it should first:</p>",
+    "choices": [
+     "Reproduce a case already verified by hand",
+     "Be run many times",
+     "Be converted to a spreadsheet",
+     "Print without error messages"
+    ],
+    "answer": 0,
+    "solution": "<p>Running without errors proves only that the syntax is legal — a script can be fluently, confidently wrong. The hand-checked case pins the LOGIC: if the script reproduces a known answer, its machinery is sound and may be pointed at unknown cases. Repetition of an unverified script just repeats the doubt. This is the platform's own machine-verification habit, handed to you.</p>"
+   }
+  ]
+ },
+ "2": {
+  "lecture": "\n<h3>§1 · Types: what a value is</h3>\n<p>Every value in Python has a type, and the type decides what operations mean. Mechanics\nuses four constantly: <em>int</em> — whole numbers, exact; <em>float</em> — decimals,\napproximate by nature; <em>str</em> — text, including text that LOOKS like a number; and\n<em>bool</em> — True or False, the currency of decisions. The classic trap sits between str\nand float: data arrives from files and instruments as text, and <code>\"42.5\"</code> will\nnot do arithmetic — <code>\"42.5\" * 2</code> is not 85. Conversion is explicit:\n<code>float(\"42.5\")</code> crosses the border, and crossing it consciously is the habit.</p>\n<h3>§2 · Floats tell the truth approximately</h3>\n<p>A float is a binary approximation of a decimal number, and the approximation shows:\n\\( 0.1 + 0.2 \\) is not exactly \\( 0.3 \\) in a computer, and testing equality between\ncomputed floats fails unpredictably. The professional pattern is the tolerance test —\n\\( \\texttt{abs(a - b) < 1e-9} \\) — precisely the pattern every quiz verifier on this\nplatform uses. Roundoff also accumulates: sum a million small floats and the last digits\ndrift. None of this is a defect to fix; it is a property to respect, the numerical\nequivalent of instrument uncertainty.</p>\n<h3>§3 · Presenting numbers like an engineer</h3>\n<p>Computed values arrive with fifteen digits; engineering answers carry units and honest\nprecision. The f-string is the tool: <code>f\"{p/1000:.2f} kW\"</code> renders 8175 W as\n\\( \\texttt{8.18 kW} \\) — converted, rounded, and labeled in one expression. Precision in\nthe format is a claim about accuracy, exactly as significant figures were in the physics\ncourse: print three decimals only if the calculation deserves them. The output line of a\nscript is its public face; make it state value, precision, and unit together, every\ntime.</p>\n<h3>§4 · The type-discipline working method</h3>\n<p>Treat every value's type as consciously as its unit. At the borders of the script —\nreading files, taking input — convert text to numbers explicitly and immediately, so the\ninterior works entirely in numeric types. Compare floats only with tolerances; reserve\nequality for ints and strings. Name booleans as assertions — <code>is_running</code>,\n<code>above_alarm</code> — so conditions read as sentences. And when a result looks\nabsurd, check types before logic: half the beginner's \"impossible\" outputs are a string\nwhere a number belonged, silently concatenated instead of added. The interpreter always\ndoes exactly what the types tell it to; the working method is making sure that is also\nwhat you meant.</p>\n<p>Keep the int/float division of labor deliberate as well. Counts, indices, and loop\nvariables are integers by nature — a plant has 14 pumps, never 14.0 — while every measured\nquantity is a float carrying its approximation honestly. Mixing them is legal (Python\npromotes to float), but REPORTING a count as a decimal reads as sloppiness, and rounding a\nfloat into an index without deciding between truncation and rounding is how off-by-one\nerrors are born. When precision genuinely matters — currency totals, long accumulations —\nknow that specialized decimal types exist and that the ordinary float is a measuring\ninstrument, not a ledger. For this course's engineering arithmetic, floats with tolerance\ncomparisons and honest formatting carry every calculation; the discipline is knowing which\ntype each value IS, the same way the physics course always knew each quantity's unit — a\nhabit checked once per variable and repaid on every line after.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>The script skeleton</b> (Lesson 1) — inputs, computation, labeled output.</li>\n<li><b>Significant figures</b> (Physics I) — precision as an honesty claim.</li>\n<li><b>Tolerance thinking</b> (Math I) — approximation with stated error.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>int / float</td><td>exact whole vs approximate decimal</td><td>Counts are ints; measurements are floats.</td></tr>\n<tr><td>str</td><td>text, even when it looks numeric</td><td>File and instrument data arrives as str — convert at the border.</td></tr>\n<tr><td>bool</td><td>True / False</td><td>Decision currency; name them as assertions.</td></tr>\n<tr><td>Conversion</td><td>\\( \\texttt{float(\"42.5\")},\\ \\texttt{int(x)} \\)</td><td>Explicit border crossings; int() truncates toward zero.</td></tr>\n<tr><td>Float comparison</td><td>\\( \\texttt{abs(a-b) < tol} \\)</td><td>Never == between computed floats.</td></tr>\n<tr><td>f-string</td><td>\\( \\texttt{f\"\\{v:.2f\\} kW\"} \\)</td><td>Value, precision, and unit in one expression.</td></tr>\n<tr><td>Roundoff</td><td>binary approximation drift</td><td>Respected like instrument uncertainty, not 'fixed'.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The equality that fails</b></p>\n<p><b>Problem.</b> Predict the output of both lines, and write the correct comparison:</p>\n<pre><code>print(0.1 + 0.2 == 0.3)\nprint(abs((0.1 + 0.2) - 0.3) < 1e-9)</code></pre>",
+    "solution": "<p><b>Solution.</b> (1) First line: <code>False</code> — in binary, 0.1 and 0.2 are repeating fractions; their sum is 0.30000000000000004.\n(2) Second line: <code>True</code> — the difference (≈\\( 5.5\\times10^{-17} \\)) is far inside the \\( 10^{-9} \\) tolerance.\n(3) The tolerance test IS the correct float comparison.</p>\n<p><b>Answer:</b> False, then True.\n<b>Sanity check:</b> this is not a Python defect — every binary floating-point system on earth does it. Engineering already knows the answer: no two measured values are ever \"equal\" either, only equal within tolerance; the code pattern just says so explicitly.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Crossing the text border</b></p>\n<p><b>Problem.</b> A level reading arrives from a file as the text <code>\"42.5\"</code>. Show what <code>\"42.5\" * 2</code> produces, and script the correct doubling.</p>",
+    "solution": "<p><b>Solution.</b> (1) <code>\"42.5\" * 2</code> → <code>\"42.542.5\"</code> — string repetition, perfectly legal, silently wrong.\n(2) Correct: <code>reading = float(\"42.5\")</code>; <code>doubled = reading * 2</code> → 85.0.</p>\n<p><b>Answer:</b> text repetition vs the numeric 85.0 — the conversion makes the difference.\n<b>Sanity check:</b> the wrong version raises no error at all — the type system did exactly what strings do. Every file-reading script in this course will convert at the border for exactly this reason; the habit costs one function call and prevents the silent classic.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Publishing a result properly</b></p>\n<p><b>Problem.</b> A script computes <code>p = 8175</code> (watts). Write the output line that reports it in kW to two decimals with its unit — and state exactly what prints.</p>",
+    "solution": "<p><b>Solution.</b> (1) <code>print(f\"shaft power = {p/1000:.2f} kW\")</code>.\n(2) \\( 8175/1000 = 8.175 \\); format \\( \\texttt{.2f} \\) rounds to two decimals.\n(3) Prints: <code>shaft power = 8.18 kW</code>.</p>\n<p><b>Answer:</b> <code>shaft power = 8.18 kW</code>.\n<b>Sanity check:</b> conversion, rounding, and labeling happened in ONE expression — nothing was stored rounded (the full 8175 remains available for further computation), which is the right division of labor: full precision inside, honest precision at the interface.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>type(\"3.14\")</code> reports:</p>",
+    "choices": [
+     "str",
+     "float",
+     "int",
+     "bool"
+    ],
+    "answer": 0,
+    "solution": "<p>Quotes make it text, whatever it resembles: <code>\"3.14\"</code> is a string of four characters. It becomes a number only through explicit conversion — <code>float(\"3.14\")</code>. Instrument logs, CSV files, and user input all deliver strings; treating them as numbers without conversion is the most common silent error in beginner data scripts.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>int(7.9)</code> evaluates to:</p>",
+    "choices": [
+     "7",
+     "8",
+     "7.9",
+     "An error"
+    ],
+    "answer": 0,
+    "solution": "<p><code>int()</code> truncates toward zero — it drops the fraction, it does not round: 7. Rounding is a different, explicit request: <code>round(7.9)</code> gives 8. The distinction bites in bin-counting and indexing arithmetic, where a truncation assumed to be a rounding shifts everything by one. Choose the operation by name, not by hope.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which comparison between two COMPUTED float values is professionally correct?</p>",
+    "choices": [
+     "<code>abs(a - b) < 1e-9</code>",
+     "<code>a == b</code>",
+     "<code>str(a) == str(b)</code>",
+     "<code>a is b</code>"
+    ],
+    "answer": 0,
+    "solution": "<p>Computed floats carry binary roundoff, so equality is a coin toss; the tolerance test states how close is close enough — an engineering judgment made explicit. String comparison inherits the same digits problem in costume, and <code>is</code> tests object identity, a different concept entirely. Every verifier on this platform uses the tolerance pattern; now you know why.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>10 / 4</code> evaluates to:</p>",
+    "choices": [
+     "2.5",
+     "2",
+     "3",
+     "2.25"
+    ],
+    "answer": 0,
+    "solution": "<p>Single slash is TRUE division and always returns a float: 2.5. Floor division <code>10 // 4</code> gives 2. (Older languages divided integers integrally, and imported habits from them cause exactly this surprise in reverse.) Knowing which division you asked for is part of type discipline — the operators are unambiguous even when memory isn't.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A boolean variable controlling an alarm branch is best named:</p>",
+    "choices": [
+     "<code>above_alarm</code>",
+     "<code>x</code>",
+     "<code>value2</code>",
+     "<code>temp</code>"
+    ],
+    "answer": 0,
+    "solution": "<p>Booleans are assertions, and naming them as assertions makes conditions read as sentences: <code>if above_alarm:</code> needs no comment. Generic names force every reader back up the script to discover what is being tested. (<code>temp</code> is doubly cursed — ambiguous between 'temporary' and 'temperature'.) Readable conditions are cheap insurance in any script an auditor may one day read.</p>"
+   }
+  ]
+ },
+ "3": {
+  "lecture": "\n<h3>§1 · Decisions: if, elif, else</h3>\n<p>Programs earn their keep when behavior depends on data, and the instrument is the\nconditional. An <code>if</code> tests a boolean expression; <code>elif</code> chains\nfurther tests in order; <code>else</code> catches the remainder. Order matters and is a\ndesign decision: an alarm classifier tests the most severe threshold first, so a reading of\n95 °C reports \"trip\" rather than the also-true \"warning\". Comparisons\n(\\( \\texttt{< <= == >= >} \\)) and the boolean connectives (\\( \\texttt{and, or, not} \\))\ncompose the tests; indentation — four spaces — is not decoration but syntax, defining\nexactly which lines each branch owns.</p>\n<h3>§2 · Repetition: for and while</h3>\n<p>The <code>for</code> loop walks a known collection — every reading in a list, every\nline in a file, every integer in <code>range(n)</code> (which yields 0 through\n\\( n-1 \\)) — and is the workhorse of data processing: initialize an accumulator, add\neach item, report. The <code>while</code> loop repeats as long as a condition holds and\nserves the open-ended questions: keep compounding the filter's pressure drop until it\ncrosses the alarm line, and report how many weeks that took. Choose by the question's\nshape — known collection, <code>for</code>; unknown horizon, <code>while</code> — and give\nevery <code>while</code> a guaranteed exit, because a condition that never turns false\nruns forever.</p>\n<h3>§3 · Guard clauses: refusing bad input early</h3>\n<p>Real calculations meet impossible inputs — negative flows, zero efficiencies, text where\nnumbers belong — and the professional pattern rejects them at the door:\n<code>if eta <= 0: raise ValueError(\"efficiency must be positive\")</code>. The guard\nclause converts a silent wrong answer into a loud, named failure at the exact line where\nthe assumption broke. The mathematics course called this domain discipline — functions\nhave domains, and \\( \\eta = 0 \\) is not in this one; the guard writes the domain into\nthe code.</p>\n<h3>§4 · The control-flow working method</h3>\n<p>Translate procedures the way you would explain them aloud. Write the decision table\nfirst — conditions in severity order, outcomes named — then transcribe it as an\nif/elif/else chain and test EVERY branch once, including the else. For loops, name the\naccumulator for what it accumulates (<code>total_kwh</code>, not <code>s</code>),\ninitialize it visibly, and hand-trace the first two iterations on paper before trusting a\nthousand — the two-minute trace that catches off-by-one and wrong-order errors while they\nare still cheap. Guard first, compute second, report third: scripts organized in that\norder read as procedures, fail loudly at their borders, and hold up when the data turns\nhostile, which production data always eventually does.</p>\n<p>Two loop hygienes complete the method. Keep the loop body honest about what it touches —\na loop that both accumulates a total AND mutates the list it walks is two jobs tangled, and\ntangled jobs breed the subtle bugs; split them. And when a while-loop's exit depends on a\ncomputed quantity, add a hard iteration cap as a guard — <code>if weeks > 1000: raise\nRuntimeError(...)</code> — so a modeling mistake produces a named failure in milliseconds\ninstead of a silent forever. Loops are where scripts spend their lives; discipline there\nis discipline everywhere.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Booleans and comparisons</b> (Lesson 2) — conditions are boolean expressions.</li>\n<li><b>The exponential model</b> (Math I) — today's while-loop example compounds it.</li>\n<li><b>Named variables</b> (Lesson 1) — accumulators with honest names.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>if / elif / else</td><td>first true branch wins</td><td>Decision chains; order encodes priority.</td></tr>\n<tr><td>Comparison operators</td><td>\\( \\texttt{< <= == >= > !=} \\)</td><td>The tests; == compares, = assigns — never confuse them.</td></tr>\n<tr><td>for loop</td><td>\\( \\texttt{for x in collection:} \\)</td><td>Known collections: readings, lines, range(n) = 0…n−1.</td></tr>\n<tr><td>while loop</td><td>\\( \\texttt{while condition:} \\)</td><td>Unknown horizons — with a guaranteed exit.</td></tr>\n<tr><td>Accumulator pattern</td><td>init, add per item, report</td><td>Totals, counts, maxima across any dataset.</td></tr>\n<tr><td>Guard clause</td><td>\\( \\texttt{if bad: raise ValueError(...)} \\)</td><td>Reject impossible inputs loudly, at the border.</td></tr>\n<tr><td>break</td><td>exit the loop now</td><td>Early exit when the answer is found.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Trace the alarm classifier</b></p>\n<p><b>Problem.</b> Trace this classifier for readings of 85, then 96 (°C):</p>\n<pre><code>if t >= 95:\n    level = \"TRIP\"\nelif t >= 80:\n    level = \"ALARM\"\nelif t >= 70:\n    level = \"WARNING\"\nelse:\n    level = \"NORMAL\"</code></pre>",
+    "solution": "<p><b>Solution.</b> (1) t = 85: the 95-test fails, the 80-test passes → <code>\"ALARM\"</code>; the 70-test is never reached.\n(2) t = 96: the FIRST test passes → <code>\"TRIP\"</code>, chain exits immediately.</p>\n<p><b>Answer:</b> 85 → ALARM; 96 → TRIP.\n<b>Sanity check:</b> reverse the order — test 70 first — and a 96 °C reading would report \"WARNING\", since 96 ≥ 70 is also true and the first true branch wins. Severity-descending order is not style; it is the logic. This is why the working method writes the decision table before the code.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The accumulator, traced</b></p>\n<p><b>Problem.</b> Trace the total across the loop:</p>\n<pre><code>readings = [4, 7, 2, 9]\ntotal = 0\nfor r in readings:\n    total = total + r</code></pre>",
+    "solution": "<p><b>Solution.</b> (1) total starts 0.\n(2) After each pass: 0+4=4; 4+7=11; 11+2=13; 13+9=22.\n(3) Final: <code>total = 22</code>.</p>\n<p><b>Answer:</b> 22.\n<b>Sanity check:</b> hand-tracing the first two iterations (4, then 11) is the working method's cheap audit — if those match expectation, the pattern is sound for four items or four million. Forgetting the initialization line, the classic slip, would crash on the first pass rather than silently corrupt: Python's favor to beginners.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>How many weeks to the alarm?</b></p>\n<p><b>Problem.</b> A filter's ΔP starts at 0.30 bar and compounds 5% weekly; the alarm is 0.60 bar. Write the while loop that counts the weeks, and state its result.</p>",
+    "solution": "<p><b>Solution.</b> (1) <code>dp = 0.30; weeks = 0</code>\n<code>while dp &lt; 0.60:</code>\n<code>    weeks += 1</code>\n<code>    dp = 0.30 * 1.05 ** weeks</code>\n(2) Week 14: \\( 0.30 \\times 1.05^{14} = 0.594 \\) — still under. Week 15: \\( 0.624 \\) — crossed.\n(3) Result: <code>weeks = 15</code>.</p>\n<p><b>Answer:</b> 15 weeks.\n<b>Sanity check:</b> the mathematics course's logarithm gave 14.2 weeks for the exact crossing — the loop answers the OPERATIONAL question (first whole week past the line), hence 15. Same physics, two honest answers to two subtly different questions; knowing which one you asked is the engineering.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>range(5)</code> iterates over:</p>",
+    "choices": [
+     "0, 1, 2, 3, 4",
+     "1, 2, 3, 4, 5",
+     "0, 1, 2, 3, 4, 5",
+     "5 copies of nothing"
+    ],
+    "answer": 0,
+    "solution": "<p>range(n) starts at 0 and stops BEFORE n: five values, 0 through 4. The zero-start convention aligns with list indexing (Lesson 6) so <code>range(len(data))</code> walks every index — and the off-by-one instincts imported from 1-counting are the classic loop bug this fact retires. When 1 through 5 is genuinely wanted: <code>range(1, 6)</code>.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The difference between <code>=</code> and <code>==</code> is:</p>",
+    "choices": [
+     "Assignment versus comparison",
+     "They are interchangeable",
+     "== is for numbers only",
+     "= compares, == assigns"
+    ],
+    "answer": 0,
+    "solution": "<p><code>x = 5</code> stores; <code>x == 5</code> asks. Python refuses plain assignment inside an if-condition, converting the classic typo into a visible syntax error — a kindness not all languages extend. Reading them aloud differently ('gets' versus 'equals') keeps the two straight in review, where the eye alone glides past a single missing character.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A guard clause like <code>if eta <= 0: raise ValueError(...)</code> exists to:</p>",
+    "choices": [
+     "Turn an impossible input into a loud, located failure instead of a silent wrong answer",
+     "Speed up the calculation",
+     "Handle only user typos",
+     "Avoid writing an else branch"
+    ],
+    "answer": 0,
+    "solution": "<p>Fed η = 0, the unguarded script divides by zero somewhere downstream — or worse, a negative η produces a plausible-looking negative power that travels into a report. The guard names the broken assumption at the exact border where it entered. It is the code form of a domain statement, and auditors read guards as the script's declared operating envelope.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>After <code>total = 0</code> and <code>for i in range(3): total += i</code>, total equals:</p>",
+    "choices": [
+     "3",
+     "6",
+     "5",
+     "0"
+    ],
+    "answer": 0,
+    "solution": "<p>The loop adds 0, 1, 2 — sum 3. Answering 6 adds 1+2+3, the off-by-one imported from 1-counting; range's zero-start (previous question) decides it. The two-iteration hand trace — total: 0, then 1, then 3 — settles such questions in seconds, which is why the working method makes it a reflex before any loop is trusted at scale.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Inside a loop scanning readings for the first value above a limit, the statement that exits immediately upon finding it is:</p>",
+    "choices": [
+     "break",
+     "stop",
+     "exit the interpreter",
+     "else"
+    ],
+    "answer": 0,
+    "solution": "<p><code>break</code> leaves the loop at once — the found-it exit that saves scanning the rest. (<code>continue</code>, its sibling, skips to the next iteration instead.) There is no <code>stop</code>; killing the interpreter to end a loop is surgery with a hammer. Early exits also document intent: a reader sees the loop is a SEARCH, not a full sweep.</p>"
+   }
+  ]
+ },
+ "4": {
+  "lecture": "\n<h3>§1 · Functions: calculations with names</h3>\n<p>A function packages a calculation behind a name and an interface:\n<code>def shaft_power(q_m3s, head_m, eta=0.7):</code> declares what goes in,\n<code>return</code> declares what comes out, and everything between is the calculation,\nwritten once and reused forever. The docstring — a quoted paragraph directly under the\ndef — states what the function does AND its units, which turns the function into a\nself-documenting engineering tool: <code>help(shaft_power)</code> answers the reviewer\nbefore the reviewer asks. Default arguments (the <code>eta=0.7</code>) encode the usual\ncase while keeping the unusual case one keyword away.</p>\n<h3>§2 · Return, not print</h3>\n<p>A function that PRINTS its result has spent it; a function that RETURNS it hands the\nvalue to the caller for further use — feeding the next calculation, a comparison, a plot,\na test. Printing is presentation, the script's outer layer; returning is plumbing, the\ncomposable interior. The distinction becomes visible the first time you try to use a\nprinted result in arithmetic and find you hold <code>None</code>. Compose functions the\nway the chain rule composed rates: small functions, each doing one nameable thing, wired\nby their returns — \\( \\texttt{gap(c\\_to\\_k(90), c\\_to\\_k(30))} \\) reads like the\nsentence it implements.</p>\n<h3>§3 · Scope: what happens in a function stays there</h3>\n<p>Variables born inside a function are local: invisible outside, gone when the call ends.\nThis is a feature — ten functions can each use <code>x</code> without collision — and a\ndiscipline: a function should receive what it needs as arguments and deliver what it\nproduces as returns, never reaching sideways into the script's globals. Functions written\nthat way are testable in isolation, which is exactly how the next lesson will test\nthem.</p>\n<h3>§4 · The function-design working method</h3>\n<p>Extract a function whenever a calculation is used twice, or once but nameable. Name it\nby what it returns (<code>hydraulic_power_w</code>), carry units in parameter names, and\nwrite the docstring FIRST — if you cannot state the contract in a sentence, the function\nis not yet one thing. Keep functions small enough to hand-verify: one formula, one\ndecision, one transformation each. Then apply Lesson 1's rule at the function scale:\nevery function meets a hand-checked case before it is trusted, and the check lives beside\nthe function as next lesson's assertion. A personal library of such functions — built,\nchecked, and reused across this course — is the deliverable this working method is\nquietly assembling.</p>\n<p>Resist the two classic function pathologies while the habits are forming. The\ndo-everything function — read the file, convert the units, compute the power, print the\nreport — cannot be tested except by running the world; split it at every nameable seam and\neach piece becomes checkable alone. And the copy-paste twin — the same formula pasted in\nthree places with one variable renamed — guarantees that a future correction reaches two\nof the three; extraction into one function makes the fix land everywhere by construction.\nFunctions are the unit of reuse, of testing, and of trust: size them so all three work.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>The script skeleton</b> (Lessons 1–3) — functions modularize it.</li>\n<li><b>Function notation</b> (Math I) — f(x) becomes def f(x):.</li>\n<li><b>Unit-bearing names</b> (Lesson 2) — now on parameters too.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>def / return</td><td>\\( \\texttt{def f(x): ... return y} \\)</td><td>The named, reusable calculation with a declared interface.</td></tr>\n<tr><td>Docstring</td><td>contract + units, under the def</td><td>The function's datasheet; help() reads it back.</td></tr>\n<tr><td>Default argument</td><td>\\( \\texttt{eta=0.7} \\)</td><td>The usual case built in; override by keyword when unusual.</td></tr>\n<tr><td>Return vs print</td><td>plumbing vs presentation</td><td>Return feeds further computation; print spends the value.</td></tr>\n<tr><td>Local scope</td><td>inside variables die at return</td><td>Isolation that makes functions testable and reusable.</td></tr>\n<tr><td>Composition</td><td>\\( \\texttt{g(f(x))} \\)</td><td>Small functions wired by returns — the chain rule's cousin.</td></tr>\n<tr><td>One-thing rule</td><td>one formula / decision per function</td><td>Small enough to hand-verify is small enough to trust.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Build and trace the power function</b></p>\n<p><b>Problem.</b> Trace the call <code>shaft_power(0.025, 25)</code>:</p>\n<pre><code>def shaft_power(q_m3s, head_m, eta=0.7):\n    \"\"\"Shaft power in W for water. q in m3/s, head in m.\"\"\"\n    p_hyd = 1000 * 9.81 * q_m3s * head_m\n    return p_hyd / eta</code></pre>",
+    "solution": "<p><b>Solution.</b> (1) \\( p_{hyd} = 1000 \\times 9.81 \\times 0.025 \\times 25 = 6131\\ \\mathrm{W} \\).\n(2) η defaults to 0.7: \\( 6131/0.7 = 8759\\ \\mathrm{W} \\).\n(3) Returns ≈8.76 kW (the value — nothing prints unless the caller prints).</p>\n<p><b>Answer:</b> ≈8759 W returned.\n<b>Sanity check:</b> the default carried the usual efficiency silently; a stiffer pump calls <code>shaft_power(0.025, 25, eta=0.8)</code> → 7664 W. One function now serves every pump problem this course has computed by hand — which is precisely the point of writing it.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Three statistics, one return</b></p>\n<p><b>Problem.</b> Write a function returning the minimum, maximum, and mean of a list, and trace it on <code>[3, 9, 6]</code>.</p>",
+    "solution": "<p><b>Solution.</b> (1) <code>def stats(xs):</code>\n<code>    return min(xs), max(xs), sum(xs)/len(xs)</code>\n(2) Trace: min 3, max 9, mean \\( 18/3 = 6.0 \\).\n(3) Caller unpacks: <code>lo, hi, avg = stats(readings)</code>.</p>\n<p><b>Answer:</b> \\( (3,\\ 9,\\ 6.0) \\).\n<b>Sanity check:</b> the mean lies between min and max — the free ordering audit every statistics return should pass; and returning the tuple (rather than printing three lines) leaves the caller free to alarm on <code>hi</code>, trend <code>avg</code>, or ignore <code>lo</code>: plumbing, not presentation.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Composed conversions</b></p>\n<p><b>Problem.</b> Given <code>def c_to_k(t_c): return t_c + 273.15</code> and <code>def gap(a, b): return a - b</code>, trace <code>gap(c_to_k(90), c_to_k(30))</code> and comment on the design.</p>",
+    "solution": "<p><b>Solution.</b> (1) Inner calls first: \\( 90 + 273.15 = 363.15 \\); \\( 30 + 273.15 = 303.15 \\).\n(2) <code>gap(363.15, 303.15)</code> → 60.0 K.</p>\n<p><b>Answer:</b> 60.0 K.\n<b>Sanity check:</b> a temperature DIFFERENCE is identical in °C and K — the offsets cancel, and the composition proves it numerically. Two tiny, individually verifiable functions composed by returns produced a correct result neither prints: composition is how small trusted pieces build large trusted calculations.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A function's docstring should state, at minimum:</p>",
+    "choices": [
+     "What it computes and the units of inputs and output",
+     "The author's name",
+     "The date it was written",
+     "Nothing — code documents itself"
+    ],
+    "answer": 0,
+    "solution": "<p>The docstring is the function's datasheet: contract plus units, readable via help() without opening the source. Authorship and dates belong to version control, which tracks them automatically. 'Self-documenting code' covers WHAT lines do, never which unit a parameter expects — and unit ambiguity, as ever, is the error that costs the most and announces itself the least.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A function that prints its result instead of returning it:</p>",
+    "choices": [
+     "Cannot feed its value into further computation",
+     "Is faster",
+     "Is equivalent in every way",
+     "Uses less memory"
+    ],
+    "answer": 0,
+    "solution": "<p>Printing sends characters to the screen and returns <code>None</code> — try arithmetic on it and the error arrives one line later, mystifying beginners. Returning hands the caller a value to compute with, test, or print AT THE EDGE of the script. The rule of thumb: functions return; the script's last lines print. Everything composable follows from it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A variable created inside a function is, outside the function:</p>",
+    "choices": [
+     "Invisible — it exists only during the call",
+     "Available globally",
+     "Available if the names match",
+     "Zero"
+    ],
+    "answer": 0,
+    "solution": "<p>Local scope: born at the call, gone at the return. This isolation is what lets ten functions use <code>x</code> without collision, and what makes each testable alone. Needing a function's inner value outside is the signal to RETURN it — reaching in (or leaking globals out) couples everything to everything, and coupled scripts break in sympathy.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>With <code>def f(x): return x * x</code>, the value of <code>f(f(2))</code> is:</p>",
+    "choices": [
+     "16",
+     "8",
+     "4",
+     "2"
+    ],
+    "answer": 0,
+    "solution": "<p>Inside-out: f(2) = 4, then f(4) = 16. Composition evaluates inner calls first — exactly the chain-rule reading order from the mathematics course. Answering 8 computes \\( 2^3 \\), a different composition; 4 stops after one call. Tracing nested calls inner-first is a two-second discipline that scales to arbitrarily deep pipelines.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In <code>def shaft_power(q_m3s, head_m, eta=0.7)</code>, the <code>eta=0.7</code> means:</p>",
+    "choices": [
+     "Callers may omit eta and get 0.7; or pass their own",
+     "Eta can never change",
+     "Eta must always be supplied as 0.7",
+     "The function only works at 70% efficiency"
+    ],
+    "answer": 0,
+    "solution": "<p>A default argument encodes the usual case without forbidding the unusual: <code>shaft_power(q, h)</code> uses 0.7; <code>shaft_power(q, h, eta=0.82)</code> overrides it. Defaults document typical practice right in the signature — and keep call sites short where the typical applies. The pattern recurs across every engineering library you will ever import.</p>"
+   }
+  ]
+ }
+}

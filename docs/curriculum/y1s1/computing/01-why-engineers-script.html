@@ -54,7 +54,7 @@
     <h1>Why engineers script</h1>
     <p class="sub">The spreadsheet's limits and the script's advantages: repeatability, audit trail, scale. Setting up Python and running a first calculation. Version thinking for engineering work.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/1">Mark as complete</button>
@@ -67,23 +67,90 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name two failure modes of spreadsheet engineering that scripts avoid.</li><li>What makes a calculation reproducible?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>CMP 106 · Engineering Computing</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name two failure modes of spreadsheet engineering that scripts avoid.</li><li>What makes a calculation reproducible?</li></ul></div><div class="measure">
+<h3>01 · Why engineers script</h3>
+<p>A spreadsheet hides its logic inside cells; a script lays it out as readable text. That
+single difference buys the three things engineering calculation needs most:
+<em>repeatability</em> — run the script tomorrow on new data and the identical logic
+executes; <em>auditability</em> — a reviewer reads the calculation top to bottom, every
+assumption visible; and <em>scale</em> — the loop that processes one reading processes a
+million without new effort. Spreadsheets remain excellent scratchpads, but the moment a
+calculation matters, recurs, or grows, the professional tool is a script — and the habit of
+writing one is what this course installs.</p>
+<h3>02 · The toolchain, plainly</h3>
+<p>Python is an interpreter: it reads statements and executes them immediately. You can feed
+it lines interactively — the REPL, ideal for trying an idea — or hand it a file of
+statements, a script, which is the durable product. A script is just text: openable in any
+editor, storable beside the data it processed, and — crucially — diffable, so yesterday's
+version and today's can be compared line by line. That property makes scripts the natural
+citizens of version control and the natural evidence in an engineering audit trail.</p>
+<h3>03 · Anatomy of a calculation script</h3>
+<p>Every calculation script worth keeping has the same skeleton: named inputs at the top,
+with units in the names or comments (\( \texttt{flow\_m3h = 100} \)); the computation in
+clear steps, mirroring how you would write it on paper; and output that states units —
+\( \texttt{print(f"shaft power = \{P/1000:.1f\} kW")} \). Arithmetic operators behave
+as expected, with three worth flagging now: \( \texttt{**} \) is exponentiation,
+\( \texttt{/} \) always returns a decimal, and \( \texttt{//} \) divides and discards
+the remainder. A pump-power script in this shape is eight lines — and it replaces the
+back-of-envelope forever, because it IS the envelope, kept.</p>
+<h3>04 · The scripting working method</h3>
+<p>Write scripts the way the mathematics course taught you to check units: as a discipline,
+not an afterthought. Name variables with their units — ambiguity between bar and kPa has
+sunk more calculations than any syntax error ever will. State inputs once, at the top,
+never buried mid-logic. Print results WITH units and sensible precision. Keep one
+calculation per script while learning; later lessons modularize. And before trusting any
+script, run it against a case you have verified by hand — the machine-verification habit
+this whole platform practices on you is the habit you are now learning to practice on your
+own code. A script that has never met a hand-checked case is an opinion with syntax.</p>
+<p>Finally, keep scripts with their evidence. Store the script beside the data it
+processed and note the date and source of both — the calculation, its inputs, and its
+result then travel as one reviewable package. Months later, when a result is questioned,
+the answer is a rerun rather than an archaeology project; and when the data changes, the
+same package regenerates every downstream number identically. That closed loop — data,
+script, result, rerunnable — is what engineering computing means by an audit trail.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Name two failure modes of spreadsheet engineering that scripts avoid.</li><li>What makes a calculation reproducible?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Order-of-magnitude sense</b> (Math I) — the sanity screen for every output.</li>
+<li><b>Unit discipline</b> (Math I, Physics I) — now encoded in variable names.</li>
+<li><b>No prior programming</b> — the course starts from zero, honestly.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Script</td><td>statements in a file, run top to bottom</td><td>The durable, auditable form of a calculation.</td></tr>
+<tr><td>REPL</td><td>type a line, see the result</td><td>Trying ideas; never the final home of real work.</td></tr>
+<tr><td>Variable</td><td>\( \texttt{name = value} \)</td><td>Named storage; put the unit in the name: \( \texttt{head\_m} \).</td></tr>
+<tr><td>Operators</td><td>\( \texttt{+ - * / // \%\ **} \)</td><td>\( \texttt{/} \) gives decimals; \( \texttt{//} \) floors; \( \texttt{**} \) powers.</td></tr>
+<tr><td>print with f-string</td><td>\( \texttt{f"P = \{p:.1f\} kW"} \)</td><td>Output that states value, precision, and unit together.</td></tr>
+<tr><td>Comment</td><td>\( \texttt{\#} \) to end of line</td><td>The why beside the what; assumptions on the record.</td></tr>
+<tr><td>Hand-check rule</td><td>script vs worked case</td><td>No script is trusted before it reproduces a known answer.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Trace the pump-power script</b></p>
+<p><b>Problem.</b> Trace this script and state its output:</p>
+<pre><code>rho = 1000        # kg/m3
+g = 9.81          # m/s2
+flow_m3h = 100
+head_m = 30
+eta = 0.70
+Q = flow_m3h / 3600
+P = rho * g * Q * head_m / eta
+print(f"shaft power = {P/1000:.1f} kW")</code></pre></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( Q = 100/3600 = 0.02778\ \mathrm{m^3/s} \).
+(2) \( P = 1000 \times 9.81 \times 0.02778 \times 30 / 0.70 = 11{,}679\ \mathrm{W} \).
+(3) Output: <code>shaft power = 11.7 kW</code>.</p>
+<p><b>Answer:</b> 11.7 kW.
+<b>Sanity check:</b> this is the exact calculation the mathematics course verified by hand — hydraulic 8.2 kW, divided by 0.7. The script is that envelope, kept: change the flow tomorrow and the identical logic reruns, which is the entire argument of 1.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>A conversion worth scripting</b></p>
+<p><b>Problem.</b> Write (and trace for 6.0 barg) a script converting gauge pressure in bar to absolute pressure in kPa: \( P_{abs} = P_{gauge} \times 100 + 101.325 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) <code>p_barg = 6.0</code>; <code>p_kpa_abs = p_barg * 100 + 101.325</code>; <code>print(f"{p_kpa_abs:.1f} kPa abs")</code>.
+(2) Trace: \( 6.0 \times 100 + 101.325 = 701.3\ \mathrm{kPa\ abs} \).</p>
+<p><b>Answer:</b> 701.3 kPa absolute.
+<b>Sanity check:</b> the gauge trap from the mathematics course, now armored in code: the script's NAME says barg in and kPa-absolute out, so the assumption travels with the calculation — which is precisely what a cell formula never tells its reader.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>The running-cost one-liner</b></p>
+<p><b>Problem.</b> A 15 kW machine runs 16 h/day at an energy price of 0.045 per kWh. Script the daily cost and trace it.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) <code>cost = 15 * 16 * 0.045</code>.
+(2) \( 15 \times 16 = 240\ \mathrm{kWh/day} \); \( 240 \times 0.045 = 10.8 \) per day.</p>
+<p><b>Answer:</b> 10.8 currency units per day — ≈3,940 per year of continuous duty.
+<b>Sanity check:</b> kW times hours gives kWh (energy), times price-per-kWh gives money — the units chain cleanly, and the annualized figure (×365) is the number that turns a motor-efficiency conversation into a business case. Three inputs, one line, permanent tool.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>The decisive advantage of a script over a spreadsheet for a recurring engineering calculation is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The logic is visible, reviewable, and reruns identically on new data</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Scripts cannot contain errors</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Scripts run faster, which is what matters</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Spreadsheets cannot do arithmetic</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Auditability and repeatability are the engineering virtues: every step readable top to bottom, every rerun identical. Scripts absolutely can contain errors — the hand-check rule exists because of it; speed rarely matters at calculation scale; and spreadsheets compute fine — they just hide the logic in cells where reviewers cannot see it whole.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>In Python, <code>7 // 2</code> evaluates to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>3</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>3.5</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p><code>//</code> is floor division: divide and discard the remainder — 3. Plain <code>/</code> gives 3.5 (always a float); rounding UP would give 4 (that's <code>math.ceil</code>); 1 is the REMAINDER, delivered by <code>%</code>. The three operators split the division jobs among themselves, and mixing them up is the first classic Python slip.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p><code>print(2 ** 3)</code> outputs:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>6</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>9</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>23</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p><code>**</code> is exponentiation: \( 2^3 = 8 \). The caret <code>^</code> — which many calculators use — means something entirely different in Python (bitwise XOR), and <code>2^3</code> would print 1: a legal expression computing the wrong thing silently, which is exactly the kind of error the hand-check rule is designed to catch.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>The best variable name for a flow reading of 100 m³/h is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span><code>flow_m3h</code></span></button><button type="button" class="quiz-choice"><span class="key">B</span><span><code>f</code></span></button><button type="button" class="quiz-choice"><span class="key">C</span><span><code>x1</code></span></button><button type="button" class="quiz-choice"><span class="key">D</span><span><code>data</code></span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The unit rides in the name, so every later line that touches it knows what it holds — the script equivalent of the mathematics course's unit discipline. Single letters and generic names create the bar-versus-kPa ambiguities that sink calculations; six months later, <code>flow_m3h</code> still explains itself and <code>x1</code> explains nothing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Before a new calculation script is trusted, it should first:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Reproduce a case already verified by hand</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Be run many times</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Be converted to a spreadsheet</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Print without error messages</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Running without errors proves only that the syntax is legal — a script can be fluently, confidently wrong. The hand-checked case pins the LOGIC: if the script reproduces a known answer, its machinery is sound and may be pointed at unknown cases. Repetition of an unverified script just repeats the doubt. This is the platform's own machine-verification habit, handed to you.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>
