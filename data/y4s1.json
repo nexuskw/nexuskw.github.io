@@ -124,28 +124,17 @@
         },
         {
           "n": 9,
-          "t": "Fans and blowers",
+          "t": "Fans, blowers, and turbines",
           "tier": 3,
-          "scope": "Fan laws and curves; static versus total pressure. Balance and belt issues as the routine failure diet. Cooling and ventilation duties in Gulf summer.",
-          "src": "Çengel & Cimbala, Ch. 14",
+          "scope": "Fan laws and curves; static versus total pressure; balance and belt issues as the routine failure diet of cooling and ventilation duty in Gulf summer. Steam and gas turbines in outline: stage energy conversion recalled from thermodynamics, governing and protection systems, and steam quality's blade consequences. The rest of the rotating fleet, respected from a maintenance distance.",
+          "src": "Çengel & Cimbala, Ch. 14; NPTEL: Applied Thermodynamics",
           "preview": [
             "State the fan laws and what a 10% speed cut buys in power.",
-            "Static versus total pressure: which does a duct system feel?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Steam and gas turbines in outline",
-          "tier": 3,
-          "scope": "Stage energy conversion recalled from thermodynamics; governing and protection systems. Steam quality's blade consequences. The prime movers behind large trains, respected from a maintenance distance.",
-          "src": "NPTEL: Applied Thermodynamics",
-          "preview": [
-            "Why does steam quality decide blade erosion?",
             "What does overspeed protection interrupt, and how fast must it act?"
           ]
         },
         {
-          "n": 11,
+          "n": 10,
           "t": "Machinery installation and commissioning",
           "tier": 3,
           "scope": "Foundations, grouting, and soft foot; piping strain as the silent misalignment source. Commissioning checks and baseline data capture. The installation quality that decides the first five years of vibration history.",
@@ -156,7 +145,7 @@
           ]
         },
         {
-          "n": 12,
+          "n": 11,
           "t": "Rotating equipment failure investigation project",
           "tier": 3,
           "scope": "A staged failed-pump scenario: history, vibration data, oil results, and teardown photographs provided. Produce the failure analysis and corrective actions. The course's eight core lessons deployed as one investigation.",
@@ -419,18 +408,6 @@
         },
         {
           "n": 9,
-          "t": "Online monitoring and protection systems",
-          "tier": 3,
-          "scope": "Permanently installed sensors, protection versus prediction, and trip logic on critical trains. Proximity probes on journal-bearing machines. When online systems earn their cost.",
-          "src": "ISO 18436-aligned content; video: Mobius Institute",
-          "kuwait": "EQUATE",
-          "preview": [
-            "Protection versus prediction systems: what does each shutdown philosophy imply?",
-            "Why do journal-bearing machines carry proximity probes rather than accelerometers?"
-          ]
-        },
-        {
-          "n": 10,
           "t": "Diagnostics case marathon",
           "tier": 3,
           "scope": "A dozen anonymized cases across the four technologies read cold, then debriefed. Differential diagnosis practice: competing explanations ranked. The pattern library a working analyst carries.",
@@ -441,7 +418,7 @@
           ]
         },
         {
-          "n": 11,
+          "n": 10,
           "t": "PdM data management and trending",
           "tier": 3,
           "scope": "Baselines, alarm limits, and trend curation; false-alarm discipline. Integrating PdM findings into the CMMS work flow. The administrative half that makes the technical half matter.",
@@ -452,7 +429,7 @@
           ]
         },
         {
-          "n": 12,
+          "n": 11,
           "t": "PdM program design project",
           "tier": 3,
           "scope": "For a given equipment list: criticality-based technology assignment, routes, intervals, and KPI set, costed and staffed. The deliverable a reliability engineer presents to justify the program. Course capstone.",
@@ -544,6 +521,18 @@
         },
         {
           "n": 7,
+          "t": "Online monitoring and protection systems",
+          "tier": 3,
+          "scope": "Permanently installed sensors, protection versus prediction, and trip logic on critical trains. Proximity probes on journal-bearing machines. When online systems earn their cost.",
+          "src": "ISO 18436-aligned content; video: Mobius Institute",
+          "kuwait": "EQUATE",
+          "preview": [
+            "Protection versus prediction systems: what does each shutdown philosophy imply?",
+            "Why do journal-bearing machines carry proximity probes rather than accelerometers?"
+          ]
+        },
+        {
+          "n": 8,
           "t": "Dashboards and reporting that change behavior",
           "tier": 3,
           "scope": "KPI design: leading versus lagging, owner versus audience. Dashboard sins: vanity metrics and unactionable charts. Production meetings run from data with provenance.",
@@ -554,7 +543,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 9,
           "t": "Analytics and anomaly detection in outline",
           "tier": 3,
           "scope": "Statistical baselines and simple models on historian data; what 'AI for PdM' can and cannot promise today. Pilot design with success criteria. Skepticism as an engineering instrument.",
@@ -565,7 +554,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "OT/IT convergence and security",
           "tier": 3,
           "scope": "Network zones and conduits; patching and backup discipline for control systems. Remote vendor access governed. The security posture a data project must not degrade.",
@@ -576,7 +565,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Plant data project",
           "tier": 3,
           "scope": "From a provided historian extract: build state logic, compute OEE, find the top three losses, and present the case for one improvement. Data engineering in production clothing. Course capstone.",
@@ -799,6 +788,17 @@
         },
         {
           "n": 7,
+          "t": "Uncertainty, sensitivity, and risk",
+          "tier": 3,
+          "scope": "Sensitivity analysis and breakeven on the variables that actually move a decision. Expected value with honest probabilities; decision trees for repair-versus-replace under uncertainty. Presenting ranges instead of false precision — the analyst's credibility insurance.",
+          "src": "NPTEL: Engineering Economics",
+          "preview": [
+            "What does a sensitivity chart reveal that a single NPV number hides?",
+            "When is expected value the wrong basis for a one-shot decision?"
+          ]
+        },
+        {
+          "n": 8,
           "t": "Project management fundamentals",
           "tier": 3,
           "scope": "Scope, WBS, and responsibility assignment; the triple constraint stated without cliché. Stakeholders and the single-page charter. Plant projects sized from kilodinar to shutdown scale.",
@@ -809,7 +809,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 9,
           "t": "Scheduling: CPM and float",
           "tier": 3,
           "scope": "Networks, critical paths, and float computed by hand once. Crashing economics. The schedule literacy turnarounds will demand at scale.",
@@ -820,7 +820,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Cost control and earned value",
           "tier": 3,
           "scope": "Budgets, commitments, and actuals separated; earned-value indices computed and interpreted. Forecast at completion honestly. Progress reporting that survives audit.",
@@ -831,7 +831,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Business-case project",
           "tier": 3,
           "scope": "Build the full case for one reliability improvement: baseline losses, options, NPV/payback, risks, and implementation schedule. Presented as a one-pager plus backup. The document that gets funding.",

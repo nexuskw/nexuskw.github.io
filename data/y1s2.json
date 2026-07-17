@@ -512,28 +512,17 @@
         },
         {
           "n": 9,
-          "t": "Welding processes II — resistance, gas, and solid state",
+          "t": "Welding II, thermal cutting, and joint preparation",
           "tier": 3,
-          "scope": "Resistance spot and seam welding; oxyfuel processes; friction and explosion welding in outline. Brazing and soldering distinguished properly from welding. Matching process to joint, material, and volume.",
-          "src": "Groover, welding chapters; Black & Kohser",
+          "scope": "Resistance spot and seam welding; oxyfuel, friction, and explosion welding in outline; brazing and soldering distinguished properly from welding. Thermal cutting — oxyfuel, plasma, and laser — with kerf and heat-affected edges. Joint types, edge preparation geometry, and fit-up as the quiet variable behind weld quality.",
+          "src": "Groover, welding chapters; Kalpakjian & Schmid; Black & Kohser",
           "preview": [
             "Resistance spot welding: what generates the heat, and where?",
-            "Brazing versus welding: what melts, and what doesn't?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Thermal cutting and joint preparation",
-          "tier": 3,
-          "scope": "Oxyfuel, plasma, and laser cutting; kerf and heat-affected edges. Joint types and edge preparation geometry. Fit-up as the quiet variable behind weld quality.",
-          "src": "Kalpakjian & Schmid; Black & Kohser",
-          "preview": [
-            "Why does plasma cutting beat oxyfuel on stainless?",
             "What does poor fit-up do to a weld's defect odds?"
           ]
         },
         {
-          "n": 11,
+          "n": 10,
           "t": "Mechanical joining",
           "tier": 3,
           "scope": "Bolted joints: preload, torque–tension, and why gasketed flanges leak when torqued wrong. Riveting and adhesive bonding in outline. The maintenance view: joints are made to be remade.",
@@ -544,7 +533,7 @@
           ]
         },
         {
-          "n": 12,
+          "n": 11,
           "t": "Additive manufacturing first contact",
           "tier": 3,
           "scope": "The AM process families in one pass: PBF, DED, FDM, binder jetting. Where AM already earns keep: jigs, obsolete spares, prototypes. Honest limits — surface, properties, qualification.",
@@ -812,6 +801,17 @@
         },
         {
           "n": 9,
+          "t": "Synchronous machines and standby generation",
+          "tier": 3,
+          "scope": "The synchronous machine as motor and alternator: the rotating field met from the other side, synchronous speed, and excitation. Standby diesel generator sets — ratings, load acceptance, and the transfer logic that keeps critical plant alive. Paralleling conditions in outline: why voltage, frequency, and phase must agree before the breaker closes.",
+          "src": "NPTEL: Basic Electrical Technology",
+          "preview": [
+            "Why does a synchronous machine run at exactly synchronous speed or not at all?",
+            "Name the three quantities that must match before paralleling a generator onto the bus."
+          ]
+        },
+        {
+          "n": 10,
           "t": "Motor starting, protection, and VFDs",
           "tier": 3,
           "scope": "DOL and star-delta starting; overloads and protection classes. Variable-frequency drives in outline: what they do to the torque curve and to bearings. Motor circuit anatomy from MCC to terminal box.",
@@ -822,7 +822,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Electrical safety and measurements",
           "tier": 3,
           "scope": "Shock and arc-flash hazards respected properly; lockout-tagout as a mechanical engineer practices it. Insulation resistance and clamp-meter measurements. The boundary line between mechanical and electrical work scopes.",

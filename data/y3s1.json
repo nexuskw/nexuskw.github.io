@@ -357,6 +357,17 @@
         },
         {
           "n": 8,
+          "t": "HMI design for operators",
+          "tier": 3,
+          "scope": "Screen hierarchy and navigation designed around the operator's tasks, not the tag database. High-performance HMI principles: gray backgrounds, analog context, and alarms that stand out because nothing else shouts. Binding displays to PLC data and testing the interface against abnormal situations, not just the happy path.",
+          "src": "NPTEL: Industrial Automation and Control; supplementary video: RealPars",
+          "preview": [
+            "Why do high-performance HMIs keep most of the screen gray?",
+            "What should an overview screen let an operator judge in five seconds?"
+          ]
+        },
+        {
+          "n": 9,
           "t": "Alarm management and diagnostics design",
           "tier": 3,
           "scope": "Alarm philosophy applied in logic: priority, deadband, and state-based suppression. First-out capture for trips. Designing the diagnostics you will want during the outage.",
@@ -367,7 +378,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "OT cybersecurity basics",
           "tier": 3,
           "scope": "Why plant networks are attacked and how they are segmented, patched, and backed up. Remote access done with adult supervision. The maintenance engineer's cyber hygiene responsibilities.",
@@ -378,7 +389,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Integration project: a two-station line",
           "tier": 3,
           "scope": "Two PLC stations, one network, shared interlocks, one HMI: specify, program, and fault-test the pair. Handshake design under failure conditions. The systems view PLC I could not yet teach.",
@@ -623,28 +634,17 @@
         },
         {
           "n": 8,
-          "t": "Ultrasonic testing in depth",
+          "t": "Volumetric NDT in depth: UT and RT",
           "tier": 3,
-          "scope": "Wave propagation, probes, and calibration blocks. Angle-beam weld scanning geometry. Sizing and characterizing indications — where UT skill actually lives.",
+          "scope": "Ultrasonic testing: wave propagation, probes, calibration blocks, and angle-beam weld scanning — sizing and characterizing indications, where UT skill actually lives. Radiographic testing: source selection, geometry, image quality indicators, and film and digital reading of the classic defect appearances. Radiation safety as an absolute boundary.",
           "src": "Kalpakjian & Schmid, inspection sections",
           "preview": [
             "Why does angle-beam UT find what straight-beam misses in welds?",
-            "What does a calibration block calibrate?"
+            "What does an IQI (penetrameter) prove about a radiograph?"
           ]
         },
         {
           "n": 9,
-          "t": "Radiographic testing in depth",
-          "tier": 3,
-          "scope": "Source selection, geometry, and image quality indicators. Film and digital reading of the classic defect appearances. Radiation safety as an absolute boundary.",
-          "src": "Kalpakjian & Schmid, inspection sections",
-          "preview": [
-            "What does an IQI (penetrameter) prove about a radiograph?",
-            "Why is source-side versus film-side geometry visible in the image?"
-          ]
-        },
-        {
-          "n": 10,
           "t": "Welding procedure and welder qualification",
           "tier": 3,
           "scope": "WPS variables — essential and nonessential; PQR testing: tensiles, bends, macros. Welder performance qualification and its limits of position and thickness. The paperwork that makes welds trustworthy.",
@@ -655,7 +655,7 @@
           ]
         },
         {
-          "n": 11,
+          "n": 10,
           "t": "Cutting, gouging, and repair welding",
           "tier": 3,
           "scope": "Arc gouging and defect excavation; repair sequences that don't make things worse. Excavation verification by MT/PT. Repair welding as controlled surgery, permitted and documented.",
@@ -667,7 +667,7 @@
           ]
         },
         {
-          "n": 12,
+          "n": 11,
           "t": "Fabrication quality plan project",
           "tier": 3,
           "scope": "Assemble an inspection and test plan for a welded assembly: hold points, NDT extents, acceptance criteria, and records. The QA/QC document flow of a fabrication contract walked once end to end.",

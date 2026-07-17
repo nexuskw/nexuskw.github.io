@@ -644,13 +644,13 @@
         },
         {
           "n": 6,
-          "t": "Fundamentals of metal forming",
+          "t": "Fundamentals of metal forming and workability",
           "tier": 3,
-          "scope": "Flow stress and the flow curve; hot, warm, and cold working defined by homologous temperature. Strain-rate sensitivity in hot work. Friction and lubrication at the die interface — the tax every forming process pays.",
-          "src": "Groover, Ch. 18; Kalpakjian & Schmid, forming fundamentals",
+          "scope": "Flow stress and the flow curve; hot, warm, and cold working defined by homologous temperature. Strain-rate sensitivity in hot work, and friction and lubrication at the die interface — the tax every forming process pays. Workability limits and the defect families they guard — edge cracking, center bursts (chevrons), laps, and surface defects — read as process diagnostics, not random events.",
+          "src": "Groover, Ch. 18–19; Kalpakjian & Schmid, forming fundamentals",
           "preview": [
             "Define hot working by homologous temperature, and name its two big gifts.",
-            "Why does strain-rate sensitivity matter in hot forming but barely in cold?"
+            "Chevron cracks in a drawn bar: what process condition produces them?"
           ]
         },
         {
@@ -711,17 +711,6 @@
         },
         {
           "n": 11,
-          "t": "Forming defects and workability",
-          "tier": 3,
-          "scope": "Edge cracking, center bursts (chevrons), laps, and surface defects mapped to their process causes. Workability limits and how processes are kept inside them. Defects as process diagnostics, not random events.",
-          "src": "Kalpakjian & Schmid, forming chapters; Groover, Ch. 19",
-          "preview": [
-            "Chevron cracks in a drawn bar: what process condition produces them?",
-            "Why are forming defects process diagnostics rather than random events?"
-          ]
-        },
-        {
-          "n": 12,
           "t": "Process selection and cost fundamentals",
           "tier": 3,
           "scope": "Choosing among casting, forming, and machining for a given geometry, alloy, tolerance, and volume. Fixed versus variable cost and the break-even volume between processes. Near-net-shape thinking as an economic argument.",
@@ -788,6 +777,17 @@
         },
         {
           "n": 5,
+          "t": "Testing and debugging engineering code",
+          "tier": 3,
+          "scope": "Assertions and test cases that pin a calculation to a hand-checked answer before it is trusted at scale. Exceptions and guard clauses for bad inputs; unit sanity checks as an executable habit. Debugging as hypothesis testing, not stare-and-hope.",
+          "src": "MIT OCW 6.0001",
+          "preview": [
+            "What does an assertion buy you that a printed answer doesn't?",
+            "Why should a calculation function be tested against a hand-checked case before scale use?"
+          ]
+        },
+        {
+          "n": 6,
           "t": "Lists, dictionaries, and files",
           "tier": 3,
           "scope": "Collections for measurement sets and equipment records. Reading and writing CSV files — the lingua franca of plant data exports. Cleaning real, messy data defensively.",
@@ -798,7 +798,7 @@
           ]
         },
         {
-          "n": 6,
+          "n": 7,
           "t": "Arrays and numerical work",
           "tier": 3,
           "scope": "NumPy arrays for vectorized calculation over whole datasets. Elementwise operations, aggregation, and broadcasting. A vibration record processed without a single explicit loop.",
@@ -809,7 +809,7 @@
           ]
         },
         {
-          "n": 7,
+          "n": 8,
           "t": "Plotting engineering data",
           "tier": 3,
           "scope": "Time series, scatter, and log-scale plots with honest axes and units. The plot as an argument, not a decoration. Reproducing a textbook figure from raw numbers.",
@@ -820,7 +820,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 9,
           "t": "Curve fitting and interpolation",
           "tier": 3,
           "scope": "Least-squares fits to calibration and performance data. Interpolation for table lookups — steam tables and pump curves as targets. Residuals as the fit's honesty check.",
@@ -831,7 +831,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Small simulations",
           "tier": 3,
           "scope": "Time-stepping a first-order ODE: tank level, cooling, simple reliability decay. Step size and stability observed experimentally. Simulation as a cheap laboratory.",
@@ -842,7 +842,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Project: a maintenance data mini-analysis",
           "tier": 3,
           "scope": "End-to-end exercise: load a work-order export, clean it, compute simple KPIs, and plot the story. The habits of reproducible analysis. This project pattern returns in Reliability Engineering.",

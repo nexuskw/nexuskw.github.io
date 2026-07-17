@@ -49,28 +49,17 @@
         },
         {
           "n": 4,
-          "t": "Bending stress in beams",
+          "t": "Bending and transverse shear in beams",
           "tier": 3,
-          "scope": "The flexure formula derived from plane sections. Section modulus as the designer's currency. Where beams actually fail — and why the extreme fiber earns its name.",
+          "scope": "The flexure formula derived from plane sections; section modulus as the designer's currency. Shear stress distribution and shear flow — why webs carry shear and flanges carry moment in an I-beam. Built-up sections and their fastener spacing, and where beams actually fail.",
           "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
           "preview": [
             "Why does bending stress vanish at the neutral axis and peak at the surface?",
-            "What does section modulus let you compare across shapes?"
+            "Why do I-beam webs carry the shear while flanges carry the moment?"
           ]
         },
         {
           "n": 5,
-          "t": "Transverse shear in beams",
-          "tier": 3,
-          "scope": "Shear stress distribution and shear flow. Why webs carry shear and flanges carry moment in an I-beam. Built-up sections and their fastener spacing.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Why do I-beam webs carry the shear while flanges carry the moment?",
-            "Where does shear stress peak in a rectangular section?"
-          ]
-        },
-        {
-          "n": 6,
           "t": "Beam deflection",
           "tier": 3,
           "scope": "Elastic curve by integration; superposition with standard cases. Stiffness as a serviceability limit distinct from strength. Machinery baseplate and walkway deflection checks.",
@@ -81,7 +70,7 @@
           ]
         },
         {
-          "n": 7,
+          "n": 6,
           "t": "Combined loading",
           "tier": 3,
           "scope": "Axial, torsion, bending, and pressure superposed at a point. Critical-point hunting on real components. A shaft with a pulley worked completely — the pattern for machine design.",
@@ -92,7 +81,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 7,
           "t": "Stress transformation and Mohr's circle",
           "tier": 3,
           "scope": "Plane-stress transformation derived, then Mohr's circle as its graphical engine. Principal stresses and maximum shear located. Why fatigue cracks pick their planes.",
@@ -103,7 +92,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 8,
           "t": "Pressure vessels: thin-walled theory",
           "tier": 3,
           "scope": "Hoop and axial stress derived from equilibrium. The 2:1 hoop-to-axial ratio and what it predicts about vessel failure orientation. First contact with the equipment class Asset Integrity will govern.",
@@ -114,7 +103,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 9,
           "t": "Failure theories",
           "tier": 3,
           "scope": "Tresca and von Mises for ductile metals; maximum normal stress for brittle ones. Using them on combined-stress states from lesson 7. What 'the stress' means when there are six components.",
@@ -125,7 +114,7 @@
           ]
         },
         {
-          "n": 11,
+          "n": 10,
           "t": "Buckling of columns",
           "tier": 3,
           "scope": "Euler buckling derived; effective length and slenderness. The crossover between yielding and buckling. Why long slender compression members fail sideways without warning.",
@@ -136,7 +125,7 @@
           ]
         },
         {
-          "n": 12,
+          "n": 11,
           "t": "Stress concentration and fatigue preview",
           "tier": 3,
           "scope": "Kt at holes, fillets, and keyways; the geometry tax on nominal stress. Notch sensitivity in brief. The handshake with Materials II's fatigue lesson — geometry and metallurgy jointly set life.",
@@ -230,6 +219,17 @@
         },
         {
           "n": 7,
+          "t": "Cooling towers and cooling water systems",
+          "tier": 3,
+          "scope": "Evaporative cooling read straight off the psychrometric chart: range, approach, and why wet-bulb temperature sets the floor. Cycles of concentration, makeup, and blowdown arithmetic. The condenser cooling loop as the plant's other utility — sized, fouled, and chemically managed.",
+          "src": "NPTEL: Applied Thermodynamics; video: LearnChemE (CU Boulder) — applied thermo",
+          "preview": [
+            "Why can a cooling tower cool water below the ambient dry-bulb temperature?",
+            "What does raising cycles of concentration save, and what does it risk?"
+          ]
+        },
+        {
+          "n": 8,
           "t": "Compressed air systems",
           "tier": 3,
           "scope": "Compression work, multistaging, and intercooling derived and priced. Receivers, dryers, and dew point. Leak economics — why compressed air is the plant's most expensive utility per joule.",
@@ -240,7 +240,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 9,
           "t": "Combustion fundamentals",
           "tier": 3,
           "scope": "Stoichiometry, excess air, and flue-gas analysis. Heating values and combustion efficiency from stack measurements. Boiler tuning as applied chemistry.",
@@ -251,7 +251,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Exergy analysis of utilities",
           "tier": 3,
           "scope": "Second-law accounting applied to boilers, heat exchangers, and throttles. Exergy destruction rankings as an audit's priority list. Where the utility bill actually leaks.",
@@ -262,7 +262,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Utility system audit project",
           "tier": 3,
           "scope": "A guided paper audit of a representative factory utility deck: steam, air, chilled water. Balances closed, losses ranked, fixes proposed with payback estimates. The Tier-2 utilities lesson practiced end to end.",
@@ -307,28 +307,17 @@
         },
         {
           "n": 3,
-          "t": "Flow description and Reynolds number",
+          "t": "Flow description, Reynolds number, and continuity",
           "tier": 3,
-          "scope": "Streamlines, flow regimes, and the Reynolds number as the master dimensionless group. Laminar and turbulent flow distinguished physically. Where transition sits in real pipe sizes.",
-          "src": "Çengel & Cimbala, Ch. 4, 8; video: LearnChemE (CU Boulder) — fluids",
+          "scope": "Streamlines and flow regimes; the Reynolds number as the master dimensionless group, with laminar and turbulent flow distinguished physically and transition located in real pipe sizes. Control-volume mass balances, steady and unsteady, and velocity–area trades in ducts and nozzles. The one-line continuity equation that gating design already used in MFG 105.",
+          "src": "Çengel & Cimbala, Ch. 4–5, 8; video: LearnChemE (CU Boulder) — fluids",
           "preview": [
             "Compute-style: what Reynolds number regime is water at 2 m/s in a 100 mm pipe?",
-            "Why does transition matter for head-loss scaling?"
+            "Halve a duct's area at constant flow: what must velocity do?"
           ]
         },
         {
           "n": 4,
-          "t": "Mass conservation and continuity",
-          "tier": 3,
-          "scope": "Control-volume mass balances, steady and unsteady. Velocity–area trades in ducts and nozzles. The one-line equation that gating design already used in MFG 105.",
-          "src": "Çengel & Cimbala, Ch. 5; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Halve a duct's area at constant flow: what must velocity do?",
-            "When is the unsteady term in the mass balance unavoidable?"
-          ]
-        },
-        {
-          "n": 5,
           "t": "Bernoulli, energy equation, pipe flow, and pump curves",
           "tier": 2,
           "core60": "B7",
@@ -341,7 +330,7 @@
           ]
         },
         {
-          "n": 6,
+          "n": 5,
           "t": "Momentum analysis",
           "tier": 3,
           "scope": "Control-volume momentum for forces on bends, nozzles, and vanes. Thrust blocks and pipe anchor loads. Why elbows in large lines need restraint calculations.",
@@ -352,7 +341,7 @@
           ]
         },
         {
-          "n": 7,
+          "n": 6,
           "t": "Dimensional analysis and similarity",
           "tier": 3,
           "scope": "Buckingham Pi with engineering judgment. Model testing and scale-up logic. The affinity-law preview: why pump performance scales the way it does.",
@@ -363,7 +352,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 7,
           "t": "Laminar and turbulent pipe flow in depth",
           "tier": 3,
           "scope": "Fully developed laminar flow derived to the Hagen–Poiseuille result. Turbulent velocity profiles and roughness effects. Entrance lengths and where gauges should not be installed.",
@@ -374,7 +363,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 8,
           "t": "Piping networks and valves",
           "tier": 3,
           "scope": "Series and parallel lines; three-reservoir style problems by iteration. Valve types and their loss and control characters. Reading a pump-and-piping isometric as a resistance network.",
@@ -385,7 +374,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 9,
           "t": "Flow measurement",
           "tier": 3,
           "scope": "Orifice, venturi, rotameter, magnetic, ultrasonic, and Coriolis meters — principle, accuracy, and installation effects. Differential-pressure metering derived from Bernoulli. Straight-run requirements as physics, not superstition.",
@@ -396,7 +385,7 @@
           ]
         },
         {
-          "n": 11,
+          "n": 10,
           "t": "Turbomachinery fundamentals",
           "tier": 3,
           "scope": "Euler turbomachine equation derived from angular momentum. Velocity triangles for a centrifugal impeller. Specific speed as the shape parameter of the pump world.",
@@ -407,7 +396,7 @@
           ]
         },
         {
-          "n": 12,
+          "n": 11,
           "t": "Compressible flow first contact",
           "tier": 3,
           "scope": "Mach number, choking, and converging-nozzle behavior. Relief and blowdown implications. Enough gas dynamics to respect what happens downstream of a PSV.",
@@ -475,6 +464,17 @@
         },
         {
           "n": 5,
+          "t": "Limit gauging and Taylor's principle",
+          "tier": 3,
+          "scope": "Limits and fits recalled from the drawing course, then verified the shop-floor way: GO/NO-GO limit gauges designed with gauge-maker's tolerance. Taylor's principle — why the GO gauge must check the whole feature while the NO-GO checks point by point. Where attribute gauging beats measurement, and where it hides trouble.",
+          "src": "NPTEL: Metrology",
+          "preview": [
+            "Why must a GO gauge check the whole feature while the NO-GO checks point by point?",
+            "Gauge-maker's tolerance sits inside the work tolerance: who does that protect?"
+          ]
+        },
+        {
+          "n": 6,
           "t": "Surface texture measurement",
           "tier": 3,
           "scope": "Ra, Rz, and the stylus trace read properly. Cutoffs and filtering honestly explained. Finish specs matched to gaskets, seals, and bearing seats.",
@@ -485,7 +485,7 @@
           ]
         },
         {
-          "n": 6,
+          "n": 7,
           "t": "Statistical process control I",
           "tier": 3,
           "scope": "Variation: common versus special cause — the distinction all of SPC rests on. X̄–R charts built and read. Control limits versus specification limits, never confused again.",
@@ -496,7 +496,7 @@
           ]
         },
         {
-          "n": 7,
+          "n": 8,
           "t": "Statistical process control II and capability",
           "tier": 3,
           "scope": "Attribute charts in brief; capability indices Cp and Cpk computed and abused-proofed. What Cpk = 1.33 actually promises. Capability studies as pre-production gatekeeping.",
@@ -507,7 +507,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 9,
           "t": "Acceptance sampling",
           "tier": 3,
           "scope": "Sampling plans, OC curves, and the risks each party carries. AQL semantics without the folklore. Where sampling makes sense and where 100% inspection is owed.",
@@ -518,7 +518,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Gauge R&R and measurement systems",
           "tier": 3,
           "scope": "Repeatability and reproducibility studies: can the gauge see the tolerance? %GRR computed and judged. The study that should precede every SPC deployment and rarely does.",
@@ -529,7 +529,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Quality systems and audits",
           "tier": 3,
           "scope": "ISO 9001 logic: say it, do it, prove it. Nonconformance, CAPA, and audit trails. Where quality systems touch maintenance records — more often than either side admits.",
@@ -633,6 +633,17 @@
         },
         {
           "n": 8,
+          "t": "Vibration and speed sensors",
+          "tier": 3,
+          "scope": "Piezoelectric accelerometers with IEPE powering; mounting and its frequency ceiling, previewed for the condition-monitoring course. Eddy-current proximity probes for shaft motion on journal bearings. Tachometers and encoders — the speed and phase references every machinery diagnosis leans on.",
+          "src": "NPTEL: Industrial Instrumentation",
+          "preview": [
+            "Why does an accelerometer's mounting method set its usable frequency range?",
+            "What does a proximity probe measure that a case-mounted accelerometer cannot?"
+          ]
+        },
+        {
+          "n": 9,
           "t": "Analog-to-digital and sampling",
           "tier": 3,
           "scope": "Sampling, aliasing, and resolution in bits. Anti-alias filtering as a non-negotiable. Why a vibration channel's sample rate sets what defects it can see — the data-collector connection.",
@@ -643,7 +654,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Signal transmission and noise",
           "tier": 3,
           "scope": "Grounding, shielding, and segregation of signal from power. Ground loops diagnosed and killed. HART over 4–20 mA in outline.",
@@ -654,7 +665,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Sensor selection and installation project",
           "tier": 3,
           "scope": "Specify the measurement points for a small process skid: variables, technologies, ranges, and installation details. Datasheets filled honestly. The exercise instrument engineers call 'doing the index'.",

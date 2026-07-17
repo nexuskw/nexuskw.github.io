@@ -224,6 +224,17 @@
         },
         {
           "n": 8,
+          "t": "Clutches and brakes",
+          "tier": 3,
+          "scope": "Friction torque of plate and cone clutches under uniform-pressure and uniform-wear assumptions — and which one to trust in service. Band and shoe brakes with self-energizing behavior located. The heat released in every engagement, and where it goes.",
+          "src": "NPTEL: Theory of Machines",
+          "preview": [
+            "Uniform pressure versus uniform wear: which predicts less torque, and why is it the honest one for a worn clutch?",
+            "What makes a brake shoe self-energizing — and when does that become self-locking?"
+          ]
+        },
+        {
+          "n": 9,
           "t": "Flywheels and speed fluctuation",
           "tier": 3,
           "scope": "Turning-moment diagrams and coefficient of fluctuation. Flywheel sizing from energy variation. Presses and compressors as the plants' flywheel machines.",
@@ -234,7 +245,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Balancing of rotating and reciprocating masses",
           "tier": 3,
           "scope": "Single- and multi-plane rotating balance done with vectors. Reciprocating unbalance and why it can't be fully balanced. The kinematic truth behind field balancing jobs.",
@@ -245,7 +256,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Governors and gyroscopic effects",
           "tier": 3,
           "scope": "Centrifugal governors as proportional controllers made of iron. Gyroscopic couples on turbine and vehicle bearings. Legacy topics that still explain modern behavior.",
@@ -361,28 +372,17 @@
         },
         {
           "n": 9,
-          "t": "Radiation fundamentals",
+          "t": "Radiation: fundamentals and exchange",
           "tier": 3,
-          "scope": "Blackbody laws, emissivity, and view factors in simple geometries. Radiation shields. The furnace and the thermographer's camera share this physics.",
+          "scope": "Blackbody laws, emissivity, and view factors in simple geometries; two-surface enclosures and network-method basics. Radiation shields, and combined convection–radiation surface losses. Estimating bare-pipe losses the way an energy audit does — the physics the furnace and the thermographer's camera share.",
           "src": "Çengel & Ghajar, Ch. 12–13; video: LearnChemE (CU Boulder) — heat transfer",
           "preview": [
             "Why does emissivity dominate radiation exchange for gray surfaces?",
-            "What does a view factor conserve?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Radiation exchange and combined modes",
-          "tier": 3,
-          "scope": "Two-surface enclosures and network method basics. Combined convection–radiation surface losses. Estimating bare-pipe losses the way an energy audit does.",
-          "src": "Çengel & Ghajar, Ch. 13; video: LearnChemE (CU Boulder) — heat transfer",
-          "preview": [
-            "What does a radiation shield actually add?",
             "Estimate bare-pipe loss: which two modes add, and when does radiation win?"
           ]
         },
         {
-          "n": 11,
+          "n": 10,
           "t": "Mass transfer analogy",
           "tier": 3,
           "scope": "Diffusion and convective mass transfer via the heat-transfer analogy. Evaporation and drying estimates. The shared mathematics made explicit.",
@@ -393,7 +393,7 @@
           ]
         },
         {
-          "n": 12,
+          "n": 11,
           "t": "Thermal design mini-project",
           "tier": 3,
           "scope": "Rate or size a small exchanger against a duty with fouling margins, then critique the design's failure modes. Calculations packaged for review. The heat-transfer counterpart of the shaft project.",
@@ -798,6 +798,17 @@
         },
         {
           "n": 9,
+          "t": "Personal protective equipment and its limits",
+          "tier": 3,
+          "scope": "PPE as the last line in the hierarchy of controls, never the first answer. Head, eye, hearing, respiratory, hand, and foot protection matched to assessed hazards; fit, compatibility, and maintenance as the quiet failure points. Why PPE programs decay silently — and what keeps them honest.",
+          "src": "NPTEL: Industrial Safety Engineering",
+          "preview": [
+            "Why does PPE sit last in the hierarchy of controls?",
+            "Name two ways a respirator program fails without anyone noticing."
+          ]
+        },
+        {
+          "n": 10,
           "t": "Heat stress and Gulf conditions",
           "tier": 3,
           "scope": "Heat illness physiology and the WBGT logic of work-rest cycles. Summer work rules in Kuwait's climate. Hydration and acclimatization as engineering controls, not advice.",
@@ -808,7 +819,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Incident investigation",
           "tier": 3,
           "scope": "Evidence preservation, timelines, and causal analysis without blame-first shortcuts. Corrective actions that change systems, not just people. The investigation skill reused in reliability RCA.",

@@ -360,6 +360,17 @@
         },
         {
           "n": 8,
+          "t": "Machine tending and assembly cells",
+          "tier": 3,
+          "scope": "Robots loading machine tools: door, chuck, and cycle-start interlocks, with the machine as the cell's real master. Part presentation — trays, bowl feeders, and vision in outline — as the make-or-break engineering. Assembly tasks: insertion, torque, and the compliance problem rigid parts pose.",
+          "src": "NPTEL: Industrial Robotics",
+          "preview": [
+            "Why is part presentation usually harder engineering than the robot motion itself?",
+            "What interlocks must exist before a robot reaches into a CNC machine?"
+          ]
+        },
+        {
+          "n": 9,
           "t": "Robotic welding cells",
           "tier": 3,
           "scope": "Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural work of the Kirby kind.",
@@ -371,7 +382,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Cell integration",
           "tier": 3,
           "scope": "The robot inside the PLC's state machine: handshakes, permissives, and fault recovery paths. Peripheral devices and fixturing. Cycle-time analysis against the line's takt.",
@@ -382,7 +393,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Robot maintenance and diagnostics",
           "tier": 3,
           "scope": "Preventive tasks: lubrication, belts, batteries, dress-pack inspection. Error logs and drift trends as early warnings. What a robot's reliability program looks like on paper.",
@@ -514,17 +525,6 @@
         },
         {
           "n": 10,
-          "t": "Reliability testing and growth",
-          "tier": 3,
-          "scope": "Life testing and accelerated testing in outline; reliability growth tracking during commissioning. Burn-in's logic and limits. Evidence standards for 'the fix worked'.",
-          "src": "NPTEL: Reliability Engineering",
-          "preview": [
-            "What does reliability growth tracking during commissioning reveal?",
-            "Burn-in: what does it remove, and from which bathtub region?"
-          ]
-        },
-        {
-          "n": 11,
           "t": "Human factors in reliability",
           "tier": 3,
           "scope": "Maintenance-induced failures: the uncomfortable data. Error-provocative designs and procedures. Designing tasks so the night shift succeeds.",
@@ -535,7 +535,7 @@
           ]
         },
         {
-          "n": 12,
+          "n": 11,
           "t": "Reliability data project",
           "tier": 3,
           "scope": "From a provided failure log: clean, classify, Weibull-fit, model the system, and recommend strategy changes with quantified backing. The full Reliability I toolkit exercised once. Deliverable formatted as a plant engineering report.",
@@ -638,6 +638,17 @@
         },
         {
           "n": 8,
+          "t": "Materials selection against corrosion",
+          "tier": 3,
+          "scope": "The selection ladder: carbon steel with corrosion allowance, coated steel, 304 and 316 stainless, duplex grades, and nickel alloys — each step priced against the environment it must survive. PREN put to work; galvanizing and aluminizing as sacrificial armor. Nonmetallics — GRP and HDPE — where metals lose the argument.",
+          "src": "Callister & Rethwisch, Ch. 17",
+          "preview": [
+            "What does 316's molybdenum buy over 304 in chloride service?",
+            "When does a nonmetallic pipe beat every alloy on the ladder?"
+          ]
+        },
+        {
+          "n": 9,
           "t": "Coatings and linings",
           "tier": 3,
           "scope": "Surface preparation standards as the real quality variable; coating families and their service envelopes. Inspection: holiday testing and DFT. Coating failure modes read like weld defects.",
@@ -648,7 +659,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Cathodic protection and inhibitors",
           "tier": 3,
           "scope": "Sacrificial and impressed-current CP with the electrochemistry made explicit. CP surveys in outline. Inhibitors and chemical treatment where coatings can't go.",
@@ -659,7 +670,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Corrosion monitoring and management",
           "tier": 3,
           "scope": "Coupons, ER probes, and thickness-monitoring locations; corrosion rates fed into remaining-life arithmetic. Corrosion management systems as documents that direct money. The bridge into Year 4's asset integrity course.",

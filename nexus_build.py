@@ -760,8 +760,8 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
   to Industry 4.0 — covering every core mechanical-engineering discipline and role. Every
   lesson already has its own page — scope, sources, and checkpoint questions — and full
   teaching depth is rolling out course by course, tracked honestly below. The catalog
-  normalizes toward 528 lessons (6 classes × 11 lessons per semester) as authored
-  content, never as padding.</p>
+  is a strict grid — 6 classes per semester, 11 lessons per class, 528 lessons — built
+  as authored content, never as padding.</p>
   <div class="tracker">
     <p class="small"><b>{depth} of {total}</b> lessons at full teaching depth · {pct}% —
     updated with every build. The rest are in production, in queue order.</p>

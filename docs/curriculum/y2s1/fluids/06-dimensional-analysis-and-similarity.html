@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0E1626">
+<title>Dimensional analysis and similarity — Fluid Mechanics — Nexus Institute of Technology</title>
+<meta name="description" content="Buckingham Pi with engineering judgment. Model testing and scale-up logic. The affinity-law preview: why pump performance scales the way it does.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/fluids/6">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
+      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
+      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">FLD 203 · Fluid Mechanics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-fluid-properties.html" class="ol" data-key="y2s1/fluids/1"><span class="tick"></span><span>01 · Fluid properties</span></a><a href="02-pressure-and-fluid-statics.html" class="ol" data-key="y2s1/fluids/2"><span class="tick"></span><span>02 · Pressure and fluid statics</span></a><a href="03-flow-description-reynolds-number-and-continuity.html" class="ol" data-key="y2s1/fluids/3"><span class="tick"></span><span>03 · Flow description, Reynolds number, and continuity</span></a><a href="04-bernoulli-energy-equation-pipe-flow-and-pump-curves.html" class="ol" data-key="y2s1/fluids/4"><span class="tick"></span><span>04 · Bernoulli, energy equation, pipe flow, and pump curves</span></a><a href="05-momentum-analysis.html" class="ol" data-key="y2s1/fluids/5"><span class="tick"></span><span>05 · Momentum analysis</span></a><a href="06-dimensional-analysis-and-similarity.html" class="ol cur" data-key="y2s1/fluids/6"><span class="tick"></span><span>06 · Dimensional analysis and similarity</span></a><a href="07-laminar-and-turbulent-pipe-flow-in-depth.html" class="ol" data-key="y2s1/fluids/7"><span class="tick"></span><span>07 · Laminar and turbulent pipe flow in depth</span></a><a href="08-piping-networks-and-valves.html" class="ol" data-key="y2s1/fluids/8"><span class="tick"></span><span>08 · Piping networks and valves</span></a><a href="09-flow-measurement.html" class="ol" data-key="y2s1/fluids/9"><span class="tick"></span><span>09 · Flow measurement</span></a><a href="10-turbomachinery-fundamentals.html" class="ol" data-key="y2s1/fluids/10"><span class="tick"></span><span>10 · Turbomachinery fundamentals</span></a><a href="11-compressible-flow-first-contact.html" class="ol" data-key="y2s1/fluids/11"><span class="tick"></span><span>11 · Compressible flow first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
+<a href="index.html">FLD 203</a> /
+<span>Lesson 06 of 11</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M14 40 L66 40 C 84 40, 84 64, 100 64"/><path d="M14 56 L60 56 C 74 56, 76 78, 100 78"/><path d="M14 72 L52 72 C 62 72, 64 92, 100 92"/><circle cx="100" cy="40" r="5" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">FLD 203 · LESSON 06 OF 11 · YEAR 2 · SEMESTER 1</p>
+    <h1>Dimensional analysis and similarity</h1>
+    <p class="sub">Buckingham Pi with engineering judgment. Model testing and scale-up logic. The affinity-law preview: why pump performance scales the way it does.</p>
+  </div>
+  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>Çengel &amp; Cimbala, Fluid Mechanics: Fundament</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/fluids/6">Mark as complete</button>
+  
+</div>
+<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
+  <button data-tab="t-library" data-ar="المكتبة">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does Buckingham Pi promise about model tests?</li><li>Why do pump affinity laws follow from similarity?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
+<div class="measure">
+  
+  <p>This lesson belongs to <b>FLD 203 · Fluid Mechanics</b>
+  (Year 2 · Semester 1). It stands on the course's primary texts:</p>
+  <ul class="plain"><li><a href="https://openlibrary.org/works/OL18026047W" title="Çengel &amp; Cimbala — Fluid Mechanics (Open Library)" target="_blank" rel="noopener">Çengel &amp; Cimbala</a>, Fluid Mechanics: Fundamentals and Applications (McGraw-Hill)</li></ul>
+  <p class="small">Course context: Pressure, flow, and loss: statics to Bernoulli to real pipe networks with pumps attached — taught so that a pump curve, a system curve, and an NPSH margin become native reading.</p>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
+<div class="measure">
+  <p>The five-problem interactive quiz for this lesson is in production. Until
+  it lands, use the lesson's checkpoint questions as practice prompts —
+  attempt them from the cited source before reading on:</p>
+  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
+  <ul><li>What does Buckingham Pi promise about model tests?</li><li>Why do pump affinity laws follow from similarity?</li></ul></div>
+</div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL18026047W" title="Çengel &amp; Cimbala — Fluid Mechanics (Open Library)" target="_blank" rel="noopener">Çengel &amp; Cimbala</a>, Ch. 7; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — fluids</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLGED90Y_uL1IMZkaD9wTnlFdC3F9DpUkJ" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL18026047W" title="Çengel &amp; Cimbala — Fluid Mechanics (Open Library)" target="_blank" rel="noopener">Çengel &amp; Cimbala</a>, Fluid Mechanics: Fundamentals and Applications (McGraw-Hill)</li></ul>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="05-momentum-analysis.html">← 05 · Momentum analysis</a><a href="index.html" data-ar="كل الدروس · FLD 203">All lessons · FLD 203</a><a href="07-laminar-and-turbulent-pipe-flow-in-depth.html">07 · Laminar and turbulent pipe flow in depth →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
+    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free bilingual engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+  <p class="lang-ar">تعليم هندسي مجاني ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
+  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
+  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
+</footer>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+</body>
+</html>

@@ -132,6 +132,33 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
+- 528 NORMALIZATION EXECUTED (2026-07-17, owner-approved): the catalog is now a
+  strict 6×11 grid — 48 courses × 11 lessons = 528, verified at build
+  (coverage 52/528 = 10%). Actions: (a) MOVES — reliability-1 "Reliability
+  testing and growth" → reliability-2 (now L6, after design-for-
+  maintainability); condition-monitoring "Online monitoring and protection
+  systems" → scada-iiot (now L7, after IIoT sensors; kuwait tag moved with
+  it). (b) MERGES of adjacent thin Tier-3 pairs (scopes combined verbatim-
+  faithful, nothing dropped): mfg-processes-1 6+11 (forming fundamentals +
+  workability), mfg-processes-2 9+10 (welding II + thermal cutting/joint
+  prep), strength 4+5 (bending + transverse shear), fluids 3+4 (flow
+  description/Re + continuity), heat-transfer 9+10 (radiation pair),
+  welding-ndt 8+9 (UT + RT in depth), rotating-equipment 9+10 (fans/blowers
+  + turbines), maintenance-planning 10+11 (shutdown execution + contractor
+  mgmt, HEISCO kuwait tag kept). (c) NEW AUTHORED STUBS (Tier 3, real scope
+  + src + 2 preview questions each, never padding): computing L5 testing/
+  debugging code; electrical L9 synchronous machines & standby generation;
+  thermo-2 L7 cooling towers; metrology L5 limit gauging & Taylor's
+  principle; electronics-sensors L8 vibration & speed sensors;
+  kinematics-machinery L8 clutches & brakes; safety L9 PPE & its limits;
+  plc-2 L8 HMI design; robotics L8 machine tending & assembly cells;
+  corrosion L8 materials selection; engineering-economics L7 uncertainty/
+  sensitivity/risk; smart-manufacturing L3 MES & ISA-95 stack; hse L10
+  monitoring/audit/review; capstone L5 spares & materials strategy.
+  mfg-processes-1 fragment ids (…-01…-09) still align with lesson numbers
+  (only L11 was removed). Curriculum-page copy updated to "strict grid"
+  wording in nexus_build.py. Lesson renumbering shifts localStorage
+  progress keys for in-flight learners in the 24 touched courses — accepted.
 - APPROVALS RECEIVED (owner, 2026-07-17 PM): (1) v5 Academic Shield logo
   APPROVED; (2) shell/UI/colors APPROVED; (3) 522→528 strict 6×11
   normalization APPROVED (execute in the NEXT session — 9 courses have 12

@@ -35,6 +35,17 @@
         },
         {
           "n": 3,
+          "t": "MES and the manufacturing software stack",
+          "tier": 3,
+          "scope": "The ISA-95 level picture: sensors and control below, ERP above, and manufacturing execution systems holding the middle. MES functions — scheduling, dispatching, genealogy and traceability, quality records — and where each earns its keep. The integration seams where smart-manufacturing projects actually fail.",
+          "src": "NPTEL: Industry 4.0 courses",
+          "preview": [
+            "What does MES answer that neither SCADA nor ERP can?",
+            "Why is product genealogy a plant-floor function rather than an ERP report?"
+          ]
+        },
+        {
+          "n": 4,
           "t": "Digital twin levels",
           "tier": 3,
           "scope": "Descriptive, diagnostic, predictive, and prescriptive twins distinguished by what they can answer. Asset versus process twins. An honest inventory of what each level costs to build and keep true.",
@@ -45,7 +56,7 @@
           ]
         },
         {
-          "n": 4,
+          "n": 5,
           "t": "Simulation of production systems",
           "tier": 3,
           "scope": "Discrete-event simulation for lines and buffers; validation against measured cycle data. Experiments on the model instead of the plant. The packaging line simulated for a debottlenecking decision.",
@@ -57,7 +68,7 @@
           ]
         },
         {
-          "n": 5,
+          "n": 6,
           "t": "Predictive maintenance analytics",
           "tier": 3,
           "scope": "Feature extraction from vibration and process data; models from thresholds to learning methods in outline. Validation against labeled failures — the scarce commodity. Where analytics augments and where it hallucinates.",
@@ -68,7 +79,7 @@
           ]
         },
         {
-          "n": 6,
+          "n": 7,
           "t": "Machine vision and quality 4.0",
           "tier": 3,
           "scope": "Cameras, lighting, and defect detection on moving product. Classical vision versus learned models. False-reject economics on a high-speed line.",
@@ -79,7 +90,7 @@
           ]
         },
         {
-          "n": 7,
+          "n": 8,
           "t": "Additive and digital workflows",
           "tier": 3,
           "scope": "Scan-to-print for obsolete spares; digital part inventories. Qualification questions for load-bearing prints. The maintenance storeroom's digital future, soberly assessed.",
@@ -90,7 +101,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 9,
           "t": "Cybersecurity for smart plants",
           "tier": 3,
           "scope": "Expanded attack surface of connected equipment; segmentation and monitoring revisited at plant scale. Incident response for OT. Security as a precondition, not a feature.",
@@ -101,7 +112,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Economics of digitalization",
           "tier": 3,
           "scope": "Pilot-to-scale economics; the graveyard of proofs-of-concept explained. Benefits tracked against baselines the finance department accepts. Engineering economics applied to the smartest buzzwords.",
@@ -112,7 +123,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Smart manufacturing case evaluation",
           "tier": 3,
           "scope": "Evaluate a vendor's condition-monitoring-plus-analytics proposal for a representative plant: architecture, claims, gaps, and a pilot design with success criteria. The skeptical adoption skill this decade rewards.",
@@ -254,29 +265,18 @@
         },
         {
           "n": 10,
-          "t": "Shutdown execution management",
+          "t": "Shutdown execution and contractor management",
           "tier": 3,
-          "scope": "Daily battle rhythm: progress capture, lookaheads, and constraint clearing. Field coordination of contractors — the HEISCO-scale interface. Handback and startup sequencing with operations.",
+          "scope": "Daily battle rhythm: progress capture, lookaheads, and constraint clearing, with handback and startup sequencing agreed with operations. Scoping service contracts — unit-rate versus lump-sum trade-offs — and field coordination of contractors at the HEISCO-scale interface. Contractor performance measured like internal crews: the owner's-engineer skill of buying maintenance work well.",
           "src": "SMRP framework; NPTEL: Project Management",
-          "kuwait": "HEISCO",
           "preview": [
             "What does the daily battle rhythm capture that weekly reports miss?",
-            "Why is handback sequencing an operations decision?"
-          ]
+            "Unit-rate versus lump-sum: which risk sits where?"
+          ],
+          "kuwait": "HEISCO"
         },
         {
           "n": 11,
-          "t": "Contractor and service management",
-          "tier": 3,
-          "scope": "Scoping service contracts; unit-rate versus lump-sum trade-offs. Contractor performance measured like internal crews. The owner's-engineer skill of buying maintenance work well.",
-          "src": "SMRP framework",
-          "preview": [
-            "Unit-rate versus lump-sum: which risk sits where?",
-            "What makes contractor performance measurable?"
-          ]
-        },
-        {
-          "n": 12,
           "t": "Planning simulation capstone",
           "tier": 3,
           "scope": "A four-week simulated plant: notifications arrive, you plan, schedule, and report KPIs; then a mini-turnaround is planned end to end. The full course exercised as one continuous role-play. Portfolio output: a complete planner's package.",
@@ -534,6 +534,17 @@
         },
         {
           "n": 10,
+          "t": "Monitoring, audit, and management review",
+          "tier": 3,
+          "scope": "Active monitoring — inspections, tours, and planned observation — against reactive measures that only count harm already done. Audits distinguished from inspections: system versus workplace. Indicator suites that resist gaming, and the management review that closes the SMS loop or quietly breaks it.",
+          "src": "NEBOSH IGC alignment",
+          "preview": [
+            "What does an audit examine that an inspection cannot see?",
+            "Name one way a safety indicator gets gamed — and the design that resists it."
+          ]
+        },
+        {
+          "n": 11,
           "t": "HSE case file project",
           "tier": 3,
           "scope": "Build the HSE plan for a maintenance shutdown package: risk assessments, permits, isolations, emergency arrangements, and monitoring. The integration exercise that mirrors real pre-shutdown reviews.",
@@ -620,6 +631,17 @@
         },
         {
           "n": 6,
+          "t": "Reliability testing and growth",
+          "tier": 3,
+          "scope": "Life testing and accelerated testing in outline; reliability growth tracking during commissioning. Burn-in's logic and limits. Evidence standards for 'the fix worked'.",
+          "src": "NPTEL: Reliability Engineering",
+          "preview": [
+            "What does reliability growth tracking during commissioning reveal?",
+            "Burn-in: what does it remove, and from which bathtub region?"
+          ]
+        },
+        {
+          "n": 7,
           "t": "Spares optimization with reliability data",
           "tier": 3,
           "scope": "Failure distributions driving stocking levels; Monte Carlo thinking for insurance spares. Pooling and vendor-held options. The reliability–inventory interface quantified.",
@@ -630,7 +652,7 @@
           ]
         },
         {
-          "n": 7,
+          "n": 8,
           "t": "Operational reliability: procedures and precision",
           "tier": 3,
           "scope": "Operating-envelope discipline and startup/shutdown stress; precision-maintenance standards as failure prevention. Operator care integrated with PdM findings. Reliability as everyone's output, engineered.",
@@ -641,7 +663,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 9,
           "t": "Management of change for reliability",
           "tier": 3,
           "scope": "MOC review of modifications for reliability impact; temporary equipment and its expiry. Documentation updates as part of the change, not afterthought. The quiet failures MOC exists to prevent.",
@@ -652,7 +674,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "Economics of reliability programs",
           "tier": 3,
           "scope": "Program costs against avoided losses; the credibility problem of counting non-events. Baseline construction and honest attribution. Selling year three of a program in year one's budget cycle.",
@@ -663,7 +685,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Reliability program capstone",
           "tier": 3,
           "scope": "Design the complete reliability program for a described plant: assessment, roadmap, organization, KPIs, and first-year plan with budget. Presented as to a plant manager. The portfolio piece for reliability-engineer interviews.",
@@ -730,6 +752,17 @@
         },
         {
           "n": 5,
+          "t": "Spares and materials strategy",
+          "tier": 3,
+          "scope": "Bills of materials built for the critical equipment; stocking policies driven by criticality and the failure data from the reliability phases. Insurance-spare decisions documented with the arithmetic on the table. Deliverable: the spares strategy section of the dossier.",
+          "src": "MPL 452 / REL 455 foundations",
+          "preview": [
+            "Which spares decision needs Weibull data rather than min/max history?",
+            "What makes an insurance spare economic despite near-zero expected demand?"
+          ]
+        },
+        {
+          "n": 6,
           "t": "Integrity and inspection plan",
           "tier": 3,
           "scope": "Damage mechanisms, CML plans, and relief-device registers for the static equipment. Deliverable: the integrity plan section.",
@@ -740,7 +773,7 @@
           ]
         },
         {
-          "n": 6,
+          "n": 7,
           "t": "Production plan and OEE baseline",
           "tier": 3,
           "scope": "Capacity, takt, and schedule for the product mix; OEE state model defined from available signals. Deliverable: production plan with loss-accounting design.",
@@ -751,7 +784,7 @@
           ]
         },
         {
-          "n": 7,
+          "n": 8,
           "t": "Improvement portfolio",
           "tier": 3,
           "scope": "Three costed improvement cases — one reliability, one changeover, one energy — with NPV and payback. Deliverable: the investment one-pagers.",
@@ -762,7 +795,7 @@
           ]
         },
         {
-          "n": 8,
+          "n": 9,
           "t": "HSE integration",
           "tier": 3,
           "scope": "Risk assessments and permit requirements woven into the job plans and shutdown scope. Deliverable: the HSE annexes that make the plans executable.",
@@ -773,7 +806,7 @@
           ]
         },
         {
-          "n": 9,
+          "n": 10,
           "t": "The integrated report",
           "tier": 3,
           "scope": "All phases assembled into one coherent plant-engineering dossier with an executive summary written last and read first. Internal consistency audit across sections. The document that demonstrates the whole pathway.",
@@ -784,7 +817,7 @@
           ]
         },
         {
-          "n": 10,
+          "n": 11,
           "t": "Defense and portfolio review",
           "tier": 3,
           "scope": "The dossier defended against structured challenge: assumptions probed, trade-offs justified. Feedback folded into the final portfolio. The dress rehearsal for the interviews the career section prepares.",

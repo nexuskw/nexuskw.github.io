@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0E1626">
+<title>Simulation of production systems — Smart Manufacturing &amp; Digital Twin — Nexus Institute of Technology</title>
+<meta name="description" content="Discrete-event simulation for lines and buffers; validation against measured cycle data. Experiments on the model instead of the plant. The packaging ">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y4s2/smart-manufacturing/5">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
+      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
+      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <button id="langBtn" class="lang-btn" type="button">العربية</button>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">SMF 451 · Smart Manufacturing &amp; Digital Twin</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-industry-4-0-taxonomy.html" class="ol" data-key="y4s2/smart-manufacturing/1"><span class="tick"></span><span>01 · Industry 4.0 taxonomy</span></a><a href="02-manufacturing-data-architecture.html" class="ol" data-key="y4s2/smart-manufacturing/2"><span class="tick"></span><span>02 · Manufacturing data architecture</span></a><a href="03-mes-and-the-manufacturing-software-stack.html" class="ol" data-key="y4s2/smart-manufacturing/3"><span class="tick"></span><span>03 · MES and the manufacturing software stack</span></a><a href="04-digital-twin-levels.html" class="ol" data-key="y4s2/smart-manufacturing/4"><span class="tick"></span><span>04 · Digital twin levels</span></a><a href="05-simulation-of-production-systems.html" class="ol cur" data-key="y4s2/smart-manufacturing/5"><span class="tick"></span><span>05 · Simulation of production systems</span></a><a href="06-predictive-maintenance-analytics.html" class="ol" data-key="y4s2/smart-manufacturing/6"><span class="tick"></span><span>06 · Predictive maintenance analytics</span></a><a href="07-machine-vision-and-quality-4-0.html" class="ol" data-key="y4s2/smart-manufacturing/7"><span class="tick"></span><span>07 · Machine vision and quality 4.0</span></a><a href="08-additive-and-digital-workflows.html" class="ol" data-key="y4s2/smart-manufacturing/8"><span class="tick"></span><span>08 · Additive and digital workflows</span></a><a href="09-cybersecurity-for-smart-plants.html" class="ol" data-key="y4s2/smart-manufacturing/9"><span class="tick"></span><span>09 · Cybersecurity for smart plants</span></a><a href="10-economics-of-digitalization.html" class="ol" data-key="y4s2/smart-manufacturing/10"><span class="tick"></span><span>10 · Economics of digitalization</span></a><a href="11-smart-manufacturing-case-evaluation.html" class="ol" data-key="y4s2/smart-manufacturing/11"><span class="tick"></span><span>11 · Smart manufacturing case evaluation</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
+<a href="index.html">SMF 451</a> /
+<span>Lesson 05 of 11</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="28" r="9"/><circle cx="26" cy="82" r="9"/><circle cx="94" cy="82" r="9"/><circle cx="60" cy="64" r="7" class="amb"/><line x1="60" y1="37" x2="60" y2="56"/><line x1="54" y1="68" x2="33" y2="76"/><line x1="66" y1="68" x2="87" y2="76"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">SMF 451 · LESSON 05 OF 11 · YEAR 4 · SEMESTER 2</p>
+    <h1>Simulation of production systems</h1>
+    <p class="sub">Discrete-event simulation for lines and buffers; validation against measured cycle data. Experiments on the model instead of the plant. The packaging line simulated for a debottlenecking decision.</p>
+  </div>
+  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>NPTEL: Industry 4.0 and Industrial Internet </b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y4s2/smart-manufacturing/5">Mark as complete</button>
+  
+</div>
+<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
+  <button data-tab="t-library" data-ar="المكتبة">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What validates a discrete-event model before you trust its experiments?</li><li>Why simulate the buffer sizes rather than argue about them?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
+<div class="measure">
+  
+  <p>This lesson belongs to <b>SMF 451 · Smart Manufacturing &amp; Digital Twin</b>
+  (Year 4 · Semester 2). It stands on the course's primary texts:</p>
+  <ul class="plain"><li>NPTEL: Industry 4.0 and Industrial Internet of Things-family courses (nptel.ac.in)</li></ul>
+  <p class="small">Course context: Industry 4.0 without the brochure: data architectures, digital-twin levels, simulation, and predictive analytics — evaluated with an engineer's skepticism and a maintenance career's use cases.</p>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
+<div class="measure">
+  <p>The five-problem interactive quiz for this lesson is in production. Until
+  it lands, use the lesson's checkpoint questions as practice prompts —
+  attempt them from the cited source before reading on:</p>
+  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
+  <ul><li>What validates a discrete-event model before you trust its experiments?</li><li>Why simulate the buffer sizes rather than argue about them?</li></ul></div>
+</div><div class="applied"><span class="tag">Applied case</span><p>Industry anchor for this lesson: <b>KDD / Petra</b>. The full applied case is written when this lesson reaches full depth; the <a href="../../../career/index.html">Career Paths page</a> maps what KDD / Petra runs and which roles touch this topic.</p></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  <p class="src"><b>Taught from</b> — NPTEL: Industry 4.0 courses</p>
+  <ul class="plain small"><li>NPTEL: Industry 4.0 and Industrial Internet of Things-family courses (nptel.ac.in)</li></ul>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="04-digital-twin-levels.html">← 04 · Digital twin levels</a><a href="index.html" data-ar="كل الدروس · SMF 451">All lessons · SMF 451</a><a href="06-predictive-maintenance-analytics.html">06 · Predictive maintenance analytics →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
+    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
+    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free bilingual engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+  <p class="lang-ar">تعليم هندسي مجاني ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
+  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
+  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
+</footer>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
+</body>
+</html>
