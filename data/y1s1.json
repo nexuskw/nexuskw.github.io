@@ -468,7 +468,12 @@
           "preview": [
             "Why is weight not mass, and where does the confusion bite in bolt-load calculations?",
             "Resolve a 10 kN cable force at 30° to horizontal into components."
-          ]
+          ],
+          "video": {
+            "id": "5OE3DV4ga2A",
+            "title": "Statics: Lesson 4 - Cartesian Notation & Vector Addition Explained!",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 2,
@@ -479,7 +484,12 @@
           "preview": [
             "What does a couple do that a single force cannot?",
             "State Varignon's theorem and one situation where it saves work."
-          ]
+          ],
+          "video": {
+            "id": "39MoPdlSzl8",
+            "title": "Statics: Lesson 21 - Introduction to Moments: The r x F Method",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 3,
@@ -490,7 +500,12 @@
           "preview": [
             "Name the three steps of a free-body diagram and the most common omission.",
             "What reactions does a fixed support supply that a pin does not?"
-          ]
+          ],
+          "video": {
+            "id": "G4_NFrUPSj4",
+            "title": "Statics: Lesson 18 - How to Solve Complex Systems with Multiple FBDs",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 4,
@@ -501,7 +516,12 @@
           "preview": [
             "A particle under three concurrent forces is in equilibrium: what geometric fact must the forces obey?",
             "When do you solve by components versus by force triangle?"
-          ]
+          ],
+          "video": {
+            "id": "6Gy6oEVoaGo",
+            "title": "Statics: Lesson 16 - 2D Force Equilibrium & Frictionless Pulleys",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 5,
@@ -512,7 +532,12 @@
           "preview": [
             "Why does a two-force member carry load only along its axis?",
             "Statically determinate versus indeterminate: what changes in how you must solve?"
-          ]
+          ],
+          "video": {
+            "id": "bPbQeptNxEo",
+            "title": "Statics: Lesson 29 - 2D Reaction at Supports, Example Problem",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 6,
@@ -523,7 +548,12 @@
           "preview": [
             "How do you spot a zero-force member by inspection?",
             "Method of sections: when does it beat method of joints, and why?"
-          ]
+          ],
+          "video": {
+            "id": "BVCIQfFzguk",
+            "title": "Statics: Lesson 48 - Trusses, Method of Joints",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 7,
@@ -534,7 +564,12 @@
           "preview": [
             "Why must frames be dismembered at pins with action–reaction pairs?",
             "What is mechanical advantage in a toggle clamp, statically speaking?"
-          ]
+          ],
+          "video": {
+            "id": "rIuRRV-NzKA",
+            "title": "Statics: Lesson 53 - Frame Problem with Two-Force Members",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 8,
@@ -545,7 +580,12 @@
           "preview": [
             "What sign convention makes shear and moment diagrams consistent?",
             "Where is bending moment maximum when shear crosses zero — and why?"
-          ]
+          ],
+          "video": {
+            "id": "eTEdNJRPYwk",
+            "title": "Statics: Lesson 57 - Introduction to Internal Forces, M N V",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 9,
@@ -556,7 +596,12 @@
           "preview": [
             "Derive the direction of impending motion's friction force on a wedge being driven.",
             "Why does belt tension ratio grow exponentially with wrap angle?"
-          ]
+          ],
+          "video": {
+            "id": "RBlxyyUw8Xc",
+            "title": "Statics: Lesson 62 - Friction is Fun, Box on an Incline",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 10,
@@ -567,7 +612,12 @@
           "preview": [
             "Why does a lifting hook need to sit over the center of gravity, and what happens if it doesn't?",
             "Composite centroid: outline the tabular method for an L-section."
-          ]
+          ],
+          "video": {
+            "id": "KCwvoUTyqJg",
+            "title": "Statics: Lesson 37 - Finding the Center of Gravity & Centroids",
+            "channel": "Jeff Hanson"
+          }
         },
         {
           "n": 11,
@@ -578,7 +628,12 @@
           "preview": [
             "What does the parallel-axis theorem add, and when must you use it?",
             "Why does an I-beam's shape maximize second moment for its area?"
-          ]
+          ],
+          "video": {
+            "id": "Fy6K8cxv5y0",
+            "title": "Statics: Lesson 67 - Introduction to Area Moment of Inertia",
+            "channel": "Jeff Hanson"
+          }
         }
       ]
     },
@@ -732,7 +787,12 @@
           "preview": [
             "Name two failure modes of spreadsheet engineering that scripts avoid.",
             "What makes a calculation reproducible?"
-          ]
+          ],
+          "video": {
+            "id": "nykOeWgQcHM",
+            "title": "MIT 6.0001 Lec 1 — What is Computation?",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 2,
@@ -743,7 +803,12 @@
           "preview": [
             "Why does 0.1 + 0.2 ≠ 0.3 in floating point, and when does an engineer care?",
             "Show a unit conversion written so the units audit themselves."
-          ]
+          ],
+          "video": {
+            "id": "SE4P7IVCunE",
+            "title": "MIT 6.0001 Lec 3 — Strings, Guess-and-Check, Approximations",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 3,
@@ -754,7 +819,12 @@
           "preview": [
             "Turn 'if the reading exceeds limit, flag it' into control flow — what guards the invalid-input case?",
             "When is a while loop honest and a for loop not?"
-          ]
+          ],
+          "video": {
+            "id": "0jljZRnHwOI",
+            "title": "MIT 6.0001 Lec 2 — Branching and Iteration",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 4,
@@ -765,7 +835,12 @@
           "preview": [
             "What belongs in a function's docstring for an engineering calculation?",
             "Why do small, single-purpose functions beat one long script?"
-          ]
+          ],
+          "video": {
+            "id": "MjbuarJ7SE0",
+            "title": "MIT 6.0001 Lec 4 — Decomposition, Abstraction, and Functions",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 5,
@@ -776,7 +851,12 @@
           "preview": [
             "What does an assertion buy you that a printed answer doesn't?",
             "Why should a calculation function be tested against a hand-checked case before scale use?"
-          ]
+          ],
+          "video": {
+            "id": "9H6muyZjms0",
+            "title": "MIT 6.0001 Lec 7 — Testing, Debugging, Exceptions, and Assertions",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 6,
@@ -787,7 +867,12 @@
           "preview": [
             "Why is CSV the lingua franca of plant data, and what are its traps?",
             "Dict versus list for an equipment register: which and why?"
-          ]
+          ],
+          "video": {
+            "id": "RvRKT-jXvko",
+            "title": "MIT 6.0001 Lec 5 — Tuples, Lists, Aliasing, Mutability, and Cloning",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 7,
@@ -798,7 +883,12 @@
           "preview": [
             "What does vectorization replace, and why is it faster and clearer?",
             "Compute the RMS of an array in one line — conceptually, what happened?"
-          ]
+          ],
+          "video": {
+            "id": "o9nW0uBqvEo",
+            "title": "MIT 6.0001 Lec 10 — Understanding Program Efficiency (best fit: why vectorized code wins)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 8,
@@ -809,7 +899,12 @@
           "preview": [
             "Name three properties of an honest engineering plot.",
             "When does a log axis reveal what a linear one hides?"
-          ]
+          ],
+          "video": {
+            "id": "6wUD_gp5WeE",
+            "title": "MIT 6.0002 Lec 5 — Random Walks (best fit: building and reading plots)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 9,
@@ -820,7 +915,12 @@
           "preview": [
             "What do residuals tell you that R² alone does not?",
             "Interpolation versus extrapolation: why is one routine and the other risky?"
-          ]
+          ],
+          "video": {
+            "id": "vIFKGFl1Cn8",
+            "title": "MIT 6.0002 Lec 9 — Understanding Experimental Data (curve fitting)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 10,
@@ -831,7 +931,12 @@
           "preview": [
             "Time-step a cooling ODE: what goes wrong when the step is too large?",
             "Why is simulation a cheap laboratory — and when is it a lying one?"
-          ]
+          ],
+          "video": {
+            "id": "OgO1gpXSUzU",
+            "title": "MIT 6.0002 Lec 6 — Monte Carlo Simulation",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 11,
@@ -842,7 +947,12 @@
           "preview": [
             "From a work-order export, which cleaning steps must precede any KPI?",
             "Why should analysis scripts read raw data and never edit it?"
-          ]
+          ],
+          "video": {
+            "id": "iOZVbILaIZc",
+            "title": "MIT 6.0002 Lec 15 — Statistical Sins and Wrap Up (honest analysis habits)",
+            "channel": "MIT OpenCourseWare"
+          }
         }
       ]
     }
