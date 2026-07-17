@@ -20,7 +20,12 @@
           "preview": [
             "Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)",
             "What exactly does the integrating factor multiply away?"
-          ]
+          ],
+          "video": {
+            "id": "tVzaX9u6YAE",
+            "title": "MIT 18.03 Lec 3 — Solving First-order Linear ODEs",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 2,
@@ -31,7 +36,12 @@
           "preview": [
             "Write the ODE for a 5 m³ well-mixed tank flushed at 0.25 m³/min, and read off τ. (20 min)",
             "Why do a cooling casting and a discharging capacitor share one mathematics?"
-          ]
+          ],
+          "video": {
+            "id": "XDhJ8lVGbl8",
+            "title": "MIT 18.03 Lec 1 — The Geometrical View of y' = f(x,y)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 3,
@@ -42,7 +52,12 @@
           "preview": [
             "Classify y'' + 4y' + 3y = 0 by its roots. (−1 and −3: overdamped)",
             "What does a complex-conjugate root pair mean physically?"
-          ]
+          ],
+          "video": {
+            "id": "vP-oRQqmeg4",
+            "title": "MIT 18.03 Lec 9 — Second-order Linear ODEs with Constant Coefficients",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 4,
@@ -53,7 +68,12 @@
           "preview": [
             "Why does the transient die out while the forced response persists?",
             "What particular-solution form do you try for a constant force input?"
-          ]
+          ],
+          "video": {
+            "id": "9KbpbBMThTE",
+            "title": "MIT 18.03 Lec 13 — Finding Particular Solutions to Inhomogeneous ODEs",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 5,
@@ -64,7 +84,12 @@
           "preview": [
             "Compute ωn for m = 4 kg, k = 10 kN/m. (50 rad/s)",
             "What limits the resonant amplitude in a real machine?"
-          ]
+          ],
+          "video": {
+            "id": "Y9_zrupnz0Q",
+            "title": "MIT 18.03 Lec 14 — Resonance (reinforcement/bridge lecture)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 6,
@@ -75,7 +100,12 @@
           "preview": [
             "What is the transform of e^(−3t)? (1/(s+3))",
             "How do initial conditions enter a transformed equation without extra work?"
-          ]
+          ],
+          "video": {
+            "id": "sZ2qulI6GEk",
+            "title": "MIT 18.03 Lec 19 — Introduction to the Laplace Transform (reinforcement/bridge lecture)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 7,
@@ -86,7 +116,12 @@
           "preview": [
             "Invert 6/(s(s+3)). (2 − 2e^(−3t))",
             "What does dividing by s do to a signal in the time domain?"
-          ]
+          ],
+          "video": {
+            "id": "_YVcjNmjHik",
+            "title": "MIT 18.03 Lec 22 — Laplace Transforms with Discontinuous Inputs",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 8,
@@ -97,7 +132,12 @@
           "preview": [
             "Write the two-tank mixing problem as a matrix equation.",
             "What plays the characteristic equation's role for a system of equations?"
-          ]
+          ],
+          "video": {
+            "id": "MCrDzhpu3-s",
+            "title": "MIT 18.03 Lec 24 — Introduction to First-order Systems of ODEs",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 9,
@@ -108,7 +148,12 @@
           "preview": [
             "Solve a 3×3 system by elimination, tracking each pivot.",
             "What does a near-zero determinant warn you about the answer?"
-          ]
+          ],
+          "video": {
+            "id": "YBajUR3EFSM",
+            "title": "MIT 18.02 Lec 4 — Square Systems",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 10,
@@ -119,7 +164,12 @@
           "preview": [
             "Find the eigenvalues of [[2,1],[1,2]]. (1 and 3)",
             "Why do the signs of eigenvalues decide stability?"
-          ]
+          ],
+          "video": {
+            "id": "heBvViSi9xQ",
+            "title": "MIT 18.03 Lec 25 — Homogeneous Linear Systems (eigenvalues at work)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 11,
@@ -130,7 +180,12 @@
           "preview": [
             "Take two Euler steps of y' = −y, y(0) = 1, h = 0.5. (0.25)",
             "Why can too large a step make a stable equation explode numerically?"
-          ]
+          ],
+          "video": {
+            "id": "LbKKzMag5Rc",
+            "title": "MIT 18.03 Lec 2 — Euler's Numerical Method",
+            "channel": "MIT OpenCourseWare"
+          }
         }
       ]
     },

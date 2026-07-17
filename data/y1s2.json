@@ -20,7 +20,12 @@
           "preview": [
             "What do the dot and cross products each measure physically — one plant example apiece?",
             "Find the moment of a force about an axis: which product combination does it?"
-          ]
+          ],
+          "video": {
+            "id": "PxCxlsl_YwY",
+            "title": "MIT 18.02 Lec 1 — Dot Product",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 2,
@@ -31,7 +36,12 @@
           "preview": [
             "What does the gradient's direction mean on a temperature field?",
             "Which partial derivative answers 'which input moves the output most'?"
-          ]
+          ],
+          "video": {
+            "id": "dK3NEf13nPc",
+            "title": "MIT 18.02 Lec 8 — Partial Derivatives",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 3,
@@ -42,7 +52,12 @@
           "preview": [
             "Propagate ±2% flow and ±1% head errors into pump power: which dominates and why?",
             "What does linearization around an operating point throw away?"
-          ]
+          ],
+          "video": {
+            "id": "7eZVshlT33Q",
+            "title": "MIT 18.02 Lec 11 — Differentials and the Chain Rule",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 4,
@@ -53,7 +68,12 @@
           "preview": [
             "Set up (don't solve) the triple integral for a stepped shaft's mass.",
             "Why does integration order sometimes make an impossible integral easy?"
-          ]
+          ],
+          "video": {
+            "id": "YP_B0AapU0c",
+            "title": "MIT 18.02 Lec 16 — Double Integrals",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 5,
@@ -64,7 +84,12 @@
           "preview": [
             "Flux through a surface: what does a zero answer mean physically?",
             "Read divergence and curl as statements about sources and swirl."
-          ]
+          ],
+          "video": {
+            "id": "xrypSZU8cBE",
+            "title": "MIT 18.02 Lec 19 — Vector Fields and Line Integrals",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 6,
@@ -75,7 +100,12 @@
           "preview": [
             "What does a singular coefficient matrix signal about your truss model?",
             "Why does Gaussian elimination beat matrix inversion for one solve?"
-          ]
+          ],
+          "video": {
+            "id": "bHdzkFrgRcA",
+            "title": "MIT 18.02 Lec 3 — Matrices and Inverse Matrices",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 7,
@@ -97,7 +127,12 @@
           "preview": [
             "Classify overdamped, critical, underdamped by the characteristic roots.",
             "Sketch the underdamped step response and label its envelope."
-          ]
+          ],
+          "video": {
+            "id": "rZ3-nFV6l8w",
+            "title": "MIT 18.03 Lec 11 — General Second-order Linear Homogeneous ODEs",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 9,
@@ -108,7 +143,12 @@
           "preview": [
             "Why does response amplitude peak near the natural frequency?",
             "What happens to phase as forcing sweeps through resonance?"
-          ]
+          ],
+          "video": {
+            "id": "Y9_zrupnz0Q",
+            "title": "MIT 18.03 Lec 14 — Resonance (reinforcement/bridge lecture)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 10,
@@ -119,7 +159,12 @@
           "preview": [
             "Why does the Laplace transform turn an ODE into algebra?",
             "What does a pole's location say about a response's shape?"
-          ]
+          ],
+          "video": {
+            "id": "sZ2qulI6GEk",
+            "title": "MIT 18.03 Lec 19 — Introduction to the Laplace Transform (reinforcement/bridge lecture)",
+            "channel": "MIT OpenCourseWare"
+          }
         },
         {
           "n": 11,
@@ -130,7 +175,12 @@
           "preview": [
             "Why does a square wave contain only odd harmonics?",
             "Connect Fourier series to the lines on a vibration analyzer's screen."
-          ]
+          ],
+          "video": {
+            "id": "EWWw0jryj1A",
+            "title": "MIT 18.03 Lec 15 — Introduction to Fourier Series",
+            "channel": "MIT OpenCourseWare"
+          }
         }
       ]
     },

@@ -21,7 +21,11 @@
             "Why must every term of a physical equation share the same dimensions, and what error does this catch first?",
             "A pump's flow is 'about 100' — cubic metres per hour or per day? Show how an order-of-magnitude check settles it."
           ],
-          "video": "none"
+          "video": {
+            "id": "hIAdCTNi1S8",
+            "title": "Treating Units Algebraically and Dimensional Analysis",
+            "channel": "Khan Academy"
+          }
         },
         {
           "n": 2,
@@ -204,7 +208,12 @@
           "preview": [
             "Decompose a 100 N force at 37° above horizontal into components — the operation statics repeats daily.",
             "Why is torque a vector while temperature is not?"
-          ]
+          ],
+          "video": {
+            "id": "J__Sph6srxs",
+            "title": "Dr. Melnick — Units and Significant Figures",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 2,
@@ -215,7 +224,12 @@
           "preview": [
             "A hoist accelerates from rest at 0.5 m/s²: how far does it travel in 6 s? (9 m)",
             "What does the area under a velocity–time graph mean physically?"
-          ]
+          ],
+          "video": {
+            "id": "swZoh8YhqAo",
+            "title": "Dynamics — Particle Kinematics Notes",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 3,
@@ -226,7 +240,12 @@
           "preview": [
             "A part leaves a horizontal conveyor at 2 m/s from 1.25 m height: how far out does it land? (≈1.0 m)",
             "Why don't the horizontal and vertical motions of a projectile interfere?"
-          ]
+          ],
+          "video": {
+            "id": "hIOq8uxveR0",
+            "title": "Dynamics — 2D Rectangular Motion Notes",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 4,
@@ -237,7 +256,12 @@
           "preview": [
             "What is the weight of a 50 kg motor, and why is 'kg' not a force? (≈490 N)",
             "Why is a free-body diagram drawn for one body at a time?"
-          ]
+          ],
+          "video": {
+            "id": "ouD_v_I-YT4",
+            "title": "Dr. Melnick — Newton's 3 Laws of Motion",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 5,
@@ -248,7 +272,12 @@
           "preview": [
             "A crate sits on a 20° incline with μs = 0.30: does it stay? (No — tan 20° = 0.36 > 0.30)",
             "Why does static friction adjust to the load while kinetic friction does not?"
-          ]
+          ],
+          "video": {
+            "id": "urkfH7_ikVg",
+            "title": "Dynamics — Particle Kinetics Notes",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 6,
@@ -259,7 +288,12 @@
           "preview": [
             "How much work does it take to raise a 200 kg load 12 m against gravity? (≈23.5 kJ)",
             "What computation does the work–energy theorem let you skip entirely?"
-          ]
+          ],
+          "video": {
+            "id": "YBqK0yPIV_w",
+            "title": "Dynamics — Work and Energy Notes, Part 1",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 7,
@@ -270,7 +304,12 @@
           "preview": [
             "From what height must a 2 kg part fall to hit 7 m/s? (≈2.5 m)",
             "When is mechanical energy not conserved, and where does the difference go?"
-          ]
+          ],
+          "video": {
+            "id": "LBcEMbfRo-o",
+            "title": "Dynamics — Conservation of Energy Notes",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 8,
@@ -281,7 +320,12 @@
           "preview": [
             "Two 5 kg carts collide and stick, one moving at 4 m/s: final speed? (2 m/s)",
             "Why does extending the stopping time reduce the impact force?"
-          ]
+          ],
+          "video": {
+            "id": "3nJIzh5rmGs",
+            "title": "Dynamics — Conservation of Momentum Notes",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 9,
@@ -292,7 +336,12 @@
           "preview": [
             "Convert 1450 rpm to rad/s. (≈152)",
             "Why does the same force produce different torques at different radii?"
-          ]
+          ],
+          "video": {
+            "id": "EbtemXLK7PM",
+            "title": "Dynamics — Rigid Body Kinematics: Linear vs Angular Velocity",
+            "channel": "Engineering Deciphered"
+          }
         },
         {
           "n": 10,
@@ -402,7 +451,12 @@
           "preview": [
             "What does total runout control that circular runout does not?",
             "Why does GD&T's datum system beat coordinate tolerancing for function?"
-          ]
+          ],
+          "video": {
+            "id": "G7wnGeR_69k",
+            "title": "Understanding GD&T",
+            "channel": "The Efficient Engineer"
+          }
         },
         {
           "n": 8,
@@ -751,7 +805,12 @@
           "preview": [
             "From a tensile curve, extract modulus, yield, UTS, and ductility — where does each live?",
             "Why does true stress keep rising while engineering stress falls after necking?"
-          ]
+          ],
+          "video": {
+            "id": "aQf6Q8t1FQE",
+            "title": "An Introduction to Stress and Strain",
+            "channel": "The Efficient Engineer"
+          }
         },
         {
           "n": 8,
@@ -762,7 +821,12 @@
           "preview": [
             "Why is hardness a proxy for strength, and when does the proxy break?",
             "What does the ductile–brittle transition mean for winter impact loads?"
-          ]
+          ],
+          "video": {
+            "id": "WSRqJdT2COE",
+            "title": "Understanding Material Strength, Ductility and Toughness",
+            "channel": "The Efficient Engineer"
+          }
         },
         {
           "n": 9,
@@ -789,7 +853,8 @@
           "preview": [
             "What does recrystallization undo, and what does its temperature roughly track?",
             "Define hot working without mentioning absolute temperature."
-          ]
+          ],
+          "video": "none"
         },
         {
           "n": 11,
@@ -800,7 +865,8 @@
           "preview": [
             "Why do castings show chill, columnar, and equiaxed zones?",
             "Where does microsegregation live, and why does it survive solidification?"
-          ]
+          ],
+          "video": "none"
         }
       ]
     },

@@ -193,10 +193,42 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   4/21/18/16/29/48/53/57/62/37/67 → our L1–L11). computing — 11 embeds,
   MIT OCW 6.0001 (Lec 1,3,2,4,7,5,10) + 6.0002 (Lec 5,9,6,15), all
   oEmbed-verified; L7/L8/L11 are declared best-fits, titled honestly.
-  Site embeds 32. REMAINING QUEUE (verify-before-embed; TODO stays until
-  verified — NEVER mark "none" where a match likely exists unverified):
-  materials-1 → MIT OCW 3.091 gallery; physics-1 → check MIT OCW 8.01
-  availability; drawing-cad → search once, likely "none". Then Y1S2 with each
+  Site embeds 32.
+- HUMAN-IN-THE-LOOP VIDEO PROTOCOL (owner, Phase-3 + Global Directive,
+  2026-07-17/18 — supersedes autonomous embedding): ALL video candidates
+  are PROPOSED in table format (Lesson | Primary | Arabic Supplemental |
+  Justification), oEmbed-verified BEFORE proposal, and embedded only after
+  the owner's explicit APPROVE per row. CHANNEL LIST v2 (primary/English
+  technical, enforced in APPROVED_CHANNELS): original 15 + Engineering
+  Deciphered, Randall Manteufel, 3Blue1Brown, Less Boring Lectures,
+  Husam's Mech Vision, Khan Academy. ARABIC RULE: Arabic channels
+  (قناة د.محمد شايع — thermo/heat-transfer, 550+ lectures; Ala Hijazi —
+  GJU, mechanical drawing/statics, channel URL still unverified) are
+  SUPPLEMENTAL ONLY — never the primary frame; a dedicated
+  "Supplemental/Arabic Resources" renderer block is still to be built
+  before the first Arabic approval can ship.
+- BATCH A+B APPROVED & EXECUTED (owner, 2026-07-18): embeds now 73.
+  VERIFIED+EMBEDDED: materials-1 L7/L8 (Efficient Engineer stress-strain,
+  strength/ductility/toughness); physics-1 L1–L9 (Engineering Deciphered
+  units + dynamics series); drawing-cad L7 (Efficient Engineer GD&T);
+  math-1 L1 (Khan Academy units/dimensional analysis — replaced the
+  "none" marker); math-2 L1–L6,L8–L11 (MIT OCW 18.02/18.03); math-3 全11
+  (MIT OCW 18.03/18.02). "NONE" MARKERS (owner-approved): materials-1
+  L10 (recrystallization) + L11 (solidification) — approved list has no
+  match; our casting lectures carry L11's depth in-house. DUP-RULING
+  (owner): 18.03 Lec 14 Resonance + Lec 19 Laplace intentionally
+  cross-listed in math-2 L9/L10 AND math-3 L5/L6 as reinforcement/bridge
+  lectures. SYLLABUS-REFINEMENT NOTE (owner-acknowledged): math-2 L7–L10
+  duplicates math-3 topics (legacy overlap from the Curriculum Map's
+  math-3 addition) — refine math-2 toward pure multivariable/vector
+  calculus in a future map revision. AWAITING RULING: math-2 L7
+  (3Blue1Brown eigenvectors, PFDu9oVAE-g, verified) — not in the owner's
+  approve list, left TODO. QUEUED FOR NEXT PASS (owner-approved as
+  queued): physics-1 L10 (rigid-body kinetics — Hanson Dynamics
+  playlist), L11 (SHM — Less Boring Lectures); drawing-cad L1–L6,L8–L11
+  (Husam's Mech Vision scoping + Ala Hijazi Arabic supplemental).
+  WAVE PLAN C–J recorded in session log; Wave C = dynamics + physics-1
+  remainder via Hanson/ED dynamics playlists. Then Y1S2 with each
   course build. BATCH SCALING ORDER (owner): after Y1S1 patch → full
   math-1-pipeline builds for Y1S2, Y2S1, Y2S2, with per-lesson video
   mapping from the approved channels and career-sector rotation per course.

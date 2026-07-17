@@ -45,7 +45,11 @@ APPROVED_CHANNELS = ("mit opencourseware", "mit ocw",   # one org, two spellings
                      "engineering mindset", "realpars", "solisplc",
                      "automationdirect", "plcprofessor", "galcotv",
                      "hegamastery", "siemens knowledge hub",
-                     "schneider electric hub")
+                     "schneider electric hub",
+                     # owner expansion (Phase-3 / Global Directive, 2026-07-17/18):
+                     "engineering deciphered", "randall manteufel",
+                     "3blue1brown", "less boring lectures",
+                     "husam's mech vision", "khan academy")
 
 def channel_approved(name):
     low = (name or "").lower()
