@@ -297,6 +297,19 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   centering both languages, gear off, shine band position sampled
   moving (~33px/1.2s). Earlier v1 (rotating gear at 60s/rev) superseded
   same-day by owner order "cancel this. discard the gear."
+- HOMEPAGE ROBOT CREW (owner order 2026-07-18): four small flat-vector
+  robot characters playing with mechanical tools, generated via Higgsfield
+  (nano_banana jobs 9bf28329 wrench-on-bolt / 8ecc4264 gear-hoop /
+  247e699f caliper+blueprint / d4f0f791 oil-can, backgrounds removed via
+  remove_background, true-PNG cutouts resized to 320px) →
+  assets/nx/bots/*.png. Placed as decorative .nx-bot divs (CSS
+  background-image, NOT <img> — keeps the non-logo <img> build gate
+  meaningful) beside homepage sections 01–04 in BOTH language blocks
+  (inset-inline-end positioning mirrors in RTL); gentle nx-bob 5.5s
+  animation, staggered delays; hidden ≤1120px (would overlap text);
+  animation off under prefers-reduced-motion. Verified at 1280px: all 4
+  visible per language, zero text overlap (elementFromPoint check),
+  images load. Homepage only — academic pages untouched.
 - BANNER v3 + COST PURGE (owner orders 2026-07-18): (a) hero meta chips:
   Languages and Cost REMOVED from the banner (Curriculum chip only);
   the appbar language toggle (.lang-btn) STAYS — banner-only removal.

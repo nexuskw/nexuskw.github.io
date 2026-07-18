@@ -150,6 +150,19 @@ a:hover{color:var(--nx-teal-h)}
 .nx-hero .meta div{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8fa39c}
 .nx-hero .meta b{display:block;font-size:14px;letter-spacing:0;text-transform:none;color:#fff;margin-top:3px}
 @media(max-width:700px){.nx-hero .txt{max-width:100%}.nx-hero .bg{opacity:.08}}
+/* ---- homepage robot crew (owner order 2026-07-18): small robots playing
+   with mechanical tools around the homepage sections. CSS backgrounds (not
+   <img>) so the build's non-logo image gate stays meaningful. ---- */
+.part{position:relative}
+.nx-bot{position:absolute;width:120px;height:120px;background:center/contain no-repeat;
+  pointer-events:none;z-index:1;animation:nx-bob 5.5s ease-in-out infinite}
+.nx-bot-wrench{background-image:url(bots/bot-wrench.png);inset-inline-end:3%;top:30px}
+.nx-bot-gear{background-image:url(bots/bot-gear.png);inset-inline-end:2%;top:-30px;width:134px;height:134px;animation-delay:1.2s}
+.nx-bot-caliper{background-image:url(bots/bot-caliper.png);inset-inline-end:4%;bottom:6px;width:112px;height:112px;animation-delay:2.1s}
+.nx-bot-oil{background-image:url(bots/bot-oil.png);inset-inline-end:3%;top:40px;animation-delay:3s}
+@keyframes nx-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(max-width:1120px){.nx-bot{display:none}}
+@media(prefers-reduced-motion:reduce){.nx-bot{animation:none}}
 /* ---- homepage welcome animation (owner directive 2026-07-18) ----
    Staggered rise-in of the hero stack + the gear motif slowly turning,
    like a plant coming up to speed. translateY only (RTL-safe); fully
