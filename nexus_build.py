@@ -436,10 +436,26 @@ def library_tab(les, course):
                        f'lesson video above remains the technical reference.</p>'
                        f'<ul class="plain">{rows}</ul></div>')
 
+    # Alternative videos (owner approval workflow, 2026-07-18): the primary
+    # embed above, plus every other owner-approved candidate as a link list.
+    # Each id was oEmbed-verified real before entry.
+    alts_html = ""
+    alts = lv.get("alternatives") if isinstance(lv, dict) else None
+    if alts:
+        rows = "".join(
+            f'<li><a href="https://www.youtube.com/watch?v={esc(a["id"])}" '
+            f'target="_blank" rel="noopener">{esc(a["title"])}</a> '
+            f'<span class="src">{esc(a.get("channel", ""))}</span></li>'
+            for a in alts)
+        alts_html = ('<div class="lib-alts"><h4 data-ar="فيديوهات بديلة">'
+                     'Alternative videos</h4>'
+                     f'<ul class="plain small">{rows}</ul></div>')
+
     return f"""
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>
   {video}
+  {alts_html}
 </div>
 {arabic_html}
 <div class="lib-block lib-books">

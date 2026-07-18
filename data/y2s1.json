@@ -403,7 +403,24 @@
           "video": {
             "id": "VvDJyhYSJv8",
             "title": "Understanding Viscosity",
-            "channel": "The Efficient Engineer"
+            "channel": "The Efficient Engineer",
+            "alternatives": [
+              {
+                "id": "Fa_VzLBgSfg",
+                "title": "Understanding Viscosity of Fluids: Theory & Experiments",
+                "channel": "Engineering Materials-Tribology-Design"
+              },
+              {
+                "id": "UVcyea3ZH54",
+                "title": "Understanding Viscosity and Viscous Force",
+                "channel": "The Practical School"
+              },
+              {
+                "id": "f8areXBvSsA",
+                "title": "Understanding Viscosity in Fluids",
+                "channel": "Engineering Streamlined"
+              }
+            ]
           }
         },
         {
@@ -419,7 +436,24 @@
           "video": {
             "id": "6btDiYZ5xa0",
             "title": "Fluid/Hydrostatic Pressure in 11 Minutes!",
-            "channel": "Less Boring Lectures"
+            "channel": "Less Boring Lectures",
+            "alternatives": [
+              {
+                "id": "3MvRpp7WnK0",
+                "title": "Hydrostatic Pressure in 8 Minutes!",
+                "channel": "Less Boring Lectures"
+              },
+              {
+                "id": "C0ujLqKPWew",
+                "title": "Hydrostatic Pressure (Fluid Mechanics Lesson 3)",
+                "channel": "Strong Medicine"
+              },
+              {
+                "id": "vLiC_v_2iFU",
+                "title": "Hydrostatic Pressure Basics",
+                "channel": "kvillesblog"
+              }
+            ]
           }
         },
         {
@@ -437,7 +471,24 @@
             "title": "Understanding Reynolds Number",
             "channel": "Fluid Matters",
             "verified": true,
-            "note": "oEmbed-verified 2026-07-18; established channel (>3k views); video-policy v3"
+            "note": "owner-approved 2026-07-18; oEmbed-verified real; video-policy v3",
+            "alternatives": [
+              {
+                "id": "NenlNon6ODw",
+                "title": "Reynolds Number — Laminar vs. Turbulent Flow in 8 Minutes",
+                "channel": "Less Boring Lectures"
+              },
+              {
+                "id": "t_D_tbzBnDg",
+                "title": "Reynolds Number Explained: Complete Engineering Guide",
+                "channel": "Academic Engineering"
+              },
+              {
+                "id": "WNIbQm8wg2E",
+                "title": "Laminar Flow, Turbulent Flow and Reynolds Number",
+                "channel": "Fluids Explained"
+              }
+            ]
           }
         },
         {
