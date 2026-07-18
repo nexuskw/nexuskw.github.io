@@ -1,7 +1,7 @@
 /* Nexus Institute of Technology — minimal service worker.
    Assets: cache-first. Pages: network-first with cache fallback. */
-var VERSION = 'nx-40feeb224e';
-var CORE = ['./', 'assets/nx/nexus.css?v=40feeb224e', 'assets/nx/nexus.js?v=40feeb224e',
+var VERSION = 'nx-1769bfdca6';
+var CORE = ['./', 'assets/nx/nexus.css?v=1769bfdca6', 'assets/nx/nexus.js?v=1769bfdca6',
             'assets/nx/logo.svg', 'manifest.webmanifest'];
 
 self.addEventListener('install', function (e) {

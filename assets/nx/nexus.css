@@ -139,14 +139,14 @@ a:hover{color:var(--nx-teal-h)}
 .catch b{color:var(--nx-teal)}
 .nx-hero{position:relative;border-radius:14px;overflow:hidden;background:var(--nx-grad-hero);
   color:#eef4f2;padding:38px 34px;margin:26px 0}
-.nx-hero .bg{position:absolute;inset-inline-end:42px;top:-14px;width:240px;height:240px;opacity:.13;pointer-events:none}
+.nx-hero .bg{display:none}
 .nx-hero .bg *{stroke:#14CFA0}
 .nx-hero .bg .amb{fill:#F5A623;stroke:none}
-.nx-hero .txt{position:relative;max-width:72%}
+.nx-hero .txt{position:relative;max-width:100%;text-align:center}
 .nx-hero .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--nx-teal);margin:0 0 10px}
 .nx-hero h1{margin:0 0 10px;font-size:clamp(24px,4vw,38px);line-height:1.18;letter-spacing:-.01em}
 .nx-hero .sub{margin:0;color:#b9c6c1;font-size:15.5px;font-family:var(--serif)}
-.nx-hero .meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px;position:relative}
+.nx-hero .meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px;position:relative;justify-content:center}
 .nx-hero .meta div{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8fa39c}
 .nx-hero .meta b{display:block;font-size:14px;letter-spacing:0;text-transform:none;color:#fff;margin-top:3px}
 @media(max-width:700px){.nx-hero .txt{max-width:100%}.nx-hero .bg{opacity:.08}}
@@ -155,17 +155,18 @@ a:hover{color:var(--nx-teal-h)}
    like a plant coming up to speed. translateY only (RTL-safe); fully
    disabled under prefers-reduced-motion. */
 @keyframes nx-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@keyframes nx-turn{to{transform:rotate(360deg)}}
-@keyframes nx-breathe{0%,100%{opacity:1}50%{opacity:.45}}
+@keyframes nx-shine{0%{left:-45%}60%{left:115%}100%{left:115%}}
 .nx-hero .eyebrow{animation:nx-rise .65s cubic-bezier(.2,.7,.2,1) both .1s}
 .nx-hero h1{animation:nx-rise .75s cubic-bezier(.2,.7,.2,1) both .28s}
 .nx-hero .sub{animation:nx-rise .75s cubic-bezier(.2,.7,.2,1) both .46s}
 .nx-hero .meta{animation:nx-rise .8s cubic-bezier(.2,.7,.2,1) both .64s}
-.nx-hero .bg{animation:nx-turn 60s linear infinite;transform-origin:50% 50%}
-.nx-hero .bg .amb{animation:nx-breathe 5s ease-in-out infinite 1.2s}
+/* banner shine: a soft skewed light band sweeping across the hero card */
+.nx-hero::after{content:"";position:absolute;top:-60%;bottom:-60%;width:34%;left:-45%;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.05) 30%,rgba(245,166,35,.12) 50%,rgba(255,255,255,.05) 70%,transparent 100%);
+  transform:skewX(-18deg);animation:nx-shine 5.5s ease-in-out infinite 1s;pointer-events:none}
 @media(prefers-reduced-motion:reduce){
-  .nx-hero .eyebrow,.nx-hero h1,.nx-hero .sub,.nx-hero .meta,
-  .nx-hero .bg,.nx-hero .bg .amb{animation:none}
+  .nx-hero .eyebrow,.nx-hero h1,.nx-hero .sub,.nx-hero .meta{animation:none}
+  .nx-hero::after{display:none}
 }
 
 /* ---------- structure ---------- */

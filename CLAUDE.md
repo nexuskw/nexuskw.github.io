@@ -282,16 +282,21 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Emitted docs/ scanned: ZERO old-brand residue. NOT purged, by rule:
   ledger history below (audit trail, verbatim), dead-path strings inside
   build.py (inert library internals), archived first-generation assets.
-- HOMEPAGE WELCOME ANIMATION (owner order 2026-07-18 — partially lifts the
-  earlier "no animations" hold, for this feature only; broader design
-  refinement remains gated on the owner's visual-style decision): hero
-  entrance in assets/nx/nexus.css — staggered nx-rise (eyebrow .1s → h1
-  .28s → sub .46s → meta .64s, translateY only, RTL-safe), gear motif
-  nx-turn 90s/rev continuous, amber hub nx-breathe 5s pulse; ALL disabled
-  under prefers-reduced-motion. Scope: .nx-hero (homepage only, both
-  languages; AR hero replays on language toggle). Verified in-browser:
-  computed animation properties, entrance completion, live rotation
-  sampling (~10°/2s).
+- HOMEPAGE WELCOME ANIMATION v2 (owner orders 2026-07-18 — partially lifts
+  the earlier "no animations" hold, for this feature only; broader design
+  refinement remains gated on the owner's visual-style decision): FINAL
+  STATE per owner iteration: gear motif DISCARDED (.nx-hero .bg
+  display:none — markup kept, CSS-off, reversible; nx-turn/nx-breathe
+  removed), hero text stack CENTERED (EN + AR; text-align:center +
+  meta justify-content:center, direction-neutral), banner SHINE sweep
+  (.nx-hero::after skewed amber-white gradient band, nx-shine 5.5s
+  ease-in-out infinite), staggered nx-rise entrance KEPT (eyebrow .1s →
+  h1 .28s → sub .46s → meta .64s, translateY only, RTL-safe). All
+  animations disabled under prefers-reduced-motion (shine ::after
+  display:none). Scope: .nx-hero, homepage only. Verified in-browser:
+  centering both languages, gear off, shine band position sampled
+  moving (~33px/1.2s). Earlier v1 (rotating gear at 60s/rev) superseded
+  same-day by owner order "cancel this. discard the gear."
 - INSTITUTE REBRAND EXECUTED (owner approval + addendum, 2026-07-18):
   tone pivot from transition-playbook to professional-institute voice.
   MISSION: eyebrow now "Mission · Advanced Industrial Systems & Engineering
