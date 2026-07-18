@@ -139,7 +139,7 @@ a:hover{color:var(--nx-teal-h)}
 .catch b{color:var(--nx-teal)}
 .nx-hero{position:relative;border-radius:14px;overflow:hidden;background:var(--nx-grad-hero);
   color:#eef4f2;padding:38px 34px;margin:26px 0}
-.nx-hero .bg{position:absolute;inset-inline-end:-18px;top:-24px;width:240px;height:240px;opacity:.13;pointer-events:none}
+.nx-hero .bg{position:absolute;inset-inline-end:42px;top:-14px;width:240px;height:240px;opacity:.13;pointer-events:none}
 .nx-hero .bg *{stroke:#14CFA0}
 .nx-hero .bg .amb{fill:#F5A623;stroke:none}
 .nx-hero .txt{position:relative;max-width:72%}
@@ -161,7 +161,7 @@ a:hover{color:var(--nx-teal-h)}
 .nx-hero h1{animation:nx-rise .75s cubic-bezier(.2,.7,.2,1) both .28s}
 .nx-hero .sub{animation:nx-rise .75s cubic-bezier(.2,.7,.2,1) both .46s}
 .nx-hero .meta{animation:nx-rise .8s cubic-bezier(.2,.7,.2,1) both .64s}
-.nx-hero .bg{animation:nx-turn 90s linear infinite;transform-origin:50% 50%}
+.nx-hero .bg{animation:nx-turn 60s linear infinite;transform-origin:50% 50%}
 .nx-hero .bg .amb{animation:nx-breathe 5s ease-in-out infinite 1.2s}
 @media(prefers-reduced-motion:reduce){
   .nx-hero .eyebrow,.nx-hero h1,.nx-hero .sub,.nx-hero .meta,
