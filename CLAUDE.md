@@ -311,7 +311,23 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   attached (rotation: Automotive-Toyota, Aerospace-Airbus, Industrial
   controls-Rockwell — distinct trio). Company-free scan PASS. Render
   verified in-browser: L3 quiz 5/5, glossary, MathJax 105, embed, zero §.
-  Coverage 74→78/528 (15%). NEXT: math-3 L5-L11, then Y2S1 course 2.
+  Coverage 74→78/528 (15%).
+- BREADTH MODE (owner directive 2026-07-18: "prioritize breadth" — one
+  starter batch per course across more of Year 2, plus "add whatever
+  parts you finish to each lesson at the same time" = incremental merge).
+  BATCH 2 = strength (SOM 201) L1-L4 fresh units: 500-540w §1-§5 lectures
+  (axial stress/strain + Hooke + FoS; series/indeterminate + thermal
+  stress; torsion + power-torque; bending + section modulus + shear),
+  glossary TABLES, 24 Python-verified quiz items (σ=204MPa, δ=2.55mm,
+  FoS=1.56, εT=600µε, σth=120MPa, T=95.5N·m, τ=7.6MPa, J∝d⁴ ×16,
+  I=4.17e6mm⁴, S=83333mm³, σ=120MPa). Library already 11/11 approved
+  Hanson MoM embeds (Wave D). Career attached (Construction-Bechtel,
+  Process-Shell, Automotive-Caterpillar — distinct trio). Company-free
+  scan PASS; render-gate spot check PASS (§ none, glossary, 8 quiz,
+  embed, no company names in academic tabs). Coverage 78→82/528 (16%).
+  Y2S1 status: math-3 4/11, strength 4/11 authored; both have full
+  approved videos. NEXT (empty-video courses): fluids/statistics/etc.
+  need the real per-video verification pass under video-policy v3.
 - VIDEO POLICY v3 (owner directive 2026-07-18 — RELAXES the strict
   APPROVED_CHANNELS allowlist): videos may now come from ANY channel, not
   just the 21-item list, PROVIDED (a) the video is the best on-topic fit

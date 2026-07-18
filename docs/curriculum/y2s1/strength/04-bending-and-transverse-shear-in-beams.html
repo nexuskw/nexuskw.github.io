@@ -54,7 +54,7 @@
     <h1>Bending and transverse shear in beams</h1>
     <p class="sub">The flexure formula derived from plane sections; section modulus as the designer's currency. Shear stress distribution and shear flow — why webs carry shear and flanges carry moment in an I-beam. Built-up sections and their fastener spacing, and where beams actually fail.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/strength/4">Mark as complete</button>
@@ -67,23 +67,68 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does bending stress vanish at the neutral axis and peak at the surface?</li><li>Why do I-beam webs carry the shear while flanges carry the moment?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>SOM 201 · Strength of Materials</b>
-  (Year 2 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li><li>NPTEL: Strength of Materials (nptel.ac.in)</li></ul>
-  <p class="small">Course context: Stress where it lives: axial members, torsion, bending, combined loading, and failure theories — the course that turns statics diagrams into the numbers written on repair procedures and fitness-for-service notes.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does bending stress vanish at the neutral axis and peak at the surface?</li><li>Why do I-beam webs carry the shear while flanges carry the moment?</li></ul></div><div class="measure">
+<h3>01 · Bending stress from plane sections</h3>
+<p>A beam resists transverse load by bending, and bending puts one face in tension and the
+other in compression, with a neutral axis of zero stress between. Assuming plane sections
+stay plane, strain varies linearly with distance \(y\) from the neutral axis, and so — through
+Hooke's law — does stress. Integrating that stress into a resisting moment gives the
+<b>flexure formula</b> \( \sigma=\dfrac{My}{I} \), where \(I\) is the second moment of area
+of the cross-section. Stress is largest at the extreme fibre, farthest from the neutral
+axis.</p>
+<h3>02 · Section modulus, the designer's currency</h3>
+<p>Evaluating the flexure formula at the extreme fibre \(c\) gives
+\( \sigma_{\max}=\dfrac{M}{S} \), where \( S=I/c \) is the <b>section modulus</b> — a single
+number that captures a section's bending efficiency. A rectangular section
+\(b\times h\) has \( I=\dfrac{bh^3}{12} \) and \( S=\dfrac{bh^2}{6} \). For \(b=50\),
+\(h=100\) mm: \( I=4.17\times10^6\ \text{mm}^4 \), \( S=83{,}333\ \text{mm}^3 \), so a
+10&nbsp;kN·m moment gives \( \sigma=M/S=10\times10^6/83{,}333=120\ \text{MPa} \). Because
+\(S\propto h^2\), depth matters far more than width — the reason beams are tall, not fat.</p>
+<h3>03 · Transverse shear and shear flow</h3>
+<p>Bending rarely comes alone; the transverse load also produces a <b>shear stress</b>
+\( \tau=\dfrac{VQ}{Ib} \), where \(V\) is the shear force, \(Q\) the first moment of the area
+beyond the level of interest, and \(b\) the width there. Shear stress is greatest at the
+neutral axis — opposite to bending stress — which is why an I-beam puts material in flanges
+(far out, for bending) and a thin web at the centre (to carry shear). The related idea of
+<b>shear flow</b> \( q=VQ/I \) sizes the fasteners or welds that hold a built-up section
+together.</p>
+<h3>04 · Designing a beam</h3>
+<p>The design task inverts the flexure formula: for a required moment and an allowable
+stress, the section must supply \( S\ge M/\sigma_{\text{allow}} \). Choosing the lightest
+section that meets this — a deep, thin-webbed shape — is the everyday work of structural and
+machine design, and \(S\) is the number tabulated for every standard beam. Bending stress
+usually governs, but the shear check at the neutral axis must not be skipped for short, heavily
+loaded beams, where shear can control. Reading which of the two governs — long slender beams
+by bending, short stubby ones by shear — is the judgement this lesson trains.</p>
+<h3>05 · Bending as the course's capstone stress</h3>
+<p>Bending combines everything before it: an internal moment (from statics), a linear stress
+distribution (from plane sections and Hooke's law), a geometry factor (\(I\) and \(S\)), and
+an allowable (from the tensile contract). It is the axial and torsional grammar applied to a
+stress that varies across the section rather than being uniform or radial. Mastering the
+section modulus — why depth is cubed into \(I\) but squared into \(S\), why beams are oriented
+tall — equips the machine-design and structures courses that follow, where beam selection is
+routine. The through-line of Strength of Materials is now complete: define the stress, relate
+it to strain, judge it against an allowable — for axial, torsional, and bending members alike.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why does bending stress vanish at the neutral axis and peak at the surface?</li><li>Why do I-beam webs carry the shear while flanges carry the moment?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Shear and moment</b> — internal \(V\) and \(M\) from statics.</li>
+<li><b>Second moment of area</b> — \(I=bh^3/12\) for rectangles.</li>
+<li><b>The flexure logic</b> — plane sections + Hooke's law.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Flexure formula</td><td>\( \sigma=My/I \)</td><td>Bending stress at height \(y\).</td></tr>
+<tr><td>Section modulus</td><td>\( S=I/c,\ \sigma_{max}=M/S \)</td><td>Max bending stress; beam sizing.</td></tr>
+<tr><td>Rect. properties</td><td>\( I=bh^3/12,\ S=bh^2/6 \)</td><td>Solid rectangular section.</td></tr>
+<tr><td>Transverse shear</td><td>\( \tau=VQ/Ib \)</td><td>Shear stress, peaks at neutral axis.</td></tr>
+<tr><td>Shear flow</td><td>\( q=VQ/I \)</td><td>Sizing fasteners in built-up beams.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Second moment and section modulus</b></p><p><b>Problem.</b> A rectangular beam has b=50 mm, h=100 mm. Find \(I\) and the section modulus \(S\).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( I=\dfrac{bh^3}{12}=\dfrac{50(100)^3}{12}=4.17\times10^6\ \text{mm}^4 \). \( S=I/c=4.17\times10^6/50=83{,}333\ \text{mm}^3 \) (also \(bh^2/6\)). <b>Answer:</b> \(I=4.17\times10^6\ \text{mm}^4,\ S=83{,}333\ \text{mm}^3\).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Bending stress</b></p><p><b>Problem.</b> The same beam carries a bending moment of 10 kN·m. Find the maximum bending stress.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \sigma_{max}=M/S=\dfrac{10\times10^6\ \text{N·mm}}{83{,}333\ \text{mm}^3}=120\ \text{MPa} \). <b>Answer:</b> 120 MPa. <b>Check:</b> N·mm / mm³ = N/mm² = MPa.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Depth versus width</b></p><p><b>Problem.</b> To halve the bending stress most cheaply, is it better to double the width or increase the depth — and why?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( S=bh^2/6 \): \(S\propto b\) but \(S\propto h^2\). Doubling width doubles \(S\); increasing depth by \(\sqrt2\) also doubles \(S\) for far less added material. <b>Answer:</b> add depth — it is squared into \(S\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Maximum bending stress in a beam occurs:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>At the extreme fibre, farthest from the neutral axis</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At the neutral axis</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Uniformly across the depth</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>At the supports only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\(\sigma=My/I\) grows with \(y\), so it peaks at the top/bottom fibre. The neutral axis has zero bending stress.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The section modulus of a rectangle is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( bh^2/6 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( bh^3/12 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \pi d^4/32 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( bh/2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\(S=I/c=(bh^3/12)/(h/2)=bh^2/6\). \(bh^3/12\) is \(I\); \(\pi d^4/32\) is the polar \(J\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Transverse shear stress \( \tau=VQ/Ib \) in a beam is greatest:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>At the neutral axis</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At the extreme fibre</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>At the supports' bolts</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Uniform across depth</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\(Q\) is largest at the neutral axis, so shear peaks there — opposite to bending stress, which peaks at the fibres.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Beams are made tall rather than wide because \(S=bh^2/6\) makes stress most sensitive to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Depth \(h\) (squared)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Width \(b\) (linear)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Length</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Material only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Depth enters as \(h^2\), width only as \(b\); adding height buys bending capacity far more efficiently than adding width.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>At the neutral axis of a beam in pure bending, the bending stress is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Zero</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Maximum tension</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Maximum compression</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Equal to the shear stress</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\(\sigma=My/I\) with \(y=0\) at the neutral axis gives zero bending stress; the extreme fibres carry the peaks.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>
