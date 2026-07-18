@@ -1,7 +1,16 @@
-# SUN DEVIL FACTORY — MASTER BRIEF (final authority)
+# NEXUS INSTITUTE OF TECHNOLOGY — MASTER BRIEF (final authority)
 
 This file is the continuation contract for any model or person working on this
 repository. Where any other instruction differs from this brief, this brief wins.
+
+PROJECT IDENTITY (owner directive, 2026-07-18, permanent): this project is
+**Nexus Institute of Technology** — live at https://nexuskw.github.io/, repo
+github.com/nexuskw/nexuskw.github.io, generator `nexus_build.py`. All
+owner-facing output, documents, and instructions use the name "Nexus" ONLY.
+The ledger below is the historical decision record: entries predating the
+rebrand keep their original wording verbatim (deleting or rewording history
+is prohibited — it is the audit trail). Where old entries conflict with
+newer ones, the newer entry wins, as always.
 
 ## FINAL DECISIONS (from the project owner)
 
@@ -259,6 +268,20 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   table, git recovery). PENDING (gated on owner): design refinement —
   owner will finalize visual style, then layout suggestions; NO animations
   per explicit owner order.
+- NEXUS-ONLY IDENTITY PURGE (owner CRITICAL directive, 2026-07-18,
+  permanent — see PROJECT IDENTITY at the top of this file): all owner-
+  facing output/docs use "Nexus" exclusively. EXECUTED: table.sdf CSS class
+  → table.nx-table (nexus.css 6 rules + career.html/career-ar.html 3 tables
+  each; styling verified by computed-style check on the rendered page);
+  launch configs sdf-docs → nexus-docs (project + session level, path
+  updated); build.py docstring + nexus_build.py comment retitled neutral
+  ("previous-generation library"); README.md + DEPLOY.md rewritten
+  Nexus-current (old build/deploy steps were stale); PROJECT_MAP.md +
+  OWNER_MANUAL.md re-issued Nexus-exclusive; local folder renamed
+  sun-devil-factory → nexus-institute (git/remote unaffected; verified).
+  Emitted docs/ scanned: ZERO old-brand residue. NOT purged, by rule:
+  ledger history below (audit trail, verbatim), dead-path strings inside
+  build.py (inert library internals), archived first-generation assets.
 - CHECKPOINT: COMPUTING EDUCATIONAL UNIT COMPLETE (2026-07-18): fifth Y1S1
   course under the Unit template; second fresh-authored (no legacy content).
   Batches 1-2 (commits 785b322, debd9da) shipped L1-8; Batch 3 this commit:

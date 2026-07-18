@@ -331,12 +331,12 @@ table.glossary td:first-child{font-weight:700;font-family:var(--sans);font-size:
 
 /* ---------- tables (career) ---------- */
 .tablewrap{overflow-x:auto;margin:26px 0;border:1px solid var(--nx-line);border-radius:12px;background:#fff}
-table.sdf{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
-table.sdf caption{caption-side:top;text-align:start;font-family:var(--sans);font-size:11px;
+table.nx-table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+table.nx-table caption{caption-side:top;text-align:start;font-family:var(--sans);font-size:11px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--nx-amber-d);padding:14px 16px 6px}
-table.sdf th{background:var(--nx-panel);color:#dfe8e4;text-align:start;font-size:12px;letter-spacing:.06em;padding:10px 14px}
-table.sdf td{border-top:1px solid var(--nx-line);padding:12px 14px;vertical-align:top;font-family:var(--serif)}
-table.sdf tr:nth-child(even) td{background:#f8faf8}
+table.nx-table th{background:var(--nx-panel);color:#dfe8e4;text-align:start;font-size:12px;letter-spacing:.06em;padding:10px 14px}
+table.nx-table td{border-top:1px solid var(--nx-line);padding:12px 14px;vertical-align:top;font-family:var(--serif)}
+table.nx-table tr:nth-child(even) td{background:#f8faf8}
 
 /* ---------- plan / dep-grid / refresher (fragments) ---------- */
 .plan article{display:flex;gap:20px;border-inline-start:3px solid var(--nx-teal-d);padding:14px 0 14px 20px;margin:12px 0;background:#fff;border-radius:0 12px 12px 0;border-top:1px solid var(--nx-line);border-bottom:1px solid var(--nx-line);border-inline-end:1px solid var(--nx-line)}
@@ -395,7 +395,7 @@ table.sdf tr:nth-child(even) td{background:#f8faf8}
 html[lang="ar"] .lang-ar{display:block}
 html[lang="ar"] .lang-en{display:none}
 html[lang="ar"] .measure p,html[lang="ar"] .measure li,html[lang="ar"] .lead,
-html[lang="ar"] table.sdf td,html[lang="ar"] .quiz-item .q p{font-family:'Geeza Pro','Baghdad','Al Bayan',var(--sans)}
+html[lang="ar"] table.nx-table td,html[lang="ar"] .quiz-item .q p{font-family:'Geeza Pro','Baghdad','Al Bayan',var(--sans)}
 bdi,[dir="ltr"]{unicode-bidi:isolate}
 .ar-note{border:1px solid var(--nx-line);border-inline-start:3px solid var(--nx-amber);border-radius:0 10px 10px 0;
   background:#fff;padding:14px 18px;margin:0 0 18px;font-size:14.5px;color:#33373c;max-width:75ch}

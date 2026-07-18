@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Sun Devil Factory — static site generator.
+"""Nexus data/helper library (previous-generation site generator, retained
+as the import layer for nexus_build.py — do not deploy from this file).
 
 Zero dependencies. Reads data/*.json + content fragments, emits docs/.
 Every lesson gets its own page with five tabs (Lecture / Foundations /

@@ -1,48 +1,34 @@
-# Deploy — one authentication step, then live
+# Deploy — Nexus Institute of Technology
 
-The site is fully built and committed. `docs/` contains the complete 59-page
-static site; GitHub Pages serves it directly from the repo. Nothing needs to
-be built on a server.
+The site is a fully static build committed to the repo. GitHub Pages serves the
+`docs/` folder of `main` directly — nothing runs on a server.
 
-## Path A — GitHub Pages with gh CLI (recommended, ~60 seconds)
-
-Target: `https://nexuskw.github.io/` (org `nexuskw`,
-repo `asu`). Any account/repo works — the site is base-path independent.
-
-```bash
-brew install gh                # if not installed
-gh auth login                  # one-time browser login (nexuskw org owner)
-cd "/Users/ilmshri/Social Media/sun-devil-factory"
-gh repo create asu --public --source=. --push
-gh api "repos/{owner}/nexuskw.github.io/pages" -X POST \
-  -f "source[branch]=main" -f "source[path]=/docs"
-```
-
-Live URL: `https://nexuskw.github.io/`
-(first build takes a minute or two).
-
-## Path B — GitHub web UI (no CLI)
-
-1. Create an empty **public** repo named `sun-devil-factory` at github.com/new
-   (no README).
-2. ```bash
-   cd "/Users/ilmshri/Social Media/sun-devil-factory"
-   git remote add origin https://github.com/<your-username>/sun-devil-factory.git
-   git push -u origin main
-   ```
-3. Repo → Settings → Pages → Source: **Deploy from a branch** →
-   Branch `main`, folder `/docs` → Save.
-
-## Path C — Cloudflare Pages (alternative free host)
-
-Dashboard → Workers & Pages → Create → Pages → Upload assets → drag the
-`docs/` folder. Or connect the GitHub repo (build command: `python3 build.py`,
-output directory: `docs`).
+- **Live URL:** https://nexuskw.github.io/
+- **Repo:** `github.com/nexuskw/nexuskw.github.io` (origin; credential in the
+  Mac's keychain)
+- **Pages config:** Settings → Pages → Deploy from a branch → `main`, `/docs`
+  (already configured)
 
 ## After any content change
 
 ```bash
-python3 build.py && git add -A && git commit -m "…" && git push
+cd "/Users/ilmshri/Social Media/sun-devil-factory"
+python3 nexus_build.py                       # rebuild — must end with the summary lines
+git add -A && git commit -m "describe change"
+git push origin main                         # live ~1 minute later
 ```
 
-Pages redeploys automatically on push.
+Always build with `nexus_build.py`. (`build.py` is its import library — deploying
+from it emits the retired previous-generation site.)
+
+## Local preview
+
+```bash
+python3 -m http.server -d docs 8000    # → http://localhost:8000
+```
+
+## Verify after deploy
+
+Open https://nexuskw.github.io/curriculum/ and confirm the coverage counter and
+your changed pages. If a push doesn't appear within ~2 minutes, check
+repo → Actions for the Pages build status.

@@ -1,7 +1,7 @@
 # OWNER'S MANUAL — editing Nexus content yourself
 
 Companion to **[PROJECT_MAP.md](PROJECT_MAP.md)** (which files are safe). This manual
-covers *how* to edit the safe ones without breaking the site.
+covers *how* to edit the safe ones without breaking the Nexus site.
 
 ---
 
@@ -27,7 +27,7 @@ covers *how* to edit the safe ones without breaking the site.
 A Mac Terminal at the project folder:
 
 ```bash
-cd "/Users/ilmshri/Social Media/sun-devil-factory"
+cd "/Users/ilmshri/Social Media/nexus-institute"
 ```
 
 Python 3 and git are already installed and configured (the push credential is in your
@@ -45,7 +45,7 @@ python3 nexus_build.py
 #    success looks like:   NEXUS build <hash>
 #                          pages: 579 | search index: 528 | embeds: 102
 #                          coverage: 74/528 lessons at full depth (14%)
-#    an error (long red "AssertionError: ...") means: nothing was deployed,
+#    an error (long "AssertionError: ...") means: nothing was deployed,
 #    fix the file and rerun.
 
 # 3. preview on your own machine (optional but recommended)

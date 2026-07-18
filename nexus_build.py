@@ -2,7 +2,7 @@
 """NEXUS INSTITUTE OF TECHNOLOGY — static site generator (Stages 2–4).
 
 Zero dependencies. Reuses the data layer and verified-link machinery from
-build.py (the legacy Sun Devil Factory generator) and emits the full Nexus
+build.py (the retained previous-generation library) and emits the full Nexus
 platform into docs/: centered brand chrome with Mission | Curriculum |
 Career Paths, four-tab lesson pages (Foundations / Lecture / Worked
 Examples / Library), interactive quiz engine, side drop-down section menu,
