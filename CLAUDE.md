@@ -282,6 +282,16 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Emitted docs/ scanned: ZERO old-brand residue. NOT purged, by rule:
   ledger history below (audit trail, verbatim), dead-path strings inside
   build.py (inert library internals), archived first-generation assets.
+- HOMEPAGE WELCOME ANIMATION (owner order 2026-07-18 — partially lifts the
+  earlier "no animations" hold, for this feature only; broader design
+  refinement remains gated on the owner's visual-style decision): hero
+  entrance in assets/nx/nexus.css — staggered nx-rise (eyebrow .1s → h1
+  .28s → sub .46s → meta .64s, translateY only, RTL-safe), gear motif
+  nx-turn 90s/rev continuous, amber hub nx-breathe 5s pulse; ALL disabled
+  under prefers-reduced-motion. Scope: .nx-hero (homepage only, both
+  languages; AR hero replays on language toggle). Verified in-browser:
+  computed animation properties, entrance completion, live rotation
+  sampling (~10°/2s).
 - INSTITUTE REBRAND EXECUTED (owner approval + addendum, 2026-07-18):
   tone pivot from transition-playbook to professional-institute voice.
   MISSION: eyebrow now "Mission · Advanced Industrial Systems & Engineering

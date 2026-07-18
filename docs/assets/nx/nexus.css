@@ -150,6 +150,23 @@ a:hover{color:var(--nx-teal-h)}
 .nx-hero .meta div{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8fa39c}
 .nx-hero .meta b{display:block;font-size:14px;letter-spacing:0;text-transform:none;color:#fff;margin-top:3px}
 @media(max-width:700px){.nx-hero .txt{max-width:100%}.nx-hero .bg{opacity:.08}}
+/* ---- homepage welcome animation (owner directive 2026-07-18) ----
+   Staggered rise-in of the hero stack + the gear motif slowly turning,
+   like a plant coming up to speed. translateY only (RTL-safe); fully
+   disabled under prefers-reduced-motion. */
+@keyframes nx-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes nx-turn{to{transform:rotate(360deg)}}
+@keyframes nx-breathe{0%,100%{opacity:1}50%{opacity:.45}}
+.nx-hero .eyebrow{animation:nx-rise .65s cubic-bezier(.2,.7,.2,1) both .1s}
+.nx-hero h1{animation:nx-rise .75s cubic-bezier(.2,.7,.2,1) both .28s}
+.nx-hero .sub{animation:nx-rise .75s cubic-bezier(.2,.7,.2,1) both .46s}
+.nx-hero .meta{animation:nx-rise .8s cubic-bezier(.2,.7,.2,1) both .64s}
+.nx-hero .bg{animation:nx-turn 90s linear infinite;transform-origin:50% 50%}
+.nx-hero .bg .amb{animation:nx-breathe 5s ease-in-out infinite 1.2s}
+@media(prefers-reduced-motion:reduce){
+  .nx-hero .eyebrow,.nx-hero h1,.nx-hero .sub,.nx-hero .meta,
+  .nx-hero .bg,.nx-hero .bg .amb{animation:none}
+}
 
 /* ---------- structure ---------- */
 .part{padding:34px 0 8px}
