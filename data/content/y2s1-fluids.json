@@ -1,0 +1,326 @@
+{
+ "1": {
+  "lecture": "\n<h3>§1 · What a fluid is, and the properties that matter</h3>\n<p>A fluid is a substance that cannot resist a shear stress at rest — it deforms continuously under any tangential force, however small. That single fact separates fluid mechanics from solid mechanics and forces a different toolkit. Before any flow is analysed, four bulk properties must be pinned down. <b>Density</b> \\( \\rho \\) (mass per unit volume, kg/m³) sets inertia and weight; <b>specific weight</b> \\( \\gamma=\\rho g \\) converts it to force per volume; <b>specific gravity</b> \\( SG=\\rho/\\rho_{\\text{water}} \\) is the dimensionless ratio to water at 4°C; and <b>viscosity</b> \\( \\mu \\) measures a fluid's resistance to shearing. Water has \\( \\rho\\approx1000 \\) kg/m³, so \\( \\gamma\\approx9810 \\) N/m³; an oil of \\( \\rho=850 \\) has \\( SG=0.85 \\).</p>\n<h3>§2 · Viscosity, defined by Newton's law</h3>\n<p>Viscosity is defined operationally. Place a fluid between two plates and slide the top one: the fluid develops a velocity gradient \\( du/dy \\), and the shear stress needed is \\( \\tau=\\mu\\,\\dfrac{du}{dy} \\) — <b>Newton's law of viscosity</b>. Fluids obeying it with constant \\( \\mu \\) are <b>Newtonian</b> (water, air, light oils); those whose apparent viscosity changes with shear rate (paint, slurry, blood) are non-Newtonian. For \\( \\mu=0.1 \\) Pa·s and a gradient of \\( 50\\ \\text{s}^{-1} \\), the shear stress is \\( \\tau=0.1\\times50=5 \\) Pa. Viscosity is the property that makes real flow lose energy; an idealised inviscid fluid (\\( \\mu=0 \\)) would flow forever without friction, a useful fiction for some problems and a dangerous one for others.</p>\n<h3>§3 · Kinematic viscosity and the role of temperature</h3>\n<p>Two viscosities appear in practice. The <b>dynamic</b> viscosity \\( \\mu \\) (Pa·s) enters force balances; the <b>kinematic</b> viscosity \\( \\nu=\\mu/\\rho \\) (m²/s) enters the Reynolds number and diffusion of momentum. For the oil above, \\( \\nu=0.1/850\\approx1.18\\times10^{-4} \\) m²/s. Temperature dependence runs opposite ways for the two states of matter that concern us: liquids thin dramatically as they warm (their molecules escape each other's attraction), while gases thicken slightly as they warm (faster molecules transfer more momentum across streamlines). An engineer sizing a pump for cold-start oil and hot running oil is really sizing for two different fluids.</p>\n<h3>§4 · The property-first working method</h3>\n<p>The discipline this lesson installs is to fix properties, with units, before touching a flow equation. Read \\( \\rho \\) at the operating temperature, not a handbook default; compute \\( \\gamma=\\rho g \\) only when a weight or pressure is wanted; carry \\( \\mu \\) and \\( \\nu \\) separately and know which one a formula expects. Units are the audit: \\( \\tau=\\mu\\,du/dy \\) must come out in pascals, and if it does not, a property is in the wrong units. Every later lesson — statics through compressible flow — takes these four numbers as given, so an error here propagates through the whole course. A further property, <b>bulk modulus</b> \\( K=-V\\,dp/dV \\), measures resistance to compression and decides whether a fluid may be treated as incompressible: liquids have enormous \\(K\\) and are effectively incompressible below high pressures, while gases are compressible whenever speeds approach the speed of sound (Lesson 11). Get the fluid right first — its density, its viscosity, and whether it compresses — then analyse its motion.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>SI units</b> — pascals, kg/m³, and their algebra.</li><li><b>Stress</b> — force per area, from Statics/Strength.</li><li><b>Derivatives</b> — the velocity gradient \\(du/dy\\).</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Density</td><td>\\( \\rho=m/V \\)</td><td>Inertia, weight, and every mass balance.</td></tr>\n<tr><td>Specific weight</td><td>\\( \\gamma=\\rho g \\)</td><td>Converting mass to force per volume.</td></tr>\n<tr><td>Specific gravity</td><td>\\( SG=\\rho/\\rho_{w} \\)</td><td>Dimensionless comparison to water.</td></tr>\n<tr><td>Dynamic viscosity</td><td>\\( \\tau=\\mu\\,du/dy \\)</td><td>Shear stress in force balances.</td></tr>\n<tr><td>Kinematic viscosity</td><td>\\( \\nu=\\mu/\\rho \\)</td><td>Reynolds number, momentum diffusion.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Shear stress from Newton's law</b></p><p><b>Problem.</b> A Newtonian oil has \\( \\mu=0.1 \\) Pa·s. If the velocity gradient near a wall is \\( 50\\ \\text{s}^{-1} \\), find the wall shear stress.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\tau=\\mu\\,du/dy=0.1\\times50=5 \\) Pa. <b>Answer:</b> 5 Pa. <b>Check:</b> Pa·s × 1/s = Pa, units close.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Kinematic viscosity</b></p><p><b>Problem.</b> For the same oil with \\( \\rho=850 \\) kg/m³, find the kinematic viscosity.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\nu=\\mu/\\rho=0.1/850\\approx1.18\\times10^{-4} \\) m²/s. <b>Answer:</b> \\(1.18\\times10^{-4}\\) m²/s.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Specific weight and gravity</b></p><p><b>Problem.</b> Water has \\( \\rho=1000 \\) kg/m³. Give its specific weight, and the specific gravity of an \\(850\\)-kg/m³ oil.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\gamma=\\rho g=1000\\times9.81=9810 \\) N/m³; \\( SG_{oil}=850/1000=0.85 \\). <b>Answer:</b> \\( \\gamma=9810 \\) N/m³, \\(SG=0.85\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A fluid is distinguished from a solid because it:</p>",
+    "choices": [
+     "Cannot resist shear at rest",
+     "Has no mass",
+     "Is always incompressible",
+     "Cannot be compressed"
+    ],
+    "answer": 0,
+    "solution": "<p>A fluid deforms continuously under any shear. It certainly has mass, and compressibility varies.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Newton's law of viscosity is:</p>",
+    "choices": [
+     "\\( \\tau=\\mu\\,du/dy \\)",
+     "\\( \\tau=\\mu\\,u \\)",
+     "\\( \\tau=\\rho g h \\)",
+     "\\( \\tau=\\rho V^2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Shear stress is proportional to the velocity gradient, with \\(\\mu\\) the constant. \\(\\rho g h\\) is hydrostatic pressure.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Kinematic viscosity \\( \\nu \\) equals:</p>",
+    "choices": [
+     "\\( \\mu/\\rho \\)",
+     "\\( \\mu\\rho \\)",
+     "\\( \\rho/\\mu \\)",
+     "\\( \\mu g \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\nu=\\mu/\\rho \\), units m²/s. It appears in the Reynolds number.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>As temperature rises, the viscosity of a LIQUID typically:</p>",
+    "choices": [
+     "Decreases",
+     "Increases",
+     "Stays constant",
+     "Doubles"
+    ],
+    "answer": 0,
+    "solution": "<p>Liquids thin with heat as molecular attractions weaken; gases do the opposite.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Specific gravity of a fluid is dimensionless because it is:</p>",
+    "choices": [
+     "A ratio of densities",
+     "A density in kg/m³",
+     "A weight",
+     "A pressure"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( SG=\\rho/\\rho_{water} \\); the units cancel.</p>"
+   }
+  ]
+ },
+ "2": {
+  "lecture": "\n<h3>§1 · Pressure and the hydrostatic law</h3>\n<p>In a fluid at rest there is no shear, so the only stress is pressure, acting equally in all directions at a point (Pascal's principle). The one equation that governs a static fluid is the <b>hydrostatic law</b>: pressure increases with depth as \\( \\dfrac{dp}{dz}=-\\rho g \\), which for a constant-density fluid integrates to \\( p=p_0+\\rho g h \\), where \\(h\\) is depth below the reference surface. Ten metres of water therefore adds \\( \\rho g h=1000\\times9.81\\times10=98{,}100 \\) Pa \\(=98.1\\) kPa — close to one atmosphere for every ten metres, a number worth memorising.</p>\n<h3>§2 · Gauge, absolute, and vacuum</h3>\n<p>Pressure is quoted against a reference. <b>Absolute</b> pressure is measured from a perfect vacuum; <b>gauge</b> pressure is measured from local atmospheric, \\( p_{\\text{abs}}=p_{\\text{atm}}+p_{\\text{gauge}} \\). A depth reading of 98.1 kPa gauge is \\( 101.325+98.1=199.4 \\) kPa absolute. Confusing the two is a classic and consequential error — pump suction limits, boiling points, and gas-law calculations all demand absolute pressure, while structural loads on a wall care only about the gauge difference across it. State which you mean, every time.</p>\n<h3>§3 · Manometers and pressure measurement</h3>\n<p>The hydrostatic law turns a column of liquid into a pressure gauge. In a manometer, a pressure difference is read as a height difference: \\( \\Delta p=\\rho g\\,\\Delta h \\). Because \\(\\rho\\) sits in the formula, a dense fluid gives a short, readable column — mercury (\\( \\rho=13{,}600 \\) kg/m³) reads 50 kPa as only \\( \\Delta h=50{,}000/(13{,}600\\times9.81)\\approx0.375 \\) m, whereas water would need over five metres. The same law gives the force and centre of pressure on a submerged gate: pressure grows linearly with depth, so the resultant acts below the centroid, a fact that decides how dam gates and tank walls are hinged.</p>\n<h3>§4 · The statics working method</h3>\n<p>The procedure is uniform. Choose a reference surface where the pressure is known (often the free surface at atmospheric). Move to the point of interest along a connected body of the same fluid, adding \\( \\rho g h \\) for every descent and subtracting it for every rise. Switch \\(\\rho\\) whenever the fluid changes (oil over water, gas over liquid). Keep gauge and absolute straight, and let units confirm the arithmetic — \\( \\rho g h \\) must land in pascals. This \"walk the column\" method solves every manometer and submerged-surface problem without new equations, and it is the same energy-accounting habit that Bernoulli's equation extends to moving fluids in the next lessons. Two extensions of the static law are worth flagging now. <b>Buoyancy</b> — Archimedes' principle — is nothing more than the net of hydrostatic pressure over a submerged body: the upward force equals the weight of displaced fluid, \\( F_B=\\rho g V_{\\text{disp}} \\), which is why steel ships float and why a partly filled tank's contents shift the centre of buoyancy. And the <b>force on a plane submerged surface</b> is the pressure at its centroid times its area, applied at the centre of pressure below the centroid — the calculation behind every tank wall, lock gate, and dam face. Both follow from \\( p=p_0+\\rho g h \\) with no new physics, only careful bookkeeping of where the pressure acts.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Fluid properties</b> (Lesson 1) — density is the key input.</li><li><b>Force and pressure</b> — force per area.</li><li><b>Integration of a gradient</b> — \\(dp/dz=-\\rho g\\).</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Hydrostatic law</td><td>\\( p=p_0+\\rho g h \\)</td><td>Pressure at depth in a static fluid.</td></tr>\n<tr><td>Absolute pressure</td><td>\\( p_{abs}=p_{atm}+p_{gauge} \\)</td><td>Gas laws, cavitation, boiling.</td></tr>\n<tr><td>Gauge pressure</td><td>\\( p_{gauge}=p_{abs}-p_{atm} \\)</td><td>Structural load across a wall.</td></tr>\n<tr><td>Manometer</td><td>\\( \\Delta p=\\rho g\\,\\Delta h \\)</td><td>Reading pressure as a column height.</td></tr>\n<tr><td>Pascal's principle</td><td>\\( p \\) equal in all directions</td><td>Pressure at a point in a static fluid.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Pressure at depth</b></p><p><b>Problem.</b> Find the gauge pressure 10 m below the surface of water (\\( \\rho=1000 \\) kg/m³).</p>",
+    "solution": "<p><b>Solution.</b> \\( p=\\rho g h=1000\\times9.81\\times10=98{,}100 \\) Pa \\(=98.1\\) kPa. <b>Answer:</b> 98.1 kPa gauge.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Gauge to absolute</b></p><p><b>Problem.</b> Convert that reading to absolute pressure (atmospheric \\(=101.325\\) kPa).</p>",
+    "solution": "<p><b>Solution.</b> \\( p_{abs}=101.325+98.1=199.4 \\) kPa. <b>Answer:</b> \\(\\approx199.4\\) kPa absolute.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Mercury manometer height</b></p><p><b>Problem.</b> What mercury column (\\( \\rho=13{,}600 \\) kg/m³) balances a 50-kPa pressure difference?</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta h=\\Delta p/(\\rho g)=50{,}000/(13{,}600\\times9.81)\\approx0.375 \\) m. <b>Answer:</b> \\(\\approx0.375\\) m (375 mm Hg).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a static fluid, pressure varies with depth as:</p>",
+    "choices": [
+     "\\( p=p_0+\\rho g h \\)",
+     "\\( p=p_0+\\mu h \\)",
+     "\\( p=\\rho V^2 \\)",
+     "\\( p=\\text{constant everywhere} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Hydrostatic law; pressure rises linearly with depth. It is constant only along a horizontal plane.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Absolute pressure equals:</p>",
+    "choices": [
+     "Gauge + atmospheric",
+     "Gauge − atmospheric",
+     "Atmospheric − gauge",
+     "Gauge only"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( p_{abs}=p_{atm}+p_{gauge} \\). Cavitation and gas-law work need absolute.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A denser manometer fluid gives, for the same \\( \\Delta p \\):</p>",
+    "choices": [
+     "A shorter column",
+     "A taller column",
+     "The same column",
+     "No reading"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\Delta h=\\Delta p/(\\rho g) \\); larger \\(\\rho\\) means smaller \\(\\Delta h\\) — why mercury is used.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Pascal's principle states that pressure at a point in a static fluid:</p>",
+    "choices": [
+     "Acts equally in all directions",
+     "Acts only downward",
+     "Depends on direction",
+     "Is zero"
+    ],
+    "answer": 0,
+    "solution": "<p>With no shear at rest, pressure is isotropic at a point.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The resultant force on a vertical submerged wall acts:</p>",
+    "choices": [
+     "Below the centroid",
+     "At the centroid",
+     "At the top",
+     "At the surface"
+    ],
+    "answer": 0,
+    "solution": "<p>Pressure grows with depth, so the pressure prism's centroid — the line of action — sits below the area centroid.</p>"
+   }
+  ]
+ },
+ "3": {
+  "lecture": "\n<h3>§1 · Describing flow, and the master number</h3>\n<p>Once a fluid moves, the first questions are how fast, how much, and in what regime. <b>Flow rate</b> comes in two forms: volume flow \\( Q=AV \\) (m³/s) and mass flow \\( \\dot m=\\rho Q=\\rho AV \\) (kg/s), where \\(V\\) is the average velocity over cross-section \\(A\\). The regime — smooth <b>laminar</b> layers or chaotic <b>turbulent</b> mixing — is set by the single most important dimensionless group in the subject, the <b>Reynolds number</b> \\( Re=\\dfrac{\\rho V D}{\\mu}=\\dfrac{V D}{\\nu} \\), the ratio of inertial to viscous forces. In a pipe, \\( Re<2300 \\) is laminar, \\( Re>4000 \\) turbulent, with a transitional band between.</p>\n<h3>§2 · Reading the Reynolds number</h3>\n<p>For water (\\( \\nu\\approx10^{-6} \\) m²/s) at \\( V=2 \\) m/s in a \\( D=0.05 \\) m pipe, \\( Re=VD/\\nu=2\\times0.05/10^{-6}=100{,}000 \\) — firmly turbulent, as almost all practical water pipes are. The power of \\(Re\\) is that it collapses geometry, speed, and fluid into one number: two completely different flows with the same \\(Re\\) behave alike, which is the basis of model testing (Lesson 6). Low \\(Re\\) means viscosity dominates and disturbances are damped; high \\(Re\\) means inertia dominates and small disturbances grow into turbulence.</p>\n<h3>§3 · Continuity: mass is conserved</h3>\n<p>Mass cannot accumulate in a rigid pipe running full and steady, so what enters must leave: \\( \\rho_1 A_1 V_1=\\rho_2 A_2 V_2 \\), and for an incompressible fluid \\( A_1 V_1=A_2 V_2 \\) — the <b>continuity equation</b>. A pipe of \\( D=0.05 \\) m carrying \\( V=2 \\) m/s passes \\( Q=AV=\\frac{\\pi}{4}(0.05)^2\\times2\\approx3.93\\times10^{-3} \\) m³/s. Halve the diameter and the area falls fourfold, so continuity forces the velocity to quadruple: \\( V_2=V_1(D_1/D_2)^2=2\\times4=8 \\) m/s. Continuity is why a nozzle speeds flow up and a diffuser slows it down, with no energy added — purely geometry conserving mass.</p>\n<h3>§4 · The flow-description working method</h3>\n<p>Given any internal flow: first compute \\( Re \\) to fix the regime, because laminar and turbulent flows obey different friction and profile laws and mixing them is a common error. Then apply continuity to relate velocities at different sections — it is an accounting identity that holds regardless of losses, so it is always available and always exact for incompressible steady flow. Keep \\( Q \\) (what a meter reads) and \\( V \\) (what the physics uses) distinct, linked by \\(Q=AV\\). These two tools — a regime number and a mass balance — precede every energy analysis, and they are exactly what Bernoulli's equation in Lesson 4 builds upon. It also helps to distinguish the flow's character in time and space: a <b>steady</b> flow has properties that do not change with time at a fixed point (most pipe systems at their operating point), while an <b>unsteady</b> flow does (a valve slamming, a pump starting). A flow is <b>uniform</b> if velocity does not change along the path and <b>developing</b> if it does, as near a pipe entrance where the velocity profile is still forming. These distinctions decide which simplified equations are legitimate: the clean continuity and Bernoulli forms used throughout this course assume steady, and usually fully-developed, conditions, and applying them to a genuinely unsteady flow is a category error, not a small approximation.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Kinematic viscosity</b> (Lesson 1) — the \\( \\nu \\) in \\(Re\\).</li><li><b>Circle area</b> — \\(A=\\pi D^2/4\\).</li><li><b>Mass conservation</b> — nothing accumulates in steady flow.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Volume flow rate</td><td>\\( Q=AV \\)</td><td>What a flow meter reports.</td></tr>\n<tr><td>Mass flow rate</td><td>\\( \\dot m=\\rho AV \\)</td><td>Balances, compressible flow.</td></tr>\n<tr><td>Reynolds number</td><td>\\( Re=VD/\\nu \\)</td><td>Laminar vs turbulent regime.</td></tr>\n<tr><td>Continuity</td><td>\\( A_1V_1=A_2V_2 \\)</td><td>Relating velocities across sections.</td></tr>\n<tr><td>Transition</td><td>\\( Re\\approx2300\\!-\\!4000 \\)</td><td>Pipe flow regime boundary.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reynolds number</b></p><p><b>Problem.</b> Water (\\( \\nu=10^{-6} \\) m²/s) flows at \\( V=2 \\) m/s in a \\( D=0.05 \\) m pipe. Find \\(Re\\) and the regime.</p>",
+    "solution": "<p><b>Solution.</b> \\( Re=VD/\\nu=2\\times0.05/10^{-6}=100{,}000 \\). Since \\(Re>4000\\): turbulent. <b>Answer:</b> \\(Re=100{,}000\\), turbulent.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Volume flow rate</b></p><p><b>Problem.</b> For that pipe and velocity, find the volume flow rate.</p>",
+    "solution": "<p><b>Solution.</b> \\( A=\\frac{\\pi}{4}(0.05)^2=1.96\\times10^{-3} \\) m²; \\( Q=AV=1.96\\times10^{-3}\\times2\\approx3.93\\times10^{-3} \\) m³/s. <b>Answer:</b> \\(\\approx3.93\\times10^{-3}\\) m³/s (3.93 L/s).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Continuity through a contraction</b></p><p><b>Problem.</b> The pipe narrows from \\(D_1=0.05\\) m to \\(D_2=0.025\\) m. If \\(V_1=2\\) m/s, find \\(V_2\\).</p>",
+    "solution": "<p><b>Solution.</b> \\( A_1V_1=A_2V_2\\Rightarrow V_2=V_1(D_1/D_2)^2=2\\times(2)^2=8 \\) m/s. <b>Answer:</b> 8 m/s. <b>Check:</b> half the diameter → quarter the area → four times the velocity.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The Reynolds number is the ratio of:</p>",
+    "choices": [
+     "Inertial to viscous forces",
+     "Pressure to gravity",
+     "Mass to volume",
+     "Heat to work"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( Re=\\rho VD/\\mu \\); high \\(Re\\) = inertia dominant = turbulent.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a pipe, flow is typically laminar when:</p>",
+    "choices": [
+     "\\( Re<2300 \\)",
+     "\\( Re>4000 \\)",
+     "\\( Re=100{,}000 \\)",
+     "always"
+    ],
+    "answer": 0,
+    "solution": "<p>Below ~2300 viscosity damps disturbances; above ~4000 it is turbulent.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Continuity for incompressible pipe flow states:</p>",
+    "choices": [
+     "\\( A_1V_1=A_2V_2 \\)",
+     "\\( p_1=p_2 \\)",
+     "\\( V_1=V_2 \\)",
+     "\\( A_1=A_2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Mass conservation; velocity rises where area falls.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Halving a pipe's diameter (same flow rate) changes the velocity by a factor of:</p>",
+    "choices": [
+     "4",
+     "2",
+     "1/2",
+     "1/4"
+    ],
+    "answer": 0,
+    "solution": "<p>Area \\(\\propto D^2\\) falls 4×, so velocity rises 4× by continuity.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Volume and mass flow are related by:</p>",
+    "choices": [
+     "\\( \\dot m=\\rho Q \\)",
+     "\\( \\dot m=Q/\\rho \\)",
+     "\\( \\dot m=Q \\)",
+     "\\( \\dot m=\\mu Q \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\dot m=\\rho Q=\\rho AV \\).</p>"
+   }
+  ]
+ },
+ "4": {
+  "lecture": "\n<h3>§1 · Energy along a streamline</h3>\n<p><b>Bernoulli's equation</b> is the energy balance of an ideal flow: for steady, incompressible, frictionless flow along a streamline, \\( \\dfrac{p}{\\rho g}+\\dfrac{V^2}{2g}+z=\\text{constant} \\). Each term is a <b>head</b>, an energy per unit weight measured in metres: pressure head \\( p/\\rho g \\), velocity head \\( V^2/2g \\), and elevation head \\(z\\). The statement is that these three trade against one another but their sum is conserved — speed a fluid up and its pressure must fall, raise it and something else must give. It is Lesson 2's hydrostatic accounting extended to a moving fluid.</p>\n<h3>§2 · Reading the trades</h3>\n<p>The velocity head is where intuition often fails, so anchor it numerically: water at \\( V=2 \\) m/s carries a velocity head \\( V^2/2g=4/(2\\times9.81)\\approx0.204 \\) m and a dynamic pressure \\( \\tfrac12\\rho V^2=\\tfrac12\\times1000\\times2^2=2000 \\) Pa. Torricelli's result — the speed of a jet draining under a head \\(h\\) — falls straight out by setting pressure and velocity heads equal: \\( V=\\sqrt{2gh} \\), so a 5-metre head drives \\( V=\\sqrt{2\\times9.81\\times5}\\approx9.9 \\) m/s. The same balance explains why a venturi throat (small area, high speed) shows low pressure, the principle behind carburettors, flow meters, and aspirators.</p>\n<h3>§3 · The real energy equation: adding losses and machines</h3>\n<p>Real flow has friction and often a pump or turbine, so Bernoulli is generalised to the <b>steady-flow energy equation</b>: \\( \\dfrac{p_1}{\\rho g}+\\dfrac{V_1^2}{2g}+z_1+h_{\\text{pump}}=\\dfrac{p_2}{\\rho g}+\\dfrac{V_2^2}{2g}+z_2+h_{\\text{turbine}}+h_{\\text{loss}} \\). The head loss \\( h_{\\text{loss}} \\) collects pipe friction (major losses) and fittings (minor losses); \\( h_{\\text{pump}} \\) is the head a pump adds. A pump's required head and the system's demand meet at the operating point where the <b>pump curve</b> (head falling as flow rises) crosses the <b>system curve</b> (head rising as flow rises) — the single most important reading in rotating-equipment work, developed fully in Lesson 10.</p>\n<h3>§4 · The Bernoulli working method</h3>\n<p>Apply it disciplined: pick two points on the same streamline where you know the most, write the full energy equation, and cancel what is genuinely zero — an open surface has gauge pressure zero, a large reservoir has negligible velocity, a horizontal run drops the \\(z\\) terms. Never drop friction on a long pipe or a machine that is present; ideal Bernoulli is a first estimate, not a licence to ignore losses. Confirm the trade makes physical sense — pressure should fall where the fluid speeds up — and check units, since every head is in metres. This energy accounting, together with continuity and the Reynolds number, closes the toolkit for the momentum, loss, and turbomachinery lessons that follow. One caution completes the picture: Bernoulli is an <em>energy</em> statement along a streamline and says nothing about <em>forces</em> on a bend or a vane — for those, the momentum equation of Lesson 5 is required, and the two are complementary rather than interchangeable. Nor does Bernoulli survive a hydraulic jump, a shock, or any abrupt loss, where mechanical energy is dissipated to heat and the constant on the right-hand side simply drops. Knowing exactly which assumptions are in force — steady, incompressible, frictionless, one streamline — is what separates a correct application from a plausible-looking wrong one, and it is worth restating those four words each time the equation is written.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Continuity</b> (Lesson 3) — relates the velocities Bernoulli connects.</li><li><b>Hydrostatic head</b> (Lesson 2) — the pressure/elevation terms.</li><li><b>Energy conservation</b> — the balance being written.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Bernoulli</td><td>\\( \\frac{p}{\\rho g}+\\frac{V^2}{2g}+z=\\text{const} \\)</td><td>Ideal steady incompressible streamline.</td></tr>\n<tr><td>Velocity head</td><td>\\( V^2/2g \\)</td><td>Kinetic energy per unit weight.</td></tr>\n<tr><td>Dynamic pressure</td><td>\\( \\tfrac12\\rho V^2 \\)</td><td>Pitot tubes, drag, meters.</td></tr>\n<tr><td>Torricelli</td><td>\\( V=\\sqrt{2gh} \\)</td><td>Jet speed draining under head \\(h\\).</td></tr>\n<tr><td>Energy equation</td><td>\\( \\ldots+h_{pump}=\\ldots+h_{loss} \\)</td><td>Real flow with friction and machines.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Torricelli jet speed</b></p><p><b>Problem.</b> Water drains from a tank through a hole 5 m below the surface. Find the ideal jet speed.</p>",
+    "solution": "<p><b>Solution.</b> \\( V=\\sqrt{2gh}=\\sqrt{2\\times9.81\\times5}\\approx9.9 \\) m/s. <b>Answer:</b> \\(\\approx9.9\\) m/s. <b>Check:</b> pressure head at depth converts to velocity head.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Velocity head and dynamic pressure</b></p><p><b>Problem.</b> Water flows at \\( V=2 \\) m/s. Find its velocity head and dynamic pressure.</p>",
+    "solution": "<p><b>Solution.</b> Velocity head \\( V^2/2g=4/19.62\\approx0.204 \\) m; dynamic pressure \\( \\tfrac12\\rho V^2=\\tfrac12\\times1000\\times4=2000 \\) Pa. <b>Answer:</b> 0.204 m, 2000 Pa.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Pressure drop across a contraction</b></p><p><b>Problem.</b> Using Bernoulli (no losses, horizontal), if velocity rises from 2 to 8 m/s, find the pressure drop for water.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta p=\\tfrac12\\rho(V_2^2-V_1^2)=\\tfrac12\\times1000\\times(64-4)=30{,}000 \\) Pa \\(=30\\) kPa drop. <b>Answer:</b> 30 kPa fall (pressure drops as speed rises).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Each term in Bernoulli's equation \\( p/\\rho g+V^2/2g+z \\) has units of:</p>",
+    "choices": [
+     "Length (head, m)",
+     "Pressure (Pa)",
+     "Energy (J)",
+     "Velocity (m/s)"
+    ],
+    "answer": 0,
+    "solution": "<p>Energy per unit weight is a length — a 'head' in metres.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Bernoulli's equation requires the flow to be:</p>",
+    "choices": [
+     "Steady, incompressible, frictionless",
+     "Turbulent",
+     "Compressible",
+     "Viscous"
+    ],
+    "answer": 0,
+    "solution": "<p>Ideal Bernoulli assumes no friction; real flow needs the energy equation with \\(h_{loss}\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Where a pipe speeds the fluid up, the pressure:</p>",
+    "choices": [
+     "Falls",
+     "Rises",
+     "Is unchanged",
+     "Doubles"
+    ],
+    "answer": 0,
+    "solution": "<p>The sum of heads is constant, so a rise in velocity head forces a fall in pressure head.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A pump's operating point is where the pump curve crosses the:</p>",
+    "choices": [
+     "System curve",
+     "x-axis",
+     "Efficiency line",
+     "Reynolds line"
+    ],
+    "answer": 0,
+    "solution": "<p>Pump head (falling with flow) meets system demand (rising with flow) at the operating point.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Torricelli's \\( V=\\sqrt{2gh} \\) comes from equating:</p>",
+    "choices": [
+     "Pressure head and velocity head",
+     "Two dynamic pressures",
+     "Mass and momentum",
+     "Laminar and turbulent flow"
+    ],
+    "answer": 0,
+    "solution": "<p>The elevation/pressure head available converts entirely to velocity head in ideal drainage.</p>"
+   }
+  ]
+ }
+}
