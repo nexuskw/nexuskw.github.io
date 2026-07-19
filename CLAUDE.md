@@ -328,6 +328,16 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Y2S1 status: math-3 4/11, strength 4/11 authored; both have full
   approved videos. NEXT (empty-video courses): fluids/statistics/etc.
   need the real per-video verification pass under video-policy v3.
+- STATISTICS (STS 206) COURSE COMPLETE (2026-07-19): second fully-complete
+  Year-2 course. All 11 lessons full Educational Units — 500-1000w lectures,
+  glossary tables, 3 solve + 5 MC (every number Python-verified: descriptive
+  stats, probability rules, binomial/Poisson, normal/z/empirical-rule,
+  SE/CLT, confidence intervals, z-test/p-value, least-squares regression/R²,
+  2^k factorial DOE, reliability R(t)/MTBF/series-parallel, malpractice/
+  multiple-comparisons/base-rate) + approved videos + alternatives + texts.
+  Company-free PASS. Coverage 93→104/528 (20% milestone). Commits 3aa00b3,
+  e4751a9, 0b47408. STILL OWED for the directive: math-3 L5-L11 + L2/L3/L4
+  word-count top-up (last video-bearing course needing content).
 - FLUIDS (FLD 203) COURSE COMPLETE (owner directive "every video lesson
   gets the full unit", 2026-07-19): all 11 lessons now full Educational
   Units — lecture (500-1000w §1-§4), glossary-table foundations, 3 solve +
