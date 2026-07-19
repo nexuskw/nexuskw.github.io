@@ -646,5 +646,248 @@
     "solution": "<p>The linear model is evidence only within the observed range.</p>"
    }
   ]
+ },
+ "9": {
+  "lecture": "\n<h3>§1 · Experimenting on purpose</h3>\n<p><b>Design of experiments</b> (DOE) is the discipline of planning tests so that the data answer the question with the fewest runs and the clearest conclusions. Its target is the relationship between input <b>factors</b> (temperature, pressure, feed rate) and an output <b>response</b> (yield, strength). The naive approach — change <b>one factor at a time</b> (OFAT), holding the rest fixed — is intuitive but wasteful and, worse, blind: it cannot detect <b>interactions</b>, where the effect of one factor depends on the level of another. Factorial design fixes both problems at once.</p>\n<h3>§2 · Factorial designs</h3>\n<p>A <b>full factorial</b> tests every combination of factor levels. With \\(k\\) factors each at two levels (low and high), the design has \\( 2^k \\) runs: three factors need \\( 2^3=8 \\) runs, four need \\( 2^4=16 \\). From these runs the analysis extracts two things OFAT cannot. The <b>main effect</b> of a factor is the average change in response as it moves from low to high — computed across all the other factors' settings, so it is more reliable than a single OFAT sweep. The <b>interaction</b> effect measures how one factor's influence shifts with another's level, which is often where the real engineering lives: a catalyst that helps at high temperature but hurts at low is an interaction no one-factor study would ever reveal.</p>\n<h3>§3 · Efficiency and fractional designs</h3>\n<p>Factorial designs are efficient because every run contributes to estimating every effect — the data are reused, not spent one factor at a time. When \\(k\\) is large, \\( 2^k \\) grows fast (seven factors would need 128 runs), so a <b>fractional factorial</b> runs a carefully chosen subset — a half-fraction \\( 2^{k-1} \\) uses 8 runs for four factors instead of 16 — trading the ability to resolve high-order interactions (usually negligible) for a large saving in runs. Good DOE also uses <b>randomisation</b> (to protect against unknown drifts), <b>replication</b> (to estimate noise), and <b>blocking</b> (to remove known nuisance variation), the three safeguards that separate a designed experiment from a mere collection of trials.</p>\n<h3>§4 · The DOE working method</h3>\n<p>To design an experiment: list the factors and the response; choose two levels (or more for curvature); pick a full or fractional factorial sized to the run budget; and randomise the run order. Analyse by computing main effects and interactions, testing each against the noise estimated from replication — the hypothesis-testing logic of Lesson 7 applied to effects. Report the significant effects and, above all, the interactions, because those are what OFAT and intuition miss. DOE is the bridge from passive statistics (describing data that happened) to active engineering (arranging data to be maximally informative), and it recurs across the quality, process, and reliability courses wherever a process must be optimised rather than merely observed. A final note on scope: two levels per factor reveal linear effects and interactions but cannot see <b>curvature</b> — a response that peaks in the middle looks flat if only the ends are tested. Detecting an optimum needs a centre point or a three-level (response-surface) design, the natural next step once a factorial has identified which few factors actually matter. This screen-then-optimise sequence — a cheap factorial to find the vital factors, a richer design to tune them — is the standard industrial recipe, and it is far more efficient than either exhaustive testing or one-factor guesswork.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Hypothesis testing</b> (Lesson 7) — testing an effect against noise.</li><li><b>Factors and levels</b> — inputs set high/low.</li><li><b>Powers of two</b> — the \\( 2^k \\) run count.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Full factorial</td><td>\\( 2^k \\) runs</td><td>Every combination of \\(k\\) two-level factors.</td></tr>\n<tr><td>Main effect</td><td>avg. low→high change</td><td>A factor's overall influence.</td></tr>\n<tr><td>Interaction</td><td>effect depends on another</td><td>What OFAT cannot detect.</td></tr>\n<tr><td>Fractional factorial</td><td>\\( 2^{k-1} \\)</td><td>Fewer runs, sacrifice high orders.</td></tr>\n<tr><td>Randomise/replicate/block</td><td>the three safeguards</td><td>Guard against drift and noise.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Full factorial run count</b></p><p><b>Problem.</b> How many runs does a full factorial with three two-level factors require?</p>",
+    "solution": "<p><b>Solution.</b> \\( 2^k=2^3=8 \\) runs. <b>Answer:</b> 8.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Adding a factor</b></p><p><b>Problem.</b> How many runs for four two-level factors, and for a half-fraction?</p>",
+    "solution": "<p><b>Solution.</b> Full: \\( 2^4=16 \\). Half-fraction: \\( 2^{4-1}=8 \\). <b>Answer:</b> 16 full, 8 half.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why not one-factor-at-a-time</b></p><p><b>Problem.</b> In 8 factorial runs versus 8 OFAT runs, what can the factorial estimate that OFAT cannot?</p>",
+    "solution": "<p><b>Solution.</b> The factorial estimates all main effects AND their interactions from the same 8 runs; OFAT estimates only main effects and misses interactions entirely. <b>Answer:</b> interactions between factors.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A full factorial with \\(k\\) two-level factors needs how many runs?</p>",
+    "choices": [
+     "\\(2^k\\)",
+     "\\(2k\\)",
+     "\\(k^2\\)",
+     "\\(k!\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Every combination of two levels across \\(k\\) factors.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The key thing OFAT cannot detect is:</p>",
+    "choices": [
+     "Interactions",
+     "Main effects",
+     "The mean",
+     "The variance"
+    ],
+    "answer": 0,
+    "solution": "<p>OFAT varies one factor with others fixed, so interaction effects are invisible.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A main effect is the response change averaged:</p>",
+    "choices": [
+     "Over all other factors' settings",
+     "At one fixed setting",
+     "Over time only",
+     "Over replicates only"
+    ],
+    "answer": 0,
+    "solution": "<p>Averaging across the design makes it more reliable than a single sweep.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A fractional factorial saves runs by:</p>",
+    "choices": [
+     "Sacrificing high-order interactions",
+     "Ignoring main effects",
+     "Using one factor",
+     "Removing replication"
+    ],
+    "answer": 0,
+    "solution": "<p>It aliases usually-negligible high-order interactions to shrink the run count.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Randomising run order protects against:</p>",
+    "choices": [
+     "Unknown drifts over time",
+     "Interactions",
+     "Small samples",
+     "The mean"
+    ],
+    "answer": 0,
+    "solution": "<p>It spreads any time-based nuisance variation across the design.</p>"
+   }
+  ]
+ },
+ "10": {
+  "lecture": "\n<h3>§1 · The statistics of failure</h3>\n<p><b>Reliability</b> is the probability that a component or system performs its function for a stated time under stated conditions — statistics applied to failure. Its central function is the <b>reliability function</b> \\( R(t) \\), the probability of surviving to time \\(t\\), which falls from 1 at \\(t=0\\) toward 0. Its complement \\( F(t)=1-R(t) \\) is the cumulative failure probability. This lesson is a preview of the dedicated reliability courses, connecting the distributions already met to the language of survival, failure rate, and mean life.</p>\n<h3>§2 · The exponential model and MTBF</h3>\n<p>The simplest and most-used life model is the <b>exponential</b>, which assumes a constant failure rate \\( \\lambda \\): \\( R(t)=e^{-\\lambda t} \\). It is <b>memoryless</b> — a survivor is statistically as good as new — which fits random, non-wearout failures. Its <b>mean time between failures</b> is \\( \\text{MTBF}=1/\\lambda \\). A component with \\( \\lambda=0.001 \\) failures per hour has \\( \\text{MTBF}=1000 \\) hours, and its reliability at that mean life is \\( R(1000)=e^{-0.001\\times1000}=e^{-1}\\approx0.368 \\) — a much-misunderstood fact: only 37% survive to the MTBF, because the MTBF is a mean, not a guarantee, and the exponential is heavily right-skewed.</p>\n<h3>§3 · Wearout, the bathtub, and systems</h3>\n<p>Constant rate is not universal. The <b>Weibull</b> distribution generalises the exponential with a shape parameter that captures <b>infant mortality</b> (falling rate, early defects), <b>random</b> failures (constant rate), and <b>wearout</b> (rising rate, ageing) — the three regions of the classic <b>bathtub curve</b> of failure rate over life. For systems, reliability combines by structure exactly like the probability rules of Lesson 2. Components in <b>series</b> (all must work) multiply: two at \\(0.9\\) give \\( 0.9\\times0.9=0.81 \\), and reliability only falls as parts are added. Components in <b>parallel</b> (redundant, one suffices) combine through their failure probabilities: two at \\(0.9\\) give \\( 1-(0.1)(0.1)=0.99 \\) — redundancy is how a system is made more reliable than any of its parts.</p>\n<h3>§4 · The reliability working method</h3>\n<p>To reason about reliability: pick the life model from the failure physics — exponential for random failures, Weibull when the rate changes with age — and estimate its parameters from failure data (the project pattern of the computing course). Compute \\( R(t) \\), MTBF, or a survival probability as the question demands, and never quote MTBF as a lifetime: report \\( R(t) \\) at the actual mission time. Build system reliability from component reliability using series (multiply) and parallel (redundancy) rules, and use them to find the weak link — in series, the least reliable component dominates. This preview hands directly to the reliability-engineering stream, where Weibull analysis, redundancy design, and maintenance strategy are developed in full, all resting on the survival function and the probability rules established here. One more quantity ties the pieces together: the <b>failure rate</b> or hazard \\( h(t) \\), the instantaneous rate of failure among survivors, which is constant for the exponential, falling then rising for the bathtub, and monotonic for many Weibull shapes. It is the hazard, not the raw failure count, that tells maintenance <em>when</em> to intervene — a rising hazard justifies scheduled replacement, while a constant one means age-based replacement buys nothing and condition monitoring is the better strategy. Reading the hazard shape from failure data is thus the hinge between the statistics of this lesson and the maintenance decisions of the reliability courses.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Exponential distribution</b> (Lesson 4) — the constant-rate model.</li><li><b>Probability rules</b> (Lesson 2) — series/parallel combination.</li><li><b>Complement</b> — \\( F=1-R \\).</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Reliability function</td><td>\\( R(t)=e^{-\\lambda t} \\)</td><td>Survival probability to time \\(t\\).</td></tr>\n<tr><td>MTBF</td><td>\\( 1/\\lambda \\)</td><td>Mean life, constant rate.</td></tr>\n<tr><td>Bathtub curve</td><td>infant / random / wearout</td><td>Failure rate over life.</td></tr>\n<tr><td>Series system</td><td>\\( R=\\prod R_i \\)</td><td>All parts must work.</td></tr>\n<tr><td>Parallel system</td><td>\\( R=1-\\prod(1-R_i) \\)</td><td>Redundancy; one suffices.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>MTBF and reliability</b></p><p><b>Problem.</b> A component has failure rate \\( \\lambda=0.001 \\)/hr. Find its MTBF and its reliability at 1000 hours.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\text{MTBF}=1/\\lambda=1000 \\) hr; \\( R(1000)=e^{-0.001\\times1000}=e^{-1}\\approx0.368 \\). <b>Answer:</b> MTBF 1000 hr; \\(R\\approx0.368\\) — only 37% survive to the MTBF.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Series system reliability</b></p><p><b>Problem.</b> Two components (each \\(R=0.9\\)) are in series. Find the system reliability.</p>",
+    "solution": "<p><b>Solution.</b> Series: \\( R=0.9\\times0.9=0.81 \\). <b>Answer:</b> 0.81 — lower than either part.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Redundancy</b></p><p><b>Problem.</b> The same two components are placed in parallel (one suffices). Find the reliability.</p>",
+    "solution": "<p><b>Solution.</b> Parallel: \\( R=1-(1-0.9)(1-0.9)=1-0.01=0.99 \\). <b>Answer:</b> 0.99 — higher than either part.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The reliability function \\(R(t)\\) gives the probability of:</p>",
+    "choices": [
+     "Surviving to time \\(t\\)",
+     "Failing immediately",
+     "The mean life",
+     "A defect"
+    ],
+    "answer": 0,
+    "solution": "<p>\\(R(t)=e^{-\\lambda t}\\) for the exponential model, falling from 1 toward 0.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For the exponential model, MTBF equals:</p>",
+    "choices": [
+     "\\(1/\\lambda\\)",
+     "\\(\\lambda\\)",
+     "\\(e^{-\\lambda}\\)",
+     "\\(\\lambda^2\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Mean of the exponential is the reciprocal of the rate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Reliability at the MTBF for an exponential component is about:</p>",
+    "choices": [
+     "37%",
+     "50%",
+     "100%",
+     "0%"
+    ],
+    "answer": 0,
+    "solution": "<p>\\(R(\\text{MTBF})=e^{-1}\\approx0.37\\); the MTBF is a mean, not a guarantee.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Adding components in SERIES makes system reliability:</p>",
+    "choices": [
+     "Lower than any part",
+     "Higher",
+     "Unchanged",
+     "Exactly 1"
+    ],
+    "answer": 0,
+    "solution": "<p>Reliabilities multiply, so more series parts lower the total.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The bathtub curve's three regions are:</p>",
+    "choices": [
+     "Infant mortality, random, wearout",
+     "Only wearout",
+     "Only random",
+     "Series, parallel, mixed"
+    ],
+    "answer": 0,
+    "solution": "<p>Failure rate falls, flattens, then rises over a product's life.</p>"
+   }
+  ]
+ },
+ "11": {
+  "lecture": "\n<h3>§1 · How statistics goes wrong</h3>\n<p>Statistics is as easily used to mislead as to inform, usually without outright lying. This closing lesson catalogues the common failures — some honest mistakes, some motivated — so that an engineer can produce and demand honest analysis. The theme is that every technique in this course has an integrity condition attached, and violating it quietly produces numbers that are precise, confident, and wrong. Recognising the failure modes is as much a professional skill as computing the statistics themselves.</p>\n<h3>§2 · P-hacking and multiple comparisons</h3>\n<p>The most corrosive abuse is <b>p-hacking</b>: trying many analyses and reporting only the one that reached significance. Its engine is the <b>multiple-comparisons</b> problem. A single test at \\( \\alpha=0.05 \\) has a 5% false-alarm rate, but run many and false positives become nearly certain: with 20 independent tests, the chance of at least one spurious \"significant\" result is \\( 1-0.95^{20}\\approx0.64 \\) — about a two-in-three chance of a false discovery even when nothing is real. The honest defences are to fix the hypothesis before the data, to correct the threshold for the number of tests, and to report all analyses run, not just the flattering one.</p>\n<h3>§3 · Base rates, confounding, and Simpson's paradox</h3>\n<p>Ignoring the <b>base rate</b> is the classic probability error. A test that is 99% sensitive and 95% specific for a fault present in 1% of parts, applied to a positive result, gives \\( P(\\text{fault}\\mid\\text{positive})=\\dfrac{0.01\\times0.99}{0.01\\times0.99+0.99\\times0.05}\\approx0.167 \\) — only a 17% chance the flagged part is actually faulty, because the rare condition is swamped by false positives. <b>Confounding</b> — a lurking variable driving both an apparent cause and effect — turns correlation into false causation, and its dramatic form is <b>Simpson's paradox</b>, where a trend that holds in every subgroup reverses when the groups are pooled. All three are failures to condition on the right information, and all three are invisible to anyone who trusts a single summary number.</p>\n<h3>§4 · The honest-reporting working method</h3>\n<p>Report to inform, not to persuade. State the hypothesis and analysis plan before collecting data; report the sample size, the effect size, and a confidence interval, not just a p-value; and disclose every analysis performed. Draw graphs honestly — a truncated or inverted axis, a cherry-picked time window, or a mismatched scale can make a trivial change look dramatic or hide a real one, and misleading graphs are the most common statistical deception precisely because they bypass the arithmetic. Distinguish statistical from practical significance, correlation from causation, and the sample from the population. This is the integrity floor of the whole discipline, and it is the same floor this platform is built on: every number verified, every claim sourced, nothing precise-but-false. An engineer who can compute a statistic and also refuse to misuse it is the one this course aims to produce. A short checklist captures the defences: was the hypothesis fixed before the data, or fished from them; is the significance corrected for how many things were tested; does the claimed cause survive the obvious confounders; is the effect large enough to matter, not merely detectable; and does every graph use an honest scale. A result that passes all five is worth acting on; one that fails any of them is, at best, a lead to investigate rather than a conclusion to ship. Carrying that checklist is the mark of a professional, and it is the note this statistics course deliberately ends on.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Hypothesis testing</b> (Lesson 7) — p-values and \\( \\alpha \\).</li><li><b>Bayes / conditional probability</b> (Lesson 2) — base rates.</li><li><b>Regression cautions</b> (Lesson 8) — correlation vs causation.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>P-hacking</td><td>report only \\(p<\\alpha\\)</td><td>Manufactured significance.</td></tr>\n<tr><td>Multiple comparisons</td><td>\\( 1-(1-\\alpha)^m \\)</td><td>False positives across \\(m\\) tests.</td></tr>\n<tr><td>Base-rate fallacy</td><td>Bayes with rare events</td><td>Ignoring prevalence.</td></tr>\n<tr><td>Confounding</td><td>lurking variable</td><td>Correlation ≠ causation.</td></tr>\n<tr><td>Simpson's paradox</td><td>trend reverses on pooling</td><td>Aggregating heterogeneous groups.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Multiple comparisons</b></p><p><b>Problem.</b> With 20 independent tests each at \\( \\alpha=0.05 \\), find the probability of at least one false positive when nothing is real.</p>",
+    "solution": "<p><b>Solution.</b> \\( P=1-(1-0.05)^{20}=1-0.95^{20}\\approx1-0.358=0.64 \\). <b>Answer:</b> \\(\\approx0.64\\) — false discovery is likely, the reason to correct for multiplicity.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Base-rate fallacy</b></p><p><b>Problem.</b> A test 99% sensitive, 95% specific, for a fault in 1% of parts, returns positive. Find the probability the part is actually faulty.</p>",
+    "solution": "<p><b>Solution.</b> \\( P(\\text{fault}\\mid+)=\\frac{0.01\\times0.99}{0.01\\times0.99+0.99\\times0.05}=\\frac{0.0099}{0.0594}\\approx0.167 \\). <b>Answer:</b> \\(\\approx0.167\\) — only 17%, because the fault is rare.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading a p-hacked study</b></p><p><b>Problem.</b> A team ran 20 analyses and reports the one with \\(p=0.03\\). Why is this weak evidence?</p>",
+    "solution": "<p><b>Solution.</b> Across 20 tests a false positive is ~64% likely by chance, so a single \\(p=0.03\\) chosen from many is not the 3% it appears — it must be corrected for the number of comparisons. <b>Answer:</b> selective reporting inflates significance; correct for multiplicity or pre-register.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>P-hacking is:</p>",
+    "choices": [
+     "Reporting only the analysis that reached significance",
+     "A computation error",
+     "A type of graph",
+     "A large sample"
+    ],
+    "answer": 0,
+    "solution": "<p>Trying many analyses and cherry-picking the significant one.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Running 20 tests at \\( \\alpha=0.05 \\) makes at least one false positive:</p>",
+    "choices": [
+     "Likely (~64%)",
+     "Impossible",
+     "Exactly 5%",
+     "Certain"
+    ],
+    "answer": 0,
+    "solution": "<p>\\(1-0.95^{20}\\approx0.64\\) — multiplicity inflates false discovery.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Ignoring the base rate when a condition is rare tends to:</p>",
+    "choices": [
+     "Overstate the chance it is present",
+     "Understate it",
+     "Have no effect",
+     "Fix confounding"
+    ],
+    "answer": 0,
+    "solution": "<p>False positives swamp true positives for rare conditions (Bayes).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Simpson's paradox is when a trend:</p>",
+    "choices": [
+     "Reverses when subgroups are pooled",
+     "Is always linear",
+     "Has no p-value",
+     "Is a graph error"
+    ],
+    "answer": 0,
+    "solution": "<p>Aggregating heterogeneous groups can flip the apparent direction.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A truncated y-axis on a chart can:</p>",
+    "choices": [
+     "Exaggerate a trivial change",
+     "Only clarify data",
+     "Fix p-hacking",
+     "Increase the sample"
+    ],
+    "answer": 0,
+    "solution": "<p>Misleading axes are the most common visual deception; draw scales honestly.</p>"
+   }
+  ]
  }
 }
