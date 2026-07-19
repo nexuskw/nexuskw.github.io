@@ -785,7 +785,21 @@
           "preview": [
             "Mean versus median on skewed repair times: which tells the truer story?",
             "What does a box plot show that a bar of averages hides?"
-          ]
+          ],
+          "video": {
+            "id": "SplCk-t1BeA",
+            "title": "Descriptive Statistics: FULL Tutorial - Mean, Median, Mode, Variance & SD (With Examples)",
+            "channel": "Grad Coach",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "d2SbaRpvuos",
+                "title": "Mean, Median, Mode and Standard Deviation: Descriptive Statistics",
+                "channel": "Endpoint Media"
+              }
+            ]
+          }
         },
         {
           "n": 2,
@@ -796,7 +810,21 @@
           "preview": [
             "Bayes in one line: why do false alarms dominate rare-event detection?",
             "Independence: what does assuming it wrongly do to risk estimates?"
-          ]
+          ],
+          "video": {
+            "id": "_IgyaD7vOOA",
+            "title": "Conditional Probabilities, Clearly Explained!!!",
+            "channel": "StatQuest with Josh Starmer",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "84Nkyd8A0Qw",
+                "title": "Common Discrete Distributions: Bernoulli, Binomial, Poisson",
+                "channel": "BIOS 6611"
+              }
+            ]
+          }
         },
         {
           "n": 3,
@@ -807,7 +835,26 @@
           "preview": [
             "When is Poisson the right model for failure counts?",
             "What assumptions does a binomial defect model make?"
-          ]
+          ],
+          "video": {
+            "id": "oI3hZJqXJuc",
+            "title": "The Main Ideas behind Probability Distributions",
+            "channel": "StatQuest with Josh Starmer",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "84Nkyd8A0Qw",
+                "title": "Common Discrete Distributions: Bernoulli, Binomial, Poisson",
+                "channel": "BIOS 6611"
+              },
+              {
+                "id": "sVBOSwT5K8I",
+                "title": "The Binomial and Poisson Distributions",
+                "channel": "Luis Serrano Academy"
+              }
+            ]
+          }
         },
         {
           "n": 4,
@@ -818,7 +865,26 @@
           "preview": [
             "Why are repair times often lognormal?",
             "What does the exponential's memoryless property claim — and when is it false?"
-          ]
+          ],
+          "video": {
+            "id": "rzFX5NWojp0",
+            "title": "The Normal Distribution, Clearly Explained!!!",
+            "channel": "StatQuest with Josh Starmer",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "B1IpnjgL_0A",
+                "title": "Understanding Normal Distribution | Bell Curve Explained Step-by-Step",
+                "channel": "PM Expert"
+              },
+              {
+                "id": "OQY5FLPTzBg",
+                "title": "Normal Distribution Explained Simply (Bell Curve)",
+                "channel": "CodeLucky"
+              }
+            ]
+          }
         },
         {
           "n": 5,
@@ -829,7 +895,26 @@
           "preview": [
             "Why do averages of n samples scatter less by √n?",
             "What does the CLT let you assume about sample means?"
-          ]
+          ],
+          "video": {
+            "id": "YAlJCEDH2uY",
+            "title": "The Central Limit Theorem, Clearly Explained!!!",
+            "channel": "StatQuest with Josh Starmer",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "ly0oRwW189M",
+                "title": "The Central Limit Theorem Explained Simply",
+                "channel": "The Synthetic Mind"
+              },
+              {
+                "id": "_7MDxoyZqlc",
+                "title": "CENTRAL LIMIT THEOREM: simple visual explanation",
+                "channel": "MaxML"
+              }
+            ]
+          }
         },
         {
           "n": 6,
@@ -840,7 +925,26 @@
           "preview": [
             "Interpret a 95% confidence interval without the classic misreading.",
             "Why compute sample size before the test campaign?"
-          ]
+          ],
+          "video": {
+            "id": "TqOeMYtOc1w",
+            "title": "Confidence Intervals, Clearly Explained!!!",
+            "channel": "StatQuest with Josh Starmer",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "ENnlSlvQHO0",
+                "title": "Confidence Interval [Simply explained]",
+                "channel": "numiqo"
+              },
+              {
+                "id": "ftYdEm6pEkE",
+                "title": "Interpreting Confidence Intervals EXPLAINED in 3 Minutes with Examples",
+                "channel": "Ace Tutors"
+              }
+            ]
+          }
         },
         {
           "n": 7,
@@ -851,7 +955,21 @@
           "preview": [
             "What do Type I and Type II errors cost in a plant decision?",
             "Statistically significant but operationally meaningless: give an example."
-          ]
+          ],
+          "video": {
+            "id": "vemZtEM63GY",
+            "title": "p-values: What they are and how to interpret them",
+            "channel": "StatQuest with Josh Starmer",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "N4ZQQqyIf6k",
+                "title": "Using Bootstrapping to Calculate p-values!!!",
+                "channel": "StatQuest with Josh Starmer"
+              }
+            ]
+          }
         },
         {
           "n": 8,
@@ -862,7 +980,26 @@
           "preview": [
             "What pattern in residuals invalidates a straight-line fit?",
             "Why does R² alone never justify a model?"
-          ]
+          ],
+          "video": {
+            "id": "7ArmBVF2dCs",
+            "title": "Linear Regression, Clearly Explained!!!",
+            "channel": "StatQuest with Josh Starmer",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "aFDOzpTeg0s",
+                "title": "The Essence of Linear Regression!!!",
+                "channel": "StatQuest with Josh Starmer"
+              },
+              {
+                "id": "zITIFTsivN8",
+                "title": "Multiple Regression, Clearly Explained!!!",
+                "channel": "StatQuest with Josh Starmer"
+              }
+            ]
+          }
         },
         {
           "n": 9,
@@ -873,7 +1010,26 @@
           "preview": [
             "What is an interaction, and why does one-factor-at-a-time miss it?",
             "Read main effects from a 2² experiment table."
-          ]
+          ],
+          "video": {
+            "id": "cHoYAyYHzB0",
+            "title": "Full Factorial Design (DoE - Design of Experiments) Simply explained",
+            "channel": "numiqo",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "orl3r0VDNpw",
+                "title": "Full Factorial Experiments Explained",
+                "channel": "Jordan Edmunds Chetty"
+              },
+              {
+                "id": "ntiBXZ7R_kw",
+                "title": "What is Fractional Factorial Design of Experiments Explained and How to Use it Like an Expert",
+                "channel": "The Open Educator"
+              }
+            ]
+          }
         },
         {
           "n": 10,
@@ -884,7 +1040,26 @@
           "preview": [
             "What is censored data, and why do failure logs teem with it?",
             "Hazard versus failure rate: what does each function describe?"
-          ]
+          ],
+          "video": {
+            "id": "BQXnKpP2lrI",
+            "title": "RELIABILITY Explained! Failure Rate, MTTF, MTBF, Bathtub Curve, Exponential and Weibull Distribution",
+            "channel": "CQE Academy",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "UhnvPx3_ImQ",
+                "title": "introduction to Weibull Analysis for Reliability Engineering",
+                "channel": "LT72884"
+              },
+              {
+                "id": "ibnU0TM5O-M",
+                "title": "Weibull distribution using the fatigue test as an example (survival/failure/reliability analysis)",
+                "channel": "tec-science"
+              }
+            ]
+          }
         },
         {
           "n": 11,
@@ -895,7 +1070,26 @@
           "preview": [
             "Name two chart crimes that flatter a KPI.",
             "What must an honest uncertainty statement accompany?"
-          ]
+          ],
+          "video": {
+            "id": "hgp91KvbJV4",
+            "title": "How to Lie with Data | Misleading Graphs",
+            "channel": "Alex The Analyst",
+            "verified": true,
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "f4yZJVdJCG4",
+                "title": "How to Lie With Statistics (and get away with it)",
+                "channel": "Unsolicited advice"
+              },
+              {
+                "id": "1NIW1Ia8M2U",
+                "title": "Misleading Graphs",
+                "channel": "Dan Kernler"
+              }
+            ]
+          }
         }
       ]
     },
