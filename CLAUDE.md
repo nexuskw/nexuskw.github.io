@@ -328,6 +328,17 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Y2S1 status: math-3 4/11, strength 4/11 authored; both have full
   approved videos. NEXT (empty-video courses): fluids/statistics/etc.
   need the real per-video verification pass under video-policy v3.
+- FLUIDS (FLD 203) COURSE COMPLETE (owner directive "every video lesson
+  gets the full unit", 2026-07-19): all 11 lessons now full Educational
+  Units — lecture (500-1000w §1-§4), glossary-table foundations, 3 solve +
+  5 MC quiz (every number Python-verified pre-write), plus the already-
+  approved video embed + alternatives + canonical textbooks. Batches:
+  L1-4 (properties/statics/Reynolds/Bernoulli), L5-8 (momentum/dim-analysis/
+  friction-Moody/networks-valves), L9-11 (flow-measurement/turbomachinery-
+  NPSH/compressible). Company-free PASS. First fully-complete Year-2 course.
+  Coverage 74→93/528 (18%). Commits 66cad73, f960430, a0d6947. STILL OWED
+  for the directive: statistics content (11 lessons, videos already in),
+  math-3 L5-L11 + L2/L3/L4 word-count top-up.
 - YEAR-2 VIDEO + CONTENT PUSH (owner, 2026-07-18/19): dual track. VIDEOS
   (owner: embed-then-report, batches of 3, primary embed + verified
   alternatives, finish all Year-2 empty-video courses): FLUIDS 11/11
