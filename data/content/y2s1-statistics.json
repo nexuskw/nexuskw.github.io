@@ -1,0 +1,326 @@
+{
+ "1": {
+  "lecture": "\n<h3>§1 · Why engineers need statistics</h3>\n<p>No two manufactured parts are identical, no measurement is exact, and no process is perfectly steady. Statistics is the mathematics of that variation — the discipline that turns a scatter of numbers into a defensible statement. It has two halves: <b>descriptive</b> statistics, which summarise data in hand, and <b>inferential</b> statistics, which reason from a sample to the population it came from. This lesson builds the descriptive toolkit, the honest summary that every later inference rests on. Get the summary wrong and every test, interval, and control chart built on it inherits the error.</p>\n<h3>§2 · Centre: mean, median, mode</h3>\n<p>Three numbers locate the centre of a data set, and they answer different questions. The <b>mean</b> \\( \\bar x=\\frac{1}{n}\\sum x_i \\) is the balance point; for the set \\( \\{2,4,4,4,5,5,7,9\\} \\) it is \\( 40/8=5 \\). The <b>median</b> is the middle value once ordered — here the average of the 4th and 5th values, \\( (4+5)/2=4.5 \\) — and it ignores outliers, which is why incomes and house prices are reported as medians. The <b>mode</b> is the most frequent value, here \\(4\\) (appearing three times), the only measure that works for categorical data. When a distribution is skewed the three separate, and the gap between mean and median is itself a signal of skew.</p>\n<h3>§3 · Spread: variance and standard deviation</h3>\n<p>Centre alone is half the story; spread is the other half. The <b>variance</b> averages squared deviations from the mean, and the <b>standard deviation</b> is its square root, back in the data's own units. For the set above the squared deviations sum to \\(32\\); the <b>population</b> variance is \\( 32/8=4 \\) (so \\( \\sigma=2 \\)), while the <b>sample</b> variance divides by \\(n-1\\): \\( 32/7\\approx4.57 \\) (so \\( s\\approx2.14 \\)). The \\(n-1\\) — <b>Bessel's correction</b> — is not a quirk: a sample's own mean sits closer to its data than the true mean does, so dividing by \\(n\\) would systematically underestimate the spread. Use \\(n-1\\) whenever the data are a sample, which in engineering is almost always.</p>\n<h3>§4 · The describing-data working method</h3>\n<p>Before any test, summarise honestly: report a measure of centre <em>and</em> a measure of spread — a mean with no standard deviation hides exactly the variation that matters to an engineer. Choose the measure to fit the data: median and interquartile range for skewed or outlier-prone data, mean and standard deviation for roughly symmetric data, mode for categories. Plot before you compute — a histogram or box plot reveals skew, gaps, and outliers that no single number shows, and it is the cheapest guard against summarising a bimodal process as if it were one. These honest summaries are the raw material for the whole course: the mean becomes an estimate (Lesson 6), its variation becomes a test statistic (Lesson 7), and its spread becomes a control limit in the metrology and quality courses. Two further summaries round out the descriptive toolkit and appear throughout the curriculum: the <b>range</b> and <b>interquartile range</b> (IQR), which capture spread without squaring, and the <b>coefficient of variation</b> \\( s/\\bar x \\), a dimensionless spread that lets you compare the relative scatter of two processes measured in different units. Together with a histogram, these turn a column of raw numbers into a picture an engineer can defend in a review.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Summation notation</b> — \\( \\sum x_i \\) and averages.</li><li><b>Ordering data</b> — for the median and quartiles.</li><li><b>Squares and roots</b> — variance to standard deviation.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Mean</td><td>\\( \\bar x=\\frac1n\\sum x_i \\)</td><td>Centre of symmetric data.</td></tr>\n<tr><td>Median</td><td>middle ordered value</td><td>Skewed or outlier-prone data.</td></tr>\n<tr><td>Mode</td><td>most frequent value</td><td>Categorical data.</td></tr>\n<tr><td>Variance</td><td>\\( s^2=\\frac{\\sum(x-\\bar x)^2}{n-1} \\)</td><td>Spread of a sample.</td></tr>\n<tr><td>Standard deviation</td><td>\\( s=\\sqrt{s^2} \\)</td><td>Spread in the data's units.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Mean, median, mode</b></p><p><b>Problem.</b> For \\( \\{2,4,4,4,5,5,7,9\\} \\) find the mean, median, and mode.</p>",
+    "solution": "<p><b>Solution.</b> Mean \\( =40/8=5 \\); median \\( =(4+5)/2=4.5 \\); mode \\( =4 \\) (three times). <b>Answer:</b> mean 5, median 4.5, mode 4.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Sample standard deviation</b></p><p><b>Problem.</b> For that set (\\( \\bar x=5 \\)), the squared deviations sum to 32. Find the sample standard deviation.</p>",
+    "solution": "<p><b>Solution.</b> \\( s^2=\\frac{32}{n-1}=\\frac{32}{7}\\approx4.57 \\); \\( s=\\sqrt{4.57}\\approx2.14 \\). <b>Answer:</b> \\(s\\approx2.14\\). <b>Check:</b> divide by \\(n-1\\), not \\(n\\), for a sample.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Population vs sample variance</b></p><p><b>Problem.</b> If those eight values were the WHOLE population, what is the variance?</p>",
+    "solution": "<p><b>Solution.</b> Divide by \\(n=8\\): \\( \\sigma^2=32/8=4 \\), so \\( \\sigma=2 \\). <b>Answer:</b> \\( \\sigma^2=4,\\ \\sigma=2 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which measure of centre is least affected by outliers?</p>",
+    "choices": [
+     "Median",
+     "Mean",
+     "Sum",
+     "Range"
+    ],
+    "answer": 0,
+    "solution": "<p>The median depends only on the middle rank, not extreme values; the mean is pulled by outliers.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Sample variance divides the summed squared deviations by:</p>",
+    "choices": [
+     "\\(n-1\\)",
+     "\\(n\\)",
+     "\\(n+1\\)",
+     "\\(n^2\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Bessel's correction \\(n-1\\) corrects the downward bias from using the sample mean.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Standard deviation has the same units as the data because it is:</p>",
+    "choices": [
+     "The square root of variance",
+     "The variance",
+     "The mean squared",
+     "Dimensionless"
+    ],
+    "answer": 0,
+    "solution": "<p>Variance is in squared units; its root returns to the data's units.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For strongly skewed data, the best centre-and-spread pair is:</p>",
+    "choices": [
+     "Median and IQR",
+     "Mean and SD",
+     "Mode and range",
+     "Mean and variance"
+    ],
+    "answer": 0,
+    "solution": "<p>Median and interquartile range resist the skew that distorts the mean and SD.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A large gap between the mean and median indicates:</p>",
+    "choices": [
+     "Skew",
+     "No variation",
+     "A calculation error",
+     "A large sample"
+    ],
+    "answer": 0,
+    "solution": "<p>When they separate, the distribution is skewed; symmetric data have them nearly equal.</p>"
+   }
+  ]
+ },
+ "2": {
+  "lecture": "\n<h3>§1 · Probability as the language of chance</h3>\n<p>Inference runs on probability, so the rules must be exact. A <b>probability</b> is a number between 0 and 1 measuring how likely an event is; for equally likely outcomes it is favourable outcomes over total outcomes. A fair die shows an even number with probability \\( 3/6=0.5 \\). Two ideas organise everything else: how probabilities <b>combine</b> across events (this lesson), and how they build into <b>distributions</b> (Lessons 3–4). Getting the combination rules right is what separates a sound reliability estimate from a plausible-sounding wrong one.</p>\n<h3>§2 · The addition and multiplication rules</h3>\n<p>The <b>addition rule</b> gives the probability that A <em>or</em> B occurs: \\( P(A\\cup B)=P(A)+P(B)-P(A\\cap B) \\), subtracting the overlap so it is not counted twice. For \\( P(A)=0.5,\\ P(B)=0.4,\\ P(A\\cap B)=0.2 \\), \\( P(A\\cup B)=0.5+0.4-0.2=0.7 \\). The <b>multiplication rule</b> gives the probability that A <em>and</em> B both occur; when the events are <b>independent</b> — one does not affect the other — it is simply the product \\( P(A\\cap B)=P(A)P(B) \\). Two fair coins both landing heads is \\( 0.5\\times0.5=0.25 \\). Independence is an assumption to be checked, not assumed: correlated failures are exactly where naive multiplication underestimates risk.</p>\n<h3>§3 · Conditional probability and Bayes</h3>\n<p>When events are not independent, the <b>conditional probability</b> of A given B is \\( P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)} \\) — the chance of A restricted to the world where B has happened. With \\( P(A\\cap B)=0.2 \\) and \\( P(B)=0.4 \\), \\( P(A\\mid B)=0.2/0.4=0.5 \\). Reversing the condition is the job of <b>Bayes' theorem</b>, \\( P(A\\mid B)=\\dfrac{P(B\\mid A)P(A)}{P(B)} \\), which updates a prior belief with new evidence. Bayes is the reason a positive result on a rare-fault test can still, correctly, mean the fault is probably absent — the base rate dominates — and it underpins modern diagnostics and reliability updating.</p>\n<h3>§4 · The probability working method</h3>\n<p>Translate carefully: \"or\" invokes the addition rule (watch the overlap), \"and\" the multiplication rule (check independence first), \"given that\" a conditional. Draw the sample space or a tree for anything with more than two events, because intuition fails fast — the birthday and false-positive paradoxes are famous precisely because the correct rules override the gut. Keep every probability in \\([0,1]\\) and confirm a partition sums to 1 as an arithmetic check. These rules are the grammar of the distributions in the next lessons and of every reliability, quality, and risk calculation the curriculum returns to, so precision here pays compound interest. Two structural ideas make large problems tractable. <b>Complementary</b> events — \\( P(\\text{not }A)=1-P(A) \\) — often turn a hard \"at least one\" calculation into an easy \"none\": the probability that at least one of several independent components fails is one minus the probability that all survive, the backbone of system-reliability analysis. And the <b>law of total probability</b> assembles an overall chance from mutually exclusive cases, weighting each conditional by how often its case occurs. Both are just the addition and multiplication rules applied with care, and both recur constantly once systems have more than a couple of parts.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Fractions and ratios</b> — probabilities as proportions.</li><li><b>Sets</b> — union, intersection, complement.</li><li><b>Counting outcomes</b> — for equally likely cases.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Addition rule</td><td>\\( P(A\\cup B)=P(A)+P(B)-P(A\\cap B) \\)</td><td>Probability of A or B.</td></tr>\n<tr><td>Multiplication (indep.)</td><td>\\( P(A\\cap B)=P(A)P(B) \\)</td><td>Both occur, independent events.</td></tr>\n<tr><td>Conditional</td><td>\\( P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)} \\)</td><td>A given B has occurred.</td></tr>\n<tr><td>Independence</td><td>\\( P(A\\mid B)=P(A) \\)</td><td>B tells nothing about A.</td></tr>\n<tr><td>Bayes' theorem</td><td>\\( P(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)} \\)</td><td>Update a prior with evidence.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Addition rule</b></p><p><b>Problem.</b> With \\( P(A)=0.5 \\), \\( P(B)=0.4 \\), \\( P(A\\cap B)=0.2 \\), find \\( P(A\\cup B) \\).</p>",
+    "solution": "<p><b>Solution.</b> \\( P(A\\cup B)=0.5+0.4-0.2=0.7 \\). <b>Answer:</b> 0.7. <b>Check:</b> subtract the overlap once.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Independent events</b></p><p><b>Problem.</b> Two fair coins are tossed. Find the probability of two heads.</p>",
+    "solution": "<p><b>Solution.</b> Independent, so \\( P=0.5\\times0.5=0.25 \\). <b>Answer:</b> 0.25.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Conditional probability</b></p><p><b>Problem.</b> With \\( P(A\\cap B)=0.2 \\) and \\( P(B)=0.4 \\), find \\( P(A\\mid B) \\).</p>",
+    "solution": "<p><b>Solution.</b> \\( P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}=\\frac{0.2}{0.4}=0.5 \\). <b>Answer:</b> 0.5.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The addition rule subtracts \\( P(A\\cap B) \\) because:</p>",
+    "choices": [
+     "The overlap would be double-counted",
+     "It is always zero",
+     "B causes A",
+     "Events are independent"
+    ],
+    "answer": 0,
+    "solution": "<p>A and B share outcomes; counting both alone counts the overlap twice.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For independent events, \\( P(A\\cap B) \\) equals:</p>",
+    "choices": [
+     "\\( P(A)P(B) \\)",
+     "\\( P(A)+P(B) \\)",
+     "\\( P(A)/P(B) \\)",
+     "\\( P(A)-P(B) \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Multiplication rule for independence.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Conditional probability \\( P(A\\mid B) \\) is:</p>",
+    "choices": [
+     "\\( P(A\\cap B)/P(B) \\)",
+     "\\( P(A)P(B) \\)",
+     "\\( P(A)+P(B) \\)",
+     "\\( P(B)/P(A) \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The joint probability restricted to the world where B occurred.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Assuming independence when failures are actually correlated tends to:</p>",
+    "choices": [
+     "Underestimate combined risk",
+     "Overestimate it",
+     "Have no effect",
+     "Make probabilities exceed 1"
+    ],
+    "answer": 0,
+    "solution": "<p>Correlated failures co-occur more than the product predicts, so risk is understated.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Bayes' theorem is used to:</p>",
+    "choices": [
+     "Update a prior with new evidence",
+     "Add probabilities",
+     "Compute a mean",
+     "Sort data"
+    ],
+    "answer": 0,
+    "solution": "<p>It reverses the conditioning to revise belief given data.</p>"
+   }
+  ]
+ },
+ "3": {
+  "lecture": "\n<h3>§1 · Random variables and distributions</h3>\n<p>A <b>random variable</b> assigns a number to each outcome — the count of defects in a batch, the number of arrivals in an hour — and its <b>probability distribution</b> lists how likely each value is. For counts, the distribution is <b>discrete</b>: a probability mass on each integer, summing to 1. Two discrete distributions cover most engineering counting problems, and recognising which one applies is the whole skill: the <b>binomial</b> for a fixed number of yes/no trials, and the <b>Poisson</b> for events occurring at a steady rate.</p>\n<h3>§2 · The binomial distribution</h3>\n<p>The <b>binomial</b> models \\(n\\) independent trials each with success probability \\(p\\): \\( P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k} \\). Its mean is \\( \\mu=np \\) and its variance \\( \\sigma^2=np(1-p) \\). For \\( n=10 \\) parts with a \\( p=0.2 \\) defect rate, the expected number of defects is \\( np=2 \\), the variance is \\( 10\\times0.2\\times0.8=1.6 \\), and the standard deviation \\( \\sqrt{1.6}\\approx1.26 \\). The chance of zero defects is \\( P(X=0)=0.8^{10}\\approx0.107 \\) — about an 11% chance a batch of ten passes clean, a number that surprises people who expect a 20% defect rate to hit every batch.</p>\n<h3>§3 · The Poisson distribution</h3>\n<p>The <b>Poisson</b> models the count of events in a fixed interval when they occur independently at an average rate \\( \\lambda \\): \\( P(X=k)=\\dfrac{\\lambda^k e^{-\\lambda}}{k!} \\). Uniquely, its mean and variance are both \\( \\lambda \\). For an average of \\( \\lambda=3 \\) breakdowns per week, the probability of a quiet week with zero breakdowns is \\( P(X=0)=e^{-3}\\approx0.0498 \\), about 5%. The Poisson also arises as the limit of a binomial with large \\(n\\) and small \\(p\\) (rare events in many trials), which is why it models flaws per metre of weld, calls per hour, or particles per sample — any \"how many in a span\" question with a steady rate.</p>\n<h3>§4 · The discrete-distribution working method</h3>\n<p>Pick the model from the physical situation, not the formula: a fixed number of independent yes/no trials is binomial; a count of events over a continuous span at a constant rate is Poisson. Check the assumptions — binomial needs constant \\(p\\) and independence; Poisson needs a steady rate and no clustering — because a violated assumption (say, defects that come in bursts) breaks the model quietly. Then read the mean and variance directly (\\(np\\) and \\(np(1-p)\\); \\(\\lambda\\) and \\(\\lambda\\)) to sanity-check any probability you compute. These two distributions feed straight into quality sampling plans and reliability counts later in the curriculum, and their means are the expectations every acceptance criterion is written against. A third discrete model, the <b>geometric</b> distribution, answers a different question — how many trials until the first success (or failure) — with mean \\( 1/p \\); it is the natural model for \"how long until the next breakdown\" in trial terms and the discrete cousin of the exponential distribution met in Lesson 4. Knowing which of these three a situation calls for — a fixed count, a rate over a span, or a waiting time — is the practical payoff of this lesson, because choosing the wrong family produces answers that are precise and wrong.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Probability rules</b> (Lesson 2) — independence and multiplication.</li><li><b>Combinations</b> — \\( \\binom{n}{k} \\).</li><li><b>Factorials and \\(e\\)</b> — for the Poisson mass.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Random variable</td><td>outcome → number</td><td>Quantifying a random result.</td></tr>\n<tr><td>Binomial</td><td>\\( \\binom{n}{k}p^k(1-p)^{n-k} \\)</td><td>Fixed \\(n\\) yes/no trials.</td></tr>\n<tr><td>Binomial moments</td><td>\\( \\mu=np,\\ \\sigma^2=np(1-p) \\)</td><td>Expected count and spread.</td></tr>\n<tr><td>Poisson</td><td>\\( \\frac{\\lambda^k e^{-\\lambda}}{k!} \\)</td><td>Events per interval, steady rate.</td></tr>\n<tr><td>Poisson moments</td><td>\\( \\mu=\\sigma^2=\\lambda \\)</td><td>Rate is mean and variance.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Binomial mean and spread</b></p><p><b>Problem.</b> Ten parts have a \\( p=0.2 \\) defect probability. Find the expected number of defects, the variance, and the standard deviation.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\mu=np=10\\times0.2=2 \\); \\( \\sigma^2=np(1-p)=10\\times0.2\\times0.8=1.6 \\); \\( \\sigma=\\sqrt{1.6}\\approx1.26 \\). <b>Answer:</b> mean 2, variance 1.6, SD 1.26.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Binomial probability of zero</b></p><p><b>Problem.</b> For those ten parts, find the probability of no defects.</p>",
+    "solution": "<p><b>Solution.</b> \\( P(X=0)=\\binom{10}{0}0.2^0 0.8^{10}=0.8^{10}\\approx0.107 \\). <b>Answer:</b> \\(\\approx0.107\\) (about 11%).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Poisson probability</b></p><p><b>Problem.</b> Breakdowns average \\( \\lambda=3 \\) per week. Find the probability of a week with none.</p>",
+    "solution": "<p><b>Solution.</b> \\( P(X=0)=\\frac{3^0 e^{-3}}{0!}=e^{-3}\\approx0.0498 \\). <b>Answer:</b> \\(\\approx0.0498\\) (about 5%).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The binomial distribution models:</p>",
+    "choices": [
+     "A fixed number of yes/no trials",
+     "Events per continuous interval",
+     "A continuous measurement",
+     "A skewed mean"
+    ],
+    "answer": 0,
+    "solution": "<p>Fixed \\(n\\), constant \\(p\\), independent trials. Events per interval is Poisson.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A binomial with \\(n=10,\\ p=0.2\\) has mean:</p>",
+    "choices": [
+     "2",
+     "0.2",
+     "10",
+     "1.6"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mu=np=2 \\); 1.6 is the variance.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For the Poisson distribution, the variance equals:</p>",
+    "choices": [
+     "The mean \\(\\lambda\\)",
+     "\\(\\lambda^2\\)",
+     "\\(np(1-p)\\)",
+     "1"
+    ],
+    "answer": 0,
+    "solution": "<p>Uniquely, Poisson mean and variance are both \\(\\lambda\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The Poisson distribution is appropriate for:</p>",
+    "choices": [
+     "Counts of events at a steady rate",
+     "A single yes/no trial",
+     "A normal measurement",
+     "A ranked list"
+    ],
+    "answer": 0,
+    "solution": "<p>Flaws per metre, calls per hour — counts over a span at constant rate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A Poisson arises as the limit of a binomial when:</p>",
+    "choices": [
+     "\\(n\\) large, \\(p\\) small",
+     "\\(n\\) small",
+     "\\(p=0.5\\)",
+     "\\(n=p\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Many trials, rare success — the rare-event limit \\(\\lambda=np\\).</p>"
+   }
+  ]
+ },
+ "4": {
+  "lecture": "\n<h3>§1 · From counts to measurements</h3>\n<p>Where discrete distributions count, <b>continuous</b> distributions measure — length, temperature, strength, time. A continuous variable takes any value in a range, so probability attaches to intervals, not points, through a <b>probability density function</b> whose area gives probability and integrates to 1. One continuous distribution dominates engineering: the <b>normal</b>, or Gaussian, distribution — the symmetric bell curve that describes measurement error, natural variation, and, through the next lesson's central limit theorem, the behaviour of averages themselves.</p>\n<h3>§2 · The normal distribution and the z-score</h3>\n<p>The normal distribution is fixed by two parameters, its mean \\( \\mu \\) and standard deviation \\( \\sigma \\). Any value is located by its <b>z-score</b> \\( z=\\dfrac{x-\\mu}{\\sigma} \\), the number of standard deviations from the mean, which converts any normal to the <b>standard normal</b> (mean 0, SD 1) so one table serves all. A test score of \\(x=130\\) from a distribution with \\( \\mu=100,\\ \\sigma=15 \\) has \\( z=(130-100)/15=2 \\); the fraction of the population below it is \\( \\Phi(2)\\approx0.977 \\), so it beats about 97.7% of the population. The z-score is the universal ruler of the normal world.</p>\n<h3>§3 · The empirical rule and other continuous models</h3>\n<p>The normal's spread follows the <b>empirical (68–95–99.7) rule</b>: about 68% of values lie within \\( \\pm1\\sigma \\) of the mean, 95% within \\( \\pm2\\sigma \\), and 99.7% within \\( \\pm3\\sigma \\). This is why \"six-sigma\" quality — keeping the process spread far inside the tolerance — corresponds to a vanishingly small defect fraction. Two other continuous models recur: the <b>uniform</b>, flat over a range (rounding error, a first guess at ignorance), and the <b>exponential</b>, describing the time between random events with mean \\( 1/\\lambda \\) — the Poisson's continuous partner, and the basic model of memoryless failure times in reliability.</p>\n<h3>§4 · The continuous-distribution working method</h3>\n<p>To use a normal model: standardise with the z-score, then read the tail or interval probability from the standard-normal table (or software), remembering that the table gives area to the left, so a right tail is one minus that and a central band is a difference of two. Check the model before trusting it — a histogram that is skewed or bounded (times, counts near zero) is not normal, and forcing it there gives wrong tail probabilities exactly where decisions are made. The normal earns its dominance in the next lesson, where the central limit theorem shows that sample means become normal almost regardless of the parent distribution, which is why so much of inference is built on this one curve. It is worth carrying one honest caution about the normal: it is unbounded and symmetric, so it assigns nonzero probability to impossible values — a negative length, a strength below zero. For quantities physically bounded at zero or strongly one-sided, distributions such as the <b>lognormal</b> (for multiplicative processes and many strength and lifetime data) or the <b>Weibull</b> (the reliability workhorse of Lesson 10) fit better and keep their tails on the physically possible side. The normal is the default, not the law — reach for it because the data support it, not out of habit.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Mean and standard deviation</b> (Lesson 1) — the normal's parameters.</li><li><b>Area as probability</b> — the density integrates to 1.</li><li><b>Reading a table</b> — the standard-normal CDF.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Normal distribution</td><td>bell curve \\( (\\mu,\\sigma) \\)</td><td>Measurement error, natural variation.</td></tr>\n<tr><td>z-score</td><td>\\( z=\\frac{x-\\mu}{\\sigma} \\)</td><td>Standardise to the standard normal.</td></tr>\n<tr><td>Empirical rule</td><td>68–95–99.7%</td><td>Spread within 1/2/3 σ.</td></tr>\n<tr><td>Exponential</td><td>mean \\( 1/\\lambda \\)</td><td>Time between random events.</td></tr>\n<tr><td>Uniform</td><td>flat over \\([a,b]\\)</td><td>Rounding, first-guess ignorance.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>z-score and percentile</b></p><p><b>Problem.</b> A value \\(x=130\\) comes from a normal with \\( \\mu=100,\\ \\sigma=15 \\). Find its z-score and the fraction below it.</p>",
+    "solution": "<p><b>Solution.</b> \\( z=(130-100)/15=2 \\); \\( \\Phi(2)\\approx0.977 \\). <b>Answer:</b> \\(z=2\\), about 97.7% below it.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Empirical rule</b></p><p><b>Problem.</b> In a normal distribution, what fraction lies within \\( \\pm2\\sigma \\) of the mean?</p>",
+    "solution": "<p><b>Solution.</b> By the empirical rule, about 95% (precisely \\( \\Phi(2)-\\Phi(-2)\\approx0.954 \\)). <b>Answer:</b> \\(\\approx95\\%\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Exponential mean</b></p><p><b>Problem.</b> Failures follow an exponential distribution with rate \\( \\lambda=0.5 \\) per year. Find the mean time to failure.</p>",
+    "solution": "<p><b>Solution.</b> Mean \\( =1/\\lambda=1/0.5=2 \\) years. <b>Answer:</b> 2 years.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For a continuous variable, probability corresponds to:</p>",
+    "choices": [
+     "Area under the density",
+     "The height at a point",
+     "A single value",
+     "A count"
+    ],
+    "answer": 0,
+    "solution": "<p>Continuous probability is area over an interval; a single point has probability zero.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The z-score \\( z=(x-\\mu)/\\sigma \\) measures:</p>",
+    "choices": [
+     "Standard deviations from the mean",
+     "The raw value",
+     "The variance",
+     "A percentage"
+    ],
+    "answer": 0,
+    "solution": "<p>It standardises any normal to the standard normal.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The empirical rule says about 68% of a normal lies within:</p>",
+    "choices": [
+     "\\( \\pm1\\sigma \\)",
+     "\\( \\pm2\\sigma \\)",
+     "\\( \\pm3\\sigma \\)",
+     "\\( \\pm0.5\\sigma \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>68–95–99.7 for 1, 2, 3 σ respectively.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The exponential distribution models:</p>",
+    "choices": [
+     "Time between random events",
+     "A yes/no trial",
+     "A symmetric measurement",
+     "A ranked count"
+    ],
+    "answer": 0,
+    "solution": "<p>It is the continuous partner of the Poisson, with mean \\(1/\\lambda\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A standard-normal table typically gives the area:</p>",
+    "choices": [
+     "To the left of \\(z\\)",
+     "To the right",
+     "In both tails",
+     "At the point"
+    ],
+    "answer": 0,
+    "solution": "<p>Left-tail (CDF); a right tail is one minus it, a band is a difference.</p>"
+   }
+  ]
+ }
+}
