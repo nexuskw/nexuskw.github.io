@@ -1,0 +1,976 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CMP 106 — Content Review</title><script>MathJax={tex:{inlineMath:[["\\(","\\)"]]},svg:{fontCache:"global"}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style>
+ body{font:16px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;max-width:900px;margin:0 auto;padding:24px;color:#16202e;background:#f7f9fb}
+ h1{font-size:25px;border-bottom:3px solid #1f7a5c;padding-bottom:8px}
+ .meta{color:#5a6b7b;font-size:14px;margin-bottom:22px}
+ section.lesson{background:#fff;border:1px solid #dde5ec;border-radius:10px;padding:18px 22px;margin:20px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+ section.lesson>h2{font-size:19px;color:#0e1626;margin-top:0;border-left:5px solid #1f7a5c;padding-left:12px}
+ h3.tab{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#1f7a5c;margin:20px 0 8px;border-bottom:1px solid #e3ebf1;padding-bottom:4px}
+ h3.tab .cnt{color:#8a99a8;font-weight:400;text-transform:none;letter-spacing:0}
+ .body h3{font-size:15.5px;color:#20364a;margin:15px 0 4px}
+ .body h4{font-size:14px;color:#3a4a5a;margin:13px 0 4px}
+ table.glossary{border-collapse:collapse;width:100%;font-size:13.5px;margin:8px 0}
+ table.glossary th,table.glossary td{border:1px solid #d3dde5;padding:6px 9px;text-align:left;vertical-align:top}
+ table.glossary th{background:#eef4f2}
+ ul.plain{margin:6px 0 6px 18px}
+ .qcard{border:1px solid #e0e8ef;border-radius:8px;padding:11px 14px;margin:10px 0;background:#fbfdfe}
+ .qcard.mc{background:#f9fbf9}
+ .qtag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff;background:#1f7a5c;border-radius:4px;padding:2px 7px;margin-bottom:6px}
+ .qcard.mc .qtag{background:#3a6ea5}
+ ol.opts{margin:6px 0 6px 20px}
+ ol.opts li.correct{color:#116b41;font-weight:600}
+ .soln{background:#f0f5f2;border-left:3px solid #1f7a5c;padding:8px 12px;margin-top:8px;border-radius:0 6px 6px 0;font-size:14.5px}
+ .qname{margin:0 0 4px}
+</style></head><body><h1>CMP 106 · Engineering Computing</h1><p class="meta">Y1S1 · computing · 11 lesson(s) authored · Lecture + Foundations (glossary tables) + Examples &amp; Quiz (correct MCQ ✓). Open in a browser for MathJax.</p>
+<section class="lesson"><h2>Lesson 01 · Why engineers script</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Why engineers script</h3>
+<p>A spreadsheet hides its logic inside cells; a script lays it out as readable text. That
+single difference buys the three things engineering calculation needs most:
+<em>repeatability</em> — run the script tomorrow on new data and the identical logic
+executes; <em>auditability</em> — a reviewer reads the calculation top to bottom, every
+assumption visible; and <em>scale</em> — the loop that processes one reading processes a
+million without new effort. Spreadsheets remain excellent scratchpads, but the moment a
+calculation matters, recurs, or grows, the professional tool is a script — and the habit of
+writing one is what this course installs.</p>
+<h3>§2 · The toolchain, plainly</h3>
+<p>Python is an interpreter: it reads statements and executes them immediately. You can feed
+it lines interactively — the REPL, ideal for trying an idea — or hand it a file of
+statements, a script, which is the durable product. A script is just text: openable in any
+editor, storable beside the data it processed, and — crucially — diffable, so yesterday's
+version and today's can be compared line by line. That property makes scripts the natural
+citizens of version control and the natural evidence in an engineering audit trail.</p>
+<h3>§3 · Anatomy of a calculation script</h3>
+<p>Every calculation script worth keeping has the same skeleton: named inputs at the top,
+with units in the names or comments (\( \texttt{flow\_m3h = 100} \)); the computation in
+clear steps, mirroring how you would write it on paper; and output that states units —
+\( \texttt{print(f"shaft power = \{P/1000:.1f\} kW")} \). Arithmetic operators behave
+as expected, with three worth flagging now: \( \texttt{**} \) is exponentiation,
+\( \texttt{/} \) always returns a decimal, and \( \texttt{//} \) divides and discards
+the remainder. A pump-power script in this shape is eight lines — and it replaces the
+back-of-envelope forever, because it IS the envelope, kept.</p>
+<h3>§4 · The scripting working method</h3>
+<p>Write scripts the way the mathematics course taught you to check units: as a discipline,
+not an afterthought. Name variables with their units — ambiguity between bar and kPa has
+sunk more calculations than any syntax error ever will. State inputs once, at the top,
+never buried mid-logic. Print results WITH units and sensible precision. Keep one
+calculation per script while learning; later lessons modularize. And before trusting any
+script, run it against a case you have verified by hand — the machine-verification habit
+this whole platform practices on you is the habit you are now learning to practice on your
+own code. A script that has never met a hand-checked case is an opinion with syntax.</p>
+<p>Finally, keep scripts with their evidence. Store the script beside the data it
+processed and note the date and source of both — the calculation, its inputs, and its
+result then travel as one reviewable package. Months later, when a result is questioned,
+the answer is a rerun rather than an archaeology project; and when the data changes, the
+same package regenerates every downstream number identically. That closed loop — data,
+script, result, rerunnable — is what engineering computing means by an audit trail.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Order-of-magnitude sense</b> (Math I) — the sanity screen for every output.</li>
+<li><b>Unit discipline</b> (Math I, Physics I) — now encoded in variable names.</li>
+<li><b>No prior programming</b> — the course starts from zero, honestly.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Script</td><td>statements in a file, run top to bottom</td><td>The durable, auditable form of a calculation.</td></tr>
+<tr><td>REPL</td><td>type a line, see the result</td><td>Trying ideas; never the final home of real work.</td></tr>
+<tr><td>Variable</td><td>\( \texttt{name = value} \)</td><td>Named storage; put the unit in the name: \( \texttt{head\_m} \).</td></tr>
+<tr><td>Operators</td><td>\( \texttt{+ - * / // \%\ **} \)</td><td>\( \texttt{/} \) gives decimals; \( \texttt{//} \) floors; \( \texttt{**} \) powers.</td></tr>
+<tr><td>print with f-string</td><td>\( \texttt{f"P = \{p:.1f\} kW"} \)</td><td>Output that states value, precision, and unit together.</td></tr>
+<tr><td>Comment</td><td>\( \texttt{\#} \) to end of line</td><td>The why beside the what; assumptions on the record.</td></tr>
+<tr><td>Hand-check rule</td><td>script vs worked case</td><td>No script is trusted before it reproduces a known answer.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Trace the pump-power script</b></p>
+<p><b>Problem.</b> Trace this script and state its output:</p>
+<pre><code>rho = 1000        # kg/m3
+g = 9.81          # m/s2
+flow_m3h = 100
+head_m = 30
+eta = 0.70
+Q = flow_m3h / 3600
+P = rho * g * Q * head_m / eta
+print(f"shaft power = {P/1000:.1f} kW")</code></pre><div class="soln"><p><b>Solution.</b> (1) \( Q = 100/3600 = 0.02778\ \mathrm{m^3/s} \).
+(2) \( P = 1000 \times 9.81 \times 0.02778 \times 30 / 0.70 = 11{,}679\ \mathrm{W} \).
+(3) Output: <code>shaft power = 11.7 kW</code>.</p>
+<p><b>Answer:</b> 11.7 kW.
+<b>Sanity check:</b> this is the exact calculation the mathematics course verified by hand — hydraulic 8.2 kW, divided by 0.7. The script is that envelope, kept: change the flow tomorrow and the identical logic reruns, which is the entire argument of §1.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>A conversion worth scripting</b></p>
+<p><b>Problem.</b> Write (and trace for 6.0 barg) a script converting gauge pressure in bar to absolute pressure in kPa: \( P_{abs} = P_{gauge} \times 100 + 101.325 \).</p><div class="soln"><p><b>Solution.</b> (1) <code>p_barg = 6.0</code>; <code>p_kpa_abs = p_barg * 100 + 101.325</code>; <code>print(f"{p_kpa_abs:.1f} kPa abs")</code>.
+(2) Trace: \( 6.0 \times 100 + 101.325 = 701.3\ \mathrm{kPa\ abs} \).</p>
+<p><b>Answer:</b> 701.3 kPa absolute.
+<b>Sanity check:</b> the gauge trap from the mathematics course, now armored in code: the script's NAME says barg in and kPa-absolute out, so the assumption travels with the calculation — which is precisely what a cell formula never tells its reader.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>The running-cost one-liner</b></p>
+<p><b>Problem.</b> A 15 kW machine runs 16 h/day at an energy price of 0.045 per kWh. Script the daily cost and trace it.</p><div class="soln"><p><b>Solution.</b> (1) <code>cost = 15 * 16 * 0.045</code>.
+(2) \( 15 \times 16 = 240\ \mathrm{kWh/day} \); \( 240 \times 0.045 = 10.8 \) per day.</p>
+<p><b>Answer:</b> 10.8 currency units per day — ≈3,940 per year of continuous duty.
+<b>Sanity check:</b> kW times hours gives kWh (energy), times price-per-kWh gives money — the units chain cleanly, and the annualized figure (×365) is the number that turns a motor-efficiency conversation into a business case. Three inputs, one line, permanent tool.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>The decisive advantage of a script over a spreadsheet for a recurring engineering calculation is:</p><ol class="opts"><li class="opt correct">The logic is visible, reviewable, and reruns identically on new data ✓</li><li class="opt">Scripts cannot contain errors</li><li class="opt">Scripts run faster, which is what matters</li><li class="opt">Spreadsheets cannot do arithmetic</li></ol><div class="soln"><p>Auditability and repeatability are the engineering virtues: every step readable top to bottom, every rerun identical. Scripts absolutely can contain errors — the hand-check rule exists because of it; speed rarely matters at calculation scale; and spreadsheets compute fine — they just hide the logic in cells where reviewers cannot see it whole.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>In Python, <code>7 // 2</code> evaluates to:</p><ol class="opts"><li class="opt correct">3 ✓</li><li class="opt">3.5</li><li class="opt">4</li><li class="opt">1</li></ol><div class="soln"><p><code>//</code> is floor division: divide and discard the remainder — 3. Plain <code>/</code> gives 3.5 (always a float); rounding UP would give 4 (that's <code>math.ceil</code>); 1 is the REMAINDER, delivered by <code>%</code>. The three operators split the division jobs among themselves, and mixing them up is the first classic Python slip.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p><code>print(2 ** 3)</code> outputs:</p><ol class="opts"><li class="opt correct">8 ✓</li><li class="opt">6</li><li class="opt">9</li><li class="opt">23</li></ol><div class="soln"><p><code>**</code> is exponentiation: \( 2^3 = 8 \). The caret <code>^</code> — which many calculators use — means something entirely different in Python (bitwise XOR), and <code>2^3</code> would print 1: a legal expression computing the wrong thing silently, which is exactly the kind of error the hand-check rule is designed to catch.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>The best variable name for a flow reading of 100 m³/h is:</p><ol class="opts"><li class="opt correct"><code>flow_m3h</code> ✓</li><li class="opt"><code>f</code></li><li class="opt"><code>x1</code></li><li class="opt"><code>data</code></li></ol><div class="soln"><p>The unit rides in the name, so every later line that touches it knows what it holds — the script equivalent of the mathematics course's unit discipline. Single letters and generic names create the bar-versus-kPa ambiguities that sink calculations; six months later, <code>flow_m3h</code> still explains itself and <code>x1</code> explains nothing.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Before a new calculation script is trusted, it should first:</p><ol class="opts"><li class="opt correct">Reproduce a case already verified by hand ✓</li><li class="opt">Be run many times</li><li class="opt">Be converted to a spreadsheet</li><li class="opt">Print without error messages</li></ol><div class="soln"><p>Running without errors proves only that the syntax is legal — a script can be fluently, confidently wrong. The hand-checked case pins the LOGIC: if the script reproduces a known answer, its machinery is sound and may be pointed at unknown cases. Repetition of an unverified script just repeats the doubt. This is the platform's own machine-verification habit, handed to you.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 02 · Variables, types, and expressions</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Types: what a value is</h3>
+<p>Every value in Python has a type, and the type decides what operations mean. Mechanics
+uses four constantly: <em>int</em> — whole numbers, exact; <em>float</em> — decimals,
+approximate by nature; <em>str</em> — text, including text that LOOKS like a number; and
+<em>bool</em> — True or False, the currency of decisions. The classic trap sits between str
+and float: data arrives from files and instruments as text, and <code>"42.5"</code> will
+not do arithmetic — <code>"42.5" * 2</code> is not 85. Conversion is explicit:
+<code>float("42.5")</code> crosses the border, and crossing it consciously is the habit.</p>
+<h3>§2 · Floats tell the truth approximately</h3>
+<p>A float is a binary approximation of a decimal number, and the approximation shows:
+\( 0.1 + 0.2 \) is not exactly \( 0.3 \) in a computer, and testing equality between
+computed floats fails unpredictably. The professional pattern is the tolerance test —
+\( \texttt{abs(a - b) < 1e-9} \) — precisely the pattern every quiz verifier on this
+platform uses. Roundoff also accumulates: sum a million small floats and the last digits
+drift. None of this is a defect to fix; it is a property to respect, the numerical
+equivalent of instrument uncertainty.</p>
+<h3>§3 · Presenting numbers like an engineer</h3>
+<p>Computed values arrive with fifteen digits; engineering answers carry units and honest
+precision. The f-string is the tool: <code>f"{p/1000:.2f} kW"</code> renders 8175 W as
+\( \texttt{8.18 kW} \) — converted, rounded, and labeled in one expression. Precision in
+the format is a claim about accuracy, exactly as significant figures were in the physics
+course: print three decimals only if the calculation deserves them. The output line of a
+script is its public face; make it state value, precision, and unit together, every
+time.</p>
+<h3>§4 · The type-discipline working method</h3>
+<p>Treat every value's type as consciously as its unit. At the borders of the script —
+reading files, taking input — convert text to numbers explicitly and immediately, so the
+interior works entirely in numeric types. Compare floats only with tolerances; reserve
+equality for ints and strings. Name booleans as assertions — <code>is_running</code>,
+<code>above_alarm</code> — so conditions read as sentences. And when a result looks
+absurd, check types before logic: half the beginner's "impossible" outputs are a string
+where a number belonged, silently concatenated instead of added. The interpreter always
+does exactly what the types tell it to; the working method is making sure that is also
+what you meant.</p>
+<p>Keep the int/float division of labor deliberate as well. Counts, indices, and loop
+variables are integers by nature — a plant has 14 pumps, never 14.0 — while every measured
+quantity is a float carrying its approximation honestly. Mixing them is legal (Python
+promotes to float), but REPORTING a count as a decimal reads as sloppiness, and rounding a
+float into an index without deciding between truncation and rounding is how off-by-one
+errors are born. When precision genuinely matters — currency totals, long accumulations —
+know that specialized decimal types exist and that the ordinary float is a measuring
+instrument, not a ledger. For this course's engineering arithmetic, floats with tolerance
+comparisons and honest formatting carry every calculation; the discipline is knowing which
+type each value IS, the same way the physics course always knew each quantity's unit — a
+habit checked once per variable and repaid on every line after.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The script skeleton</b> (Lesson 1) — inputs, computation, labeled output.</li>
+<li><b>Significant figures</b> (Physics I) — precision as an honesty claim.</li>
+<li><b>Tolerance thinking</b> (Math I) — approximation with stated error.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>int / float</td><td>exact whole vs approximate decimal</td><td>Counts are ints; measurements are floats.</td></tr>
+<tr><td>str</td><td>text, even when it looks numeric</td><td>File and instrument data arrives as str — convert at the border.</td></tr>
+<tr><td>bool</td><td>True / False</td><td>Decision currency; name them as assertions.</td></tr>
+<tr><td>Conversion</td><td>\( \texttt{float("42.5")},\ \texttt{int(x)} \)</td><td>Explicit border crossings; int() truncates toward zero.</td></tr>
+<tr><td>Float comparison</td><td>\( \texttt{abs(a-b) < tol} \)</td><td>Never == between computed floats.</td></tr>
+<tr><td>f-string</td><td>\( \texttt{f"\{v:.2f\} kW"} \)</td><td>Value, precision, and unit in one expression.</td></tr>
+<tr><td>Roundoff</td><td>binary approximation drift</td><td>Respected like instrument uncertainty, not 'fixed'.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>The equality that fails</b></p>
+<p><b>Problem.</b> Predict the output of both lines, and write the correct comparison:</p>
+<pre><code>print(0.1 + 0.2 == 0.3)
+print(abs((0.1 + 0.2) - 0.3) < 1e-9)</code></pre><div class="soln"><p><b>Solution.</b> (1) First line: <code>False</code> — in binary, 0.1 and 0.2 are repeating fractions; their sum is 0.30000000000000004.
+(2) Second line: <code>True</code> — the difference (≈\( 5.5\times10^{-17} \)) is far inside the \( 10^{-9} \) tolerance.
+(3) The tolerance test IS the correct float comparison.</p>
+<p><b>Answer:</b> False, then True.
+<b>Sanity check:</b> this is not a Python defect — every binary floating-point system on earth does it. Engineering already knows the answer: no two measured values are ever "equal" either, only equal within tolerance; the code pattern just says so explicitly.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Crossing the text border</b></p>
+<p><b>Problem.</b> A level reading arrives from a file as the text <code>"42.5"</code>. Show what <code>"42.5" * 2</code> produces, and script the correct doubling.</p><div class="soln"><p><b>Solution.</b> (1) <code>"42.5" * 2</code> → <code>"42.542.5"</code> — string repetition, perfectly legal, silently wrong.
+(2) Correct: <code>reading = float("42.5")</code>; <code>doubled = reading * 2</code> → 85.0.</p>
+<p><b>Answer:</b> text repetition vs the numeric 85.0 — the conversion makes the difference.
+<b>Sanity check:</b> the wrong version raises no error at all — the type system did exactly what strings do. Every file-reading script in this course will convert at the border for exactly this reason; the habit costs one function call and prevents the silent classic.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Publishing a result properly</b></p>
+<p><b>Problem.</b> A script computes <code>p = 8175</code> (watts). Write the output line that reports it in kW to two decimals with its unit — and state exactly what prints.</p><div class="soln"><p><b>Solution.</b> (1) <code>print(f"shaft power = {p/1000:.2f} kW")</code>.
+(2) \( 8175/1000 = 8.175 \); format \( \texttt{.2f} \) rounds to two decimals.
+(3) Prints: <code>shaft power = 8.18 kW</code>.</p>
+<p><b>Answer:</b> <code>shaft power = 8.18 kW</code>.
+<b>Sanity check:</b> conversion, rounding, and labeling happened in ONE expression — nothing was stored rounded (the full 8175 remains available for further computation), which is the right division of labor: full precision inside, honest precision at the interface.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p><code>type("3.14")</code> reports:</p><ol class="opts"><li class="opt correct">str ✓</li><li class="opt">float</li><li class="opt">int</li><li class="opt">bool</li></ol><div class="soln"><p>Quotes make it text, whatever it resembles: <code>"3.14"</code> is a string of four characters. It becomes a number only through explicit conversion — <code>float("3.14")</code>. Instrument logs, CSV files, and user input all deliver strings; treating them as numbers without conversion is the most common silent error in beginner data scripts.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p><code>int(7.9)</code> evaluates to:</p><ol class="opts"><li class="opt correct">7 ✓</li><li class="opt">8</li><li class="opt">7.9</li><li class="opt">An error</li></ol><div class="soln"><p><code>int()</code> truncates toward zero — it drops the fraction, it does not round: 7. Rounding is a different, explicit request: <code>round(7.9)</code> gives 8. The distinction bites in bin-counting and indexing arithmetic, where a truncation assumed to be a rounding shifts everything by one. Choose the operation by name, not by hope.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Which comparison between two COMPUTED float values is professionally correct?</p><ol class="opts"><li class="opt correct"><code>abs(a - b) < 1e-9</code> ✓</li><li class="opt"><code>a == b</code></li><li class="opt"><code>str(a) == str(b)</code></li><li class="opt"><code>a is b</code></li></ol><div class="soln"><p>Computed floats carry binary roundoff, so equality is a coin toss; the tolerance test states how close is close enough — an engineering judgment made explicit. String comparison inherits the same digits problem in costume, and <code>is</code> tests object identity, a different concept entirely. Every verifier on this platform uses the tolerance pattern; now you know why.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p><code>10 / 4</code> evaluates to:</p><ol class="opts"><li class="opt correct">2.5 ✓</li><li class="opt">2</li><li class="opt">3</li><li class="opt">2.25</li></ol><div class="soln"><p>Single slash is TRUE division and always returns a float: 2.5. Floor division <code>10 // 4</code> gives 2. (Older languages divided integers integrally, and imported habits from them cause exactly this surprise in reverse.) Knowing which division you asked for is part of type discipline — the operators are unambiguous even when memory isn't.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>A boolean variable controlling an alarm branch is best named:</p><ol class="opts"><li class="opt correct"><code>above_alarm</code> ✓</li><li class="opt"><code>x</code></li><li class="opt"><code>value2</code></li><li class="opt"><code>temp</code></li></ol><div class="soln"><p>Booleans are assertions, and naming them as assertions makes conditions read as sentences: <code>if above_alarm:</code> needs no comment. Generic names force every reader back up the script to discover what is being tested. (<code>temp</code> is doubly cursed — ambiguous between 'temporary' and 'temperature'.) Readable conditions are cheap insurance in any script an auditor may one day read.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 03 · Control flow</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Decisions: if, elif, else</h3>
+<p>Programs earn their keep when behavior depends on data, and the instrument is the
+conditional. An <code>if</code> tests a boolean expression; <code>elif</code> chains
+further tests in order; <code>else</code> catches the remainder. Order matters and is a
+design decision: an alarm classifier tests the most severe threshold first, so a reading of
+95 °C reports "trip" rather than the also-true "warning". Comparisons
+(\( \texttt{< <= == >= >} \)) and the boolean connectives (\( \texttt{and, or, not} \))
+compose the tests; indentation — four spaces — is not decoration but syntax, defining
+exactly which lines each branch owns.</p>
+<h3>§2 · Repetition: for and while</h3>
+<p>The <code>for</code> loop walks a known collection — every reading in a list, every
+line in a file, every integer in <code>range(n)</code> (which yields 0 through
+\( n-1 \)) — and is the workhorse of data processing: initialize an accumulator, add
+each item, report. The <code>while</code> loop repeats as long as a condition holds and
+serves the open-ended questions: keep compounding the filter's pressure drop until it
+crosses the alarm line, and report how many weeks that took. Choose by the question's
+shape — known collection, <code>for</code>; unknown horizon, <code>while</code> — and give
+every <code>while</code> a guaranteed exit, because a condition that never turns false
+runs forever.</p>
+<h3>§3 · Guard clauses: refusing bad input early</h3>
+<p>Real calculations meet impossible inputs — negative flows, zero efficiencies, text where
+numbers belong — and the professional pattern rejects them at the door:
+<code>if eta <= 0: raise ValueError("efficiency must be positive")</code>. The guard
+clause converts a silent wrong answer into a loud, named failure at the exact line where
+the assumption broke. The mathematics course called this domain discipline — functions
+have domains, and \( \eta = 0 \) is not in this one; the guard writes the domain into
+the code.</p>
+<h3>§4 · The control-flow working method</h3>
+<p>Translate procedures the way you would explain them aloud. Write the decision table
+first — conditions in severity order, outcomes named — then transcribe it as an
+if/elif/else chain and test EVERY branch once, including the else. For loops, name the
+accumulator for what it accumulates (<code>total_kwh</code>, not <code>s</code>),
+initialize it visibly, and hand-trace the first two iterations on paper before trusting a
+thousand — the two-minute trace that catches off-by-one and wrong-order errors while they
+are still cheap. Guard first, compute second, report third: scripts organized in that
+order read as procedures, fail loudly at their borders, and hold up when the data turns
+hostile, which production data always eventually does.</p>
+<p>Two loop hygienes complete the method. Keep the loop body honest about what it touches —
+a loop that both accumulates a total AND mutates the list it walks is two jobs tangled, and
+tangled jobs breed the subtle bugs; split them. And when a while-loop's exit depends on a
+computed quantity, add a hard iteration cap as a guard — <code>if weeks > 1000: raise
+RuntimeError(...)</code> — so a modeling mistake produces a named failure in milliseconds
+instead of a silent forever. Loops are where scripts spend their lives; discipline there
+is discipline everywhere.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Booleans and comparisons</b> (Lesson 2) — conditions are boolean expressions.</li>
+<li><b>The exponential model</b> (Math I) — today's while-loop example compounds it.</li>
+<li><b>Named variables</b> (Lesson 1) — accumulators with honest names.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>if / elif / else</td><td>first true branch wins</td><td>Decision chains; order encodes priority.</td></tr>
+<tr><td>Comparison operators</td><td>\( \texttt{< <= == >= > !=} \)</td><td>The tests; == compares, = assigns — never confuse them.</td></tr>
+<tr><td>for loop</td><td>\( \texttt{for x in collection:} \)</td><td>Known collections: readings, lines, range(n) = 0…n−1.</td></tr>
+<tr><td>while loop</td><td>\( \texttt{while condition:} \)</td><td>Unknown horizons — with a guaranteed exit.</td></tr>
+<tr><td>Accumulator pattern</td><td>init, add per item, report</td><td>Totals, counts, maxima across any dataset.</td></tr>
+<tr><td>Guard clause</td><td>\( \texttt{if bad: raise ValueError(...)} \)</td><td>Reject impossible inputs loudly, at the border.</td></tr>
+<tr><td>break</td><td>exit the loop now</td><td>Early exit when the answer is found.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Trace the alarm classifier</b></p>
+<p><b>Problem.</b> Trace this classifier for readings of 85, then 96 (°C):</p>
+<pre><code>if t >= 95:
+    level = "TRIP"
+elif t >= 80:
+    level = "ALARM"
+elif t >= 70:
+    level = "WARNING"
+else:
+    level = "NORMAL"</code></pre><div class="soln"><p><b>Solution.</b> (1) t = 85: the 95-test fails, the 80-test passes → <code>"ALARM"</code>; the 70-test is never reached.
+(2) t = 96: the FIRST test passes → <code>"TRIP"</code>, chain exits immediately.</p>
+<p><b>Answer:</b> 85 → ALARM; 96 → TRIP.
+<b>Sanity check:</b> reverse the order — test 70 first — and a 96 °C reading would report "WARNING", since 96 ≥ 70 is also true and the first true branch wins. Severity-descending order is not style; it is the logic. This is why the working method writes the decision table before the code.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>The accumulator, traced</b></p>
+<p><b>Problem.</b> Trace the total across the loop:</p>
+<pre><code>readings = [4, 7, 2, 9]
+total = 0
+for r in readings:
+    total = total + r</code></pre><div class="soln"><p><b>Solution.</b> (1) total starts 0.
+(2) After each pass: 0+4=4; 4+7=11; 11+2=13; 13+9=22.
+(3) Final: <code>total = 22</code>.</p>
+<p><b>Answer:</b> 22.
+<b>Sanity check:</b> hand-tracing the first two iterations (4, then 11) is the working method's cheap audit — if those match expectation, the pattern is sound for four items or four million. Forgetting the initialization line, the classic slip, would crash on the first pass rather than silently corrupt: Python's favor to beginners.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>How many weeks to the alarm?</b></p>
+<p><b>Problem.</b> A filter's ΔP starts at 0.30 bar and compounds 5% weekly; the alarm is 0.60 bar. Write the while loop that counts the weeks, and state its result.</p><div class="soln"><p><b>Solution.</b> (1) <code>dp = 0.30; weeks = 0</code>
+<code>while dp &lt; 0.60:</code>
+<code>    weeks += 1</code>
+<code>    dp = 0.30 * 1.05 ** weeks</code>
+(2) Week 14: \( 0.30 \times 1.05^{14} = 0.594 \) — still under. Week 15: \( 0.624 \) — crossed.
+(3) Result: <code>weeks = 15</code>.</p>
+<p><b>Answer:</b> 15 weeks.
+<b>Sanity check:</b> the mathematics course's logarithm gave 14.2 weeks for the exact crossing — the loop answers the OPERATIONAL question (first whole week past the line), hence 15. Same physics, two honest answers to two subtly different questions; knowing which one you asked is the engineering.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p><code>range(5)</code> iterates over:</p><ol class="opts"><li class="opt correct">0, 1, 2, 3, 4 ✓</li><li class="opt">1, 2, 3, 4, 5</li><li class="opt">0, 1, 2, 3, 4, 5</li><li class="opt">5 copies of nothing</li></ol><div class="soln"><p>range(n) starts at 0 and stops BEFORE n: five values, 0 through 4. The zero-start convention aligns with list indexing (Lesson 6) so <code>range(len(data))</code> walks every index — and the off-by-one instincts imported from 1-counting are the classic loop bug this fact retires. When 1 through 5 is genuinely wanted: <code>range(1, 6)</code>.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>The difference between <code>=</code> and <code>==</code> is:</p><ol class="opts"><li class="opt correct">Assignment versus comparison ✓</li><li class="opt">They are interchangeable</li><li class="opt">== is for numbers only</li><li class="opt">= compares, == assigns</li></ol><div class="soln"><p><code>x = 5</code> stores; <code>x == 5</code> asks. Python refuses plain assignment inside an if-condition, converting the classic typo into a visible syntax error — a kindness not all languages extend. Reading them aloud differently ('gets' versus 'equals') keeps the two straight in review, where the eye alone glides past a single missing character.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A guard clause like <code>if eta <= 0: raise ValueError(...)</code> exists to:</p><ol class="opts"><li class="opt correct">Turn an impossible input into a loud, located failure instead of a silent wrong answer ✓</li><li class="opt">Speed up the calculation</li><li class="opt">Handle only user typos</li><li class="opt">Avoid writing an else branch</li></ol><div class="soln"><p>Fed η = 0, the unguarded script divides by zero somewhere downstream — or worse, a negative η produces a plausible-looking negative power that travels into a report. The guard names the broken assumption at the exact border where it entered. It is the code form of a domain statement, and auditors read guards as the script's declared operating envelope.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>After <code>total = 0</code> and <code>for i in range(3): total += i</code>, total equals:</p><ol class="opts"><li class="opt correct">3 ✓</li><li class="opt">6</li><li class="opt">5</li><li class="opt">0</li></ol><div class="soln"><p>The loop adds 0, 1, 2 — sum 3. Answering 6 adds 1+2+3, the off-by-one imported from 1-counting; range's zero-start (previous question) decides it. The two-iteration hand trace — total: 0, then 1, then 3 — settles such questions in seconds, which is why the working method makes it a reflex before any loop is trusted at scale.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Inside a loop scanning readings for the first value above a limit, the statement that exits immediately upon finding it is:</p><ol class="opts"><li class="opt correct">break ✓</li><li class="opt">stop</li><li class="opt">exit the interpreter</li><li class="opt">else</li></ol><div class="soln"><p><code>break</code> leaves the loop at once — the found-it exit that saves scanning the rest. (<code>continue</code>, its sibling, skips to the next iteration instead.) There is no <code>stop</code>; killing the interpreter to end a loop is surgery with a hammer. Early exits also document intent: a reader sees the loop is a SEARCH, not a full sweep.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 04 · Functions</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Functions: calculations with names</h3>
+<p>A function packages a calculation behind a name and an interface:
+<code>def shaft_power(q_m3s, head_m, eta=0.7):</code> declares what goes in,
+<code>return</code> declares what comes out, and everything between is the calculation,
+written once and reused forever. The docstring — a quoted paragraph directly under the
+def — states what the function does AND its units, which turns the function into a
+self-documenting engineering tool: <code>help(shaft_power)</code> answers the reviewer
+before the reviewer asks. Default arguments (the <code>eta=0.7</code>) encode the usual
+case while keeping the unusual case one keyword away.</p>
+<h3>§2 · Return, not print</h3>
+<p>A function that PRINTS its result has spent it; a function that RETURNS it hands the
+value to the caller for further use — feeding the next calculation, a comparison, a plot,
+a test. Printing is presentation, the script's outer layer; returning is plumbing, the
+composable interior. The distinction becomes visible the first time you try to use a
+printed result in arithmetic and find you hold <code>None</code>. Compose functions the
+way the chain rule composed rates: small functions, each doing one nameable thing, wired
+by their returns — \( \texttt{gap(c\_to\_k(90), c\_to\_k(30))} \) reads like the
+sentence it implements.</p>
+<h3>§3 · Scope: what happens in a function stays there</h3>
+<p>Variables born inside a function are local: invisible outside, gone when the call ends.
+This is a feature — ten functions can each use <code>x</code> without collision — and a
+discipline: a function should receive what it needs as arguments and deliver what it
+produces as returns, never reaching sideways into the script's globals. Functions written
+that way are testable in isolation, which is exactly how the next lesson will test
+them.</p>
+<h3>§4 · The function-design working method</h3>
+<p>Extract a function whenever a calculation is used twice, or once but nameable. Name it
+by what it returns (<code>hydraulic_power_w</code>), carry units in parameter names, and
+write the docstring FIRST — if you cannot state the contract in a sentence, the function
+is not yet one thing. Keep functions small enough to hand-verify: one formula, one
+decision, one transformation each. Then apply Lesson 1's rule at the function scale:
+every function meets a hand-checked case before it is trusted, and the check lives beside
+the function as next lesson's assertion. A personal library of such functions — built,
+checked, and reused across this course — is the deliverable this working method is
+quietly assembling.</p>
+<p>Resist the two classic function pathologies while the habits are forming. The
+do-everything function — read the file, convert the units, compute the power, print the
+report — cannot be tested except by running the world; split it at every nameable seam and
+each piece becomes checkable alone. And the copy-paste twin — the same formula pasted in
+three places with one variable renamed — guarantees that a future correction reaches two
+of the three; extraction into one function makes the fix land everywhere by construction.
+Functions are the unit of reuse, of testing, and of trust: size them so all three work.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The script skeleton</b> (Lessons 1–3) — functions modularize it.</li>
+<li><b>Function notation</b> (Math I) — f(x) becomes def f(x):.</li>
+<li><b>Unit-bearing names</b> (Lesson 2) — now on parameters too.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>def / return</td><td>\( \texttt{def f(x): ... return y} \)</td><td>The named, reusable calculation with a declared interface.</td></tr>
+<tr><td>Docstring</td><td>contract + units, under the def</td><td>The function's datasheet; help() reads it back.</td></tr>
+<tr><td>Default argument</td><td>\( \texttt{eta=0.7} \)</td><td>The usual case built in; override by keyword when unusual.</td></tr>
+<tr><td>Return vs print</td><td>plumbing vs presentation</td><td>Return feeds further computation; print spends the value.</td></tr>
+<tr><td>Local scope</td><td>inside variables die at return</td><td>Isolation that makes functions testable and reusable.</td></tr>
+<tr><td>Composition</td><td>\( \texttt{g(f(x))} \)</td><td>Small functions wired by returns — the chain rule's cousin.</td></tr>
+<tr><td>One-thing rule</td><td>one formula / decision per function</td><td>Small enough to hand-verify is small enough to trust.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Build and trace the power function</b></p>
+<p><b>Problem.</b> Trace the call <code>shaft_power(0.025, 25)</code>:</p>
+<pre><code>def shaft_power(q_m3s, head_m, eta=0.7):
+    """Shaft power in W for water. q in m3/s, head in m."""
+    p_hyd = 1000 * 9.81 * q_m3s * head_m
+    return p_hyd / eta</code></pre><div class="soln"><p><b>Solution.</b> (1) \( p_{hyd} = 1000 \times 9.81 \times 0.025 \times 25 = 6131\ \mathrm{W} \).
+(2) η defaults to 0.7: \( 6131/0.7 = 8759\ \mathrm{W} \).
+(3) Returns ≈8.76 kW (the value — nothing prints unless the caller prints).</p>
+<p><b>Answer:</b> ≈8759 W returned.
+<b>Sanity check:</b> the default carried the usual efficiency silently; a stiffer pump calls <code>shaft_power(0.025, 25, eta=0.8)</code> → 7664 W. One function now serves every pump problem this course has computed by hand — which is precisely the point of writing it.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Three statistics, one return</b></p>
+<p><b>Problem.</b> Write a function returning the minimum, maximum, and mean of a list, and trace it on <code>[3, 9, 6]</code>.</p><div class="soln"><p><b>Solution.</b> (1) <code>def stats(xs):</code>
+<code>    return min(xs), max(xs), sum(xs)/len(xs)</code>
+(2) Trace: min 3, max 9, mean \( 18/3 = 6.0 \).
+(3) Caller unpacks: <code>lo, hi, avg = stats(readings)</code>.</p>
+<p><b>Answer:</b> \( (3,\ 9,\ 6.0) \).
+<b>Sanity check:</b> the mean lies between min and max — the free ordering audit every statistics return should pass; and returning the tuple (rather than printing three lines) leaves the caller free to alarm on <code>hi</code>, trend <code>avg</code>, or ignore <code>lo</code>: plumbing, not presentation.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Composed conversions</b></p>
+<p><b>Problem.</b> Given <code>def c_to_k(t_c): return t_c + 273.15</code> and <code>def gap(a, b): return a - b</code>, trace <code>gap(c_to_k(90), c_to_k(30))</code> and comment on the design.</p><div class="soln"><p><b>Solution.</b> (1) Inner calls first: \( 90 + 273.15 = 363.15 \); \( 30 + 273.15 = 303.15 \).
+(2) <code>gap(363.15, 303.15)</code> → 60.0 K.</p>
+<p><b>Answer:</b> 60.0 K.
+<b>Sanity check:</b> a temperature DIFFERENCE is identical in °C and K — the offsets cancel, and the composition proves it numerically. Two tiny, individually verifiable functions composed by returns produced a correct result neither prints: composition is how small trusted pieces build large trusted calculations.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A function's docstring should state, at minimum:</p><ol class="opts"><li class="opt correct">What it computes and the units of inputs and output ✓</li><li class="opt">The author's name</li><li class="opt">The date it was written</li><li class="opt">Nothing — code documents itself</li></ol><div class="soln"><p>The docstring is the function's datasheet: contract plus units, readable via help() without opening the source. Authorship and dates belong to version control, which tracks them automatically. 'Self-documenting code' covers WHAT lines do, never which unit a parameter expects — and unit ambiguity, as ever, is the error that costs the most and announces itself the least.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>A function that prints its result instead of returning it:</p><ol class="opts"><li class="opt correct">Cannot feed its value into further computation ✓</li><li class="opt">Is faster</li><li class="opt">Is equivalent in every way</li><li class="opt">Uses less memory</li></ol><div class="soln"><p>Printing sends characters to the screen and returns <code>None</code> — try arithmetic on it and the error arrives one line later, mystifying beginners. Returning hands the caller a value to compute with, test, or print AT THE EDGE of the script. The rule of thumb: functions return; the script's last lines print. Everything composable follows from it.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A variable created inside a function is, outside the function:</p><ol class="opts"><li class="opt correct">Invisible — it exists only during the call ✓</li><li class="opt">Available globally</li><li class="opt">Available if the names match</li><li class="opt">Zero</li></ol><div class="soln"><p>Local scope: born at the call, gone at the return. This isolation is what lets ten functions use <code>x</code> without collision, and what makes each testable alone. Needing a function's inner value outside is the signal to RETURN it — reaching in (or leaking globals out) couples everything to everything, and coupled scripts break in sympathy.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>With <code>def f(x): return x * x</code>, the value of <code>f(f(2))</code> is:</p><ol class="opts"><li class="opt correct">16 ✓</li><li class="opt">8</li><li class="opt">4</li><li class="opt">2</li></ol><div class="soln"><p>Inside-out: f(2) = 4, then f(4) = 16. Composition evaluates inner calls first — exactly the chain-rule reading order from the mathematics course. Answering 8 computes \( 2^3 \), a different composition; 4 stops after one call. Tracing nested calls inner-first is a two-second discipline that scales to arbitrarily deep pipelines.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>In <code>def shaft_power(q_m3s, head_m, eta=0.7)</code>, the <code>eta=0.7</code> means:</p><ol class="opts"><li class="opt correct">Callers may omit eta and get 0.7; or pass their own ✓</li><li class="opt">Eta can never change</li><li class="opt">Eta must always be supplied as 0.7</li><li class="opt">The function only works at 70% efficiency</li></ol><div class="soln"><p>A default argument encodes the usual case without forbidding the unusual: <code>shaft_power(q, h)</code> uses 0.7; <code>shaft_power(q, h, eta=0.82)</code> overrides it. Defaults document typical practice right in the signature — and keep call sites short where the typical applies. The pattern recurs across every engineering library you will ever import.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 05 · Testing and debugging engineering code</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Why engineers test code</h3>
+<p>This platform machine-verifies every numeric answer before publishing it; this lesson
+hands you the same discipline for your own scripts. A test is a claim made executable:
+run the function on a case whose answer you know, and let the computer confirm agreement —
+today, tomorrow, and after every future edit. Untested code decays silently: an innocent
+change to one line shifts a result three functions away, and without tests nobody notices
+until the wrong number is in a report. With tests, the same mistake fails loudly in
+seconds, at your desk, before it costs anything.</p>
+<h3>§2 · The assertion: a claim with teeth</h3>
+<p>The core tool is one statement: <code>assert condition, "message"</code> — silent when
+the condition holds, a named failure when it breaks. For engineering functions the pattern
+is the tolerance form from Lesson 2:
+<code>assert abs(area_m2(0.1) - 0.007854) &lt; 1e-6</code> — the hand-checked case
+(a 100 mm circle's \( \pi d^2/4 \)) pinned beside the function it certifies. Three or
+four assertions per function — a typical case, an edge (zero, the domain boundary), and a
+case exercising each branch — form a small permanent test suite that reruns in
+milliseconds. The habit converts "I checked it once when I wrote it" into "it is
+checked on every run", which is the difference between a memory and a guarantee.</p>
+<h3>§3 · Exceptions and honest failure</h3>
+<p>Guard clauses (Lesson 3) raise exceptions at broken assumptions; testing meets them
+from the other side. A function fed garbage should fail LOUDLY — <code>ValueError</code>
+with a message naming the violated assumption — never return a plausible wrong number.
+Debugging itself is hypothesis testing, the scientific method at a keyboard: reproduce the
+failure with the smallest possible input, form a hypothesis about the earliest wrong
+value, place a print or assertion just before the suspect line, and bisect until the bug
+has nowhere to hide. Staring is not a method; bisection is.</p>
+<h3>§4 · The verification working method</h3>
+<p>Adopt the platform's own pipeline at personal scale. Write the function; write its
+hand-checked case as an assertion immediately — while the paper calculation is still on
+the desk; add the edge-case and branch assertions; keep the whole block at the bottom of
+the file or in a test script, and run it after EVERY change. When a bug surfaces in use,
+its fix begins by writing the failing case as a new assertion — so the same bug can never
+return unannounced. And respect the honest limit: tests prove the presence of agreement
+with your checked cases, not the absence of all error — which is precisely why the cases
+are chosen with engineering judgment: the typical, the extreme, and the branch nobody
+believes will ever run. That judgment is the engineering; the assertions merely keep it
+enforced. A dozen well-chosen assertions guarding a personal library of checked functions
+is a small thing to maintain and a large thing to own: it is the difference between code
+you wrote and code you can vouch for.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Functions</b> (Lesson 4) — the unit under test.</li>
+<li><b>Tolerance comparison</b> (Lesson 2) — the float-safe assertion form.</li>
+<li><b>Guard clauses</b> (Lesson 3) — loud failure at broken assumptions.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>assert</td><td>\( \texttt{assert cond, "msg"} \)</td><td>A claim with teeth: silent if true, named failure if not.</td></tr>
+<tr><td>Tolerance assertion</td><td>\( \texttt{assert abs(f(x)-known) < tol} \)</td><td>The float-safe test against a hand-checked case.</td></tr>
+<tr><td>Edge case</td><td>zero, boundary, empty</td><td>Where functions break first; always among the test cases.</td></tr>
+<tr><td>ValueError</td><td>\( \texttt{raise ValueError(...)} \)</td><td>Refusing garbage loudly instead of returning plausible nonsense.</td></tr>
+<tr><td>Regression test</td><td>yesterday's bug as today's assertion</td><td>Fixed bugs stay fixed, by construction.</td></tr>
+<tr><td>Bisection debugging</td><td>halve the search each probe</td><td>Locating the earliest wrong value systematically.</td></tr>
+<tr><td>Test-first habit</td><td>assertion written with the function</td><td>While the hand-checked case is still on the desk.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Pin the area function</b></p>
+<p><b>Problem.</b> Given <code>def area_m2(d_m): return 3.14159 * d_m**2 / 4</code>, write the tolerance assertion pinning it to the hand-checked case d = 0.1 m, and state whether it passes.</p><div class="soln"><p><b>Solution.</b> (1) Hand check: \( A = \pi d^2/4 = \pi \times 0.01/4 = 0.007854\ \mathrm{m^2} \).
+(2) Assertion: <code>assert abs(area_m2(0.1) - 0.007854) &lt; 1e-6</code>.
+(3) The function's 5-digit π gives 0.0078540 — inside tolerance: PASSES.</p>
+<p><b>Answer:</b> the assertion passes; the function is pinned.
+<b>Sanity check:</b> the tolerance \( 10^{-6} \) was chosen to admit the 5-digit π but reject real errors — a factor-of-4 slip or a missing square lands orders of magnitude away. Tolerances are engineering judgments: tight enough to catch bugs, loose enough to ignore roundoff.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Find the bug by its units</b></p>
+<p><b>Problem.</b> This function claims to return lifting power in watts, but its test fails. Locate the bug and fix it:</p>
+<pre><code>def lift_power_w(mass_kg, height_m, time_s):
+    """Average power to lift mass through height in given time."""
+    return mass_kg * 9.81 * height_m
+
+assert abs(lift_power_w(400, 12, 60) - 784.8) < 0.1</code></pre><div class="soln"><p><b>Solution.</b> (1) The return line computes \( mgh \) — ENERGY (47,088 J), never dividing by time: the units are joules, not watts.
+(2) Fix: <code>return mass_kg * 9.81 * height_m / time_s</code>.
+(3) Check: \( 400 \times 9.81 \times 12/60 = 784.8\ \mathrm{W} \) — the assertion passes.</p>
+<p><b>Answer:</b> missing <code>/ time_s</code>; corrected, the test passes.
+<b>Sanity check:</b> the physics course's energy-versus-power distinction caught a software bug — the failing assertion pointed at it, and the unit audit named it. This is the standard rhythm: the test detects, the engineering diagnoses.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Guard, then prove the guard</b></p>
+<p><b>Problem.</b> Extend <code>shaft_power</code> with a guard against non-positive efficiency, and write the test that PROVES the guard fires.</p><div class="soln"><p><b>Solution.</b> (1) Guard: <code>if eta &lt;= 0: raise ValueError("eta must be positive")</code> as the function's first line.
+(2) Proving it: <code>try:</code> call with <code>eta=0</code>; if no exception arrives, <code>assert False, "guard did not fire"</code>; in the <code>except ValueError:</code> branch, pass.
+(3) Now BOTH behaviors are pinned: right answers for good input, loud refusal for bad.</p>
+<p><b>Answer:</b> guard + try/except test, both permanent.
+<b>Sanity check:</b> testing that failure HAPPENS feels odd once — then obvious: the guard is a promised behavior like any other, and an accidental deletion of it should fail the suite. Safety systems are tested by attempting what they must prevent; code guards earn the same respect.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>An assertion beside a function buys you, above a one-time manual check:</p><ol class="opts"><li class="opt correct">Automatic re-verification on every future run and edit ✓</li><li class="opt">Faster execution</li><li class="opt">Protection against all possible bugs</li><li class="opt">Shorter code</li></ol><div class="soln"><p>The manual check evaporates the moment it scrolls off screen; the assertion re-executes it forever — especially after edits, when yesterday's correctness is most quietly at risk. Tests never prove the absence of all error (the cases are finite), and they cost lines and microseconds — a spectacular exchange rate for the guarantee they do provide.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>The most valuable additional test cases for <code>flow_velocity(q, d)</code> beyond the typical case are:</p><ol class="opts"><li class="opt correct">Edge cases — zero flow, and the smallest/largest realistic diameter ✓</li><li class="opt">More typical cases with similar numbers</li><li class="opt">Random numbers</li><li class="opt">No more are needed</li></ol><div class="soln"><p>Functions break at their edges: zero triggers divisions and log domains, extremes expose unit and overflow assumptions. Five similar mid-range cases re-test the same path five times; edges test the paths that fail in production at 3 a.m. Random inputs without known answers verify nothing — a test needs an expected value to compare against.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Fed an impossible input, a professional calculation function should:</p><ol class="opts"><li class="opt correct">Raise a named exception explaining the violated assumption ✓</li><li class="opt">Return 0</li><li class="opt">Return its best guess</li><li class="opt">Print a warning and continue</li></ol><div class="soln"><p>A returned 0 or guess is a plausible number that travels — into comparisons, reports, decisions — with nothing marking it poisoned. The exception stops the pipeline at the exact border where the assumption broke, with a message naming it. Printed warnings scroll past unread in any automated run. Loud early failure is cheap; quiet wrong numbers compound.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>The systematic way to locate a bug in a 40-line calculation is:</p><ol class="opts"><li class="opt correct">Check intermediate values at the midpoint and bisect toward the earliest wrong one ✓</li><li class="opt">Reread the whole script repeatedly</li><li class="opt">Rewrite it from scratch</li><li class="opt">Add try/except around everything</li></ol><div class="soln"><p>Bisection: probe the middle — if values are right there, the bug is downstream; wrong, upstream. Each probe halves the search; 40 lines fall in ~6 probes. Rereading finds what you expect to see (which is how the bug survived writing); rewriting risks a new bug and loses the lesson; blanket try/except SILENCES failures — the opposite of locating them.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>After fixing a bug, the professional final step is:</p><ol class="opts"><li class="opt correct">Add the failing case as a permanent assertion ✓</li><li class="opt">Delete the evidence</li><li class="opt">Comment out the old code</li><li class="opt">Nothing — it's fixed</li></ol><div class="soln"><p>The regression test: the input that exposed the bug becomes a permanent claim, so the same failure can never return unannounced — including via some future 'improvement' that reintroduces it. Commented-out code is noise that rots; 'it's fixed' is true only until the next edit. Suites grow by exactly this route: every scar becomes armor.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 06 · Lists, dictionaries, and files</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Lists: ordered data with a name</h3>
+<p>Engineering data arrives in sequences — readings over a route, temperatures over a
+shift — and the list is Python's sequence: <code>readings = [2.1, 4.5, 3.2]</code>,
+ordered, indexable, growable. Indexing starts at ZERO — <code>readings[0]</code> is the
+first item — and negative indices count from the end, <code>readings[-1]</code> being the
+latest reading, an idiom worth owning immediately. Slices carve subranges
+(<code>readings[1:3]</code> yields items 1 and 2 — the stop index is excluded, mirroring
+range), <code>append</code> grows the list in place, and the built-ins <code>len, sum,
+min, max</code> answer the first questions any dataset is asked. The list comprehension
+compresses the transform loop to a phrase — <code>[x * 0.746 for x in hp_values]</code> —
+and reads like the sentence it implements.</p>
+<h3>§2 · Dictionaries: records with named fields</h3>
+<p>Where lists order items, dictionaries name them: <code>pump = {"tag": "P-101",
+"power_kw": 11.5}</code> is an equipment record whose fields are looked up by key —
+<code>pump["power_kw"]</code> — not by position. Adding a field is one assignment;
+asking whether one exists is <code>"tag" in pump</code>. The two structures compose into
+the universal data shape of plant work: a LIST of DICTIONARIES — one dict per equipment
+item, one list per fleet — which is exactly what a CSV file of records becomes the moment
+Python reads it.</p>
+<h3>§3 · Files: where real data lives</h3>
+<p>The CSV — comma-separated values, one record per line — is the lingua franca of every
+historian export, test-bench log, and maintenance system dump. Reading one is three
+idioms stacked: iterate the file line by line, <code>split(",")</code> each line into
+fields, and convert numeric fields with <code>float()</code> at the border, exactly as
+Lesson 2 demanded. The <code>with open(...) as f:</code> form opens the file and
+guarantees it closes. Everything after the read is Lessons 3–4: loops, accumulators, and
+functions, now fed by real data instead of typed constants.</p>
+<h3>§4 · The data-structure working method</h3>
+<p>Choose the structure by the question the data answers. Ordered measurements → list;
+named fields of one thing → dict; a fleet of records → list of dicts; and when you catch
+yourself tracking parallel lists (tags in one, powers in another), that is the signal the
+records want to be dicts. Convert types at the file border, never downstream. Trust the
+built-ins before writing loops — <code>sum, max, len</code> are tested code you did not
+have to write. And hand-trace list operations on a three-item example before applying
+them to thirty thousand rows, exactly as the loop lesson traced its accumulators: the
+small case proves the pattern, the large case merely repeats it.</p>
+<p>One caution as datasets grow: a structure choice made casually at three records
+becomes architecture at thirty thousand. The list-of-dicts shape scales gracefully
+because every operation this course teaches — loops, comprehensions, filters,
+summaries — walks it unchanged; ad-hoc shapes (nested lists of mixed meaning, parallel
+lists) accumulate special cases until the script is mostly exceptions. Choose the boring,
+regular shape early and the analysis lessons ahead inherit clean footing.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Loops and accumulators</b> (Lesson 3) — now walking real collections.</li>
+<li><b>Type conversion at borders</b> (Lesson 2) — float() on every numeric field.</li>
+<li><b>Functions</b> (Lesson 4) — file-readers and summarizers with names.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>List</td><td>\( \texttt{[2.1, 4.5, 3.2]} \)</td><td>Ordered, growable sequences of measurements.</td></tr>
+<tr><td>Zero-based index</td><td>\( \texttt{a[0]} \) first, \( \texttt{a[-1]} \) last</td><td>The counting convention behind every off-by-one.</td></tr>
+<tr><td>Slice</td><td>\( \texttt{a[1:3]} \) — stop excluded</td><td>Subranges; start included, stop excluded, like range.</td></tr>
+<tr><td>Comprehension</td><td>\( \texttt{[f(x) for x in xs]} \)</td><td>The transform loop as a readable phrase.</td></tr>
+<tr><td>Dictionary</td><td>\( \texttt{\{"tag": "P-101"\}} \)</td><td>Named fields, looked up by key — the record.</td></tr>
+<tr><td>List of dicts</td><td>one dict per record</td><td>The fleet shape; what CSVs become in memory.</td></tr>
+<tr><td>CSV reading</td><td>\( \texttt{split(",")} \) + \( \texttt{float()} \)</td><td>Line → fields → numbers, converted at the border.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>The route list, operated</b></p>
+<p><b>Problem.</b> Trace: start with <code>readings = [2.1, 4.5, 3.2]</code>; append 5.0; report the last element, the maximum, and the length.</p><div class="soln"><p><b>Solution.</b> (1) After <code>readings.append(5.0)</code>: <code>[2.1, 4.5, 3.2, 5.0]</code>.
+(2) <code>readings[-1]</code> → 5.0 (the newest); <code>max(readings)</code> → 5.0; <code>len(readings)</code> → 4.</p>
+<p><b>Answer:</b> 5.0, 5.0, 4.
+<b>Sanity check:</b> the newest reading happening to BE the maximum is the vibration-route bad news pattern — and <code>readings[-1] == max(readings)</code> is exactly the one-line trend alarm a later script will build from these three idioms. Small operations, real diagnostics.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>An equipment record that grows</b></p>
+<p><b>Problem.</b> Build the record <code>pump = {"tag": "P-101", "power_kw": 11.5}</code>; add a field <code>"status": "running"</code>; read the power; and show the fleet shape for two pumps.</p><div class="soln"><p><b>Solution.</b> (1) Add: <code>pump["status"] = "running"</code> — dicts grow by assignment.
+(2) Read: <code>pump["power_kw"]</code> → 11.5.
+(3) Fleet: <code>fleet = [{"tag": "P-101", "power_kw": 11.5}, {"tag": "P-102", "power_kw": 7.5}]</code> — a list of dicts, iterated as <code>for pump in fleet:</code>.</p>
+<p><b>Answer:</b> field added, 11.5 read, fleet as list-of-dicts.
+<b>Sanity check:</b> the alternative — parallel lists of tags and powers — breaks the moment one list is sorted or filtered without the other; the record keeps each pump's facts fused. This shape IS the maintenance database row, and recognizing it is the lesson.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Reading the export</b></p>
+<p><b>Problem.</b> A file contains two lines: <code>P-101,11.5</code> and <code>P-102,7.5</code>. Script the total power and trace it.</p><div class="soln"><p><b>Solution.</b> (1) <code>total = 0.0</code>
+<code>with open("pumps.csv") as f:</code>
+<code>    for line in f:</code>
+<code>        fields = line.split(",")</code>
+<code>        total += float(fields[1])</code>
+(2) Trace: 0.0 + 11.5 = 11.5; 11.5 + 7.5 = 19.0.</p>
+<p><b>Answer:</b> 19.0 kW total.
+<b>Sanity check:</b> every piece is a prior lesson — the with-open border, the split into fields, the float() conversion (without which <code>+=</code> would crash on a string), the accumulator. File processing is not a new skill; it is the old skills fed by a file, which is why the course built them first.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>For <code>a = [10, 20, 30, 40]</code>, the value of <code>a[1]</code> is:</p><ol class="opts"><li class="opt correct">20 ✓</li><li class="opt">10</li><li class="opt">30</li><li class="opt">An error</li></ol><div class="soln"><p>Zero-based indexing: a[0] is 10, so a[1] is 20 — the SECOND item. The 1-counting instinct from everyday life is the source of most beginner index errors, and range(n)'s 0-to-n−1 convention (Lesson 3) was designed to match this exactly: <code>a[i] for i in range(len(a))</code> touches every element with no off-by-one anywhere.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>The idiomatic way to read the LAST element of list <code>a</code> is:</p><ol class="opts"><li class="opt correct"><code>a[-1]</code> ✓</li><li class="opt"><code>a[len(a)]</code></li><li class="opt"><code>a[end]</code></li><li class="opt"><code>a.last()</code></li></ol><div class="soln"><p>Negative indices count from the end: a[-1] is the last, a[-2] the one before. <code>a[len(a)]</code> is one PAST the end — an IndexError, and the classic fencepost slip (the valid last index is len(a)−1). The other forms belong to other languages. For time-ordered data, a[-1] is 'the latest reading' — an idiom used daily.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p><code>[x * 2 for x in [1, 2, 3]]</code> evaluates to:</p><ol class="opts"><li class="opt correct">[2, 4, 6] ✓</li><li class="opt">[1, 2, 3, 1, 2, 3]</li><li class="opt">[1, 4, 9]</li><li class="opt">12</li></ol><div class="soln"><p>The comprehension applies the expression to each element: doubles, collected in order. Repetition ([1,2,3,1,2,3]) is what <code>[1,2,3] * 2</code> does — the list-level operator, a different animal; squares would need <code>x ** 2</code>. Comprehensions are the transform loop compressed to a readable phrase, and they appear in nearly every data script from here on.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Field values pulled from a CSV line by <code>split(",")</code> arrive as:</p><ol class="opts"><li class="opt correct">Strings — numeric fields need float() before arithmetic ✓</li><li class="opt">Numbers, automatically</li><li class="opt">Floats if they contain a decimal point</li><li class="opt">Whatever type the file declares</li></ol><div class="soln"><p>Files are text; split returns strings, whatever they resemble — and <code>"11.5" + "7.5"</code> concatenates to "11.57.5" rather than adding. CSV declares no types; nothing converts automatically. The border-conversion rule of Lesson 2 exists precisely for this moment: float() each numeric field at the read, and the interior of the script stays safely numeric.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Tracking pump tags in one list and their powers in a parallel list becomes fragile because:</p><ol class="opts"><li class="opt correct">Sorting or filtering one list without the other silently misaligns every record ✓</li><li class="opt">Lists cannot hold strings and floats</li><li class="opt">It uses too much memory</li><li class="opt">Dictionaries are faster</li></ol><div class="soln"><p>Parallel lists are coupled by nothing but hope: one sort, one filter, one insertion applied to only one of them, and every tag points at the wrong power — silently. The list-of-dicts shape fuses each record's fields so they travel together through any operation. Memory and speed are irrelevant at this scale; integrity is the argument, and it is decisive.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 07 · Arrays and numerical work</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · The array idea: operate on all of it</h3>
+<p>Lists process element by element through loops; numerical arrays (NumPy's
+<code>ndarray</code>) operate on whole datasets at once: <code>kw = hp * 0.746</code>
+converts every horsepower value in one expression — vectorization. The gains are two:
+the code READS as the mathematics (one formula, visibly applied to everything), and it
+runs orders of magnitude faster, because the looping happens in optimized machinery
+below. For engineering data — a year of hourly readings is 8,760 numbers, a vibration
+waveform 65,536 — the array is the natural container, and the loop becomes the
+exception rather than the habit.</p>
+<h3>§2 · The reductions: from many numbers to a few</h3>
+<p>Analysis usually ends in reductions: <code>mean</code>, <code>std</code>,
+<code>min/max</code>, <code>sum</code> — the descriptive statistics of a dataset in one
+call each. The standard deviation deserves engineering respect: it is the honest width of
+the scatter, the number that turns "about 4.25" into "4.25 ± 0.30", and the seed of
+every control chart the metrology course will draw. Alongside them, <code>argmax</code>
+answers WHERE — the index of the worst reading — which is often the more actionable
+question: not "how bad" but "which machine".</p>
+<h3>§3 · Masks: asking questions of data</h3>
+<p>Comparison on an array yields an array of booleans — a mask — and the mask selects:
+<code>readings[readings &gt; 4.0]</code> is every reading above the alarm line, in one
+expression: no loop, no if, no accumulator. Count them with <code>sum</code> of the mask,
+average them, or feed them onward. The idiom — condition, mask, selection — is the
+data-analysis sentence structure, and it compounds: masks combine with
+\( \texttt{\&} \) and \( \texttt{|} \) into compound questions ("above alarm AND
+after the overhaul") that still read as one line.</p>
+<h3>§4 · The vectorized working method</h3>
+<p>Reach for the array whenever data is homogeneous and numeric; keep lists for mixed
+records. Write transformations as whole-array expressions and CHECK them on a three-value
+array first — vectorized code is compact enough that a wrong formula corrupts everything
+uniformly, so the small trace matters doubly. Prefer the built-in reductions to
+hand-rolled loops (they are tested code, and faster), and when a reduction's answer
+surprises, look at the mask counts before doubting the data: how many values, how many
+above threshold, how many NaN — the three questions that catch most data-quality issues
+at the door. Then the discipline that spans every lesson: units ride the variable names
+(<code>vel_mm_s</code>), conversions happen once, visibly, at the border, and any result
+consumed downstream gets an assertion pinning a known case. Arrays change the scale of
+what one line does; they change nothing about what makes the line trustworthy.</p>
+<p>The payoff arrives immediately in the lessons ahead: plotting consumes arrays whole,
+curve fitting reduces them to parameters, and simulations generate them by the thousand.
+Vectorized thinking — state the operation once, apply it to everything, summarize with a
+reduction — is also precisely how plant historians and analysis platforms work
+internally, so fluency here reads directly onto the tools the later automation courses
+will operate.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Lists and loops</b> (Lessons 3, 6) — arrays replace the transform loop.</li>
+<li><b>Statistics vocabulary</b> — mean and standard deviation as scatter's width.</li>
+<li><b>Assertions</b> (Lesson 5) — vectorized code gets pinned like any other.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Array (ndarray)</td><td>homogeneous numeric block</td><td>The natural container for measurements at scale.</td></tr>
+<tr><td>Vectorization</td><td>\( \texttt{kw = hp * 0.746} \)</td><td>One expression, every element; reads as the mathematics.</td></tr>
+<tr><td>Reductions</td><td>\( \texttt{mean, std, min, max, sum} \)</td><td>Whole datasets to summary numbers, one call each.</td></tr>
+<tr><td>Standard deviation</td><td>scatter's honest width</td><td>The ± that belongs beside every reported mean.</td></tr>
+<tr><td>argmax / argmin</td><td>index of the extreme</td><td>WHICH machine, not just how bad.</td></tr>
+<tr><td>Mask</td><td>\( \texttt{a[a > 4.0]} \)</td><td>Condition → boolean array → selection, in one line.</td></tr>
+<tr><td>Compound masks</td><td>\( \texttt{(a>4) \& (t>t0)} \)</td><td>Multi-condition questions that still read as sentences.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Fleet conversion in one line</b></p>
+<p><b>Problem.</b> Motor ratings arrive in horsepower: <code>[10, 25, 50]</code>. Convert the whole set to kW (1 hp = 0.746 kW) vectorized, and state the result.</p><div class="soln"><p><b>Solution.</b> (1) <code>hp = np.array([10, 25, 50])</code>; <code>kw = hp * 0.746</code>.
+(2) Result: <code>[7.46, 18.65, 37.3]</code> — every element converted by the one expression.</p>
+<p><b>Answer:</b> [7.46, 18.65, 37.3] kW.
+<b>Sanity check:</b> the same operation on a plain LIST — <code>[10,25,50] * 0.746</code> — is an error, and <code>* 3</code> would have REPEATED the list: the array's element-wise arithmetic is a genuinely different contract, and knowing which container you hold decides what * means.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Mean and scatter of a survey</b></p>
+<p><b>Problem.</b> Four bearing-temperature readings: 4.1, 3.9, 4.3, 4.7 (°C above ambient). <b>Find:</b> the mean and the (population) standard deviation, and report them together.</p><div class="soln"><p><b>Solution.</b> (1) Mean: \( (4.1+3.9+4.3+4.7)/4 = 4.25 \).
+(2) Deviations: −0.15, −0.35, 0.05, 0.45; squares sum to 0.35; variance \( 0.35/4 = 0.0875 \).
+(3) \( \sigma = \sqrt{0.0875} = 0.30 \). Report: \( 4.25 \pm 0.30 \) °C.</p>
+<p><b>Answer:</b> mean 4.25, σ ≈ 0.30 — "4.25 ± 0.30 °C".
+<b>Sanity check:</b> σ has the data's own units and sits comfortably inside the observed spread (range 0.8) — a σ larger than the range would announce an arithmetic slip. The ± habit turns every reported mean into an honest claim, and the metrology course will build control charts on exactly this number.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>The alarm-line question</b></p>
+<p><b>Problem.</b> Vibration readings <code>[3.2, 5.1, 2.8, 6.0]</code> mm/s; the alert line is 4.0. Using a mask, find how many readings exceed it and their average.</p><div class="soln"><p><b>Solution.</b> (1) Mask: <code>v &gt; 4.0</code> → <code>[False, True, False, True]</code>.
+(2) Count: 2. Selection: <code>v[v &gt; 4.0]</code> → <code>[5.1, 6.0]</code>.
+(3) Mean of offenders: \( (5.1+6.0)/2 = 5.55\ \mathrm{mm/s} \).</p>
+<p><b>Answer:</b> 2 readings above the line, averaging 5.55 mm/s.
+<b>Sanity check:</b> condition → mask → selection replaced a four-line loop-with-if, and reads as the question itself. Scale it to a year of route data and the same one-liner is a fleet exception report — the entire reason the mask idiom is worth owning.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p><code>np.array([1, 2, 3]) * 2</code> evaluates to:</p><ol class="opts"><li class="opt correct">array([2, 4, 6]) ✓</li><li class="opt">[1, 2, 3, 1, 2, 3]</li><li class="opt">An error</li><li class="opt">array([1, 2, 3, 2])</li></ol><div class="soln"><p>Arrays do element-wise arithmetic: every value doubles. The repetition answer is what a plain LIST does with * 2 — the container decides the contract, and this pair of behaviors side by side is the cleanest illustration of why. Knowing which type you hold (Lesson 2's discipline, scaled up) is what makes the one-character operator safe.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p><code>argmax</code> returns:</p><ol class="opts"><li class="opt correct">The INDEX of the largest value ✓</li><li class="opt">The largest value</li><li class="opt">All values above average</li><li class="opt">The last value</li></ol><div class="soln"><p>max answers 'how bad'; argmax answers 'WHERE' — the position, which maps to a machine, a timestamp, a route point. In maintenance data the location is usually the actionable half: <code>tags[np.argmax(vibration)]</code> names the machine to visit. The pairing of a value-question with its index-question runs through all of applied data work.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>The standard deviation of a set of readings tells you:</p><ol class="opts"><li class="opt correct">The typical spread of readings around their mean, in the data's own units ✓</li><li class="opt">The largest error</li><li class="opt">Whether the mean is correct</li><li class="opt">The instrument's accuracy</li></ol><div class="soln"><p>σ is scatter's width — the honest ± beside the mean. It bounds nothing absolutely (readings beyond σ are routine — most data holds ~1/3 of it there), says nothing about BIAS (a precisely wrong instrument scatters tightly around the wrong value), and instrument accuracy is a calibration question. Reporting mean ± σ claims exactly what the data supports, no more.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A vectorized formula applied to 30,000 readings should first be checked by:</p><ol class="opts"><li class="opt correct">Running it on a tiny array with a hand-computable answer ✓</li><li class="opt">Running it twice on the full data</li><li class="opt">Checking that no error is raised</li><li class="opt">Trusting NumPy</li></ol><div class="soln"><p>Vectorization's power is uniform application — which means a wrong formula corrupts all 30,000 values uniformly and plausibly. The three-value trace with a known answer pins the formula; then scale merely repeats proven arithmetic. Re-running identical wrongness reproduces it identically; absence of errors proves syntax, not sense — the recurring theme every verification lesson has hammered.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>For <code>a = np.array([10, 20, 30, 40])</code>, the slice <code>a[1:3]</code> is:</p><ol class="opts"><li class="opt correct">array([20, 30]) ✓</li><li class="opt">array([20, 30, 40])</li><li class="opt">array([10, 20, 30])</li><li class="opt">array([30])</li></ol><div class="soln"><p>Same convention as lists and range: start included, stop excluded — indices 1 and 2, values 20 and 30. The consistency across list, range, and array slicing is deliberate: one fencepost rule serves the whole language, and internalizing 'stop is excluded' once retires the off-by-one everywhere at once.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 08 · Plotting engineering data</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · The plot is an argument</h3>
+<p>An engineering plot exists to support a decision, and its anatomy is the argument's
+grammar: axes labeled WITH UNITS (an unlabeled axis is a number with no meaning — the
+chart version of the unit sins every course here prosecutes), a title that states what is
+shown, and a legend when more than one series appears. The choice of plot type is the
+choice of claim: a LINE plot claims continuity — readings ordered in time, trends; a
+SCATTER plot claims only "these pairs were observed" — right for correlation questions
+and unordered data; a BAR chart compares discrete categories — machines, months, failure
+modes. Choosing a line where a scatter belongs invents continuity the data never
+promised; the plot type is the first honesty decision.</p>
+<h3>§2 · Scales that reveal</h3>
+<p>Linear axes hide what logarithmic axes reveal. Exponential decay — the cooling curves
+and filter-loading trends of the mathematics course — plots as a curve on linear axes but
+as a STRAIGHT LINE on a semilog (log-y) plot, whose slope reads the time constant:
+plotting \( \ln(T - T_\infty) \) against t was exactly this move, done by hand. Data
+spanning decades of magnitude — vibration spectra, particle counts — needs log scales
+simply to be seen: on a linear axis, the small values flatten into the floor. The
+working question before every plot: does this data live on one scale, or several?</p>
+<h3>§3 · Sampling honesty</h3>
+<p>Plotted data was SAMPLED, and sampling has physics. A signal changing faster than half
+the sampling rate does not disappear — it ALIASES, reappearing as a false slow signal:
+a 50 Hz vibration sampled at 60 Hz shows up as a phantom 10 Hz wobble
+(\( |50 - 60| \)). The instrumentation course will formalize Nyquist; the plotting
+lesson's version is the caution: before trusting a surprising slow oscillation in
+sampled data, ask what the sampling rate was. Equally, decimating data for plotting speed
+(every tenth point) is legitimate — STATED; silently, it is how spikes vanish from
+trend reviews.</p>
+<h3>§4 · The plotting working method</h3>
+<p>Build every plot in the same order. State the question the plot must answer; choose
+the type by the claim (trend → line, correlation → scatter, comparison → bar); choose
+scales by the data's structure (exponential suspicion → semilog; decades of range →
+log); label axes with quantities AND units; then read the plot yourself before showing
+anyone — does it actually answer the question, and would a skeptic's eye find the axis
+tricks (truncated baselines, cherry-picked windows) that make weak cases look strong?
+The mathematics course called the plot the test of first-order behavior; this lesson
+generalizes: the plot is where data confesses its structure, provided the plotter asks
+honestly. A figure that survives your own skepticism is ready for the morning
+meeting — and a figure that decided a question honestly is worth saving beside the script
+and data that produced it, completing the audit trail this course keeps building.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Arrays</b> (Lesson 7) — plots consume them directly.</li>
+<li><b>Semilog reasoning</b> (Math I) — the straightening trick, now automated.</li>
+<li><b>Honest reporting</b> (Lesson 2) — precision and units at the interface.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Line plot</td><td>claims continuity/order</td><td>Time series and trends — data with a meaningful order.</td></tr>
+<tr><td>Scatter plot</td><td>claims only observed pairs</td><td>Correlation questions; unordered measurements.</td></tr>
+<tr><td>Bar chart</td><td>discrete categories</td><td>Machines, months, failure modes — comparisons.</td></tr>
+<tr><td>Axis labels</td><td>quantity AND unit, always</td><td>An unlabeled axis is a meaningless number, plotted.</td></tr>
+<tr><td>Semilog (log-y)</td><td>exponentials → straight lines</td><td>Slope reads the time constant; the §straightening move.</td></tr>
+<tr><td>Log-log / log scales</td><td>decades made visible</td><td>Spectra and counts spanning orders of magnitude.</td></tr>
+<tr><td>Aliasing</td><td>\( f_{alias} = |f - f_s| \) (first order)</td><td>Fast signals masquerading as slow ones in sampled data.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Choosing the revealing scale</b></p>
+<p><b>Problem.</b> A casting's cooling data (temperature above ambient vs time) must be tested for first-order behavior and its time constant read graphically. Specify the plot, and what a straight line there proves.</p><div class="soln"><p><b>Solution.</b> (1) Plot \( \ln(T - T_\infty) \) against t — equivalently, the temperature EXCESS on a semilog (log-y) axis.
+(2) First-order decay \( e^{-t/\tau} \) becomes a straight line of slope \( -1/\tau \); curvature would refute the single-τ model.
+(3) Read τ as the negative reciprocal of the fitted slope.</p>
+<p><b>Answer:</b> semilog plot of the excess; straightness proves first-order; slope gives \( \tau \).
+<b>Sanity check:</b> this is the mathematics course's semilog method, now one plotting call instead of a hand table — same test, same honesty: the plot decides whether the model applies BEFORE the constant is quoted. Scale choice is model testing, not decoration.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Anatomy of a defensible trend plot</b></p>
+<p><b>Problem.</b> Specify the complete labeling for a plot of a week of bearing-vibration readings taken every 4 hours — and the plot type, with justification.</p><div class="soln"><p><b>Solution.</b> (1) Type: LINE plot — the readings are time-ordered, and the claim is a trend.
+(2) X-axis: "Time (h since Monday 00:00)" — quantity and unit; y-axis: "Vibration velocity (mm/s RMS)".
+(3) Title naming machine and bearing; if a second bearing shares the axes, a legend naming each series.</p>
+<p><b>Answer:</b> labeled line plot, units on both axes, titled and legended.
+<b>Sanity check:</b> strip any one element and a real failure mode appears: no units → is that mm/s or in/s?; no title → whose bearing?; scatter instead of line → the trend claim dissolves into dots. The labeling checklist is cheap; the meeting where a mislabeled chart decided wrongly is not.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>The phantom wobble</b></p>
+<p><b>Problem.</b> A 50 Hz vibration is logged by a system sampling at 60 Hz. <b>Find:</b> the frequency that appears in the data, and state the general caution.</p><div class="soln"><p><b>Solution.</b> (1) The sampling can only represent signals up to 30 Hz (half of 60).
+(2) The 50 Hz signal aliases to \( |50 - 60| = 10\ \mathrm{Hz} \) — a slow, entirely fictitious wobble.
+(3) Caution: any surprising slow oscillation in sampled data demands the question "what was the sampling rate?" before any diagnosis.</p>
+<p><b>Answer:</b> a phantom 10 Hz signal.
+<b>Sanity check:</b> the alias is not noise — it is a clean, convincing, WRONG signal, which is what makes it dangerous. The instrumentation course formalizes the Nyquist limit; the plotting lesson's duty is the reflex: sampling rate first, diagnosis second.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Every axis of an engineering plot must carry:</p><ol class="opts"><li class="opt correct">The quantity and its unit ✓</li><li class="opt">A logo</li><li class="opt">At least ten tick marks</li><li class="opt">A trend line</li></ol><div class="soln"><p>An axis labeled 'Value' — or nothing — makes the entire figure unfalsifiable: 4.5 of WHAT? The quantity-plus-unit rule is the plotting form of the unit discipline every course here enforces, and reviewers read axes before they read curves. Ticks and trend lines are choices; labels are obligations.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Exponential decay data appears as a straight line on:</p><ol class="opts"><li class="opt correct">A semilog plot (logarithmic y-axis) ✓</li><li class="opt">A linear plot</li><li class="opt">A bar chart</li><li class="opt">Any plot, if zoomed</li></ol><div class="soln"><p>Taking the log of \( Ae^{-t/\tau} \) gives a line in t with slope \( -1/\tau \) — the semilog axis does the logarithm visually. Zooming a linear plot never straightens a curve; it magnifies it. The straightening test is diagnostic, not cosmetic: straight ⇒ first-order applies; curved ⇒ the model (not the plot) needs revisiting — the mathematics course's rule, automated.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>To show whether bearing temperature correlates with load across 200 unordered spot readings, the right plot is:</p><ol class="opts"><li class="opt correct">A scatter plot of temperature against load ✓</li><li class="opt">A line plot in reading order</li><li class="opt">A bar chart per reading</li><li class="opt">A pie chart</li></ol><div class="soln"><p>The question is pairwise association: temperature VERSUS load, each reading one dot — structure (or its absence) appears as a cloud's shape. A line through unordered readings draws meaningless connections; 200 bars is unreadable; pie charts answer share-of-whole questions only. Type follows question — the first choice of the working method.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Plotting only every 10th point of a dense trend for speed is acceptable when:</p><ol class="opts"><li class="opt correct">The decimation is stated — silently, it can hide spikes ✓</li><li class="opt">Always — plots are illustrative</li><li class="opt">Never</li><li class="opt">Only for bar charts</li></ol><div class="soln"><p>Decimation is a legitimate rendering economy with a failure mode: a one-sample spike — the very event a review hunts — can fall between kept points and vanish. Stated ("plotted at 1/10 resolution; extrema verified separately"), the reader knows the contract; silent, the plot testifies to smoothness it never checked. Honesty here is disclosure, as everywhere.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>A bar chart comparing monthly downtime hours should generally have its y-axis:</p><ol class="opts"><li class="opt correct">Starting at zero, so bar heights compare honestly ✓</li><li class="opt">Starting just below the smallest value, to show detail</li><li class="opt">Logarithmic, always</li><li class="opt">Unlabeled, to reduce clutter</li></ol><div class="soln"><p>Bar charts encode value as LENGTH, and lengths compare honestly only from a common zero — a truncated baseline turns a 5% difference into a visual 3:1 ratio, the oldest chart trick in the persuasion business. (Line plots may zoom, with axes labeled, since they encode position, not length.) The skeptic's-eye pass of the working method looks for exactly this.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 09 · Curve fitting and interpolation</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Two questions a table cannot answer alone</h3>
+<p>Engineering data arrives as points: rows of a steam table, samples on a pump test,
+readings from a calibration bench. The questions arrive between the points — the head at
+a flow the test never held, the transmitter output at a pressure between bench settings.
+Two distinct operations close that gap. <em>Interpolation</em> reads between the rows of
+data you trust, adding no opinion of its own. <em>Fitting</em> proposes a model — a line,
+a low-order polynomial — and asks the data to vote on its parameters. Keeping the two
+distinct is the first discipline of this lesson: interpolation honors every point;
+fitting deliberately smooths over their scatter, and each is wrong where the other is
+right.</p>
+<h3>§2 · Interpolation: reading between the rows</h3>
+<p>Between two table rows \( (x_1, y_1) \) and \( (x_2, y_2) \), linear interpolation
+draws the chord: \( y = y_1 + \frac{x - x_1}{x_2 - x_1}\,(y_2 - y_1) \). The fraction is
+just "how far across the interval x sits", and the same fraction is applied to the
+y-interval. Property tables are published dense precisely so that this chord is an
+excellent stand-in for the true curve; <code>np.interp(x, xs, ys)</code> does the row
+hunting and the arithmetic in one call, provided the sample points <code>xs</code>
+increase monotonically. The method's honest boundary is the table's edge:
+<em>extrapolation</em> — reading beyond the last row — is a different act entirely,
+because past the data the curve owes you nothing. Worse, <code>np.interp</code> does not
+protest at the edge: it silently returns the endpoint value, so the guard clause of
+Lesson 3 — assert the query lies inside the table's range — is part of every lookup that
+matters.</p>
+<h3>§3 · Least squares: the best line through scatter</h3>
+<p>Calibration data never lies on a line; it scatters around one. For each candidate
+line, every point carries a <em>residual</em> — measured minus predicted,
+\( r_i = y_i - (m x_i + b) \). Least squares chooses the \( m, b \) that minimize
+\( \sum r_i^2 \), and for a straight line the answer is closed-form:
+\( m = \frac{n\sum x y - \sum x \sum y}{n \sum x^2 - (\sum x)^2} \), with
+\( b = \bar{y} - m\bar{x} \). <code>np.polyfit(x, y, 1)</code> evaluates exactly this.
+The degree argument is a temptation: a degree-9 polynomial threads all ten of your
+points exactly — residuals zero, \( R^2 = 1 \) — and swings wildly everywhere between
+them. Adding parameters always improves the numbers and, past the physics, always
+degrades the model; the fit stops summarizing the data and starts memorizing its
+noise.</p>
+<h3>§4 · The fitting working method</h3>
+<p>The routine that keeps fits honest: PLOT the data before fitting anything — the eye
+catches curvature, outliers, and regime changes that summary numbers hide. Fit the
+simplest model the physics justifies, then plot the RESIDUALS: random scatter of roughly
+constant width says the model has taken all the structure the data offers; any pattern —
+a bow, a trend, a fan — is physics the model missed, an instruction to think, not to
+raise the degree. Distrust \( R^2 \) as a verdict: it measures variance explained, and
+a badly bowed fit can still post 0.99; the residual plot, not the score, is the honesty
+check. Report parameters with their units and alongside the data's domain, because the
+fit is a summary of THAT range — using it outside is extrapolation wearing a
+calculator's confidence. And when the goal is only to read between trusted rows, skip
+the model entirely: interpolate. The habits are small, but they are the difference
+between a calibration you can defend and a curve that merely looks professional. Both
+return in force when Metrology fits gauge data and Reliability fits life data —
+this lesson is their rehearsal.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Arrays and reductions</b> (Lesson 7) — data arrives vectorized; sums are one call.</li>
+<li><b>Plotting</b> (Lesson 8) — the data plot and the residual plot are the lesson's instruments.</li>
+<li><b>Assertions</b> (Lesson 5) — range guards on every table lookup.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Linear interpolation</td><td>\( y = y_1 + \frac{x-x_1}{x_2-x_1}(y_2-y_1) \)</td><td>Reading between trusted table rows — steam tables, pump curves.</td></tr>
+<tr><td>Extrapolation</td><td>reading past the last row</td><td>Avoid without a physical model; the data owes nothing outside its range.</td></tr>
+<tr><td>Residual</td><td>\( r_i = y_i - \hat{y}_i \)</td><td>Measured minus predicted — the fit's per-point report card.</td></tr>
+<tr><td>Least squares</td><td>minimize \( \sum r_i^2 \)</td><td>Fitting a calibration or performance model to scattered data.</td></tr>
+<tr><td>Slope (closed form)</td><td>\( m = \frac{n\sum xy - \sum x \sum y}{n\sum x^2 - (\sum x)^2} \)</td><td>What <code>np.polyfit(x, y, 1)</code> computes for you.</td></tr>
+<tr><td>\( R^2 \)</td><td>variance explained</td><td>A screening number, never a verdict — check residuals instead.</td></tr>
+<tr><td>Overfitting</td><td>degree ≫ physics</td><td>Perfect residuals, useless predictions — the model memorized noise.</td></tr>
+<tr><td>Residual plot</td><td>\( r_i \) vs \( x_i \)</td><td>Random scatter = model adequate; any pattern = missing physics.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Reading a pump curve between test points</b></p>
+<p><b>Problem.</b> A pump test reports head 42 m at 30 m³/h and 38 m at 40 m³/h. By linear interpolation, what head does the curve predict at 34 m³/h?</p><div class="soln"><p><b>Solution.</b> (1) Fraction across the interval: \( (34-30)/(40-30) = 0.4 \).
+(2) Apply it to the head interval: \( h = 42 + 0.4\,(38 - 42) = 42 - 1.6 = 40.4 \) m.</p>
+<p><b>Answer:</b> 40.4 m.
+<b>Sanity check:</b> 34 m³/h sits 40% of the way across the flow interval, so the head must sit 40% of the way down the 4-m drop — between 42 and 38, nearer 42. Any interpolated value OUTSIDE its bracketing rows is an arithmetic slip: the chord never leaves the interval.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Calibrating a pressure transmitter</b></p>
+<p><b>Problem.</b> A bench calibration of a 4–20 mA pressure transmitter records output y (mA) at applied pressure x (bar): (0, 4.1), (2, 7.2), (4, 10.4), (6, 13.3), (8, 16.5). Fit the least-squares line and state the predicted output at 5.0 bar.</p><div class="soln"><p><b>Solution.</b> (1) The sums over the five points: \( \sum x = 20 \), \( \sum y = 51.5 \), \( \sum xy = 267.8 \), \( \sum x^2 = 120 \).
+(2) Slope: \( m = \frac{5(267.8) - 20(51.5)}{5(120) - 20^2} = \frac{309}{200} = 1.545 \) mA/bar; intercept: \( b = (51.5 - 1.545 \times 20)/5 = 4.12 \) mA — exactly what <code>np.polyfit(x, y, 1)</code> returns.
+(3) At 5.0 bar: \( y = 1.545(5.0) + 4.12 = 11.845 \approx 11.85 \) mA.</p>
+<p><b>Answer:</b> \( y = 1.545x + 4.12 \); predicted 11.85 mA at 5.0 bar.
+<b>Sanity check:</b> an ideal 4–20 mA device spanning 0–10 bar would give exactly 1.6 mA/bar from 4.0 mA — the fit (1.545 from 4.12) sits close, so the instrument is near nominal. The largest residual is 0.1 mA, scattered in sign — no structure, so the straight-line model is doing its job.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Reading residuals like an engineer</b></p>
+<p><b>Problem.</b> Flow-meter data at x = 0, 1, 2, 3, 4 gives y = 1.0, 3.15, 5.6, 8.35, 11.4. The least-squares line is \( y = 2.6x + 0.7 \) with \( R^2 = 0.9954 \). Compute the five residuals and give the verdict on the model.</p><div class="soln"><p><b>Solution.</b> (1) Predictions at x = 0…4: 0.7, 3.3, 5.9, 8.5, 11.1.
+(2) Residuals (measured − predicted): <b>+0.30, −0.15, −0.30, −0.15, +0.30</b>.
+(3) The pattern is a symmetric U — positive at both ends, negative in the middle. That is CURVATURE the line cannot express: the data carries a quadratic term the model omitted.</p>
+<p><b>Answer:</b> residuals [+0.30, −0.15, −0.30, −0.15, +0.30] — reject the straight line; the data is curved.
+<b>Sanity check:</b> this is the lesson's central trap: \( R^2 = 0.9954 \) LOOKS like an endorsement, yet the residual plot convicts the model at a glance. Variance explained is not structure exhausted — the residual plot, not the score, is the honesty check.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A residual is:</p><ol class="opts"><li class="opt correct">Measured value minus the model's prediction ✓</li><li class="opt">The model's prediction minus zero</li><li class="opt">The uncertainty of the instrument</li><li class="opt">The slope error of the fit</li></ol><div class="soln"><p>\( r_i = y_i - \hat{y}_i \): what the data said minus what the model claims — each point's individual report on the fit. Everything diagnostic in this lesson (the U-pattern, the honesty check, the overfitting verdict) is read from these numbers, which is why they matter more than any single summary score.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Extrapolating a fitted calibration line far beyond the calibrated range is risky because:</p><ol class="opts"><li class="opt correct">Outside its data range the model has no evidence — and the physics may change ✓</li><li class="opt">The arithmetic becomes less precise at large numbers</li><li class="opt">Least squares only works inside the original interval</li><li class="opt">Residuals cannot be computed outside the range</li></ol><div class="soln"><p>The fit is a summary of the range that produced it. Beyond that range there is no data to vote, and real devices leave their linear region — sensors saturate, pumps run off-curve. The arithmetic extends happily; the EVIDENCE does not. That is why the working method reports a fit's domain right beside its coefficients.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A fit posts \( R^2 = 0.99 \). What does that establish?</p><ol class="opts"><li class="opt correct">Little by itself — the residuals may still hold a systematic pattern ✓</li><li class="opt">The model is correct</li><li class="opt">The residuals are random</li><li class="opt">The data contains no outliers</li></ol><div class="soln"><p>\( R^2 \) reports variance explained — a bowed line through curved data can still score 0.99, as the solve problem showed at 0.9954. Model adequacy is read from the residual plot: random scatter passes, any structure fails. High \( R^2 \) with patterned residuals means "good summary, wrong model".</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A degree-9 polynomial fitted through 10 calibration points gives \( R^2 = 1 \). The model is:</p><ol class="opts"><li class="opt correct">Overfitted — it memorized the noise and is untrustworthy between the points ✓</li><li class="opt">Ideal — every point is matched exactly</li><li class="opt">Underfitted — more terms are needed</li><li class="opt">Correct if the residuals are all zero</li></ol><div class="soln"><p>Ten coefficients against ten points can thread every measurement exactly — including their noise — and oscillate wildly between them. Zero residuals here indict the model rather than endorse it. Parameters must be justified by physics, not by score-chasing: for a near-linear device, that means a line.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p><code>np.interp(x, xs, ys)</code> requires — and silently assumes — that:</p><ol class="opts"><li class="opt correct">The sample points xs increase monotonically; outside their range it returns the endpoint values ✓</li><li class="opt">The data is evenly spaced</li><li class="opt">The relationship is exactly linear everywhere</li><li class="opt">x appears exactly in xs</li></ol><div class="soln"><p>The function hunts for the bracketing rows, so <code>xs</code> must be sorted ascending — and beyond either end it CLAMPS to the edge value without warning, which turns an out-of-range query into a plausible-looking wrong answer. Hence the working method's guard: assert the query lies inside the table before trusting the lookup.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 10 · Small simulations</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · The equations engineers actually meet</h3>
+<p>Strip the plant to its rates and first-order differential equations appear everywhere:
+a tank fills at the rate flow-in minus flow-out; a motor housing cools at a rate
+proportional to how far it sits above ambient; receiver pressure decays as the leak
+bleeds it down. Each says \( dy/dt = f(y) \): the state's rate of change depends on the
+state itself. A few such equations have textbook solutions; most industrial variants —
+level-dependent outflow, staged inputs, valves that open mid-run — do not. Simulation
+sidesteps the impasse: instead of solving the equation, STEP it. March time forward in
+small increments, updating the state by its current rate, and the trajectory emerges
+numerically. The computer becomes a cheap laboratory — one where a tank can overflow a
+hundred times before breakfast and nothing needs mopping.</p>
+<h3>§2 · Euler's method: the honest workhorse</h3>
+<p>The simplest march is Euler's: \( y_{n+1} = y_n + \Delta t \cdot f(y_n) \) — new state
+equals old state plus rate times step. It is nothing more than "keep the rate constant
+for a little while", the same approximation a hand calculation makes, automated. Its
+price is a per-step error that accumulates in proportion to \( \Delta t \): halve the
+step, roughly halve the error at a given time. That buys a wonderfully practical
+convergence test needing no theory at all — run the simulation, halve \( \Delta t \),
+run again; if the answer you report did not change at the precision you report it,
+the step is small enough. If it moved, halve again. The experiment IS the error
+analysis, and it costs seconds.</p>
+<h3>§3 · When the step lies: stability</h3>
+<p>Take cooling toward ambient, \( dT/dt = -k\,(T - T_\infty) \). One Euler step
+multiplies the deviation from ambient by the factor \( (1 - k\,\Delta t) \). For small
+steps that factor sits just under 1 and the temperature relaxes exponentially, as
+physics says. But let \( k\,\Delta t \) exceed 2 and the factor drops below −1: each
+step OVERSHOOTS ambient farther than it started, flipping sign and growing — the
+simulated temperature oscillates with expanding amplitude while the real housing simply
+cools. The boundary \( \Delta t < 2/k \) is the stability limit, and it teaches the
+lesson's sharpest distinction: instability is not sloppiness, it is a qualitatively
+false solution. Between stable and accurate stands the time constant \( \tau = 1/k \) —
+the system's natural clock; steps around \( \tau/10 \) resolve the physics, steps near
+the limit merely avoid explosion.</p>
+<h3>§4 · The simulation working method</h3>
+<p>Write the rate as a named function <code>f(y)</code> — Lesson 4's contract — so the
+model sits in one testable place and the marching loop never changes. Anchor the code
+before trusting it: the plain cooling case has an exact solution, so assert your loop
+reproduces it; the tank has a steady state you can compute by setting the rates equal,
+so run long and assert the level settles there. Only then vary toward the case with no
+formula — the varying inflow, the staged setpoint — because a loop that reproduces the
+known case has EARNED extrapolation to the unknown one. Run the halve-the-step
+experiment as routine, plot whole trajectories rather than trusting endpoints (Lesson 8:
+the plot is the argument), and keep the model's assumptions written beside the code.
+That last habit is the deepest: a converged, stable simulation is faithful to its
+EQUATIONS, and if the equations omit real physics — the heat the sun adds, the second
+leak — the laboratory lies with perfect numerical composure. Step-size error you can
+halve away; model error you can only think away. The distinction returns at full scale
+in Heat Transfer, System Dynamics, and every digital-twin conversation of the later
+automation courses.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Loops and functions</b> (Lessons 3–4) — the march is a loop calling a named rate function.</li>
+<li><b>Assertions</b> (Lesson 5) — known cases pin the loop before it earns the unknown ones.</li>
+<li><b>Arrays and plotting</b> (Lessons 7–8) — trajectories are arrays; the plot is the readout.</li>
+<li><b>The derivative as a rate</b> (MTH 101) — \( dy/dt \) read as "current rate of change".</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>First-order ODE</td><td>\( dy/dt = f(y) \)</td><td>Tank level, cooling, pressure decay — rate depends on state.</td></tr>
+<tr><td>Euler step</td><td>\( y_{n+1} = y_n + \Delta t\, f(y_n) \)</td><td>The workhorse march: rate held constant across a small step.</td></tr>
+<tr><td>Convergence test</td><td>halve \( \Delta t \), compare</td><td>Answer unchanged at reported precision → step small enough.</td></tr>
+<tr><td>Amplification factor</td><td>\( 1 - k\,\Delta t \)</td><td>What one Euler step does to the deviation in linear decay.</td></tr>
+<tr><td>Stability limit</td><td>\( \Delta t < 2/k \)</td><td>Beyond it the march oscillates and grows — qualitatively false.</td></tr>
+<tr><td>Time constant</td><td>\( \tau = 1/k \)</td><td>The system's clock; \( \Delta t \approx \tau/10 \) resolves the physics.</td></tr>
+<tr><td>Steady state</td><td>\( f(y^*) = 0 \)</td><td>Rates balance; a hand-computable anchor for asserting the loop.</td></tr>
+<tr><td>Model vs numerical error</td><td>—</td><td>Numerics you halve away; wrong assumptions you can only think away.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Two Euler steps of a cooling motor housing</b></p>
+<p><b>Problem.</b> A housing at 90 °C cools toward 30 °C ambient with \( dT/dt = -k(T - 30) \), k = 0.1 min⁻¹. March two Euler steps with \( \Delta t = 1 \) min. (Exact value at t = 2 min: 79.12 °C.)</p><div class="soln"><p><b>Solution.</b> (1) Step 1: rate = −0.1 (90 − 30) = −6.0 °C/min, so \( T_1 = 90 + 1(−6.0) = 84.0 \) °C.
+(2) Step 2: rate = −0.1 (84 − 30) = −5.4 °C/min, so \( T_2 = 84 + 1(−5.4) = 78.6 \) °C.</p>
+<p><b>Answer:</b> 84.0 °C, then 78.6 °C.
+<b>Sanity check:</b> against the exact 79.12 °C the march is 0.52 °C low — Euler holds each interval's STARTING rate, which for cooling is always the steepest in the interval, so it systematically overshoots the drop. Halve the step and the miss roughly halves: that is the first-order signature, and the basis of the halve-and-compare test.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Tank level with level-dependent outflow</b></p>
+<p><b>Problem.</b> A 4 m² tank receives 1.2 m³/min while draining at 0.4·h m³/min: \( dh/dt = (1.2 - 0.4h)/4 \). From h = 1.0 m, march two Euler steps with \( \Delta t = 2 \) min, and state the steady-state level.</p><div class="soln"><p><b>Solution.</b> (1) Step 1: rate = (1.2 − 0.4)/4 = 0.2 m/min → \( h_1 = 1.0 + 2(0.2) = 1.4 \) m.
+(2) Step 2: rate = (1.2 − 0.56)/4 = 0.16 m/min → \( h_2 = 1.4 + 2(0.16) = 1.72 \) m.
+(3) Steady state: set inflow = outflow, 1.2 = 0.4·h* → h* = 3.0 m.</p>
+<p><b>Answer:</b> 1.4 m, 1.72 m; the level settles at 3.0 m.
+<b>Sanity check:</b> each step's rise is smaller than the last (0.40 m then 0.32 m) — as h climbs, outflow grows and the net rate shrinks: the approach to steady state decelerates, exactly the exponential-settling shape. The hand-computed 3.0 m is the assertion to pin on the loop: run long, and the simulated level must flatten there.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Watching a step go unstable</b></p>
+<p><b>Problem.</b> For the cooling law with k = 0.5 min⁻¹, ambient 30 °C, start 90 °C: state the Euler stability limit, then march two steps with \( \Delta t = 5 \) min and describe what the numbers do.</p><div class="soln"><p><b>Solution.</b> (1) Limit: \( \Delta t < 2/k = 4 \) min — and 5 min exceeds it. The step factor is \( 1 - k\Delta t = 1 - 2.5 = -1.5 \).
+(2) Step 1: \( T_1 = 90 + 5(-0.5)(90-30) = 90 - 150 = -60 \) °C. Step 2: \( T_2 = -60 + 5(-0.5)(-60-30) = -60 + 225 = 165 \) °C.
+(3) The deviation from ambient runs 60 → −90 → +135: sign flips every step, magnitude grows ×1.5 — oscillating divergence.</p>
+<p><b>Answer:</b> limit 4 min; with \( \Delta t = 5 \) the march swings 90 → −60 → 165 °C and explodes.
+<b>Sanity check:</b> the real housing just cools quietly toward 30 °C — nothing physical oscillates. The explosion is pure numerics: each oversized step overshoots ambient farther than it started. Any simulated temperature that CROSSES its own ambient on a plain cooling problem is the step size confessing, not the physics.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Halving the step size in Euler's method roughly:</p><ol class="opts"><li class="opt correct">Halves the accumulated error — the method is first-order ✓</li><li class="opt">Quarters the error</li><li class="opt">Leaves the error unchanged</li><li class="opt">Doubles the run time but not the accuracy</li></ol><div class="soln"><p>Euler's accumulated error scales with \( \Delta t \): half the step, about half the miss (the cooling solve showed 0.52 °C shrinking toward 0.26). That linear scaling is what makes the halve-and-compare experiment meaningful — and yes, half the step doubles the work, which is the honest price of the extra digit.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>The practical test that your step size is small enough:</p><ol class="opts"><li class="opt correct">Halve \( \Delta t \), rerun, and check the reported answer no longer changes ✓</li><li class="opt">The simulation finishes without error</li><li class="opt">The trajectory looks smooth on the plot</li><li class="opt">The step is smaller than 1 second</li></ol><div class="soln"><p>Convergence is demonstrated, not assumed: if halving the step moves the answer at the precision you report, the previous step was too coarse — halve again. Smooth-looking plots and error-free runs prove nothing (the unstable case errors nowhere and looks dramatic), and no absolute step size is universally small: it is small relative to the system's time constant.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A converged, stable simulation can still mislead when:</p><ol class="opts"><li class="opt correct">The model omits real physics — it solves the wrong equations exactly ✓</li><li class="opt">The step size is below the stability limit</li><li class="opt">The trajectory is stored as an array</li><li class="opt">The rate is written as a named function</li></ol><div class="soln"><p>Convergence guarantees fidelity to the EQUATIONS, not to the plant. Leave the sun's heat load or the second leak out of \( f(y) \) and the laboratory lies with perfect numerical composure. Step-size error you halve away; model error you can only think away — which is why assumptions live written beside the code.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>For \( dh/dt = (Q_{in} - c\,h)/A \), the correct Euler update is:</p><ol class="opts"><li class="opt correct"><code>h = h + dt*(Qin - c*h)/A</code> ✓</li><li class="opt"><code>h = dt*(Qin - c*h)/A</code></li><li class="opt"><code>h = h + (Qin - c*h)/A</code></li><li class="opt"><code>h = h + dt*Qin - c*h</code></li></ol><div class="soln"><p>New state = old state + step × current rate — all three pieces, every step. Dropping <code>h +</code> forgets the state; dropping <code>dt</code> marches in units of one; mangling the parentheses changes the model itself. The update line is short enough to check by units: each term must be meters.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>The steady state of \( dT/dt = -k(T - T_\infty) \) is:</p><ol class="opts"><li class="opt correct">\( T = T_\infty \), regardless of the starting temperature ✓</li><li class="opt">The starting temperature \( T_0 \)</li><li class="opt">It depends on the step size used</li><li class="opt">\( T = T_\infty + 1/k \)</li></ol><div class="soln"><p>Steady state is where the rate vanishes: \( f(T^*) = 0 \) gives \( T^* = T_\infty \). The start decides the journey, never the destination; and the step size belongs to the numerics, not the physics — if a simulated steady state MOVES when \( \Delta t \) changes, the simulation is confessing, not the tank.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 11 · Project: a maintenance data mini-analysis</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · One project, the whole course</h3>
+<p>The course closes the way real analysis begins: a work-order export lands — one CSV
+row per maintenance job, with machine tag, failure date, hours down, hours to repair, a
+cause code — and someone asks what it says. The pipeline that answers is this lesson:
+<em>load</em> the raw file, <em>clean</em> it defensively, <em>compute</em> a handful of
+KPIs, <em>plot</em> the story, and write four honest sentences on top. Every prior
+lesson reports for duty: files and dictionaries carry the records in, arrays vectorize
+the arithmetic, assertions pin the steps, plots make the argument. The deliverable is
+not a number — it is a SCRIPT that turns the raw file into the numbers, rerunnable by
+anyone, next month, unchanged.</p>
+<h3>§2 · Cleaning: where the analysis is won or lost</h3>
+<p>Real exports are dirty in boringly predictable ways: duplicated rows from double
+entry, a duration keyed in minutes into an hours column, negative times from swapped
+dates, blank cause codes. Cleaning is not clerical — every fix is an engineering
+decision, and the discipline is to make each one explicit in code: drop exact
+duplicates and COUNT what was dropped; range-check every numeric column and quarantine
+violators rather than silently deleting them; log rows in versus rows out. The payoff
+is quantitative: one mis-keyed duration can multiply a mean by ten while the median
+barely moves — which is why the robust statistics of Lesson 7 are cleaning's
+instruments, and why "how many rows survived, and why" is the first line of any
+defensible report.</p>
+<h3>§3 · KPIs with honest denominators</h3>
+<p>Three ratios summarize a machine's month. <em>MTBF</em> — uptime divided by failure
+count — how long it runs between stoppages. <em>MTTR</em> — downtime divided by failure
+count — how long a stoppage lasts. <em>Availability</em> — uptime over total period —
+the fraction of the calendar the machine was there when needed. Each is one line of
+arithmetic and one buried decision: the denominator. Calendar hours or scheduled hours?
+Do planned overhauls count as downtime? Neither answer is wrong; the UNSTATED answer is.
+The other closing instrument is the Pareto view: rank downtime by cause and the top two
+or three causes typically own most of the loss — the ranking that converts a data file
+into next month's priorities. A KPI without its denominator stated, or a ranking
+without its period, is decoration.</p>
+<h3>§4 · The reproducibility working method</h3>
+<p>The habits that make the analysis an instrument rather than a performance: the raw
+file is READ-ONLY — the script loads it, transforms in memory, writes results to new
+files, and never edits the source, because the untouched original plus the script IS
+the audit trail; rerunning must reproduce every figure exactly. One script runs raw to
+figures with no manual steps in between — no hand-pasted cells, no "then I fixed one
+value in the editor", since a single silent hand-edit breaks the chain that lets a
+reviewer trust the output. Assertions stand guard at the borders: row counts after each
+cleaning stage, ranges on every computed KPI. Figures carry their period and filters in
+the caption. And the four sentences on top state what was computed, over what
+denominator, with what excluded — the analyst's equivalent of showing units. This
+pattern — raw, script, assertions, figures, statement — returns at full strength in
+Reliability Engineering, where the same work-order data feeds Weibull fits and failure
+forecasting. This project is the rehearsal, and the habits are the deliverable.</p>
+</div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Files, lists, dictionaries</b> (Lesson 6) — the CSV comes in through these doors.</li>
+<li><b>Arrays and robust statistics</b> (Lesson 7) — means, medians, masks do the arithmetic.</li>
+<li><b>Plotting</b> (Lesson 8) — the KPI story lands as honest figures.</li>
+<li><b>Assertions</b> (Lesson 5) — row counts and ranges guard every stage.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Work-order export</td><td>one CSV row per job</td><td>The raw material of maintenance analysis.</td></tr>
+<tr><td>MTBF</td><td>\( \text{uptime} / N_{fail} \)</td><td>Mean run between stoppages — reliability's headline.</td></tr>
+<tr><td>MTTR</td><td>\( \text{downtime} / N_{fail} \)</td><td>Mean length of a stoppage — repair response in one number.</td></tr>
+<tr><td>Availability</td><td>\( \text{uptime} / \text{period} \)</td><td>Fraction of the period the machine was there when needed.</td></tr>
+<tr><td>Pareto ranking</td><td>sort causes by loss</td><td>The few causes owning most of the downtime — next month's priorities.</td></tr>
+<tr><td>Quarantine</td><td>flag, don't delete</td><td>Invalid rows set aside and counted, never silently dropped.</td></tr>
+<tr><td>Read-only raw</td><td>script reads, never edits</td><td>The untouched original + the script = the audit trail.</td></tr>
+<tr><td>Reproducibility</td><td>same file + same script → same figures</td><td>The property that makes analysis trustworthy at all.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>A machine's month in three KPIs</b></p>
+<p><b>Problem.</b> In a 720-hour month, a filling line logs 4 failures totaling 48 hours of downtime. Compute MTBF, MTTR, and availability.</p><div class="soln"><p><b>Solution.</b> (1) Uptime = 720 − 48 = 672 h.
+(2) MTBF = 672 / 4 = 168 h; MTTR = 48 / 4 = 12 h.
+(3) Availability = 672 / 720 = 0.9333 → 93.3%.</p>
+<p><b>Answer:</b> MTBF 168 h, MTTR 12 h, availability 93.3%.
+<b>Sanity check:</b> the three interlock: MTBF/(MTBF + MTTR) = 168/180 = 93.3% — the same availability by the cycle view, so the arithmetic is consistent. The buried decision is the denominator: 720 h is the CALENDAR month; against scheduled hours the number differs, and only the stated choice makes the KPI comparable.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>One bad row versus the mean</b></p>
+<p><b>Problem.</b> Six repair durations arrive (hours): 6.0, 3.5, 480.0, 5.0, 2.5, 7.0. Investigation shows 480 was keyed in MINUTES. Compute mean and median before and after the fix, and state the lesson.</p><div class="soln"><p><b>Solution.</b> (1) Raw: mean = 504/6 = 84.0 h; median = (5.0 + 6.0)/2 = 5.5 h.
+(2) Fix: 480 min = 8.0 h. Clean: mean = 32/6 = 5.33 h; median = (5.0 + 6.0)/2 = 5.5 h — unchanged.
+(3) One unit error inflated the mean ×16; the median never moved.</p>
+<p><b>Answer:</b> mean 84.0 → 5.33 h; median 5.5 → 5.5 h.
+<b>Sanity check:</b> the median's indifference is exactly why range checks matter: had the report led with "mean repair 84 h" — three and a half days to fix a filling line — the absurdity would have flagged the data. A mean wildly above its median is the classic signature of an outlier or unit mix, and the row that caused it goes to QUARANTINE with a note, never to silent deletion.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Pareto of a quarter's downtime</b></p>
+<p><b>Problem.</b> A quarter's downtime by cause: pump seal 32 h, motor bearing 18 h, coupling 9 h, instrument 5 h, other 4 h. What share of total loss do the top two causes own?</p><div class="soln"><p><b>Solution.</b> (1) Total = 32 + 18 + 9 + 5 + 4 = 68 h.
+(2) Top two: 32 + 18 = 50 h.
+(3) Share = 50/68 = 0.735 → 73.5%.</p>
+<p><b>Answer:</b> 73.5% of all downtime sits in pump seals and motor bearings.
+<b>Sanity check:</b> two of five causes owning nearly three quarters of the loss is the Pareto shape in miniature — and it converts directly into a work plan: a seal-flushing review and a bearing-lubrication review attack 50 of the 68 hours; chasing "other" first would attack 4. The ranking, with its period stated, IS the recommendation.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>The analysis script must read the raw export and never edit it because:</p><ol class="opts"><li class="opt correct">The untouched original plus the script is the audit trail — anyone can rerun and reproduce ✓</li><li class="opt">CSV files cannot be modified once written</li><li class="opt">Editing would make the script run slower</li><li class="opt">Raw files are usually write-protected anyway</li></ol><div class="soln"><p>Reproducibility is the product: same file + same script → same figures, verifiable by anyone. A single silent hand-edit breaks that chain permanently — nobody can distinguish correction from mistake afterward. Fixes belong IN the script, visible and commented, where the audit trail records them.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>First act on a freshly loaded export, before any KPI:</p><ol class="opts"><li class="opt correct">Look at it — row count, ranges, missing values, duplicates ✓</li><li class="opt">Compute MTBF immediately while the data is fresh</li><li class="opt">Delete every row with any blank field</li><li class="opt">Round all durations to whole hours</li></ol><div class="soln"><p>Compute-first hands you confident numbers built on duplicates and unit mixes — the 84-hour mean repair. The inspection pass (counts, ranges, missing, duplicates) is minutes of work that decides whether every later number means anything. Blanket deletion is its own error: rows are quarantined with counts, not vaporized.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Repair times are strongly right-skewed. The single most honest "typical repair" number:</p><ol class="opts"><li class="opt correct">The median ✓</li><li class="opt">The mean</li><li class="opt">The maximum</li><li class="opt">The standard deviation</li></ol><div class="soln"><p>Skewed data drags the mean toward its long tail — a few marathon repairs make the typical job look worse than it is (and one unit error makes it absurd, as the solve showed). The median reports the middle job faithfully. The mature report gives both and lets the gap between them SAY "skewed": that gap is information, not embarrassment.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>With uptime U, downtime D over a period P = U + D, availability is:</p><ol class="opts"><li class="opt correct">U / P ✓</li><li class="opt">P / U</li><li class="opt">U / D</li><li class="opt">D / P</li></ol><div class="soln"><p>Availability is the fraction of the period the machine was available: uptime over the whole period, 672/720 = 93.3% in the solve. U/D is a ratio of times (not a fraction), D/P is the UNavailability, and P/U exceeds 1 — a useful smell test, since no availability can. The load-bearing choice is what P counts: calendar or scheduled hours, stated every time.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>The analysis counts as reproducible when:</p><ol class="opts"><li class="opt correct">The same raw file and script yield the same numbers and figures with no manual steps ✓</li><li class="opt">It runs without printing warnings</li><li class="opt">The plots look professional</li><li class="opt">The script is shorter than 100 lines</li></ol><div class="soln"><p>Reproducibility is a property of the PIPELINE: raw in, figures out, nothing by hand in between — so a colleague (or you, next quarter, on the new export) reruns it and gets the identical story. Warnings, aesthetics, and line counts are all beside the point; the no-manual-steps chain is the point.</p></div></div></div></section></body></html>

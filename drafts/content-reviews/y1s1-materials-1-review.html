@@ -1,0 +1,735 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAT 104 — Content Review</title><script>MathJax={tex:{inlineMath:[["\\(","\\)"]]},svg:{fontCache:"global"}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style>
+ body{font:16px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;max-width:900px;margin:0 auto;padding:24px;color:#16202e;background:#f7f9fb}
+ h1{font-size:25px;border-bottom:3px solid #1f7a5c;padding-bottom:8px}
+ .meta{color:#5a6b7b;font-size:14px;margin-bottom:22px}
+ section.lesson{background:#fff;border:1px solid #dde5ec;border-radius:10px;padding:18px 22px;margin:20px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+ section.lesson>h2{font-size:19px;color:#0e1626;margin-top:0;border-left:5px solid #1f7a5c;padding-left:12px}
+ h3.tab{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#1f7a5c;margin:20px 0 8px;border-bottom:1px solid #e3ebf1;padding-bottom:4px}
+ h3.tab .cnt{color:#8a99a8;font-weight:400;text-transform:none;letter-spacing:0}
+ .body h3{font-size:15.5px;color:#20364a;margin:15px 0 4px}
+ .body h4{font-size:14px;color:#3a4a5a;margin:13px 0 4px}
+ table.glossary{border-collapse:collapse;width:100%;font-size:13.5px;margin:8px 0}
+ table.glossary th,table.glossary td{border:1px solid #d3dde5;padding:6px 9px;text-align:left;vertical-align:top}
+ table.glossary th{background:#eef4f2}
+ ul.plain{margin:6px 0 6px 18px}
+ .qcard{border:1px solid #e0e8ef;border-radius:8px;padding:11px 14px;margin:10px 0;background:#fbfdfe}
+ .qcard.mc{background:#f9fbf9}
+ .qtag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff;background:#1f7a5c;border-radius:4px;padding:2px 7px;margin-bottom:6px}
+ .qcard.mc .qtag{background:#3a6ea5}
+ ol.opts{margin:6px 0 6px 20px}
+ ol.opts li.correct{color:#116b41;font-weight:600}
+ .soln{background:#f0f5f2;border-left:3px solid #1f7a5c;padding:8px 12px;margin-top:8px;border-radius:0 6px 6px 0;font-size:14.5px}
+ .qname{margin:0 0 4px}
+</style></head><body><h1>MAT 104 · Materials Science I</h1><p class="meta">Y1S1 · materials-1 · 11 lesson(s) authored · Lecture + Foundations (glossary tables) + Examples &amp; Quiz (correct MCQ ✓). Open in a browser for MathJax.</p>
+<section class="lesson"><h2>Lesson 01 · Why materials fail the plant</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Four families, four bargains</h3>
+<p>Every engineering material belongs to one of four families, and each family is a bargain with physics. <b>Metals</b>: stiff, strong, tough, conductive — but dense and corrodible. <b>Ceramics</b>: hard, refractory, chemically inert — but brittle, and brittle without apology. <b>Polymers</b>: light, cheap, formable, corrosion-immune — but soft, creep-prone, and temperature-limited. <b>Composites</b>: property combinations the families cannot reach alone — bought with cost and joining headaches. No family is best; each is best <em>at something</em>, and the selection question is always "what does this application refuse to forgive?"</p>
+<h3>§2 · The spine of the course</h3>
+<p>Materials science stands on one chain:</p>
+\[ \text{processing} \rightarrow \text{structure} \rightarrow \text{properties} \rightarrow \text{performance} \tag{1} \]
+<p>Processing sets the internal structure — from atomic bonding through crystal defects to microstructure; structure sets the properties; properties decide whether the part survives service. The chain runs both directions: read it left-to-right to design a material, right-to-left to diagnose a failure. Every lesson in this course is one link examined closely.</p>
+<h3>§3 · The failed part is a materials question</h3>
+<p>A snapped bolt, a cracked impeller, a swollen seal — the maintenance floor sees these as events; this course teaches you to see them as structure speaking. Was the fracture surface woody and deformed (ductile, overload) or flat and crystalline (brittle, or fatigue)? Did the polymer harden and craze (thermal aging) or soften and smear (chemical attack)? Chain (1) run backwards is failure analysis, and it begins with knowing which family the part belongs to and what that family's bargain was.</p>
+
+<h3>§4 · The failure-reading working method</h3>
+<p>Materials thinking has a procedure, and it starts at the broken part, not the catalog.
+<em>Name the failure mode first</em> — overload, fatigue, corrosion, wear, creep — because
+each mode names its own culprit property and its own fix; a fatigue failure is not solved by
+a stronger material if the problem is a sharp shoulder. <em>Walk the causal chain
+backward:</em> performance failed → which property fell short → which structure produced
+that property → which processing produced that structure. The chain runs in both directions,
+and every lesson in this course adds one link. <em>Quantify before judging:</em>
+\( \sigma = F/A \) turns "the bolt looked thin" into a number — a 20% section loss is a
+25% stress rise at constant load, because the divisor shrank — and numbers survive meetings
+that adjectives do not.</p>
+<p>Close every reading with the honest questions: what environment, what load spectrum, what
+life, what cost? A material is never good or bad — it is suited or unsuited to those four
+declared inputs. The professional habit this course builds is refusing to discuss materials
+until the four inputs are on the table, and refusing to blame a material until the failure
+mode has a name.</p>
+<p>Keep one more discipline from day one: data provenance. Handbook numbers are typical
+values with real scatter; a delivered batch's certificate is the number that actually
+matters, and downstream lessons will teach you to read one. Where the certificate and the
+handbook disagree, the certificate wins — the material in the rack outranks the material in
+the book.</p>
+<p><strong>Closing.</strong> Four families, one chain, two reading directions. Everything that follows — bonding, crystals, defects, strengthening — is the machinery inside the word "structure".</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>General chemistry</b> — atoms, electrons, the periodic table at school level.</li>
+<li><b>Stress and stiffness, informally</b> — precise definitions arrive in Lesson 7.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Structure–property link</td><td>processing → structure → properties → performance</td><td>The causal chain every materials decision walks, in one direction or the other.</td></tr>
+<tr><td>Failure modes</td><td>overload, fatigue, corrosion, wear, creep</td><td>The taxonomy that turns 'it broke' into a diagnosable event.</td></tr>
+<tr><td>Stress rises as area falls</td><td>\( \sigma = F/A \)</td><td>Why corrosion and wear turn safe parts into failures at constant load.</td></tr>
+<tr><td>Material families</td><td>metals, polymers, ceramics, composites</td><td>The four kingdoms; each trades stiffness, toughness, temperature, and cost differently.</td></tr>
+<tr><td>Selection question</td><td>environment + load + life + cost</td><td>The four inputs every honest materials choice must declare.</td></tr>
+<tr><td>Representative values</td><td>handbook data ± scatter</td><td>Real properties vary batch to batch; certificates beat tables.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Stiffness per kilogram</b></p>
+<p><b>Problem.</b> Compare steel (\( E = 200\ \mathrm{GPa} \), \( \rho = 7850\ \mathrm{kg/m^3} \)) and aluminum (\( E = 69\ \mathrm{GPa} \), \( \rho = 2700\ \mathrm{kg/m^3} \)) on specific stiffness \( E/\rho \).</p><div class="soln"><p><b>Solution.</b> (1) Steel: \( 200 \times 10^9 / 7850 = 25.5 \times 10^6\ \mathrm{m^2/s^2} \).
+(2) Aluminum: \( 69 \times 10^9 / 2700 = 25.6 \times 10^6\ \mathrm{m^2/s^2} \).</p>
+<p><b>Answer:</b> essentially identical — a classic and initially shocking result.
+<b>Sanity check:</b> aluminum is one-third as stiff but also roughly one-third as dense; the ratio cancels. The lesson: "aluminum saves weight" is true only when the design is <em>not</em> limited by simple tensile stiffness — geometry (deeper, thinner sections) is where aluminum actually wins. Property data from Callister &amp; Rethwisch.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Same load, different family</b></p>
+<p><b>Problem.</b> A machine guard bracket in steel (\( E = 200\ \mathrm{GPa} \)) is proposed in glass-filled nylon (\( E \approx 2.8\ \mathrm{GPa} \), representative). Same geometry, same load. <b>Find:</b> the elastic deflection ratio.</p><div class="soln"><p><b>Solution.</b> (1) Elastic deflection at fixed geometry and load scales as \( 1/E \).
+(2) Ratio: \( 200/2.8 = 71 \).</p>
+<p><b>Answer:</b> the nylon bracket deflects ~71× more.
+<b>Sanity check:</b> that may be fine (a guard is not a bearing housing) or fatal (anything holding alignment). The number itself is neutral — the application's tolerance for deflection decides, which is §1's point: families are bargains, and you must know which clause of the bargain your part invokes.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>The corroded bolt's rising stress</b></p>
+<p><b>Problem.</b> A bolt with 245 mm² of effective cross-section carries a steady 30 kN. Corrosion thins it to 80% of its original area. <b>Find:</b> the stress before and after, and the percentage rise.</p><div class="soln"><p><b>Solution.</b> (1) Before: \( \sigma = F/A = 30{,}000/245 = 122\ \mathrm{MPa} \).
+(2) After: \( A = 0.8 \times 245 = 196\ \mathrm{mm^2} \); \( \sigma = 30{,}000/196 = 153\ \mathrm{MPa} \).
+(3) Rise: \( 1/0.8 = 1.25 \) — exactly +25%, at perfectly constant load.</p>
+<p><b>Answer:</b> 122 → 153 MPa; +25%.
+<b>Sanity check:</b> stress scales as the reciprocal of area, so a 20% area loss must produce a 25% stress rise \( (0.8^{-1} = 1.25) \) — the part moved a quarter of the way toward failure without the load changing at all, which is the quiet arithmetic behind most corrosion-driven fractures.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Ceramics buy their hardness and temperature resistance mainly at the price of:</p><ol class="opts"><li class="opt">density</li><li class="opt correct">toughness ✓</li><li class="opt">corrosion resistance</li><li class="opt">cost</li></ol><div class="soln"><p>Ionic/covalent bonding blocks the atomic-plane slide that lets metals deform, so ceramics fracture instead of flowing — low toughness is the family's standing bargain. They are typically <em>less</em> dense than metals and outstandingly corrosion-resistant, so the other choices invert the trade.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>The correct order of the materials-science chain is:</p><ol class="opts"><li class="opt">properties → processing → structure → performance</li><li class="opt correct">processing → structure → properties → performance ✓</li><li class="opt">structure → performance → processing → properties</li><li class="opt">performance → properties → processing → structure</li></ol><div class="soln"><p>Processing sets the internal structure; structure sets the properties; properties decide performance. Run left-to-right to design, right-to-left to diagnose a failure. Every later lesson is one link of this chain under a microscope.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A pump shaft snaps after two years of trouble-free service, with a flat, beach-marked fracture face. The first question a materials engineer asks is:</p><ol class="opts"><li class="opt correct">Which failure mode does the fracture surface indicate? ✓</li><li class="opt">What stronger alloy can replace it?</li><li class="opt">Who installed it?</li><li class="opt">What did the shaft cost?</li></ol><div class="soln"><p>Beach marks are fatigue's signature — and fatigue is fixed by attacking cyclic stress and stress raisers, not by raw strength; a stronger but more notch-sensitive alloy can fail sooner. Mode first, then property, then material: reversing the order is the classic upgrade-and-fail-again loop that keeps failure analysts employed.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Steel (\( E = 200 \) GPa, \( \rho = 7850 \) kg/m³) versus aluminum (\( E = 69 \) GPa, \( \rho = 2700 \) kg/m³) on stiffness per kilogram:</p><ol class="opts"><li class="opt">steel wins by ~3×</li><li class="opt">aluminum wins by ~3×</li><li class="opt correct">they are essentially equal ✓</li><li class="opt">neither has a defined ratio</li></ol><div class="soln"><p>\( E/\rho \) computes to \( 25.5 \) versus \( 25.6 \times 10^6\ \mathrm{m^2/s^2} \) — a dead heat. Aluminum's weight saving is real but comes from geometry (deeper, thinner sections at equal mass), not from raw specific stiffness. A classic selection-chart surprise.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Of the four material families, which combination best describes ceramics?</p><ol class="opts"><li class="opt correct">Stiff, hard, temperature-tolerant — and brittle ✓</li><li class="opt">Ductile and conductive</li><li class="opt">Light, tough, and cheap</li><li class="opt">Soft but creep-resistant</li></ol><div class="soln"><p>Ionic/covalent bonding gives ceramics stiffness, hardness, and thermal standing — and denies them the dislocation plasticity that lets metals yield instead of shatter. That trade is the family's entire engineering identity: superb in compression and at temperature, unforgiving of tension and impact. The other option sets describe metals, polymers-in-a-good-mood, and nothing in nature respectively.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 02 · Atomic bonding</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Bonds are springs with a depth</h3>
+<p>Two atoms settle at the separation \( r_0 \) where attraction and repulsion balance — the bottom of the bond-energy well. Two features of that well govern macroscopic behavior. Its <em>curvature</em> at the bottom is the stiffness of the interatomic spring: deep, narrow wells give high elastic modulus. Its <em>depth</em> is the bond energy: deep wells mean high melting points and — because a deep well is also more symmetric near its floor — low thermal expansion. Modulus, melting point, and expansion coefficient travel together, and the bond-energy curve is why.</p>
+<h3>§2 · The four bonding types</h3>
+<p><b>Metallic</b>: ion cores in a shared electron sea. The sea conducts (electrons free to drift) and the non-directional bonding lets planes of atoms slide without shattering — conductivity and ductility from one picture. <b>Ionic</b>: electron transfer, then Coulomb attraction between ions; strong but directionally rigid — slide a plane one spacing and like charges meet, so ceramics fracture rather than flow. <b>Covalent</b>: shared electron pairs, strongly directional; diamond's hardness and silicon's brittleness. <b>Secondary (van der Waals / hydrogen)</b>: weak dipole attractions — the reason polymer chains, strongly covalent along their backbones, still slide past each other at modest temperature.</p>
+<h3>§3 · Mixed character, measured</h3>
+<p>Real compounds sit between poles. Electronegativity difference estimates the ionic fraction of a bond; Pauling's relation \( \%IC = [1 - e^{-0.25(X_A - X_B)^2}] \times 100 \) puts MgO at ~73% ionic while SiC is ~12% — one behaves as a classic ionic ceramic, the other as a covalent one, and their fracture and conduction behavior follow suit. §Worked Examples computes both, plus the raw Coulomb force inside an ion pair.</p>
+
+<h3>§4 · Reading properties off the bond</h3>
+<p>The bond-energy curve is a property-prediction machine if read with method. <em>Well
+depth</em> is cohesion: deeper wells mean higher melting points, higher stiffness, lower
+vapor pressure — which is why tungsten's deep metallic well melts at 3400 °C while
+polyethylene's van-der-Waals-held chains soften in boiling water. <em>Well curvature</em> at
+the bottom is elastic modulus: a steep, narrow well resists stretching hard. <em>Well
+asymmetry</em> is thermal expansion: shallow, lopsided wells let atoms ride up the soft side
+as temperature climbs — polymers expand roughly ten times more than metals per degree for
+exactly this reason.</p>
+<p>Work the scale conversion fluently: table values arrive per mole, atoms bond one at a
+time, so divide by Avogadro's number — a 640 kJ/mol bond is about 1.1 aJ, or 6.6 eV, per
+bond. And keep the bonding families honest in memory: primary bonds (ionic, covalent,
+metallic) are hundreds of kJ/mol and set the ceiling properties; secondary bonds are tens
+and set the softening behavior of everything held together by them. When a datasheet
+surprises you, the bond picture is the first sanity check: no van-der-Waals solid will ever
+serve at 500 °C, whatever the brochure implies.</p>
+<p><strong>Closing.</strong> Stiffness, melting, and expansion live in the well's shape; ductility versus brittleness lives in whether the bonding forgives atomic-plane slide. Metals forgive; ceramics do not; polymers are covalent ropes held by weak handshakes.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Materials families</b> (Lesson 1) — bonding is what makes the families different.</li>
+<li><b>Basic electrostatics</b> — Coulomb's law, at plug-in level.</li>
+<li><b>Periodic table</b> — electronegativity trends left-to-right, bottom-to-top.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Ionic bond</td><td>electron transfer; cation + anion</td><td>Ceramics and salts — strong, stiff, brittle, insulating.</td></tr>
+<tr><td>Covalent bond</td><td>shared electron pairs</td><td>Diamond, silicon, polymer backbones — directional and strong.</td></tr>
+<tr><td>Metallic bond</td><td>ion cores in an electron sea</td><td>Metals — conductivity, ductility, and opacity in one picture.</td></tr>
+<tr><td>Secondary (van der Waals)</td><td>~1–50 kJ/mol</td><td>Between polymer chains; why plastics soften where metals shrug.</td></tr>
+<tr><td>Bond energy per bond</td><td>\( E_{bond} = E_{molar}/N_A \)</td><td>Converting mole-scale table data to the single-bond scale (eV).</td></tr>
+<tr><td>Bond–property reading</td><td>deep well → high \( T_m \), stiff; asymmetric well → high \( \alpha \)</td><td>Predicting melting point, modulus, and expansion from the bond curve.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>The force inside an ion pair</b></p>
+<p><b>Problem.</b> Estimate the attractive Coulomb force between a Na⁺ and Cl⁻ ion pair at separation \( r_0 = 0.276\ \mathrm{nm} \) (representative).</p><div class="soln"><p><b>Solution.</b> (1) \( F = \dfrac{k q_1 q_2}{r^2} \) with \( k = 8.99 \times 10^9\ \mathrm{N\,m^2/C^2} \), \( q = 1.602 \times 10^{-19}\ \mathrm{C} \).
+(2) \( F = \dfrac{8.99 \times 10^9 \times (1.602 \times 10^{-19})^2}{(2.76 \times 10^{-10})^2} \).
+(3) \( F = 3.03 \times 10^{-9}\ \mathrm{N} \).</p>
+<p><b>Answer:</b> ~3 nN per ion pair.
+<b>Sanity check:</b> nanonewtons sound tiny, but a square millimetre of crystal face holds ~10¹³ such pairs — summed, that is the strength of salt crystals and the reason ionic solids melt at hundreds of degrees.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Percent ionic character</b></p>
+<p><b>Problem.</b> Using Pauling electronegativities (Callister &amp; Rethwisch): Mg 1.2, O 3.5, Si 1.8, C 2.5. <b>Find:</b> the ionic character of MgO and SiC.</p><div class="soln"><p><b>Solution.</b> (1) MgO: \( \Delta X = 2.3 \); \( \%IC = [1 - e^{-0.25(2.3)^2}] \times 100 = [1 - e^{-1.32}] \times 100 = 73\% \).
+(2) SiC: \( \Delta X = 0.7 \); \( \%IC = [1 - e^{-0.25(0.7)^2}] \times 100 = [1 - e^{-0.123}] \times 100 = 12\% \).</p>
+<p><b>Answer:</b> MgO ≈ 73% ionic; SiC ≈ 12% ionic (88% covalent).
+<b>Sanity check:</b> oxygen sits far right of magnesium on the electronegativity scale, silicon and carbon are neighbors — the formula only quantifies what the periodic table already whispers. Both are "ceramics", but their bonding characters, and hence their oxidation and sintering behavior, differ usefully.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>From table to atom</b></p>
+<p><b>Problem.</b> A handbook lists a bond energy of 640 kJ/mol for a primary bond. <b>Find:</b> the energy per single bond in joules and electron-volts, and compare with a van der Waals interaction of ~8 kJ/mol.</p><div class="soln"><p><b>Solution.</b> (1) Per bond: \( 640{,}000/6.022\times10^{23} = 1.06\times10^{-18}\ \mathrm{J} \).
+(2) In eV: \( 1.06\times10^{-18}/1.602\times10^{-19} = 6.6\ \mathrm{eV} \).
+(3) The van der Waals bond: \( 8/640 = 1/80 \) of the energy — about 0.08 eV.</p>
+<p><b>Answer:</b> ≈1.1 aJ = 6.6 eV per bond; the secondary bond is ~80× weaker.
+<b>Sanity check:</b> thermal energy at room temperature is ~0.025 eV — far below 6.6 eV (primary bonds shrug off heat) but only a factor of ~3 below the secondary bond's scale, which is why gentle warmth softens polymers while leaving metals untouched.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A deep, narrow bond-energy well predicts:</p><ol class="opts"><li class="opt correct">high melting point, high stiffness, low thermal expansion ✓</li><li class="opt">low melting point, low stiffness, high expansion</li><li class="opt">high melting point, low stiffness, high expansion</li><li class="opt">no measurable consequences</li></ol><div class="soln"><p>Depth is bond energy (melting point); curvature at the bottom is the interatomic spring constant (modulus); and a deep well is symmetric near its floor, so atoms gain little amplitude with temperature (low expansion). The three properties travel together because they share one curve.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Metals conduct electricity because:</p><ol class="opts"><li class="opt">their ions are charged</li><li class="opt correct">their bonding electrons are delocalized — an electron sea ✓</li><li class="opt">they contain vacancies</li><li class="opt">their bonds are directional</li></ol><div class="soln"><p>Metallic bonding pools valence electrons into a shared sea free to drift under a field — the same non-directional picture that lets atomic planes slide (ductility). Ions in a solid metal are locked in the lattice; vacancies matter for diffusion, not conduction.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Which bond type explains a material that conducts electricity well and deforms plastically without shattering?</p><ol class="opts"><li class="opt correct">Metallic ✓</li><li class="opt">Ionic</li><li class="opt">Covalent</li><li class="opt">Van der Waals</li></ol><div class="soln"><p>The electron sea does both jobs: delocalized electrons carry charge, and non-directional bonding lets planes of ion cores slide to new positions without breaking the cohesion — plasticity. Ionic and covalent solids lock electrons in place and punish plane-sliding with fracture; secondary bonds are too weak to hold a conductor together at all. One bond picture, two headline properties.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Electronegativity difference \( \Delta X = 2.3 \) (e.g., MgO). Percent ionic character, by \( 1 - e^{-0.25\,\Delta X^2} \):</p><ol class="opts"><li class="opt">≈12%</li><li class="opt">≈36%</li><li class="opt correct">≈73% ✓</li><li class="opt">≈97%</li></ol><div class="soln"><p>\( 1 - e^{-0.25 \times 5.29} = 1 - e^{-1.32} = 0.73 \) — MgO behaves as a classic ionic ceramic. For comparison, SiC's \( \Delta X = 0.7 \) gives only ~12%: both are \"ceramics\", but their bonding characters differ usefully.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Polymers soften near 100–200 °C while metals serve far hotter. The bond-level reason is:</p><ol class="opts"><li class="opt correct">Chains are held to each other by weak secondary bonds that heat easily overcomes ✓</li><li class="opt">Polymer covalent bonds are weak</li><li class="opt">Polymers contain no crystals</li><li class="opt">Metals conduct heat away faster</li></ol><div class="soln"><p>The C–C backbone is genuinely strong — comparable to bonds in ceramics — but chains are bound to NEIGHBORING chains by van der Waals forces tens of times weaker, and it is chain-sliding that softening requires. Heat defeats the weak inter-chain bonds long before the backbone notices. That two-tier bond structure is the single most useful fact for predicting polymer temperature limits.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 03 · Crystal structures</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Three cells carry most of metallurgy</h3>
+<p>Most engineering metals crystallize into one of three unit cells. <b>FCC</b> (face-centered cubic): atoms at corners and face centers — copper, aluminum, nickel, austenitic stainless. <b>BCC</b> (body-centered cubic): corners plus one center atom — ferritic iron, chromium, tungsten. <b>HCP</b> (hexagonal close-packed): zinc, magnesium, titanium. Geometry first: in FCC atoms touch along the face diagonal, so \( a = 2R\sqrt{2} \) with 4 atoms per cell; in BCC they touch along the body diagonal, \( a = 4R/\sqrt{3} \), 2 atoms per cell.</p>
+<h3>§2 · Packing predicts behavior</h3>
+<p>The atomic packing factor — fraction of cell volume occupied — is 0.74 for FCC and HCP against 0.68 for BCC. FCC's close packing comes with close-packed planes on which slip is easy in many directions at any temperature: FCC metals stay ductile from cryogenic cold to near melting. BCC's slightly open structure makes slip thermally assisted — cool a BCC steel enough and slip stalls before fracture does, the root of the ductile–brittle transition that Lesson 8 prices in joules. HCP's single close-packed plane family gives few slip systems and the notorious formability limits of magnesium and zinc.</p>
+<h3>§3 · Density from first principles</h3>
+<p>The unit cell converts crystallography into a checkable number:</p>
+\[ \rho = \frac{nA}{V_C N_A} \tag{1} \]
+<p>\( n \) atoms per cell, \( A \) the atomic weight, \( V_C \) the cell volume, \( N_A \) Avogadro's number. §Worked Examples runs copper and lands within 1% of the handbook value — a satisfying audit that the atomic picture is not a metaphor but a measurement.</p>
+
+<h3>§4 · The unit-cell bookkeeping method</h3>
+<p>Crystal arithmetic rewards the same tabular discipline as statics. <em>Fix the cell
+geometry first:</em> for FCC, atoms touch along the face diagonal, so \( a = 2R\sqrt{2} \);
+for BCC, along the body diagonal, \( a = 4R/\sqrt{3} \) — derive the relation from the
+touching direction rather than memorizing it, and it cannot betray you. <em>Count atoms the
+honest way:</em> corners contribute an eighth each, faces a half, body atoms a whole —
+4 per FCC cell, 2 per BCC. <em>Then let the density formula audit everything:</em>
+\( \rho = nA/(V_C N_A) \) predicts copper at 8.90 g/cm³ from nothing but a radius and an
+atomic mass; agreement with the handbook to within a percent certifies the whole chain of
+geometry, counting, and units in one number.</p>
+<p>Use the same audit in reverse on real parts: a measured density falling meaningfully below
+the theoretical value is porosity talking — castings and additive parts confess their voids
+this way, and the quality lab's densitometer is running this lesson's equation as a routine
+instrument. Structure is not an abstraction; it is a number you can weigh — and the first
+crystal-level measurement most engineers ever make is a bathroom-scale argument about
+atoms, which is precisely what makes it trustworthy on a shop floor.</p>
+<p><strong>Closing.</strong> Three cells, two touching rules, one packing-factor gap that explains why austenitic steel stays tough in liquid nitrogen while ferritic steel turns to glass in a cold snap. Crystal structure is destiny, slightly exaggerated — but only slightly.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Bonding</b> (Lesson 2) — non-directional metallic bonding is what permits dense packing.</li>
+<li><b>Solid geometry</b> — cube diagonals: face \( a\sqrt{2} \), body \( a\sqrt{3} \).</li>
+<li><b>Avogadro's number</b> — the mole-to-atoms bridge for density.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Unit cell</td><td>the repeating box</td><td>The whole crystal is this cell tiled in three directions.</td></tr>
+<tr><td>FCC</td><td>\( a = 2R\sqrt{2} \), 4 atoms/cell, APF 0.74</td><td>Cu, Al, Ni, austenite — the ductile close-packed family.</td></tr>
+<tr><td>BCC</td><td>\( a = 4R/\sqrt{3} \), 2 atoms/cell, APF 0.68</td><td>Ferrite, Cr, W — strong, with a ductile-brittle transition.</td></tr>
+<tr><td>HCP</td><td>ABAB stacking, APF 0.74</td><td>Zn, Mg, Ti — close-packed but with fewer slip options.</td></tr>
+<tr><td>Theoretical density</td><td>\( \rho = nA/(V_C N_A) \)</td><td>Predicting density from the cell; auditing porosity when measurements fall short.</td></tr>
+<tr><td>Polymorphism</td><td>same atoms, different cells</td><td>Iron's BCC↔FCC switch — the lever all steel heat treatment pulls.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Packing factor of FCC</b></p>
+<p><b>Problem.</b> Derive the FCC atomic packing factor.</p><div class="soln"><p><b>Solution.</b> (1) Face-diagonal touching: \( 4R = a\sqrt{2} \Rightarrow a = 2R\sqrt{2} \).
+(2) Atoms per cell: \( 8 \times \tfrac{1}{8} + 6 \times \tfrac{1}{2} = 4 \).
+(3) \( APF = \dfrac{4 \times \tfrac{4}{3}\pi R^3}{(2R\sqrt{2})^3} = \dfrac{16.76\,R^3}{22.63\,R^3} = 0.740 \).</p>
+<p><b>Answer:</b> 0.74 — the maximum possible for equal spheres.
+<b>Sanity check:</b> the same computation for BCC (\( a = 4R/\sqrt{3} \), 2 atoms) gives 0.68; FCC is measurably tighter, consistent with its higher coordination (12 vs 8).</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Density of copper from its lattice</b></p>
+<p><b>Problem.</b> Copper: FCC, \( R = 0.128\ \mathrm{nm} \), \( A = 63.55\ \mathrm{g/mol} \) (Callister &amp; Rethwisch). <b>Find:</b> the theoretical density.</p><div class="soln"><p><b>Solution.</b> (1) \( a = 2R\sqrt{2} = 0.362\ \mathrm{nm} = 3.62 \times 10^{-8}\ \mathrm{cm} \).
+(2) \( V_C = a^3 = 4.75 \times 10^{-23}\ \mathrm{cm^3} \).
+(3) \( \rho = \dfrac{nA}{V_C N_A} = \dfrac{4 \times 63.55}{4.75 \times 10^{-23} \times 6.022 \times 10^{23}} = 8.90\ \mathrm{g/cm^3} \).</p>
+<p><b>Answer:</b> \( 8.90\ \mathrm{g/cm^3} \).
+<b>Sanity check:</b> the measured density of copper is 8.94 g/cm³ — agreement within half a percent, from nothing but an atomic radius, a molar mass, and geometry. The unit cell is bookkeeping that nature audits.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Predicting copper's density from its cell</b></p>
+<p><b>Problem.</b> Copper is FCC with atomic radius 0.128 nm and atomic mass 63.55 g/mol. <b>Find:</b> the lattice parameter and the theoretical density.</p><div class="soln"><p><b>Solution.</b> (1) FCC touching along the face diagonal: \( a = 2R\sqrt{2} = 2 \times 0.128 \times 1.414 = 0.362\ \mathrm{nm} \).
+(2) Cell volume: \( a^3 = (3.62\times10^{-8}\ \mathrm{cm})^3 = 4.74\times10^{-23}\ \mathrm{cm^3} \); FCC holds \( n = 4 \) atoms.
+(3) \( \rho = nA/(V_C N_A) = 4 \times 63.55/(4.74\times10^{-23} \times 6.022\times10^{23}) = 8.90\ \mathrm{g/cm^3} \).</p>
+<p><b>Answer:</b> \( a \approx 0.362\ \mathrm{nm} \); \( \rho \approx 8.90\ \mathrm{g/cm^3} \).
+<b>Sanity check:</b> handbook copper is 8.94 g/cm³ — agreement within half a percent from nothing but a radius, a mass, and geometry; a real part measuring well below this value is declaring porosity.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Atomic packing factors of FCC and BCC are, respectively:</p><ol class="opts"><li class="opt">0.68 and 0.74</li><li class="opt correct">0.74 and 0.68 ✓</li><li class="opt">0.52 and 0.74</li><li class="opt">0.74 and 0.74</li></ol><div class="soln"><p>FCC (and HCP) reach 0.74, the densest possible equal-sphere packing; BCC manages 0.68. The gap sounds small but carries consequences: FCC's close-packed planes slip easily at any temperature, while BCC's slip needs thermal help — the seed of the ductile–brittle transition.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Atoms per unit cell in FCC:</p><ol class="opts"><li class="opt">2</li><li class="opt correct">4 ✓</li><li class="opt">8</li><li class="opt">14</li></ol><div class="soln"><p>Eight corners shared eight ways (= 1) plus six faces shared two ways (= 3): 4 atoms. Counting 14 forgets the sharing; 2 is the BCC count. This little census feeds directly into the density formula \( \rho = nA/(V_C N_A) \).</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>How many atoms belong to one FCC unit cell?</p><ol class="opts"><li class="opt correct">4 ✓</li><li class="opt">2</li><li class="opt">8</li><li class="opt">14</li></ol><div class="soln"><p>Eight corners at one-eighth each (1) plus six faces at one-half each (3): four atoms. Counting 14 tallies the atoms TOUCHING the cell rather than the shares INSIDE it — the classic double-count; 2 belongs to BCC. The shares matter because density, packing factor, and every per-cell quantity stand on this count.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Ferritic (BCC) steels turn brittle in the cold; austenitic (FCC) stainless does not. The root cause is:</p><ol class="opts"><li class="opt">carbon content</li><li class="opt correct">slip in BCC needs thermal activation; FCC slip does not ✓</li><li class="opt">FCC is denser, hence tougher</li><li class="opt">grain size differences</li></ol><div class="soln"><p>BCC lacks truly close-packed planes, so its dislocations need thermal assistance; cool the steel and slip stalls before fracture does — the ductile–brittle transition. FCC's close-packed slip systems work at any temperature, which is why cryogenic plant is austenitic. Density itself (choice C) is not the mechanism.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>A cast component's measured density is 3% below the theoretical value computed from its crystal structure. The most likely explanation is:</p><ol class="opts"><li class="opt correct">Internal porosity from casting ✓</li><li class="opt">The crystal switched structure</li><li class="opt">The atomic mass changed</li><li class="opt">Measurement is always low</li></ol><div class="soln"><p>Theoretical density assumes a void-free lattice; real castings trap gas and shrinkage porosity, and every void subtracts mass but not volume. A 3% deficit is a 3% void fraction to first order — quality labs run exactly this comparison as a porosity screen. Structure changes and mass changes are not things service life does to a part; blaming the instrument is not analysis.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 04 · Crystallographic directions and planes</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Naming directions and planes</h3>
+<p>Crystals are anisotropic objects, so we need coordinates. <b>Directions</b> [uvw]: take the vector's components along the cell axes, clear fractions to smallest integers, wrap in square brackets, mark negatives with an overbar. <b>Planes</b> (hkl), the Miller indices: take the plane's intercepts on the axes in units of the lattice parameters, invert them, clear fractions, wrap in parentheses — an intercept at infinity (plane parallel to an axis) inverts to a clean zero. Families of equivalent directions and planes get angle and brace brackets: ⟨110⟩, {111}.</p>
+<h3>§2 · Why these labels earn their keep</h3>
+<p>Slip — plastic deformation — happens on the densest planes along the densest directions, because those are the paths where atoms ride over each other with the least protest. In FCC that means {111} planes and ⟨110⟩ directions: 12 combinations, the slip systems that make copper and aluminum so obligingly ductile. Linear and planar densities (atoms per length, per area) are the quantitative versions, and computing them is how the claim "close-packed = slip-prone" stops being a slogan.</p>
+<h3>§3 · Anisotropy leaves the lab</h3>
+<p>A single crystal's modulus can differ by a factor of two between directions. Polycrystals average this out — <em>unless processing lines the grains up</em>. Rolling does exactly that: plate develops a crystallographic texture plus elongated grains and aligned inclusions, so strength, ductility, and especially toughness differ between the rolling direction and the transverse. Standards respond by specifying test-bar orientation, and fabricators respond — or should — by orienting bends relative to the rolling direction. The Miller machinery of §1 is the language in which all of this is written.</p>
+
+<h3>§4 · The indexing working method</h3>
+<p>Miller indices are a procedure, and running it identically every time is the entire
+skill. <em>Planes:</em> read the intercepts in cell-edge units, take reciprocals, clear
+fractions, bracket as \( (hkl) \) — a plane parallel to an axis intercepts at infinity and
+earns a zero. <em>Directions:</em> head coordinates minus tail coordinates, clear to
+smallest integers, bracket as \( [uvw] \). Negative components wear an overbar, and
+families collect all symmetry-equivalent members: \( \{111\} \) means every close-packed
+plane in FCC at once. The classic error is mixing conventions mid-problem — intercepts for
+directions or vector components for planes produce plausible-looking nonsense, which is why
+the two recipes should be written at the top of the page until they are reflex.</p>
+<p>Then put the indices to work, because they exist for the packing arithmetic: linear
+density along a close-packed direction is \( 1/(2R) \) — atoms touching in a row — and the
+densest planes with the densest directions form the slip systems where plasticity lives.
+FCC's twelve well-fed slip systems are the geometric reason copper draws into wire without
+complaint; HCP's grudging three are why some alloys crack where others flow. The indices
+are the language; slip is the sentence they were invented to write.</p>
+<p><strong>Closing.</strong> Directions in brackets, planes in parentheses, slip on the close-packed combinations, and rolled products carrying their processing history as directionality. The labels are dry; what they index is not.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Unit cells</b> (Lesson 3) — indices live on the cell's axes.</li>
+<li><b>Vector components</b> — reading a direction as steps along three axes.</li>
+<li><b>Reciprocals and fraction-clearing</b> — the Miller recipe's arithmetic.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Miller indices (plane)</td><td>\( (hkl) \): intercept reciprocals, cleared</td><td>Naming planes so X-ray, slip, and cleavage talk one language.</td></tr>
+<tr><td>Direction indices</td><td>\( [uvw] \): head minus tail, cleared</td><td>Naming directions for slip, wire axes, and growth.</td></tr>
+<tr><td>Families</td><td>\( \{hkl\},\ \langle uvw \rangle \)</td><td>All symmetry-equivalent planes/directions in one symbol.</td></tr>
+<tr><td>Linear density</td><td>atoms per length along \( [uvw] \)</td><td>Close-packed directions: \( 1/(2R) \) — where slip prefers to run.</td></tr>
+<tr><td>Planar density</td><td>atoms per area on \( (hkl) \)</td><td>Close-packed planes — the other half of the slip system.</td></tr>
+<tr><td>Slip system</td><td>close-packed plane + direction</td><td>Why FCC (12 systems) is ductile and HCP (3) is touchy.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Indexing a direction and a plane</b></p>
+<p><b>Problem.</b> (a) Index the direction from the origin to the point \( (1, \tfrac{1}{2}, 1) \) in cell coordinates. (b) Index the plane with intercepts \( x = \tfrac{1}{2} \), \( y = 1 \), \( z = \infty \).</p><div class="soln"><p><b>Solution.</b> (a) Components \( (1, \tfrac{1}{2}, 1) \); clear fractions ×2 → [212].
+(b) Reciprocals: \( 1/\tfrac{1}{2} = 2 \), \( 1/1 = 1 \), \( 1/\infty = 0 \) → (210).</p>
+<p><b>Answer:</b> [212] and (210).
+<b>Sanity check:</b> (210) is parallel to the z-axis — its zero third index says so directly; a plane's zero always marks the axis it never meets. ✓</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Linear density along ⟨110⟩ in copper</b></p>
+<p><b>Problem.</b> Copper is FCC with \( R = 0.128\ \mathrm{nm} \). <b>Find:</b> the linear density of atoms along [110].</p><div class="soln"><p><b>Solution.</b> (1) [110] runs along a face diagonal — in FCC, the close-packed direction where atoms touch continuously.
+(2) The face diagonal has length \( 4R \) and passes through 2 atom diameters' worth of centers: corner atom (½) + face atom (1) + corner atom (½) = 2 atoms.
+(3) \( LD = \dfrac{2}{4R} = \dfrac{1}{2R} = \dfrac{1}{0.256\ \mathrm{nm}} = 3.91\ \mathrm{atoms/nm} \).</p>
+<p><b>Answer:</b> 3.91 atoms/nm — the maximum possible for copper: atoms in contact the whole way.
+<b>Sanity check:</b> no direction can pack tighter than touching spheres, so every other direction in the crystal must come out below 3.91 — [100], for instance, carries \( 1/a = 2.76 \) atoms/nm. Slip picks the 3.91 highway, not the 2.76 side road.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Atoms per nanometre along the slip direction</b></p>
+<p><b>Problem.</b> In FCC copper (R = 0.128 nm), the close-packed directions are \( \langle 110 \rangle \), where atoms touch in a continuous row. <b>Find:</b> the linear density along this direction.</p><div class="soln"><p><b>Solution.</b> (1) Along a close-packed row, centers sit \( 2R \) apart.
+(2) Linear density \( = 1/(2R) = 1/(2 \times 0.128) = 3.91 \) atoms/nm.
+(3) This is the maximum possible for the element — no direction packs tighter, which is precisely why slip chooses it.</p>
+<p><b>Answer:</b> ≈3.9 atoms per nanometre.
+<b>Sanity check:</b> the face diagonal of the cell \( (a\sqrt{2} = 0.512\ \mathrm{nm}) \) hosts exactly 2 atom spacings \( (2 \times 2R = 0.512) \) — the geometry closes on itself, confirming both the lattice parameter and the density.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A plane intercepts the x-axis at 1 and is parallel to both y and z axes. Its Miller indices:</p><ol class="opts"><li class="opt">(111)</li><li class="opt correct">(100) ✓</li><li class="opt">(011)</li><li class="opt">(001)</li></ol><div class="soln"><p>Intercepts \( (1, \infty, \infty) \) invert to \( (1, 0, 0) \). Parallel-to-axis always inverts to zero — the zeros in an index are a map of what the plane never touches.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Slip occurs preferentially on:</p><ol class="opts"><li class="opt correct">the planes of highest atomic density, along their densest directions ✓</li><li class="opt">the planes of lowest density, where there is room</li><li class="opt">planes perpendicular to the load</li><li class="opt">random planes</li></ol><div class="soln"><p>Close-packed planes are smooth at the atomic scale — widest spacing between planes, shortest slip step along dense directions, least bond disruption per increment of slide. In FCC that is {111}⟨110⟩: 12 systems, and the geometric reason FCC metals form so well.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A plane intercepts the crystal axes at 1, ∞, ∞ (in cell-edge units). Its Miller indices are:</p><ol class="opts"><li class="opt correct">(100) ✓</li><li class="opt">(111)</li><li class="opt">(001)</li><li class="opt">(110)</li></ol><div class="soln"><p>Reciprocals of 1, ∞, ∞ are 1, 0, 0 — the (100) plane, a cell face. Infinite intercept means parallel to that axis and earns the zero; forgetting the reciprocal step (or which axis was intercepted) produces the other options. The recipe — intercepts, reciprocals, clear — runs identically every time, which is its entire virtue.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Rolled plate is stronger and tougher along the rolling direction than across it because:</p><ol class="opts"><li class="opt">it is thinner at the edges</li><li class="opt correct">rolling aligns grains, texture, and inclusions directionally ✓</li><li class="opt">the mill heats it unevenly</li><li class="opt">Miller indices change during rolling</li></ol><div class="soln"><p>Rolling elongates grains, develops crystallographic texture, and strings out inclusions along the rolling direction — the microstructure becomes directional, so properties follow. This is why specs fix test-bar orientation and why press-brake bends run across the grain where possible.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>FCC metals are generally more ductile than HCP metals because FCC offers:</p><ol class="opts"><li class="opt correct">Twelve well-oriented slip systems versus HCP's few ✓</li><li class="opt">Stronger bonds</li><li class="opt">Larger atoms</li><li class="opt">Higher density</li></ol><div class="soln"><p>Ductility needs slip systems — close-packed planes carrying close-packed directions — available in every loading orientation. FCC provides twelve; basic HCP only three, so many grains in an HCP polycrystal sit awkwardly to the load and crack rather than flow. Bond strength, atom size, and density are the wrong level of explanation: geometry of slip is the mechanism.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 05 · Defects in solids</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · The perfect crystal is a useful fiction</h3>
+<p>Every real crystal is defective, and the defects are not blemishes on the theory — they <em>are</em> the theory of real behavior. By dimensionality: <b>point defects</b> — vacancies (missing atoms), interstitials (atoms squeezed into gaps), and substitutional or interstitial solute atoms; <b>line defects</b> — dislocations, edge and screw; <b>planar defects</b> — grain boundaries, twin boundaries, free surfaces. Each class controls a different family of properties, and the rest of this course is largely the story of engineering their populations.</p>
+<h3>§2 · Vacancies obey thermodynamics</h3>
+<p>Vacancies are not accidents; equilibrium demands them. Their fraction rises exponentially with temperature:</p>
+\[ \frac{N_v}{N} = \exp\!\left(-\frac{Q_v}{kT}\right) \tag{1} \]
+<p>Near the melting point roughly one site in ten thousand is empty; at room temperature the fraction is astronomically smaller. This matters because vacancies are diffusion's vehicle — atoms move mainly by hopping into adjacent empty sites — so (1) is the deep reason every diffusion-controlled process in Lesson 6 accelerates exponentially with temperature.</p>
+<h3>§3 · Dislocations: why metals are a thousand times weaker than they should be</h3>
+<p>Shearing a perfect crystal means breaking every bond across a plane simultaneously — the theoretical strength, orders of magnitude above anything measured. A dislocation breaks the bonds <em>one row at a time</em>, like moving a carpet by running a wrinkle across it rather than dragging the whole rug. Metals deform at realistic stresses because dislocations exist; they strengthen when we obstruct dislocation motion — with solutes, boundaries, and other dislocations, the entire agenda of Lesson 9. Grain boundaries, meanwhile, are both obstacles (strength) and fast-diffusion highways (creep, corrosion sensitivity): planar defects always charge rent both ways.</p>
+
+<h3>§4 · Reading the defect inventory</h3>
+<p>Perfection is not an option in real crystals, so the working method is inventory
+management. <em>Know each defect's dimension:</em> point defects (vacancies, interstitials,
+substitutionals), line defects (dislocations), planar defects (grain boundaries, surfaces) —
+and match each to the property it governs: vacancies to diffusion, dislocations to
+plasticity, boundaries to strength and to creep. <em>Respect the exponential:</em> the
+vacancy fraction \( e^{-Q_v/kT} \) is astronomically sensitive to temperature — around
+\( 3\times10^{-5} \) at 1000 K for a typical metal and essentially zero at room
+temperature — so processes that need vacancies (diffusion, annealing, creep) switch on with
+heat and freeze out without it. That single exponential explains why heat treatment works
+at temperature and why parts are stable at service conditions.</p>
+<p>The professional reading: defects are not flaws to lament but levers to pull. Carbon
+interstitials ARE steel; substitutional chromium IS stainless; grain boundaries ARE the
+strengthening in fine-grained plate. The materials engineer's job is rarely to remove
+defects — it is to choose which defects, at what population, on purpose. The next two
+lessons pull exactly those levers.</p>
+<p>A note on scale keeps the inventory honest: even a heavily defective crystal is mostly
+perfect. At the 1000 K figure computed in this lesson's examples, fewer than three sites in
+a hundred thousand stand vacant — and yet that trace population carries all of diffusion.
+Materials behavior is routinely governed by its rarest constituents, which is why counting
+them, rather than rounding them to zero, is a professional skill.</p>
+<p><strong>Closing.</strong> Point defects carry diffusion, line defects carry plasticity, planar defects referee both. "Defect" is the field's least fortunate word — these are the control knobs.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Crystal structures</b> (Lesson 3) — a defect is defined against the perfect cell.</li>
+<li><b>Exponentials and Boltzmann factors</b> — (1) is the course's first Arrhenius-type law.</li>
+<li><b>Slip planes</b> (Lesson 4) — dislocations move on exactly those planes.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Vacancy</td><td>missing atom; \( N_v/N = e^{-Q_v/kT} \)</td><td>The equilibrium defect — exponential in temperature; diffusion's enabler.</td></tr>
+<tr><td>Interstitial</td><td>small atom in the gaps</td><td>Carbon in iron — the basis of steel's entire personality.</td></tr>
+<tr><td>Substitutional</td><td>foreign atom on a lattice site</td><td>Alloying elements; solid-solution strengthening.</td></tr>
+<tr><td>Dislocation</td><td>line defect; extra half-plane</td><td>The carrier of plastic deformation — next lesson's protagonist.</td></tr>
+<tr><td>Grain boundary</td><td>crystal-to-crystal interface</td><td>Strengthener at room temperature, weakness at creep temperatures.</td></tr>
+<tr><td>Defect arithmetic</td><td>exponentials, not linear scaling</td><td>Small temperature changes move defect populations by orders of magnitude.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Vacancy census</b></p>
+<p><b>Problem.</b> For a metal with vacancy formation energy \( Q_v = 0.9\ \mathrm{eV} \) (representative), compare the equilibrium vacancy fraction at 1000 K and at 500 K. \( k = 8.62 \times 10^{-5}\ \mathrm{eV/K} \).</p><div class="soln"><p><b>Solution.</b> (1) At 1000 K: \( N_v/N = \exp[-0.9/(8.62 \times 10^{-5} \times 1000)] = e^{-10.44} = 2.9 \times 10^{-5} \).
+(2) At 500 K: \( N_v/N = e^{-20.88} = 8.5 \times 10^{-10} \).
+(3) Ratio: \( \approx 34{,}000 \times \) more vacancies at the higher temperature.</p>
+<p><b>Answer:</b> \( 2.9 \times 10^{-5} \) versus \( 8.5 \times 10^{-10} \).
+<b>Sanity check:</b> halving absolute temperature squares the (tiny) Boltzmann factor — the exponential's signature. This 34,000× swing in diffusion's vehicle fleet is why annealing happens in furnaces, not on benches.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Weight percent to atom percent</b></p>
+<p><b>Problem.</b> Cartridge brass is 70 wt% Cu, 30 wt% Zn (\( A_{Cu} = 63.55 \), \( A_{Zn} = 65.38\ \mathrm{g/mol} \)). <b>Find:</b> the composition in atom percent.</p><div class="soln"><p><b>Solution.</b> (1) Per 100 g: \( n_{Cu} = 70/63.55 = 1.101\ \mathrm{mol} \); \( n_{Zn} = 30/65.38 = 0.459\ \mathrm{mol} \).
+(2) \( at\%\ Cu = \dfrac{1.101}{1.101 + 0.459} \times 100 = 70.6\% \); \( at\%\ Zn = 29.4\% \).</p>
+<p><b>Answer:</b> 70.6 at% Cu, 29.4 at% Zn.
+<b>Sanity check:</b> copper and zinc have nearly equal atomic masses, so weight and atom percent nearly coincide — the conversion only bites when masses differ strongly (carbon in iron: 0.4 wt% C is ~1.8 at%). Knowing when the distinction matters is the actual skill.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Counting the missing atoms</b></p>
+<p><b>Problem.</b> A metal has a vacancy formation energy of 0.9 eV. <b>Find:</b> the equilibrium vacancy fraction at 1000 K \( (k = 8.62\times10^{-5}\ \mathrm{eV/K}) \), and comment on room temperature.</p><div class="soln"><p><b>Solution.</b> (1) \( N_v/N = e^{-Q_v/kT} = e^{-0.9/(8.62\times10^{-5} \times 1000)} = e^{-10.44} \).
+(2) \( = 2.9\times10^{-5} \) — about 29 vacancies per million sites.
+(3) At 300 K the exponent triples to −34.8: fraction \( \sim 10^{-16} \) — effectively none.</p>
+<p><b>Answer:</b> \( \approx 3\times10^{-5} \) at 1000 K; vanishing at room temperature.
+<b>Sanity check:</b> eleven orders of magnitude between furnace and floor from one exponential — exactly why diffusion-driven processes run hot and why parts hold their microstructure in service.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Raising temperature increases a metal's equilibrium vacancy fraction:</p><ol class="opts"><li class="opt">linearly</li><li class="opt correct">exponentially ✓</li><li class="opt">not at all — vacancies are fixed at solidification</li><li class="opt">only above the melting point</li></ol><div class="soln"><p>\( N_v/N = e^{-Q_v/kT} \) — a Boltzmann factor, hence exponential. Halving absolute temperature squares the (small) fraction. Vacancies are thermodynamically required, continuously created and annihilated, not frozen-in accidents.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Metals deform at stresses far below the theoretical bond-breaking strength because:</p><ol class="opts"><li class="opt">real metals contain vacancies</li><li class="opt correct">dislocations move bonds one row at a time ✓</li><li class="opt">grain boundaries are weak</li><li class="opt">the theory is wrong</li></ol><div class="soln"><p>A dislocation localizes the slip event: only one row of bonds breaks and re-forms at each step — the carpet moved by running a wrinkle across it. This thousandfold discount is why plasticity exists at workshop stresses, and why <em>obstructing</em> dislocations is how alloys are strengthened.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Raising temperature from 300 K to 1000 K changes a metal's equilibrium vacancy population by roughly:</p><ol class="opts"><li class="opt correct">Many orders of magnitude — the dependence is exponential ✓</li><li class="opt">A factor of about 3, tracking absolute temperature</li><li class="opt">It doubles</li><li class="opt">Nothing — vacancies are fixed at solidification</li></ol><div class="soln"><p>\( N_v/N = e^{-Q_v/kT} \): the temperature sits in an exponent, so tripling T moves the fraction from \( \sim10^{-16} \) toward \( \sim10^{-5} \) — about eleven orders of magnitude for a typical 0.9 eV formation energy. Linear intuition (×3, ×2) is exactly what the exponential exists to overthrow, and the difference is why annealing works hot and microstructures hold cold.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>With \( Q_v = 0.9 \) eV at 1000 K (\( k = 8.62 \times 10^{-5} \) eV/K), the vacancy fraction is about:</p><ol class="opts"><li class="opt correct">\( 3 \times 10^{-5} \) ✓</li><li class="opt">\( 3 \times 10^{-2} \)</li><li class="opt">\( 10^{-9} \)</li><li class="opt">\( 0.9 \)</li></ol><div class="soln"><p>\( \exp[-0.9/(8.62\times10^{-5} \times 1000)] = e^{-10.4} \approx 2.9 \times 10^{-5} \) — roughly one site in 34,000 empty. \( 10^{-9} \) is the 500 K answer: the exponential's steepness is the whole point.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Carbon dissolved in iron occupies which kind of site?</p><ol class="opts"><li class="opt correct">Interstitial — the gaps between iron atoms ✓</li><li class="opt">Substitutional — replacing iron atoms</li><li class="opt">Grain boundaries only</li><li class="opt">Vacancy sites</li></ol><div class="soln"><p>The carbon atom is small enough to squeeze into the interstices of the iron lattice — and strain them, which is the root of steel's strengthening and of martensite's ferocity later in the course. Chromium and nickel, iron-sized, substitute instead. The site choice also sets diffusion speed: gap-hopping carbon moves orders of magnitude faster than site-swapping chromium at any temperature.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 06 · Diffusion</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Fick's laws, with atoms attached</h3>
+<p>Diffusion is atoms hopping site to site, biased downhill in concentration. Steady state is Fick's first law, \( J = -D\, dC/dx \): flux proportional to gradient, \( D \) the diffusion coefficient. Transient cases — the plant's usual reality — obey Fick's second law:</p>
+\[ \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2} \tag{1} \]
+<p>whose solutions for a surface held at constant concentration follow the error function. The engineering headline hiding in those solutions: any characteristic penetration depth scales as</p>
+\[ x \sim \sqrt{Dt} \tag{2} \]
+<p>Double the depth costs <em>four times</em> the time. That square root governs carburizing, decarburizing, homogenization, and every soak-time argument you will ever have with a furnace schedule.</p>
+<h3>§2 · Temperature is the big lever</h3>
+<p>The diffusion coefficient is Arrhenius:</p>
+\[ D = D_0 \exp\!\left(-\frac{Q_d}{RT}\right) \tag{3} \]
+<p>with activation energy \( Q_d \) set by the migration mechanism — interstitials like carbon in iron dart between gaps cheaply; substitutional atoms must wait for vacancies and pay more. Because \( T \) sits in an exponential, modest temperature moves swamp heroic time extensions: in §Worked Examples, 200 K of extra furnace temperature buys a factor of ~19 in \( D \), which no affordable soak time matches.</p>
+<h3>§3 · Reading processes through (2) and (3)</h3>
+<p>Case-hardening a gear: carbon in from the surface, case depth by \( \sqrt{Dt} \), temperature chosen high enough for speed but below distortion limits. Homogenizing a segregated casting: the same mathematics with the dendrite arm spacing as the distance to erase. Even degradation reads this way — hydrogen charging into a weld, carburization of furnace tubes — diffusion is one mathematics wearing many overalls.</p>
+
+<h3>§4 · The diffusion estimating method</h3>
+<p>Most industrial diffusion questions are answered by one scaling law before any full
+solution: penetration grows as \( x \sim \sqrt{Dt} \). Run it as a ratio and the unknown
+constants cancel — if 4 hours of carburizing buys a 1 mm case, a 2 mm case costs
+\( 2^2 = 4 \) times as long: 16 hours, not 8. The square root is the story: doubling depth
+always quadruples time, which is why deep cases are expensive and why homogenizing a badly
+segregated casting can be economically hopeless. <em>Temperature is the other lever, and it
+is exponential:</em> \( D = D_0 e^{-Q_d/RT} \) — a modest temperature rise can buy what
+hours of extra soak cannot, which is why furnace setpoints, not timers, dominate diffusion
+process design.</p>
+<p>Keep the mechanisms straight when judging feasibility: small interstitials like carbon
+hop between gaps and move fast; substitutional atoms must wait for a vacancy to swap with
+and move orders of magnitude slower at the same temperature. That is why case-hardening
+with carbon is an overnight job while chromizing is a specialist's slow art — and why
+"just diffuse it in" is a plan that needs this lesson's arithmetic before it becomes a
+work order.</p>
+<p>The same estimating method audits vendors: a heat-treat certificate quoting an
+improbably deep case for the stated hours and temperature is either running hotter than
+declared or measuring generously — and \( \sqrt{Dt} \), evaluated on the back of the
+certificate itself, is enough to ask the question with numbers instead of suspicion.</p>
+<p><strong>Closing.</strong> Gradient drives, \( \sqrt{Dt} \) paces, Arrhenius accelerates. Three relations, and most furnace-floor arithmetic is already in hand.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Vacancies</b> (Lesson 5) — the vehicles of substitutional diffusion; their census sets the pace.</li>
+<li><b>Interstitial sites</b> (Lesson 5) — carbon's fast lanes through iron.</li>
+<li><b>Exponentials and derivatives</b> — Arrhenius plots and concentration gradients.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Fick's first law</td><td>\( J = -D\,dC/dx \)</td><td>Steady-state flux through a membrane or case.</td></tr>
+<tr><td>Diffusivity</td><td>\( D = D_0 e^{-Q_d/RT} \)</td><td>The exponential temperature lever on every diffusion process.</td></tr>
+<tr><td>Penetration rule</td><td>\( x \sim \sqrt{Dt} \)</td><td>Case depth and homogenization times: double the depth, quadruple the time.</td></tr>
+<tr><td>Interstitial vs vacancy mechanism</td><td>small atoms hop gaps; hosts swap with vacancies</td><td>Why carbon moves fast in iron and chromium moves slowly.</td></tr>
+<tr><td>Carburizing</td><td>carbon in from the surface</td><td>The gearbox case-hardening process this lesson prices.</td></tr>
+<tr><td>Homogenization</td><td>soak until gradients fade</td><td>Curing cast segregation with time and temperature.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Case depth and the square root's tax</b></p>
+<p><b>Problem.</b> Carburizing at 950 °C with \( D \approx 1.6 \times 10^{-11}\ \mathrm{m^2/s} \) (representative for carbon in austenite). <b>Find:</b> the \( \sqrt{Dt} \) penetration scale after 4 h, and the time to double it.</p><div class="soln"><p><b>Solution.</b> (1) \( t = 4 \times 3600 = 14\,400\ \mathrm{s} \).
+(2) \( \sqrt{Dt} = \sqrt{1.6 \times 10^{-11} \times 14\,400} = \sqrt{2.30 \times 10^{-7}} = 4.8 \times 10^{-4}\ \mathrm{m} \approx 0.48\ \mathrm{mm} \).
+(3) Doubling depth requires \( 4t \): 16 h.</p>
+<p><b>Answer:</b> ≈0.5 mm scale at 4 h; 16 h to reach ≈1 mm.
+<b>Sanity check:</b> the second half-millimetre costs three times what the first did — the \( \sqrt{t} \) law is why deep cases are expensive and why specifications state case depth with tolerance, not ambition.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>What 200 K buys</b></p>
+<p><b>Problem.</b> Carbon in FCC iron: \( D_0 = 2.3 \times 10^{-5}\ \mathrm{m^2/s} \), \( Q_d = 148\ \mathrm{kJ/mol} \) (Callister &amp; Rethwisch). <b>Find:</b> \( D \) at 1000 K and 1200 K.</p><div class="soln"><p><b>Solution.</b> (1) \( D_{1000} = 2.3 \times 10^{-5} \exp[-148\,000/(8.314 \times 1000)] = 4.3 \times 10^{-13}\ \mathrm{m^2/s} \).
+(2) \( D_{1200} = 2.3 \times 10^{-5} \exp[-148\,000/(8.314 \times 1200)] = 8.3 \times 10^{-12}\ \mathrm{m^2/s} \).
+(3) Ratio: ≈19×.</p>
+<p><b>Answer:</b> a 200 K raise multiplies \( D \) by ~19.
+<b>Sanity check:</b> to match that with time at 1000 K you would need a 19× longer soak — days for hours. Temperature is the lever; time is the fine adjustment. (Distortion and grain growth are the counter-forces that keep furnaces from simply running hotter.)</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Pricing a deeper case</b></p>
+<p><b>Problem.</b> A carburizing furnace produces a 1.0 mm case depth in 4 hours at temperature. Production asks for 2.0 mm. <b>Find:</b> the required time at the same temperature, using the penetration scaling law.</p><div class="soln"><p><b>Solution.</b> (1) Penetration scales as \( x \sim \sqrt{Dt} \), so \( t \propto x^2 \) at fixed temperature.
+(2) \( t_2 = t_1 (x_2/x_1)^2 = 4 \times (2.0/1.0)^2 = 16\ \mathrm{h} \).</p>
+<p><b>Answer:</b> 16 hours — quadruple, not double.
+<b>Sanity check:</b> the square-root law means each additional millimetre costs more than the one before; halfway through the 16 hours the case is at \( \sqrt{8/16} \times 2.0 = 1.41\ \mathrm{mm} \), not 1.0 — diffusion front-loads its progress, and the last fraction of depth is the expensive part.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A carburizing cycle gives 0.5 mm case depth in 4 h. Reaching 1.0 mm at the same temperature takes about:</p><ol class="opts"><li class="opt">8 h</li><li class="opt correct">16 h ✓</li><li class="opt">6 h</li><li class="opt">32 h</li></ol><div class="soln"><p>Depth scales as \( \sqrt{Dt} \): doubling depth quadruples time — 16 h. The linear instinct (8 h) is the classic furnace-scheduling error; deep cases are bought with disproportionate hours, which is why case depth is specified with tolerance, not generosity.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Carbon diffuses through iron much faster than nickel does because carbon:</p><ol class="opts"><li class="opt">is lighter</li><li class="opt correct">moves interstitially, without waiting for vacancies ✓</li><li class="opt">forms carbides</li><li class="opt">is more soluble</li></ol><div class="soln"><p>Small interstitial atoms dart between lattice gaps; substitutional atoms like nickel must wait for a vacancy to arrive next door — a rarer event with a higher activation energy. Mechanism, not atomic weight, sets the pace.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Doubling a carburized case depth at fixed temperature requires:</p><ol class="opts"><li class="opt correct">About four times the time ✓</li><li class="opt">Twice the time</li><li class="opt">The same time at double carbon potential</li><li class="opt">Half the time</li></ol><div class="soln"><p>\( x \sim \sqrt{Dt} \Rightarrow t \propto x^2 \): depth doubles only when time quadruples. Linear thinking (double time) is the classic scheduling error, and it under-books the furnace by half. Carbon potential shifts surface concentration, not the square-root march of the front — no dial removes the exponent.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>To speed a diffusion process meaningfully, the strongest single lever is:</p><ol class="opts"><li class="opt">more time</li><li class="opt correct">higher temperature ✓</li><li class="opt">a bigger furnace</li><li class="opt">finer surface finish</li></ol><div class="soln"><p>\( D = D_0 e^{-Q_d/RT} \): temperature sits in the exponent. In this course's worked example, +200 K multiplied \( D \) by ~19 — matching that with time means a 19× longer soak. Time enters only under a square root; temperature enters exponentially.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Why does carbon diffuse through iron orders of magnitude faster than chromium does?</p><ol class="opts"><li class="opt correct">Carbon hops interstitial gaps; chromium must wait for vacancies to swap into ✓</li><li class="opt">Carbon is more chemically reactive</li><li class="opt">Chromium is heavier, so gravity slows it</li><li class="opt">Carbon diffuses only along grain boundaries</li></ol><div class="soln"><p>Mechanism decides tempo. Interstitial diffusers always have empty neighboring gaps; substitutional diffusers move only when an adjacent vacancy appears — and vacancies are the scarce commodity the previous lesson counted. Reactivity and mass are red herrings at this scale, and while boundaries do offer fast paths, both species use them; the bulk mechanism gap is the real story.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 07 · Mechanical properties I: elasticity and the tension test</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · One test to rule them</h3>
+<p>Pull a standard bar to fracture, record load and elongation, and normalize away the geometry: engineering stress \( \sigma = F/A_0 \), engineering strain \( \epsilon = \Delta L/L_0 \), both referred to <em>original</em> dimensions. The resulting curve is the most quoted document in mechanical engineering, and four numbers summarize it: the elastic modulus \( E \) (initial slope, Hooke's law \( \sigma = E\epsilon \)); the yield strength \( \sigma_y \) (0.2% offset, where permanent set begins); the ultimate tensile strength (the curve's peak); and ductility, as percent elongation or reduction of area.</p>
+<h3>§2 · What each number is for</h3>
+<p>\( E \) is a bonding property — recall Lesson 2's well curvature — essentially untouchable by heat treatment: all steels share ~200 GPa. \( \sigma_y \) is the designer's boundary; machines are sized so working stress stays below it with margin. UTS matters for what happens beyond intent — overload margins and, through empirical correlations, hardness checks. Ductility is the forgiveness budget: the plastic reserve that lets a part yield locally, redistribute, and warn before it breaks.</p>
+<h3>§3 · True stress, and the necking illusion</h3>
+<p>Past the UTS the engineering curve droops — but the material is not softening. Necking has begun: area shrinks locally, and dividing load by the <em>original</em> area hides it. True stress \( \sigma_T = F/A \) (instantaneous area) keeps rising to fracture; with volume constancy the conversions in the plastic range are</p>
+\[ \sigma_T = \sigma(1+\epsilon), \qquad \epsilon_T = \ln(1+\epsilon) \tag{1} \]
+<p>Metal forming lives on true quantities — a rolling pass or a drawing die sees real areas, not test-report conventions. §Worked Examples extracts all four report numbers from raw data, then converts a point through (1).</p>
+
+<h3>§4 · Reading a tension test like a professional</h3>
+<p>The tensile curve is read in a fixed order, and each stop answers one design question.
+<em>The elastic slope first:</em> Young's modulus — and the professional expectation that it
+barely varies within an alloy family; every carbon steel runs near 200 GPa, so a certificate
+claiming otherwise indicts the test, not the steel. <em>Yield next,</em> by the 0.2% offset
+construction when the knee is gradual: draw the line parallel to the elastic slope from
+\( \varepsilon = 0.002 \) and read the intersection — this is the number design codes
+divide by safety factors. <em>Ultimate strength</em> marks where necking begins: beyond it,
+the ENGINEERING curve droops only because the true area is shrinking faster than the load —
+the material itself is still hardening, and knowing that resolves the classic "why does the
+curve fall?" confusion. <em>Ductility last:</em> percent elongation, the formability budget
+manufacturing will spend.</p>
+<p>The working method for any calculation is unit discipline on \( \sigma = F/A_0 \) and
+\( \varepsilon = \Delta L/L_0 \): kilonewtons over square millimetres give megapascals
+directly, and strain is always dimensionless — a strain quoted in millimetres is a gauge
+length away from being a number. Verify computed moduli against the family expectation
+before reporting; the check costs nothing and catches decimal slips every time.</p>
+<p><strong>Closing.</strong> One bar, one pull, four numbers, and one conversion that keeps the story honest after necking. Every mill certificate you will ever read is this lesson in tabular form.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Bond-energy wells</b> (Lesson 2) — modulus is bond stiffness, macroscopically read.</li>
+<li><b>Dislocations</b> (Lesson 5) — yield is the stress where they begin to run.</li>
+<li><b>Stress units</b> — MPa fluency: 1 MPa = 1 N/mm².</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Engineering stress</td><td>\( \sigma = F/A_0 \)</td><td>Load over ORIGINAL area — what the test machine reports.</td></tr>
+<tr><td>Engineering strain</td><td>\( \varepsilon = \Delta L/L_0 \)</td><td>Elongation over original gauge length; dimensionless.</td></tr>
+<tr><td>Young's modulus</td><td>\( E = \sigma/\varepsilon \) (elastic)</td><td>Stiffness — the elastic slope; ~200 GPa for steels, always.</td></tr>
+<tr><td>0.2% offset yield</td><td>line at \( \varepsilon = 0.002 \) parallel to E</td><td>Defining yield when the curve bends gradually.</td></tr>
+<tr><td>Ultimate tensile strength</td><td>curve maximum</td><td>The peak engineering stress; necking begins here.</td></tr>
+<tr><td>Ductility</td><td>% elongation or % RA</td><td>How much plastic deformation before fracture — formability's number.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Reading the test</b></p>
+<p><b>Problem.</b> A standard bar, \( d_0 = 12.8\ \mathrm{mm} \), \( L_0 = 50.8\ \mathrm{mm} \): elastic point (150 MPa at \( \epsilon = 0.00075 \)); yield load 35 kN; final gauge length 60.14 mm. <b>Find:</b> \( E \), \( \sigma_y \), %EL.</p><div class="soln"><p><b>Solution.</b> (1) \( A_0 = \pi(12.8)^2/4 = 128.7\ \mathrm{mm^2} \).
+(2) \( E = 150/0.00075 = 200\,000\ \mathrm{MPa} = 200\ \mathrm{GPa} \).
+(3) \( \sigma_y = 35\,000/128.7 = 272\ \mathrm{MPa} \).
+(4) \( \%EL = \dfrac{60.14 - 50.8}{50.8} \times 100 = 18.4\% \).</p>
+<p><b>Answer:</b> \( E = 200\ \mathrm{GPa} \), \( \sigma_y = 272\ \mathrm{MPa} \), %EL = 18.4 — a garden-variety structural steel.
+<b>Sanity check:</b> \( E \) landing on 200 GPa flags the material as steel before anyone reads the cert header; a result of 70 GPa would have said aluminum, whatever the paperwork claimed.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Engineering to true</b></p>
+<p><b>Problem.</b> At its UTS a specimen shows engineering stress 400 MPa at engineering strain 0.15. <b>Find:</b> the true stress and true strain (uniform deformation, volume constant).</p><div class="soln"><p><b>Solution.</b> (1) \( \sigma_T = \sigma(1+\epsilon) = 400 \times 1.15 = 460\ \mathrm{MPa} \).
+(2) \( \epsilon_T = \ln(1.15) = 0.140 \).</p>
+<p><b>Answer:</b> 460 MPa at true strain 0.140.
+<b>Sanity check:</b> true stress exceeds engineering (the bar is thinner than \( A_0 \) pretends) while true strain trails engineering — both inequalities always hold in tension, a two-second validity test on any converted data point.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Modulus from the elastic leg</b></p>
+<p><b>Problem.</b> A tensile specimen of cross-section 128.7 mm² and gauge length 50 mm carries 25.74 kN in the elastic range, elongating 0.050 mm. <b>Find:</b> the stress, the strain, and Young's modulus — and judge the result.</p><div class="soln"><p><b>Solution.</b> (1) \( \sigma = 25{,}740/128.7 = 200\ \mathrm{MPa} \).
+(2) \( \varepsilon = 0.050/50 = 0.0010 \).
+(3) \( E = \sigma/\varepsilon = 200/0.0010 = 200{,}000\ \mathrm{MPa} = 200\ \mathrm{GPa} \).</p>
+<p><b>Answer:</b> 200 MPa; 0.001; \( E = 200\ \mathrm{GPa} \).
+<b>Sanity check:</b> 200 GPa is exactly the carbon-steel family value — the specimen behaves as steel should. Had the arithmetic produced 20 or 2000 GPa, the physics (not the steel) would be under suspicion: modulus is the most constant number in the alloy family, which makes it the best error detector in the test.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A 50 kN load on a 100 mm² bar produces an engineering stress of:</p><ol class="opts"><li class="opt">50 MPa</li><li class="opt correct">500 MPa ✓</li><li class="opt">5 MPa</li><li class="opt">5000 MPa</li></ol><div class="soln"><p>\( \sigma = F/A_0 = 50\,000\ \mathrm{N} / 100\ \mathrm{mm^2} = 500\ \mathrm{N/mm^2} = 500\ \mathrm{MPa} \). The N/mm² = MPa identity is the unit fluency this course assumes from here on.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Quenching and tempering a steel changes all of these <em>except</em>:</p><ol class="opts"><li class="opt">yield strength</li><li class="opt">hardness</li><li class="opt correct">elastic modulus ✓</li><li class="opt">ductility</li></ol><div class="soln"><p>Modulus is bond stiffness — a property of the iron lattice itself, ~200 GPa for every steel regardless of heat treatment. Strength, hardness, and ductility all ride the microstructure, which is exactly what heat treatment rearranges. \"Stiffer steel via heat treat\" is a myth this question retires.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>The 0.2% offset construction exists because:</p><ol class="opts"><li class="opt correct">Many metals yield gradually, with no sharp knee to read ✓</li><li class="opt">Test machines cannot measure below 0.2% strain</li><li class="opt">It corrects for machine stiffness</li><li class="opt">Yield occurs exactly at 0.2% strain in all metals</li></ol><div class="soln"><p>Aluminum alloys and many steels bend smoothly from elastic to plastic with no drop or plateau — so the convention draws a line parallel to the elastic slope, offset by 0.002 strain, and defines yield at the intersection. It is a convention, chosen for reproducibility, not a physical event at exactly 0.2% — and the same part number measured by two labs agrees because both run the same construction.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Past the UTS, the engineering stress–strain curve falls because:</p><ol class="opts"><li class="opt">the material softens</li><li class="opt correct">necking shrinks the true area while \( A_0 \) stays in the formula ✓</li><li class="opt">the extensometer slips</li><li class="opt">dislocations annihilate</li></ol><div class="soln"><p>Deformation localizes into a neck; load drops, but true stress \( F/A \) keeps <em>rising</em> to fracture. The droop is an artifact of dividing by the original area — the material is still strain-hardening. True-stress conversion (\( \sigma_T = \sigma(1+\epsilon) \) while uniform) keeps the record honest.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Past the ultimate tensile strength, the engineering stress–strain curve falls. The material at the neck is actually:</p><ol class="opts"><li class="opt correct">Still strengthening — the curve falls only because area shrinks faster than load ✓</li><li class="opt">Softening as it heats</li><li class="opt">Melting locally</li><li class="opt">Unloading elastically</li></ol><div class="soln"><p>Engineering stress divides by the ORIGINAL area; once necking localizes, the true area collapses while true stress keeps rising to fracture. The drooping tail is an artifact of the \( A_0 \) convention, not material weakness — the classic misreading this question retires. True-stress curves, which divide by current area, rise monotonically to the end.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 08 · Mechanical properties II: hardness and toughness</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Hardness: the field's favorite proxy</h3>
+<p>Hardness is resistance to localized plastic indentation — push a standard indenter with a standard load, measure the dent. <b>Brinell</b> (10 mm ball, the impression's diameter), <b>Vickers</b> (diamond pyramid, works from foils to carbides on one scale), <b>Rockwell</b> (depth-based, direct-reading, the production floor's default). Conversions between scales are empirical, tabulated, and alloy-specific — treat cross-scale comparisons as estimates, not measurements.</p>
+<h3>§2 · Why hardness tracks strength — and when it lies</h3>
+<p>An indentation is a small, constrained plasticity experiment, so hardness rides the same dislocation resistance as yield strength. For steels the workhorse correlation is</p>
+\[ UTS\ (\mathrm{MPa}) \approx 3.45 \times HB \tag{1} \]
+<p>good enough to audit a heat treatment without cutting the part — which is precisely how the field uses it. The proxy lies when the assumptions break: heavily cold-worked surfaces, decarburized skins, coarse multi-phase structures sampled by a small indenter, or non-ferrous alloys wearing a steel correlation. Hardness answers "what is the strength <em>here, at this spot</em>" — sometimes that locality is the feature, sometimes the trap.</p>
+<h3>§3 · Toughness, and the transition that sank ships</h3>
+<p>Strength says what stress a material bears; toughness says what <em>energy</em> it absorbs breaking — measured crudely and usefully by the Charpy impact test: a notched bar, a swinging pendulum, joules read off the follower. BCC steels hold an unpleasant surprise: impact energy collapses below a <em>ductile–brittle transition temperature</em>, Lesson 3's thermally-assisted slip arriving as fracture. Liberty ships cracked in cold seas on exactly this physics. FCC metals — austenitic stainless, aluminum, copper — have no transition, which is why cryogenic plant is built from them.</p>
+
+<h3>§4 · Choosing and converting hardness numbers honestly</h3>
+<p>Hardness testing is the plant's favorite mechanical test because it is fast, cheap, and
+almost nondestructive — but its numbers demand method. <em>Choose the scale by the job:</em>
+Brinell's big ball averages over coarse structures (castings, weld HAZ surveys); Vickers's
+diamond reads thin cases and small zones; Rockwell's direct-reading dial rules production
+floors. <em>Convert with respect:</em> scales measure different deformations, so conversions
+between them are empirical tables, not algebra — and the steel-only estimate
+\( UTS \approx 3.45 \times HB \) is a field tool for triage, never a substitute for a
+tensile certificate when the number matters contractually.</p>
+<p>Toughness closes the lesson because it is the property strength tests miss: the area
+under the stress–strain curve — strength AND ductility multiplied into energy. Two materials
+of equal strength can differ tenfold in toughness, and the Charpy machine exists to catch
+the difference under shock, including the ductile-to-brittle transition that ambushes BCC
+steels in cold service. The working rule: specify strength for the load, hardness for the
+wear, toughness for the accident — and never let one number impersonate the other two.
+And when a service temperature dips below freezing, ask the Charpy question explicitly:
+transition behavior is found by testing across temperatures, never by extrapolating a single
+room-temperature result.</p>
+<p><strong>Closing.</strong> Hardness is portable strength, within its correlation's jurisdiction; Charpy is energy accounting with a notch. Between them they answer the floor's two commonest questions: is it hard enough, and will it shatter when the weather turns.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Tensile properties</b> (Lesson 7) — hardness borrows meaning from strength.</li>
+<li><b>Crystal structures</b> (Lesson 3) — BCC vs FCC decides who has a transition.</li>
+<li><b>Plastic deformation</b> (Lesson 5) — an indent is dislocation work in miniature.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Hardness</td><td>resistance to indentation</td><td>The fast, cheap, nearly nondestructive strength proxy.</td></tr>
+<tr><td>Brinell / Vickers / Rockwell</td><td>different indenters and loads</td><td>Choose by material, thickness, and surface; never mix scales casually.</td></tr>
+<tr><td>Hardness–strength estimate</td><td>\( UTS \approx 3.45 \times HB \) (MPa, steels)</td><td>A field estimate for steels — useful, and only an estimate.</td></tr>
+<tr><td>Toughness</td><td>area under the stress–strain curve</td><td>Energy to fracture; strength AND ductility together.</td></tr>
+<tr><td>Impact energy (Charpy)</td><td>absorbed J at speed</td><td>Toughness under shock, and the ductile–brittle transition hunter.</td></tr>
+<tr><td>Ductile-to-brittle transition</td><td>toughness collapses below a temperature</td><td>BCC steels in cold service — the design check winter demands.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Brinell number to strength estimate</b></p>
+<p><b>Problem.</b> A 10 mm ball under 3000 kgf leaves a 4.0 mm impression on a steel shaft. <b>Find:</b> HB and the estimated UTS.</p><div class="soln"><p><b>Solution.</b> (1) \( HB = \dfrac{2P}{\pi D \left( D - \sqrt{D^2 - d^2} \right)} = \dfrac{2 \times 3000}{\pi \times 10 \, (10 - \sqrt{100 - 16})} \).
+(2) \( \sqrt{84} = 9.165 \); denominator \( = \pi \times 10 \times 0.835 = 26.2 \).
+(3) \( HB = 6000/26.2 = 229 \).
+(4) Strength estimate, (1) of the lecture: \( UTS \approx 3.45 \times 229 = 790\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> HB 229; UTS ≈ 790 MPa.
+<b>Sanity check:</b> HB 229 sits in the plausible band for quenched-and-tempered shafting; had the dent been 2 mm (HB &gt; 900) or 8 mm (HB ≈ 50) the arithmetic itself would be flagging a bad test, not a remarkable material.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Placing a transition temperature</b></p>
+<p><b>Problem.</b> Charpy results for a structural steel (representative): upper shelf 120 J, lower shelf 5 J. Using the mean-shelf criterion, what energy defines the transition, and how is the DBTT then read?</p><div class="soln"><p><b>Solution.</b> (1) Mean-shelf energy: \( (120 + 5)/2 = 62.5\ \mathrm{J} \).
+(2) The DBTT is the temperature at which the fitted energy–temperature curve crosses 62.5 J; specifications alternatively fix an absolute floor (e.g., 27 J) at a stated service temperature.</p>
+<p><b>Answer:</b> 62.5 J crossing defines DBTT by the averaging method.
+<b>Sanity check:</b> both criteria exist because the transition is a band, not a line — a curve crossing 62.5 J at −20 °C can still fail a "27 J at −40 °C" purchase clause. Reading which criterion a spec invokes is half the job.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Strength triage from a hardness test</b></p>
+<p><b>Problem.</b> A portable tester reads 200 HB on a steel shaft with no certificate. <b>Find:</b> the estimated tensile strength, and state what the estimate may and may not be used for.</p><div class="soln"><p><b>Solution.</b> (1) Steel field estimate: \( UTS \approx 3.45 \times HB = 3.45 \times 200 = 690\ \mathrm{MPa} \).
+(2) Legitimate uses: triage, alloy-family identification, checking a delivery is not soft, weld-zone surveys.
+(3) Illegitimate uses: design allowables, contractual acceptance, anything a code requires a tensile certificate for.</p>
+<p><b>Answer:</b> ≈690 MPa — an estimate for judgment, not a property for design.
+<b>Sanity check:</b> 690 MPa sits in the medium-carbon/low-alloy band, consistent with a 200 HB reading; the ±10% scatter of the correlation is precisely why the tensile machine and the mill certificate keep their jobs.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A steel reads HB 200. Its tensile strength is roughly:</p><ol class="opts"><li class="opt">200 MPa</li><li class="opt correct">690 MPa ✓</li><li class="opt">345 MPa</li><li class="opt">2000 MPa</li></ol><div class="soln"><p>For steels, \( UTS \approx 3.45 \times HB = 690\ \mathrm{MPa} \). The correlation is empirical, steel-specific, and good enough to audit a heat treatment without destructive testing — but it is an estimate, and it does not transfer to aluminum or brass unmodified.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Which alloy family shows <em>no</em> ductile–brittle transition?</p><ol class="opts"><li class="opt">ferritic carbon steels</li><li class="opt correct">austenitic (FCC) stainless steels ✓</li><li class="opt">all steels</li><li class="opt">cast irons</li></ol><div class="soln"><p>The transition belongs to BCC structures, whose slip is thermally assisted. FCC austenitics keep their close-packed slip systems working at any temperature — the reason LNG and cryogenic equipment is built from them while ordinary structural steel gets embrittlement clauses.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>The estimate \( UTS \approx 3.45 \times HB \) is appropriately used for:</p><ol class="opts"><li class="opt correct">Field triage of steels when no certificate exists ✓</li><li class="opt">Setting design allowable stresses</li><li class="opt">Any metal, including aluminum and brass</li><li class="opt">Contractual material acceptance</li></ol><div class="soln"><p>The correlation is empirical, steel-specific, and scattered around ±10% — ideal for judging whether a mystery shaft is roughly 690 MPa-class or something soft, and disqualified from design or acceptance duty, which codes assign to tensile certificates. Applying it to nonferrous alloys imports a steel-only constant where it has no standing.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A hardness reading on a decarburized (carbon-depleted) surface skin will:</p><ol class="opts"><li class="opt">overstate the bulk strength</li><li class="opt correct">understate the bulk strength ✓</li><li class="opt">equal the bulk value</li><li class="opt">be unreadable</li></ol><div class="soln"><p>Hardness samples the material within a fraction of a millimetre of the indenter — a soft skin reads soft regardless of what lies beneath. The proxy is local by nature: sometimes that locality is the feature (checking a HAZ), sometimes the trap (a skin-deep condition masquerading as bulk).</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Toughness corresponds to which feature of the stress–strain curve?</p><ol class="opts"><li class="opt correct">The total area under the curve ✓</li><li class="opt">The peak stress</li><li class="opt">The elastic slope</li><li class="opt">The strain at yield</li></ol><div class="soln"><p>Area = stress × strain integrated = energy per volume to fracture — demanding both strength (height) and ductility (width). Peak stress alone is strength; slope is stiffness. A high, narrow curve (strong, brittle) and a low, wide one (soft, ductile) can enclose the same area, which is why toughness is its own axis of merit and why impact tests exist to measure it directly.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 09 · Dislocations and strengthening</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · One enemy, many obstacles</h3>
+<p>Plastic flow is dislocation traffic (Lesson 5), so <em>all</em> strengthening is one strategy: obstruct the traffic. Every industrial method is a different obstacle wearing a different price tag — and each purchase of strength is paid for, almost always, in ductility. Four mechanisms cover the metallurgy you will meet in practice.</p>
+<h3>§2 · The four mechanisms</h3>
+<p><b>Grain refinement.</b> A boundary forces slip to renegotiate direction; more boundaries, more negotiations. Quantitatively, the Hall–Petch relation:</p>
+\[ \sigma_y = \sigma_0 + k_y\, d^{-1/2} \tag{1} \]
+<p>— fine grains strengthen, and (uniquely among the four) usually improve toughness too, which is why fine grain is the closest metallurgy comes to a free lunch. <b>Solid solution.</b> Solute atoms strain the lattice locally; dislocations wade through the strain fields. Every alloying addition does some of this. <b>Strain hardening.</b> Deform the metal and dislocations multiply until they obstruct each other — quantified by percent cold work, spent by every rolling pass and drawing die. <b>Precipitation.</b> Fine second-phase particles force dislocations to cut or bow around them; the strongest aluminum alloys and nickel superalloys live here.</p>
+<h3>§3 · Choosing among them</h3>
+<p>The mechanisms stack — a drawn, alloyed, fine-grained wire uses three at once — but they differ in temperature stability (strain hardening anneals away; precipitates coarsen), in cost, and in what they do to toughness and conductivity. A copper conductor is the cautionary tale: solutes that strengthen it also scatter electrons, so cable copper is strengthened by drawing, not doping. §Worked Examples prices mechanism one with real Hall–Petch constants and mechanism three on a drawn rod.</p>
+
+<h3>§4 · The strengthening decision method</h3>
+<p>Every strengthening mechanism is the same sentence with a different subject: something
+obstructs dislocations. The engineering skill is choosing WHICH something, and the choice
+runs on three questions. <em>What temperature will the part see?</em> Strain hardening
+anneals away — it cannot serve hot; grain-boundary strengthening fades as boundaries begin
+to slide at creep temperatures; solid-solution and precipitation strengthening hold higher.
+<em>What process route is available?</em> Cold work arrives free with rolling and drawing;
+fine grain arrives through controlled rolling and normalizing; precipitates demand the full
+solution-quench-age cycle of the heat-treatment lessons ahead. <em>What does the trade
+cost?</em> Every mechanism buys strength with ductility — the strengthened metal forms less
+willingly, and a drawing schedule that ignores this snaps wire.</p>
+<p>Run Hall–Petch as the worked example of quantitative thinking:
+\( \sigma_y = \sigma_0 + k\,d^{-1/2} \) turns a micrograph's grain size into a yield
+prediction, and its inverse square root explains why halving grain size buys a meaningful
+but diminishing return. The mechanisms stack — commercial alloys routinely deploy three at
+once — and reading a datasheet is recognizing which levers its producer pulled. A dual-phase
+automotive steel, for instance, runs fine grains, solute, and a hard second phase
+simultaneously; its certificate is a three-lever chord, and hearing the chord is what this
+lesson trains.</p>
+<p><strong>Closing.</strong> Strength is obstructed dislocation motion — by boundaries, solutes, tangles, or particles. Name the obstacle in any datasheet's "condition" column and you have read the alloy's biography.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Dislocations as strength's agent</b> (Lesson 5) — obstacles only make sense against traffic.</li>
+<li><b>Yield strength</b> (Lesson 7) — the number every mechanism moves.</li>
+<li><b>Solute atoms</b> (Lesson 5) — substitutional and interstitial, now weaponized.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Dislocation motion</td><td>slip under shear</td><td>Plasticity's mechanism; block it and the metal strengthens.</td></tr>
+<tr><td>Strain hardening</td><td>dislocations multiply and entangle</td><td>Cold work: stronger, harder, less ductile — the rolling-mill trade.</td></tr>
+<tr><td>Solid-solution strengthening</td><td>solute atoms strain the lattice</td><td>Alloying elements as speed bumps for dislocations.</td></tr>
+<tr><td>Grain-boundary strengthening</td><td>\( \sigma_y = \sigma_0 + k\,d^{-1/2} \)</td><td>Hall–Petch: finer grains, higher yield — at service temperatures.</td></tr>
+<tr><td>Precipitation strengthening</td><td>fine particles pin dislocations</td><td>The aerospace-alloy mechanism; preview of heat treatment.</td></tr>
+<tr><td>The common thread</td><td>every mechanism obstructs dislocations</td><td>One idea, four levers — pick by cost, temperature, and process.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Hall–Petch, priced in microns</b></p>
+<p><b>Problem.</b> For 70/30 brass, \( \sigma_0 = 70\ \mathrm{MPa} \), \( k_y = 0.74\ \mathrm{MPa \cdot m^{1/2}} \) (representative constants, Callister &amp; Rethwisch). <b>Find:</b> yield strength at grain sizes 25 µm and 8 µm.</p><div class="soln"><p><b>Solution.</b> (1) \( d = 25\ \mathrm{\mu m} = 2.5 \times 10^{-5}\ \mathrm{m} \): \( d^{-1/2} = 200\ \mathrm{m^{-1/2}} \); \( \sigma_y = 70 + 0.74 \times 200 = 218\ \mathrm{MPa} \).
+(2) \( d = 8\ \mathrm{\mu m} \): \( d^{-1/2} = 354 \); \( \sigma_y = 70 + 0.74 \times 354 = 332\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> 218 → 332 MPa: a 3× grain refinement buys ~50% more yield strength.
+<b>Sanity check:</b> the square root means returns diminish — the next 50% costs refining toward the micron scale, which is why Hall–Petch is a strategy, not an infinite staircase.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Cold work in a drawing die</b></p>
+<p><b>Problem.</b> A rod is drawn from 10 mm to 8 mm diameter. <b>Find:</b> the percent cold work.</p><div class="soln"><p><b>Solution.</b> (1) Areas scale with diameter squared: \( A_0 \propto 100 \), \( A_d \propto 64 \).
+(2) \( \%CW = \dfrac{100 - 64}{100} \times 100 = 36\% \).</p>
+<p><b>Answer:</b> 36% cold work.
+<b>Sanity check:</b> a 20% diameter reduction is a 36% area reduction — area, not diameter, is what the dislocation population responds to. At this level of cold work a brass or copper would show markedly higher strength and visibly less tensile ductility; whether that is product or problem depends on whether an anneal comes next — Lesson 10's question.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Yield strength from a micrograph</b></p>
+<p><b>Problem.</b> A steel follows Hall–Petch with \( \sigma_0 = 70\ \mathrm{MPa} \) and \( k = 0.74\ \mathrm{MPa\sqrt{m}} \). Metallography shows 25 µm grains. <b>Find:</b> the yield strength, and the value if processing refines the grains to 6.25 µm.</p><div class="soln"><p><b>Solution.</b> (1) \( d^{-1/2} = (25\times10^{-6})^{-1/2} = 200\ \mathrm{m^{-1/2}} \).
+(2) \( \sigma_y = 70 + 0.74 \times 200 = 218\ \mathrm{MPa} \).
+(3) At 6.25 µm: \( d^{-1/2} = 400 \Rightarrow \sigma_y = 70 + 296 = 366\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> ≈218 MPa; refining grains fourfold lifts yield to ≈366 MPa.
+<b>Sanity check:</b> quartering the grain size doubles \( d^{-1/2} \) — the square root working exactly as written — and the gain (+148 MPa) exceeds the base lattice strength itself: grain refinement is the one strengthening lever that also IMPROVES toughness, which is why structural steels chase it.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Every metallic strengthening mechanism works by:</p><ol class="opts"><li class="opt">stiffening the atomic bonds</li><li class="opt correct">obstructing dislocation motion ✓</li><li class="opt">removing all defects</li><li class="opt">increasing density</li></ol><div class="soln"><p>Plastic flow is dislocation traffic; boundaries, solute strain fields, dislocation tangles, and precipitates are four kinds of roadblock. Bond stiffness (modulus) barely moves — which is why strengthened alloys are stronger but not stiffer, echoing Lesson 7's modulus question.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>With \( \sigma_0 = 70 \) MPa and \( k_y = 0.74\ \mathrm{MPa\sqrt{m}} \), refining grains to 10 µm gives a yield strength of about:</p><ol class="opts"><li class="opt">74 MPa</li><li class="opt correct">304 MPa ✓</li><li class="opt">141 MPa</li><li class="opt">700 MPa</li></ol><div class="soln"><p>\( d^{-1/2} = (10^{-5})^{-1/2} = 316\ \mathrm{m^{-1/2}} \); \( \sigma_y = 70 + 0.74 \times 316 = 304\ \mathrm{MPa} \). Hall–Petch rewards fine grains through the square root — and uniquely among the mechanisms it usually improves toughness at the same time.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Cold-rolled sheet is stronger than annealed sheet of the same steel because rolling:</p><ol class="opts"><li class="opt correct">Multiplies and entangles dislocations, obstructing further slip ✓</li><li class="opt">Removes all defects</li><li class="opt">Refines the atoms themselves</li><li class="opt">Adds carbon</li></ol><div class="soln"><p>Plastic deformation manufactures dislocations by the billions; they tangle and block one another, so further slip needs more stress — strain hardening. The intuition that working metal 'removes defects' is exactly backwards: cold work is defect FARMING, on purpose. Composition is untouched; the strengthening lives entirely in the defect population, which is why an anneal can erase it.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Percent cold work is computed from the change in:</p><ol class="opts"><li class="opt">length</li><li class="opt">diameter</li><li class="opt correct">cross-sectional area ✓</li><li class="opt">hardness</li></ol><div class="soln"><p>\( \%CW = (A_0 - A_d)/A_0 \times 100 \). A 10 → 8 mm draw looks like \"20%\" by diameter but is 36% by area — and area is what the dislocation population responds to. Hardness rises <em>because of</em> cold work; it is the effect, not the measure.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>According to Hall–Petch, at room temperature a finer grain size makes a metal:</p><ol class="opts"><li class="opt correct">Stronger — boundaries obstruct dislocation motion ✓</li><li class="opt">Weaker — boundaries are defects</li><li class="opt">Unchanged — grain size is cosmetic</li><li class="opt">More brittle, always</li></ol><div class="soln"><p>Each boundary forces dislocations to stop and restart in the next grain, so more boundary per volume means higher yield: \( \sigma_y = \sigma_0 + k d^{-1/2} \). The 'defects weaken' instinct inverts at room temperature — though it returns at creep temperatures, where boundaries slide. Uniquely among strengthening levers, grain refinement usually improves toughness too, which is why it is the structural-steel favorite.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 10 · Recovery, recrystallization, and grain growth</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · What cold work leaves behind</h3>
+<p>A cold-worked metal is a loaded spring at the microscale: dislocation density up a thousandfold, grains flattened and rotated, a few percent of the deformation energy locked in as internal strain. That stored energy is the driving force for everything in this lesson — heat the metal and it will spend that energy reorganizing, in three acts.</p>
+<h3>§2 · Recovery, recrystallization, grain growth</h3>
+<p><b>Recovery</b> (lowest temperatures): dislocations climb, annihilate, and tidy into low-energy walls. Residual stress falls and conductivity returns, but strength barely moves — the stress-relief anneal lives here. <b>Recrystallization</b>: new, strain-free grains nucleate in the deformed matrix and consume it wholesale; strength drops toward the annealed baseline and ductility floods back. The temperature where this completes in about an hour — the recrystallization temperature — runs roughly</p>
+\[ T_R \approx 0.4\, T_m \quad (\mathrm{in\ kelvins}) \tag{1} \]
+<p>and falls with heavier prior cold work (more stored energy, more driving force). <b>Grain growth</b>: left hot after recrystallization finishes, boundaries migrate to cut boundary area, grains coarsen, and Hall–Petch (Lesson 9) runs in reverse. Annealing schedules end when recrystallization does, not later, for exactly this reason.</p>
+<h3>§3 · Hot working, defined properly</h3>
+<p>Hot working is deformation <em>above</em> the recrystallization temperature — the metal recrystallizes as fast as the rolls harden it, so it never accumulates cold work. Cold working is deformation below \( T_R \). The boundary is homologous, not absolute: by (1), lead recrystallizes below room temperature — a fitter bending lead sheet is hot-working it at 25 °C — while tungsten at a red-hot 800 °C can still be cold-working. "Hot" belongs to the metal's melting point, not the thermometer.</p>
+
+<h3>§4 · The annealing decision method</h3>
+<p>Cold work and annealing form a cycle the mill walks deliberately, and the walking has
+rules. <em>Track the stored energy:</em> each cold pass banks dislocations, raising strength
+and dropping ductility toward the cracking threshold; the annealing furnace spends that
+stored energy on new, strain-free grains. <em>Locate the temperature honestly:</em>
+recrystallization begins near \( 0.4\,T_m \) in kelvins — the boundary that separates
+cold work from hot work by definition, not by whether the shop felt warm. Below it,
+recovery alone relaxes residual stresses while keeping most of the strength: the
+stress-relief anneal that fabricators order by that exact name. <em>Respect the clock after
+the reset:</em> grain growth never stops at temperature — \( d^2 - d_0^2 = Kt \) keeps
+consuming boundaries — so an over-soaked anneal trades the fine grain the previous lesson
+prized for coarse, weak structure. Schedules end on time for a reason.</p>
+<p>The method in practice: choose the cold-work total for the final strength, insert
+intermediate anneals where cumulative reduction approaches the alloy's formability limit,
+and finish either work-hardened (springy temper) or annealed (soft temper) to order. Temper
+designations on certificates are precisely this cycle's bookkeeping.</p>
+<p><strong>Closing.</strong> Stored strain energy drives three acts — tidy, replace, coarsen — and \( 0.4\,T_m \) marks the stage door. Every anneal on every line is a decision about which act to stop after.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Strain hardening</b> (Lesson 9) — this lesson is its undo operation.</li>
+<li><b>Dislocations and boundaries</b> (Lesson 5) — the populations being reorganized.</li>
+<li><b>Diffusion</b> (Lesson 6) — all three acts are diffusion-paced, hence Arrhenius.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Cold work</td><td>plastic strain below recrystallization</td><td>Strength up, ductility down, stored energy banked in dislocations.</td></tr>
+<tr><td>Recovery</td><td>dislocations rearrange; stresses relax</td><td>Property softening barely begins; residual stress relief.</td></tr>
+<tr><td>Recrystallization</td><td>new strain-free grains nucleate</td><td>The reset button: strength returns to soft, ductility restored.</td></tr>
+<tr><td>Recrystallization temperature</td><td>\( \approx 0.4\,T_m \) (K)</td><td>The rule-of-thumb boundary between cold and hot work.</td></tr>
+<tr><td>Grain growth</td><td>\( d^2 - d_0^2 = Kt \)</td><td>Boundaries consume each other; long soaks coarsen and weaken.</td></tr>
+<tr><td>Annealing schedule</td><td>temperature + time chosen on purpose</td><td>Buying back formability between cold-work passes.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Two metals, one rule of thumb</b></p>
+<p><b>Problem.</b> Estimate recrystallization temperatures for copper (\( T_m = 1358\ \mathrm{K} \)) and lead (\( T_m = 601\ \mathrm{K} \)).</p><div class="soln"><p><b>Solution.</b> (1) Copper: \( T_R \approx 0.4 \times 1358 = 543\ \mathrm{K} = 270\ \mathrm{^\circ C} \).
+(2) Lead: \( T_R \approx 0.4 \times 601 = 240\ \mathrm{K} = -33\ \mathrm{^\circ C} \).</p>
+<p><b>Answer:</b> Cu ≈ 270 °C; Pb ≈ −33 °C.
+<b>Sanity check:</b> lead's \( T_R \) sits below any room you will ever stand in — lead cannot be cold-worked at ambient and never strain-hardens on the bench, which any plumber has observed without naming. Copper's 270 °C is why annealing furnaces on wire lines run at moderate red heat and why drawn copper stays hard in service. (Rule-of-thumb figures; alloying and prior cold work shift them.)</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Is 500 °C hot working for brass?</b></p>
+<p><b>Problem.</b> Brass (\( T_m \approx 1188\ \mathrm{K} \), representative) is formed at 500 °C. <b>Find:</b> the homologous temperature and the classification.</p><div class="soln"><p><b>Solution.</b> (1) \( T = 773\ \mathrm{K} \).
+(2) Homologous: \( T/T_m = 773/1188 = 0.65 \).
+(3) \( 0.65 > 0.4 \): comfortably above the recrystallization threshold — hot working.</p>
+<p><b>Answer:</b> \( T/T_m = 0.65 \); hot working.
+<b>Sanity check:</b> at 0.65 homologous the metal recrystallizes during deformation itself, so the press sees low, steady flow stress and the part emerges strain-free — the entire commercial point of working hot. The same 500 °C applied to tungsten (\( T_m = 3695\ \mathrm{K} \), homologous 0.21) would be cold work, restating §3: hot is a ratio, not a reading.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>The over-soaked anneal</b></p>
+<p><b>Problem.</b> An annealed sheet enters a soak with 20 µm grains. Grain growth follows \( d^2 - d_0^2 = Kt \) with \( K = 0.12\ \mathrm{\mu m^2/s} \) at the soak temperature. <b>Find:</b> the grain size after a 1-hour hold, and comment via Hall–Petch.</p><div class="soln"><p><b>Solution.</b> (1) \( d^2 = 20^2 + 0.12 \times 3600 = 400 + 432 = 832\ \mathrm{\mu m^2} \).
+(2) \( d = \sqrt{832} = 28.8\ \mathrm{\mu m} \).
+(3) Hall–Petch: \( d^{-1/2} \) falls from 224 to 186 \( \mathrm{m^{-1/2}} \) — roughly a sixth of the grain-boundary strengthening quietly gone in one hour.</p>
+<p><b>Answer:</b> ≈29 µm after the hour — the fine grain is dissolving into the soak.
+<b>Sanity check:</b> the parabolic law decelerates (coarser structures have less boundary energy to spend), but it never stops at temperature — which is why annealing schedules end on time, not on convenience, and why "we left it in over the break" is a metallurgical event, not a scheduling footnote.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Nickel melts at 1728 K. Its recrystallization temperature is roughly:</p><ol class="opts"><li class="opt correct">≈418 °C ✓</li><li class="opt">≈691 °C</li><li class="opt">≈1382 °C</li><li class="opt">≈172 °C</li></ol><div class="soln"><p>\( T_R \approx 0.4\,T_m = 0.4 \times 1728 = 691\ \mathrm{K} = 418\ \mathrm{^\circ C} \). Choice B quotes the kelvin figure as celsius — the classic unit slip in homologous-temperature work. (Rule of thumb; alloying and prior cold work shift it.)</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>A stress-relief anneal that must <em>not</em> soften the part should stop at:</p><ol class="opts"><li class="opt correct">recovery ✓</li><li class="opt">recrystallization</li><li class="opt">grain growth</li><li class="opt">melting</li></ol><div class="soln"><p>Recovery lets dislocations tidy into low-energy arrangements — residual stress falls, conductivity returns, but strength barely moves. Recrystallization replaces the strengthened structure wholesale and erases cold work; grain growth then makes things worse. Anneal schedules are decisions about which act to stop after.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>The practical rule-of-thumb for where recrystallization begins is:</p><ol class="opts"><li class="opt correct">About 0.4 of the melting point in kelvins ✓</li><li class="opt">Exactly 500 °C for all metals</li><li class="opt">Just below the melting point</li><li class="opt">Room temperature, given time</li></ol><div class="soln"><p>\( T_{rx} \approx 0.4\,T_m \) (absolute) — which is why lead recrystallizes on the bench (its 0.4 Tm is below room temperature) while steel needs a furnace. The rule also DEFINES hot versus cold work: forming above recrystallization continuously erases the hardening that forming below it banks. A fixed Celsius number ignores that the physics scales with each metal's own melting point.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A fitter bends lead sheet at room temperature. Metallurgically, this is:</p><ol class="opts"><li class="opt">cold working</li><li class="opt correct">hot working — room temperature is above lead's \( T_R \) ✓</li><li class="opt">impossible without heating</li><li class="opt">precipitation hardening</li></ol><div class="soln"><p>Lead's \( T_R \approx 0.4 \times 601 = 240\ \mathrm{K} = -33\ \mathrm{^\circ C} \): any workshop is a hot-working mill for lead, which is why it never strain-hardens on the bench. \"Hot\" is homologous — a ratio to the melting point, not a thermometer reading.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>What drives grain growth during a long high-temperature soak?</p><ol class="opts"><li class="opt correct">Reduction of total grain-boundary energy ✓</li><li class="opt">Gravity settling of grains</li><li class="opt">Chemical reaction with the furnace air</li><li class="opt">Leftover casting stresses</li></ol><div class="soln"><p>Boundaries carry energy per area; coarsening trades many small grains for fewer large ones and shrinks the total boundary area — thermodynamics collecting its due. That is why growth never stops at temperature, only slows as the driving energy dwindles (the parabolic law), and why time at temperature is a controlled quantity on every annealing schedule rather than a rounding detail.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 11 · Solidification and cast structure</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Nucleation: the reluctant start</h3>
+<p>A melt below its freezing point does not freeze at once — a solid nucleus must first reach a critical size before growing is cheaper than redissolving. The balance of surface energy paid against volume energy won sets the critical radius:</p>
+\[ r^* = \frac{2\gamma T_m}{\Delta H_f\, \Delta T} \tag{1} \]
+<p>— inversely proportional to the undercooling \( \Delta T \). Homogeneous nucleation needs implausible undercoolings; real melts nucleate <em>heterogeneously</em> on mold walls and inoculant particles, which is why foundries seed melts deliberately: more nuclei, finer grains, better castings.</p>
+<h3>§2 · The three zones of a casting</h3>
+<p>Read a sectioned billet or ingot and solidification history is written in its grains. <b>Chill zone</b>: a skin of fine equiaxed grains, nucleated in a rush against the cold mold. <b>Columnar zone</b>: long grains growing inward along the heat-flow direction, competing until the best-aligned survive. <b>Central equiaxed zone</b>: grains nucleated in the cooling interior liquid. The proportions are process knobs — pouring superheat, mold cooling, stirring — and they matter because columnar structures are anisotropic and their convergence planes are weak.</p>
+<h3>§3 · Segregation: solidification's chemical fingerprint</h3>
+<p>Solids accept less solute than liquids, so a growing crystal rejects solute into the melt ahead of it. At dendrite scale this leaves <b>microsegregation</b> — solute-lean dendrite cores, solute-rich interdendritic pockets, quantified by the lever rule on the phase diagram and erasable only by homogenization (Lesson 6's \( \sqrt{Dt} \), with the arm spacing as the distance). At full-ingot scale, <b>macrosegregation</b> — centerline enrichment in continuously cast products — cannot be diffused away at any industrial timescale; it must be managed in the caster. Coring survives because solid-state diffusion is slow: the fingerprint outlives the process that made it.</p>
+
+<h3>§4 · Reading a casting's history from its structure</h3>
+<p>A sectioned casting is a recording of its own solidification, and the working method is
+to read it zone by zone. <em>The chill zone</em> at the surface — fine random grains — says
+the mold quenched the first metal fast. <em>The columnar zone</em> — long grains aimed at
+the center — says heat left through the walls, and its aligned boundaries are weak paths
+that matter for load direction. <em>The equiaxed center</em> says nucleation won the race in
+the last, slowest-cooling liquid. Alongside the zones, read the defects as verbs:
+centerline shrinkage means feeding failed; segregation bands mean solute was pushed ahead
+of the fronts; gas porosity's round voids mean dissolved gas came out of solution.</p>
+<p>Then run the arithmetic that controls all of it: Chvorinov's rule,
+\( t = B(V/A)^2 \), prices each region's solidification time by its modulus \( V/A \) —
+and the whole craft of risering is making the riser's modulus larger than the casting's, so
+the riser freezes LAST and feeds shrinkage instead of hosting it. The same square law says
+thin sections freeze fast and fine, heavy bosses freeze slow and coarse — so properties
+vary across one casting by design necessity, a fact the machine-design courses will inherit
+and respect.</p>
+<p><strong>Closing.</strong> Nucleation sets the grain count, growth writes the three zones, rejection writes the chemistry. A casting's cross-section is a recording — this lesson teaches you to play it back.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Diffusion</b> (Lesson 6) — segregation is diffusion losing a race; homogenization is the rematch.</li>
+<li><b>Grain boundaries</b> (Lesson 5) — the zones are grain populations with histories.</li>
+<li><b>Phase-diagram reading</b> — the lever rule arrives properly in Materials Science II; used gently here.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Nucleation and growth</td><td>solid starts at sites, fronts advance</td><td>How every casting, weld, and ingot begins.</td></tr>
+<tr><td>Chvorinov's rule</td><td>\( t = B\,(V/A)^2 \)</td><td>Solidification time from shape: the casting modulus squared.</td></tr>
+<tr><td>Chill / columnar / equiaxed zones</td><td>surface → aligned → random grains</td><td>Reading a cast cross-section like a history of its cooling.</td></tr>
+<tr><td>Dendrites</td><td>tree-like growth fronts</td><td>The microstructural signature of alloy solidification.</td></tr>
+<tr><td>Segregation</td><td>solute rejected ahead of the front</td><td>Why composition varies across a casting; homogenization's target.</td></tr>
+<tr><td>Shrinkage</td><td>liquid → solid volume deficit</td><td>Risers exist to feed it; porosity is the unfed remainder.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>The critical nucleus for iron</b></p>
+<p><b>Problem.</b> For pure iron (representative values, Callister &amp; Rethwisch): \( \gamma = 0.255\ \mathrm{J/m^2} \), \( \Delta H_f = 1.85 \times 10^9\ \mathrm{J/m^3} \), \( T_m = 1811\ \mathrm{K} \), homogeneous undercooling \( \Delta T = 295\ \mathrm{K} \). <b>Find:</b> \( r^* \).</p><div class="soln"><p><b>Solution.</b> (1) \( r^* = \dfrac{2 \times 0.255 \times 1811}{1.85 \times 10^9 \times 295} \).
+(2) Numerator: 923.6; denominator: \( 5.46 \times 10^{11} \).
+(3) \( r^* = 1.69 \times 10^{-9}\ \mathrm{m} \approx 1.7\ \mathrm{nm} \).</p>
+<p><b>Answer:</b> ≈1.7 nm — a cluster of only a few thousand atoms.
+<b>Sanity check:</b> the required undercooling, ~295 K, is enormous — real ladles never see it, confirming §1: industrial solidification is heterogeneous, nucleating on walls and particles at a few degrees of undercooling instead.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Lever rule on a freezing alloy</b></p>
+<p><b>Problem.</b> A Cu–35 wt% Ni alloy sits in the two-phase field where the liquid contains 32 wt% Ni and the solid 43 wt% Ni (compositions from the Cu–Ni diagram, Callister &amp; Rethwisch). <b>Find:</b> the phase fractions.</p><div class="soln"><p><b>Solution.</b> (1) Lever rule, liquid fraction: \( W_L = \dfrac{C_s - C_0}{C_s - C_L} = \dfrac{43 - 35}{43 - 32} = \dfrac{8}{11} = 0.73 \).
+(2) Solid: \( W_S = \dfrac{35 - 32}{11} = 0.27 \). Sum: 1.00. ✓</p>
+<p><b>Answer:</b> 73% liquid, 27% solid.
+<b>Sanity check:</b> the first solid (43% Ni) is markedly richer than the average (35%) — the rejection of §3 in numbers. Freeze fast and that difference is buried as coring in every dendrite; the lever rule is segregation's arithmetic before it becomes homogenization's problem.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Sizing the freeze with Chvorinov</b></p>
+<p><b>Problem.</b> A plate casting has volume-to-area modulus \( V/A = 0.02\ \mathrm{m} \), and the mold's Chvorinov constant is \( B = 2.5\times10^{6}\ \mathrm{s/m^2} \). <b>Find:</b> the solidification time, and the modulus a riser needs to freeze after the casting.</p><div class="soln"><p><b>Solution.</b> (1) \( t = B\,(V/A)^2 = 2.5\times10^{6} \times (0.02)^2 = 2.5\times10^{6} \times 4\times10^{-4} = 1000\ \mathrm{s} \approx 17\ \mathrm{min} \).
+(2) A riser must freeze later: its modulus must exceed the casting's — practice sizes risers at \( (V/A)_{riser} \approx 1.2 \times (V/A)_{casting} = 0.024\ \mathrm{m} \), giving \( t \approx 1440\ \mathrm{s} \), a 44% margin.</p>
+<p><b>Answer:</b> ≈1000 s (17 min); riser modulus ≥ ~0.024 m.
+<b>Sanity check:</b> the square law means the 20% modulus margin becomes a 44% time margin \( (1.2^2 = 1.44) \) — geometry's gift to the riser designer, and the reason modulus, not volume, is the quantity risering tables tabulate.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Increasing the undercooling \( \Delta T \) of a melt makes the critical nucleus radius \( r^* \):</p><ol class="opts"><li class="opt">larger</li><li class="opt correct">smaller ✓</li><li class="opt">unchanged</li><li class="opt">infinite</li></ol><div class="soln"><p>\( r^* = 2\gamma T_m/(\Delta H_f\, \Delta T) \) — undercooling sits in the denominator. Colder melts accept smaller nuclei, so nucleation gets easier and grains finer. Inoculants exploit the same idea from the other side, by making heterogeneous sites abundant.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>From mold wall to center, a casting's grain zones run:</p><ol class="opts"><li class="opt">columnar → chill → equiaxed</li><li class="opt correct">chill → columnar → equiaxed ✓</li><li class="opt">equiaxed → columnar → chill</li><li class="opt">uniform throughout</li></ol><div class="soln"><p>The cold wall nucleates a fine chill zone; survivors grow inward as columnar grains along the heat-flow direction; the last liquid nucleates the central equiaxed zone. The proportions are process knobs — superheat, cooling, stirring — and a macro-etch reads them back like a chart recorder.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Per Chvorinov's rule, a riser feeds a casting successfully when the riser has:</p><ol class="opts"><li class="opt correct">A larger volume-to-area modulus than the casting ✓</li><li class="opt">A larger volume, regardless of shape</li><li class="opt">A smaller modulus, to freeze first</li><li class="opt">The same shape as the casting</li></ol><div class="soln"><p>\( t = B(V/A)^2 \): freezing order follows modulus, not size. A riser with the greater \( V/A \) stays liquid longest and feeds the casting's shrinkage; a big-but-thin riser (large volume, larger area) can freeze first and feed nothing. Modulus is the quantity risering practice tabulates — the rule's square makes even modest modulus margins into comfortable time margins.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>An alloy at 35 wt% Ni sits between liquid (32) and solid (43) on the Cu–Ni diagram. The liquid fraction is:</p><ol class="opts"><li class="opt">27%</li><li class="opt">35%</li><li class="opt correct">73% ✓</li><li class="opt">89%</li></ol><div class="soln"><p>Lever rule: \( W_L = (43-35)/(43-32) = 8/11 = 0.73 \). Note the arm you use is the one on the <em>far</em> side of the average — the commonest lever-rule slip is grabbing the near arm, which gives the 27% solid fraction instead.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>The long, aligned grains found just inside a casting's surface are the:</p><ol class="opts"><li class="opt correct">Columnar zone — grains grew opposite the heat flow through the mold wall ✓</li><li class="opt">Chill zone</li><li class="opt">Equiaxed zone</li><li class="opt">Segregation zone</li></ol><div class="soln"><p>After the chill zone's fine surface grains, survivors grow inward along the thermal gradient — long, parallel, and directional: the columnar zone. Its aligned boundaries are anisotropic weak paths, which matters when loads cross them. The equiaxed center forms last where cooling is slow and nucleation wins. Reading the three zones in order IS reading the casting's cooling history.</p></div></div></div></section></body></html>

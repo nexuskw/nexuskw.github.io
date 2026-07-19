@@ -801,6 +801,30 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 - Every new Tier 1/2 page: follow the gold standard structure of
   y1s1-mp1-02/03. Verify every citation and URL before adding. Label all
   industrial numbers "representative" unless from a cited source.
+- MATH-3 (MTH 207) COURSE COMPLETE (2026-07-19, owner directive "every
+  video lesson gets the full unit"): all 11 lessons now full Educational
+  Units. AUTHORED THIS SESSION: L5-L11 fresh (free/forced oscillations +
+  resonance/beats; Laplace transforms I — definition/table/derivative &
+  shift rules; Laplace II — transform-solve-invert IVPs + partial
+  fractions; systems as Ax=b + determinant/inverse; Gaussian elimination/
+  pivots/rank; eigenvalues/eigenvectors + x'=Ax stability; numerical ODEs
+  Euler/Heun/RK4 + step-size convergence). Each: §1-§5 lecture 550-612w
+  (all >=500 floor), glossary-TABLE foundations, 3 solve + 5 MC quiz.
+  L2/L3/L4 lecture top-up DONE (484/398/450 -> 700/678/704w via a §5
+  each; all verified numbers preserved). Every quiz number machine-checked
+  pre-write in pure-Python (56 assertions: L5-L7 21 incl. Laplace
+  transforms confirmed by numerical integration of ∫₀^∞ e^{-st}f dt; L8-L11
+  35 incl. 2×2/3×3 solve, determinant, inverse·A=I, eigenvalues via
+  trace/det, Euler global-error halving ratio 1.92≈2). Company-free scan
+  PASS (academic rule). Videos already 11/11 approved MIT OCW 18.03 embeds
+  — untouched. Build clean (nexus_build.py): pages 579, embeds 124,
+  coverage 104→111/528 (21%). Render-gate: zero raw § leak (build
+  normalises §N→0N), all 11 pages placeholder-free, glossary + 8-item quiz
+  + embed present, MTH 207 L10 spot-checked in-browser ("Full lesson" /
+  "8-problem interactive quiz" headers confirmed). Content-review doc at
+  drafts/mth207-content-review.html. NOT YET PUSHED to live — awaiting
+  owner go-ahead. STILL OWED for the wider directive: Year-2 empty-video
+  courses electronics-sensors, mfg-processes-2 (no videos/content yet).
 
 ### Writing rules (non-negotiable)
 

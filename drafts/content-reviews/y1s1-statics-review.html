@@ -1,0 +1,737 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>STA 103 — Content Review</title><script>MathJax={tex:{inlineMath:[["\\(","\\)"]]},svg:{fontCache:"global"}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style>
+ body{font:16px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;max-width:900px;margin:0 auto;padding:24px;color:#16202e;background:#f7f9fb}
+ h1{font-size:25px;border-bottom:3px solid #1f7a5c;padding-bottom:8px}
+ .meta{color:#5a6b7b;font-size:14px;margin-bottom:22px}
+ section.lesson{background:#fff;border:1px solid #dde5ec;border-radius:10px;padding:18px 22px;margin:20px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+ section.lesson>h2{font-size:19px;color:#0e1626;margin-top:0;border-left:5px solid #1f7a5c;padding-left:12px}
+ h3.tab{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#1f7a5c;margin:20px 0 8px;border-bottom:1px solid #e3ebf1;padding-bottom:4px}
+ h3.tab .cnt{color:#8a99a8;font-weight:400;text-transform:none;letter-spacing:0}
+ .body h3{font-size:15.5px;color:#20364a;margin:15px 0 4px}
+ .body h4{font-size:14px;color:#3a4a5a;margin:13px 0 4px}
+ table.glossary{border-collapse:collapse;width:100%;font-size:13.5px;margin:8px 0}
+ table.glossary th,table.glossary td{border:1px solid #d3dde5;padding:6px 9px;text-align:left;vertical-align:top}
+ table.glossary th{background:#eef4f2}
+ ul.plain{margin:6px 0 6px 18px}
+ .qcard{border:1px solid #e0e8ef;border-radius:8px;padding:11px 14px;margin:10px 0;background:#fbfdfe}
+ .qcard.mc{background:#f9fbf9}
+ .qtag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff;background:#1f7a5c;border-radius:4px;padding:2px 7px;margin-bottom:6px}
+ .qcard.mc .qtag{background:#3a6ea5}
+ ol.opts{margin:6px 0 6px 20px}
+ ol.opts li.correct{color:#116b41;font-weight:600}
+ .soln{background:#f0f5f2;border-left:3px solid #1f7a5c;padding:8px 12px;margin-top:8px;border-radius:0 6px 6px 0;font-size:14.5px}
+ .qname{margin:0 0 4px}
+</style></head><body><h1>STA 103 · Engineering Statics</h1><p class="meta">Y1S1 · statics · 11 lesson(s) authored · Lecture + Foundations (glossary tables) + Examples &amp; Quiz (correct MCQ ✓). Open in a browser for MathJax.</p>
+<section class="lesson"><h2>Lesson 01 · Forces, vectors, and resultants</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Force is a vector, and the arrow is the contract</h3>
+<p>A force has magnitude, direction, and a point of application — drop any of the three and the analysis is fiction. In 2-D we work in components: a force \( F \) at angle \( \theta \) above the horizontal carries \( F_x = F\cos\theta \) and \( F_y = F\sin\theta \). The reverse trip is just as routine:</p>
+\[ R = \sqrt{R_x^2 + R_y^2}, \qquad \theta = \tan^{-1}\!\frac{R_y}{R_x} \tag{1} \]
+<p>Resultants are found by summing components, never by adding magnitudes — two 10 kN forces can combine to anything from 0 to 20 kN depending on their directions.</p>
+<h3>§2 · Weight is not mass</h3>
+<p>Mass is the amount of matter, in kilograms; weight is the gravitational <em>force</em> on that mass, \( W = mg \) with \( g = 9.81\ \mathrm{m/s^2} \), in newtons. A 250 kg motor does not load its sling with "250 kg" — it loads it with \( 250 \times 9.81 = 2452.5\ \mathrm{N} \approx 2.45\ \mathrm{kN} \). Bolt-load calculations, sling charts, and pressure-area checks all fail the same way when someone feeds a mass where a force belongs. Carry units through every line; they are the cheapest error detector you will ever own.</p>
+<h3>§3 · Cables and struts resolve the same way</h3>
+<p>A taut cable pulls along its own axis; a straight two-force strut pushes or pulls along its axis. Both therefore hand you a force whose <em>direction is known from geometry</em> — only the magnitude is unknown. Resolving such members into components is the mechanical habit this whole course is built on, and §Worked Examples drills it on a crane cable and a motor lift.</p>
+
+<h3>§4 · The component working method</h3>
+<p>Every force problem in this course, and most in the courses after it, runs through one
+mechanical procedure — run it the same way every time and errors lose their hiding places.
+<em>Choose axes deliberately:</em> horizontal-vertical by default, but rotate the axes onto an
+incline the moment most forces align with it — the algebra shrinks. <em>Build a sign
+table:</em> before any arithmetic, write each force's components with signs from the geometry,
+in a small table, so every \( \cos \) and \( \sin \) is committed once and visibly.
+<em>Sum, then recompose:</em> add the columns for \( \Sigma F_x \) and \( \Sigma F_y \),
+recompose into magnitude and angle — and state the quadrant from the signs of the sums, not
+from the calculator's arctangent, which cheerfully reports the wrong quadrant half the time.</p>
+<p>Then run the two closing audits. <em>Recomposition:</em> resolve your resultant back into
+components; if they don't reproduce the sums, a sign slipped. <em>Magnitude sense:</em> the
+resultant can never exceed the sum of the magnitudes and can never be less than the largest
+minus the rest — an answer outside that band is wrong before any rechecking. Ten disciplined
+seconds close out a page of arithmetic.</p>
+<p><strong>Closing.</strong> Components in, resultant out, units carried, weight computed from mass — four small disciplines that remove most of the errors this course will otherwise spend weeks catching.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Trigonometry</b> — sine, cosine, tangent on right triangles, fluently and without a diagram panic.</li>
+<li><b>SI units</b> — newtons, kilograms, and the prefix ladder (kN, MPa come soon).</li>
+<li><b>Vector idea</b> — a quantity with direction; formal vector algebra is built here, not assumed.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Force</td><td>vector, in newtons</td><td>Any push or pull on a body; magnitude, direction, and point of application all matter.</td></tr>
+<tr><td>Components</td><td>\( F_x = F\cos\theta,\ F_y = F\sin\theta \)</td><td>Splitting a force onto working axes before any equilibrium arithmetic.</td></tr>
+<tr><td>Resultant</td><td>\( R = \sqrt{(\Sigma F_x)^2 + (\Sigma F_y)^2} \)</td><td>Collapsing a force set into one equivalent force.</td></tr>
+<tr><td>Direction of resultant</td><td>\( \theta = \tan^{-1}(\Sigma F_y/\Sigma F_x) \)</td><td>Reporting the resultant as magnitude-plus-angle; check the quadrant.</td></tr>
+<tr><td>Unit conversion</td><td>\( W = mg \)</td><td>Kilograms on a display are mass; slings and anchors feel newtons.</td></tr>
+<tr><td>Recomposition check</td><td>components → \( R \) → components</td><td>The self-audit that catches sign and quadrant slips.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Resolving a cable force</b></p>
+<p><b>Problem.</b> A crane cable applies \( F = 10\ \mathrm{kN} \) to a padeye, at \( 30^\circ \) above the horizontal. <b>Find:</b> the horizontal and vertical components.</p><div class="soln"><p><b>Solution.</b> (1) \( F_x = 10\cos 30^\circ = 8.66\ \mathrm{kN} \).
+(2) \( F_y = 10\sin 30^\circ = 5.00\ \mathrm{kN} \).
+(3) Check by recomposition: \( \sqrt{8.66^2 + 5.00^2} = 10.0\ \mathrm{kN} \) — the original magnitude returns.</p>
+<p><b>Answer:</b> \( F_x = 8.66\ \mathrm{kN} \), \( F_y = 5.00\ \mathrm{kN} \).
+<b>Sanity check:</b> at \( 30^\circ \) the force leans closer to horizontal than vertical, so \( F_x > F_y \) — as computed.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Weight, then sling tension</b></p>
+<p><b>Problem.</b> A 250 kg motor hangs from two identical sling legs, each at \( 60^\circ \) above the horizontal. <b>Find:</b> the weight and the tension per leg.</p><div class="soln"><p><b>Solution.</b> (1) Weight: \( W = mg = 250 \times 9.81 = 2452.5\ \mathrm{N} \).
+(2) Vertical equilibrium, two legs sharing symmetrically: \( 2T\sin 60^\circ = W \).
+(3) \( T = 2452.5 / (2 \times 0.866) = 1416\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( W \approx 2.45\ \mathrm{kN} \); each leg carries \( \approx 1.42\ \mathrm{kN} \).
+<b>Sanity check:</b> each leg carries more than \( W/2 = 1226\ \mathrm{N} \) because only the vertical component of the leg tension supports load — flattening the legs toward horizontal would drive \( T \) higher still, which is why rigging charts penalize shallow sling angles.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Three forces, one resultant</b></p>
+<p><b>Problem.</b> Three concurrent forces act on a padeye: 300 N along +x, 200 N along +y, and 150 N at 210° (measured CCW from +x). <b>Find:</b> the magnitude and direction of the resultant.</p><div class="soln"><p><b>Solution.</b> (1) Components: \( \Sigma F_x = 300 + 0 + 150\cos 210° = 300 - 129.9 = 170.1\ \mathrm{N} \); \( \Sigma F_y = 0 + 200 + 150\sin 210° = 200 - 75 = 125\ \mathrm{N} \).
+(2) Magnitude: \( R = \sqrt{170.1^2 + 125^2} = 211\ \mathrm{N} \).
+(3) Direction: both sums positive → first quadrant; \( \theta = \tan^{-1}(125/170.1) = 36.3° \) above +x.</p>
+<p><b>Answer:</b> \( R \approx 211\ \mathrm{N} \) at 36.3°.
+<b>Sanity check:</b> the magnitude band: largest force alone is 300 N and the sum of magnitudes is 650 N — but the 150 N force opposes the other two, so a resultant below 300 N is expected; recomposing 211 N at 36.3° returns (170.1, 125.0) exactly.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A 20 kN cable force acts at \( 60^\circ \) above the horizontal. What is its vertical component?</p><ol class="opts"><li class="opt">10.0 kN</li><li class="opt correct">17.3 kN ✓</li><li class="opt">20.0 kN</li><li class="opt">34.6 kN</li></ol><div class="soln"><p>\( F_y = F\sin\theta = 20\sin 60^\circ = 17.3\ \mathrm{kN} \). Choosing 10.0 kN is the classic swap — that is \( 20\cos 60^\circ \), the <em>horizontal</em> component. The component along an axis uses the sine of the angle measured from the other axis; sketch the triangle before reaching for a formula.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Forces of 6 kN and 8 kN act at a point. Which resultant magnitude is <em>impossible</em>?</p><ol class="opts"><li class="opt">2 kN</li><li class="opt">10 kN</li><li class="opt">14 kN</li><li class="opt correct">16 kN ✓</li></ol><div class="soln"><p>Two forces bound their resultant between their difference and their sum: \( |8-6| = 2 \) kN (opposing) up to \( 8+6 = 14 \) kN (aligned). 10 kN sits inside the range (it is the perpendicular case, \( \sqrt{6^2+8^2} \)). 16 kN exceeds the sum — no orientation can produce it.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A 100 N force acts at 60° above the horizontal. What are its horizontal and vertical components?</p><ol class="opts"><li class="opt correct">50.0 N and 86.6 N ✓</li><li class="opt">86.6 N and 50.0 N</li><li class="opt">100 N and 60 N</li><li class="opt">60 N and 100 N</li></ol><div class="soln"><p>\( F_x = 100\cos 60° = 50.0\ \mathrm{N} \), \( F_y = 100\sin 60° = 86.6\ \mathrm{N} \). The swapped pair is the classic cosine–sine mix-up — at angles above 45° the vertical component must be the larger, which settles it without a calculator. The other options confuse the magnitude and the angle with components, which have force units both.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A crane load cell reads 500 (calibrated in kg). What force does the load apply to the hook?</p><ol class="opts"><li class="opt">500 N</li><li class="opt correct">\( \approx 4.9\ \mathrm{kN} \) ✓</li><li class="opt">\( \approx 50\ \mathrm{kN} \)</li><li class="opt">500 kg is already a force</li></ol><div class="soln"><p>\( W = mg = 500 \times 9.81 = 4905\ \mathrm{N} \approx 4.9\ \mathrm{kN} \). Kilograms measure mass; the hook feels newtons. Writing \"500 N\" understates the load nearly tenfold — the exact unit slip Lesson 1's vignette catches in a lift plan.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Two 100 N forces act on a bracket at right angles to each other. The resultant's magnitude is:</p><ol class="opts"><li class="opt correct">≈141 N ✓</li><li class="opt">200 N</li><li class="opt">100 N</li><li class="opt">0 N</li></ol><div class="soln"><p>Perpendicular forces add vectorially: \( R = \sqrt{100^2 + 100^2} = 141\ \mathrm{N} \). Answering 200 N adds magnitudes algebraically — only legal when forces are collinear and aligned; 0 N would require them opposed. The resultant of two forces always lies between their difference and their sum: here between 0 and 200, and 141 sits exactly where the right angle puts it.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 02 · Moments and couples</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Moment: the turning effect of a force</h3>
+<p>The moment of a force about a point measures its tendency to rotate a body about that point:</p>
+\[ M = F d \tag{1} \]
+<p>where \( d \) is the <em>perpendicular</em> distance from the point to the force's line of action — not the distance to where the force happens to be applied. A 500 N pull on a 0.6 m wrench gives 300 N·m only if the pull is perpendicular to the handle; at \( 60^\circ \) to it, the effective arm shrinks and \( M = 500 \times 0.6 \sin 60^\circ = 259.8\ \mathrm{N \cdot m} \). Sign convention: pick counterclockwise positive and never renegotiate mid-problem.</p>
+<h3>§2 · Varignon's theorem</h3>
+<p>The moment of a force equals the sum of the moments of its components. This is not a curiosity — it is the standard labor-saving device. Rather than hunt for a perpendicular distance through awkward geometry, resolve the force into \( F_x \) and \( F_y \) at its point of application and take each component's moment with its own easy arm. The wrench case above: \( F_y = 500\sin 60^\circ \) acting 0.6 m from the nut gives the same 259.8 N·m in one line.</p>
+<h3>§3 · Couples: pure rotation</h3>
+<p>Two equal, opposite, non-collinear forces form a <em>couple</em>. Their force resultant is zero — a couple does not push a body anywhere — but their moment \( M = Fd \) (\( d \) the separation) is the same about <em>every</em> point in the plane. That free-floating property is why we may slide a couple anywhere on a rigid body, and why any force system reduces to one force plus one couple at a chosen point — the standard equivalent system used from here to machine design.</p>
+
+<h3>§4 · The moment working method</h3>
+<p>Moments punish improvisation, so fix the routine. <em>Declare the convention first</em> —
+counterclockwise positive, written at the top of the page — and never renegotiate it
+mid-problem. <em>Choose the moment center tactically:</em> the point that kills the most
+unknowns, usually where reaction lines cross; the moment of a force through the chosen point
+is zero, and that choice is free information. <em>Pick the computation route per force:</em>
+if the perpendicular distance is visible, \( M = Fd \) is fastest; if the geometry is
+angled and awkward, split the force into components at its point of application and let
+Varignon's theorem sum the pieces — components times their own clean arms beat one force
+times a distance you can't see.</p>
+<p>Treat couples as the privileged objects they are: a couple's moment is the same about
+every point, so it moves freely around the diagram without recalculation — the one moment
+that never asks "about where?". And keep the units honest: newton-metres, force times
+length, always stated. A moment reported as a bare number is an invitation to the classic
+error of adding it to a force — dimensional homogeneity, learned in the mathematics course,
+polices this line for free.</p>
+<p><strong>Closing.</strong> Moment is force times perpendicular arm; Varignon converts geometry into components; couples turn without pushing and belong to no particular point. These three facts carry every equilibrium equation that follows.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Force components</b> (Lesson 1) — Varignon's theorem is useless without quick resolution.</li>
+<li><b>Perpendicular distance</b> — reading the shortest distance from a point to a line off a sketch.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Moment of a force</td><td>\( M = F\,d \)</td><td>Turning effect about a point; \( d \) is the PERPENDICULAR distance.</td></tr>
+<tr><td>Cross-product form</td><td>\( \mathbf{M} = \mathbf{r} \times \mathbf{F} \)</td><td>3-D moments, or when the perpendicular distance is awkward to see.</td></tr>
+<tr><td>Angled-force moment</td><td>\( M = F\,r\sin\theta \)</td><td>Force not perpendicular to the arm — the general planar case.</td></tr>
+<tr><td>Couple</td><td>\( M = F\,s \) (force pair, spacing \( s \))</td><td>Pure turning with zero net force; the same moment about EVERY point.</td></tr>
+<tr><td>Varignon's theorem</td><td>\( M_O(\mathbf{F}) = \Sigma M_O(\text{components}) \)</td><td>Splitting an awkward force into components and summing their moments.</td></tr>
+<tr><td>Sign convention</td><td>CCW positive (declare it)</td><td>One declared convention per problem, kept to the end.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Wrench moment, two ways</b></p>
+<p><b>Problem.</b> A 500 N force acts at the end of a 0.6 m wrench, at \( 60^\circ \) to the handle axis. <b>Find:</b> the moment about the nut, by perpendicular arm and by Varignon.</p><div class="soln"><p><b>Solution.</b> (1) Perpendicular arm: \( d = 0.6\sin 60^\circ = 0.520\ \mathrm{m} \), so \( M = 500 \times 0.520 = 259.8\ \mathrm{N\cdot m} \).
+(2) Varignon: the component across the handle is \( 500\sin 60^\circ = 433.0\ \mathrm{N} \) with arm 0.6 m: \( M = 433.0 \times 0.6 = 259.8\ \mathrm{N\cdot m} \). The along-handle component's line of action passes through the nut — zero arm, zero moment.</p>
+<p><b>Answer:</b> \( M = 259.8\ \mathrm{N\cdot m} \) by both routes.
+<b>Sanity check:</b> the perpendicular case bounds it: \( 500 \times 0.6 = 300\ \mathrm{N\cdot m} \) is the maximum possible, and \( 259.8 < 300 \). ✓</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>A couple on a valve handwheel</b></p>
+<p><b>Problem.</b> Two hands apply equal and opposite 200 N forces at diametrically opposite points of a 0.3 m-diameter handwheel. <b>Find:</b> the moment, and the moment about a point 1 m away from the wheel's center.</p><div class="soln"><p><b>Solution.</b> (1) Couple moment: \( M = Fd = 200 \times 0.3 = 60\ \mathrm{N\cdot m} \).
+(2) About the distant point: a couple's moment is identical about every point in the plane — still \( 60\ \mathrm{N\cdot m} \). The two forces' moments about that point differ individually, but their sum is unchanged.</p>
+<p><b>Answer:</b> \( 60\ \mathrm{N\cdot m} \), everywhere.
+<b>Sanity check:</b> the force resultant is \( 200 - 200 = 0 \) — the wheel is turned, not translated, which is exactly what a handwheel is for.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>The angled pull on a valve wrench</b></p>
+<p><b>Problem.</b> A 250 N pull is applied at the end of a 0.6 m wrench arm, at 40° to the arm. <b>Find:</b> the moment about the pivot, and the pull angle that would maximize it.</p><div class="soln"><p><b>Solution.</b> (1) Only the component perpendicular to the arm turns it: \( M = F\,r\sin\theta = 250 \times 0.6 \times \sin 40° = 150 \times 0.643 = 96.4\ \mathrm{N\,m} \).
+(2) The maximum comes at \( \theta = 90° \): \( M_{max} = 250 \times 0.6 = 150\ \mathrm{N\,m} \) — pulling square to the arm.</p>
+<p><b>Answer:</b> 96.4 N·m; maximum 150 N·m at 90°.
+<b>Sanity check:</b> \( \sin 40° = 0.643 \) means the angled pull delivers 64% of the perpendicular pull's moment — exactly the fraction computed, and exactly why a fitter instinctively squares up on a stubborn valve.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A 400 N force acts perpendicular to a wrench, 0.25 m from the nut. The moment about the nut is:</p><ol class="opts"><li class="opt correct">100 N·m ✓</li><li class="opt">400 N·m</li><li class="opt">1600 N·m</li><li class="opt">25 N·m</li></ol><div class="soln"><p>\( M = Fd = 400 \times 0.25 = 100\ \mathrm{N\cdot m} \). Perpendicular application means the full 0.25 m is the moment arm — no sine factor needed. 1600 N·m divides instead of multiplying; 25 N·m forgets the force entirely.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>A couple acting on a bracket is evaluated about a point 2 m away instead of at the bracket. Its moment:</p><ol class="opts"><li class="opt">doubles</li><li class="opt">halves</li><li class="opt correct">is unchanged ✓</li><li class="opt">drops to zero</li></ol><div class="soln"><p>A couple's moment is the same about <em>every</em> point in the plane — its force resultant is zero, so moving the reference point adds equal and opposite contributions that cancel. That location-independence is what makes couples freely movable on a rigid body.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Two 80 N forces form a couple with 0.5 m between their lines of action. The couple's moment about a point 3 m away from the pair is:</p><ol class="opts"><li class="opt correct">40 N·m — a couple's moment is the same about every point ✓</li><li class="opt">240 N·m — moment grows with distance</li><li class="opt">20 N·m</li><li class="opt">Cannot be found without the exact point</li></ol><div class="soln"><p>\( M = F s = 80 \times 0.5 = 40\ \mathrm{N\,m} \), and the defining property of a couple is that this value is identical about <em>every</em> point — the two forces' individual moments change with the point, but their sum never does. Growing the moment with distance imports single-force thinking; that is exactly the habit the couple concept exists to break.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Varignon's theorem lets you replace \"find the perpendicular distance\" with:</p><ol class="opts"><li class="opt correct">summing the moments of the force's components ✓</li><li class="opt">doubling the force and halving the arm</li><li class="opt">taking moments only about the centroid</li><li class="opt">ignoring forces through the reference point</li></ol><div class="soln"><p>The moment of a force equals the sum of the moments of its components — so resolve at the point of application and use each component's easy rectangular arm. (Forces whose line of action passes through the moment point do contribute zero, but that is a corollary, not the theorem.)</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Varignon's theorem lets you compute a force's moment by:</p><ol class="opts"><li class="opt correct">Summing the moments of the force's components about the same point ✓</li><li class="opt">Multiplying the force by any convenient distance</li><li class="opt">Averaging the moments about two points</li><li class="opt">Replacing the force with its resultant</li></ol><div class="soln"><p>The moment of a force about a point equals the sum of the moments of its components about that point — which is why splitting an angled force at its point of application and using each component's clean perpendicular arm is both legal and usually faster. "Any convenient distance" is the classic error the theorem prevents: the arm must be perpendicular to each force line, and components make those arms visible.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 03 · The free-body diagram</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Isolate, replace, label</h3>
+<p>A free-body diagram is built in three deliberate moves. <em>Isolate:</em> draw the body alone, severed from every support and contact. <em>Replace:</em> at each cut, draw the force or moment that the removed part exerted on the body. <em>Label:</em> every force gets a symbol, a direction, and — for knowns — a value with units. The most common omission is the body's own weight, acting at its center of gravity; the second most common is a forgotten contact force at a surface the sketch made look innocent.</p>
+<h3>§2 · Supports are force vocabularies</h3>
+<p>Each support type supplies a fixed menu of reactions. A <b>roller</b> or smooth surface: one force, normal to the rolling surface. A <b>pin</b>: two force components, unknown in direction until solved. A <b>fixed (built-in) support</b>: two force components <em>plus a moment</em> — that resisting moment is what a pin cannot supply, and it is why a flagpole stays up while a pinned pole would fall. A taut <b>cable</b>: one pull, along the cable, never a push.</p>
+<h3>§3 · Every equilibrium error is an FBD error</h3>
+<p>When a statics answer comes out wrong, the algebra is rarely the culprit; the diagram is. A force drawn at the wrong point, a reaction assumed in a direction the support cannot supply, an internal force shown on a body that was never cut — each corrupts the equations before they are written. The professional habit is to treat the FBD as a deliverable in itself: a diagram a colleague could take and write the equations from without asking you anything. §Worked Examples applies the discipline to a simply supported beam and a cantilever.</p>
+
+<h3>§4 · The FBD checklist</h3>
+<p>The free-body diagram is a procedure, not an artwork. Run the checklist in order.
+<em>One — isolate:</em> redraw ONLY the chosen body, stripped of everything it touches.
+<em>Two — replace every contact:</em> each support, cable, surface, and neighbor becomes the
+force set it can transmit — a cable becomes one pull along its line, a smooth surface one
+normal push, a pin two components. <em>Three — add the field forces:</em> weight at the
+center of gravity, always. <em>Four — name every unknown</em> with a symbol and an assumed
+direction; a wrong assumption costs nothing — the algebra answers with a minus sign.
+<em>Five — count:</em> unknowns versus available equations, before solving; a mismatch caught
+here saves a page of doomed algebra.</p>
+<p>Two disciplines keep diagrams honest. Forces the body exerts on other things never appear
+— an FBD shows only what acts <em>on</em> the body, and mixing the action–reaction pair onto
+one diagram is the classic corruption. And when a problem involves several connected bodies,
+draw a separate FBD per body plus, where helpful, one of the whole assembly — the pair of
+views cross-checks itself, because the internal forces must cancel in the assembly view.</p>
+<p><strong>Closing.</strong> Isolate, replace, label; know each support's force menu; never write \( \Sigma F = 0 \) until the picture is finished. The FBD is not preparation for the analysis — it <em>is</em> the analysis.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Forces as vectors</b> (Lesson 1) — reactions are drawn as components.</li>
+<li><b>Moments</b> (Lesson 2) — fixed supports supply one, and \( \Sigma M = 0 \) will need it.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Free-body diagram</td><td>one body, all forces on it</td><td>The non-negotiable first step of every equilibrium problem.</td></tr>
+<tr><td>Support replacement</td><td>contact → force(s)</td><td>Each support type contributes its own reaction set to the diagram.</td></tr>
+<tr><td>Weight</td><td>\( W = mg \) at the center of gravity</td><td>Every body with mass carries it; drawn at the centroid.</td></tr>
+<tr><td>Normal force</td><td>\( N \perp \) surface</td><td>Contact with a surface pushes, never pulls, normal to the contact.</td></tr>
+<tr><td>Action–reaction discipline</td><td>pairs act on DIFFERENT bodies</td><td>The force a body exerts on the floor never appears on that body's own FBD.</td></tr>
+<tr><td>Unknown bookkeeping</td><td>name every unknown once</td><td>Count unknowns vs equations before solving anything.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Beam on a pin and a roller</b></p>
+<p><b>Problem.</b> A 4 m beam is pinned at A and rests on a roller at B (right end). A 2 kN load acts 1.5 m from A. Neglect beam weight. <b>Find:</b> the reactions.</p><div class="soln"><p><b>Solution.</b> (1) FBD: pin at A gives \( A_x, A_y \); roller at B gives vertical \( R_B \); load 2 kN down at 1.5 m.
+(2) \( \Sigma F_x = 0 \Rightarrow A_x = 0 \) (no horizontal loads).
+(3) \( \Sigma M_A = 0 \): \( R_B \times 4 - 2 \times 1.5 = 0 \Rightarrow R_B = 0.75\ \mathrm{kN} \).
+(4) \( \Sigma F_y = 0 \): \( A_y = 2 - 0.75 = 1.25\ \mathrm{kN} \).</p>
+<p><b>Answer:</b> \( A_y = 1.25\ \mathrm{kN} \), \( R_B = 0.75\ \mathrm{kN} \), \( A_x = 0 \).
+<b>Sanity check:</b> the load sits nearer A, so A carries more — 1.25 &gt; 0.75, and the two sum to 2 kN. ✓</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Cantilever: the moment reaction earns its keep</b></p>
+<p><b>Problem.</b> A bracket is built into a wall (fixed support) and carries 3 kN downward at 2 m from the wall. <b>Find:</b> the wall reactions.</p><div class="soln"><p><b>Solution.</b> (1) FBD: at the wall draw \( V \) (vertical force), \( H \) (horizontal force), and moment \( M_w \).
+(2) \( \Sigma F_x = 0 \Rightarrow H = 0 \).
+(3) \( \Sigma F_y = 0 \Rightarrow V = 3\ \mathrm{kN} \) upward.
+(4) \( \Sigma M_{wall} = 0 \Rightarrow M_w = 3 \times 2 = 6\ \mathrm{kN\cdot m} \), opposing the load's turning.</p>
+<p><b>Answer:</b> \( V = 3\ \mathrm{kN} \), \( M_w = 6\ \mathrm{kN\cdot m} \).
+<b>Sanity check:</b> replace the fixed support with a pin: no \( M_w \) is available, nothing balances the 6 kN·m, and the bracket rotates — the moment reaction is not optional bookkeeping, it is what "built-in" means.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Free body on an incline</b></p>
+<p><b>Problem.</b> A 50 kg crate rests on a smooth 25° incline, held by a rope parallel to the slope. Draw the free-body diagram and <b>find</b> the rope tension and the normal force. \( g = 9.81\ \mathrm{m/s^2} \).</p><div class="soln"><p><b>Solution.</b> (1) FBD: weight \( W = 50 \times 9.81 = 490.5\ \mathrm{N} \) vertically down; normal \( N \) perpendicular to the slope; tension \( T \) up the slope. Axes along and normal to the incline.
+(2) Along the slope: \( T = W\sin 25° = 490.5 \times 0.4226 = 207\ \mathrm{N} \).
+(3) Normal to it: \( N = W\cos 25° = 490.5 \times 0.9063 = 445\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( T \approx 207\ \mathrm{N} \), \( N \approx 445\ \mathrm{N} \).
+<b>Sanity check:</b> \( \sqrt{207^2 + 445^2} = 490.8 \approx W \) — the two components reassemble the weight, as the rotated axes demand; and a steeper slope would trade N for T, exactly as intuition says.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Which support supplies a moment reaction?</p><ol class="opts"><li class="opt">Roller</li><li class="opt">Pin</li><li class="opt">Cable</li><li class="opt correct">Fixed (built-in) support ✓</li></ol><div class="soln"><p>Only the fixed support resists rotation, adding a moment to its two force components. A pin gives two force components but spins freely; a roller gives one normal force; a cable one axial pull. This menu is why a flagpole (fixed) stands while the same pole on a pin would fall.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>The most commonly <em>omitted</em> force on a free-body diagram is:</p><ol class="opts"><li class="opt correct">the body's own weight ✓</li><li class="opt">the applied load</li><li class="opt">the roller reaction</li><li class="opt">wind load</li></ol><div class="soln"><p>Self-weight, acting at the center of gravity, is invisible on the sketch and therefore chronically forgotten — the first item to check on any suspect FBD. Applied loads and support reactions are at least prompted by the drawing; gravity prompts nothing.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>Which force does NOT belong on the free-body diagram of a crate resting on the floor?</p><ol class="opts"><li class="opt correct">The force the crate exerts on the floor ✓</li><li class="opt">The crate's weight</li><li class="opt">The normal force from the floor on the crate</li><li class="opt">A rope tension pulling the crate</li></ol><div class="soln"><p>An FBD shows only forces acting <em>on</em> the chosen body. The crate-on-floor force acts on the <em>floor</em> — it is the Newton's-third-law partner of the normal force, and the pair never appears on one diagram together. Including it is the most common FBD corruption, and it silently doubles the contact force in the equations.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A taut cable attached to a body can exert on it:</p><ol class="opts"><li class="opt">a pull or a push along the cable</li><li class="opt correct">only a pull along the cable ✓</li><li class="opt">a force in any direction</li><li class="opt">a pull plus a moment</li></ol><div class="soln"><p>Cables carry tension only — they pull along their own axis and buckle rather than push. Drawing a cable force as a push (or at an angle to the cable) is an FBD error that no amount of correct algebra downstream can repair.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>A planar body is supported by one pin and one roller. How many unknown reaction components appear on its FBD?</p><ol class="opts"><li class="opt correct">3 ✓</li><li class="opt">2</li><li class="opt">4</li><li class="opt">6</li></ol><div class="soln"><p>The pin contributes two components; the roller one, normal to its surface: three unknowns — exactly matching the three planar equilibrium equations, which is why pin-plus-roller is THE standard determinate support scheme. Four would demand more equations than statics owns; two would leave the body a mechanism.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 04 · Equilibrium of a particle</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Concurrent forces, one point, two (or three) equations</h3>
+<p>A particle in statics is any body whose forces all pass through one point — a hook, a ring, a connection node. Equilibrium then needs only force balance:</p>
+\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0 \tag{1} \]
+<p>(add \( \Sigma F_z = 0 \) in 3-D). No moment equation exists to help: concurrent forces have no arm about their common point. Two equations means two unknowns per 2-D node — count before solving, and if unknowns exceed equations, another FBD is required, not more algebra.</p>
+<h3>§2 · Components or geometry — choose deliberately</h3>
+<p>With exactly three concurrent forces in equilibrium, the vectors must close into a triangle tip-to-tail; the law of sines then hands over the answer quickly and the geometric fact is worth having on its own. With four or more forces, or awkward angles, components (1) win every time and never mislead. The professional default is components; the triangle is a fast lane you take when the problem is small and the geometry clean.</p>
+<h3>§3 · Cables, rings, and pulleys</h3>
+<p>Cable systems are particle equilibrium in the field. Each cable pulls along its axis; a frictionless pulley changes a cable's <em>direction</em> but not its tension — the same \( T \) runs through. A single movable pulley therefore halves the holding force: two rope parts share the load. These idealizations (massless cable, frictionless sheave) are stated assumptions, not truths — real sheave friction adds a few percent, which is why rigging tables carry efficiency factors. §Worked Examples solves the classic two-cable suspension and a movable-pulley hold.</p>
+
+<h3>§4 · The particle equilibrium recipe</h3>
+<p>Concurrent-force problems yield to a fixed sequence. <em>FBD of the point</em> — the ring,
+hook, or knot where the forces meet — with every cable's pull drawn along its own line.
+<em>Axes and components:</em> resolve each force with the sign table from Lesson 1.
+<em>Write both equations:</em> \( \Sigma F_x = 0 \) and \( \Sigma F_y = 0 \), giving two
+equations for at most two unknowns. <em>Solve simultaneously</em> — substitution is usually
+cleanest: express one tension from the x-equation, feed it to the y-equation.
+<em>Check physically:</em> substitute the answers back until both sums close to zero within
+rounding, and confirm every cable came out in tension — a negative cable force is not a
+solution, it is a diagnosis that the geometry cannot hang that load that way.</p>
+<p>Read the answers like an engineer afterward. The steeper cable always carries more of a
+hung load's weight; as a cable approaches horizontal its tension grows without bound —
+which is why "just pull it a little tighter" is how straight spans of cable snap hardware.
+The recipe produces numbers; the reading of them produces judgment, and the judgment is
+what the courses downstream — and the plant floor — actually pay for.</p>
+<p><strong>Closing.</strong> One point, force balance only, unknowns counted against equations, triangle for three clean forces, components for everything else. Particle equilibrium is small — and it is the kernel of every truss joint in Lesson 6.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Resolution into components</b> (Lesson 1) — the working method of the whole lesson.</li>
+<li><b>FBD discipline</b> (Lesson 3) — the node is isolated and every cable drawn pulling.</li>
+<li><b>Simultaneous equations</b> — two unknowns from two linear equations, cleanly.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Particle equilibrium</td><td>\( \Sigma F_x = 0,\ \Sigma F_y = 0 \)</td><td>Concurrent force systems — rings, hooks, connection points.</td></tr>
+<tr><td>Two-force equilibrium</td><td>equal, opposite, collinear</td><td>A body under exactly two forces; the shortcut behind two-force members.</td></tr>
+<tr><td>Cable assumption</td><td>tension only, along the cable</td><td>Cables pull; a computed compression in a cable means the model is wrong.</td></tr>
+<tr><td>Simultaneous solution</td><td>two equations, two unknowns</td><td>Two unknown tensions from the two component equations.</td></tr>
+<tr><td>Equilibrium check</td><td>substitute back</td><td>Verify both component sums close to zero with the solved values.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Two cables, one weight</b></p>
+<p><b>Problem.</b> A 500 N weight hangs from a ring supported by cable A at \( 30^\circ \) above horizontal (up-left) and cable B at \( 45^\circ \) above horizontal (up-right). <b>Find:</b> both tensions.</p><div class="soln"><p><b>Solution.</b> (1) FBD of the ring: \( T_A \) up-left at 30°, \( T_B \) up-right at 45°, 500 N down.
+(2) \( \Sigma F_x = 0 \): \( -T_A\cos 30^\circ + T_B\cos 45^\circ = 0 \Rightarrow T_A = 0.8165\,T_B \).
+(3) \( \Sigma F_y = 0 \): \( T_A\sin 30^\circ + T_B\sin 45^\circ = 500 \).
+(4) Substitute: \( T_B(0.8165 \times 0.5 + 0.7071) = 500 \Rightarrow T_B = 448.3\ \mathrm{N} \), \( T_A = 366.0\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( T_A = 366\ \mathrm{N} \), \( T_B = 448\ \mathrm{N} \).
+<b>Sanity check:</b> back-substitute: \( 366.0\sin 30^\circ + 448.3\sin 45^\circ = 183.0 + 317.0 = 500\ \mathrm{N} \). ✓ The steeper cable (B) carries more of the vertical — as its geometry says it must.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>The movable pulley</b></p>
+<p><b>Problem.</b> A 100 kg load hangs from a single frictionless movable pulley; one rope end is anchored, the other held by a worker, both rope parts vertical. <b>Find:</b> the holding force.</p><div class="soln"><p><b>Solution.</b> (1) Load weight: \( W = 100 \times 9.81 = 981\ \mathrm{N} \).
+(2) FBD of the pulley block: two rope parts up, each with the same tension \( T \) (frictionless sheave), \( W \) down.
+(3) \( 2T = 981 \Rightarrow T = 490.5\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( \approx 490\ \mathrm{N} \) — half the load.
+<b>Sanity check:</b> the worker pays for the halved force with doubled rope travel; energy balances. A real sheave adds friction, so field pull runs a few percent higher — the idealization is stated, not smuggled.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Two cables, one load</b></p>
+<p><b>Problem.</b> A 1200 N load hangs from a ring supported by two cables: cable 1 at 30° above horizontal to the left, cable 2 at 45° above horizontal to the right. <b>Find:</b> both cable tensions.</p><div class="soln"><p><b>Solution.</b> (1) FBD of the ring; equilibrium of the concurrent system.
+(2) \( \Sigma F_x = 0 \): \( T_1\cos 30° = T_2\cos 45° \Rightarrow T_2 = 1.2247\,T_1 \).
+(3) \( \Sigma F_y = 0 \): \( T_1\sin 30° + T_2\sin 45° = 1200 \Rightarrow 0.5\,T_1 + 0.866\,T_1 = 1200 \Rightarrow T_1 = 1200/1.366 = 878\ \mathrm{N} \).
+(4) \( T_2 = 1.2247 \times 878 = 1076\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( T_1 \approx 878\ \mathrm{N} \), \( T_2 \approx 1076\ \mathrm{N} \).
+<b>Sanity check:</b> the steeper cable (45°) carries more — as it must — and substituting back: \( 878\times0.5 + 1076\times0.7071 = 439 + 761 = 1200\ \mathrm{N} \) ✓; both tensions positive, so both cables genuinely pull.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>Three concurrent forces hold a particle in equilibrium. Drawn tip-to-tail they must:</p><ol class="opts"><li class="opt correct">form a closed triangle ✓</li><li class="opt">be equal in magnitude</li><li class="opt">be mutually perpendicular</li><li class="opt">all pass through the ground</li></ol><div class="soln"><p>\( \Sigma F = 0 \) means the vector chain returns to its start — a closed triangle. Magnitudes need not be equal (each opposes the resultant of the other two), and perpendicularity is a special case, not a requirement. The closed triangle is also the fast graphical solution route.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>A 1000 N load hangs symmetrically from two slings, each at \( 45^\circ \) above horizontal. Tension per sling:</p><ol class="opts"><li class="opt">500 N</li><li class="opt correct">707 N ✓</li><li class="opt">1000 N</li><li class="opt">1414 N</li></ol><div class="soln"><p>\( 2T\sin 45^\circ = 1000 \Rightarrow T = 1000/(2 \times 0.707) = 707\ \mathrm{N} \). Each sling carries more than half the load because only its vertical component supports weight. 500 N ignores the angle; 1414 N applies the factor twice.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A body is in equilibrium under exactly three non-parallel forces. The three forces must be:</p><ol class="opts"><li class="opt correct">Concurrent — their lines of action meet at one point ✓</li><li class="opt">Equal in magnitude</li><li class="opt">Perpendicular to each other</li><li class="opt">Applied at the same point on the body</li></ol><div class="soln"><p>If two of the lines meet at a point, the third must pass through it too — otherwise it would create an unbalanced moment about that intersection. That is the three-force-member theorem, and it locates unknown reaction directions geometrically before any algebra. Equal magnitudes and right angles are special cases, not requirements; the forces act where they act — only their <em>lines</em> must concur.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A rope runs over a frictionless pulley. The pulley changes the rope's:</p><ol class="opts"><li class="opt">tension only</li><li class="opt correct">direction only ✓</li><li class="opt">both tension and direction</li><li class="opt">neither</li></ol><div class="soln"><p>With no friction at the sheave, the same tension runs through the whole rope — the pulley redirects it, nothing more. Mechanical advantage in pulley systems comes from the number of rope parts sharing the load, never from a single sheave altering tension.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>A ring in equilibrium is pulled by exactly two cables. The two tensions must be:</p><ol class="opts"><li class="opt correct">Equal, opposite, and collinear ✓</li><li class="opt">Equal and perpendicular</li><li class="opt">Proportional to the cable lengths</li><li class="opt">Zero</li></ol><div class="soln"><p>Two-force equilibrium demands the forces be equal in magnitude, opposite in direction, and share one line of action — otherwise either a net force or a net couple survives. This is the two-force-member principle that later turns truss members into pure tension/compression carriers. Cable length is irrelevant to statics; and nonzero loads are perfectly possible — they just must be collinear.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 05 · Equilibrium of rigid bodies</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · The full toolkit</h3>
+<p>A rigid body in plane equilibrium obeys three independent equations:</p>
+\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0, \qquad \Sigma M_O = 0 \tag{1} \]
+<p>with the moment point \( O \) yours to choose — and choosing it <em>on</em> an unknown force's line of action removes that unknown from the equation. The craft of rigid-body statics is mostly the craft of choosing moment points that make equations fall apart into one-unknown pieces.</p>
+<h3>§2 · Two- and three-force members</h3>
+<p>A member loaded at exactly two points carries force only along the line joining them — anything else would leave an unbalanced moment. Recognizing a two-force member converts a two-component unknown into a single magnitude along a known direction, which is a large discount. A three-force member's forces must be concurrent (or all parallel); that fact locates unknown directions geometrically. Both shortcuts come from \( \Sigma M = 0 \) applied with intent.</p>
+<h3>§3 · Determinate or not</h3>
+<p>Three equations solve three unknowns. A beam on a pin and a roller (3 unknowns) is <em>statically determinate</em>: statics alone finishes it. Add a second pin (4 unknowns) and equilibrium no longer decides how the supports share — the structure is <em>statically indeterminate</em>, and the answer depends on stiffness, which is Strength of Materials' opening business. Recognizing indeterminacy early saves you from hunting for a fourth equation that does not exist.</p>
+
+<h3>§4 · The rigid-body recipe</h3>
+<p>Bodies with size add one resource and one obligation: moments. The sequence is fixed.
+<em>FBD with the support table:</em> replace each support by its reaction set — pin two,
+roller one, fixed three — and count; a planar body offers exactly three equations, so more
+than three unknowns stops the problem before it starts. <em>Take moments first, and
+tactically:</em> choose the moment center where the most unknown reaction lines intersect —
+usually a support — so one \( \Sigma M = 0 \) line yields one unknown immediately.
+<em>Finish with the force sums:</em> \( \Sigma F_x = 0 \), \( \Sigma F_y = 0 \) deliver
+the remaining reactions. <em>Audit with a spare moment equation:</em> a moment sum about a
+different point, computed with the solved numbers, must close to zero — the free
+self-check almost nobody uses and every professional should.</p>
+<p>Two readings matter on the way out. Reactions must add up to carry the total applied
+load — vertically and horizontally — or something is lost. And the load-sharing should make
+physical sense: a point load near one support loads that support proportionally harder, in
+inverse ratio of the distances — lever arms doing exactly what levers do.</p>
+<p>One caution for the field: supports in drawings are idealizations of hardware. A "pin"
+is a bolted cleat that also resists a little moment; a "roller" is a slotted hole or a
+bearing pad that can bind. The three-equation arithmetic stands on those idealizations, so
+when a measured reaction disagrees stubbornly with the calculation, inspect the support
+before doubting the algebra — the hardware may have quietly changed its type.</p>
+<p><strong>Closing.</strong> Three equations, moment points chosen to kill unknowns, two-force members spotted on sight, and the determinacy count run before solving. That is rigid-body statics in one paragraph; the rest is practice.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>FBDs and support menus</b> (Lesson 3) — reactions drawn correctly is the entry fee.</li>
+<li><b>Moments and Varignon</b> (Lesson 2) — \( \Sigma M_O = 0 \) is the workhorse equation.</li>
+<li><b>Particle equilibrium</b> (Lesson 4) — the force-balance half of the toolkit.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Rigid-body equilibrium</td><td>\( \Sigma F_x = 0,\ \Sigma F_y = 0,\ \Sigma M = 0 \)</td><td>Bodies with size — beams, frames, brackets; three equations, no more.</td></tr>
+<tr><td>Pin support</td><td>2 unknowns \( (A_x, A_y) \)</td><td>Resists translation both ways, spins freely.</td></tr>
+<tr><td>Roller support</td><td>1 unknown, \( \perp \) surface</td><td>Resists only normal to its rolling surface.</td></tr>
+<tr><td>Fixed support</td><td>3 unknowns \( (A_x, A_y, M_A) \)</td><td>Welded or embedded ends; adds a reaction moment.</td></tr>
+<tr><td>Moment-point strategy</td><td>take \( \Sigma M \) where unknowns intersect</td><td>Kills two unknowns in one line — the professional's first move.</td></tr>
+<tr><td>Statical determinacy</td><td>unknowns = 3 (planar)</td><td>More unknowns than equations means statics alone cannot solve it.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Beam with mixed loading</b></p>
+<p><b>Problem.</b> A 6 m beam, pin at A (left), roller at B (right), carries a uniform load of 2 kN/m across its full length plus a 5 kN point load 2 m from A. <b>Find:</b> the reactions.</p><div class="soln"><p><b>Solution.</b> (1) Replace the UDL by its resultant: \( 2 \times 6 = 12\ \mathrm{kN} \) at midspan (3 m).
+(2) \( \Sigma M_A = 0 \): \( 6R_B - 12(3) - 5(2) = 0 \Rightarrow R_B = 46/6 = 7.67\ \mathrm{kN} \).
+(3) \( \Sigma F_y = 0 \): \( R_A = 12 + 5 - 7.67 = 9.33\ \mathrm{kN} \).
+(4) Check with \( \Sigma M_B \): \( 9.33 \times 6 - 12 \times 3 - 5 \times 4 = 56 - 36 - 20 = 0 \). ✓</p>
+<p><b>Answer:</b> \( R_A = 9.33\ \mathrm{kN} \), \( R_B = 7.67\ \mathrm{kN} \).
+<b>Sanity check:</b> the point load sits toward A, so A carries the larger share; totals sum to 17 kN, the whole applied load. ✓</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>The two-force strut discount</b></p>
+<p><b>Problem.</b> A horizontal arm is pinned to a wall at A and carries 4 kN down at its 2 m free end. A strut, pinned at the arm 1.2 m from A and to the wall below, props it at \( 45^\circ \). <b>Find:</b> the strut force and pin reactions at A.</p><div class="soln"><p><b>Solution.</b> (1) The strut is a two-force member: its force \( T \) acts along its \( 45^\circ \) axis — one unknown, not two.
+(2) \( \Sigma M_A = 0 \): \( T\sin 45^\circ \times 1.2 = 4 \times 2 \Rightarrow T = 9.43\ \mathrm{kN} \) (compression — it props).
+(3) \( \Sigma F_x = 0 \): \( A_x = T\cos 45^\circ = 6.67\ \mathrm{kN} \), directed toward the wall.
+(4) \( \Sigma F_y = 0 \): \( A_y = 4 - T\sin 45^\circ = 4 - 6.67 = -2.67\ \mathrm{kN} \) — the pin actually pulls the arm <em>down</em>.</p>
+<p><b>Answer:</b> strut 9.43 kN (compression); at A: 6.67 kN horizontal, 2.67 kN downward.
+<b>Sanity check:</b> the strut's vertical push (6.67 kN) exceeds the 4 kN load, so the pin must hold the arm down — a sign the arithmetic predicted and the negative \( A_y \) confirmed.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Reactions of a simply supported beam</b></p>
+<p><b>Problem.</b> A 6 m beam is pinned at A and rests on a roller at B. A 4 kN load acts 2 m from A. <b>Find:</b> both support reactions.</p><div class="soln"><p><b>Solution.</b> (1) FBD: \( A_x, A_y \) at the pin, \( B_y \) at the roller; no horizontal loads → \( A_x = 0 \).
+(2) Moments about A (killing both pin unknowns): \( \Sigma M_A = B_y \times 6 - 4 \times 2 = 0 \Rightarrow B_y = 8/6 = 1.33\ \mathrm{kN} \).
+(3) \( \Sigma F_y = 0 \): \( A_y = 4 - 1.33 = 2.67\ \mathrm{kN} \).</p>
+<p><b>Answer:</b> \( A_y = 2.67\ \mathrm{kN} \), \( B_y = 1.33\ \mathrm{kN} \), \( A_x = 0 \).
+<b>Sanity check:</b> the load sits twice as close to A as to B, and A carries twice B's share \( (2.67 = 2\times1.33) \) — the lever ratio exactly; audit moment about B: \( 2.67\times6 - 4\times4 = 16 - 16 = 0 \) ✓.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A two-force member carries load:</p><ol class="opts"><li class="opt correct">along the line joining its two load points ✓</li><li class="opt">perpendicular to its axis</li><li class="opt">in whatever direction the larger force acts</li><li class="opt">only if it is straight</li></ol><div class="soln"><p>With forces at only two points, moment equilibrium about either point forces both to lie along the joining line — otherwise an unbalanced couple remains. (Even a bent member obeys this: the force follows the line between the two pins, not the member's shape.)</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>An 8 m beam on a pin (A) and roller (B) carries 10 kN at 2 m from A. Reaction at B:</p><ol class="opts"><li class="opt correct">2.5 kN ✓</li><li class="opt">5.0 kN</li><li class="opt">7.5 kN</li><li class="opt">10 kN</li></ol><div class="soln"><p>\( \Sigma M_A = 0: R_B \times 8 = 10 \times 2 \Rightarrow R_B = 2.5\ \mathrm{kN} \), leaving \( R_A = 7.5\ \mathrm{kN} \). The load sits near A, so A carries the lion's share — 5 kN each would only be right for a mid-span load.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>How many independent equilibrium equations does a single rigid body offer in a planar problem?</p><ol class="opts"><li class="opt correct">3 ✓</li><li class="opt">2</li><li class="opt">4</li><li class="opt">6</li></ol><div class="soln"><p>Two force sums and one moment sum: \( \Sigma F_x = 0 \), \( \Sigma F_y = 0 \), \( \Sigma M = 0 \). Writing moment equations about additional points produces true statements but not new information — any fourth equation is a combination of the first three. Six belongs to 3-D. This count is the budget every support scheme is measured against.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A plane structure has four unknown reactions. Equilibrium alone:</p><ol class="opts"><li class="opt">solves it if you use moments cleverly</li><li class="opt correct">cannot decide the load shares — stiffness must ✓</li><li class="opt">shows the structure is unstable</li><li class="opt">requires a fourth equation from friction</li></ol><div class="soln"><p>Plane statics supplies exactly three independent equations; a fourth unknown makes the structure statically indeterminate. No choice of moment points manufactures new information — the missing equation comes from deformation compatibility, which is Strength of Materials' business.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>A roller support on an inclined surface exerts a reaction:</p><ol class="opts"><li class="opt correct">Perpendicular to the inclined surface ✓</li><li class="opt">Vertically upward, always</li><li class="opt">Along the beam's axis</li><li class="opt">In any direction needed for equilibrium</li></ol><div class="soln"><p>A roller can only push normal to the surface it rolls on — that is its entire personality, and on an incline the reaction tilts with the surface. "Vertically upward" is the flat-ground habit misapplied; "any direction" describes a pin, not a roller. Reading the support's geometry before writing its reaction is the discipline this question rehearses.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 06 · Trusses</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · A truss is a set of two-force members</h3>
+<p>The truss idealization: straight members, frictionless pin joints, loads applied only at joints. Every member is then a two-force member — pure tension or pure compression along its axis. That single assumption converts a structure into bookkeeping: find each member's axial force and its sense. Real gusset-plated, bolted trusses are not pinned, but the idealization prices member forces remarkably well and is the standard first analysis of any roof truss or braced rack.</p>
+<h3>§2 · Method of joints, method of sections</h3>
+<p>The <b>method of joints</b> isolates one pin at a time and applies particle equilibrium — two equations per joint, so start at a joint with at most two unknowns (usually a support) and walk the structure. The <b>method of sections</b> cuts clean through up to three members and treats one whole side as a rigid body; a moment taken about the intersection of two cut members isolates the third in a single line. Joints when you want everything; sections when you want <em>one</em> member deep inside the span without solving half the truss to reach it.</p>
+<h3>§3 · Zero-force members and reading the load path</h3>
+<p>At an unloaded joint of two non-collinear members, both are zero-force; at an unloaded joint of three members where two are collinear, the third is zero-force. Spotting these by inspection prunes the work — and teaches the deeper habit: a truss is a <em>load path</em>. Follow the applied load through diagonals and chords to the supports and the force pattern (top chord compression, bottom chord tension in a simply supported truss under gravity load) stops being memorized and starts being seen.</p>
+
+<h3>§4 · Choosing the attack: joints or sections</h3>
+<p>Truss problems reward a decision made before any arithmetic. <em>Sweep for zero-force
+members first</em> — the two-collinear-plus-one pattern at unloaded joints — and strike them
+out; trusses routinely shrink by a quarter before any equation is written. <em>Ask what the
+problem actually wants.</em> Every member force? Method of joints: find a starting joint with
+at most two unknowns (support ends and loaded tips qualify), solve it, and let each solved
+member unlock the next joint. Three specific member forces in a big truss? Method of
+sections: cut through at most three members including the targets, treat either half as a
+rigid body, and take a moment about the point where the two unwanted cut members intersect —
+the target force falls out in one line.</p>
+<p>Keep the bookkeeping uniform: assume every member in tension, let negative answers declare
+compression, and record T or C beside every result — downstream design cares about the
+difference more than the magnitude, because compression members buckle and tension members
+don't. Final audit: at any solved joint, the component sums must close; thirty seconds of
+checking buys back the whole truss.</p>
+<p><strong>Closing.</strong> Two-force members, joints for the census, sections for the surgical strike, zero-force members pruned on sight. A truss drawing is a picture of forces waiting to be read.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Particle equilibrium</b> (Lesson 4) — a joint is exactly that problem, repeated.</li>
+<li><b>Rigid-body equilibrium</b> (Lesson 5) — support reactions come first; sections use \( \Sigma M \).</li>
+<li><b>Two-force members</b> (Lesson 5) — the fact that makes the whole idealization work.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Truss assumptions</td><td>pin joints, loads at joints</td><td>Members become two-force members: pure tension or compression.</td></tr>
+<tr><td>Method of joints</td><td>\( \Sigma F_x = 0,\ \Sigma F_y = 0 \) per joint</td><td>Solving every member force, joint by joint, ≤2 unknowns at a time.</td></tr>
+<tr><td>Method of sections</td><td>cut ≤3 members, use \( \Sigma M \)</td><td>One targeted member force without solving the whole truss.</td></tr>
+<tr><td>Tension vs compression</td><td>assume tension; negative = compression</td><td>One consistent assumption; the sign delivers the verdict.</td></tr>
+<tr><td>Zero-force members</td><td>two collinear + one at a joint, unloaded</td><td>Spotting them first shrinks the problem before any arithmetic.</td></tr>
+<tr><td>Joint order</td><td>start where ≤2 unknowns</td><td>Usually a support or the loaded end; the solvable path through the truss.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Method of joints on a triangular truss</b></p>
+<p><b>Problem.</b> A symmetric triangular truss spans 4 m with apex height 1.5 m; a 10 kN load hangs at the apex. <b>Find:</b> the forces in a sloping member and the bottom chord.</p><div class="soln"><p><b>Solution.</b> (1) By symmetry each support carries 5 kN.
+(2) Slope angle: \( \theta = \tan^{-1}(1.5/2) = 36.87^\circ \).
+(3) Joint at left support — vertical: \( F_{slope}\sin\theta = 5 \Rightarrow F_{slope} = 5/0.6 = 8.33\ \mathrm{kN} \), pushing into the joint: <em>compression</em>.
+(4) Horizontal: \( F_{chord} = F_{slope}\cos\theta = 8.33 \times 0.8 = 6.67\ \mathrm{kN} \), pulling: <em>tension</em>.</p>
+<p><b>Answer:</b> sloping members 8.33 kN (C); bottom chord 6.67 kN (T).
+<b>Sanity check:</b> the sloped member must exceed the 5 kN vertical it carries (only its sine works vertically): 8.33 &gt; 5. ✓ Flatter trusses drive both numbers up — why shallow roofs need heavier members.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>One member by sections</b></p>
+<p><b>Problem.</b> A parallel-chord truss: span 8 m, height 2 m, four 2 m panels, 4 kN at each of the three interior bottom-chord joints. <b>Find:</b> the bottom-chord force in the second panel.</p><div class="soln"><p><b>Solution.</b> (1) Reactions: total 12 kN, symmetric, \( R = 6\ \mathrm{kN} \) each.
+(2) Cut vertically through the second panel (between \( x = 2 \) and \( x = 4 \) m); keep the left portion.
+(3) Moment about the <em>top</em> joint at \( x = 2\ \mathrm{m} \) (height 2 m) — the cut top chord and diagonal pass through it, vanishing from the equation. The 4 kN load at \( x = 2 \) also has zero arm.
+(4) \( \Sigma M = 0 \): \( F_{BC} \times 2 = 6 \times 2 \Rightarrow F_{BC} = 6\ \mathrm{kN} \) (tension).</p>
+<p><b>Answer:</b> 6 kN, tension.
+<b>Sanity check:</b> one cut, one moment equation, one member — against walking three joints to reach the same number. Sections earn their keep exactly here.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>First joint of a roof truss</b></p>
+<p><b>Problem.</b> At a truss joint, a diagonal member rises at 45° and a bottom chord runs horizontally; the joint carries a 10 kN downward load. <b>Find:</b> both member forces and their sense (T or C).</p><div class="soln"><p><b>Solution.</b> (1) Assume both members in tension (pulling away from the joint).
+(2) \( \Sigma F_y = 0 \): \( F_d\sin 45° - 10 = 0 \Rightarrow F_d = 14.14\ \mathrm{kN} \)… but the diagonal must push up to hold the load, so with the tension assumption the sign works out via geometry: taking the diagonal rising away from the joint, \( F_d = +14.14\ \mathrm{kN} \) along the member toward the joint = <b>compression</b> when the diagonal sits above the load.
+(3) \( \Sigma F_x = 0 \): \( F_c = F_d\cos 45° = 10\ \mathrm{kN} \), pulling away — <b>tension</b>.</p>
+<p><b>Answer:</b> diagonal ≈ 14.1 kN (C), chord = 10.0 kN (T).
+<b>Sanity check:</b> the diagonal's vertical component \( 14.14\sin45° = 10 \) exactly balances the load, and its horizontal component \( 14.14\cos45° = 10 \) is exactly what the chord resists — the classic strut-and-tie pair every roof truss repeats.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>At an unloaded truss joint, two members meet at an angle (non-collinear). Their forces are:</p><ol class="opts"><li class="opt">equal and opposite</li><li class="opt correct">both zero ✓</li><li class="opt">proportional to their lengths</li><li class="opt">indeterminate</li></ol><div class="soln"><p>Resolve perpendicular to either member: only the other member has a component there, so it must be zero — and then the first must be zero too. This inspection rule prunes trusses before any arithmetic; the members still matter for stability and other load cases.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>A simply supported truss carries gravity loads. Typically its chords are:</p><ol class="opts"><li class="opt">top in tension, bottom in compression</li><li class="opt">both in tension</li><li class="opt correct">top in compression, bottom in tension ✓</li><li class="opt">both in compression</li></ol><div class="soln"><p>The truss sags like a beam: the top shortens (compression), the bottom stretches (tension) — the same pattern a bending-moment diagram implies. Reading this without calculation is the \"load path\" habit; a cantilevered truss reverses it, which is the standard trap.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>At an unloaded truss joint, two members are collinear and a third meets them at an angle. The third member's force is:</p><ol class="opts"><li class="opt correct">Zero ✓</li><li class="opt">Equal to the chord force</li><li class="opt">Compression, always</li><li class="opt">Indeterminate</li></ol><div class="soln"><p>Sum forces perpendicular to the collinear pair: only the angled member has a component there, and with no load at the joint that component — hence the whole force — must vanish. That is the zero-force-member rule, and sweeping for it first routinely deletes a quarter of a truss before any equations. The member still matters structurally (it braces against buckling and load cases not analyzed) — zero force is not zero purpose.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>At a support carrying 5 kN vertically, the only non-horizontal member is a diagonal at \( 30^\circ \) above horizontal. Its force is:</p><ol class="opts"><li class="opt">2.5 kN</li><li class="opt">5 kN</li><li class="opt">8.66 kN</li><li class="opt correct">10 kN ✓</li></ol><div class="soln"><p>The diagonal alone must supply the 5 kN vertical: \( F\sin 30^\circ = 5 \Rightarrow F = 10\ \mathrm{kN} \). The shallow angle is the punishment — at 30°, only half the member force works vertically. 8.66 kN mistakes sine for cosine; 2.5 kN multiplies instead of divides.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Why does the method of sections cut through at most three members of a plane truss?</p><ol class="opts"><li class="opt correct">A rigid body yields only three equilibrium equations to solve the cut forces ✓</li><li class="opt">Cutting more would physically weaken the truss</li><li class="opt">Three is the largest number of members at any joint</li><li class="opt">It is only a convention</li></ol><div class="soln"><p>The cut half of the truss is treated as one rigid body, which offers exactly three planar equations — so at most three unknown cut-member forces are solvable. Cut four and the section alone cannot finish (though a clever moment point may still extract one target). The limit is the equation budget, not the saw: nothing is physically cut at all.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 07 · Frames and machines</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Frames are not trusses</h3>
+<p>A frame contains at least one <em>multi-force member</em> — a member loaded at three or more points, or loaded between its pins. Its members carry shear and bending, not just axial force, so the truss shortcut (force along the member) is off the table except for any genuine two-force members hiding inside. Identify those first: every one you spot replaces two unknowns with one.</p>
+<h3>§2 · Dismember at the pins — and pay Newton his due</h3>
+<p>The method is systematic: draw an FBD of the whole frame for the external reactions, then <em>dismember</em> — separate the members at their connecting pins and draw each member alone. At every pin, the force one member exerts on the other appears on both diagrams, equal and opposite. The classic error is drawing pin components in inconsistent directions on the two sides, which silently violates \( \Sigma F = 0 \) for the pin itself. Adopt a convention, draw the action–reaction pair explicitly, and let negative answers correct your guesses.</p>
+<h3>§3 · Machines: frames that multiply force</h3>
+<p>A machine is a frame with moving parts designed to transmit and transform force — pliers, clamps, linkages, toggles. The same dismemberment analysis yields the <em>mechanical advantage</em>: output force per input force, set by the lever arms. A toggle clamp near its dead-center position multiplies force enormously because the geometry sends the output arm toward zero — the reason a modest hand force can hold a workpiece against machining loads. §Worked Examples runs a gripping tool and a loaded two-member frame.</p>
+
+<h3>§4 · The disassembly working method</h3>
+<p>Frames surrender to a fixed sequence, and improvising it is how pin forces get lost.
+<em>Survey for two-force members first</em> — straight, loaded only at their two pins —
+because each one found replaces two unknown components with a single force along the member
+line. <em>Solve the assembly as one rigid body</em> where possible, harvesting the external
+reactions before any disassembly. <em>Then pull the pins:</em> draw a separate FBD for every
+member, and at each shared pin write the force ONCE, applying it to the two members as an
+equal-and-opposite pair — the bookkeeping backbone of the whole method. Choose which member's
+diagram to solve first by counting unknowns: there is almost always one member with only
+two or three, and solving it feeds the others like the truss's joint order did.</p>
+<p>For machines, the same disassembly answers the practical question — what does the jaw,
+blade, or clamp deliver for a given hand force? Moments about the pivot of the handle member
+give the multiplication directly: output over input equals input arm over output arm. When
+the answer looks too good, check whether friction and pin clearances were ignored — they
+were, and real tools deliver a little less than the statics promises.</p>
+<p><strong>Closing.</strong> Spot the two-force members, dismember at pins with honest action–reaction pairs, and read machines as frames whose geometry is doing force arithmetic. Statics of frames is Newton's third law made procedural.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Rigid-body equilibrium</b> (Lesson 5) — applied member by member.</li>
+<li><b>Two-force member recognition</b> (Lesson 5) — the frame analyst's first move.</li>
+<li><b>Truss thinking</b> (Lesson 6) — to see when it does <em>not</em> apply.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Frame</td><td>contains ≥1 multi-force member</td><td>Structures with members carrying 3+ forces; joints solved by disassembly.</td></tr>
+<tr><td>Machine</td><td>frame with moving parts</td><td>Pliers, clamps, linkages — force multiplication devices.</td></tr>
+<tr><td>Member disassembly</td><td>FBD per member</td><td>The frame method: pull the pins apart and expose the pin forces.</td></tr>
+<tr><td>Pin-force pairs</td><td>equal and opposite on the two members</td><td>Newton's third law at every shared pin — the bookkeeping backbone.</td></tr>
+<tr><td>Two-force member shortcut</td><td>force along the member line</td><td>Spot them first; each one turns two unknowns into one.</td></tr>
+<tr><td>Mechanical advantage</td><td>\( F_{out}/F_{in} = a_{in}/a_{out} \)</td><td>Lever-arm ratios in machines — what the tool multiplies.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Gripping tool</b></p>
+<p><b>Problem.</b> A gripping tool's handles are squeezed with 150 N at 200 mm from the pivot pin; the jaws grip at 40 mm on the other side of the pivot. <b>Find:</b> the jaw force and mechanical advantage.</p><div class="soln"><p><b>Solution.</b> (1) FBD of one handle-jaw lever about the pivot.
+(2) \( \Sigma M_{pivot} = 0 \): \( 150 \times 200 = F_{jaw} \times 40 \).
+(3) \( F_{jaw} = 30000/40 = 750\ \mathrm{N} \).
+(4) \( MA = 750/150 = 5 \) — equal to the arm ratio \( 200/40 \).</p>
+<p><b>Answer:</b> 750 N grip; mechanical advantage 5.
+<b>Sanity check:</b> arms ratio 5:1 must give force ratio 5:1 — the lever law in its plainest form; the pivot pin itself carries \( 150 + 750 = 900\ \mathrm{N} \), the largest force in the tool, which is why pivot pins wear first.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Two-member frame under a side load</b></p>
+<p><b>Problem.</b> Members AC and BC are pinned together at C \( (2, 3)\ \mathrm{m} \), with A \( (0,0) \) pinned and B \( (4,0) \) on a roller. A 6 kN horizontal force pushes at C. <b>Find:</b> reactions and member forces.</p><div class="soln"><p><b>Solution.</b> (1) Whole frame, \( \Sigma M_A = 0 \): \( B_y \times 4 - 6 \times 3 = 0 \Rightarrow B_y = 4.5\ \mathrm{kN} \) up.
+(2) \( \Sigma F_y = 0 \Rightarrow A_y = -4.5\ \mathrm{kN} \) (i.e., 4.5 kN down); \( \Sigma F_x = 0 \Rightarrow A_x = -6\ \mathrm{kN} \) (opposing the push).
+(3) Both members are two-force (loaded only at their end pins). At C, resolve along the member directions: each member's axis has length \( \sqrt{2^2+3^2} = 3.61\ \mathrm{m} \).
+(4) Solving joint C: \( F_{AC} = 5.41\ \mathrm{kN} \) tension, \( F_{BC} = 5.41\ \mathrm{kN} \) compression.</p>
+<p><b>Answer:</b> \( A = (6.0, 4.5)\ \mathrm{kN} \) resisting, \( B_y = 4.5\ \mathrm{kN} \); \( |F_{AC}| = |F_{BC}| = 5.41\ \mathrm{kN} \), tension and compression respectively.
+<b>Sanity check:</b> the side push tries to topple the frame toward B: the windward member (AC) stretches, the leeward (BC) squashes — signs agree with the picture.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>What the jaws deliver</b></p>
+<p><b>Problem.</b> A pair of pliers has handles gripped 180 mm from the pivot pin and jaws biting 45 mm from it, on the other side. A technician squeezes with 120 N per handle. <b>Find:</b> the jaw clamping force, treating each half as a lever about the pin.</p><div class="soln"><p><b>Solution.</b> (1) One handle as a rigid body pivoting at the pin: moments about the pin give \( F_{jaw} \times 45 = 120 \times 180 \).
+(2) \( F_{jaw} = 120 \times 180/45 = 480\ \mathrm{N} \).
+(3) Mechanical advantage: \( 180/45 = 4 \) — the arm ratio, exactly.</p>
+<p><b>Answer:</b> ≈480 N of clamp per 120 N of grip.
+<b>Sanity check:</b> the pin carries the sum of the transverse forces — \( 120 + 480 = 600\ \mathrm{N} \) — which is why the pivot pin, not the jaw, is where worn pliers fail first; the statics quietly predicts the tool's wear point.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A lever takes 100 N of hand force at 300 mm from the pivot; the output acts at 60 mm. Output force:</p><ol class="opts"><li class="opt">20 N</li><li class="opt">100 N</li><li class="opt correct">500 N ✓</li><li class="opt">3000 N</li></ol><div class="soln"><p>Moment balance: \( 100 \times 300 = F \times 60 \Rightarrow F = 500\ \mathrm{N} \) — mechanical advantage 5, the arm ratio. 20 N inverts the ratio (that lever would be a force <em>reducer</em>, useful for delicate work, not gripping).</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>What disqualifies a structure from truss analysis and makes it a frame?</p><ol class="opts"><li class="opt">more than six members</li><li class="opt correct">a member loaded at three or more points ✓</li><li class="opt">supports on different levels</li><li class="opt">any inclined member</li></ol><div class="soln"><p>Truss analysis rests on every member being two-force. A member loaded at a third point (or between its pins) carries shear and bending, so its force is no longer axial — dismemberment with action–reaction pin forces replaces the joint method.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>What distinguishes a frame from a truss?</p><ol class="opts"><li class="opt correct">A frame contains at least one member carrying three or more forces ✓</li><li class="opt">A frame has more members</li><li class="opt">A frame carries only vertical loads</li><li class="opt">A frame has no pins</li></ol><div class="soln"><p>Truss members are all two-force members — pure axial tension or compression. The moment a structure contains even one multi-force member (loaded between its joints, or at three-plus points), it is a frame, and the joint-equation shortcut dies: analysis proceeds by disassembling members and exposing pin-force pairs. Member count, load direction, and pin presence are all red herrings.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>When a frame is dismembered at a pin, the forces drawn on the two separated members must be:</p><ol class="opts"><li class="opt">equal and in the same direction</li><li class="opt correct">equal and opposite ✓</li><li class="opt">each equal to half the applied load</li><li class="opt">zero if the pin is frictionless</li></ol><div class="soln"><p>Newton's third law: the pin force one member exerts on the other is mirrored exactly. Drawing the pair inconsistently — both components up on both members, say — silently violates equilibrium of the pin and corrupts every equation written afterward.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Two members of a frame share pin C. The pin force computed on member 1 at C is 850 N pointing up-right. On member 2 at C, the pin force is:</p><ol class="opts"><li class="opt correct">850 N pointing down-left — equal and opposite ✓</li><li class="opt">850 N pointing up-right — the same</li><li class="opt">Zero — pins carry no force</li><li class="opt">Indeterminate without more equations</li></ol><div class="soln"><p>Newton's third law at the shared pin: whatever member 1 receives, member 2 receives exactly reversed. This pairing is the entire bookkeeping system of frame analysis — write the force once, apply it twice with opposite signs. Copying it in the same direction onto both members is the classic frame error, and it silently violates equilibrium of the pin itself.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 08 · Internal forces: shear and bending moment</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Cut the beam, expose the invisible</h3>
+<p>External reactions are only half the story; design needs the forces <em>inside</em> the member. Cut a beam at any section and, on the exposed face, three internal resultants restore equilibrium: normal force \( N \), shear force \( V \), and bending moment \( M \). Sign convention (keep it for life): positive shear rotates the element clockwise; positive moment sags the beam — compression on top, tension on the bottom. The convention is arbitrary; consistency is not.</p>
+<h3>§2 · Diagrams, and the calculus that draws them</h3>
+<p>Shear and moment vary along the span, so we plot them. Two differential relations do most of the drawing:</p>
+\[ \frac{dV}{dx} = -w(x), \qquad \frac{dM}{dx} = V \tag{1} \]
+<p>Between point loads, \( V \) is constant and \( M \) runs straight; under a uniform load, \( V \) slopes linearly and \( M \) curves parabolically. A point load steps \( V \); a couple steps \( M \). And the operational headline: <em>the bending moment is extremal where the shear crosses zero</em> — because \( dM/dx = V = 0 \) there. That is where beams break, and where you look first.</p>
+<h3>§3 · Why these diagrams are the product</h3>
+<p>Strength of Materials will convert \( M \) into bending stress and \( V \) into shear stress; every beam, shaft, and rack girder calculation starts from these two plots. Drawing them is not an academic exercise before the real work — for the structural side of plant engineering, the diagram <em>is</em> the deliverable that the stress check consumes. §Worked Examples builds both canonical cases: the central point load and the uniform load.</p>
+
+<h3>§4 · Building the diagrams without tears</h3>
+<p>Internal-force diagrams are constructed, not guessed, and the construction has a grammar.
+<em>Reactions first</em> — no diagram survives wrong supports. <em>Walk the beam from the
+left,</em> cutting just after each load or support: shear jumps by each point force, slopes
+down under distributed load at exactly the load intensity, and the moment's slope at every
+station IS the shear there — \( dM/dx = V \). That one relation is the whole craft: where
+shear crosses zero, the moment peaks; where shear is constant, the moment runs straight;
+where the load is uniform, the moment curves as a parabola. <em>Close the audit at the far
+end:</em> both diagrams must return to zero (or to the end reaction/moment) — a diagram
+that doesn't close is announcing an arithmetic error at the exact spot it diverges.</p>
+<p>Keep the benchmark cases in your head as calibration: a central point load peaks at
+\( PL/4 \); a uniform load at \( wL^2/8 \). Any computed maximum should be sanity-checked
+against the nearest benchmark before it goes near a design table — the courses on strength
+and machine design will consume these diagrams, and they inherit every error made here.</p>
+<p><strong>Closing.</strong> Cut, expose \( N, V, M \), plot with the two differential relations, and read the maximum moment where shear crosses zero. Beams are analyzed exactly once you can draw these two pictures without hesitation.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Support reactions</b> (Lessons 3, 5) — computed before any cut is made.</li>
+<li><b>Equilibrium of a cut body</b> (Lesson 5) — the exposed section is just another FBD.</li>
+<li><b>Basic calculus</b> — slopes and areas connect \( w \), \( V \), and \( M \).</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Internal forces</td><td>N, V, M at a cut</td><td>What the material itself must carry at any section.</td></tr>
+<tr><td>Method of sections (beams)</td><td>cut, keep one side, apply equilibrium</td><td>N, V, M at one location in one pass.</td></tr>
+<tr><td>Shear diagram</td><td>\( V(x) \)</td><td>How transverse load accumulates along the span.</td></tr>
+<tr><td>Moment diagram</td><td>\( M(x) \)</td><td>Where bending is worst — the beam designer's map.</td></tr>
+<tr><td>Diagram calculus</td><td>\( dV/dx = -w,\ dM/dx = V \)</td><td>Slopes and areas connect load, shear, and moment; V = 0 locates max M.</td></tr>
+<tr><td>Central point load</td><td>\( M_{max} = PL/4 \)</td><td>The benchmark case every beam eye should know cold.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Central point load</b></p>
+<p><b>Problem.</b> Simply supported beam, span \( L = 4\ \mathrm{m} \), point load \( P = 8\ \mathrm{kN} \) at midspan. <b>Find:</b> the shear and moment diagrams and the maximum moment.</p><div class="soln"><p><b>Solution.</b> (1) Reactions: symmetric, \( R = 4\ \mathrm{kN} \) each.
+(2) Shear: \( V = +4\ \mathrm{kN} \) from A to midspan, stepping down by 8 to \( -4\ \mathrm{kN} \) to B.
+(3) Moment: rises linearly (slope 4) to midspan, falls linearly after.
+(4) \( M_{max} = 4 \times 2 = 8\ \mathrm{kN\cdot m} \) — matching \( PL/4 = 8 \times 4/4 \).</p>
+<p><b>Answer:</b> \( V_{max} = 4\ \mathrm{kN} \), \( M_{max} = 8\ \mathrm{kN\cdot m} \) at midspan.
+<b>Sanity check:</b> \( M \) peaks exactly where \( V \) crosses zero (the load point). Diagram closes to zero at both ends — free ends carry no moment. ✓</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Uniform load</b></p>
+<p><b>Problem.</b> Simply supported beam, \( L = 6\ \mathrm{m} \), UDL \( w = 3\ \mathrm{kN/m} \). <b>Find:</b> diagrams and \( M_{max} \).</p><div class="soln"><p><b>Solution.</b> (1) Reactions: \( R = wL/2 = 9\ \mathrm{kN} \) each.
+(2) Shear: \( V(x) = 9 - 3x \) — linear, zero at \( x = 3\ \mathrm{m} \).
+(3) Moment: parabolic, \( M(x) = 9x - 1.5x^2 \).
+(4) \( M_{max} = M(3) = 27 - 13.5 = 13.5\ \mathrm{kN\cdot m} \) — matching \( wL^2/8 = 3 \times 36/8 \).</p>
+<p><b>Answer:</b> \( V_{max} = 9\ \mathrm{kN} \) at the supports; \( M_{max} = 13.5\ \mathrm{kN\cdot m} \) at midspan.
+<b>Sanity check:</b> shear crosses zero at midspan by symmetry, and the parabola peaks there. The two formulas \( PL/4 \) and \( wL^2/8 \) are worth memorizing — they bound most quick beam checks you will ever do standing up.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Shear and moment at a section</b></p>
+<p><b>Problem.</b> An 8 m simply supported beam carries a 6 kN point load at midspan. <b>Find:</b> the reactions, the internal shear and moment 2 m from the left support, and the maximum bending moment.</p><div class="soln"><p><b>Solution.</b> (1) Symmetry: \( R_A = R_B = 3\ \mathrm{kN} \).
+(2) Cut at 2 m (left of the load), keep the left piece: \( V = +3\ \mathrm{kN} \); \( M = 3 \times 2 = 6\ \mathrm{kN\,m} \).
+(3) Maximum at midspan where V crosses zero: \( M_{max} = PL/4 = 6 \times 8/4 = 12\ \mathrm{kN\,m} \).</p>
+<p><b>Answer:</b> \( R = 3\ \mathrm{kN} \) each; at 2 m: \( V = 3\ \mathrm{kN},\ M = 6\ \mathrm{kN\,m} \); \( M_{max} = 12\ \mathrm{kN\,m} \).
+<b>Sanity check:</b> \( dM/dx = V \): the moment climbs at 3 kN·m per metre on the left half — 6 at 2 m, 12 at 4 m — exactly linearly, as constant shear demands.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>The bending moment in a beam is maximum where:</p><ol class="opts"><li class="opt">the load is largest</li><li class="opt correct">the shear force crosses zero ✓</li><li class="opt">the beam is deepest</li><li class="opt">deflection is zero</li></ol><div class="soln"><p>\( dM/dx = V \): the moment's slope is the shear, so \( M \) turns where \( V = 0 \). The largest load and the moment peak often do coincide — but the shear-zero rule is the reason, and the reliable locator when loading is mixed.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>A simply supported beam, span 10 m, carries 2 kN/m over its whole length. \( M_{max} \):</p><ol class="opts"><li class="opt">20 kN·m</li><li class="opt correct">25 kN·m ✓</li><li class="opt">50 kN·m</li><li class="opt">100 kN·m</li></ol><div class="soln"><p>\( M_{max} = wL^2/8 = 2 \times 100 / 8 = 25\ \mathrm{kN\cdot m} \) at midspan. 50 uses \( wL^2/4 \) (confusing it with \( PL/4 \)); 100 forgets the 8 entirely. The two canonical formulas — \( PL/4 \) and \( wL^2/8 \) — are worth keeping straight for standing-up estimates.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A simply supported beam of span L carries a central point load P. The maximum bending moment is:</p><ol class="opts"><li class="opt correct">\( PL/4 \), at midspan ✓</li><li class="opt">\( PL/2 \), at midspan</li><li class="opt">\( PL/8 \), at the supports</li><li class="opt">\( PL \), under the load</li></ol><div class="soln"><p>Reactions are \( P/2 \); the moment climbs linearly to midspan: \( (P/2)(L/2) = PL/4 \). \( PL/2 \) forgets the reaction split; \( PL/8 \) borrows the uniform-load formula's denominator (\( wL^2/8 \)) — the classic benchmark mix-up; and moments at simple supports are zero by definition. \( PL/4 \) is a number every engineer should carry as calibration.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>At a downward point load, the shear diagram:</p><ol class="opts"><li class="opt correct">steps down by the load value ✓</li><li class="opt">slopes gradually downward</li><li class="opt">is unaffected</li><li class="opt">steps up by half the load</li></ol><div class="soln"><p>A concentrated load is a jump in \( V \) equal to its magnitude — the diagram is discontinuous there. Distributed loads produce the gradual slopes (\( dV/dx = -w \)); mixing up step versus slope is the fastest way to a wrong diagram.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>At every point along a beam, the slope of the bending-moment diagram equals:</p><ol class="opts"><li class="opt correct">The shear force there ✓</li><li class="opt">The load intensity there</li><li class="opt">The reaction at the nearest support</li><li class="opt">Zero</li></ol><div class="soln"><p>\( dM/dx = V \) — the fundamental relation of diagram construction. Its consequences do the real work: maximum moment where shear crosses zero, straight moment lines under constant shear, parabolas under uniform load. The load intensity is the slope of the SHEAR diagram \( (dV/dx = -w) \) — one derivative over; confusing the two levels is the standard diagram error.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 09 · Friction</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · Dry friction and the threshold</h3>
+<p>A stationary block resists sliding with whatever friction force equilibrium demands — up to a ceiling:</p>
+\[ F \le \mu_s N \tag{1} \]
+<p>Equality holds only at <em>impending motion</em>; below it, friction is found from equilibrium, not from (1). Once sliding starts, kinetic friction \( \mu_k N \) (with \( \mu_k < \mu_s \)) takes over — which is why things lurch. The resultant of \( N \) and limiting \( F \) leans at the friction angle \( \phi = \tan^{-1}\mu_s \) from the normal; the cone it sweeps contains every possible contact reaction. If the applied load's line falls inside the cone, no sliding — geometry answering a force question.</p>
+<h3>§2 · Wedges and screws</h3>
+<p>A wedge is friction's canonical machine: driving it must beat friction on <em>both</em> faces, and the friction directions always oppose the impending relative motion — set them by asking "which way does each surface slide?" before writing equations. A power screw is a wedge wrapped around a cylinder: the thread's helix angle plays the wedge angle, and self-locking (the jack that holds under load) occurs when the friction angle exceeds the helix angle. Every jack, clamp, and threaded fastener trades on this.</p>
+<h3>§3 · Belt friction: the exponential surprise</h3>
+<p>A belt or rope wrapped on a drum can hold a large tension with a small one. Integrating the friction on each element of wrap gives the capstan equation:</p>
+\[ \frac{T_2}{T_1} = e^{\mu \beta} \tag{2} \]
+<p>with \( \beta \) the wrap angle in radians. The ratio is <em>exponential</em> in wrap — each added turn multiplies. Three turns of rope on a bollard hold a ship; the same law sets how much power a conveyor drive pulley can transmit before the belt slips.</p>
+
+<h3>§4 · The friction working method</h3>
+<p>Friction problems have one trap and one discipline. The trap: writing
+\( F = \mu_s N \) by reflex. Static friction is adaptive — it supplies exactly what
+equilibrium demands, UP TO the ceiling \( \mu_s N \), and equals the ceiling only at
+impending motion. So the method is: <em>assume equilibrium, solve for the friction force
+required,</em> then <em>compare</em> with the available maximum. Required below available —
+the body holds, and the actual friction is the required value, not the ceiling. Required
+above available — motion begins, and kinetic friction \( \mu_k N \) takes over at its
+lower, fixed value.</p>
+<p>The discipline: recompute \( N \) from equilibrium every time the loading changes.
+A downward push on a crate raises N and buys holding capacity; an upward-angled pull robs
+it — the same pull that helps horizontally hurts vertically, and the trade is decided by
+the numbers, not intuition. Complete the method by checking the second failure mode: tall
+narrow bodies may TIP before they slide, so compare the moment of the push about the
+tipping edge with the restoring moment of the weight. Slip-or-tip is answered by whichever
+threshold arrives first, and rigging, racking, and machine-skid problems ask it weekly.</p>
+<p>Treat published coefficients as estimates, not constants. Surface condition, moisture,
+paint, and dust move \( \mu \) by tens of percent, which is why lift plans and skid
+calculations carry margin on top of the friction arithmetic. When a job genuinely hinges on
+friction, the professional move is to measure — the tilt test that reads \( \mu_s \)
+straight off the angle of repose — and then still design as if the measured number were
+optimistic.</p>
+<p><strong>Closing.</strong> Friction is an inequality until motion impends; wedges and screws are friction geometrized; and wrap buys holding power exponentially. Get the impending-motion direction right and the rest is bookkeeping.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Equilibrium with inequalities in mind</b> (Lesson 5) — friction saturates; it is not always \( \mu N \).</li>
+<li><b>FBD discipline</b> (Lesson 3) — friction direction set by impending motion, drawn before solving.</li>
+<li><b>Exponentials</b> — the capstan equation lives on \( e^{\mu\beta} \).</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Static friction</td><td>\( F_s \le \mu_s N \)</td><td>Adaptive holding force up to a ceiling; equality only at impending slip.</td></tr>
+<tr><td>Kinetic friction</td><td>\( F_k = \mu_k N \)</td><td>Once sliding, friction drops to this steady value.</td></tr>
+<tr><td>Impending motion</td><td>\( F_s = \mu_s N \)</td><td>The boundary case where friction problems are solved.</td></tr>
+<tr><td>Angle of repose</td><td>\( \tan\phi = \mu_s \)</td><td>The steepest slope a body rests on; a field measurement of \( \mu_s \).</td></tr>
+<tr><td>Slip vs tip</td><td>compare \( \mu_s N \) with the tipping ratio</td><td>Tall loads may tip before they slide; check both failure modes.</td></tr>
+<tr><td>Normal-force honesty</td><td>N from equilibrium, not assumption</td><td>Pushes and pulls change N — recompute it before multiplying by \( \mu \).</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Dragging a crate, and why angle helps</b></p>
+<p><b>Problem.</b> An 80 kg crate sits on a floor with \( \mu_s = 0.35 \). <b>Find:</b> the horizontal force to start it moving, and the force if pulling at \( 20^\circ \) above horizontal.</p><div class="soln"><p><b>Solution.</b> (1) \( W = 80 \times 9.81 = 784.8\ \mathrm{N} \).
+(2) Horizontal pull: \( P = \mu_s W = 0.35 \times 784.8 = 274.7\ \mathrm{N} \).
+(3) Angled pull: the vertical component unloads the floor. \( N = W - P\sin 20^\circ \), and impending motion demands \( P\cos 20^\circ = \mu_s N \).
+(4) \( P = \dfrac{\mu_s W}{\cos 20^\circ + \mu_s \sin 20^\circ} = \dfrac{274.7}{0.940 + 0.120} = 259.3\ \mathrm{N} \).</p>
+<p><b>Answer:</b> 274.7 N flat; 259.3 N at 20° — about 6% less.
+<b>Sanity check:</b> lifting-while-pulling reduces \( N \), hence friction; too steep an angle wastes pull on lift instead of advance, so an optimum angle exists (it equals the friction angle, \( \tan^{-1}0.35 \approx 19.3^\circ \) — our 20° is nearly optimal).</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Conveyor drive pulley</b></p>
+<p><b>Problem.</b> A belt wraps a drive pulley \( 180^\circ \) with \( \mu = 0.3 \); the slack side runs at \( T_1 = 1.2\ \mathrm{kN} \). <b>Find:</b> the maximum tight-side tension and transmittable belt pull before slip.</p><div class="soln"><p><b>Solution.</b> (1) Wrap: \( \beta = \pi\ \mathrm{rad} \).
+(2) Capstan: \( T_2/T_1 = e^{0.3\pi} = 2.566 \).
+(3) \( T_2 = 1.2 \times 2.566 = 3.08\ \mathrm{kN} \).
+(4) Transmittable pull: \( T_2 - T_1 = 1.88\ \mathrm{kN} \).</p>
+<p><b>Answer:</b> \( T_2 = 3.08\ \mathrm{kN} \); usable pull 1.88 kN.
+<b>Sanity check:</b> increase wrap to \( 270^\circ \) (snub pulley): ratio \( e^{0.3 \times 4.71} = 4.11 \) — the exponential means modest extra wrap buys disproportionate capacity, which is exactly why snub pulleys exist.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Will the crate move?</b></p>
+<p><b>Problem.</b> A 40 kg crate sits on a concrete floor, \( \mu_s = 0.35 \), \( \mu_k = 0.28 \). A horizontal push of 120 N is applied. <b>Find:</b> whether the crate moves, the actual friction force, and the push needed to start motion.</p><div class="soln"><p><b>Solution.</b> (1) \( N = W = 40 \times 9.81 = 392\ \mathrm{N} \); maximum static friction \( = 0.35 \times 392 = 137\ \mathrm{N} \).
+(2) Required friction for equilibrium = 120 N < 137 N → the crate stays put.
+(3) Actual friction = <b>120 N</b> — what equilibrium demands, not the ceiling.
+(4) To start motion: push > 137 N; once moving, only \( 0.28 \times 392 = 110\ \mathrm{N} \) sustains it.</p>
+<p><b>Answer:</b> no motion; friction = 120 N; break-away at ≈137 N, then ≈110 N to keep sliding.
+<b>Sanity check:</b> the drop from 137 to 110 N is why a stuck skid lurches when it finally breaks free — the classic static-to-kinetic step, predicted entirely by the two coefficients.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A block presses on the floor with \( N = 200\ \mathrm{N} \), \( \mu_s = 0.4 \). A 50 N horizontal push is applied. The friction force is:</p><ol class="opts"><li class="opt">80 N</li><li class="opt correct">50 N ✓</li><li class="opt">200 N</li><li class="opt">20 N</li></ol><div class="soln"><p>Below the threshold, friction equals whatever equilibrium demands: 50 N. The ceiling \( \mu_s N = 80\ \mathrm{N} \) applies only at impending motion — quoting 80 N for a 50 N push is the single most common friction error, and it fails the sanity check that the block would accelerate backwards.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Doubling a belt's wrap angle on a drum multiplies its holding ratio \( T_2/T_1 \) by:</p><ol class="opts"><li class="opt">2</li><li class="opt correct">the original ratio again (it squares) ✓</li><li class="opt">\( \mu \)</li><li class="opt">nothing — wrap doesn't matter</li></ol><div class="soln"><p>\( T_2/T_1 = e^{\mu\beta} \), so \( \beta \to 2\beta \) squares the ratio: \( e^{\mu \cdot 2\beta} = (e^{\mu\beta})^2 \). Exponentials multiply where intuitions add — three turns on a bollard hold a ship precisely because each turn multiplies the previous total.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A crate needs 137 N to start sliding. It is pushed with 50 N and does not move. The friction force acting on it is:</p><ol class="opts"><li class="opt correct">50 N ✓</li><li class="opt">137 N</li><li class="opt">Zero</li><li class="opt">The average, about 94 N</li></ol><div class="soln"><p>Static friction is adaptive: it supplies exactly what equilibrium requires — here 50 N to balance the push — and not one newton more. The ceiling \( \mu_s N = 137\ \mathrm{N} \) is reached only at impending motion. Writing \( \mu_s N \) by reflex whenever friction appears is the single most common friction error, and this question is its vaccine.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>A power screw is self-locking (holds its load with no applied torque) when:</p><ol class="opts"><li class="opt correct">the friction angle exceeds the helix angle ✓</li><li class="opt">the helix angle exceeds the friction angle</li><li class="opt">the load exceeds the friction force</li><li class="opt">it is lubricated</li></ol><div class="soln"><p>Self-locking requires friction to beat the thread's slope: \( \phi > \alpha \). A jack that stays up under load is exactly this inequality. Lubrication <em>reduces</em> \( \phi \) and can therefore un-lock a marginal screw — the opposite of choice D's instinct.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>A crate just barely rests without sliding on a ramp inclined at 21.8°. Its coefficient of static friction is about:</p><ol class="opts"><li class="opt correct">0.40 ✓</li><li class="opt">0.22</li><li class="opt">0.80</li><li class="opt">0.37</li></ol><div class="soln"><p>At the angle of repose, \( \tan\phi = \mu_s \): \( \tan 21.8° = 0.40 \). This is also a practical field measurement — tilt a sample surface until sliding begins and read the coefficient off the angle. Choosing 0.37 uses \( \sin \) instead of \( \tan \); 0.22 mistakes the angle-over-degrees ratio for physics; 0.80 doubles the truth by using the wrong triangle side.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 10 · Centroids and centers of gravity</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · The average position of area or weight</h3>
+<p>The centroid is the area-weighted average position of a shape:</p>
+\[ \bar{x} = \frac{\int x\, dA}{\int dA}, \qquad \bar{y} = \frac{\int y\, dA}{\int dA} \tag{1} \]
+<p>The center of gravity is the same construction weighted by weight; for uniform density and gravity they coincide. Integration handles curved boundaries once; engineering practice handles everything else by <em>composite parts</em> — split the shape into rectangles, triangles, and circles whose centroids are known, then take the weighted average. Holes enter the sum as negative areas: same formula, signed.</p>
+<h3>§2 · The tabular method</h3>
+<p>Composite work is done in a table: one row per part, columns for \( A \), \( \bar{x}_i \), \( \bar{y}_i \), \( A\bar{x}_i \), \( A\bar{y}_i \); sum the columns, divide. The discipline matters more than it looks — a consistent datum (pick one corner, state it) and signed areas prevent the classic errors: measuring one part from a different origin, or forgetting that a cut-out subtracts moment as well as area. The same table extends without modification to weights: replace \( A \) with \( W \) and the result is a center of gravity.</p>
+<h3>§3 · Where the hook must sit</h3>
+<p>Lift any rigid load from a single hook and it hangs with its center of gravity vertically below the hook. If the CG is off the hook line, the load tilts until they align — swinging tools, spilling contents, and shifting sling angles on the way. A lifting plan therefore starts with a CG calculation: composite masses of pump, motor, and baseplate, exactly the table of §2 with kilograms in the area column. The hook, or the sling spread, is then placed to put the CG under the crane's line of pull. §Worked Examples runs one steel section and one equipment skid.</p>
+
+<h3>§4 · The tabular working method</h3>
+<p>Centroid calculations live or die by bookkeeping, so industrialize it. <em>Decompose</em>
+the section into shapes whose centroids are known — rectangles, triangles, circles.
+<em>Fix one reference corner</em> for the whole table and never move it mid-problem; half of
+all centroid errors are two shapes measured from two different origins. <em>Tabulate</em>
+\( A_i \), \( \bar{x}_i \), \( \bar{y}_i \), \( A_i\bar{x}_i \),
+\( A_i\bar{y}_i \) — holes entering as negative areas with negative first moments —
+<em>sum the columns, divide.</em> The table is not scaffolding to discard later: the
+moment-of-inertia lesson extends the same table by one column, and CAD packages print the
+same quantities under the same names, so fluency here reads straight into the tools.</p>
+<p>Audit the answer geometrically before accepting it: the centroid must sit inside the
+convex hull of the section (though possibly outside the material, as in an L or a channel —
+that is legal and common), and symmetry must be honored — any axis of symmetry the section
+has, the centroid sits on. An answer violating either rule is wrong with certainty, no
+recomputation required.</p>
+<p><strong>Closing.</strong> One averaging formula, executed by table, with signed areas and a declared datum. From steel sections to lifting plans, it is the same arithmetic wearing different units.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Basic integration</b> — (1) is used directly only for curved shapes; know what the integral means.</li>
+<li><b>Moments</b> (Lesson 2) — \( A\bar{x} \) is a first moment; the language is identical.</li>
+<li><b>Weight vs mass</b> (Lesson 1) — CG tables may carry kg; convert before forces are needed.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Centroid</td><td>\( \bar{x} = \Sigma A_i \bar{x}_i / \Sigma A_i \)</td><td>The area's balance point; where a distributed load's resultant acts.</td></tr>
+<tr><td>Center of gravity</td><td>\( W \) acts here</td><td>The single point standing in for a body's distributed weight.</td></tr>
+<tr><td>Composite method</td><td>split, tabulate, sum</td><td>Real sections as rectangles/triangles/circles in a table.</td></tr>
+<tr><td>Negative areas</td><td>holes enter with \( A < 0 \)</td><td>Cutouts subtract area AND first moment in the same table.</td></tr>
+<tr><td>Symmetry shortcut</td><td>centroid lies on every symmetry axis</td><td>One axis kills one coordinate before any arithmetic.</td></tr>
+<tr><td>Distributed load resultant</td><td>\( R = \int w\,dx \) at the load-area centroid</td><td>Replacing a load diagram by one force at the right spot.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>Centroid of an L-section</b></p>
+<p><b>Problem.</b> An L-section: vertical leg 20 mm wide × 100 mm tall; horizontal leg 80 mm × 20 mm extending right from the vertical leg's base. Datum: outer bottom-left corner. <b>Find:</b> the centroid.</p><div class="soln"><p><b>Solution.</b> (1) Part 1 (vertical): \( A_1 = 20 \times 100 = 2000\ \mathrm{mm^2} \), centroid (10, 50).
+(2) Part 2 (horizontal): \( A_2 = 80 \times 20 = 1600\ \mathrm{mm^2} \), centroid (60, 10).
+(3) \( \bar{x} = \dfrac{2000(10) + 1600(60)}{3600} = \dfrac{116000}{3600} = 32.2\ \mathrm{mm} \).
+(4) \( \bar{y} = \dfrac{2000(50) + 1600(10)}{3600} = \dfrac{116000}{3600} = 32.2\ \mathrm{mm} \).</p>
+<p><b>Answer:</b> \( (\bar{x}, \bar{y}) = (32.2, 32.2)\ \mathrm{mm} \).
+<b>Sanity check:</b> the centroid lies between the two part centroids, pulled toward the larger leg — and lands <em>outside the metal</em>, in the corner notch, which is perfectly legal: centroids are properties of the area, not addresses in it.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Skid center of gravity for a lift</b></p>
+<p><b>Problem.</b> A skid (masses representative): pump 320 kg centered at \( x = 0.5\ \mathrm{m} \), motor 260 kg at \( x = 1.6\ \mathrm{m} \), baseplate 140 kg at \( x = 1.1\ \mathrm{m} \), from the skid's left edge. <b>Find:</b> the CG and the single-hook pick point.</p><div class="soln"><p><b>Solution.</b> (1) Total mass: \( 320 + 260 + 140 = 720\ \mathrm{kg} \).
+(2) \( \bar{x} = \dfrac{320(0.5) + 260(1.6) + 140(1.1)}{720} = \dfrac{160 + 416 + 154}{720} = \dfrac{730}{720} = 1.014\ \mathrm{m} \).</p>
+<p><b>Answer:</b> CG at 1.01 m from the left edge; hook (or sling resultant) goes there.
+<b>Sanity check:</b> the CG sits between pump and motor, slightly motor-side of the midpoint — the motor's greater distance nearly offsets the pump's greater mass. Hook it at midspan (≈0.8–0.9 m for this layout) and the motor end dips on pick.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>Centroid of an L-section</b></p>
+<p><b>Problem.</b> An L-shaped bracket section: a 100 × 20 mm horizontal base plate with a 20 × 80 mm vertical leg standing on its left end. Reference origin at the bottom-left corner. <b>Find:</b> the centroid.</p><div class="soln"><p><b>Solution.</b> (1) Parts: base \( A_1 = 2000\ \mathrm{mm^2} \) at \( (50, 10) \); leg \( A_2 = 1600\ \mathrm{mm^2} \) at \( (10, 60) \).
+(2) \( \bar{x} = (2000 \times 50 + 1600 \times 10)/3600 = 116{,}000/3600 = 32.2\ \mathrm{mm} \).
+(3) \( \bar{y} = (2000 \times 10 + 1600 \times 60)/3600 = 116{,}000/3600 = 32.2\ \mathrm{mm} \).</p>
+<p><b>Answer:</b> \( (\bar{x}, \bar{y}) \approx (32.2, 32.2)\ \mathrm{mm} \).
+<b>Sanity check:</b> the centroid lands between the two part centroids, pulled toward the larger base — and it sits just off the material in the L's inside corner, which is legal and typical for L-sections; a hanging bracket would tilt about exactly this point.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>A load is lifted from a single hook placed away from its center of gravity. On pick-up, the load:</p><ol class="opts"><li class="opt">rises level</li><li class="opt correct">tilts until the CG hangs below the hook ✓</li><li class="opt">rotates continuously</li><li class="opt">cannot be lifted</li></ol><div class="soln"><p>A suspended rigid body settles with its CG vertically below the support point — the only orientation with zero net moment. The tilt is the field's free CG-finder (the trial pick), and the hazard when tall equipment swings as it seeks that alignment.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>Masses of 100 kg at \( x = 0 \) and 300 kg at \( x = 2\ \mathrm{m} \) share a skid. The CG is at:</p><ol class="opts"><li class="opt">0.5 m</li><li class="opt">1.0 m</li><li class="opt correct">1.5 m ✓</li><li class="opt">2.0 m</li></ol><div class="soln"><p>\( \bar{x} = (100 \times 0 + 300 \times 2)/400 = 1.5\ \mathrm{m} \) — three-quarters of the way toward the heavier mass, matching the 3:1 mass ratio. 1.0 m is the unweighted midpoint, the error the weighted average exists to prevent.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>A section has one axis of symmetry. Its centroid:</p><ol class="opts"><li class="opt correct">Lies somewhere on that axis ✓</li><li class="opt">Lies at the section's geometric center</li><li class="opt">Must lie inside the material</li><li class="opt">Cannot be found without integration</li></ol><div class="soln"><p>Symmetry forces the first moment across the axis to cancel, pinning the centroid to the axis — one coordinate for free. The geometric center requires TWO axes of symmetry; and the centroid can sit outside the material entirely (an L-section's inside corner, a channel's mouth) — legal and common. Composite tables handle the rest without any integral.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>Can a shape's centroid lie outside its material?</p><ol class="opts"><li class="opt">never</li><li class="opt">only for curved shapes</li><li class="opt correct">yes — an L-section's does ✓</li><li class="opt">only if density varies</li></ol><div class="soln"><p>The centroid is an area-weighted average position, not an address in the metal — an L-section's centroid sits in the empty corner notch. Rings, channels, and angles all put it in air; slings and fixtures must still act through it.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>In a composite-area centroid table, a drilled hole is handled by entering:</p><ol class="opts"><li class="opt correct">Its area and first moments with negative signs ✓</li><li class="opt">Its area as positive but located at the origin</li><li class="opt">Nothing — holes are ignored</li><li class="opt">Half its area</li></ol><div class="soln"><p>A hole is anti-material: it removes area AND first moment, so it rides the same table with \( A < 0 \) and correspondingly negative \( A\bar{x} \), \( A\bar{y} \) — computed at the HOLE's own centroid. Ignoring holes biases the centroid toward the removed metal; the negative-entry convention keeps one uniform procedure for any section a drawing can throw at you.</p></div></div></div></section>
+<section class="lesson"><h2>Lesson 11 · Moments of inertia</h2>
+<h3 class="tab">Lecture</h3><div class="body">
+<h3>§1 · The second moment: area times distance squared</h3>
+<p>The second moment of area about the x-axis is</p>
+\[ I_x = \int y^2\, dA \tag{1} \]
+<p>Distance enters <em>squared</em>: area far from the axis counts disproportionately. For the workhorse rectangle about its own centroid, \( I = bh^3/12 \) — the cubed depth is the single most consequential exponent in structural engineering. \( I \) is not inertia in the dynamic sense; it is a purely geometric measure of how a section's area is deployed against bending.</p>
+<h3>§2 · The parallel-axis theorem</h3>
+<p>Centroidal values are tabulated; real composite parts sit away from the composite centroid. The transfer rule:</p>
+\[ I = \bar{I} + A d^2 \tag{2} \]
+<p>adds \( Ad^2 \) for a part whose own centroid lies distance \( d \) from the axis in question. Two habits keep it honest: the theorem transfers only <em>from</em> a centroidal axis (never between two non-centroidal axes directly), and in composite work the \( Ad^2 \) terms usually dwarf the parts' own \( \bar{I} \) — flanges of an I-beam earn their keep almost entirely through \( Ad^2 \).</p>
+<h3>§3 · Why sections look the way they do</h3>
+<p>An I-beam is the parallel-axis theorem drawn in steel: put most of the area in two flanges far from the neutral axis (huge \( d \)), keep a thin web to hold them apart and carry shear. §Worked Examples computes a small I-section at \( I = 4.49 \times 10^6\ \mathrm{mm^4} \) — then shows a solid square of the <em>same area</em> manages only \( 0.65 \times 10^6 \): the shape, not the steel, is doing seven times the work. Strength of Materials will divide bending moment by exactly this \( I \) to get stress; every section table you will ever open is a catalog of this one integral.</p>
+
+<h3>§4 · The transfer working method</h3>
+<p>Composite moments of inertia extend the centroid table by exactly one discipline: the
+parallel-axis transfer. The sequence never varies. <em>Find the composite centroid first</em>
+— Lesson 10's table verbatim. <em>For each part,</em> write its own centroidal
+\( \bar{I}_i \) from the standard formulas, measure the distance \( d_i \) from the
+part's centroid to the COMPOSITE centroid, and transfer: \( I_i = \bar{I}_i + A_i d_i^2 \).
+<em>Sum.</em> Holes ride the same table with negative \( A \) and negative \( \bar{I} \).
+The classic error is transferring between two arbitrary axes — the theorem only moves I
+away from a shape's OWN centroid, never between two off-centroid axes; when in doubt, route
+through the centroid in two steps.</p>
+<p>Read the result with the \( h^3 \) instinct: material far from the axis does the work,
+which is why doubling a beam's depth multiplies its bending stiffness eightfold while
+doubling its width merely doubles it, and why the I-beam exists at all. When a computed
+composite I comes out smaller than its largest part's contribution, the arithmetic is
+wrong — transfers only ever add for real areas. These numbers feed the flexure formula in
+Strength of Materials directly; the audit habits travel with them.</p>
+<p><strong>Closing.</strong> \( y^2 \) rewards distance, \( bh^3/12 \) rewards depth, and \( Ad^2 \) explains the I-beam. Statics ends by manufacturing the geometric property that strength calculations spend.</p></div>
+<h3 class="tab">Foundations</h3><div class="body">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Centroids</b> (Lesson 10) — the composite centroid must be located before any \( d \) is measured.</li>
+<li><b>Composite bookkeeping</b> (Lesson 10) — the same table grows two more columns.</li>
+<li><b>Integration</b> — (1) is evaluated once for the rectangle; after that, tables and transfer.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Area moment of inertia</td><td>\( I = \int y^2 dA \)</td><td>The section's resistance to bending; mm⁴.</td></tr>
+<tr><td>Rectangle about centroid</td><td>\( I = bh^3/12 \)</td><td>The workhorse formula; depth cubed is the story.</td></tr>
+<tr><td>Rectangle about base</td><td>\( I = bh^3/3 \)</td><td>When the reference axis sits on an edge.</td></tr>
+<tr><td>Parallel-axis theorem</td><td>\( I = \bar{I} + A d^2 \)</td><td>Moving I from a shape's centroid to the composite's axis.</td></tr>
+<tr><td>Composite I</td><td>sum of transferred parts</td><td>The same tabular discipline as centroids, one column longer.</td></tr>
+<tr><td>Depth leverage</td><td>\( I \propto h^3 \)</td><td>Why beams stand upright and I-beams put material far from the axis.</td></tr>
+</tbody></table></div>
+</div>
+<h3 class="tab">Examples &amp; Quiz <span class="cnt">(3 solved + 5 MCQ)</span></h3>
+<div class="body"><div class="qcard solve"><div class="qtag">SOLVE 1</div><p class="qname"><b>I-section by composite parts</b></p>
+<p><b>Problem.</b> An I-section: two flanges 100 × 10 mm (top and bottom), web 10 × 80 mm, overall depth 100 mm, symmetric. <b>Find:</b> \( I \) about the horizontal centroidal axis.</p><div class="soln"><p><b>Solution.</b> (1) Symmetry puts the centroid at mid-depth; each flange centroid sits \( d = 45\ \mathrm{mm} \) away.
+(2) One flange: \( \bar{I} = \dfrac{100 \times 10^3}{12} = 8333\ \mathrm{mm^4} \); \( Ad^2 = 1000 \times 45^2 = 2\,025\,000\ \mathrm{mm^4} \).
+(3) Web (centroid on the axis, no transfer): \( \dfrac{10 \times 80^3}{12} = 426\,667\ \mathrm{mm^4} \).
+(4) Total: \( I = 2(8333 + 2\,025\,000) + 426\,667 = 4.49 \times 10^6\ \mathrm{mm^4} \).</p>
+<p><b>Answer:</b> \( I \approx 4.49 \times 10^6\ \mathrm{mm^4} \).
+<b>Sanity check:</b> the flanges' own \( \bar{I} \) (8,333 each) is 0.4% of their \( Ad^2 \) — the transfer term carries the section, as §2 promised.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 2</div><p class="qname"><b>Same steel, different shape</b></p>
+<p><b>Problem.</b> Reshape the I-section's area (\( A = 2 \times 1000 + 800 = 2800\ \mathrm{mm^2} \)) into a solid square. <b>Find:</b> its \( I \) and the comparison.</p><div class="soln"><p><b>Solution.</b> (1) Square side: \( s = \sqrt{2800} = 52.9\ \mathrm{mm} \).
+(2) \( I = \dfrac{s^4}{12} = \dfrac{52.9^4}{12} = 0.653 \times 10^6\ \mathrm{mm^4} \).
+(3) Ratio: \( 4.49/0.653 = 6.9 \).</p>
+<p><b>Answer:</b> the I-shape is ~6.9× stiffer in bending than a square of identical area.
+<b>Sanity check:</b> identical steel tonnage, sevenfold performance difference — pure geometry. This single ratio is why rolled sections exist, why racks are built from I-beams and channels, and why "add more steel" is the wrong first answer to a deflection problem.</p></div></div><div class="qcard solve"><div class="qtag">SOLVE 3</div><p class="qname"><b>One rectangle, two axes</b></p>
+<p><b>Problem.</b> A 60 mm wide × 100 mm deep rectangular section. <b>Find:</b> its moment of inertia about its own centroidal horizontal axis and about its base — and reconcile the two with the parallel-axis theorem.</p><div class="soln"><p><b>Solution.</b> (1) Centroidal: \( \bar{I} = bh^3/12 = 60 \times 100^3/12 = 5.0 \times 10^6\ \mathrm{mm^4} \).
+(2) About the base: \( I = bh^3/3 = 2.0 \times 10^7\ \mathrm{mm^4} \).
+(3) Parallel axis, \( d = 50\ \mathrm{mm} \): \( \bar{I} + Ad^2 = 5.0\times10^6 + 6000 \times 2500 = 2.0 \times 10^7 \) ✓ — the two formulas are one theorem apart.</p>
+<p><b>Answer:</b> \( 5.0 \times 10^6\ \mathrm{mm^4} \) centroidal; \( 2.0 \times 10^7\ \mathrm{mm^4} \) at the base.
+<b>Sanity check:</b> the base value is exactly four times the centroidal one for a rectangle — a ratio worth memorizing as a self-test whenever both are computed.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 1</div><p>The second moment of area \( I \) measures:</p><ol class="opts"><li class="opt">how much area a section has</li><li class="opt correct">how far from the axis the area is deployed (distance squared) ✓</li><li class="opt">the section's mass distribution</li><li class="opt">the maximum stress it can carry</li></ol><div class="soln"><p>\( I = \int y^2 dA \): area counts by the <em>square</em> of its distance from the axis. Two sections of identical area can differ in \( I \) sevenfold — geometry, not quantity of material. Stress capacity involves \( I \) but also material strength; \( I \) itself is purely geometric.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 2</div><p>A 50 mm wide × 100 mm deep rectangle, about its horizontal centroidal axis: \( I \) =</p><ol class="opts"><li class="opt">\( 1.04 \times 10^6\ \mathrm{mm^4} \)</li><li class="opt correct">\( 4.17 \times 10^6\ \mathrm{mm^4} \) ✓</li><li class="opt">\( 8.33 \times 10^6\ \mathrm{mm^4} \)</li><li class="opt">\( 0.42 \times 10^6\ \mathrm{mm^4} \)</li></ol><div class="soln"><p>\( I = bh^3/12 = 50 \times 100^3/12 = 4.17 \times 10^6\ \mathrm{mm^4} \). Choice A swaps \( b \) and \( h \) (\( 100 \times 50^3/12 \)) — a factor of 4 penalty for laying the section on its side, which is the whole lesson about depth cubed.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 3</div><p>The area moment of inertia carries units of:</p><ol class="opts"><li class="opt correct">mm⁴ ✓</li><li class="opt">mm²</li><li class="opt">mm³</li><li class="opt">N·mm</li></ol><div class="soln"><p>\( I = \int y^2\,dA \): length squared times area — length to the fourth. mm² is area, mm³ is the section modulus (I divided by a distance — coming in Strength of Materials), N·mm is a moment of force: three different section quantities that beginners shuffle. Units are the fastest audit: any "moment of inertia" not in length⁴ is some other animal.</p></div></div><div class="qcard mc"><div class="qtag">MCQ 4</div><p>The parallel-axis theorem \( I = \bar{I} + Ad^2 \) may be applied:</p><ol class="opts"><li class="opt">between any two parallel axes</li><li class="opt correct">only transferring from a centroidal axis ✓</li><li class="opt">only for symmetric sections</li><li class="opt">only when \( d \) is small</li></ol><div class="soln"><p>The theorem transfers from a part's own centroidal axis outward. Chaining it between two non-centroidal axes double-counts the offset — go back through the centroid instead. (Symmetry and the size of \( d \) are irrelevant to validity.)</p></div></div><div class="qcard mc"><div class="qtag">MCQ 5</div><p>Doubling a rectangular beam's depth (h) while keeping its width multiplies its centroidal moment of inertia by:</p><ol class="opts"><li class="opt correct">8 ✓</li><li class="opt">2</li><li class="opt">4</li><li class="opt">16</li></ol><div class="soln"><p>\( I = bh^3/12 \propto h^3 \): doubling h gives \( 2^3 = 8 \) times the stiffness quantity. Doubling the WIDTH doubles I only linearly — which is the entire argument for deep, upright sections and for the I-beam's flanges-far-from-axis geometry. Choosing 4 squares instead of cubes; 16 belongs to \( h^4 \), a different integral.</p></div></div></div></section></body></html>
