@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=d80c121b41">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ab16da1840">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -97,7 +97,7 @@
 <h3>06 · The two products, side by side</h3>
 <p>Keep the division clean and every 3-D problem sorts itself. The dot product is a <em>number</em> that peaks when vectors align and vanishes at right angles — reach for it for work, for components, for testing perpendicularity, for angles. The cross product is a <em>vector</em> that vanishes when vectors align and peaks at right angles — reach for it for moment, for area, for a normal to two directions, for testing parallelism. Almost every quantity in statics, dynamics, and electromagnetism is one of these two contractions of a pair of vectors, and choosing the right one is usually the whole battle. The scalar triple product \( \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) \) combines both to give the signed volume of the parallelepiped on three vectors — the determinant test for whether three directions are independent, which the linear-algebra lessons ahead build on directly.</p>
 <h3>07 · Computing the cross product in practice</h3>
-<p>By hand, the cross product is read off a symbolic determinant with the unit vectors in the top row: \( \mathbf{a}\times\mathbf{b}=\det\begin{pmatrix}\hat{\imath}&\hat{\jmath}&\hat{k}\\a_1&a_2&a_3\\b_1&b_2&b_3\end{pmatrix} \), which expands to \( (a_2b_3-a_3b_2,\;a_3b_1-a_1b_3,\;a_1b_2-a_2b_1) \). This is the formula behind every moment in the lesson, and it is worth memorising as a pattern — each component skips its own index and cross-multiplies the other two. The determinant view also explains why \( \mathbf{a}\times\mathbf{b}=-\,\mathbf{b}\times\mathbf{a} \): swapping two rows of a determinant flips its sign, so the cross product is <em>anti-commutative</em>, and the order of \( \mathbf{r} \) and \( \mathbf{F} \) in a moment therefore fixes the sense of the twist. Getting that order right is the difference between a bolt that tightens and one that loosens.</p>
+<p>By hand, the cross product is read off a symbolic determinant with the unit vectors in the top row:</p>\[ \mathbf{a}\times\mathbf{b}=\det\begin{pmatrix}\hat{\imath}&\hat{\jmath}&\hat{k}\\a_1&a_2&a_3\\b_1&b_2&b_3\end{pmatrix} \]<p>which expands, component by component, to \( (a_2b_3-a_3b_2,\;a_3b_1-a_1b_3,\;a_1b_2-a_2b_1) \). This is the formula behind every moment in the lesson, and it is worth memorising as a pattern — each component skips its own index and cross-multiplies the other two. The determinant view also explains why \( \mathbf{a}\times\mathbf{b}=-\,\mathbf{b}\times\mathbf{a} \): swapping two rows of a determinant flips its sign, so the cross product is <em>anti-commutative</em>, and the order of \( \mathbf{r} \) and \( \mathbf{F} \) in a moment therefore fixes the sense of the twist. Getting that order right is the difference between a bolt that tightens and one that loosens.</p>
 </div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
@@ -165,6 +165,6 @@ for.</p>
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=d80c121b41"></script>
+<script src="../../../assets/nx/nexus.js?v=ab16da1840"></script>
 </body>
 </html>

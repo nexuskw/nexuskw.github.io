@@ -416,7 +416,7 @@ table.nx-table tr:nth-child(even) td{background:#f8faf8}
 figure.lesson-diagram svg{max-width:100%;height:auto;display:block;margin:0 auto}
 figure.lesson-diagram figcaption{font-family:var(--serif);font-size:14px;line-height:1.7;color:var(--nx-muted);
   max-width:70ch;margin:14px auto 0;text-align:center}
-.measure mjx-container[display="true"]{margin:22px 0}
+.measure mjx-container[display="true"]{margin:22px 0;overflow-x:auto;overflow-y:hidden;max-width:100%}
 .keybox mjx-container[display="true"]{margin:8px 0 12px}
 .check{border:1px solid var(--nx-line);border-radius:14px;background:#fff;margin:34px 0 0;overflow:hidden}
 .check .q{padding:24px 26px 18px}
