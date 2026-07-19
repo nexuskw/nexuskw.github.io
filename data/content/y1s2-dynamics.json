@@ -1,0 +1,474 @@
+{
+ "1": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A particle on a curved path: velocity is tangent; acceleration splits into a tangential part (change of speed) and a normal part (change of direction) pointing toward the centre of curvature\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"24\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Curvilinear motion: a = aₜ (along path) + aₙ (toward centre)</text><polyline points=\"170.1,175.0 166.3,181.9 163.0,189.0 160.0,196.2 157.3,203.6 155.1,211.2 153.3,218.8 151.8,226.5 150.8,234.3 150.2,242.1 150.0,250.0 150.2,257.9 150.8,265.7 151.8,273.5 153.3,281.2 155.1,288.8 157.3,296.4 160.0,303.8 163.0,311.0 166.3,318.1 170.1,325.0 174.2,331.7 178.6,338.2 183.4,344.4 188.5,350.4 193.9,356.1 199.6,361.5 205.6,366.6 211.8,371.4 218.3,375.8 225.0,379.9 231.9,383.7 239.0,387.0 246.2,390.0 253.6,392.7 261.2,394.9 268.8,396.7 276.5,398.2 284.3,399.2 292.1,399.8 300.0,400.0 307.9,399.8 315.7,399.2 323.5,398.2 331.2,396.7 338.8,394.9 346.4,392.7 353.8,390.0 361.0,387.0 368.1,383.7 375.0,379.9 381.7,375.8 388.2,371.4 394.4,366.6 400.4,361.5 406.1,356.1 411.5,350.4 416.6,344.4 421.4,338.2 425.8,331.7 429.9,325.0 433.7,318.1 437.0,311.0 440.0,303.8 442.7,296.4 444.9,288.8 446.7,281.2 448.2,273.5 449.2,265.7 449.8,257.9 450.0,250.0 449.8,242.1 449.2,234.3 448.2,226.5 446.7,218.8 444.9,211.2 442.7,203.6 440.0,196.2 437.0,189.0 433.7,181.9 429.9,175.0\" fill=\"none\" stroke=\"#16202e\" stroke-width=\"1.6\"/><circle cx=\"375.0\" cy=\"120.1\" r=\"5\" fill=\"#16202e\"/><circle cx=\"300\" cy=\"250\" r=\"3\" fill=\"#16202e\"/><text x=\"306\" y=\"254\" fill=\"#16202e\" font-size=\"11\">C</text><line x1=\"375.0\" y1=\"120.1\" x2=\"300\" y2=\"250\" stroke=\"#e8eef3\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text x=\"308\" y=\"185\" fill=\"#16202e\" font-size=\"10\">ρ</text><line x1=\"375.0\" y1=\"120.1\" x2=\"305.7\" y2=\"80.1\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><path d=\"M305.7,80.1 L310.2,87.9 M305.7,80.1 L314.7,80.1\" stroke=\"#1f7a5c\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"309.7\" y=\"80.1\" fill=\"#1f7a5c\" font-size=\"13\" font-weight=\"700\">v</text><line x1=\"375.0\" y1=\"120.1\" x2=\"331.7\" y2=\"95.1\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><path d=\"M331.7,95.1 L336.2,102.9 M331.7,95.1 L340.7,95.1\" stroke=\"#c2820f\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"323.7\" y=\"87.1\" fill=\"#c2820f\" font-size=\"13\" font-weight=\"700\">aₜ</text><line x1=\"375.0\" y1=\"120.1\" x2=\"345.0\" y2=\"172.1\" stroke=\"#6d4aa0\" stroke-width=\"2.4\"/><path d=\"M345.0,172.1 L352.8,167.6 M345.0,172.1 L345.0,163.1\" stroke=\"#6d4aa0\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"349.0\" y=\"172.1\" fill=\"#6d4aa0\" font-size=\"13\" font-weight=\"700\">aₙ</text><text x=\"16\" y=\"290\" fill=\"#16202e\" font-size=\"11\">aₜ = dv/dt (speed change) · aₙ = v²/ρ (direction change, toward C)</text></svg><figcaption>On a curved path the velocity always points along the path (tangent). The acceleration has two parts: a tangential piece that changes the speed, and a normal piece — pointing toward the centre of curvature — that changes the direction.</figcaption></figure>\n\n<h3>§1 · Position, velocity, acceleration</h3>\n<p>Kinematics describes motion without yet asking what causes it. Along a straight line, <b>velocity</b> is the rate of change of position, \\( v=dx/dt \\), and <b>acceleration</b> the rate of change of velocity, \\( a=dv/dt \\). When the acceleration is constant these integrate to the three equations of motion that solve most rectilinear problems: \\( v=v_0+at \\), \\( x=x_0+v_0t+\\tfrac12at^2 \\), and \\( v^2=v_0^2+2a(x-x_0) \\). A car starting from rest at \\( a=3\\ \\text{m/s}^2 \\) for \\( 5 \\) s reaches \\( v=3(5)=15 \\) m/s having travelled \\( x=\\tfrac12(3)(5^2)=37.5 \\) m — and the third equation checks it, \\( v=\\sqrt{2(3)(37.5)}=15 \\) m/s. These are the workhorses; the rest of the lesson is what changes when the path bends.</p>\n\n<h3>§2 · Curved paths: normal and tangential</h3>\n<p>When a particle follows a curve, velocity stays tangent to the path but acceleration generally does not. The natural split is into a <b>tangential</b> component \\( a_t=dv/dt \\), which changes the <em>speed</em>, and a <b>normal</b> component \\( a_n=\\dfrac{v^2}{\\rho} \\), which changes the <em>direction</em> and always points toward the centre of curvature (here \\( \\rho \\) is the radius of curvature). A car cornering at \\( v=20 \\) m/s on a curve of radius \\( \\rho=100 \\) m has \\( a_n=400/100=4\\ \\text{m/s}^2 \\) inward even at constant speed; if it is also speeding up at \\( a_t=2\\ \\text{m/s}^2 \\), the total acceleration is \\( a=\\sqrt{a_t^2+a_n^2}=\\sqrt{20}\\approx4.47\\ \\text{m/s}^2 \\). Direction change is itself an acceleration — the fact that makes cornering and rotating machinery demand force.</p>\n<div class=\"keybox\"><span class=\"tag\">Key result — normal-tangential acceleration</span>\n<p>\\[ a_t=\\frac{dv}{dt}\\ \\text{(speed change)},\\qquad a_n=\\frac{v^2}{\\rho}\\ \\text{(direction change, toward centre)}. \\]</p></div>\n\n<h3>§3 · Projectile motion</h3>\n<p>A projectile is just two rectilinear motions at once: constant velocity horizontally, constant acceleration \\( -g \\) vertically. Launch speed \\( v_0 \\) at angle \\( \\theta \\) gives horizontal \\( v_0\\cos\\theta \\) and vertical \\( v_0\\sin\\theta \\). The range on level ground is \\( R=\\dfrac{v_0^2\\sin2\\theta}{g} \\) and the peak height \\( H=\\dfrac{v_0^2\\sin^2\\theta}{2g} \\). For \\( v_0=20 \\) m/s at \\( 30^\\circ \\): \\( R=\\dfrac{400\\sin60^\\circ}{9.81}\\approx35.3 \\) m and \\( H=\\dfrac{400(0.25)}{2(9.81)}\\approx5.10 \\) m. The two directions are solved separately and only share the clock — the single most useful idea in projectile problems.</p>\n\n<h3>§4 · The working method</h3>\n<p>The disciplined routine is: (1) choose a coordinate description that matches the motion — rectilinear for straight-line, normal-tangential for curved paths, polar for radial problems; (2) write velocity and acceleration in that description; (3) for constant acceleration reach for the three equations of motion, otherwise integrate \\( a\\to v\\to x \\). Keep speed change (tangential) and direction change (normal) mentally separate on any curved path, because forgetting the \\( v^2/\\rho \\) term is the commonest error in the subject — and it is exactly the term that, multiplied by mass in the next lesson, becomes the centripetal force a road, a bearing, or a turbine blade must supply.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Derivatives and integrals</b> — velocity and acceleration are rates.</li><li><b>Vectors</b> (from math) — motion in two dimensions.</li><li><b>Right-triangle trigonometry</b> — resolving components.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Velocity / acceleration</td><td>\\( v=\\dfrac{dx}{dt},\\ a=\\dfrac{dv}{dt} \\)</td><td>Definitions.</td></tr>\n<tr><td>Constant-a equations</td><td>\\( v=v_0+at,\\ x=x_0+v_0t+\\tfrac12at^2 \\)</td><td>Rectilinear, constant acceleration.</td></tr>\n<tr><td>Velocity–position</td><td>\\( v^2=v_0^2+2a(x-x_0) \\)</td><td>When time is not wanted.</td></tr>\n<tr><td>Tangential accel</td><td>\\( a_t=dv/dt \\)</td><td>Change of speed.</td></tr>\n<tr><td>Normal accel</td><td>\\( a_n=v^2/\\rho \\)</td><td>Change of direction (toward centre).</td></tr>\n<tr><td>Projectile range</td><td>\\( R=\\dfrac{v_0^2\\sin2\\theta}{g} \\)</td><td>Level-ground range.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Rectilinear from rest</b></p><p><b>Problem.</b> A car starts from rest and accelerates at \\( 3\\ \\text{m/s}^2 \\) for \\( 5 \\) s. Find its final speed and the distance travelled.</p>",
+    "solution": "<p><b>Solution.</b> \\( v=v_0+at=0+3(5)=15 \\) m/s. \\( x=v_0t+\\tfrac12at^2=\\tfrac12(3)(5^2)=37.5 \\) m. Check with \\( v^2=2ax=2(3)(37.5)=225 \\Rightarrow v=15 \\) m/s ✓.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Normal and tangential acceleration</b></p><p><b>Problem.</b> A car rounds a curve of radius \\( \\rho=100 \\) m at \\( v=20 \\) m/s while speeding up at \\( a_t=2\\ \\text{m/s}^2 \\). Find the normal acceleration and the total acceleration.</p>",
+    "solution": "<p><b>Solution.</b> \\( a_n=\\dfrac{v^2}{\\rho}=\\dfrac{400}{100}=4\\ \\text{m/s}^2 \\) (toward the centre). The total is the vector sum of perpendicular parts: \\( a=\\sqrt{a_t^2+a_n^2}=\\sqrt{2^2+4^2}=\\sqrt{20}\\approx4.47\\ \\text{m/s}^2 \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Projectile</b></p><p><b>Problem.</b> A ball is launched at \\( v_0=20 \\) m/s at \\( 30^\\circ \\) above the horizontal. Find the range and the maximum height (\\( g=9.81\\ \\text{m/s}^2 \\)).</p>",
+    "solution": "<p><b>Solution.</b> Range \\( R=\\dfrac{v_0^2\\sin2\\theta}{g}=\\dfrac{400\\sin60^\\circ}{9.81}\\approx35.3 \\) m. Max height \\( H=\\dfrac{v_0^2\\sin^2\\theta}{2g}=\\dfrac{400(0.25)}{19.62}\\approx5.10 \\) m. Horizontal and vertical motions are solved separately, sharing only the time.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For constant acceleration, the velocity after time \\(t\\) is:</p>",
+    "choices": [
+     "\\( v_0+at \\)",
+     "\\( v_0 t \\)",
+     "\\( \\tfrac12 at^2 \\)",
+     "\\( v_0+\\tfrac12 at \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( v=v_0+at \\) — the integral of constant acceleration.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The normal (centripetal) acceleration on a curved path is:</p>",
+    "choices": [
+     "\\( v^2/\\rho \\)",
+     "\\( dv/dt \\)",
+     "\\( v\\rho \\)",
+     "\\( \\rho/v^2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( a_n=v^2/\\rho \\), directed toward the centre of curvature — it changes direction, not speed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A car from rest at \\( 3\\ \\text{m/s}^2 \\) reaches, after 5 s, a speed of:</p>",
+    "choices": [
+     "15 m/s",
+     "7.5 m/s",
+     "30 m/s",
+     "45 m/s"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( v=3(5)=15 \\) m/s.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The distance in the previous case is:</p>",
+    "choices": [
+     "37.5 m",
+     "75 m",
+     "15 m",
+     "18.75 m"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( x=\\tfrac12 at^2=\\tfrac12(3)(25)=37.5 \\) m.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>At \\( v=20 \\) m/s on a curve of radius \\(100\\) m, the normal acceleration is:</p>",
+    "choices": [
+     "4 m/s²",
+     "2 m/s²",
+     "40 m/s²",
+     "0.2 m/s²"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( a_n=v^2/\\rho=400/100=4\\ \\text{m/s}^2 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The tangential acceleration \\( a_t \\) represents:</p>",
+    "choices": [
+     "the change of speed",
+     "the change of direction",
+     "the radius of curvature",
+     "the velocity itself"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( a_t=dv/dt \\) — the rate at which speed changes along the path.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In projectile motion, the horizontal and vertical motions:</p>",
+    "choices": [
+     "are independent, sharing only time",
+     "are the same",
+     "cannot be separated",
+     "both have acceleration \\(g\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Horizontal is constant-velocity, vertical is constant-acceleration \\(-g\\); they share only the clock.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A projectile launched at \\( 20 \\) m/s and \\( 30^\\circ \\) has a range of about:</p>",
+    "choices": [
+     "35 m",
+     "71 m",
+     "20 m",
+     "5 m"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( R=v_0^2\\sin2\\theta/g=400\\sin60^\\circ/9.81\\approx35.3 \\) m.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A road engineer setting the design speed of a highway curve is working the\nnormal-acceleration equation directly. The lateral acceleration a driver feels is\n\\( a_n=v^2/\\rho \\), and comfort and safety limits cap it — which fixes the minimum\nradius \\( \\rho \\) for a given speed, or the safe speed for a given radius. Superelevation\n(banking the road) and the friction budget of the next lesson both exist to supply\nexactly this \\( v^2/\\rho \\) demand; underestimate it and vehicles slide off the bend.</p>\n<p>The same term sizes rotating machinery on the plant floor. A point on a spinning\nimpeller or grinding wheel at radius \\(r\\) undergoes centripetal acceleration\n\\( a_n=v^2/r=\\omega^2 r \\), and multiplied by mass this becomes the outward force the\nmaterial and fasteners must hold. It is why maximum safe speeds are stamped on grinding\nwheels and why overspeed on a turbine is catastrophic: the direction-changing\nacceleration, not the speed itself, is what tears components apart.</p>\n"
+ },
+ "2": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Free-body diagram of a block on a 30-degree incline: weight down, normal force perpendicular to the surface, friction along the surface\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"24\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Free-body diagram: block on a 30° incline</text><polygon points=\"60,250 480,250 60,8\" fill=\"#eef2f5\" stroke=\"#16202e\" stroke-width=\"1.5\"/><polygon points=\"234.3,108.1 263.7,125.1 246.7,154.6 217.3,137.6\" fill=\"#fff\" stroke=\"#16202e\" stroke-width=\"1.5\"/><line x1=\"240.5\" y1=\"131.4\" x2=\"240.5\" y2=\"201.4\" stroke=\"#6d4aa0\" stroke-width=\"2.4\"/><path d=\"M240.5,201.4 L245.0,193.6 M240.5,201.4 L236.0,193.6\" stroke=\"#6d4aa0\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"246.5\" y=\"201.4\" fill=\"#6d4aa0\" font-size=\"13\" font-weight=\"700\">mg</text><line x1=\"240.5\" y1=\"131.4\" x2=\"210.5\" y2=\"183.3\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><path d=\"M210.5,183.3 L218.3,178.8 M210.5,183.3 L210.5,174.3\" stroke=\"#1f7a5c\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"196.5\" y=\"183.3\" fill=\"#1f7a5c\" font-size=\"13\" font-weight=\"700\">N</text><line x1=\"240.5\" y1=\"131.4\" x2=\"192.9\" y2=\"103.9\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><path d=\"M192.9,103.9 L197.4,111.6 M192.9,103.9 L201.9,103.9\" stroke=\"#c2820f\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"186.9\" y=\"99.9\" fill=\"#c2820f\" font-size=\"13\" font-weight=\"700\">f</text><text x=\"410\" y=\"244\" fill=\"#16202e\" font-size=\"12\">θ = 30°</text><text x=\"16\" y=\"290\" fill=\"#16202e\" font-size=\"11\">N = mg·cosθ · driving force = mg·sinθ · friction f ≤ μN</text></svg><figcaption>Newton's second law is applied through a free-body diagram: every force on the block is drawn, resolved along and across the surface, and summed. On an incline the weight splits into a driving component mg·sinθ and a pressing component mg·cosθ.</figcaption></figure>\n\n<h3>§1 · F = ma, applied through a free-body diagram</h3>\n<p>Newton's second law, \\( \\sum\\mathbf{F}=m\\mathbf{a} \\), connects the forces on a particle to its acceleration. The whole discipline of using it is the <b>free-body diagram</b> (FBD): isolate the body, draw every force acting on it — weight, normal contact, friction, applied loads, tension — and nothing else, then sum components along convenient axes. On a curved or inclined path the axes are chosen to match the motion, which is why the normal–tangential split of the last lesson matters here. Get the FBD right and the algebra is routine; get it wrong — a missing or invented force — and no amount of algebra recovers. The FBD is the single most important habit in all of mechanics.</p>\n\n<h3>§2 · Friction and the incline</h3>\n<p>On a plane inclined at \\( \\theta \\), the weight \\( mg \\) resolves into a component \\( mg\\sin\\theta \\) driving the block down the slope and a component \\( mg\\cos\\theta \\) pressing it into the surface. The surface pushes back with the <b>normal force</b> \\( N=mg\\cos\\theta \\), and dry friction opposes sliding up to a limit \\( f\\le\\mu N \\). For a \\( 10 \\) kg block on a \\( 30^\\circ \\) incline: \\( N=10(9.81)\\cos30^\\circ\\approx84.96 \\) N, driving force \\( mg\\sin30^\\circ=49.05 \\) N, and maximum friction \\( \\mu N=0.2(84.96)\\approx16.99 \\) N. Since the drive exceeds friction, the block slides, and Newton's law along the slope gives \\( a=g(\\sin\\theta-\\mu\\cos\\theta)=9.81(0.5-0.173)\\approx3.21\\ \\text{m/s}^2 \\).</p>\n<div class=\"keybox\"><span class=\"tag\">Key relations — incline &amp; friction</span>\n<p>\\( N=mg\\cos\\theta \\); driving force \\( =mg\\sin\\theta \\); friction \\( f\\le\\mu N \\). Sliding: \\( a=g(\\sin\\theta-\\mu\\cos\\theta) \\).</p></div>\n\n<h3>§3 · Curvilinear motion: the centripetal force</h3>\n<p>The normal acceleration \\( a_n=v^2/\\rho \\) of the last lesson, multiplied by mass, is a real force requirement: turning a particle of mass \\(m\\) on a curve of radius \\(r\\) demands a <b>centripetal force</b> \\( F=\\dfrac{mv^2}{r} \\) directed toward the centre. On a flat road that force can only come from friction, \\( \\mu mg\\ge\\dfrac{mv^2}{r} \\), which caps the cornering speed at \\( v_{\\max}=\\sqrt{\\mu g r} \\). For \\( \\mu=0.7,\\ r=50 \\) m: \\( v_{\\max}=\\sqrt{0.7(9.81)(50)}\\approx18.5 \\) m/s (about \\(67\\) km/h). Exceed it and the friction budget is spent, the required centripetal force cannot be supplied, and the vehicle slides straight on — Newton's law making a hard physical prediction.</p>\n\n<h3>§4 · The working method</h3>\n<p>For any kinetics problem: (1) draw the free-body diagram — every real force, no more; (2) choose axes that match the motion (along/across a slope, normal/tangential on a curve); (3) write \\( \\sum F=ma \\) in each direction and solve. Two checks guard the work: the normal direction usually has no acceleration (so \\( \\sum F=0 \\) there, fixing \\(N\\)), and units must close to newtons. This routine handles the block, the cornering car, the elevator, and the whole of the following energy and momentum lessons, which are Newton's law integrated over distance and over time respectively.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Particle kinematics</b> (Lesson 1) — \\(a\\), and \\( a_n=v^2/\\rho \\).</li><li><b>Vector components</b> — resolving forces along axes.</li><li><b>Weight</b> \\( W=mg \\) — the ever-present force.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Newton's 2nd law</td><td>\\( \\sum\\mathbf{F}=m\\mathbf{a} \\)</td><td>Forces ↔ acceleration.</td></tr>\n<tr><td>Weight</td><td>\\( W=mg \\)</td><td>Gravity force.</td></tr>\n<tr><td>Normal (incline)</td><td>\\( N=mg\\cos\\theta \\)</td><td>Contact force on a slope.</td></tr>\n<tr><td>Dry friction</td><td>\\( f\\le\\mu N \\)</td><td>Opposes/limits sliding.</td></tr>\n<tr><td>Centripetal force</td><td>\\( F=mv^2/r \\)</td><td>Force to turn on a curve.</td></tr>\n<tr><td>Max cornering speed</td><td>\\( v_{\\max}=\\sqrt{\\mu g r} \\)</td><td>Friction-limited on a flat curve.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Block on an incline</b></p><p><b>Problem.</b> A \\(10\\) kg block sits on a \\(30^\\circ\\) incline with \\( \\mu=0.2 \\). Find its acceleration down the slope (\\( g=9.81 \\)).</p>",
+    "solution": "<p><b>Solution.</b> Normal: \\( N=mg\\cos\\theta=84.96 \\) N. Along the slope: driving \\( mg\\sin\\theta=49.05 \\) N, friction \\( \\mu N=16.99 \\) N opposing. Newton's law: \\( ma=mg\\sin\\theta-\\mu N \\), so \\( a=g(\\sin\\theta-\\mu\\cos\\theta)=9.81(0.5-0.173)\\approx3.21\\ \\text{m/s}^2 \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Cornering speed</b></p><p><b>Problem.</b> A car corners on a flat road of radius \\(50\\) m with tyre friction \\( \\mu=0.7 \\). Find the maximum speed before it slides.</p>",
+    "solution": "<p><b>Solution.</b> Friction must supply the centripetal force: \\( \\mu mg\\ge mv^2/r \\). The mass cancels: \\( v_{\\max}=\\sqrt{\\mu g r}=\\sqrt{0.7(9.81)(50)}=\\sqrt{343.4}\\approx18.5 \\) m/s (\\(\\approx67\\) km/h).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Centripetal force</b></p><p><b>Problem.</b> Find the centripetal force on a \\(1200\\) kg car cornering at \\(18.5\\) m/s on a \\(50\\) m radius, and confirm it matches the available friction.</p>",
+    "solution": "<p><b>Solution.</b> \\( F=\\dfrac{mv^2}{r}=\\dfrac{1200(18.5)^2}{50}\\approx8240 \\) N. Available friction \\( \\mu mg=0.7(1200)(9.81)\\approx8240 \\) N — they match, confirming the car is exactly at its limit.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Newton's second law states:</p>",
+    "choices": [
+     "\\( \\sum\\mathbf{F}=m\\mathbf{a} \\)",
+     "\\( \\sum\\mathbf{F}=0 \\) always",
+     "\\( \\mathbf{F}=mv \\)",
+     "\\( \\mathbf{a}=m\\mathbf{F} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The net force equals mass times acceleration: \\( \\sum\\mathbf{F}=m\\mathbf{a} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The maximum dry-friction force is:</p>",
+    "choices": [
+     "\\( \\mu N \\)",
+     "\\( \\mu mg \\) always",
+     "\\( N/\\mu \\)",
+     "\\( \\mu/N \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( f\\le\\mu N \\) — the limit is \\( \\mu \\) times the normal force (which is \\(mg\\) only on a level surface).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>On a \\(30^\\circ\\) incline, the component of weight along the slope is:</p>",
+    "choices": [
+     "\\( mg\\sin\\theta \\)",
+     "\\( mg\\cos\\theta \\)",
+     "\\( mg\\tan\\theta \\)",
+     "\\( mg \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The driving component is \\( mg\\sin\\theta \\); the pressing (normal) component is \\( mg\\cos\\theta \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The force needed to turn a mass on a curve of radius \\(r\\) is:</p>",
+    "choices": [
+     "\\( mv^2/r \\) toward the centre",
+     "\\( mv^2/r \\) outward",
+     "\\( mvr \\)",
+     "\\( mg \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The centripetal force \\( mv^2/r \\) points toward the centre — the outward \"centrifugal\" force is a reaction felt in a rotating frame, not the real applied force.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The max cornering speed on a flat curve is:</p>",
+    "choices": [
+     "\\( \\sqrt{\\mu g r} \\)",
+     "\\( \\mu g r \\)",
+     "\\( \\sqrt{g r} \\)",
+     "\\( \\mu\\sqrt{g r} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Setting \\( \\mu mg=mv^2/r \\) and cancelling \\(m\\) gives \\( v_{\\max}=\\sqrt{\\mu g r} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In the normal (perpendicular-to-motion) direction on a slope, the acceleration is usually:</p>",
+    "choices": [
+     "zero, so \\( \\sum F=0 \\) fixes \\(N\\)",
+     "equal to \\(g\\)",
+     "equal to \\(a\\) along the slope",
+     "undefined"
+    ],
+    "answer": 0,
+    "solution": "<p>The block does not leave the surface, so there is no normal acceleration; \\( \\sum F=0 \\) perpendicular gives \\( N=mg\\cos\\theta \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An elevator accelerating upward makes the apparent weight of a passenger:</p>",
+    "choices": [
+     "increase to \\( m(g+a) \\)",
+     "decrease to \\( m(g-a) \\)",
+     "stay \\( mg \\)",
+     "become zero"
+    ],
+    "answer": 0,
+    "solution": "<p>The floor must supply \\( N=m(g+a) \\) to accelerate the passenger up — the felt weight rises.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The maximum cornering speed \\( \\sqrt{\\mu g r} \\) is independent of:</p>",
+    "choices": [
+     "the vehicle mass",
+     "the friction \\( \\mu \\)",
+     "the radius \\(r\\)",
+     "gravity \\(g\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The mass cancels in \\( \\mu mg=mv^2/r \\), so the limit depends only on \\( \\mu, g, r \\) — not on how heavy the vehicle is.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A haul-road or ramp designer at a quarry or plant lives on the incline equations.\nWhether a loaded truck can climb a grade, or will slide on a wet slope, is decided by\n\\( \\tan\\theta \\) against the available friction \\( \\mu \\): once \\( \\sin\\theta \\) exceeds\n\\( \\mu\\cos\\theta \\) the vehicle accelerates downhill uncontrollably. The same balance sets\nhow much a conveyor can incline before material slips back, and how steep a stored pile\ncan stand — the angle of repose is just the slope at which \\( \\tan\\theta=\\mu \\).</p>\n<p>The cornering limit \\( v_{\\max}=\\sqrt{\\mu gr} \\) governs every guided vehicle on site,\nfrom forklifts to AGVs to rail curves. Because the mass cancels, the safe speed depends\nonly on the radius and the friction, which is why speed limits tighten on tight bends and\nwhy oil or dust on the floor — cutting \\( \\mu \\) — is a genuine hazard: it lowers\n\\( v_{\\max} \\) without changing anything the driver can see.</p>\n"
+ },
+ "3": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 290\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Energy bar chart: at the top all energy is potential; at the bottom all of it has become kinetic; total is conserved\"><rect width=\"560\" height=\"290\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"24\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Energy is conserved: PE at the top becomes KE at the bottom</text><line x1=\"30\" y1=\"240\" x2=\"530\" y2=\"240\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"90\" y=\"278\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\" font-weight=\"700\">At the top</text><rect x=\"60\" y=\"90\" width=\"46\" height=\"150\" fill=\"#c2820f\" fill-opacity=\"0.8\"/><text x=\"83\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">PE</text><text x=\"83\" y=\"84\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">mgh</text><rect x=\"115\" y=\"236\" width=\"46\" height=\"4\" fill=\"#1f7a5c\" fill-opacity=\"0.8\"/><text x=\"138\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">KE</text><text x=\"138\" y=\"230\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">0</text><text x=\"270\" y=\"278\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\" font-weight=\"700\">Halfway</text><rect x=\"240\" y=\"165\" width=\"46\" height=\"75\" fill=\"#c2820f\" fill-opacity=\"0.8\"/><text x=\"263\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">PE</text><text x=\"263\" y=\"159\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\"></text><rect x=\"295\" y=\"165\" width=\"46\" height=\"75\" fill=\"#1f7a5c\" fill-opacity=\"0.8\"/><text x=\"318\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">KE</text><text x=\"318\" y=\"159\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\"></text><text x=\"450\" y=\"278\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\" font-weight=\"700\">At the bottom</text><rect x=\"420\" y=\"236\" width=\"46\" height=\"4\" fill=\"#c2820f\" fill-opacity=\"0.8\"/><text x=\"443\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">PE</text><text x=\"443\" y=\"230\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">0</text><rect x=\"475\" y=\"90\" width=\"46\" height=\"150\" fill=\"#1f7a5c\" fill-opacity=\"0.8\"/><text x=\"498\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">KE</text><text x=\"498\" y=\"84\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">½mv²</text></svg><figcaption>Work and energy turn Newton's law into an accounting statement. As a body descends, potential energy is spent and kinetic energy is bought at the same rate; the total is conserved when no friction leaks it away.</figcaption></figure>\n\n<h3>§1 · Work: force acting through distance</h3>\n<p>The <b>work</b> done by a constant force is \\( W=Fd\\cos\\theta \\) — the force times the distance times the cosine of the angle between them, so only the component of force along the motion counts. A force perpendicular to the path (a normal force, the tension in a turning string) does no work at all. This is the dot product of the vector lessons, integrated along a path. Work is measured in joules, and it is the currency in which the whole energy method is denominated: instead of tracking forces and accelerations moment by moment, we track how much work is done and where it goes.</p>\n\n<h3>§2 · Kinetic energy and the work–energy theorem</h3>\n<p>A moving particle carries <b>kinetic energy</b> \\( KE=\\tfrac12mv^2 \\), and the <b>work–energy theorem</b> states that the net work done on it equals its change in kinetic energy: \\( W_{\\text{net}}=\\Delta KE \\). This is Newton's law integrated over distance, and it is an accounting identity — energy in equals energy stored. A \\( 100 \\) N force pushing a \\( 20 \\) kg block from rest over \\( 10 \\) m (frictionless) does \\( W=1000 \\) J, so \\( \\tfrac12(20)v^2=1000 \\Rightarrow v=10 \\) m/s. The power of the method is that it never asks about the acceleration or the time — only the endpoints — which is exactly what makes it the fast route through problems where forces vary along the way.</p>\n<div class=\"keybox\"><span class=\"tag\">Key identity — work–energy</span>\n<p>\\[ W_{\\text{net}}=\\Delta KE=\\tfrac12mv_2^2-\\tfrac12mv_1^2. \\]</p></div>\n\n<h3>§3 · Potential energy and conservation</h3>\n<p>Some forces store the work done against them as <b>potential energy</b>, recoverable later: gravity stores \\( PE=mgh \\), a spring stores \\( \\tfrac12kx^2 \\). When only such conservative forces act, the sum \\( KE+PE \\) is constant — <b>conservation of energy</b>. A mass dropped from height \\( h \\) converts all its \\( mgh \\) into \\( \\tfrac12mv^2 \\), giving \\( v=\\sqrt{2gh} \\); from \\( h=5 \\) m, \\( v=\\sqrt{2(9.81)(5)}\\approx9.9 \\) m/s, independent of the mass. A spring of stiffness \\( k=2000 \\) N/m compressed \\( x=0.1 \\) m stores \\( \\tfrac12(2000)(0.1)^2=10 \\) J, enough to launch a \\( 0.5 \\) kg mass to \\( v=\\sqrt{2(10)/0.5}\\approx6.3 \\) m/s. Friction, by contrast, is non-conservative — it drains mechanical energy into heat, and its work is where the \"lost\" energy goes.</p>\n\n<h3>§4 · Power and the working method</h3>\n<p><b>Power</b> is the rate of doing work, \\( P=\\dfrac{dW}{dt}=Fv \\) — the number that sizes motors and engines. A \\( 500 \\) N pull at \\( 2 \\) m/s delivers \\( 1000 \\) W. The energy method's routine is: (1) identify the states (start and end) and the energies present at each — kinetic, gravitational, spring; (2) account for any work added by applied forces or drained by friction; (3) set energy-in equal to energy-out and solve. Choose energy over \\( F=ma \\) whenever the question links speed to position and the time in between does not matter — falling bodies, spring launches, roller-coaster speeds — because it collapses a differential equation into one algebraic balance.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Newton's second law</b> (Lesson 2) — energy is it, integrated over distance.</li><li><b>The dot product</b> — work counts the along-path force component.</li><li><b>Springs</b> \\( F=kx \\) — the source of elastic energy.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Work</td><td>\\( W=Fd\\cos\\theta \\)</td><td>Force through distance.</td></tr>\n<tr><td>Kinetic energy</td><td>\\( KE=\\tfrac12mv^2 \\)</td><td>Energy of motion.</td></tr>\n<tr><td>Work–energy theorem</td><td>\\( W_{\\text{net}}=\\Delta KE \\)</td><td>Link work to speed change.</td></tr>\n<tr><td>Gravitational PE</td><td>\\( PE=mgh \\)</td><td>Height energy.</td></tr>\n<tr><td>Spring PE</td><td>\\( \\tfrac12kx^2 \\)</td><td>Elastic energy.</td></tr>\n<tr><td>Conservation</td><td>\\( KE+PE=\\text{const} \\)</td><td>No friction; \\( v=\\sqrt{2gh} \\).</td></tr>\n<tr><td>Power</td><td>\\( P=Fv \\)</td><td>Rate of work; motor sizing.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Work–energy theorem</b></p><p><b>Problem.</b> A \\(100\\) N force pushes a \\(20\\) kg block from rest over \\(10\\) m on a frictionless floor. Find the work done and the final speed.</p>",
+    "solution": "<p><b>Solution.</b> Work \\( W=Fd=100(10)=1000 \\) J. By the work–energy theorem \\( W=\\tfrac12mv^2 \\), so \\( \\tfrac12(20)v^2=1000\\Rightarrow v^2=100\\Rightarrow v=10 \\) m/s.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Falling body</b></p><p><b>Problem.</b> A mass is released from rest and falls \\(h=5\\) m. Find its speed at the bottom (\\( g=9.81 \\)).</p>",
+    "solution": "<p><b>Solution.</b> Conservation: \\( mgh=\\tfrac12mv^2 \\), so \\( v=\\sqrt{2gh}=\\sqrt{2(9.81)(5)}=\\sqrt{98.1}\\approx9.9 \\) m/s — independent of the mass.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Spring launch</b></p><p><b>Problem.</b> A spring of stiffness \\(k=2000\\) N/m is compressed \\(x=0.1\\) m. Find the stored energy and the launch speed of a \\(0.5\\) kg mass.</p>",
+    "solution": "<p><b>Solution.</b> Stored energy \\( \\tfrac12kx^2=\\tfrac12(2000)(0.1)^2=10 \\) J. All of it becomes kinetic: \\( \\tfrac12(0.5)v^2=10\\Rightarrow v^2=40\\Rightarrow v\\approx6.3 \\) m/s.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The work done by a constant force is:</p>",
+    "choices": [
+     "\\( Fd\\cos\\theta \\)",
+     "\\( Fd\\sin\\theta \\)",
+     "\\( Fd \\) always",
+     "\\( F/d \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Only the component of force along the motion does work: \\( W=Fd\\cos\\theta \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Kinetic energy is:</p>",
+    "choices": [
+     "\\( \\tfrac12mv^2 \\)",
+     "\\( mv \\)",
+     "\\( mgh \\)",
+     "\\( \\tfrac12kv^2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( KE=\\tfrac12mv^2 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The work–energy theorem states \\( W_{\\text{net}}= \\):</p>",
+    "choices": [
+     "\\( \\Delta KE \\)",
+     "\\( \\Delta PE \\)",
+     "\\( 0 \\)",
+     "\\( Fv \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Net work equals the change in kinetic energy.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A mass falling freely through height \\(h\\) reaches speed:</p>",
+    "choices": [
+     "\\( \\sqrt{2gh} \\)",
+     "\\( 2gh \\)",
+     "\\( \\sqrt{gh} \\)",
+     "\\( gh \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( mgh=\\tfrac12mv^2\\Rightarrow v=\\sqrt{2gh} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A force perpendicular to the motion does work equal to:</p>",
+    "choices": [
+     "zero",
+     "\\( Fd \\)",
+     "\\( \\tfrac12Fd \\)",
+     "\\( Fd\\cos\\theta \\) with \\( \\theta=0 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\cos90^\\circ=0 \\), so a perpendicular force (e.g. a normal force) does no work.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The energy stored in a spring compressed \\(x\\) is:</p>",
+    "choices": [
+     "\\( \\tfrac12kx^2 \\)",
+     "\\( kx \\)",
+     "\\( \\tfrac12kx \\)",
+     "\\( kx^2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Spring potential energy is \\( \\tfrac12kx^2 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Power delivered by a force \\(F\\) at speed \\(v\\) is:</p>",
+    "choices": [
+     "\\( Fv \\)",
+     "\\( F/v \\)",
+     "\\( \\tfrac12Fv^2 \\)",
+     "\\( Fv^2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Power is the rate of doing work: \\( P=Fv \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Friction is a non-conservative force because it:</p>",
+    "choices": [
+     "drains mechanical energy into heat",
+     "stores energy for later",
+     "does no work",
+     "increases kinetic energy"
+    ],
+    "answer": 0,
+    "solution": "<p>Friction's work is lost from the mechanical balance as heat — it cannot be recovered, unlike spring or gravitational energy.</p>"
+   }
+  ],
+  "kuwait": "\n<p>An engineer sizing a hoist or conveyor motor works straight from power, \\( P=Fv \\).\nLifting a load at a steady rate needs at least the power to raise its weight,\n\\( P=mg\\,v_{\\text{lift}} \\), plus friction losses; picking a motor below that figure\nmeans it stalls under load. The energy view also sizes braking: stopping a moving mass\nmeans absorbing its kinetic energy \\( \\tfrac12mv^2 \\), which is why a brake or a\nbuffer at the end of a travel is rated in joules, and why doubling the speed\nquadruples the braking energy a crane or lift must dissipate.</p>\n<p>Conservation of energy is the quick estimator on the plant floor. The speed a\ndropped tool or a falling load reaches is \\( v=\\sqrt{2gh} \\) regardless of its mass —\nwhich is why fall-arrest and drop-zone calculations depend only on height, and why a\nmodest drop can still produce a dangerous impact. Reading a hazard as an energy\n\\( mgh \\) to be caught, rather than a force to be resisted, is how guarding and\ncontainment are actually specified.</p>\n"
+ },
+ "4": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 270\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A collision before and after: total momentum is the same before and after; kinetic energy may be lost in the impact\"><rect width=\"560\" height=\"270\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"24\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Collision: momentum conserved before &amp; after; KE may drop</text><text x=\"120\" y=\"60\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Before</text><line x1=\"30\" y1=\"120\" x2=\"240\" y2=\"120\" stroke=\"#e8eef3\" stroke-width=\"1.2\"/><rect x=\"50\" y=\"86\" width=\"48\" height=\"34\" rx=\"4\" fill=\"#fff\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><text x=\"74.0\" y=\"108\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"13\" font-weight=\"700\">2 kg</text><line x1=\"102\" y1=\"80\" x2=\"142\" y2=\"80\" stroke=\"#1f7a5c\" stroke-width=\"2.2\"/><path d=\"M142,80 l-7,-4 M142,80 l-7,4\" stroke=\"#1f7a5c\" stroke-width=\"2.2\" fill=\"none\"/><text x=\"122.0\" y=\"72\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"11\">3 m/s</text><rect x=\"175\" y=\"86\" width=\"38\" height=\"34\" rx=\"4\" fill=\"#fff\" stroke=\"#c2820f\" stroke-width=\"2\"/><text x=\"194.0\" y=\"108\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"13\" font-weight=\"700\">1 kg</text><text x=\"194\" y=\"80\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"11\">at rest</text><text x=\"410\" y=\"60\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">After (stick)</text><line x1=\"320\" y1=\"120\" x2=\"530\" y2=\"120\" stroke=\"#e8eef3\" stroke-width=\"1.2\"/><rect x=\"360\" y=\"86\" width=\"48\" height=\"34\" rx=\"4\" fill=\"#fff\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><text x=\"384.0\" y=\"108\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"13\" font-weight=\"700\">2</text><rect x=\"408\" y=\"86\" width=\"38\" height=\"34\" rx=\"4\" fill=\"#fff\" stroke=\"#c2820f\" stroke-width=\"2\"/><text x=\"427.0\" y=\"108\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"13\" font-weight=\"700\">1</text><line x1=\"450\" y1=\"80\" x2=\"478\" y2=\"80\" stroke=\"#16202e\" stroke-width=\"2.2\"/><path d=\"M478,80 l-7,-4 M478,80 l-7,4\" stroke=\"#16202e\" stroke-width=\"2.2\" fill=\"none\"/><text x=\"464.0\" y=\"72\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">2 m/s</text><line x1=\"285\" y1=\"50\" x2=\"285\" y2=\"180\" stroke=\"#e8eef3\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"16\" y=\"215\" fill=\"#16202e\" font-size=\"11\">Momentum: 2·3 = (2+1)·2 = 6 kg·m/s ✓  ·  KE: 9 J → 6 J (3 J lost to the impact)</text><text x=\"16\" y=\"234\" fill=\"#16202e\" font-size=\"11\">Restitution e = (separation speed)/(approach speed): e=1 elastic, e=0 perfectly plastic</text></svg><figcaption>Impulse–momentum is Newton's law integrated over time. In any collision the total momentum before equals the total after; kinetic energy, by contrast, is generally lost — turned into heat, sound, and deformation.</figcaption></figure>\n\n<h3>§1 · Impulse changes momentum</h3>\n<p>Integrate Newton's law over time instead of distance and you get the <b>impulse–momentum</b> principle: the <b>impulse</b> \\( J=\\int F\\,dt \\) of a force equals the change in <b>momentum</b> \\( p=mv \\) it produces, \\( J=\\Delta p=m\\Delta v \\). For a constant force this is simply \\( J=F\\,\\Delta t \\). A \\( 200 \\) N force acting for \\( 0.1 \\) s delivers \\( J=20 \\) N·s, which brings a \\( 2 \\) kg mass from rest to \\( \\Delta v=J/m=10 \\) m/s. This is the natural tool for short, hard interactions — a hammer blow, a kick, a coupling impact — where the force is large, brief, and hard to measure, but its time-integral is exactly what changes the motion.</p>\n\n<h3>§2 · Conservation of momentum</h3>\n<p>When no <em>external</em> impulse acts on a system, its total momentum is conserved — the internal forces between colliding bodies are equal and opposite, so they cancel in the sum. For two bodies, \\( m_1v_1+m_2v_2=m_1v_1'+m_2v_2' \\) through the collision. This holds whether the collision is bouncy or sticky, which is what makes it so powerful: it constrains the after-state without any knowledge of the messy forces during contact. It is the principle behind recoil, rocket thrust, and every impact calculation in the lesson.</p>\n<div class=\"keybox\"><span class=\"tag\">Key principles — impulse &amp; momentum</span>\n<p>\\[ J=\\int F\\,dt=\\Delta p=m\\Delta v;\\qquad \\sum m_iv_i=\\sum m_iv_i'\\ \\text{(no external impulse)}. \\]</p></div>\n\n<h3>§3 · Impact and the coefficient of restitution</h3>\n<p>Momentum conservation gives one equation, but a collision of two bodies has two unknown final velocities, so a second relation is needed: the <b>coefficient of restitution</b> \\( e=\\dfrac{\\text{separation speed}}{\\text{approach speed}}=\\dfrac{v_2'-v_1'}{v_1-v_2} \\), a number between \\(0\\) and \\(1\\) set by the materials. A <b>perfectly elastic</b> impact has \\( e=1 \\) and conserves kinetic energy; a <b>perfectly plastic</b> one has \\( e=0 \\) and the bodies stick. Take a \\( 2 \\) kg body at \\( 3 \\) m/s striking a stationary \\( 1 \\) kg body and sticking (\\( e=0 \\)): momentum gives \\( v'=\\dfrac{2(3)}{3}=2 \\) m/s. The kinetic energy falls from \\( \\tfrac12(2)(3^2)=9 \\) J to \\( \\tfrac12(3)(2^2)=6 \\) J — \\( 3 \\) J lost to deformation and heat. Energy is <em>not</em> conserved in impact unless \\( e=1 \\).</p>\n\n<h3>§4 · The working method</h3>\n<p>For any impact: (1) draw the before and after states with velocities and signs on one axis; (2) write conservation of momentum \\( \\sum m_iv_i=\\sum m_iv_i' \\); (3) add the restitution relation \\( e=(v_2'-v_1')/(v_1-v_2) \\) as the second equation, and solve the pair. For a stick (\\(e=0\\)) the two bodies share a common final velocity and one equation suffices. Never assume kinetic energy is conserved — check \\(e\\) first, because treating a real, lossy impact as elastic is the classic error. Impulse–momentum over time and work–energy over distance are the two integrals of Newton's law, and together they answer almost every particle problem without solving a differential equation.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Newton's second law</b> (Lesson 2) — impulse is it, integrated over time.</li><li><b>Kinetic energy</b> (Lesson 3) — to see what impact loses.</li><li><b>Signed one-dimensional velocities</b> — direction bookkeeping.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Momentum</td><td>\\( p=mv \\)</td><td>Quantity of motion.</td></tr>\n<tr><td>Impulse</td><td>\\( J=\\int F\\,dt=F\\Delta t \\)</td><td>Effect of a force over time.</td></tr>\n<tr><td>Impulse–momentum</td><td>\\( J=\\Delta p \\)</td><td>Short, hard interactions.</td></tr>\n<tr><td>Conservation</td><td>\\( \\sum m_iv_i=\\sum m_iv_i' \\)</td><td>No external impulse.</td></tr>\n<tr><td>Restitution</td><td>\\( e=\\dfrac{v_2'-v_1'}{v_1-v_2} \\)</td><td>Second impact equation.</td></tr>\n<tr><td>Elastic / plastic</td><td>\\( e=1 \\) / \\( e=0 \\)</td><td>KE conserved / bodies stick.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Impulse on a mass</b></p><p><b>Problem.</b> A constant \\(200\\) N force acts on a \\(2\\) kg mass (initially at rest) for \\(0.1\\) s. Find the impulse and the final speed.</p>",
+    "solution": "<p><b>Solution.</b> Impulse \\( J=F\\Delta t=200(0.1)=20 \\) N·s. By impulse–momentum \\( J=m\\Delta v \\), so \\( \\Delta v=20/2=10 \\) m/s. Starting from rest, the final speed is \\(10\\) m/s.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Perfectly plastic collision</b></p><p><b>Problem.</b> A \\(2\\) kg body moving at \\(3\\) m/s strikes a stationary \\(1\\) kg body and they stick together. Find the common velocity and the kinetic energy lost.</p>",
+    "solution": "<p><b>Solution.</b> Momentum: \\( 2(3)+1(0)=(2+1)v'\\Rightarrow v'=\\dfrac{6}{3}=2 \\) m/s. \\( KE \\) before \\( =\\tfrac12(2)(3^2)=9 \\) J; after \\( =\\tfrac12(3)(2^2)=6 \\) J. Lost \\( =9-6=3 \\) J (to deformation and heat).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Restitution</b></p><p><b>Problem.</b> Two equal masses collide, one at \\(4\\) m/s striking the other at rest, with \\( e=0.5 \\). Find the two final velocities.</p>",
+    "solution": "<p><b>Solution.</b> Momentum (equal masses): \\( v_1'+v_2'=4 \\). Restitution: \\( v_2'-v_1'=e(v_1-v_2)=0.5(4)=2 \\). Solving: \\( v_2'=3 \\) m/s, \\( v_1'=1 \\) m/s. (Momentum check: \\(1+3=4\\) ✓.)</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Impulse equals:</p>",
+    "choices": [
+     "the change in momentum",
+     "the change in kinetic energy",
+     "the force",
+     "the velocity"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( J=\\int F\\,dt=\\Delta p \\) — impulse is the change in momentum.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For a constant force, impulse is:</p>",
+    "choices": [
+     "\\( F\\Delta t \\)",
+     "\\( Fd \\)",
+     "\\( \\tfrac12Ft^2 \\)",
+     "\\( F/t \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( J=F\\Delta t \\) for a constant force.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Total momentum is conserved when:</p>",
+    "choices": [
+     "no external impulse acts",
+     "the collision is elastic only",
+     "kinetic energy is conserved",
+     "masses are equal"
+    ],
+    "answer": 0,
+    "solution": "<p>Internal collision forces cancel, so momentum is conserved whenever no external impulse acts — elastic or not.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The coefficient of restitution is:</p>",
+    "choices": [
+     "separation speed ÷ approach speed",
+     "approach speed ÷ separation speed",
+     "momentum ÷ energy",
+     "always 1"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( e=(v_2'-v_1')/(v_1-v_2) \\), between 0 and 1.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A perfectly elastic collision has:</p>",
+    "choices": [
+     "\\( e=1 \\), kinetic energy conserved",
+     "\\( e=0 \\), bodies stick",
+     "no momentum conservation",
+     "\\( e=0.5 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( e=1 \\) means kinetic energy is fully recovered — an elastic impact.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A perfectly plastic collision has:</p>",
+    "choices": [
+     "\\( e=0 \\), the bodies stick together",
+     "\\( e=1 \\), they bounce apart",
+     "kinetic energy conserved",
+     "no momentum change"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( e=0 \\): the separation speed is zero, so the bodies move off together.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In the 2 kg + 1 kg sticking collision above, kinetic energy:</p>",
+    "choices": [
+     "drops from 9 J to 6 J",
+     "is conserved at 9 J",
+     "rises to 12 J",
+     "becomes zero"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( 9\\) J before, \\(6\\) J after — \\(3\\) J is lost to the impact, since \\(e=0\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>To deliver a given impulse with a smaller peak force, you should:</p>",
+    "choices": [
+     "extend the contact time",
+     "shorten the contact time",
+     "increase the mass",
+     "reduce the momentum change"
+    ],
+    "answer": 0,
+    "solution": "<p>Since \\( J=F\\Delta t \\) is fixed by the momentum change, a longer \\( \\Delta t \\) means a lower \\(F\\) — the principle behind crumple zones and cushioning.</p>"
+   }
+  ],
+  "kuwait": "\n<p>The impulse relation \\( J=F\\Delta t \\) is the physics of every cushion, crumple\nzone, and pipe-hanger snubber on site. The momentum a moving mass must lose in a stop\nis fixed, so the only way to cut the peak force is to stretch the time of the stop:\na longer \\( \\Delta t \\) means a smaller \\(F\\). That is why buffers, shock mounts, and\npackaging exist, and why a hammer blow — a very short \\( \\Delta t \\) — produces an\nenormous force from a modest swing, the tool a fitter uses to seat a pin that steady\npressure cannot.</p>\n<p>Momentum conservation sizes the reaction forces of fluid machinery. A jet of\nwater striking a plate, or the change of direction inside a pump volute or a pipe bend,\nchanges the fluid's momentum, and by Newton's third law the structure feels the equal\nand opposite force. Anchor blocks on large pipe bends and the thrust rating of a\nnozzle are momentum calculations — \\( F=\\dot m\\,\\Delta v \\) — turned into bolts and\nconcrete.</p>\n"
+ }
+}
