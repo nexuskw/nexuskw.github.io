@@ -506,7 +506,24 @@
           "video": {
             "id": "DW4rItB20h4",
             "title": "Understanding Bernoulli's Equation",
-            "channel": "The Efficient Engineer"
+            "channel": "The Efficient Engineer",
+            "alternatives": [
+              {
+                "id": "1almvhAFgHA",
+                "title": "Bernoulli's Equation & Flow in Pipes — Understanding Bernoulli",
+                "channel": "Michel van Biezen"
+              },
+              {
+                "id": "LylAqJnncbo",
+                "title": "Pumps in Bernoulli's Equation",
+                "channel": "Michel van Biezen"
+              },
+              {
+                "id": "3y6AP70P8fY",
+                "title": "Flow with a Pump",
+                "channel": "Michel van Biezen"
+              }
+            ]
           }
         },
         {
@@ -524,7 +541,24 @@
             "title": "Conservation of Linear Momentum in Fluid Mechanics",
             "channel": "Fluid Matters",
             "verified": true,
-            "note": "oEmbed-verified 2026-07-18; established channel (>3k views); video-policy v3"
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "ObKwjK0vU2c",
+                "title": "Conservation of Linear Momentum for a Control Volume",
+                "channel": "CPPMechEngTutorials"
+              },
+              {
+                "id": "83QyZFMfhoQ",
+                "title": "Linear Momentum Equation Examples",
+                "channel": "CPPMechEngTutorials"
+              },
+              {
+                "id": "BXkYIacZzzM",
+                "title": "Solved Example: Conservation of Mass & Momentum (Control Volume)",
+                "channel": "CollegeFluidMechanics"
+              }
+            ]
           }
         },
         {
@@ -539,10 +573,27 @@
           ],
           "video": {
             "id": "eRBEPV8NCHI",
-            "title": "Buckingham Pi Theorem (Fluid Mechanics #6)",
+            "title": "Buckingham Pi Theorem (Fluid Mechanics)",
             "channel": "Prof. Van Buren",
             "verified": true,
-            "note": "oEmbed-verified 2026-07-18; established channel (>3k views); video-policy v3"
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "TOhCNYcg5Lc",
+                "title": "Dimensional Analysis: Buckingham Pi Theorem",
+                "channel": "Fluid Matters"
+              },
+              {
+                "id": "ELDJGLDtCy4",
+                "title": "Dimensional Analysis & Buckingham Pi Theorem",
+                "channel": "Spoon Feed Me"
+              },
+              {
+                "id": "pBkfjNMW26Y",
+                "title": "Dimensional Analysis: Buckingham Pi Theorem",
+                "channel": "Study from Home with Us"
+              }
+            ]
           }
         },
         {
@@ -558,7 +609,24 @@
           "video": {
             "id": "9A-uUG0WR0w",
             "title": "Understanding Laminar and Turbulent Flow",
-            "channel": "The Efficient Engineer"
+            "channel": "The Efficient Engineer",
+            "alternatives": [
+              {
+                "id": "2YtZFf0NsY8",
+                "title": "Laminar & Turbulent Pipe Flow, The Moody Diagram",
+                "channel": "CPPMechEngTutorials"
+              },
+              {
+                "id": "hZskrtS2bhU",
+                "title": "Moody Chart, Colebrook & Haaland — Friction Factor & Head Loss",
+                "channel": "Professor Behrang"
+              },
+              {
+                "id": "tISdp_394Bw",
+                "title": "Turbulent Flow: Moody Chart",
+                "channel": "Simmy Sigma"
+              }
+            ]
           }
         },
         {
@@ -576,7 +644,24 @@
             "title": "Valves Explained — Control Valve Types",
             "channel": "saVRee",
             "verified": true,
-            "note": "oEmbed-verified 2026-07-18; established channel (>3k views); video-policy v3"
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "X14nww4wuAk",
+                "title": "How Ball, Gate, Globe, Butterfly, Check & Relief Valves Work",
+                "channel": "ExplainFull"
+              },
+              {
+                "id": "GSEIpwf5FBI",
+                "title": "How Globe Valves Work",
+                "channel": "saVRee"
+              },
+              {
+                "id": "RQhMh0suaDI",
+                "title": "Types of Valves Explained — Gate, Globe, Ball & Butterfly",
+                "channel": "3D DECODE"
+              }
+            ]
           }
         },
         {
@@ -594,7 +679,19 @@
             "title": "Flow Measurement with Venturi Flow Meters",
             "channel": "Fluid Matters",
             "verified": true,
-            "note": "oEmbed-verified 2026-07-18; established channel (>3k views); video-policy v3"
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "GXDJvva1g9A",
+                "title": "Differential Flow Devices — Venturi, Orifice Plates, Flow Nozzles",
+                "channel": "Ives Equipment Corporation"
+              },
+              {
+                "id": "rN_xgeps7xY",
+                "title": "Differential Pressure Flow Meter — Basics",
+                "channel": "Simplifyde"
+              }
+            ]
           }
         },
         {
@@ -612,7 +709,24 @@
             "title": "Centrifugal Pump Curves — Performance & Characteristics",
             "channel": "HardHat Engineer",
             "verified": true,
-            "note": "oEmbed-verified 2026-07-18; established channel (>3k views); video-policy v3"
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "WUal9LXc0iM",
+                "title": "How Do Centrifugal Pumps Work? (100% Animation)",
+                "channel": "saVRee"
+              },
+              {
+                "id": "zUsmZc9sUhI",
+                "title": "Pump Curve Explained — How to Read a Pump Curve",
+                "channel": "Jeferson Costa"
+              },
+              {
+                "id": "vc0CiMo2Z3Y",
+                "title": "Centrifugal Pump Performance Curve (Head, Flow, Efficiency)",
+                "channel": "An Pump"
+              }
+            ]
           }
         },
         {
@@ -630,7 +744,24 @@
             "title": "Introduction to Compressible Flow",
             "channel": "CPPMechEngTutorials",
             "verified": true,
-            "note": "oEmbed-verified 2026-07-18; established channel (>3k views); video-policy v3"
+            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+            "alternatives": [
+              {
+                "id": "FERCAWBqDaE",
+                "title": "Mach Number and Introduction to Compressible Flow",
+                "channel": "Flowthermolab"
+              },
+              {
+                "id": "iMPFN3rLIr8",
+                "title": "Compressible Flow & Mach Number",
+                "channel": "Ahsan"
+              },
+              {
+                "id": "naejqfrUXmY",
+                "title": "Compressible Flow — Subsonic, Sonic, Supersonic, Hypersonic",
+                "channel": "Lead GATE"
+              }
+            ]
           }
         }
       ]
