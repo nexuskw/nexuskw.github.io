@@ -9,25 +9,26 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=d2ec4186b1">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2cf8c96ec8">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body data-key="y4s1/production-lean/9">
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+    <a class="brand" href="../../../index.html" aria-label="Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
       <span class="txt"><span class="teal">Nexus</span> Institute of Technology
-        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
+        <small>Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
-      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
-      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
-      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+      <a href="../../../index.html">Home</a>
+      <a href="../../../about/index.html">About</a>
+      <a href="../../../mission/index.html">Mission</a>
+      <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+      <a href="../../../career/index.html">Career Paths</a>
     </nav>
     <span class="spacer"></span>
-    <button id="langBtn" class="lang-btn" type="button">العربية</button>
   </div>
 </header>
 
@@ -43,7 +44,7 @@
   <a href="01-production-systems-and-layouts.html" class="ol" data-key="y4s1/production-lean/1"><span class="tick"></span><span>01 · Production systems and layouts</span></a><a href="02-capacity-and-takt.html" class="ol" data-key="y4s1/production-lean/2"><span class="tick"></span><span>02 · Capacity and takt</span></a><a href="03-aggregate-planning-and-mps.html" class="ol" data-key="y4s1/production-lean/3"><span class="tick"></span><span>03 · Aggregate planning and MPS</span></a><a href="04-mrp-and-erp-logic.html" class="ol" data-key="y4s1/production-lean/4"><span class="tick"></span><span>04 · MRP and ERP logic</span></a><a href="05-shop-floor-scheduling.html" class="ol" data-key="y4s1/production-lean/5"><span class="tick"></span><span>05 · Shop-floor scheduling</span></a><a href="06-lean-s-logic.html" class="ol" data-key="y4s1/production-lean/6"><span class="tick"></span><span>06 · Lean's logic</span></a><a href="07-value-stream-mapping-flow-and-pull.html" class="ol" data-key="y4s1/production-lean/7"><span class="tick"></span><span>07 · Value stream mapping, flow, and pull</span></a><a href="08-smed-5s-and-visual-management.html" class="ol" data-key="y4s1/production-lean/8"><span class="tick"></span><span>08 · SMED, 5S, and visual management</span></a><a href="09-dmaic-i-define-measure-analyze.html" class="ol cur" data-key="y4s1/production-lean/9"><span class="tick"></span><span>09 · DMAIC I: Define, Measure, Analyze</span></a><a href="10-dmaic-improve-and-control.html" class="ol" data-key="y4s1/production-lean/10"><span class="tick"></span><span>10 · DMAIC: Improve and Control</span></a><a href="11-improvement-project-simulation.html" class="ol" data-key="y4s1/production-lean/11"><span class="tick"></span><span>11 · Improvement project simulation</span></a>
 </aside>
 <div class="lesson-main">
-<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <a href="index.html">PPL 405</a> /
 <span>Lesson 09 of 11</span></nav>
 
@@ -60,15 +61,17 @@
   <button id="completeBtn" class="complete-btn" type="button" data-key="y4s1/production-lean/9">Mark as complete</button>
   
 </div>
-<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Engineering Statistics (STS 206) as prerequisite</b></div>
+<div class="video-hero"><div class="vh-frame vh-empty"><div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p></div><div class="vh-bar"><span class="n">LECTURE VIDEO — IN PRODUCTION</span></div></div>
 <div class="tabs" role="tablist">
-  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
-  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
-  <button data-tab="t-library" data-ar="المكتبة">Library</button>
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What must a charter's baseline contain before Measure starts?</li><li>Stratify downtime by shift and product: what pattern would implicate process, not people?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What must a charter's baseline contain before Measure starts?</li><li>Stratify downtime by shift and product: what pattern would implicate process, not people?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
 <div class="measure">
   
   <p>This lesson belongs to <b>PPL 405 · Production Planning &amp; Lean Six Sigma</b>
@@ -76,7 +79,7 @@
   <ul class="plain"><li>Engineering Statistics (STS 206) as prerequisite</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, production systems chapters</li><li>NPTEL: Production and Operations Management-family courses (nptel.ac.in)</li><li>NPTEL: quality and operations management courses (nptel.ac.in)</li></ul>
   <p class="small">Course context: Running and improving the production system in one course: capacity, master scheduling, MRP/ERP, and shop-floor scheduling from the planning tradition; value streams, flow, SMED, 5S, and DMAIC from the lean and Six Sigma tradition.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
 <div class="measure">
   <p>The five-problem interactive quiz for this lesson is in production. Until
   it lands, use the lesson's checkpoint questions as practice prompts —
@@ -84,39 +87,38 @@
   <div class="preview"><b>Practice prompts — solutions not yet published:</b>
   <ul><li>What must a charter's baseline contain before Measure starts?</li><li>Stratify downtime by shift and product: what pattern would implicate process, not people?</li></ul></div>
 </div></section>
-<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
-  <h3 data-ar="فيديو الدرس">Lesson video</h3>
-  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  <h3>Lesson video</h3>
+  
   
 </div>
 
 <div class="lib-block lib-books">
-  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  <h3>Textbooks &amp; references</h3>
   <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL547479W" target="_blank" rel="noopener">Factory Physics — Hopp &amp; Spearman</a></li></ul>
   <p class="src"><b>Taught from</b> — NPTEL quality content; STS 206 foundations</p>
   <ul class="plain small"><li>Engineering Statistics (STS 206) as prerequisite</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, production systems chapters</li><li>NPTEL: Production and Operations Management-family courses (nptel.ac.in)</li><li>NPTEL: quality and operations management courses (nptel.ac.in)</li></ul>
 </div>
 <div class="wide"></div></section>
-<nav class="prevnext"><a href="08-smed-5s-and-visual-management.html">← 08 · SMED, 5S, and visual management</a><a href="index.html" data-ar="كل الدروس · PPL 405">All lessons · PPL 405</a><a href="10-dmaic-improve-and-control.html">10 · DMAIC: Improve and Control →</a></nav>
+<nav class="prevnext"><a href="08-smed-5s-and-visual-management.html">← 08 · SMED, 5S, and visual management</a><a href="index.html">All lessons · PPL 405</a><a href="10-dmaic-improve-and-control.html">10 · DMAIC: Improve and Control →</a></nav>
 </div>
 </div>
 </main>
 <footer class="nx-foot">
   <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
   <nav>
-    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
-    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
-    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    <a href="../../../index.html">Home</a> ·
+    <a href="../../../about/index.html">About</a> ·
+    <a href="../../../mission/index.html">Mission</a> ·
+    <a href="../../../curriculum/index.html">Curriculum</a> ·
+    <a href="../../../career/index.html">Career Paths</a>
   </nav>
-  <p class="lang-en">Bilingual engineering education. Worked-example values are
+  <p class="lang-en">Free, open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-  <p class="lang-ar">تعليم هندسي ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
-  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
-  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=d2ec4186b1"></script>
+<script src="../../../assets/nx/nexus.js?v=2cf8c96ec8"></script>
 </body>
 </html>

@@ -9,25 +9,26 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=d2ec4186b1">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2cf8c96ec8">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body data-key="y3s2/instrumentation/3">
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+    <a class="brand" href="../../../index.html" aria-label="Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
       <span class="txt"><span class="teal">Nexus</span> Institute of Technology
-        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
+        <small>Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
-      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
-      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
-      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+      <a href="../../../index.html">Home</a>
+      <a href="../../../about/index.html">About</a>
+      <a href="../../../mission/index.html">Mission</a>
+      <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+      <a href="../../../career/index.html">Career Paths</a>
     </nav>
     <span class="spacer"></span>
-    <button id="langBtn" class="lang-btn" type="button">العربية</button>
   </div>
 </header>
 
@@ -43,7 +44,7 @@
   <a href="01-the-process-control-loop-end-to-end.html" class="ol" data-key="y3s2/instrumentation/1"><span class="tick"></span><span>01 · The process control loop end to end</span></a><a href="02-p-id-reading.html" class="ol" data-key="y3s2/instrumentation/2"><span class="tick"></span><span>02 · P&amp;ID reading</span></a><a href="03-control-valves.html" class="ol cur" data-key="y3s2/instrumentation/3"><span class="tick"></span><span>03 · Control valves</span></a><a href="04-transmitter-engineering-in-the-field.html" class="ol" data-key="y3s2/instrumentation/4"><span class="tick"></span><span>04 · Transmitter engineering in the field</span></a><a href="05-loop-tuning-in-practice.html" class="ol" data-key="y3s2/instrumentation/5"><span class="tick"></span><span>05 · Loop tuning in practice</span></a><a href="06-multiloop-structures.html" class="ol" data-key="y3s2/instrumentation/6"><span class="tick"></span><span>06 · Multiloop structures</span></a><a href="07-dcs-and-control-room-architecture.html" class="ol" data-key="y3s2/instrumentation/7"><span class="tick"></span><span>07 · DCS and control-room architecture</span></a><a href="08-safety-instrumented-systems.html" class="ol" data-key="y3s2/instrumentation/8"><span class="tick"></span><span>08 · Safety instrumented systems</span></a><a href="09-analyzers-and-special-measurements.html" class="ol" data-key="y3s2/instrumentation/9"><span class="tick"></span><span>09 · Analyzers and special measurements</span></a><a href="10-instrument-maintenance-and-reliability.html" class="ol" data-key="y3s2/instrumentation/10"><span class="tick"></span><span>10 · Instrument maintenance and reliability</span></a><a href="11-loop-package-project.html" class="ol" data-key="y3s2/instrumentation/11"><span class="tick"></span><span>11 · Loop package project</span></a>
 </aside>
 <div class="lesson-main">
-<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <a href="index.html">INS 352</a> /
 <span>Lesson 03 of 11</span></nav>
 
@@ -60,15 +61,17 @@
   <button id="completeBtn" class="complete-btn" type="button" data-key="y3s2/instrumentation/3">Mark as complete</button>
   
 </div>
-<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>NPTEL: Industrial Instrumentation; Process Control (nptel.ac.in)</b></div>
+<div class="video-hero"><div class="vh-frame vh-empty"><div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p></div><div class="vh-bar"><span class="n">LECTURE VIDEO — IN PRODUCTION</span></div></div>
 <div class="tabs" role="tablist">
-  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
-  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
-  <button data-tab="t-library" data-ar="المكتبة">Library</button>
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Inherent versus installed valve characteristic: what bends the curve?</li><li>Why does an equal-percentage valve suit most flow loops?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Inherent versus installed valve characteristic: what bends the curve?</li><li>Why does an equal-percentage valve suit most flow loops?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
 <div class="measure">
   
   <p>This lesson belongs to <b>INS 352 · Instrumentation &amp; Process Control</b>
@@ -76,7 +79,7 @@
   <ul class="plain"><li><a href="https://nptel.ac.in/courses/108105064" title="NPTEL — Industrial Instrumentation (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Instrumentation</a> <span class="srcnote">alternative (enable captions)</span>; Process Control (nptel.ac.in)</li></ul>
   <p class="small">Course context: The control loop as plumbing and paperwork: P&amp;ID literacy, transmitters and control valves, loop tuning in the field, and the safety instrumented systems that sit above regulation — EQUATE-style process-plant territory.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
 <div class="measure">
   <p>The five-problem interactive quiz for this lesson is in production. Until
   it lands, use the lesson's checkpoint questions as practice prompts —
@@ -84,39 +87,38 @@
   <div class="preview"><b>Practice prompts — solutions not yet published:</b>
   <ul><li>Inherent versus installed valve characteristic: what bends the curve?</li><li>Why does an equal-percentage valve suit most flow loops?</li></ul></div>
 </div></section>
-<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
-  <h3 data-ar="فيديو الدرس">Lesson video</h3>
-  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  <h3>Lesson video</h3>
+  
   
 </div>
 
 <div class="lib-block lib-books">
-  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  <h3>Textbooks &amp; references</h3>
   <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL21115369W" target="_blank" rel="noopener">Instrumentation and Control Systems — W. Bolton</a></li><li><a href="https://openlibrary.org/works/OL2717669W" target="_blank" rel="noopener">Modern Control Engineering — Katsuhiko Ogata</a></li></ul>
   <p class="src"><b>Taught from</b> — NPTEL: Process Control</p>
   <ul class="plain small"><li><a href="https://nptel.ac.in/courses/108105064" title="NPTEL — Industrial Instrumentation (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Instrumentation</a> <span class="srcnote">alternative (enable captions)</span>; Process Control (nptel.ac.in)</li></ul>
 </div>
 <div class="wide"></div></section>
-<nav class="prevnext"><a href="02-p-id-reading.html">← 02 · P&amp;ID reading</a><a href="index.html" data-ar="كل الدروس · INS 352">All lessons · INS 352</a><a href="04-transmitter-engineering-in-the-field.html">04 · Transmitter engineering in the field →</a></nav>
+<nav class="prevnext"><a href="02-p-id-reading.html">← 02 · P&amp;ID reading</a><a href="index.html">All lessons · INS 352</a><a href="04-transmitter-engineering-in-the-field.html">04 · Transmitter engineering in the field →</a></nav>
 </div>
 </div>
 </main>
 <footer class="nx-foot">
   <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
   <nav>
-    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
-    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
-    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    <a href="../../../index.html">Home</a> ·
+    <a href="../../../about/index.html">About</a> ·
+    <a href="../../../mission/index.html">Mission</a> ·
+    <a href="../../../curriculum/index.html">Curriculum</a> ·
+    <a href="../../../career/index.html">Career Paths</a>
   </nav>
-  <p class="lang-en">Bilingual engineering education. Worked-example values are
+  <p class="lang-en">Free, open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-  <p class="lang-ar">تعليم هندسي ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
-  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
-  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=d2ec4186b1"></script>
+<script src="../../../assets/nx/nexus.js?v=2cf8c96ec8"></script>
 </body>
 </html>

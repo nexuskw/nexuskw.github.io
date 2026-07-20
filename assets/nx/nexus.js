@@ -24,7 +24,7 @@
   }
   var saved = null;
   try { saved = localStorage.getItem(LANG_KEY); } catch (e) {}
-  if (saved === 'ar') applyLang('ar');
+  if (btn && saved === 'ar') applyLang('ar');  /* Arabic on hold: never auto-apply without the toggle */
   if (btn) btn.addEventListener('click', function () {
     var next = document.documentElement.lang === 'ar' ? 'en' : 'ar';
     applyLang(next);
@@ -294,4 +294,36 @@
     var root = document.documentElement.getAttribute('data-root') || './';
     navigator.serviceWorker.register(root + 'sw.js').catch(function () {});
   }
+})();
+
+/* ---------- interactive workshop (homepage): pointer parallax + gear train.
+   Hand-coded, zero dependencies; disabled under prefers-reduced-motion. ---------- */
+(function () {
+  var scene = document.getElementById('nxScene');
+  if (!scene) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var layers = [].slice.call(scene.querySelectorAll('[data-depth]'));
+  var gears = [].slice.call(document.querySelectorAll('.gear-spin'));
+  var tx = 0, ty = 0, cx = 0, cy = 0, spin = 0, vel = 0, lastX = null;
+  window.addEventListener('pointermove', function (e) {
+    var r = scene.getBoundingClientRect();
+    tx = (e.clientX - r.left) / Math.max(r.width, 1) - 0.5;
+    ty = (e.clientY - r.top) / Math.max(r.height, 1) - 0.5;
+    if (lastX !== null) vel += (e.clientX - lastX) * 0.12;
+    lastX = e.clientX;
+  }, { passive: true });
+  (function tick() {
+    cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08;
+    vel *= 0.93; spin += 0.12 + vel * 0.02;
+    for (var i = 0; i < layers.length; i++) {
+      var d = parseFloat(layers[i].getAttribute('data-depth')) || 0;
+      layers[i].style.transform =
+        'translate(' + (cx * d * 20).toFixed(1) + 'px,' + (cy * d * 14).toFixed(1) + 'px)';
+    }
+    for (var g = 0; g < gears.length; g++) {
+      var ratio = parseFloat(gears[g].getAttribute('data-ratio')) || 1;
+      gears[g].style.transform = 'rotate(' + (spin / ratio).toFixed(2) + 'deg)';
+    }
+    requestAnimationFrame(tick);
+  })();
 })();

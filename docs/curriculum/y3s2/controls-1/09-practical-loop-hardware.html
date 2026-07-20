@@ -9,25 +9,26 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=d2ec4186b1">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=2cf8c96ec8">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body data-key="y3s2/controls-1/9">
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
+    <a class="brand" href="../../../index.html" aria-label="Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
       <span class="txt"><span class="teal">Nexus</span> Institute of Technology
-        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
+        <small>Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
-      <a href="../../../index.html" data-ar="الرسالة">Mission</a>
-      <a href="../../../curriculum/index.html" class="on" data-ar="المنهج">Curriculum</a>
-      <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+      <a href="../../../index.html">Home</a>
+      <a href="../../../about/index.html">About</a>
+      <a href="../../../mission/index.html">Mission</a>
+      <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+      <a href="../../../career/index.html">Career Paths</a>
     </nav>
     <span class="spacer"></span>
-    <button id="langBtn" class="lang-btn" type="button">العربية</button>
   </div>
 </header>
 
@@ -43,7 +44,7 @@
   <a href="01-dynamic-modeling-of-physical-systems.html" class="ol" data-key="y3s2/controls-1/1"><span class="tick"></span><span>01 · Dynamic modeling of physical systems</span></a><a href="02-laplace-transfer-functions.html" class="ol" data-key="y3s2/controls-1/2"><span class="tick"></span><span>02 · Laplace transfer functions</span></a><a href="03-first-and-second-order-responses.html" class="ol" data-key="y3s2/controls-1/3"><span class="tick"></span><span>03 · First- and second-order responses</span></a><a href="04-closed-loop-behavior-and-steady-state-error.html" class="ol" data-key="y3s2/controls-1/4"><span class="tick"></span><span>04 · Closed-loop behavior and steady-state error</span></a><a href="05-stability-routh-hurwitz.html" class="ol" data-key="y3s2/controls-1/5"><span class="tick"></span><span>05 · Stability: Routh–Hurwitz</span></a><a href="06-root-locus.html" class="ol" data-key="y3s2/controls-1/6"><span class="tick"></span><span>06 · Root locus</span></a><a href="07-frequency-response-and-bode-plots.html" class="ol" data-key="y3s2/controls-1/7"><span class="tick"></span><span>07 · Frequency response and Bode plots</span></a><a href="08-pid-control.html" class="ol" data-key="y3s2/controls-1/8"><span class="tick"></span><span>08 · PID control</span></a><a href="09-practical-loop-hardware.html" class="ol cur" data-key="y3s2/controls-1/9"><span class="tick"></span><span>09 · Practical loop hardware</span></a><a href="10-discrete-time-and-digital-control-basics.html" class="ol" data-key="y3s2/controls-1/10"><span class="tick"></span><span>10 · Discrete-time and digital control basics</span></a><a href="11-case-studies-in-machine-control.html" class="ol" data-key="y3s2/controls-1/11"><span class="tick"></span><span>11 · Case studies in machine control</span></a>
 </aside>
 <div class="lesson-main">
-<nav class="crumbs"><a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> /
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <a href="index.html">CTL 302</a> /
 <span>Lesson 09 of 11</span></nav>
 
@@ -60,15 +61,17 @@
   <button id="completeBtn" class="complete-btn" type="button" data-key="y3s2/controls-1/9">Mark as complete</button>
   
 </div>
-<div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Ogata-tradition control theory via MIT OCW 2.04A Systems and Controls (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame vh-empty"><div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p></div><div class="vh-bar"><span class="n">LECTURE VIDEO — IN PRODUCTION</span></div></div>
 <div class="tabs" role="tablist">
-  <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
-  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
-  <button data-tab="t-library" data-ar="المكتبة">Library</button>
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do stiction and deadband do to a well-tuned loop?</li><li>Why can a valve problem masquerade as a tuning problem?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do stiction and deadband do to a well-tuned loop?</li><li>Why can a valve problem masquerade as a tuning problem?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
 <div class="measure">
   
   <p>This lesson belongs to <b>CTL 302 · System Dynamics &amp; Control I</b>
@@ -76,7 +79,7 @@
   <ul class="plain"><li>Ogata-tradition control theory via <a href="https://ocw.mit.edu/courses/2-04a-systems-and-controls-spring-2013/" title="MIT OCW 2.04A Systems and Controls" target="_blank" rel="noopener">MIT OCW 2.04A</a> Systems and Controls (ocw.mit.edu)</li><li>NPTEL: Control Engineering</li></ul>
   <p class="small">Course context: Feedback made quantitative: modeling, transfer functions, stability, root locus, frequency response, and the PID controller — the theory under every temperature loop and speed governor in the plant.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
 <div class="measure">
   <p>The five-problem interactive quiz for this lesson is in production. Until
   it lands, use the lesson's checkpoint questions as practice prompts —
@@ -84,39 +87,38 @@
   <div class="preview"><b>Practice prompts — solutions not yet published:</b>
   <ul><li>What do stiction and deadband do to a well-tuned loop?</li><li>Why can a valve problem masquerade as a tuning problem?</li></ul></div>
 </div></section>
-<section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
-  <h3 data-ar="فيديو الدرس">Lesson video</h3>
-  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  <h3>Lesson video</h3>
+  
   
 </div>
 
 <div class="lib-block lib-books">
-  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  <h3>Textbooks &amp; references</h3>
   <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2717669W" target="_blank" rel="noopener">Modern Control Engineering — Katsuhiko Ogata</a></li><li><a href="https://openlibrary.org/works/OL3505210W" target="_blank" rel="noopener">Control Systems Engineering — Norman S. Nise</a></li></ul>
   <p class="src"><b>Taught from</b> — NPTEL: Control Engineering</p>
   <ul class="plain small"><li>Ogata-tradition control theory via <a href="https://ocw.mit.edu/courses/2-04a-systems-and-controls-spring-2013/" title="MIT OCW 2.04A Systems and Controls" target="_blank" rel="noopener">MIT OCW 2.04A</a> Systems and Controls (ocw.mit.edu)</li><li>NPTEL: Control Engineering</li></ul>
 </div>
 <div class="wide"></div></section>
-<nav class="prevnext"><a href="08-pid-control.html">← 08 · PID control</a><a href="index.html" data-ar="كل الدروس · CTL 302">All lessons · CTL 302</a><a href="10-discrete-time-and-digital-control-basics.html">10 · Discrete-time and digital control basics →</a></nav>
+<nav class="prevnext"><a href="08-pid-control.html">← 08 · PID control</a><a href="index.html">All lessons · CTL 302</a><a href="10-discrete-time-and-digital-control-basics.html">10 · Discrete-time and digital control basics →</a></nav>
 </div>
 </div>
 </main>
 <footer class="nx-foot">
   <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
   <nav>
-    <a href="../../../index.html" data-ar="الرسالة">Mission</a> ·
-    <a href="../../../curriculum/index.html" data-ar="المنهج">Curriculum</a> ·
-    <a href="../../../career/index.html" data-ar="المسارات المهنية">Career Paths</a>
+    <a href="../../../index.html">Home</a> ·
+    <a href="../../../about/index.html">About</a> ·
+    <a href="../../../mission/index.html">Mission</a> ·
+    <a href="../../../curriculum/index.html">Curriculum</a> ·
+    <a href="../../../career/index.html">Career Paths</a>
   </nav>
-  <p class="lang-en">Bilingual engineering education. Worked-example values are
+  <p class="lang-en">Free, open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-  <p class="lang-ar">تعليم هندسي ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
-  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
-  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=d2ec4186b1"></script>
+<script src="../../../assets/nx/nexus.js?v=2cf8c96ec8"></script>
 </body>
 </html>

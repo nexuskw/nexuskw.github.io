@@ -240,18 +240,19 @@ NX_PAGE = """<!doctype html>
 <body{body_attrs}>
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="{prefix}index.html" aria-label="{brand_ar} — Nexus Institute of Technology">
+    <a class="brand" href="{prefix}index.html" aria-label="Nexus Institute of Technology">
       <img src="{prefix}assets/nx/logo.svg" alt="">
       <span class="txt"><span class="teal">Nexus</span> Institute of Technology
-        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
+        <small>Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
-      <a href="{prefix}index.html"{on_home} data-ar="{ar_mission}">Mission</a>
-      <a href="{prefix}curriculum/index.html"{on_curr} data-ar="{ar_curr}">Curriculum</a>
-      <a href="{prefix}career/index.html"{on_career} data-ar="{ar_career}">Career Paths</a>
+      <a href="{prefix}index.html"{on_home}>Home</a>
+      <a href="{prefix}about/index.html"{on_about}>About</a>
+      <a href="{prefix}mission/index.html"{on_mission}>Mission</a>
+      <a href="{prefix}curriculum/index.html"{on_curr}>Curriculum</a>
+      <a href="{prefix}career/index.html"{on_career}>Career Paths</a>
     </nav>
     <span class="spacer"></span>
-    <button id="langBtn" class="lang-btn" type="button">العربية</button>
   </div>
 </header>
 {sidemenu}
@@ -261,17 +262,16 @@ NX_PAGE = """<!doctype html>
 <footer class="nx-foot">
   <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
   <nav>
-    <a href="{prefix}index.html" data-ar="{ar_mission}">Mission</a> ·
-    <a href="{prefix}curriculum/index.html" data-ar="{ar_curr}">Curriculum</a> ·
-    <a href="{prefix}career/index.html" data-ar="{ar_career}">Career Paths</a>
+    <a href="{prefix}index.html">Home</a> ·
+    <a href="{prefix}about/index.html">About</a> ·
+    <a href="{prefix}mission/index.html">Mission</a> ·
+    <a href="{prefix}curriculum/index.html">Curriculum</a> ·
+    <a href="{prefix}career/index.html">Career Paths</a>
   </nav>
-  <p class="lang-en">Bilingual engineering education. Worked-example values are
+  <p class="lang-en">Free, open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-  <p class="lang-ar">تعليم هندسي ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
-  والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
-  كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
 <script src="{prefix}assets/nx/nexus.js?v={v}"></script>
 </body>
@@ -300,15 +300,19 @@ def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None
     body = nx_text(body)
     html = NX_PAGE.format(
         title=esc(title), desc=esc(desc), prefix=prefix, body=body,
-        extra_head=extra_head, v=NX_V, brand_ar=BRAND_AR,
-        ar_mission=AR["Mission"], ar_curr=AR["Curriculum"], ar_career=AR["Career Paths"],
+        extra_head=extra_head, v=NX_V,
         sidemenu=sidemenu_html(menu or []),
         main_class=' class="wrap"' if wrap else "",
         body_attrs=body_attrs,
         on_home=' class="on"' if active == "home" else "",
+        on_about=' class="on"' if active == "about" else "",
+        on_mission=' class="on"' if active == "mission" else "",
         on_curr=' class="on"' if active == "curriculum" else "",
         on_career=' class="on"' if active == "career" else "",
     )
+    # ARABIC HOLD (owner 2026-07-20): strip data-ar hooks at emit time; the
+    # bilingual layer returns when a translation toolkit is chosen.
+    html = re.sub(r'\s+data-ar(?:-placeholder)?="[^"]*"', "", html)
     assert SECTION_SIGN not in html, f"section sign leaked into {path}"
     out = OUT / path
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -451,20 +455,43 @@ def library_tab(les, course):
                      'Alternative videos</h4>'
                      f'<ul class="plain small">{rows}</ul></div>')
 
-    return f"""
+    # ---- VIDEO HERO (redesign 2026-07-20, reference-style): the primary
+    # embed plays front-and-center under the lesson header, with a mono
+    # attribution bar; the Library tab keeps alternatives + texts.
+    if "<iframe" in video:
+        if isinstance(lv, dict):
+            vh_title, vh_channel = lv["title"], lv.get("channel", "")
+            watch = f'https://www.youtube.com/watch?v={lv["id"]}'
+        else:
+            m = re.search(r'title="([^"]*)"', video)
+            vh_title, vh_channel, watch = (m.group(1) if m else "Lecture video"), "", ""
+        video_hero = (f'<div class="video-hero"><div class="vh-frame">{video}</div>'
+                      f'<div class="vh-bar">'
+                      f'<span class="n">{esc(vh_title)}</span>'
+                      + (f'<span class="c">{esc(vh_channel).upper()}</span>' if vh_channel else "")
+                      + '</div></div>')
+        lib_video_slot = ('<p class="small">The lesson video plays at the top of '
+                          'this page. Alternatives and references below.</p>')
+    else:
+        video_hero = (f'<div class="video-hero"><div class="vh-frame vh-empty">{video}</div>'
+                      f'<div class="vh-bar"><span class="n">LECTURE VIDEO — IN PRODUCTION</span></div></div>')
+        lib_video_slot = ""
+
+    library = f"""
 <div class="lib-block lib-video">
-  <h3 data-ar="فيديو الدرس">Lesson video</h3>
-  {video}
+  <h3>Lesson video</h3>
+  {lib_video_slot}
   {alts_html}
 </div>
 {arabic_html}
 <div class="lib-block lib-books">
-  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  <h3>Textbooks &amp; references</h3>
   {canonical_texts_html(course)}
   <p class="src"><b>Taught from</b> — {src_html}</p>
   <ul class="plain small">{taught}</ul>
 </div>
 <div class="wide">{cards_html}</div>"""
+    return video_hero, library
 
 # ------------------------------------------------------------ quiz --------
 def quiz_html(items):
@@ -623,7 +650,7 @@ def build_lesson_page(sem, course, les, prefix, tabs_all):
                      f'Career Paths page</a> maps what {esc(kw)} runs and which '
                      f'roles touch this topic.</p></div>')
 
-    library = library_tab(les, course)
+    video_hero, library = library_tab(les, course)
 
     # ---- shell
     name = lesson_page_name(course, les)
@@ -680,7 +707,9 @@ def build_lesson_page(sem, course, les, prefix, tabs_all):
   <button id="completeBtn" class="complete-btn" type="button" data-key="{lesson_key}">Mark as complete</button>
   {core_chip}
 </div>
-<div class="lang-ar"><div class="ar-note">{AR_LESSON_NOTE}</div></div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>{esc(course.get("taught_from", [""])[0])}</b></div>
+{video_hero}
 <div class="tabs" role="tablist">
   <button class="on" data-tab="t-lecture" data-ar="{AR['Lecture']}">Lecture</button>
   <button data-tab="t-foundations" data-ar="{AR['Foundations']}">Foundations</button>
@@ -869,29 +898,58 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
     return total, depth
 
 # ------------------------------------------------------------- statics ----
-def build_static_pages():
-    mission = fragment("pages/mission.html")
+def build_static_pages(sems, tabs_by_course):
+    # ---- HOME (redesign 2026-07-20): banner preserved; structure mirrors the
+    # approved reference (stats / FIG panels / featured / tracks / notes) in the
+    # Nexus LIGHT identity. No robots (.nx-bot), no Arabic.
+    total = sum(len(c["lessons"]) for s in sems for c in s["courses"])
+    depth = sum(1 for s in sems for c in s["courses"] for l in c["lessons"]
+                if lesson_depth(l, tabs_by_course[(s["id"], c["id"])]))
+    home = (fragment("pages/home-nexus.html")
+            .replace("{{DEPTH}}", str(depth))
+            .replace("{{PCT}}", str(round(100 * depth / total))))
     nx_page("index.html",
             "Nexus Institute of Technology — Learn Mechanical Engineering from Scratch to Industry 4.0",
-            "A complete, bilingual B.S.-shaped mechanical engineering "
-            "curriculum for anyone — from zero background to Industry 4.0.",
-            mission, "", "home",
-            menu=[("#premise", "The premise", "الفكرة", False, None),
-                  ("#method", "How content is built", "طريقة البناء", False, None),
-                  ("#start", "Where to start", "من أين تبدأ", False, None),
-                  ("#integrity", "The integrity floor", "أرضية النزاهة", False, None)])
+            "A complete B.S.-shaped mechanical engineering curriculum for "
+            "anyone — from zero background to Industry 4.0. Free, forever.",
+            home, "", "home")
 
-    career_en = fragment("pages/career.html")
-    career_ar = fragment("pages/career-ar.html")
-    career = (f'<div class="lang-en">{career_en}</div>'
-              f'<div class="lang-ar" dir="rtl">{career_ar}</div>')
+    # ---- ABOUT (new tab)
+    nx_page("about/index.html",
+            "About — Nexus Institute of Technology",
+            "Why Nexus exists: a free, world-class mechanical engineering "
+            "education for anyone willing to work for it.",
+            fragment("pages/about.html"), "../", "about")
+
+    # ---- MISSION (own tab, content kept as-is below its hero, which now
+    # lives on the homepage)
+    mission_en = fragment("pages/mission.html").split('<div class="lang-ar"')[0]
+    mission_body = mission_en[mission_en.find('<div class="catch">'):]
+    if mission_body.rstrip().endswith('</div>'):        # drop the lang-en close
+        mission_body = mission_body.rstrip()[:-6]
+    mission_head = """<div class="pagehead">
+  <p class="kicker"><span class="n">MISSION</span>Advanced Industrial Systems &amp; Engineering Mastery</p>
+  <h1>Learn Mechanical Engineering from Scratch to Industry 4.0.</h1>
+</div>"""
+    nx_page("mission/index.html",
+            "Mission — Nexus Institute of Technology",
+            "The Nexus mission: a complete mechanical-engineering pathway from "
+            "first principles to Industry 4.0, free and honestly labeled.",
+            mission_head + mission_body, "../", "mission",
+            menu=[("#premise", "The premise", None, False, None),
+                  ("#method", "How content is built", None, False, None),
+                  ("#start", "Where to start", None, False, None),
+                  ("#integrity", "The integrity floor", None, False, None)])
+
+    # ---- CAREER (EN only while the Arabic layer is on hold)
+    career = f'<div class="lang-en">{fragment("pages/career.html")}</div>'
     nx_page("career/index.html",
             "Career Paths — Nexus Institute of Technology",
             "Careers in advanced industrial systems: the full role landscape, "
             "the certification architecture, interview mastery, and a "
             "twelve-month development plan.",
             career, "../", "career",
-            menu=[("#top", "The landscape", "الخريطة", False, None)])
+            menu=[("#top", "The landscape", None, False, None)])
 
 def build_search_index(sems):
     idx = []
@@ -946,7 +1004,7 @@ def main():
             for les in c["lessons"]:
                 build_lesson_page(sem, c, les, "../../../", tabs_all)
                 n_pages += 1
-    build_static_pages()
+    build_static_pages(sems, tabs_by_course)
     n_pages += 2
     n_idx = build_search_index(sems)
 

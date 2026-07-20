@@ -477,3 +477,105 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
 .lib-arabic{border-inline-start:4px solid var(--nx-teal-d)}
 .lib-arabic ul.plain li{margin:10px 0}
 .lib-arabic .src{font-family:var(--sans);font-size:12px;color:var(--nx-muted);margin-inline-start:8px}
+
+/* ===================== FRONTEND REDESIGN 2026-07-20 =====================
+   Homepage (reference-structured, LIGHT identity), video-hero lesson layout,
+   About page. Fonts unchanged. Arabic UI on hold. */
+
+/* ---- homepage CTA under banner ---- */
+.home-cta{margin:26px 0 6px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+/* ---- stats band ---- */
+.nx-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:880px;margin:30px auto 8px;padding:0 6px}
+.nx-stats .stat{border:1px solid var(--nx-line);border-radius:12px;background:#fff;padding:16px 10px;text-align:center}
+.nx-stats .stat b{display:block;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em;color:var(--nx-teal-d)}
+.nx-stats .stat span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--nx-muted)}
+@media(max-width:640px){.nx-stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ---- FIG panels (blueprint flavor, light) ---- */
+.fig-panel{border:1.5px solid var(--nx-ink);border-radius:14px;background:#fff;overflow:hidden;margin:26px 0}
+.fig-cap{display:flex;justify-content:space-between;gap:10px;padding:10px 16px;border-bottom:1px solid var(--nx-line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--nx-muted);text-transform:uppercase}
+.fig-note{padding:12px 16px;border-top:1px solid var(--nx-line);font-family:var(--serif);font-size:13.5px;color:var(--nx-muted)}
+.scene-stage,.overview-stage{position:relative;overflow:hidden;
+  background:repeating-linear-gradient(0deg,rgba(31,122,92,.05) 0 1px,transparent 1px 40px),
+             repeating-linear-gradient(90deg,rgba(31,122,92,.05) 0 1px,transparent 1px 40px),#fbfdfe}
+.scene-stage svg,.overview-stage svg{display:block;width:100%;height:auto}
+.overview-stage a.node{cursor:pointer}
+.overview-stage a.node circle{transition:stroke .2s,stroke-width .2s}
+.overview-stage a.node:hover circle{stroke:var(--nx-teal-d);stroke-width:3.5}
+
+/* gears + machinery */
+.gear-spin{transform-box:fill-box;transform-origin:center;will-change:transform}
+.nx-scene [data-depth]{will-change:transform}
+.crank{transform-box:view-box;transform-origin:700px 212px}
+@keyframes nx-crank{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes nx-piston{0%,100%{transform:translateX(0)}50%{transform:translateX(56px)}}
+.crank{animation:nx-crank 4s linear infinite;transform-origin:700px 212px}
+.piston{animation:nx-piston 4s ease-in-out infinite}
+.toolchip{position:absolute;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--nx-line);
+  border-radius:999px;padding:7px 14px;box-shadow:0 6px 18px rgba(22,32,46,.08);will-change:transform}
+.toolchip span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--nx-ink)}
+@media(max-width:640px){.toolchip{display:none}}
+
+/* ---- featured courses ---- */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0 10px}
+@media(max-width:840px){.feat-grid{grid-template-columns:1fr}}
+.feat-card{display:block;border:1px solid var(--nx-line);border-radius:14px;background:#fff;padding:20px 22px;
+  text-decoration:none;color:var(--nx-ink);transition:transform .18s,box-shadow .18s,border-color .18s}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(22,32,46,.10);border-color:var(--nx-teal-d)}
+.feat-card .code{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--nx-teal-d)}
+.feat-card h3{margin:8px 0 8px;font-size:19px}
+.feat-card p{font-family:var(--serif);font-size:14px;color:#33373c;margin:0 0 14px}
+.feat-card .meta{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--nx-amber-d)}
+.allcta{margin:18px 0 0}
+
+/* ---- tracks ---- */
+.track-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0}
+@media(max-width:840px){.track-grid{grid-template-columns:1fr}}
+.track{border:1px solid var(--nx-line);border-radius:14px;background:#fff;padding:22px 22px 10px}
+.track .tcap{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--nx-amber-d);margin:0 0 6px}
+.track h3{margin:0 0 6px}
+.trow{display:flex;align-items:center;gap:14px;padding:10px 2px;border-top:1px solid var(--nx-line);
+  text-decoration:none;color:var(--nx-ink);font-size:14.5px}
+.trow:hover{color:var(--nx-teal-d)}
+.trow .tcode{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--nx-muted);min-width:64px}
+.trow .arr{margin-inline-start:auto;color:var(--nx-teal-d)}
+
+/* ---- notes ---- */
+.note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}
+@media(max-width:840px){.note-grid{grid-template-columns:1fr}}
+.note{border:1px solid var(--nx-line);border-inline-start:3px solid var(--nx-teal-d);border-radius:0 12px 12px 0;background:#fff;padding:18px 20px}
+.note .ncap{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--nx-muted);margin:0 0 8px}
+.note h3{margin:0 0 8px;font-size:16.5px}
+.note p{font-family:var(--serif);font-size:14px;color:#33373c;margin:0}
+
+/* ---- CTA band ---- */
+.cta-band{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  border:1.5px solid var(--nx-teal-d);border-radius:16px;background:linear-gradient(120deg,#f2f8f5,#fff);padding:26px 28px;margin:8px 0 26px}
+.cta-band h2{margin:4px 0 0}
+
+/* ---- lesson video hero + source strip (reference lesson layout) ---- */
+.src-strip{border-inline-start:3px solid var(--nx-teal-d);background:#fff;border-radius:0 10px 10px 0;
+  padding:12px 18px;margin:22px 0 0;max-width:100%}
+.src-strip .t{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--nx-teal-d);margin-bottom:4px}
+.src-strip b{font-family:var(--serif);font-style:italic;font-weight:600;font-size:14.5px;color:var(--nx-ink)}
+.video-hero{border:1.5px solid var(--nx-ink);border-radius:14px;overflow:hidden;background:#fff;margin:22px 0 6px}
+.video-hero .vh-frame{background:#0E1626}
+.video-hero figure.embed{margin:0}
+.video-hero figure.embed iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0}
+.video-hero figure.embed figcaption{display:none}
+.video-hero .vh-empty{background:#fbfdfe;padding:26px 22px}
+.video-hero .vh-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:10px 16px;border-top:1px solid var(--nx-line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+.video-hero .vh-bar .t{color:var(--nx-teal-d)}
+.video-hero .vh-bar .n{color:var(--nx-ink)}
+.video-hero .vh-bar .c{color:var(--nx-muted)}
+.video-hero .vh-bar a{margin-inline-start:auto;color:var(--nx-amber-d);text-decoration:none}
+.video-hero .vh-bar a:hover{text-decoration:underline}
+
+/* ---- reduced motion: everything still, parallax off ---- */
+@media (prefers-reduced-motion: reduce){
+  .crank,.piston{animation:none}
+  .gear-spin,.toolchip,.nx-scene [data-depth]{transform:none !important}
+}
