@@ -579,3 +579,8 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
   .crank,.piston{animation:none}
   .gear-spin,.toolchip,.nx-scene [data-depth]{transform:none !important}
 }
+
+/* GTranslate float switcher: keep it clear of the sticky app bar (owner config
+   places it top-right, which collides with the nav). Nudge below the 58px bar. */
+.gt_float_switcher{top:68px !important;right:14px !important;box-shadow:0 6px 18px rgba(22,32,46,.12) !important}
+@media(max-width:760px){.gt_float_switcher{top:64px !important;right:10px !important}}
