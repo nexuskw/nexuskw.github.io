@@ -911,3 +911,31 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 - No fabricated URLs. Verify every external link live before committing.
 - English only. Professor's voice: direct, precise, no filler, no
   motivational language.
+
+## STANDING DIRECTIVE — ME / Industry 4.0 platform build (owner, 2026-07-22)
+
+Applies to this repo permanently, retroactively to all courses/lessons and
+proactively to all future content, regardless of any future rebrand.
+
+1. MEDIA CENTERING & RESPONSIVENESS — Library-tab lecture videos centered in
+   their container (`display:flex; justify-content:center; align-items:center;
+   margin:0 auto`). 100% fluid across mobile/tablet/laptop/desktop. Kill the
+   right-side whitespace asymmetry on MacBook: auto-center main containers,
+   grids, and video wrappers (`margin-left:auto; margin-right:auto; width:100%;
+   max-width:960px`).
+2. UNIT POLICY — SI is the default baseline for all theory, derivations, and
+   core content. Worked examples and quiz questions MUST also test alternative
+   systems (US Customary/Imperial, CGS) for real-world versatility.
+3. GLOBAL REFERENCE TAB — dedicated site-wide Reference section indexing unit
+   conversions, variable definitions, equations, and terminology. Every
+   variable/factor/equation/term introduced inline in lessons BEFORE it appears
+   in a quiz or example.
+4. DYNAMIC QUIZ ENGINE — on an incorrect MCQ answer, swap the question for an
+   alternative variant that tests the same underlying concept.
+5. COURSE-SUMMARY PDF — prominent download at the end of each completed course.
+   Structure: Part 1 = all lecture lessons compiled sequentially; Part 2 = all
+   corresponding foundations pages/toolkits following the lectures.
+6. FOOTER NAVIGATION — bottom of every lesson and course-completion state gives
+   BOTH "Next Lesson" and "Next Course" (direct progression to the next course).
+
+Build order this pass (owner, 2026-07-22): #1 → #6 → #3 → #4 → #2 → #5.
