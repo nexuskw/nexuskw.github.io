@@ -274,21 +274,9 @@ NX_PAGE = """<!doctype html>
   illustration. Lessons not yet at full depth say so honestly.</p>
 </footer>
 <script src="{prefix}assets/nx/nexus.js?v={v}"></script>
-{gtranslate}
 </body>
 </html>
 """
-
-# GTranslate float widget (owner-supplied translation toolkit, 2026-07-21):
-# client-side whole-page translation (EN/FR/IT/ES/AR), replacing the retired
-# data-ar bilingual layer. Kept verbatim to the owner's configuration.
-GTRANSLATE_WIDGET = ('<div class="gtranslate_wrapper"></div>\n'
-    '<script>window.gtranslateSettings = {"default_language":"en",'
-    '"native_language_names":true,"languages":["en","fr","it","es","ar"],'
-    '"wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"right",'
-    '"switcher_vertical_position":"top","float_switcher_open_direction":"bottom",'
-    '"flag_style":"3d","alt_flags":{"en":"usa"}}</script>\n'
-    '<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>')
 
 NX_V = None
 
@@ -312,7 +300,7 @@ def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None
     body = nx_text(body)
     html = NX_PAGE.format(
         title=esc(title), desc=esc(desc), prefix=prefix, body=body,
-        extra_head=extra_head, v=NX_V, gtranslate=GTRANSLATE_WIDGET,
+        extra_head=extra_head, v=NX_V,
         sidemenu=sidemenu_html(menu or []),
         main_class=' class="wrap"' if wrap else "",
         body_attrs=body_attrs,

@@ -890,16 +890,15 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   canonical texts; honest in-production panel when no approved video. Verified:
   0 Arabic chars in docs/, 0 nx-bot on homepage, 375px no overflow, gears animate
   (JS transform sampled). Reduced-motion disables all homepage motion.
-- GTRANSLATE INTEGRATION (owner-supplied toolkit, 2026-07-21): the "translation
-  toolkit" the Arabic-hold was waiting for. GTranslate float widget added to the
-  page template (nexus_build.py NX_PAGE, GTRANSLATE_WIDGET constant, {gtranslate}
-  field) so it is on all 581 pages — client-side whole-page translation EN/FR/IT/
-  ES/AR via Google, top-right float switcher, 3d flags, owner's exact config kept
-  verbatim. Supersedes the retired data-ar bilingual layer (which stays stripped at
-  emit). VERIFIED in-sandbox: switcher renders, all 5 languages load, selection
-  updates state (EN->AR). NOT verifiable in the localhost sandbox: the actual Google
-  text translation (cross-origin translate.google engine is blocked on localhost /
-  in the in-app browser) — confirm on the live HTTPS site in a normal browser.
+- GTRANSLATE — ADDED THEN REMOVED (owner, 2026-07-21): the owner-supplied GTranslate
+  float widget (EN/FR/IT/ES/AR) was integrated site-wide, then the owner said "cancel
+  and remove this current translating tool" — FULLY REVERTED same session (widget,
+  GTRANSLATE_WIDGET constant + {gtranslate} field, CSS switcher override all removed;
+  0 residue in docs/). Translation remains ON HOLD — the site is EN-only, no language
+  switcher. Do NOT re-add a translation tool without a fresh owner directive. (Note:
+  in-sandbox the switcher rendered and loaded 5 languages, but the actual Google
+  cross-origin translation could not be exercised in the localhost/in-app browser;
+  the removal was an owner product decision, not a verified failure.)
 
 ### Writing rules (non-negotiable)
 
