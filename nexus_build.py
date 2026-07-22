@@ -841,6 +841,7 @@ def build_course_page(sem, course, prefix, tabs_all, next_course=None):
 {hero_html}
 <div class="cta-row">
   <a id="resumeBtn" class="btn btn-primary" href="{lesson_page_name(course, course['lessons'][0])}">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
   <a class="btn btn-ghost" href="{prefix}curriculum/index.html" data-ar="{AR['Curriculum']}">Full curriculum</a>
 </div>
 {learn_html}
@@ -1166,6 +1167,66 @@ def build_reference_page(sems, refs_by_course, prefix='../'):
             "each course's own lessons.",
             body, prefix, "reference", extra_head=MATHJAX)
 
+def build_course_summary(sem, course, prefix, tabs_all, ref):
+    """Owner directive #5: end-of-course summary, print-optimized so the browser's
+    'Save as PDF' yields the downloadable document (no server-side PDF dependency
+    on a static host). Part 1 = all authored lectures in order; Part 2 = the
+    foundations/toolkits; Part 3 = the compiled course reference (same engine as
+    the Reference tab). Lessons still in production are named honestly, not faked."""
+    lectures, foundations, miss_lec, miss_fnd = [], [], [], []
+    for les in course['lessons']:
+        n = les['n']
+        tab = tabs_all.get(str(n), {})
+        head = f"Lesson {n:02d} · {esc(les['t'])}"
+        lec = tab.get('lecture') if isinstance(tab, dict) else None
+        if isinstance(lec, str) and lec.strip():
+            lectures.append(f'<section class="sum-lesson"><h3>{head}</h3>'
+                            f'<div class="measure">{lec}</div></section>')
+        else:
+            miss_lec.append(n)
+        fnd = tab.get('foundations') if isinstance(tab, dict) else None
+        if isinstance(fnd, str) and fnd.strip():
+            foundations.append(f'<section class="sum-lesson"><h3>{head}</h3>'
+                               f'<div class="measure">{fnd}</div></section>')
+        else:
+            miss_fnd.append(n)
+
+    def omitted(nums, what):
+        if not nums:
+            return ''
+        return (f'<p class="ref-thin">Lessons {", ".join("%02d" % n for n in nums)} '
+                f'are still in production and are omitted from the {what} section.</p>')
+
+    p1 = ''.join(lectures) or '<p class="ref-thin">No lecture content is authored for this course yet.</p>'
+    p2 = ''.join(foundations) or '<p class="ref-thin">No foundations content is authored for this course yet.</p>'
+    body = f"""
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>{esc(course['code'])} · {esc(sem['title'])}</p>
+  <h1>{esc(course['code'])} — {esc(course['title'])}</h1>
+  <p class="sub">One compiled document: every authored lecture, then the foundations
+  toolkits, then this course's own equation-and-term reference. Use
+  <b>Print / Save as PDF</b> for a downloadable copy.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+  <h2 class="sum-part">Part 1 — Lectures</h2>
+  {omitted(miss_lec, 'lectures')}
+  {p1}
+  <h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
+  {omitted(miss_fnd, 'foundations')}
+  {p2}
+  <h2 class="sum-part">Part 3 — Course reference</h2>
+  <div class="wide">{reference_section_html(sem, course, ref, prefix)}</div>
+</article>"""
+    nx_page(f"curriculum/{sem['id']}/{course['id']}/summary.html",
+            f"Course summary — {course['title']} — Nexus Institute of Technology",
+            f"Compiled lectures, foundations, and reference for "
+            f"{course['code']} {course['title']}.",
+            body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
+
 def main():
     global NX_V
     if OUT.exists():
@@ -1220,6 +1281,9 @@ def main():
             tabs_all = tabs_by_course[(sem["id"], c["id"])]
             nxt = next_course_of[(sem["id"], c["id"])]
             build_course_page(sem, c, "../../../", tabs_all, nxt)
+            n_pages += 1
+            build_course_summary(sem, c, "../../../", tabs_all,
+                                 refs_by_course[(sem["id"], c["id"])])
             n_pages += 1
             for les in c["lessons"]:
                 build_lesson_page(sem, c, les, "../../../", tabs_all, nxt)

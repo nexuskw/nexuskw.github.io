@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0E1626">
+<title>Course summary — Strength of Materials — Nexus Institute of Technology</title>
+<meta name="description" content="Compiled lectures, foundations, and reference for SOM 201 Strength of Materials.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=fe8c5bee5e">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="Nexus Institute of Technology">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small>Online Engineering Education</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <a href="../../../about/index.html">About</a>
+      <a href="../../../mission/index.html">Mission</a>
+      <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+      <a href="../../../reference/index.html">Reference</a>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+  </div>
+</header>
+
+<main>
+
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>SOM 201 · Year 2 · Semester 1</p>
+  <h1>SOM 201 — Strength of Materials</h1>
+  <p class="sub">One compiled document: every authored lecture, then the foundations
+  toolkits, then this course's own equation-and-term reference. Use
+  <b>Print / Save as PDF</b> for a downloadable copy.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+  <h2 class="sum-part">Part 1 — Lectures</h2>
+  <p class="ref-thin">Lessons 05, 06, 07, 08, 09, 10, 11 are still in production and are omitted from the lectures section.</p>
+  <section class="sum-lesson"><h3>Lesson 01 · Stress and strain under axial load</h3><div class="measure">
+<h3>01 · Stress: force made local</h3>
+<p>A load of a few kilonewtons means nothing to a material until it is spread over an
+area. <b>Normal stress</b> \( \sigma = P/A \) is that intensity — force per unit area,
+in pascals (N/m²), or in engineering practice megapascals. A 100&nbsp;kN pull on a
+25&nbsp;mm round bar (\( A=\tfrac{\pi}{4}d^2=490.9\ \text{mm}^2 \)) is
+\( \sigma=100{,}000/490.9\times10^{-6}\approx204\ \text{MPa} \). The same force on a
+thicker bar is a gentler stress. Stress, not force, is what a material feels, and it is
+the quantity every allowable is written against.</p>
+<h3>02 · Strain: deformation made dimensionless</h3>
+<p><b>Normal strain</b> \( \varepsilon = \delta/L \) is the stretch per unit length —
+a pure number. It divides out the specimen size so that a 1&nbsp;mm stretch in a
+1&nbsp;m bar (\( \varepsilon=0.001 \)) and a 2&nbsp;mm stretch in a 2&nbsp;m bar describe
+the <em>same</em> material state. This normalisation is why stress and strain, not force
+and elongation, are the axes of the material's fingerprint: they belong to the material,
+not to the part.</p>
+<h3>03 · Hooke's law and the elastic contract</h3>
+<p>Over the initial straight portion of the tensile curve, stress is proportional to
+strain: \( \sigma = E\varepsilon \). The slope \(E\) is <b>Young's modulus</b> — steel's
+is about 200&nbsp;GPa — a stiffness the material carries regardless of shape. Combining
+the three relations gives the workhorse deformation formula
+\( \delta = \dfrac{PL}{AE} \). An 80&nbsp;kN load on a 2&nbsp;m steel bar of 20&nbsp;mm
+diameter stretches it \( \delta=\dfrac{80{,}000\times2}{314\times10^{-6}\times200\times10^9}
+\approx2.55\ \text{mm} \). Longer and softer stretches more; thicker and stiffer stretches
+less — all four factors sit in one fraction.</p>
+<h3>04 · Reading the tensile curve as a contract</h3>
+<p>The tensile test is the material's signed contract. The <b>proportional limit</b> ends
+Hooke's law; the <b>yield strength</b> marks the onset of permanent deformation — the
+number most designs are kept below; the <b>ultimate strength</b> is the peak the specimen
+can carry; and the strain at fracture measures <b>ductility</b>, the warning a part gives
+before it breaks. Design keeps the working stress a chosen margin below yield, expressed
+as a <b>factor of safety</b> \( \text{FoS}=\sigma_{\text{yield}}/\sigma_{\text{allow}} \):
+a 250&nbsp;MPa yield held to a 160&nbsp;MPa allowable is a FoS of about 1.56.</p>
+<h3>05 · Why this lesson is the foundation of the course</h3>
+<p>Every later topic — torsion, bending, combined loading, buckling, fatigue — is this
+same logic applied to a different stress: define the stress from the load and geometry,
+relate it to a strain through an elastic law, and compare against an allowable drawn from
+the tensile contract. The stress–strain diagram is therefore not one lesson among many but
+the template for all of them. Master reading it — where the straight part ends, how much
+warning the ductility gives, what margin the factor of safety buys — and the rest of
+Strength of Materials becomes variations on a theme you already understand. The habit of
+converting a raw force into a local stress, and only then judging safety, is the single
+most important reflex the course installs.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 02 · Axial members and thermal stress</h3><div class="measure">
+<h3>01 · Bars in series: deformations add</h3>
+<p>Real members are rarely one uniform prism. A <b>stepped bar</b> — segments of different
+area or load — deforms by the sum of its parts: \( \delta=\sum \dfrac{P_iL_i}{A_iE_i} \).
+Each segment carries its own internal force (found by a free-body cut) over its own length
+and area. The method is bookkeeping: cut, find \(P_i\), compute each \( \delta_i \), add
+with sign. Tension lengthens (+), compression shortens (−); the signs must be respected or
+a stretch and a squeeze will wrongly cancel.</p>
+<h3>02 · Statically indeterminate axial problems</h3>
+<p>When a bar is held at both ends, statics alone cannot find the internal forces — there
+are more unknown reactions than equilibrium equations. The missing equation is
+<b>compatibility</b>: a geometric statement about how the deformations must fit, usually
+"the total length change is zero" or "the two segments share the same displacement."
+Pairing equilibrium with compatibility and Hooke's law closes the problem. This trio —
+equilibrium, compatibility, material law — is the general recipe for every indeterminate
+structure in the curriculum, first met here in its simplest axial form.</p>
+<h3>03 · Thermal strain and free expansion</h3>
+<p>Temperature changes strain a material even with no load: \( \varepsilon_T=\alpha\,\Delta T \),
+where \( \alpha \) is the coefficient of thermal expansion (steel \(\approx12\times10^{-6}
+/^\circ\text{C}\)). A 50&nbsp;°C rise gives \( \varepsilon_T=600\times10^{-6} \) — a free
+bar simply grows by \( \alpha\,\Delta T\,L \) and feels no stress. Thermal strain is real
+deformation; it becomes a stress only when something stops it.</p>
+<h3>04 · Thermal stress: expansion against restraint</h3>
+<p>Restrain that bar between rigid walls so it cannot grow, and the thermal strain is
+converted entirely into mechanical strain of the opposite sign — a compressive stress
+\( \sigma=E\alpha\,\Delta T \). For steel over 50&nbsp;°C:
+\( \sigma=200\times10^9\times12\times10^{-6}\times50=120\ \text{MPa} \), independent of the
+bar's length or area. That length-independence surprises students and explains real
+failures: a fully restrained pipe run heated 50&nbsp;°C carries 120&nbsp;MPa whether it is
+one metre or one hundred. Expansion joints, loops, and sliding supports exist precisely to
+give thermal strain somewhere to go before it becomes stress.</p>
+<h3>05 · The engineering lesson</h3>
+<p>The pattern to carry forward: deformation is additive over segments, indeterminate
+problems need compatibility, and temperature is just another source of strain that turns
+into stress only under restraint. The thermal case is the embryo of the entire piping- and
+pressure-stress world of later courses — where a plant's thermal cycling, not its pressure,
+is often the fatigue driver. An engineer who instinctively asks "is this free to expand, or
+restrained?" before worrying about the temperature itself has absorbed the core of this
+lesson. The arithmetic is easy; the modelling judgement — free versus restrained, determinate
+versus indeterminate — is the skill. It is worth stressing the counter-intuitive part once more: thermal stress is set by the temperature change, the material, and the degree of restraint alone, never by how long the member is. A designer who adds length hoping to relieve a restrained thermal load achieves nothing; only giving the expansion room — a loop, a joint, a sliding support — actually lowers the stress. That single insight prevents a whole class of piping and structural failures.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 03 · Torsion of shafts</h3><div class="measure">
+<h3>01 · Twisting a shaft</h3>
+<p>A driveline transmits power by torque, and torque twists. For a circular shaft the
+<b>torsion formula</b> \( \tau=\dfrac{Tr}{J} \) gives the shear stress at radius \(r\),
+where \(J\) is the polar second moment of area — \( J=\dfrac{\pi d^4}{32} \) for a solid
+shaft. Stress is zero on the axis and maximum at the surface, so shafts are loaded most
+where they can be inspected. The surface stress can be written directly as
+\( \tau_{\max}=\dfrac{16T}{\pi d^3} \), the sizing formula an engineer reaches for first.</p>
+<h3>02 · Angle of twist</h3>
+<p>How much a shaft rotates end-to-end is \( \varphi=\dfrac{TL}{GJ} \), the torsional twin
+of \( \delta=PL/AE \): torque replaces force, the shear modulus \(G\) replaces \(E\), and
+\(J\) replaces \(A\). The parallel is exact and worth holding onto — axial and torsional
+members obey the same load–stiffness–geometry logic. Excess twist matters even when stress
+is safe: a shaft that winds up too much upsets timing, gear meshing, and control response.</p>
+<h3>03 · Power, torque, and speed</h3>
+<p>Rotating machines are rated in power, but shafts are sized by torque, so the link
+\( P=T\omega \) is used constantly. With speed in rev/min, \( \omega=\dfrac{2\pi N}{60} \).
+A 15&nbsp;kW motor at 1500&nbsp;rev/min turns at \( \omega=157.1\ \text{rad/s} \) and
+delivers \( T=P/\omega=15{,}000/157.1=95.5\ \text{N·m} \). Halving the speed for the same
+power doubles the torque — which is why low-speed drives need fat shafts, and why a
+gearbox that reduces speed must be built for the torque it raises.</p>
+<h3>04 · Sizing and reading failures</h3>
+<p>To size a solid shaft, invert the surface-stress formula:
+\( d=\left(\dfrac{16T}{\pi\tau_{\text{allow}}}\right)^{1/3} \) — the cube root is why a
+modest torque increase needs only a small diameter increase, and why hollow shafts (most
+material at large radius, where it works hardest) are so efficient. Torsional failures read
+their own history: a ductile shaft shears flat across the section (maximum shear on the
+transverse plane), while a brittle shaft breaks on a 45° helix (maximum tension on the
+diagonal). The fracture surface names the failure mode before any calculation. This
+stress-at-a-radius reasoning returns directly in the rotating-equipment and machine-design
+courses, where shaft sizing is a daily task.</p>
+<h3>05 · Why torsion generalises the axial story</h3>
+<p>Torsion is the second instance of the course's master pattern, and seeing it as such is
+the point: a load (torque) produces a stress (shear) that varies with geometry (\(r\) and
+\(J\)), relates to a deformation (twist) through a material stiffness (\(G\)), and is judged
+against an allowable. Where axial members spread force over an area, shafts spread torque
+over a radius distribution — but the modelling grammar is identical. An engineer who has
+internalised \( \delta=PL/AE \) already half-knows \( \varphi=TL/GJ \); the remaining work
+is recognising which geometry factor plays the role of \(A\). That transfer of structure, lesson to lesson, is what turns a list of formulas into a single competence. The same recognition makes the hollow-shaft insight obvious rather than memorised: because stress rises with radius, material near the axis barely earns its weight, so removing it costs little strength and saves much mass — the reason drive shafts and structural tubes are hollow by default.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 04 · Bending and transverse shear in beams</h3><div class="measure">
+<h3>01 · Bending stress from plane sections</h3>
+<p>A beam resists transverse load by bending, and bending puts one face in tension and the
+other in compression, with a neutral axis of zero stress between. Assuming plane sections
+stay plane, strain varies linearly with distance \(y\) from the neutral axis, and so — through
+Hooke's law — does stress. Integrating that stress into a resisting moment gives the
+<b>flexure formula</b> \( \sigma=\dfrac{My}{I} \), where \(I\) is the second moment of area
+of the cross-section. Stress is largest at the extreme fibre, farthest from the neutral
+axis.</p>
+<h3>02 · Section modulus, the designer's currency</h3>
+<p>Evaluating the flexure formula at the extreme fibre \(c\) gives
+\( \sigma_{\max}=\dfrac{M}{S} \), where \( S=I/c \) is the <b>section modulus</b> — a single
+number that captures a section's bending efficiency. A rectangular section
+\(b\times h\) has \( I=\dfrac{bh^3}{12} \) and \( S=\dfrac{bh^2}{6} \). For \(b=50\),
+\(h=100\) mm: \( I=4.17\times10^6\ \text{mm}^4 \), \( S=83{,}333\ \text{mm}^3 \), so a
+10&nbsp;kN·m moment gives \( \sigma=M/S=10\times10^6/83{,}333=120\ \text{MPa} \). Because
+\(S\propto h^2\), depth matters far more than width — the reason beams are tall, not fat.</p>
+<h3>03 · Transverse shear and shear flow</h3>
+<p>Bending rarely comes alone; the transverse load also produces a <b>shear stress</b>
+\( \tau=\dfrac{VQ}{Ib} \), where \(V\) is the shear force, \(Q\) the first moment of the area
+beyond the level of interest, and \(b\) the width there. Shear stress is greatest at the
+neutral axis — opposite to bending stress — which is why an I-beam puts material in flanges
+(far out, for bending) and a thin web at the centre (to carry shear). The related idea of
+<b>shear flow</b> \( q=VQ/I \) sizes the fasteners or welds that hold a built-up section
+together.</p>
+<h3>04 · Designing a beam</h3>
+<p>The design task inverts the flexure formula: for a required moment and an allowable
+stress, the section must supply \( S\ge M/\sigma_{\text{allow}} \). Choosing the lightest
+section that meets this — a deep, thin-webbed shape — is the everyday work of structural and
+machine design, and \(S\) is the number tabulated for every standard beam. Bending stress
+usually governs, but the shear check at the neutral axis must not be skipped for short, heavily
+loaded beams, where shear can control. Reading which of the two governs — long slender beams
+by bending, short stubby ones by shear — is the judgement this lesson trains.</p>
+<h3>05 · Bending as the course's capstone stress</h3>
+<p>Bending combines everything before it: an internal moment (from statics), a linear stress
+distribution (from plane sections and Hooke's law), a geometry factor (\(I\) and \(S\)), and
+an allowable (from the tensile contract). It is the axial and torsional grammar applied to a
+stress that varies across the section rather than being uniform or radial. Mastering the
+section modulus — why depth is cubed into \(I\) but squared into \(S\), why beams are oriented
+tall — equips the machine-design and structures courses that follow, where beam selection is
+routine. The through-line of Strength of Materials is now complete: define the stress, relate
+it to strain, judge it against an allowable — for axial, torsional, and bending members alike.</p>
+</div></section>
+  <h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
+  <p class="ref-thin">Lessons 05, 06, 07, 08, 09, 10, 11 are still in production and are omitted from the foundations section.</p>
+  <section class="sum-lesson"><h3>Lesson 01 · Stress and strain under axial load</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Statics</b> — internal force from a free-body cut precedes any stress.</li>
+<li><b>Areas of sections</b> — \(A=\tfrac{\pi}{4}d^2\) for round bars.</li>
+<li><b>Unit discipline</b> — MPa = N/mm²; keep a consistent system.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Normal stress</td><td>\( \sigma=P/A \)</td><td>Axial force spread over a cross-section.</td></tr>
+<tr><td>Normal strain</td><td>\( \varepsilon=\delta/L \)</td><td>Size-independent measure of stretch.</td></tr>
+<tr><td>Hooke's law</td><td>\( \sigma=E\varepsilon \)</td><td>Elastic (straight-line) region only.</td></tr>
+<tr><td>Axial deformation</td><td>\( \delta=PL/AE \)</td><td>Elongation of a uniform bar.</td></tr>
+<tr><td>Factor of safety</td><td>\( \sigma_y/\sigma_{allow} \)</td><td>Margin held below yield.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 02 · Axial members and thermal stress</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Axial stress/strain</b> (Lesson 1) — the per-segment ingredients.</li>
+<li><b>Free-body cuts</b> — to find each segment's internal force.</li>
+<li><b>Equilibrium equations</b> — half of every indeterminate problem.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Series deformation</td><td>\( \delta=\sum P_iL_i/A_iE_i \)</td><td>Stepped or composite bars.</td></tr>
+<tr><td>Compatibility</td><td>geometry of fit</td><td>Extra equation for indeterminate bars.</td></tr>
+<tr><td>Thermal strain</td><td>\( \varepsilon_T=\alpha\Delta T \)</td><td>Free temperature change, no stress.</td></tr>
+<tr><td>Thermal stress</td><td>\( \sigma=E\alpha\Delta T \)</td><td>Fully restrained temperature change.</td></tr>
+<tr><td>Expansion coeff.</td><td>\( \alpha \) [1/°C]</td><td>Material's thermal sensitivity.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 03 · Torsion of shafts</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Axial member logic</b> (Lessons 1–2) — torsion mirrors \(\delta=PL/AE\).</li>
+<li><b>Second moments of area</b> — \(J=\pi d^4/32\) for solid circles.</li>
+<li><b>Rotational kinematics</b> — \(\omega=2\pi N/60\).</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Torsion formula</td><td>\( \tau=Tr/J \)</td><td>Shear stress at radius \(r\).</td></tr>
+<tr><td>Surface shear</td><td>\( \tau_{max}=16T/\pi d^3 \)</td><td>Solid-shaft sizing.</td></tr>
+<tr><td>Angle of twist</td><td>\( \varphi=TL/GJ \)</td><td>End-to-end rotation.</td></tr>
+<tr><td>Power–torque</td><td>\( P=T\omega,\ \omega=2\pi N/60 \)</td><td>Link machine rating to shaft torque.</td></tr>
+<tr><td>Polar moment</td><td>\( J=\pi d^4/32 \)</td><td>Solid circular section.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 04 · Bending and transverse shear in beams</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Shear and moment</b> — internal \(V\) and \(M\) from statics.</li>
+<li><b>Second moment of area</b> — \(I=bh^3/12\) for rectangles.</li>
+<li><b>The flexure logic</b> — plane sections + Hooke's law.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Flexure formula</td><td>\( \sigma=My/I \)</td><td>Bending stress at height \(y\).</td></tr>
+<tr><td>Section modulus</td><td>\( S=I/c,\ \sigma_{max}=M/S \)</td><td>Max bending stress; beam sizing.</td></tr>
+<tr><td>Rect. properties</td><td>\( I=bh^3/12,\ S=bh^2/6 \)</td><td>Solid rectangular section.</td></tr>
+<tr><td>Transverse shear</td><td>\( \tau=VQ/Ib \)</td><td>Shear stress, peaks at neutral axis.</td></tr>
+<tr><td>Shear flow</td><td>\( q=VQ/I \)</td><td>Sizing fasteners in built-up beams.</td></tr>
+</tbody></table></div>
+</div></section>
+  <h2 class="sum-part">Part 3 — Course reference</h2>
+  <div class="wide"><h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[\sigma = P/A\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[A=\tfrac{\pi}{4}d^2=490.9\ \text{mm}^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\sigma=100{,}000/490.9\times10^{-6}\approx204\ \text{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\varepsilon = \delta/L\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\varepsilon=0.001\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\sigma = E\varepsilon\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta = \dfrac{PL}{AE}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta=\dfrac{80{,}000\times2}{314\times10^{-6}\times200\times10^9} \approx2.55\ \text{mm}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\text{FoS}=\sigma_{\text{yield}}/\sigma_{\text{allow}}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[A=\tfrac{\pi}{4}d^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta=PL/AE\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[A=\tfrac{\pi}{4}(25)^2=490.9\ \text{mm}^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\sigma=P/A=100{,}000/490.9=203.7\ \text{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\approx204\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[A=\tfrac{\pi}{4}(20)^2=314\ \text{mm}^2=314\times10^{-6}\,\text{m}^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta=\dfrac{PL}{AE}=\dfrac{80{,}000\times2}{314\times10^{-6}\times200\times10^9}=2.55\times10^{-3}\,\text{m}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\approx2.55\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\text{FoS}=\sigma_y/\sigma_{allow}=250/160=1.56\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\approx1.56\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[E=\sigma/\varepsilon\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta\propto L\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta=\sum \dfrac{P_iL_i}{A_iE_i}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\varepsilon_T=\alpha\,\Delta T\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\approx12\times10^{-6} /^\circ\text{C}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\varepsilon_T=600\times10^{-6}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\sigma=E\alpha\,\Delta T\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\sigma=200\times10^9\times12\times10^{-6}\times50=120\ \text{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\delta=\sum P_iL_i/A_iE_i\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\varepsilon_T=\alpha\Delta T\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\sigma=E\alpha\Delta T\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\alpha=12\times10^{-6}/^\circ\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\varepsilon_T=\alpha\Delta T=12\times10^{-6}\times50=600\times10^{-6}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\sigma=E\alpha\Delta T=200\times10^9\times12\times10^{-6}\times50=120\times10^6\,\text{Pa}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\delta\propto1/A\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\delta_A/\delta_B=2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\alpha=12\times10^{-6}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[12\times10^{-6}\times50=600\times10^{-6}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\tau=\dfrac{Tr}{J}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[J=\dfrac{\pi d^4}{32}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\tau_{\max}=\dfrac{16T}{\pi d^3}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\varphi=\dfrac{TL}{GJ}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[P=T\omega\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\omega=\dfrac{2\pi N}{60}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\omega=157.1\ \text{rad/s}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[T=P/\omega=15{,}000/157.1=95.5\ \text{N·m}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[d=\left(\dfrac{16T}{\pi\tau_{\text{allow}}}\right)^{1/3}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\varphi=TL/GJ\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[J=\pi d^4/32\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li></ul>
+<h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\sigma\)</span><span class="chip">\(\pi\)</span><span class="chip">\(\varepsilon\)</span><span class="chip">\(\delta\)</span><span class="chip">\(\alpha\)</span><span class="chip">\(\Delta\)</span><span class="chip">\(\mu\)</span><span class="chip">\(\tau\)</span><span class="chip">\(\varphi\)</span><span class="chip">\(\omega\)</span><span class="chip unit">mm</span><span class="chip unit">MPa</span><span class="chip unit">m</span><span class="chip unit">Pa</span><span class="chip unit">rad/s</span><span class="chip unit">N·m</span></div>
+<h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>Areas of sections</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>ductility</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>factor of safety</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Normal strain</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Normal stress</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>proportional limit</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Statics</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>ultimate strength</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Unit discipline</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>yield strength</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Young's modulus</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Axial stress/strain</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>compatibility</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>Equilibrium equations</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>Free-body cuts</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>stepped bar</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>Axial member logic</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></td></tr><tr><td>Rotational kinematics</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></td></tr><tr><td>Second moments of area</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></td></tr><tr><td>torsion formula</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></td></tr><tr><td>flexure formula</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>Second moment of area</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>section modulus</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>Shear and moment</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>shear flow</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>shear stress</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>The flexure logic</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr></tbody></table></div></div>
+</article>
+</main>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html">Home</a> ·
+    <a href="../../../about/index.html">About</a> ·
+    <a href="../../../mission/index.html">Mission</a> ·
+    <a href="../../../curriculum/index.html">Curriculum</a> ·
+    <a href="../../../reference/index.html">Reference</a> ·
+    <a href="../../../career/index.html">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free, open engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+</footer>
+<script src="../../../assets/nx/nexus.js?v=fe8c5bee5e"></script>
+</body>
+</html>

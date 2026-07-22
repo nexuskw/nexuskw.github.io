@@ -310,6 +310,25 @@ html.js .tabpanel.on{display:block}
 .ref-terms th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
   text-transform:uppercase;color:var(--nx-muted)}
 .ref-terms td:last-child{width:1%;white-space:nowrap}
+/* ---------- course summary / print (owner directive #5) ---------- */
+.sum-doc{max-width:1060px;margin:0 auto;padding:0 4vw 40px}
+.sum-part{font-size:15px;letter-spacing:.02em;border-bottom:2px solid var(--nx-ink);
+  padding-bottom:8px;margin:40px 0 22px}
+.sum-lesson{margin:0 0 30px}
+.sum-lesson>h3{font-size:16px;color:var(--nx-teal-d);margin:0 0 12px;
+  padding-top:6px;border-top:1px solid var(--nx-line)}
+@media print{
+  .appbar,.nx-foot,.sidemenu,.no-print,.coursenav,.prevnext,.crumbs{display:none !important}
+  body{background:#fff;color:#000}
+  main.wrap,main{padding:0;margin:0}
+  .pagehead{padding:0 0 12px;max-width:none}
+  .sum-doc{max-width:none;padding:0}
+  .sum-lesson,.ref-course,.keybox,figure{break-inside:avoid}
+  .sum-part{break-before:page}
+  .sum-part:first-of-type{break-before:auto}
+  a{color:#000;text-decoration:none}
+  .ref-jump{display:none}
+}
 .preview{border:1px solid var(--nx-line);border-inline-start:3px solid var(--nx-amber);background:#fff;
   border-radius:0 10px 10px 0;padding:14px 18px 12px;margin:0 0 16px;max-width:75ch}
 [dir="rtl"] .preview{border-radius:10px 0 0 10px}
