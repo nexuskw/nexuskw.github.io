@@ -890,6 +890,16 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   canonical texts; honest in-production panel when no approved video. Verified:
   0 Arabic chars in docs/, 0 nx-bot on homepage, 375px no overflow, gears animate
   (JS transform sampled). Reduced-motion disables all homepage motion.
+- GTRANSLATE INTEGRATION (owner-supplied toolkit, 2026-07-21): the "translation
+  toolkit" the Arabic-hold was waiting for. GTranslate float widget added to the
+  page template (nexus_build.py NX_PAGE, GTRANSLATE_WIDGET constant, {gtranslate}
+  field) so it is on all 581 pages — client-side whole-page translation EN/FR/IT/
+  ES/AR via Google, top-right float switcher, 3d flags, owner's exact config kept
+  verbatim. Supersedes the retired data-ar bilingual layer (which stays stripped at
+  emit). VERIFIED in-sandbox: switcher renders, all 5 languages load, selection
+  updates state (EN->AR). NOT verifiable in the localhost sandbox: the actual Google
+  text translation (cross-origin translate.google engine is blocked on localhost /
+  in the in-app browser) — confirm on the live HTTPS site in a normal browser.
 
 ### Writing rules (non-negotiable)
 
