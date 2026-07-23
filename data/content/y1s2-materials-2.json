@@ -234,5 +234,241 @@
    }
   ],
   "kuwait": "\n<p>The iron–carbon diagram and its heat treatments are the core knowledge of a steel\nmill and any heat-treat shop. Choosing a carbon level sets the achievable hardness;\nchoosing a cooling path — full anneal for softness and machinability, normalize for a\nuniform structure, quench-and-temper for strength with toughness — sets the final\nproperties. A rebar, a gear, and a spring may start from similar steel and diverge\nentirely through heat treatment, all predicted by this one diagram.</p>\n<p>Getting the treatment wrong is a real failure mode maintenance sees. An over-quenched\npart left untempered is glass-hard and cracks in service; an under-hardened shaft wears\nand fatigues early. Reading a failed component's microstructure back against the\niron–carbon diagram — was it pearlitic, martensitic, over-tempered? — is standard\nfailure analysis, telling the investigator whether the metal or the process was at\nfault.</p>\n"
+ },
+ "3": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Temperature versus time cooling curves from the austenitizing temperature, comparing slow furnace cooling for a full anneal against faster air cooling for a normalize, both crossing the 727 degree eutectoid line at different times\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Full anneal vs normalize: the same steel, two cooling paths</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">time (schematic — furnace cooling is far slower than air) →</text><text x=\"20\" y=\"160\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 160)\">temperature →</text><line x1=\"66\" y1=\"89.1\" x2=\"540\" y2=\"89.1\" stroke=\"#1f7a5c\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><text x=\"404\" y=\"84\" fill=\"#1f7a5c\" font-size=\"11\">727°C — eutectoid (Lesson 2)</text><text x=\"70\" y=\"72\" fill=\"#16202e\" font-size=\"11\">850°C — austenitize (both paths start here)</text><polyline points=\"66.0,60.0 77.8,75.0 89.7,88.8 101.5,101.6 113.4,113.4 125.2,124.3 137.1,134.3 148.9,143.6 160.8,152.2 172.7,160.1 184.5,167.4 196.4,174.1 208.2,180.3 220.1,186.1 231.9,191.4 243.8,196.3 255.6,200.8 267.4,205.0 279.3,208.8 291.1,212.4 303.0,215.6 314.9,218.7 326.7,221.5 338.5,224.0 350.4,226.4 362.2,228.6 374.1,230.6 386.0,232.5 397.8,234.2 409.6,235.8 421.5,237.3 433.4,238.7 445.2,239.9 457.0,241.1 468.9,242.2 480.8,243.1 492.6,244.1 504.5,244.9 516.3,245.7 528.1,246.4 540.0,247.1\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2\"/><polyline points=\"66.0,60.0 77.8,118.0 89.7,158.7 101.5,187.4 113.4,207.5 125.2,221.6 137.1,231.5 148.9,238.5 160.8,243.4 172.7,246.9 184.5,249.3 196.4,251.0 208.2,252.2 220.1,253.0 231.9,253.6 243.8,254.0 255.6,254.3 267.4,254.5 279.3,254.7 291.1,254.8 303.0,254.8 314.9,254.9 326.7,254.9 338.5,254.9 350.4,255.0 362.2,255.0 374.1,255.0 386.0,255.0 397.8,255.0 409.6,255.0 421.5,255.0 433.4,255.0 445.2,255.0 457.0,255.0 468.9,255.0 480.8,255.0 492.6,255.0 504.5,255.0 516.3,255.0 528.1,255.0 540.0,255.0\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><circle cx=\"89.9\" cy=\"89.1\" r=\"3.5\" fill=\"#c2820f\"/><circle cx=\"71.4\" cy=\"89.1\" r=\"3.5\" fill=\"#3a6ea5\"/><text x=\"288\" y=\"199\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">Full anneal (furnace) → coarse pearlite, softest</text><text x=\"176\" y=\"270\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">Normalize (air) → fine pearlite, harder</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Same steel, same eutectoid crossing — cooling RATE sets pearlite spacing and hardness</text></svg><figcaption>Both paths start at the same austenitizing temperature and cross the same 727°C eutectoid line — the furnace-cooled anneal spends far longer doing it than the air-cooled normalize, producing coarser (softer) pearlite versus finer (harder) pearlite from the identical steel.</figcaption></figure>\n\n<h3>§1 · Softening and homogenizing: anneal, normalize, stress relieve, spheroidize</h3>\n<p>Four heat treatments share one purpose — leave the steel <em>softer, more uniform, or less stressed</em> than it arrived — and differ only in how far they go. A <b>full anneal</b> austenitizes the steel, then cools it slowly in the furnace itself. The long time spent transforming near 727°C lets carbon diffuse far, so the pearlite that forms is <em>coarse</em> and widely spaced — the softest, most ductile condition the steel can reach, at the cost of hours of furnace time. A <b>normalize</b> austenitizes the same way but cools in still air — faster, cheaper, and stopping the transformation before carbon has time to spread as far, giving <em>fine</em> pearlite: moderately stronger and harder than annealed, and — because austenitizing resets the grain size — more uniform than as-cast or as-forged stock.</p>\n\n<h3>§2 · Reading the diagram — cooling rate sets lamellar spacing</h3>\n<p>The working method is the same tool from Lessons 1–2, run twice. Both curves leave the austenitizing temperature together and cross the 727°C eutectoid line — the furnace path far later than the air path. Time spent in the transformation range controls how far carbon can diffuse before the pearlite locks in: slow crossing → carbon travels far → thick, widely-spaced lamellae → soft. Fast crossing → carbon travels little → thin, closely-spaced lamellae → hard. This is the same principle as grain-size strengthening from Materials I: finer internal spacing resists dislocation motion more, so hardness rises as the microstructure gets finer — whether that spacing is grain size or lamellar spacing.</p>\n<p><b>Stress relief</b> and <b>spheroidize</b> stay below 727°C entirely, so neither re-forms austenite. Stress relief (roughly 600–650°C, held then air- or furnace-cooled) exists only to let locked-in residual stress from welding, machining, or cold forming relax — it changes no phase, only removes distortion risk. Spheroidize holds a high-carbon steel just under 727°C long enough that the cementite lamellae ball up into spheroids dispersed in ferrite — the softest, most formable condition a high-carbon steel reaches, used before heavy cold work such as cold heading or wire drawing.</p>\n\n<h3>§3 · Case hardening: a hard shell, a tough core</h3>\n<p>A gear tooth or a cam lobe needs a wear-resistant <em>surface</em> and a fracture-resistant <em>core</em> at once — through-hardening the whole part would win the surface and lose the core to brittleness. Three processes solve this by hardening only a shell. <b>Carburizing</b> diffuses carbon into a low-carbon steel's surface at high temperature (roughly 900–950°C) in a carbon-rich atmosphere; the enriched surface then hardens fully on quenching while the low-carbon core stays tough. Because it is diffusion, case depth follows the same square-root-of-time law as any diffusion process: \\( x\\approx k\\sqrt{t} \\) — doubling the case depth takes four times the time, not twice.</p>\n<p><b>Nitriding</b> diffuses nitrogen into the surface at a much lower temperature (roughly 500–550°C), forming hard nitride compounds directly, with <em>no</em> quench afterward — the part was already finish-machined, so avoiding a quench avoids the distortion a quench would cause. <b>Induction hardening</b> diffuses nothing at all: a coil heats only a thin surface layer of an already carbon-adequate steel above the transformation temperature in seconds, and that layer alone is quenched — fast, atmosphere-free, well suited to high-volume shafts and gears.</p>\n\n<h3>§4 · Choosing a treatment — the working method</h3>\n<p>Given a required property set, the sequence runs: (1) <em>normalize or anneal</em> the as-received bar stock so it machines cleanly and predictably; (2) machine to near-final shape; (3) <em>case-harden</em> the specific wear surfaces — carburizing where a deep case and a soft core both matter, induction hardening where speed and a defined shallow zone matter, nitriding where the part must not distort — leaving stock on the hardened surfaces for finishing, since hardening shifts dimensions slightly; (4) finish-grind the hardened surfaces to final size. A drawing callout that reads \"case-harden journals, 0.8–1.0 mm effective case depth\" is asking for exactly this sequence, in this order.</p>\n<div class=\"keybox\"><span class=\"tag\">Key tool — diffusion case depth</span>\n<p>\\[ x \\approx k\\sqrt{t}\\qquad\\Rightarrow\\qquad \\frac{t_2}{t_1}=\\left(\\frac{x_2}{x_1}\\right)^2. \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Lever rule and eutectoid reaction</b> (Lessons 1–2) — cooling rate through 727°C sets the microstructure.</li><li><b>Diffusion and Fick's law</b> (Materials I) — the basis of the case-depth relation.</li><li><b>Grain size and strength</b> (Materials I) — the same \"finer spacing, more strength\" logic applies to pearlite.</li></ul>\n<h4>Toolkit — treatments and the case-depth law</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning / formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Full anneal</td><td>austenitize + furnace cool</td><td>Softest, coarse pearlite.</td></tr>\n<tr><td>Normalize</td><td>austenitize + air cool</td><td>Fine pearlite, uniform grain.</td></tr>\n<tr><td>Stress relief</td><td>hold below 727°C</td><td>Removes residual stress, no phase change.</td></tr>\n<tr><td>Spheroidize</td><td>prolonged hold below 727°C</td><td>Maximum machinability/formability.</td></tr>\n<tr><td>Case depth</td><td>\\( x\\approx k\\sqrt{t} \\)</td><td>Carburizing / nitriding depth vs. time.</td></tr>\n<tr><td>Induction hardening</td><td>local heat + quench, no diffusion</td><td>Fast, defined shallow zone.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Normalized 1060 steel — lever rule reused</b></p><p><b>Problem.</b> A 1060 steel (\\(0.60\\)% C) is normalized. Is it hypoeutectoid or hypereutectoid, and what fractions of ferrite and pearlite does it contain just below 727°C? (Use \\(C_\\alpha=0.022\\)%, eutectoid \\(0.76\\)%.)</p>",
+    "solution": "<p><b>Solution.</b> \\(0.60 < 0.76\\), so it is hypoeutectoid. \\( W_\\alpha=\\dfrac{0.76-0.60}{0.76-0.022}=\\dfrac{0.16}{0.738}\\approx0.217 \\); \\( W_{\\text{pearlite}}=\\dfrac{0.60-0.022}{0.738}\\approx0.783 \\). About 22% proeutectoid ferrite, 78% pearlite — and because it was normalized (air-cooled), that pearlite is fine, not coarse.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Carburizing time for a deeper case</b></p><p><b>Problem.</b> A carburizing cycle of 4 hours produces a 0.8 mm case. Using \\( x\\approx k\\sqrt{t} \\), how long is needed for a 1.2 mm case at the same temperature?</p>",
+    "solution": "<p><b>Solution.</b> \\( \\dfrac{t_2}{t_1}=\\left(\\dfrac{x_2}{x_1}\\right)^2=\\left(\\dfrac{1.2}{0.8}\\right)^2=1.5^2=2.25 \\), so \\( t_2=4\\times2.25=9 \\) hours — more than double the time for 1.5× the depth, because depth grows with the square root of time.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why stress relief leaves the microstructure alone</b></p><p><b>Problem.</b> A welded 0.76% C (eutectoid) bracket is stress-relieved at 650°C for 2 hours. Does this change its pearlite content? Explain using the eutectoid temperature.</p>",
+    "solution": "<p><b>Solution.</b> No. \\(650^\\circ\\text{C} < 727^\\circ\\text{C}\\), the eutectoid temperature, so no austenite ever forms — there is nothing to transform back into pearlite on cooling. The hold only lets locked-in residual stress relax; the 100% pearlite microstructure from welding is unchanged.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which cooling path gives the SOFTER steel, and why?</p>",
+    "choices": [
+     "Full anneal — slow furnace cooling gives coarse pearlite",
+     "Normalize — air cooling gives coarse pearlite",
+     "Full anneal — furnace cooling gives fine pearlite",
+     "Both give identical hardness"
+    ],
+    "answer": 0,
+    "solution": "<p>Slow furnace cooling gives carbon more time to diffuse, producing coarse, widely-spaced — and softer — pearlite.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Stress relief is held below the eutectoid temperature primarily to:</p>",
+    "choices": [
+     "Remove residual stress without re-forming austenite",
+     "Fully re-harden the part",
+     "Form martensite at the surface",
+     "Diffuse carbon into the surface"
+    ],
+    "answer": 0,
+    "solution": "<p>Staying below 727°C means no austenite forms — the treatment relaxes stress, not microstructure.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Spheroidizing is used mainly to:</p>",
+    "choices": [
+     "Maximize machinability and formability before heavy cold work",
+     "Maximize surface hardness",
+     "Add carbon to the surface",
+     "Refine grain size after casting"
+    ],
+    "answer": 0,
+    "solution": "<p>Spheroidized cementite in a soft ferrite matrix is the most formable condition a high-carbon steel reaches.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Carburizing hardens a low-carbon steel's surface by:</p>",
+    "choices": [
+     "Diffusing carbon into the surface at high temperature, then quenching",
+     "Heating the whole part above the eutectoid and furnace-cooling",
+     "Heating only the surface with an induction coil",
+     "Adding nitrogen at low temperature with no quench"
+    ],
+    "answer": 0,
+    "solution": "<p>Carburizing enriches the surface with carbon by diffusion; the quench then hardens that enriched layer.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Nitriding is often preferred over carburizing for finished precision parts because:</p>",
+    "choices": [
+     "It runs at lower temperature with no post-treatment quench, so distortion is minimal",
+     "It produces a far deeper case than carburizing",
+     "It requires no diffusion step at all",
+     "It only works on high-carbon steel"
+    ],
+    "answer": 0,
+    "solution": "<p>No quench after nitriding means the already-finished dimensions are not disturbed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Induction hardening differs from carburizing chiefly because it:</p>",
+    "choices": [
+     "Changes no composition — it heats and quenches only the existing surface layer",
+     "Adds carbon to a low-carbon core",
+     "Requires hours at high temperature in a furnace atmosphere",
+     "Cannot be used on shafts or gears"
+    ],
+    "answer": 0,
+    "solution": "<p>Induction hardening relies on rapid local heating and quenching, not diffusion of any element.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In shop sequencing, case hardening is normally scheduled:</p>",
+    "choices": [
+     "After rough machining but before finish grinding, since it distorts the part slightly",
+     "Before any machining at all",
+     "After finish grinding, so grinding removes the hardened case",
+     "Timing makes no difference"
+    ],
+    "answer": 0,
+    "solution": "<p>Rough-machine soft → case-harden → finish-grind to final size keeps the hardened surface intact and on-dimension.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A gear tooth needing a wear-resistant surface AND a fracture-resistant core calls for:</p>",
+    "choices": [
+     "Case hardening — a hard shell over an unhardened, ductile core",
+     "Through-hardening the entire tooth",
+     "Full annealing only",
+     "Stress relief only"
+    ],
+    "answer": 0,
+    "solution": "<p>Through-hardening would win the surface and lose the core to brittleness — case hardening keeps both.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A shaft drawing that calls out \"normalize, then induction-harden the bearing journals to 0.8 mm effective case depth\" is specifying exactly the sequence above: soft enough to machine cleanly, then a hard, wear-resistant surface only where a bearing rides, over a core still tough enough to carry shock load. A regional fabrication or machine shop reads that callout, sequences rough machining before hardening and finish grinding after, and treats the case-depth number as a real acceptance criterion, checked on a cross-sectioned sample.</p>\n<p>Failure analysis runs the same logic backward. A shaft that snapped rather than wore out, with a glassy, brittle fracture right at the case-core boundary, points to a case pushed too deep or a core hardened along with it — through-hardening dressed up as case hardening. A journal that wore through quickly points to too shallow a case, or a stress-relief step skipped before final grinding, leaving residual stress to help the wear along. Reading the failure back against the treatments above usually tells a maintenance engineer which step in the sequence was missed.</p>\n"
+ },
+ "4": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Jominy end-quench hardenability curves: hardness in Rockwell C versus distance from the quenched end, comparing a plain-carbon steel that falls off sharply against an alloy steel that stays hard much farther out, both starting from the same hardness at the quenched end\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Jominy end-quench: hardenability is DEPTH, not peak hardness</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">distance from quenched end (mm) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">hardness (HRC) →</text><text x=\"70\" y=\"52\" fill=\"#16202e\" font-size=\"11\">Same %C → same HRC at x=0 for both steels</text><polyline points=\"66.0,60.0 77.8,96.7 89.7,126.4 101.5,150.6 113.4,170.3 125.2,186.2 137.1,199.1 148.9,209.6 160.8,218.2 172.7,225.1 184.5,230.7 196.4,235.3 208.2,239.0 220.1,242.0 231.9,244.4 243.8,246.4 255.6,248.0 267.4,249.4 279.3,250.4 291.1,251.3 303.0,252.0 314.9,252.5 326.7,253.0 338.5,253.4 350.4,253.7 362.2,253.9 374.1,254.1 386.0,254.3 397.8,254.4 409.6,254.5 421.5,254.6 433.4,254.7 445.2,254.8 457.0,254.8 468.9,254.8 480.8,254.9 492.6,254.9 504.5,254.9 516.3,254.9 528.1,254.9 540.0,255.0\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2\"/><polyline points=\"66.0,60.0 77.8,67.5 89.7,74.7 101.5,81.6 113.4,88.2 125.2,94.6 137.1,100.7 148.9,106.7 160.8,112.3 172.7,117.8 184.5,123.1 196.4,128.1 208.2,133.0 220.1,137.6 231.9,142.1 243.8,146.5 255.6,150.6 267.4,154.6 279.3,158.5 291.1,162.2 303.0,165.7 314.9,169.1 326.7,172.4 338.5,175.6 350.4,178.6 362.2,181.6 374.1,184.4 386.0,187.1 397.8,189.7 409.6,192.2 421.5,194.6 433.4,196.9 445.2,199.1 457.0,201.3 468.9,203.3 480.8,205.3 492.6,207.2 504.5,209.0 516.3,210.8 528.1,212.5 540.0,214.1\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><line x1=\"184.5\" y1=\"255\" x2=\"184.5\" y2=\"123.1\" stroke=\"#1f7a5c\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><circle cx=\"184.5\" cy=\"230.7\" r=\"3.5\" fill=\"#c2820f\"/><circle cx=\"184.5\" cy=\"123.1\" r=\"3.5\" fill=\"#3a6ea5\"/><text x=\"190\" y=\"245\" fill=\"#1f7a5c\" font-size=\"10\">12.5 mm (½\")</text><text x=\"300\" y=\"245\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">Plain-carbon (≈1040) — falls off fast</text><text x=\"300\" y=\"140\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">Alloy (≈4140) — stays hard far out</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Alloying elements slow the fall — they buy DEPTH of hardening, not the peak value</text></svg><figcaption>Both steels reach the same hardness at the quenched end, because peak hardness is set by carbon content alone. The alloy steel simply stays hard much farther from that end — the definition of higher hardenability.</figcaption></figure>\n\n<h3>§1 · Reading the designation</h3>\n<p>The AISI/SAE four-digit system encodes composition directly. The <em>first two digits</em> name the alloy family — 10xx is plain carbon, 41xx is chromium-molybdenum, 43xx is nickel-chromium-molybdenum, and so on. The <em>last two digits</em> give the carbon content in hundredths of a percent: 4140 is a Cr-Mo steel at \\(0.40\\)% C; 1020 is plain carbon at \\(0.20\\)% C. Reading a designation is reading two separate questions at once — which alloying family, and how much carbon — and the two answer different things about the steel entirely.</p>\n\n<h3>§2 · What carbon buys, and what alloying buys</h3>\n<p><b>Carbon</b> sets the <em>ceiling</em>: the maximum hardness any steel of that composition can reach, achieved right at a quenched surface where cooling is fastest. A 1040 and a 4140 — both \\(0.40\\)% C — quench to essentially the <em>same</em> peak hardness. What differs is how far that hardness extends inward. <b>Alloying elements</b> — manganese, chromium, molybdenum, nickel — slow the austenite-to-pearlite transformation, so a slower-cooling interior still has time to form the hard, non-equilibrium structure instead of soft pearlite. This property — how deep the hardening penetrates, independent of the peak value — is <b>hardenability</b>, and it is what alloying buys.</p>\n\n<h3>§3 · The Jominy end-quench test</h3>\n<p>Hardenability is measured directly: a standard round bar is austenitized, then one end is water-quenched while the rest air-cools at a rate that falls off smoothly with distance from that end. Hardness measured along the bar's length — the <b>Jominy curve</b> — is a direct picture of hardenability. A shallow-hardenability steel (plain carbon) drops from peak hardness within a few millimetres of the quenched end; a deep-hardenability steel (alloyed) stays near-peak for tens of millimetres. At the classic reference distance of \\(12.5\\ \\text{mm}\\) (\\(\\tfrac{1}{2}\\ \\text{in}\\)), a 1040-type curve has already fallen to the mid-20s HRC while a 4140-type curve is still in the low-to-mid 40s — the same numbers a heat-treater reads off a real Jominy chart to judge whether a given steel will through-harden a given section size.</p>\n\n<h3>§4 · Selecting a grade — the working method</h3>\n<p>Selection runs from the part outward. First, the <em>section size</em>: a thin part cools fast everywhere and a plain-carbon steel may through-harden it fine; a thick shaft's core cools slowly no matter what quenchant is used, and only a deep-hardenability alloy steel will harden there. Second, the <em>service demand</em>: a shaft under bending and torsion needs toughness through its cross-section, which plain-carbon steel — hard skin, soft, weak core — cannot give at any real diameter. Third, <em>cost</em>: alloying elements and the slower, more controlled quenches deep-hardenability grades often need both add cost, so a plain-carbon grade is the right answer whenever section size and service load allow it. A 4140 shaft and a 1040 shaft can leave the quench at the identical surface hardness; only the Jominy curve — and the part's actual thickness — says which one is lying about its core.</p>\n<div class=\"keybox\"><span class=\"tag\">Key distinction</span>\n<p>Carbon content sets <em>peak</em> hardness. Alloy content sets how far that hardness reaches — <em>hardenability</em>, read directly off the Jominy curve.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Ferrite / austenite / martensite / pearlite</b> (Lesson 2) — the phases hardenability chooses between.</li><li><b>Cooling rate and microstructure</b> (Lesson 3) — faster cooling favors harder, less-equilibrium structures.</li><li><b>Reading a chart against a working method</b>, as in Lessons 1–3.</li></ul>\n<h4>Toolkit — designation and hardenability</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning / formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>10xx / 41xx / 43xx …</td><td>first 2 digits = alloy family</td><td>Identifies alloying elements present.</td></tr>\n<tr><td>xx40, xx20 …</td><td>last 2 digits = %C × 100</td><td>Sets peak achievable hardness.</td></tr>\n<tr><td>Hardenability</td><td>depth of hardening, not peak HRC</td><td>What alloying (Mn, Cr, Mo, Ni) buys.</td></tr>\n<tr><td>Jominy curve</td><td>HRC vs. distance from quenched end</td><td>Direct hardenability measurement.</td></tr>\n<tr><td>12.5 mm point</td><td>reference distance (½ in)</td><td>Standard comparison point between grades.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Decoding a designation</b></p><p><b>Problem.</b> A drawing calls for AISI 4340 for a heavy-duty shaft. What does each pair of digits tell you?</p>",
+    "solution": "<p><b>Solution.</b> \"43\" identifies a nickel-chromium-molybdenum alloy family (high hardenability); \"40\" means \\(0.40\\)% carbon, setting the peak achievable hardness — the same peak a plain 1040 bar would reach at its surface, but 4340 holds that hardness far deeper into a thick section.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading the Jominy chart</b></p><p><b>Problem.</b> At 12.5 mm from the quenched end, a plain-carbon curve reads about 24 HRC and an alloy curve reads about 44 HRC, though both started near 55 HRC at the end. Explain why the two curves start together and end apart.</p>",
+    "solution": "<p><b>Solution.</b> They start together because carbon content — identical in both — sets the peak hardness available right at the fast-quenched end. They end apart because the alloying elements in the second steel slow the pearlite transformation, so even the more slowly-cooled material 12.5 mm in still forms a hard structure instead of soft pearlite: greater hardenability, same carbon ceiling.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing a grade for section size</b></p><p><b>Problem.</b> A 100 mm diameter shaft needs to be hard and tough through its full cross-section. A 1040 bar and a 4140 bar reach identical surface hardness when quenched. Which grade should be specified, and why?</p>",
+    "solution": "<p><b>Solution.</b> 4140. At 100 mm diameter the core cools far too slowly for the plain-carbon 1040 to do anything but form soft pearlite there — its hardenability does not reach the center. 4140's alloying content extends hardening deep enough to still harden that core, even though both grades would look identical at the surface alone.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The last two digits of a steel designation like 4140 give:</p>",
+    "choices": [
+     "Carbon content in hundredths of a percent",
+     "The alloying family",
+     "The Jominy distance",
+     "The hardness in HRC"
+    ],
+    "answer": 0,
+    "solution": "<p>xx40 means 0.40% carbon; the first two digits name the alloy family instead.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Peak achievable hardness at a quenched surface is set mainly by:</p>",
+    "choices": [
+     "Carbon content",
+     "Alloying content",
+     "Section size",
+     "The Jominy bar length"
+    ],
+    "answer": 0,
+    "solution": "<p>Carbon sets the hardness ceiling; alloying decides how deep that ceiling is reached.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Hardenability is best defined as:</p>",
+    "choices": [
+     "How deep hardening penetrates from the quenched surface",
+     "The maximum hardness a steel can reach",
+     "How hard a steel is at room temperature before treatment",
+     "The melting point of the alloy"
+    ],
+    "answer": 0,
+    "solution": "<p>Two steels can share a peak hardness and differ completely in hardenability — the depth that hardness reaches.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In the Jominy end-quench test, hardness is measured:</p>",
+    "choices": [
+     "Along the bar's length, moving away from the quenched end",
+     "Only at the quenched end",
+     "Only at the far, air-cooled end",
+     "At the bar's midpoint only"
+    ],
+    "answer": 0,
+    "solution": "<p>The full curve — hardness at every distance from the quenched end — is the point of the test.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Alloying elements such as Cr, Mo, and Ni raise hardenability mainly by:</p>",
+    "choices": [
+     "Slowing the austenite-to-pearlite transformation",
+     "Raising the carbon content",
+     "Lowering the melting point",
+     "Increasing electrical conductivity"
+    ],
+    "answer": 0,
+    "solution": "<p>A slower pearlite transformation gives more of the cross-section time to form a hard structure instead.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A thin part that cools quickly everywhere is often specified in plain-carbon steel rather than an alloy grade because:</p>",
+    "choices": [
+     "Fast cooling reaches every section, so extra hardenability isn't needed",
+     "Plain-carbon steel is always harder",
+     "Alloy steels cannot be quenched",
+     "Thin parts never need hardening"
+    ],
+    "answer": 0,
+    "solution": "<p>When the whole section already cools fast, the alloy grade's main advantage — depth — goes unused; plain carbon does the job for less.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two steels reach identical surface hardness after quenching. This alone tells you:</p>",
+    "choices": [
+     "They likely share the same carbon content, not necessarily the same hardenability",
+     "They are the same grade",
+     "They have identical hardenability",
+     "One must be plain carbon"
+    ],
+    "answer": 0,
+    "solution": "<p>Surface hardness reflects carbon content; only the depth profile (the Jominy curve) reveals hardenability.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a designation like 4140, which pair of digits identifies the alloy family (which elements besides carbon are present)?</p>",
+    "choices": [
+     "The first two digits",
+     "The last two digits",
+     "Neither — alloy family is stamped separately",
+     "The Jominy bar's length"
+    ],
+    "answer": 0,
+    "solution": "<p>First two digits = alloy family (here, chromium-molybdenum); last two = carbon content.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A procurement request that specifies \"4140\" instead of \"1040\" for a heavy shaft is not asking for a harder steel at the surface — a heat-treater can get both to nearly the same surface HRC. It is asking for a steel that stays hard deep enough into a thick section to carry load without a soft, fatigue-prone core. Reading a Jominy curve, or even just recognizing the alloy-family digits on a mill certificate, is how a maintenance or design engineer checks that the grade delivered actually matches the section size it has to survive in.</p>\n<p>Substitution decisions run into this constantly: a store only has 1045 in stock where the drawing calls for 4140. For a small-diameter pin the substitution may be harmless — both harden through at that size. For a large shaft it is not, however similar the two grades look on a hardness tester at the surface; the core of the 1045 shaft will stay soft. The Jominy curve, not the spec sheet's single hardness number, is what settles whether a substitution is safe.</p>\n"
  }
 }
