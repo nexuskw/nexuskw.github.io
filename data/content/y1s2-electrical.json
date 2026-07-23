@@ -706,5 +706,595 @@
    }
   ],
   "kuwait": "\n<p>A plant one-line diagram showing \"400/230 V\" on the main distribution transformer is stating a wye secondary directly: 230 V is the phase (line-to-neutral) voltage feeding single-phase loads like lighting and small equipment, while 400 V is the line-to-line voltage feeding three-phase motors and larger loads, both delivered from the exact same winding by the √3 relationship of §2 — a detail worth understanding before assuming a \"400 V\" and a \"230 V\" circuit come from two different sources.</p>\n<p>Balanced loading across the three phases is a standing electrical-maintenance concern precisely because §3's constant-power result only holds when the load actually is balanced; a plant that has grown single-phase loads unevenly across its three phases over the years loses some of three-phase's smooth-delivery advantage and can show measurable current imbalance between phases on a clamp-meter reading, worth correcting before it shows up as uneven heating in the supply transformer.</p>\n"
+ },
+ "7": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A transformer schematic with a primary winding of N1 turns at voltage V1 on the left, a shared iron core in the middle, and a secondary winding of N2 turns at voltage V2 on the right, with the turns ratio setting the voltage ratio\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Transformer: turns set voltage, power is nearly conserved</text><rect x=\"150\" y=\"110\" width=\"70\" height=\"90\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><text x=\"185\" y=\"105\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"12\" font-weight=\"600\">V₁</text><text x=\"185\" y=\"230\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">N₁ turns (primary)</text><line x1=\"270\" y1=\"95\" x2=\"270\" y2=\"215\" stroke=\"#16202e\" stroke-width=\"3\"/><line x1=\"282\" y1=\"95\" x2=\"282\" y2=\"215\" stroke=\"#16202e\" stroke-width=\"3\"/><text x=\"276\" y=\"235\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">shared core</text><rect x=\"340\" y=\"110\" width=\"70\" height=\"60\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2\"/><text x=\"375\" y=\"105\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"12\" font-weight=\"600\">V₂</text><text x=\"375\" y=\"230\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">N₂ turns (secondary)</text><text x=\"220\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"12\" font-weight=\"600\">V₁/V₂ = N₁/N₂     I₁/I₂ = N₂/N₁     S₁ ≈ S₂</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Fewer secondary turns here → lower V₂, but higher I₂ — apparent power in ≈ apparent power out</text></svg><figcaption>Turns ratio sets the voltage transformation directly; current transforms the opposite way, so apparent power in an ideal transformer is nearly conserved between primary and secondary.</figcaption></figure>\n\n<h3>§1 · Ideal transformer relations</h3>\n<p>A transformer transfers energy between two circuits through a shared magnetic core, with no direct electrical connection between primary and secondary windings. The <b>turns ratio</b> \\(a=N_1/N_2\\) sets the voltage transformation directly: \\(V_1/V_2=N_1/N_2=a\\). Current transforms the opposite way: \\(I_1/I_2=N_2/N_1=1/a\\) — more secondary turns means lower secondary current for the same power, and vice versa. What stays nearly constant is <b>apparent power</b>: \\(S_1\\approx S_2\\) for an ideal device, since turns change the voltage-current split, not the total VA transferred.</p>\n\n<h3>§2 · Real losses</h3>\n<p>Real transformers carry two loss types. <b>Core losses</b> — hysteresis and eddy-current losses in the iron — are roughly constant whenever the transformer is energized, independent of load. <b>Copper losses</b> — \\(I^2R\\) losses in the winding resistance — grow with the square of load current, and are zero at no load. Because one loss is roughly load-independent and the other grows with the square of load, peak efficiency occurs somewhere between no-load and full-load, where the two loss types are roughly balanced — not necessarily at full rated load, a common misreading of a nameplate.</p>\n\n<h3>§3 · Nameplate data decoded</h3>\n<p>Two numbers matter first. The <b>kVA rating</b> is the transformer's apparent-power capacity — it sets the maximum current the unit can safely carry at rated voltage, tying directly to Lesson 5's apparent power. The <b>voltage ratio</b> (e.g. \"11000/400 V\") states what it is built to step between. Beyond those two: <b>impedance percentage</b> (\\(\\%Z\\)) sets both voltage regulation under load and, critically, the fault current magnitude available if the secondary is bolted-shorted — a low \\(\\%Z\\) transformer can deliver very high fault current, a real protection-coordination consideration. <b>Vector group</b> states the phase relationship between primary and secondary, which matters when paralleling transformers or matching downstream equipment.</p>\n\n<h3>§4 · Distribution transformers in a plant one-line diagram</h3>\n<p>A one-line diagram shows a transformer as a simple symbol carrying its kVA and voltage-ratio label. Reading it: (1) identify the voltage transformation — what feeds in, what comes out; (2) check the kVA rating against the actual connected or expected load for real capacity headroom; (3) note \\(\\%Z\\) for protective-device coordination downstream. This reading skill, not detailed transformer design, is what a mechanical engineer working around plant power systems actually needs.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relations — the ideal transformer</span>\n<p>\\[ \\frac{V_1}{V_2}=\\frac{N_1}{N_2},\\qquad \\frac{I_1}{I_2}=\\frac{N_2}{N_1},\\qquad S_1\\approx S_2. \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Apparent power S</b> (Lesson 5) — nearly conserved across an ideal transformer.</li><li><b>AC impedance</b> (Lesson 4) — the basis for %Z.</li></ul>\n<h4>Toolkit — transformer relations</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Turns ratio</td><td>\\( a=N_1/N_2=V_1/V_2 \\)</td><td>Sets voltage transformation.</td></tr>\n<tr><td>Current ratio</td><td>\\( I_1/I_2=N_2/N_1 \\)</td><td>Inverse of the voltage ratio.</td></tr>\n<tr><td>Core losses</td><td>roughly constant with load</td><td>Present whenever energized.</td></tr>\n<tr><td>Copper losses</td><td>\\( \\propto I^2 \\)</td><td>Grow with load current squared.</td></tr>\n<tr><td>%Z</td><td>impedance percentage</td><td>Sets fault current and voltage regulation.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Turns ratio, voltage, and current</b></p><p><b>Problem.</b> An ideal transformer has 1000 primary turns and 200 secondary turns, with 2400 V applied to the primary. Find the secondary voltage, and if the secondary supplies 5 A to its load, find the primary current.</p>",
+    "solution": "<p><b>Solution.</b> \\( a=1000/200=5 \\). \\( V_2=V_1/a=2400/5=480\\ \\text{V} \\). \\( I_1=I_2/a=5/5=1\\ \\text{A} \\). Check: \\(S_1=2400\\times1=2400\\ \\text{VA}\\), \\(S_2=480\\times5=2400\\ \\text{VA}\\) — equal, as expected.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading a nameplate</b></p><p><b>Problem.</b> A three-phase transformer nameplate reads \"500 kVA, 11000/400 V, 4.5% Z.\" Find the maximum continuous secondary current at rated voltage, and explain what the 4.5% Z tells a protection engineer.</p>",
+    "solution": "<p><b>Solution.</b> \\( I_2=\\dfrac{S}{\\sqrt3\\,V_2}=\\dfrac{500{,}000}{1.732\\times400}\\approx722\\ \\text{A} \\). The 4.5% Z means the transformer’s own impedance limits bolted-secondary fault current to roughly \\(1/0.045\\approx22\\) times full-load current — protective devices downstream must be sized and coordinated to interrupt a fault of that magnitude safely.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Sizing a step-down turns ratio</b></p><p><b>Problem.</b> A step-down transformer must reduce 6600 V to 415 V. Find the required turns ratio.</p>",
+    "solution": "<p><b>Solution.</b> \\( a=V_1/V_2=6600/415\\approx15.9 \\), so \\(N_1:N_2\\approx15.9:1\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Transformer voltage ratio follows:</p>",
+    "choices": [
+     "The turns ratio directly, V1/V2 = N1/N2",
+     "The inverse of the turns ratio",
+     "The square of the turns ratio",
+     "No relationship to turns at all"
+    ],
+    "answer": 0,
+    "solution": "<p>Voltage transforms in direct proportion to turns.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Transformer current ratio is:</p>",
+    "choices": [
+     "The inverse of the turns ratio, I1/I2 = N2/N1",
+     "Identical to the voltage ratio",
+     "Always exactly 1:1",
+     "Unrelated to the turns ratio"
+    ],
+    "answer": 0,
+    "solution": "<p>Current transforms oppositely to voltage, keeping VA nearly constant.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For an ideal transformer, apparent power:</p>",
+    "choices": [
+     "Stays nearly constant between primary and secondary",
+     "Doubles from primary to secondary",
+     "Is unrelated between primary and secondary",
+     "Is always zero on the secondary"
+    ],
+    "answer": 0,
+    "solution": "<p>S1 ≈ S2, since turns only redistribute the voltage-current split.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Core losses in a transformer:</p>",
+    "choices": [
+     "Are roughly constant regardless of load",
+     "Grow with the square of load current",
+     "Are zero whenever the transformer is energized",
+     "Only occur at full load"
+    ],
+    "answer": 0,
+    "solution": "<p>Core losses depend on the applied voltage/frequency, not load current.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Copper losses in a transformer:</p>",
+    "choices": [
+     "Grow with the square of load current",
+     "Are constant regardless of load",
+     "Only occur at no load",
+     "Are unrelated to winding resistance"
+    ],
+    "answer": 0,
+    "solution": "<p>Copper losses are I²R losses in the windings.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The two nameplate numbers that matter first are:</p>",
+    "choices": [
+     "kVA rating and voltage ratio",
+     "Weight and color",
+     "Manufacturer name and serial number only",
+     "Frequency and phase count only"
+    ],
+    "answer": 0,
+    "solution": "<p>Capacity and the voltage transformation are the two starting facts any reading needs.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A transformer's %Z mainly affects:</p>",
+    "choices": [
+     "Fault current magnitude and voltage regulation under load",
+     "Its physical weight",
+     "Its color coding",
+     "The number of phases it can supply"
+    ],
+    "answer": 0,
+    "solution": "<p>%Z is the internal impedance limiting both regulation and fault current.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Peak transformer efficiency typically occurs:</p>",
+    "choices": [
+     "Somewhere between no-load and full-load, not necessarily at full rated load",
+     "Always exactly at full rated load",
+     "Always at no load",
+     "At exactly 50% of the voltage rating"
+    ],
+    "answer": 0,
+    "solution": "<p>Where core losses (roughly constant) and copper losses (growing with I²) are balanced.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A plant one-line diagram review, before any new equipment is added downstream of an existing distribution transformer, is exactly §4's working method in practice: checking the transformer's kVA rating against the new total connected load, not just against what it was originally specified for years earlier, is what catches an overloaded transformer before it trips or, worse, overheats in service.</p>\n<p>A transformer running noticeably warmer than its neighbors of similar rating and load, confirmed by a thermal survey, is often flagged for a %Z and loss check rather than an immediate replacement — an aging unit with rising core losses (from insulation or lamination degradation) can run hot well before its winding actually fails, and catching that trend early is cheaper than an unplanned outage later.</p>\n"
+ },
+ "8": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Torque versus speed curve for an induction motor, rising from a moderate starting torque at standstill to a breakdown torque peak, then falling steeply toward zero torque at synchronous speed, with the rated operating point marked on the steep falling section\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Induction motor torque-speed curve</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">speed, per-unit of synchronous (0 → 1) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">torque, per-unit of breakdown →</text><polyline points=\"89.7,191.2 131.4,184.8 173.1,177.0 214.8,167.4 256.5,155.6 298.3,140.7 340.0,122.4 381.7,102.0 402.5,93.3 423.4,89.2 444.3,95.9 465.1,122.4 477.6,151.6 486.0,177.0 494.3,206.4 498.5,222.2 502.6,238.5\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><circle cx=\"423.4\" cy=\"89.2\" r=\"4\" fill=\"#1f7a5c\"/><text x=\"380\" y=\"80\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">breakdown (pullout) torque</text><circle cx=\"494.3\" cy=\"206.4\" r=\"4\" fill=\"#c2820f\"/><text x=\"440\" y=\"200\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">rated point — small slip</text><text x=\"90\" y=\"200\" fill=\"#16202e\" font-size=\"10\">starting torque</text><line x1=\"540\" y1=\"255\" x2=\"540\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"500\" y=\"52\" fill=\"#16202e\" font-size=\"10\">synchronous speed — never reached under load</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Rated point sits on the steep falling side, well past breakdown torque — stable, load-following behavior</text></svg><figcaption>Torque rises from standstill to a breakdown peak, then falls steeply as speed approaches synchronous. The motor's normal operating point sits at small slip on that steep falling section, giving it stable, self-correcting load-following behavior.</figcaption></figure>\n\n<h3>§1 · The rotating field and slip</h3>\n<p>Three-phase stator windings, fed by currents \\(120^\\circ\\) apart in time and arranged \\(120^\\circ\\) apart in space (Lesson 6's phasor geometry), produce a magnetic field that physically rotates at <b>synchronous speed</b> \\( N_s=120f/p \\) (\\(f\\)=supply frequency, \\(p\\)=number of poles) — no moving parts required to create the rotation itself. The rotor is dragged along by induction — hence the name — but can never actually reach synchronous speed: doing so would eliminate relative motion between rotor and field, eliminating induced rotor current and therefore torque. <b>Slip</b>, \\( s=(N_s-N)/N_s \\), is always strictly greater than zero for a loaded induction motor.</p>\n\n<h3>§2 · The torque-speed curve — reading it</h3>\n<p>Starting torque, at \\(s=1\\) (standstill), is moderate. As the rotor speeds up, torque rises to a peak — the <b>breakdown</b> (or pullout) torque — at some intermediate slip, then falls steeply as slip continues to fall toward zero. The motor's normal rated operating point sits at small slip, often \\(2\\)–\\(5\\)%, well past the breakdown-torque peak, on the steep falling section of the curve — exactly where a small speed change produces a proportionally larger torque change, giving the machine its natural, stable, self-correcting load-following behavior. If load torque exceeds breakdown torque, the motor stalls outright — a hard physical limit, not a gradual slowdown.</p>\n\n<h3>§3 · Nameplate literacy</h3>\n<p><b>Power</b> (kW or hp) is the rated mechanical shaft output, not electrical input, which runs somewhat higher by the efficiency. <b>Current</b> is the rated full-load current at rated voltage, frequency, and load — the number a thermal overload is sized against. <b>Service factor</b> (e.g. 1.15) is a margin above nameplate power the motor can sustain continuously without exceeding its insulation temperature limits, under the rated conditions — not a routine overload allowance, since sustained operation there runs the insulation closer to its ceiling and shortens expected life compared to running at the 100% nameplate rating. <b>Insulation class</b> (B, F, H) states the maximum continuous winding temperature the insulation is built to withstand — the real thermal ceiling that service factor and ambient-temperature derating both have to respect.</p>\n\n<h3>§4 · Working method — the machine that drives nearly everything</h3>\n<p>(1) Read or compute slip and synchronous speed from \\( N_s=120f/p \\) and the nameplate's rated speed. (2) Locate the machine's normal operating point on the torque-speed curve — small slip, steep region, well below breakdown torque, for margin against load spikes. (3) Read power, current, service factor, and insulation class together as one coherent thermal and mechanical rating, not four unrelated numbers.</p>\n<div class=\"keybox\"><span class=\"tag\">Key definition — slip</span>\n<p>\\[ s=\\frac{N_s-N}{N_s} > 0\\quad\\text{always, for a loaded induction motor.} \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Three-phase phasors</b> (Lesson 6) — the geometry that produces the rotating field.</li><li><b>Power and current ratings</b> (Lessons 1, 5).</li></ul>\n<h4>Toolkit — the induction motor</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Synchronous speed</td><td>\\( N_s=120f/p \\)</td><td>Speed of the rotating stator field.</td></tr>\n<tr><td>Slip</td><td>\\( s=(N_s-N)/N_s \\)</td><td>Always &gt; 0 under load.</td></tr>\n<tr><td>Breakdown torque</td><td>curve peak</td><td>Hard stall limit if exceeded.</td></tr>\n<tr><td>Service factor</td><td>e.g. 1.15</td><td>Occasional margin, not routine overload.</td></tr>\n<tr><td>Insulation class</td><td>B, F, H</td><td>Sets the real thermal ceiling.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Synchronous speed and slip</b></p><p><b>Problem.</b> A 4-pole induction motor runs on a 50 Hz supply at a measured 1455 rpm under load. Find the synchronous speed and the slip, and explain why the motor cannot run at exactly synchronous speed.</p>",
+    "solution": "<p><b>Solution.</b> \\( N_s=120\\times50/4=1500\\ \\text{rpm} \\). \\( s=(1500-1455)/1500=0.03 \\) (3%). It cannot reach synchronous speed because doing so would eliminate relative motion between rotor and field, eliminating induced rotor current and torque — with no torque, it could not overcome friction or load, so it always settles at a slightly lower speed under any real load.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading a service factor</b></p><p><b>Problem.</b> A motor nameplate reads \"15 kW, service factor 1.15.\" What continuous power output does this actually permit, and is it an invitation to routinely run the motor there?</p>",
+    "solution": "<p><b>Solution.</b> SF 1.15 permits continuous operation up to \\(15\\times1.15=17.25\\ \\text{kW}\\) under the rated conditions. It is not a routine overload allowance — sustained operation at the service-factor limit runs the insulation closer to its thermal ceiling and shortens expected life compared to the 15 kW nameplate rating; it exists as an occasional margin, not a new normal operating point.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Exceeding breakdown torque</b></p><p><b>Problem.</b> A pump load’s required torque rises above an induction motor’s breakdown torque during a startup transient (a partially closed valve). What happens to the motor?</p>",
+    "solution": "<p><b>Solution.</b> The motor stalls — it cannot accelerate past the point where load torque exceeds available motor torque. Held there, it draws high stalled current similar to locked-rotor current while producing little useful shaft output, risking a thermal trip or winding damage if not cleared quickly.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Synchronous speed is given by:</p>",
+    "choices": [
+     "Ns = 120f/p",
+     "Ns = f/p",
+     "Ns = 120p/f",
+     "Ns = f × p"
+    ],
+    "answer": 0,
+    "solution": "<p>The standard synchronous-speed formula.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An induction motor cannot run at exactly synchronous speed under load because:</p>",
+    "choices": [
+     "There would be no relative motion to induce rotor current and torque",
+     "The stator would overheat instantly",
+     "Synchronous speed is only theoretical and never real",
+     "The supply frequency would need to double"
+    ],
+    "answer": 0,
+    "solution": "<p>Zero relative motion means zero induced current and zero torque.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Slip is defined as:</p>",
+    "choices": [
+     "(Ns − N)/Ns",
+     "N/Ns",
+     "Ns − N",
+     "Ns/N"
+    ],
+    "answer": 0,
+    "solution": "<p>Slip is the fractional speed deficit relative to synchronous speed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>On the torque-speed curve, breakdown (pullout) torque is:</p>",
+    "choices": [
+     "The peak torque the motor can produce before stalling",
+     "The torque at exactly synchronous speed",
+     "Always equal to starting torque",
+     "Irrelevant to motor selection"
+    ],
+    "answer": 0,
+    "solution": "<p>Exceeding this peak causes the motor to stall outright.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A motor's normal rated operating point sits:</p>",
+    "choices": [
+     "At small slip, on the steep part of the curve past breakdown torque",
+     "At standstill",
+     "Exactly at breakdown torque",
+     "At exactly synchronous speed"
+    ],
+    "answer": 0,
+    "solution": "<p>Small slip, steep region — stable and load-following.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Nameplate power rating refers to:</p>",
+    "choices": [
+     "Rated mechanical shaft output",
+     "Rated electrical input power",
+     "Peak instantaneous power only",
+     "Reactive power only"
+    ],
+    "answer": 0,
+    "solution": "<p>Electrical input is somewhat higher, by the motor's efficiency.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Service factor 1.15 permits:</p>",
+    "choices": [
+     "Continuous operation up to 115% of nameplate power under rated conditions, not a casual overload allowance",
+     "Unlimited overload at any time",
+     "Only a 15-minute overload window",
+     "No change to normal operation"
+    ],
+    "answer": 0,
+    "solution": "<p>It is a rated margin, not routine practice.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Insulation class defines:</p>",
+    "choices": [
+     "The maximum continuous winding temperature the motor is rated to withstand",
+     "The motor's physical size",
+     "The number of poles",
+     "The motor's starting torque"
+    ],
+    "answer": 0,
+    "solution": "<p>Insulation class sets the real thermal ceiling everything else must respect.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A pump or fan motor that \"hums and does not start\" under load, rather than tripping instantly, is very often stalled past its breakdown torque — a partially closed downstream valve, a jammed impeller, or a badly misaligned coupling can all raise the required starting torque past what the motor can deliver, and recognizing this from the torque-speed curve, rather than assuming an electrical fault first, often finds the real mechanical cause faster.</p>\n<p>A maintenance program that logs measured running current against nameplate full-load current at regular intervals is tracking slip and loading indirectly: a motor drawing noticeably more current than its historical baseline at the same process condition is carrying more load — a bearing dragging, a misalignment, a partially blocked flow path — well before that trend shows up as an outright trip or failure.</p>\n"
+ },
+ "9": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Bar chart of synchronous speed at 50 hertz for 2, 4, 6, and 8 pole machines, showing 3000, 1500, 1000, and 750 revolutions per minute respectively, each speed exact and fixed by pole count and frequency alone\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Synchronous speed: fixed exactly by poles and frequency</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">Ns at 50 Hz (rpm) →</text><rect x=\"107\" y=\"89.25\" width=\"60\" height=\"165.75\" fill=\"#3a6ea5\" fill-opacity=\"0.55\" stroke=\"#3a6ea5\" stroke-width=\"1.5\"/><text x=\"137\" y=\"80\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">2-pole: 3000</text><rect x=\"216\" y=\"172.1\" width=\"60\" height=\"82.9\" fill=\"#3a6ea5\" fill-opacity=\"0.55\" stroke=\"#3a6ea5\" stroke-width=\"1.5\"/><text x=\"246\" y=\"163\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">4-pole: 1500</text><rect x=\"325\" y=\"199.75\" width=\"60\" height=\"55.25\" fill=\"#3a6ea5\" fill-opacity=\"0.55\" stroke=\"#3a6ea5\" stroke-width=\"1.5\"/><text x=\"355\" y=\"190\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">6-pole: 1000</text><rect x=\"434\" y=\"213.6\" width=\"60\" height=\"41.4\" fill=\"#3a6ea5\" fill-opacity=\"0.55\" stroke=\"#3a6ea5\" stroke-width=\"1.5\"/><text x=\"464\" y=\"204\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">8-pole: 750</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">A synchronous machine runs at exactly one of these speeds — or not at all</text></svg><figcaption>Unlike an induction motor's speed range, a synchronous machine's speed is fixed exactly by its pole count and the supply frequency — one of a small set of discrete values, never anywhere in between.</figcaption></figure>\n\n<h3>§1 · The synchronous machine, from the other side</h3>\n<p>A synchronous machine's rotor carries a magnetic field — usually an electromagnet fed by DC excitation current through slip rings or a brushless exciter. Unlike an induction motor's rotor, dragged along behind the field by induced current, a synchronous machine's rotor field <em>locks</em> directly onto the stator's rotating field and turns with it, at exactly synchronous speed, with no slip at all. As a <b>motor</b>, it locks its rotor to the rotating stator field and turns at fixed synchronous speed regardless of load, up to its torque limit — beyond that limit it simply loses synchronism and stalls, rather than slowing gradually the way an induction motor does. As a <b>generator</b> (alternator), the same machine is spun by an external prime mover — a diesel engine, a steam or gas turbine — at synchronous speed, and its rotating DC-excited field induces AC voltage in the stationary stator windings. This is how virtually all utility and standby generation actually works.</p>\n\n<h3>§2 · Standby diesel generator sets</h3>\n<p>A genset's kW/kVA rating reflects both the engine's mechanical power and the alternator's electrical capacity, sized to the actual critical load plus margin for motor-starting inrush — a large motor's starting current can run 5-7 times its running current, and the genset must supply that surge without its own voltage or frequency collapsing. <b>Load acceptance</b> describes how much load the set can accept in one step without stalling the engine or causing an unacceptable voltage or frequency dip — a genset sized only on steady-state kW can still fail in practice if it cannot accept the actual step-load a real outage throws at it. The <b>transfer</b> sequence: an automatic transfer switch detects utility failure, starts the genset, waits for stable voltage and frequency, then transfers the critical load — and reverses the process automatically once utility power returns and proves stable.</p>\n\n<h3>§3 · Paralleling conditions</h3>\n<p>Before closing a breaker to connect a generator onto a live bus — paralleling with the utility, or with other generators — three quantities must match: <b>voltage magnitude</b>, <b>frequency</b>, and <b>phase angle</b>. Closing the breaker with any of these mismatched drives a large, potentially damaging circulating current between the generator and the bus, from the instantaneous voltage difference across the closing contacts — severe enough to damage the generator, the bus, or both. Automatic synchronizing relays exist specifically to check and hold off closure until all three genuinely match, rather than trusting a manual judgment call.</p>\n\n<h3>§4 · Working method</h3>\n<p>(1) Identify whether the machine is acting as a motor, locked to the supply at fixed speed, or a generator, driven by a prime mover and creating the supply. (2) For standby power, size the genset against both steady-state load and the worst-case step-load or motor-starting inrush, never steady-state alone. (3) Before any paralleling operation, verify voltage, frequency, and phase match through the actual synchronizing equipment — never assume.</p>\n<div class=\"keybox\"><span class=\"tag\">Key rule — paralleling</span>\n<p>Voltage, frequency, and phase angle must all match before the breaker closes — mismatched closure drives damaging circulating current.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The induction motor and slip</b> (Lesson 8) — the direct contrast this lesson draws.</li><li><b>Three-phase power and phasors</b> (Lessons 5–6).</li></ul>\n<h4>Toolkit — synchronous machines and gensets</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Synchronous speed</td><td>\\( N_s=120f/p \\), fixed exactly</td><td>The only speed a sync. machine runs at.</td></tr>\n<tr><td>Excitation</td><td>DC current to the rotor field</td><td>Creates the rotor's magnetic field.</td></tr>\n<tr><td>Load acceptance</td><td>step-load capability</td><td>Sizing beyond steady-state kW.</td></tr>\n<tr><td>Paralleling</td><td>voltage, frequency, phase must match</td><td>Before any breaker closes onto a live bus.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Poles for a fixed genset speed</b></p><p><b>Problem.</b> A standby generator set is driven at a fixed 1500 rpm by its diesel engine. For a 50 Hz output, how many poles must the alternator have?</p>",
+    "solution": "<p><b>Solution.</b> \\( p=120f/N_s=120\\times50/1500=4 \\) poles.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The three paralleling conditions</b></p><p><b>Problem.</b> List the three quantities that must match before a standby generator’s breaker can close to parallel it onto a live bus, and explain briefly what happens if they do not.</p>",
+    "solution": "<p><b>Solution.</b> Voltage magnitude, frequency, and phase angle. If any is mismatched at closure, a large circulating current flows between generator and bus, driven by the instantaneous voltage difference — potentially damaging the generator windings, the bus, or the breaker itself. Synchronizing equipment exists specifically to verify all three before allowing closure.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Sizing for motor-starting surge</b></p><p><b>Problem.</b> A standby genset supplies a critical load of 200 kW steady-state, of which the largest motor draws 40 kW running with a starting current 6 times its running current. Roughly how much surge kW must the genset accept momentarily when that motor starts, on top of the rest of the steady load?</p>",
+    "solution": "<p><b>Solution.</b> Approximating kW inrush scaling with current inrush, the starting motor alone demands roughly \\(40\\times6=240\\ \\text{kW}\\) momentarily. With the remaining \\(200-40=160\\ \\text{kW}\\) of the load already running steadily, the genset must briefly accept on the order of \\(160+240=400\\ \\text{kW}\\) — well above its 200 kW steady-state rating — which is exactly why motor-starting inrush, not steady load, is often the real genset sizing constraint.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A synchronous machine's rotor:</p>",
+    "choices": [
+     "Locks to the stator's rotating field and turns at exactly synchronous speed",
+     "Is dragged along behind the field, like an induction motor",
+     "Has no magnetic field of its own",
+     "Turns at a speed independent of the supply frequency"
+    ],
+    "answer": 0,
+    "solution": "<p>Locking, not slip, is what defines synchronous operation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Unlike an induction motor, a synchronous machine:</p>",
+    "choices": [
+     "Cannot run at any speed other than synchronous speed under normal operation",
+     "Always has more slip than an induction motor",
+     "Cannot be used as a generator",
+     "Requires no excitation at all"
+    ],
+    "answer": 0,
+    "solution": "<p>It runs at exactly Ns or loses synchronism (stalls) — no intermediate state.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>As a generator, a synchronous machine is:</p>",
+    "choices": [
+     "Driven by an external prime mover at synchronous speed to induce AC voltage",
+     "Fed AC power to create rotation",
+     "Only usable at variable speed",
+     "Identical in operation to an induction generator"
+    ],
+    "answer": 0,
+    "solution": "<p>Mechanical input at synchronous speed produces the electrical output.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A genset's load acceptance rating describes:</p>",
+    "choices": [
+     "How much load it can accept in one step without stalling or excessive voltage/frequency dip",
+     "Its total fuel tank capacity",
+     "Its physical footprint",
+     "Its exhaust emissions rating"
+    ],
+    "answer": 0,
+    "solution": "<p>Step-load capability, not just steady-state capacity, is the real sizing question.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An automatic transfer switch (ATS):</p>",
+    "choices": [
+     "Detects utility failure, starts the genset, and transfers load once stable",
+     "Permanently disconnects the utility supply",
+     "Only operates manually",
+     "Has no role in genset systems"
+    ],
+    "answer": 0,
+    "solution": "<p>ATS handles the full failure-detection-to-transfer sequence automatically.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Before paralleling a generator onto a live bus, the three quantities that must match are:</p>",
+    "choices": [
+     "Voltage, frequency, and phase",
+     "Voltage, current, and power factor",
+     "Frequency, power, and torque",
+     "Current, resistance, and impedance"
+    ],
+    "answer": 0,
+    "solution": "<p>These three, verified by synchronizing equipment, before the breaker closes.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Closing a breaker with mismatched voltage/frequency/phase causes:</p>",
+    "choices": [
+     "A large, potentially damaging circulating current",
+     "No effect at all",
+     "An automatic, safe adjustment",
+     "A permanent increase in generator efficiency"
+    ],
+    "answer": 0,
+    "solution": "<p>The instantaneous voltage difference across the closing contacts drives this current.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Sizing a standby genset requires considering:</p>",
+    "choices": [
+     "Both steady-state load and worst-case motor-starting inrush",
+     "Only the total connected nameplate horsepower",
+     "Only the smallest motor on the load",
+     "Fuel cost alone"
+    ],
+    "answer": 0,
+    "solution": "<p>Starting inrush is often the more demanding, easily overlooked sizing case.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A standby generator that starts and runs fine on a load bank test, but stalls or trips the moment the actual critical pump motor starts during a real outage, is almost always a §2 load-acceptance and starting-inrush sizing gap — the steady-state kW number on the genset nameplate looked adequate, but nobody checked whether it could absorb the largest motor's actual starting surge on top of everything else already running.</p>\n<p>A generator paralleling panel with automatic synchronizing relays is not a convenience feature — it exists because manual paralleling, judged only by watching two voltmeters and a frequency meter, has a long history of getting the phase-angle condition wrong under time pressure, with real equipment damage as the consequence; §3's three-condition rule is exactly what that panel is enforcing automatically.</p>\n"
+ },
+ "10": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Bar chart comparing direct on line starting current at seven times full load current with full starting torque against star delta starting current at about two point three times full load current with only one third of the starting torque, showing the reduction in current comes with a matching reduction in torque\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Star-delta starting: less inrush, proportionally less torque</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">per-unit of DOL value →</text><rect x=\"107\" y=\"89.25\" width=\"60\" height=\"165.75\" fill=\"#c2820f\" fill-opacity=\"0.55\" stroke=\"#c2820f\" stroke-width=\"1.5\"/><text x=\"137\" y=\"80\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">DOL current: 7×FLC</text><rect x=\"216\" y=\"199.75\" width=\"60\" height=\"55.25\" fill=\"#3a6ea5\" fill-opacity=\"0.55\" stroke=\"#3a6ea5\" stroke-width=\"1.5\"/><text x=\"246\" y=\"190\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">SD current: 2.3×FLC</text><rect x=\"325\" y=\"89.25\" width=\"60\" height=\"165.75\" fill=\"#c2820f\" fill-opacity=\"0.55\" stroke=\"#c2820f\" stroke-width=\"1.5\"/><text x=\"355\" y=\"80\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">DOL torque: full</text><rect x=\"434\" y=\"199.75\" width=\"60\" height=\"55.25\" fill=\"#3a6ea5\" fill-opacity=\"0.55\" stroke=\"#3a6ea5\" stroke-width=\"1.5\"/><text x=\"464\" y=\"190\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">SD torque: 1/3</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Both current and torque drop by roughly the same factor of 3 — never a free reduction</text></svg><figcaption>Star-delta starting cuts inrush current to roughly a third of direct-on-line, but starting torque falls by the same proportion — the reduced inrush is never free.</figcaption></figure>\n\n<h3>§1 · DOL and star-delta starting</h3>\n<p><b>Direct-on-line</b> (DOL) starting connects the motor straight across full line voltage — simplest and cheapest, but drawing high inrush current, typically \\(6\\)–\\(8\\times\\) rated full-load current, briefly at start, while delivering full starting torque. <b>Star-delta</b> starting temporarily connects windings normally run in delta into star (wye) for starting, then switches to delta once up to speed. Because star reduces both the line-current relationship (Lesson 6) and the voltage each winding actually sees, the two effects combine to cut inrush current to roughly a third of the DOL value. Starting torque, which scales with the <em>square</em> of applied voltage, falls by essentially the same proportion, to roughly a third — the reduced inrush is never free; it costs starting torque in direct proportion.</p>\n\n<h3>§2 · Overloads and protection classes</h3>\n<p><b>Thermal overload relays</b> protect a motor from sustained overcurrent — not short-circuit, which is the breaker or fuse's job — by modeling winding heating and tripping before insulation damage occurs. They are sized to the motor's rated full-load current, and their <b>trip class</b> (Class 10, 20, 30, and so on) states how many seconds the relay allows at locked-rotor current before tripping: a Class 10 relay trips within roughly 10 seconds at locked-rotor current, a Class 30 up to about 30 seconds. The class must match the motor's actual thermal capability during a normal start — a mismatched class can either nuisance-trip on routine starts or fail to protect the motor during a genuine stall.</p>\n\n<h3>§3 · Variable-frequency drives — the torque curve and the bearings</h3>\n<p>A VFD changes both frequency and voltage supplied to the motor, shifting synchronous speed \\( N_s=120f/p \\) and therefore the entire torque-speed curve up or down the speed axis — the mechanism behind smooth, controllable speed rather than fixed-speed on/off control, and it allows a controlled, low-current start by ramping frequency up from near zero instead of DOL's inrush spike. What a VFD does that DOL never did: its high-frequency PWM switching can induce small stray voltages on the motor shaft itself, through capacitive coupling across the air gap. Left with no safe path to ground, those voltages discharge as tiny electrical arcs through the bearing's lubricant film — over time, this electrical-discharge-machining effect pits and flutes the bearing races, a failure mode that simply does not exist on a DOL-started motor with no VFD in the circuit.</p>\n\n<h3>§4 · Motor circuit anatomy — the working method</h3>\n<p>From the motor control center bucket: incoming isolator/disconnect, then short-circuit protection (fuse or breaker), then the contactor (the switching element), then the overload relay (thermal protection), then cable, then the motor terminal box. Reading this chain in order — and knowing what each stage protects against, short-circuit versus sustained overload versus simple switching — is the working method for troubleshooting why a motor circuit tripped, and which single component is the actual suspect.</p>\n<div class=\"keybox\"><span class=\"tag\">Key trade-off — star-delta</span>\n<p>Starting current and starting torque both fall to roughly 1/3 of DOL — a reduced-current start always costs proportional starting torque.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Wye/delta relationships</b> (Lesson 6) — the basis of star-delta current reduction.</li><li><b>The torque-speed curve and slip</b> (Lesson 8) — what a VFD shifts.</li></ul>\n<h4>Toolkit — starting, protection, VFDs</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>DOL starting</td><td>full voltage, full inrush</td><td>Simplest; 6-8× FLC current.</td></tr>\n<tr><td>Star-delta starting</td><td>~1/3 current, ~1/3 torque</td><td>Reduced inrush, proportionally reduced torque.</td></tr>\n<tr><td>Overload trip class</td><td>seconds allowed at locked-rotor current</td><td>Must match motor's thermal capability.</td></tr>\n<tr><td>VFD</td><td>varies f (and V) to the motor</td><td>Shifts the torque-speed curve; enables soft start.</td></tr>\n<tr><td>Shaft grounding ring</td><td>gives stray shaft voltage a path to ground</td><td>Protects bearings from VFD-induced EDM.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Star-delta current and torque</b></p><p><b>Problem.</b> A motor’s DOL starting current is \\(7\\times\\) full-load current, with full DOL starting torque. Estimate the star-delta starting current (as a multiple of FLC) and starting torque (as a fraction of DOL torque).</p>",
+    "solution": "<p><b>Solution.</b> Star-delta current \\(\\approx7/3\\approx2.33\\times\\) FLC. Star-delta torque \\(\\approx1/3\\) of DOL torque — both cut by roughly the same factor of 3, so the reduced inrush is not free.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Will the overload trip during a normal start?</b></p><p><b>Problem.</b> A motor with locked-rotor current \\(6\\times\\) FLC is fitted with a Class 30 overload relay. During a normal start it draws \\(6\\times\\)FLC for about 8 seconds while accelerating. Will the relay likely trip, and why?</p>",
+    "solution": "<p><b>Solution.</b> No. A Class 30 relay allows roughly 30 seconds at locked-rotor current before tripping, well beyond the 8-second normal start — it should ride through a routine start without nuisance-tripping, while still protecting against a genuine stall that persists past its rated time.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why VFDs pit bearing races</b></p><p><b>Problem.</b> Explain why a motor driven by a VFD is more likely to develop pitted bearing races over time than the same motor started DOL, and name one mitigation.</p>",
+    "solution": "<p><b>Solution.</b> The VFD’s high-frequency PWM switching induces small stray voltages on the motor shaft through capacitive coupling; without a safe discharge path, these voltages repeatedly arc through the bearing’s lubricant film, pitting and fluting the races (electrical discharge machining). A shaft grounding ring, or an insulated bearing on the non-drive end, gives that stray voltage a safe path to ground instead of the bearing.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>DOL starting connects the motor:</p>",
+    "choices": [
+     "Directly across full line voltage",
+     "Through a reduced-voltage transformer always",
+     "Only in star configuration",
+     "Through a VFD by definition"
+    ],
+    "answer": 0,
+    "solution": "<p>DOL is the simplest, full-voltage starting method.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>DOL starting current is typically:</p>",
+    "choices": [
+     "6-8 times rated full-load current",
+     "1-2 times rated full-load current",
+     "Exactly equal to full-load current",
+     "20-30 times full-load current"
+    ],
+    "answer": 0,
+    "solution": "<p>A brief, large inrush is characteristic of DOL starting.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Star-delta starting reduces both:</p>",
+    "choices": [
+     "Starting current AND starting torque, to roughly 1/3 of DOL values",
+     "Only starting current, with torque unaffected",
+     "Only starting torque, with current unaffected",
+     "Neither current nor torque"
+    ],
+    "answer": 0,
+    "solution": "<p>The reduction is proportional in both quantities, not free.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Thermal overload relays protect against:</p>",
+    "choices": [
+     "Sustained overcurrent, based on modeled winding heating",
+     "Short-circuit faults",
+     "Overvoltage only",
+     "Loss of a single phase only"
+    ],
+    "answer": 0,
+    "solution": "<p>Short-circuit protection is the separate job of a fuse or breaker.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An overload relay's trip class describes:</p>",
+    "choices": [
+     "How many seconds it allows at locked-rotor current before tripping",
+     "Its physical mounting size",
+     "The motor's horsepower rating",
+     "The number of poles on the motor"
+    ],
+    "answer": 0,
+    "solution": "<p>Class 10/20/30 states the allowed time at locked-rotor current.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A VFD changes motor speed by:</p>",
+    "choices": [
+     "Varying supply frequency (and voltage), shifting the torque-speed curve",
+     "Physically changing the number of poles",
+     "Adding external gearing",
+     "Changing the motor's insulation class"
+    ],
+    "answer": 0,
+    "solution": "<p>Frequency sets synchronous speed directly, moving the whole curve.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A VFD can cause bearing damage through:</p>",
+    "choices": [
+     "Stray shaft voltages discharging as small arcs through the bearing lubricant",
+     "Excessive starting torque",
+     "Reduced starting current alone",
+     "Lower operating temperature"
+    ],
+    "answer": 0,
+    "solution": "<p>PWM switching induces shaft voltages that arc through bearings without mitigation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A shaft grounding ring on a VFD-driven motor:</p>",
+    "choices": [
+     "Gives stray shaft voltage a safe path to ground, protecting the bearings",
+     "Increases the motor's starting torque",
+     "Replaces the need for an overload relay",
+     "Reduces the motor's rated speed"
+    ],
+    "answer": 0,
+    "solution": "<p>It diverts the stray voltage away from the bearing's lubricant film.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A plant switching an older DOL-started fan or pump motor over to VFD control for energy savings, without also adding shaft grounding or insulated bearings, is a common, avoidable setup for exactly the §3 bearing-pitting failure mode — a failure that can show up as premature bearing replacement months or a couple of years into VFD service, misdiagnosed as a bad bearing batch rather than the actual root cause.</p>\n<p>Reading an MCC bucket's fault history against §4's chain — isolator, short-circuit device, contactor, overload, cable, terminal box — is standard first-response troubleshooting: a tripped overload with no short-circuit device operation points toward a sustained mechanical overload on the driven equipment, while a tripped breaker points toward a genuine fault, and starting the investigation at the wrong end wastes real time during a plant outage.</p>\n"
+ },
+ "11": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Insulation resistance measured at four points over seven years, declining from 500 megohms to 20 megohms, plotted on a log scale to show a clear degrading trend even though every individual reading still exceeds a typical minimum acceptable threshold\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Insulation resistance is a TREND, not a pass/fail number</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">years since commissioning →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">insulation resistance, MΩ (log scale) →</text><polyline points=\"125.25,89.25 243.75,113.69 362.25,138.13 480.75,175.1\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2.2\"/><circle cx=\"125.25\" cy=\"89.25\" r=\"4\" fill=\"#c2820f\"/><text x=\"100\" y=\"80\" fill=\"#c2820f\" font-size=\"10\">yr 1: 500 MΩ</text><circle cx=\"243.75\" cy=\"113.69\" r=\"4\" fill=\"#c2820f\"/><text x=\"218\" y=\"105\" fill=\"#c2820f\" font-size=\"10\">yr 3: 200 MΩ</text><circle cx=\"362.25\" cy=\"138.13\" r=\"4\" fill=\"#c2820f\"/><text x=\"336\" y=\"130\" fill=\"#c2820f\" font-size=\"10\">yr 5: 80 MΩ</text><circle cx=\"480.75\" cy=\"175.1\" r=\"4\" fill=\"#c2820f\"/><text x=\"440\" y=\"195\" fill=\"#c2820f\" font-size=\"10\">yr 7: 20 MΩ</text><line x1=\"66\" y1=\"230\" x2=\"540\" y1=\"230\" x2=\"540\" y2=\"230\" stroke=\"#1f7a5c\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"400\" y=\"245\" fill=\"#1f7a5c\" font-size=\"10\">generic \"minimum acceptable\" — every point above it, yet still failing</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">A 25× drop over 7 years, while every single reading still technically \"passes\"</text></svg><figcaption>Every one of these four readings clears a typical generic pass/fail threshold — yet the steady, steep decline over seven years is the real signal: this winding's insulation is degrading and heading toward failure, regardless of any single number's status.</figcaption></figure>\n\n<h3>§1 · Shock and arc-flash hazards, respected properly</h3>\n<p>Electric shock severity depends on the <b>current</b> actually driven through the body, not on voltage alone — even a modest voltage can drive dangerous current through wet skin or direct contact, while the same voltage may be harmless through dry, unbroken skin. This is why \"low voltage\" control circuits are never treated as automatically safe. <b>Arc-flash</b> is a distinct hazard entirely: a short-circuit fault in a high-energy system can release an explosive arc — intense heat, a pressure wave, molten metal spray — severe enough to injure someone standing near an energized panel without any direct contact at all, purely from proximity. Arc-flash risk assessment and the correct PPE are sized to the specific equipment and available fault current at that point, not a one-size-fits-all rule, and are a separate requirement from ordinary shock protection.</p>\n\n<h3>§2 · Lockout-tagout, as a mechanical engineer practices it</h3>\n<p><b>Lockout-tagout</b> means physically isolating a source of hazardous energy — electrical, but equally stored mechanical, hydraulic, or pneumatic energy — and applying a personal lock and tag before work begins, verified by an actual test for zero energy rather than trust in a switch position or a label. A mechanical engineer maintaining a pump or gearbox routinely locks out the electrical supply to that equipment as a standard first step, even though the hands-on work that follows is entirely mechanical.</p>\n\n<h3>§3 · Insulation resistance and clamp-meter measurements</h3>\n<p><b>Insulation resistance</b> testing (a megohmmeter or \"megger\" test) applies a DC test voltage across a winding's insulation to ground and reads the resulting leakage current as a resistance, typically in megohms. A single reading is of limited use alone — what counts as \"good\" varies with motor size, insulation class, age, and ambient conditions. The real diagnostic value is in the <em>trend</em>: a winding whose measured value falls steadily over successive tests, even while each individual reading still technically clears a generic threshold, is showing progressive degradation and heading toward failure, while a value stable near its historical baseline is healthy regardless of the absolute number. This is exactly why IR is logged and trended over a machine's life, not treated as a simple spot-check. <b>Clamp-meter</b> current measurements, taken without breaking the circuit, are the practical field tool for checking phase balance (Lesson 6), confirming actual running current against nameplate full-load current, and catching an abnormal draw before it causes a trip.</p>\n\n<h3>§4 · The boundary line between mechanical and electrical scope</h3>\n<p>The practical, widely-used convention: a mechanical scope of work ends at the motor's <b>terminal box</b> — the point where field wiring lands on the motor's own terminals. Everything from there back toward the supply — cable, MCC, protection devices — is electrical scope, requiring an electrically qualified and authorized person; the motor frame, coupling, bearings, and driven equipment remain squarely mechanical scope. This boundary exists because working inside a terminal box, even just to check a connection, means working on live-capable electrical equipment, which requires specific electrical safety qualification and LOTO authority that a mechanical scope of work does not automatically confer. Crossing that line without the right authorization is both a safety violation and, in most well-run plants, a policy violation — regardless of how simple the task looks.</p>\n<div class=\"keybox\"><span class=\"tag\">Key habit — read the trend, not the number</span>\n<p>Insulation resistance is diagnostic as a trend over repeated tests, not as a single pass/fail reading.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Current, voltage, and power basics</b> (Lesson 1).</li><li><b>Three-phase balance</b> (Lesson 6) — what a clamp-meter checks in practice.</li><li>No prior electrical-safety training assumed — this lesson states the vocabulary and the scope boundary.</li></ul>\n<h4>Toolkit — safety and measurement</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Shock hazard</td><td>current through the body</td><td>Requires contact or near-contact.</td></tr>\n<tr><td>Arc-flash hazard</td><td>explosive fault energy release</td><td>Injures by proximity alone; separate PPE.</td></tr>\n<tr><td>Lockout-tagout</td><td>isolate + verify zero energy</td><td>Before any work begins.</td></tr>\n<tr><td>Insulation resistance (IR)</td><td>megohm reading, DC test</td><td>Diagnostic as a trend, not a spot-check.</td></tr>\n<tr><td>Scope boundary</td><td>the motor terminal box</td><td>Mechanical stops there; electrical begins there.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading an IR trend</b></p><p><b>Problem.</b> A motor’s insulation resistance is measured at commissioning (500 MΩ), then at 3 years (200 MΩ), 5 years (80 MΩ), and 7 years (20 MΩ). Every reading still exceeds a generic 1 MΩ \"minimum acceptable\" threshold for this motor class. Is the insulation actually healthy? Explain using the trend, not the individual readings.</p>",
+    "solution": "<p><b>Solution.</b> No. Despite every reading technically clearing the generic 1 MΩ threshold, the value has fallen by roughly a factor of 25 over 7 years — a clear, steady degradation trend. The trend, not any single passing number, signals this winding is deteriorating toward failure; waiting for it to finally drop below the generic threshold means waiting until failure is close rather than catching the problem while there is time to plan a repair.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Whose scope is the terminal box?</b></p><p><b>Problem.</b> A mechanical technician is asked to \"just check the connections\" inside a running motor’s terminal box, since a suspected loose connection might be causing vibration. Is this within the mechanical scope of work? Explain the boundary.</p>",
+    "solution": "<p><b>Solution.</b> No. The terminal box is inside the electrical scope boundary; opening it, especially on live or live-capable equipment, requires electrical qualification and proper lockout/authorization, not general maintenance access. Mechanical scope covers the frame, coupling, and driven equipment; anything at or behind the terminal connections is electrical scope — the correct action is to request an electrically qualified person, not open the box directly.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Shock vs. arc-flash</b></p><p><b>Problem.</b> Explain the difference between shock hazard and arc-flash hazard, and why standing near, but not touching, an energized panel during a fault can still cause serious injury.</p>",
+    "solution": "<p><b>Solution.</b> Shock hazard requires actual current flow through a person’s body via direct or near contact with an energized conductor. Arc-flash is distinct: a fault can release explosive energy — heat, pressure, molten metal — that injures anyone nearby purely through proximity, with no contact required at all. This is why arc-flash PPE and boundary distances are assessed separately from, and in addition to, ordinary shock protection.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Electric shock severity depends primarily on:</p>",
+    "choices": [
+     "Current through the body, not voltage alone",
+     "Voltage alone, regardless of current",
+     "The color of the conductor's insulation",
+     "The time of day the contact occurs"
+    ],
+    "answer": 0,
+    "solution": "<p>Current, not voltage in isolation, is what actually harms the body.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Arc-flash hazard:</p>",
+    "choices": [
+     "Can injure someone near an energized panel without any direct contact",
+     "Only occurs with direct skin contact",
+     "Is identical to shock hazard",
+     "Cannot occur in three-phase systems"
+    ],
+    "answer": 0,
+    "solution": "<p>Proximity alone is enough for arc-flash injury during a fault.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Lockout-tagout requires:</p>",
+    "choices": [
+     "Physically isolating hazardous energy and verifying zero energy before work begins",
+     "Simply switching off a breaker and starting work",
+     "Only applies to electrical energy, never mechanical",
+     "A verbal confirmation from a supervisor only"
+    ],
+    "answer": 0,
+    "solution": "<p>Verification of zero energy, not just a switch position, is the actual requirement.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A single insulation resistance (IR) reading:</p>",
+    "choices": [
+     "Is of limited diagnostic value alone; the trend over time matters more",
+     "Is always sufficient on its own to judge motor health",
+     "Is meaningless and should never be recorded",
+     "Only matters at commissioning"
+    ],
+    "answer": 0,
+    "solution": "<p>Trend over repeated tests is the real diagnostic signal.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A steadily falling IR trend, even with each reading still technically passing:</p>",
+    "choices": [
+     "Indicates progressive insulation degradation",
+     "Indicates the insulation is improving",
+     "Has no diagnostic meaning",
+     "Only matters if a reading actually fails"
+    ],
+    "answer": 0,
+    "solution": "<p>The direction of change is the signal, not any single number's pass/fail status.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Clamp-meter current measurements are useful for:</p>",
+    "choices": [
+     "Checking phase balance and comparing running current to nameplate FLC",
+     "Measuring insulation resistance directly",
+     "Replacing the need for lockout-tagout",
+     "Only measuring DC circuits"
+    ],
+    "answer": 0,
+    "solution": "<p>A clamp meter reads current without breaking the circuit — ideal for routine field checks.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The conventional boundary between mechanical and electrical work scope is:</p>",
+    "choices": [
+     "The motor's terminal box",
+     "The motor's coupling",
+     "The driven equipment's casing",
+     "There is no conventional boundary"
+    ],
+    "answer": 0,
+    "solution": "<p>Terminal connections mark where mechanical scope ends and electrical scope begins.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Opening a motor terminal box requires:</p>",
+    "choices": [
+     "Electrical qualification and proper authorization, not general mechanical access",
+     "No special authorization if the motor looks off",
+     "Only a flashlight and a screwdriver",
+     "Permission from the equipment vendor only"
+    ],
+    "answer": 0,
+    "solution": "<p>Terminal-box access is electrical scope regardless of how simple the check appears.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A plant's predictive-maintenance program logging insulation resistance on every large motor at each scheduled outage, rather than only when a motor has already shown a problem, is applying §3 exactly as intended: the trend across several outages, not any single outage's reading, is what schedules a rewind or replacement before an in-service failure takes the equipment down unexpectedly, often at the worst possible time.</p>\n<p>A near-miss log entry describing a mechanical technician who was stopped before opening a motor terminal box to \"just check a connection\" is a live example of §4's boundary holding — the honest, useful outcome of a good safety culture is not zero incidents reported, but near-misses caught and corrected before they become the real thing.</p>\n"
  }
 }

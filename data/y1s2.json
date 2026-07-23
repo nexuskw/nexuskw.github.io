@@ -798,7 +798,8 @@
       "Where does the mechanical scope end at a motor terminal box — and why?"
      ]
     }
-   ]
+   ],
+   "career": "<p>Electrical Fundamentals is the literacy that keeps a mechanical engineer from being a stranger in their own plant’s switchroom. Three snapshots for this course:</p>\n<ul>\n<li><b>Motor and drive OEMs</b> — application engineers at manufacturers such as <b>ABB</b> live in Lessons 8 and 10 daily: reading a torque-speed curve against a real load, and explaining to a customer exactly what a VFD does to bearings that direct-on-line starting never did.</li>\n<li><b>Petrochemical and process plants</b> — reliability and electrical-liaison engineers at operators such as <b>Kuwait National Petroleum Company</b> apply Lessons 5, 9, and 11 directly: sizing power-factor correction, verifying paralleling conditions before a standby generator's breaker closes, and reading an insulation-resistance trend rather than a single pass/fail number.</li>\n<li><b>Standby and backup power</b> — application and service engineers at genset manufacturers such as <b>Cummins</b> work Lesson 9's load-acceptance and motor-starting-inrush sizing on every project quote, and Lesson 7's transformer nameplate literacy on every distribution package that ships alongside a generator set.</li>\n</ul>\n<p><b>Interview angle:</b> across all three sectors, expect a nameplate or a fault scenario on the table, not a bare definition — “read this motor nameplate” or “why did this connection overheat.” The working-method habit this course builds — identify what is actually being asked, then apply the right relation — is exactly what that question is testing.</p>"
   },
   {
    "id": "mfg-processes-1",
