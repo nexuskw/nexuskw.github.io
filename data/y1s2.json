@@ -664,7 +664,8 @@
       "What does mean effective pressure summarize about a piston engine?"
      ]
     }
-   ]
+   ],
+   "career": "<p>Thermodynamics I is the discipline behind every turbine, compressor, boiler, and chiller a mechanical engineer will ever touch. Three snapshots for this course:</p>\n<ul>\n<li><b>Power generation and turbomachinery</b> &mdash; performance and commissioning engineers at OEMs such as <b>GE</b> run Lessons 5, 7, and 11 daily: simplifying the steady-flow energy equation for a specific turbine or compressor, checking a Brayton cycle's back-work ratio, and comparing a real machine's isentropic efficiency against its as-commissioned baseline.</li>\n<li><b>Upstream oil and gas processing</b> &mdash; process and utilities engineers at operators such as <b>Kuwait Oil Company</b> apply Lessons 2, 6, and 9 directly: reading steam-table quality on separator and boiler systems, sizing receivers and knockout drums with the transient charging result in mind, and tracking compressor isentropic efficiency as a condition-monitoring number, not just a design spec.</li>\n<li><b>HVAC and refrigeration</b> &mdash; systems engineers at manufacturers such as <b>Carrier</b> live in Lesson 7's coefficient-of-performance definitions and Carnot COP ceiling every working day, sizing chillers and heat pumps against the theoretical limit for the actual evaporator and condenser temperatures involved.</li>\n</ul>\n<p><b>Interview angle:</b> across all three sectors, expect a diagram-reading question over a definition question &mdash; sketch the T&ndash;s or h&ndash;s path, mark where entropy is generated, and say what that gap costs in real work. The working-method habit this course builds &mdash; start from the full balance, cross out what a device's description rules out &mdash; is exactly what that question is testing.</p>"
   },
   {
    "id": "electrical",
