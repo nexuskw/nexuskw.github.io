@@ -974,7 +974,20 @@ number Python-verified pre-write. One gap remains from Y1: drawing-cad
 still the pre-quiz-engine "examples" text blob — a format retrofit, not
 new authoring — tracked separately, not blocking Year 1 closure.
 Coverage 133→170/528 lessons at full depth (25%→32%) across this session.
-NEXT (approved order, unstarted): Year 2 — strength (finish L5-11, already
-4/11), electronics-sensors, mfg-processes-2, then Y2S2 (thermo-2,
-heat-transfer, machine-design-1, kinematics-machinery, metrology,
-mfg-processes-3) — 34 courses remain empty across Years 2-4 site-wide.
+
+CHECKPOINT — Y2S1 THREE OF FOUR DONE (2026-07-24, same session continued):
+strength (SOM 201) finished L5-11 (7 lessons — L1-4 pre-existed in an
+older 8-item-quiz/no-kuwait format and were left as-is, not retrofitted).
+electronics-sensors (ELX 205) authored fresh, all 11 lessons + career
+block (Texas Instruments / Analog Devices / Omron — none reused from an
+earlier course's rotation). Coverage 170→188/528 (32%→36%). Diagram QA
+note for future authoring: several SVG `<text>` labels initially
+overflowed the 560-unit viewBox and were visually clipped in the browser
+(caught by screenshot spot-check, not by the pre-build Python validation,
+which does not measure rendered text width) — fixed by shortening or
+repositioning. Worth a quick visual scan of any new free-floating diagram
+label whose x-position plus estimated width sits past ~500-520.
+NEXT (approved order, unstarted): mfg-processes-2 (MFG 154, closes Y2S1),
+then Y2S2 (thermo-2, heat-transfer, machine-design-1, kinematics-machinery,
+metrology, mfg-processes-3) — 33 courses remain empty across Years 2-4
+site-wide.

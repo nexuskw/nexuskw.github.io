@@ -1,1399 +1,1400 @@
 {
-  "id": "y2s1",
-  "title": "Year 2 · Semester 1",
-  "courses": [
+ "id": "y2s1",
+ "title": "Year 2 · Semester 1",
+ "courses": [
+  {
+   "id": "math-3",
+   "code": "MTH 207",
+   "title": "Engineering Mathematics III — Differential Equations & Linear Algebra",
+   "summary": "The mathematics of dynamic systems: first- and second-order differential equations, Laplace transforms, and the matrix language of coupled systems — the toolset vibrations, controls, and heat transfer stand on.",
+   "taught_from": [
+    "MIT OCW 18.03 Differential Equations (ocw.mit.edu)"
+   ],
+   "lessons": [
     {
-      "id": "math-3",
-      "code": "MTH 207",
-      "title": "Engineering Mathematics III — Differential Equations & Linear Algebra",
-      "summary": "The mathematics of dynamic systems: first- and second-order differential equations, Laplace transforms, and the matrix language of coupled systems — the toolset vibrations, controls, and heat transfer stand on.",
-      "taught_from": [
-        "MIT OCW 18.03 Differential Equations (ocw.mit.edu)"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "First-order equations revisited: separable and linear",
-          "tier": 3,
-          "scope": "Separable equations recapped from the calculus course, then the linear first-order equation solved with the integrating factor, derived rather than decreed. Solution families and the initial condition that picks one. The course's working vocabulary set in one lesson.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)",
-            "What exactly does the integrating factor multiply away?"
-          ],
-          "video": {
-            "id": "tVzaX9u6YAE",
-            "title": "MIT 18.03 Lec 3 — Solving First-order Linear ODEs",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 2,
-          "t": "Modeling with first-order equations",
-          "tier": 3,
-          "scope": "Mixing tanks, thermal soak, and RC circuits: one balance statement each, and the same equation three times. Time constants read directly from coefficients. Steady state as the equation's destination, transient as its journey.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Write the ODE for a 5 m³ well-mixed tank flushed at 0.25 m³/min, and read off τ. (20 min)",
-            "Why do a cooling casting and a discharging capacitor share one mathematics?"
-          ],
-          "video": {
-            "id": "XDhJ8lVGbl8",
-            "title": "MIT 18.03 Lec 1 — The Geometrical View of y' = f(x,y)",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 3,
-          "t": "Second-order equations: the homogeneous story",
-          "tier": 3,
-          "scope": "The characteristic equation turns a differential equation into algebra. Overdamped, critically damped, and underdamped responses classified by the discriminant. Why the damping ratio will become the vibration engineer's favorite number.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Classify y'' + 4y' + 3y = 0 by its roots. (−1 and −3: overdamped)",
-            "What does a complex-conjugate root pair mean physically?"
-          ],
-          "video": {
-            "id": "vP-oRQqmeg4",
-            "title": "MIT 18.03 Lec 9 — Second-order Linear ODEs with Constant Coefficients",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 4,
-          "t": "Nonhomogeneous equations and forced response",
-          "tier": 3,
-          "scope": "Undetermined coefficients for constant, ramp, and sinusoidal forcing. The structure theorem: general solution = homogeneous + particular. Transient versus steady-state response — the vocabulary the controls course inherits whole.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Why does the transient die out while the forced response persists?",
-            "What particular-solution form do you try for a constant force input?"
-          ],
-          "video": {
-            "id": "9KbpbBMThTE",
-            "title": "MIT 18.03 Lec 13 — Finding Particular Solutions to Inhomogeneous ODEs",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 5,
-          "t": "Free and forced oscillations",
-          "tier": 3,
-          "scope": "The mass–spring–damper equation solved end to end. Resonance: why amplitude grows when forcing approaches the natural frequency, and why machines care at one-times running speed. Beats in brief.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Compute ωn for m = 4 kg, k = 10 kN/m. (50 rad/s)",
-            "What limits the resonant amplitude in a real machine?"
-          ],
-          "video": {
-            "id": "Y9_zrupnz0Q",
-            "title": "MIT 18.03 Lec 14 — Resonance (reinforcement/bridge lecture)",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 6,
-          "t": "Laplace transforms I",
-          "tier": 3,
-          "scope": "The transform defined and a working table built by direct integration. Transforms of derivatives: calculus becomes algebra, and initial conditions walk in automatically. Linearity as the property that makes the method industrial.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "What is the transform of e^(−3t)? (1/(s+3))",
-            "How do initial conditions enter a transformed equation without extra work?"
-          ],
-          "video": {
-            "id": "sZ2qulI6GEk",
-            "title": "MIT 18.03 Lec 19 — Introduction to the Laplace Transform (reinforcement/bridge lecture)",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 7,
-          "t": "Laplace transforms II: solving problems",
-          "tier": 3,
-          "scope": "Inverse transforms by partial fractions; step inputs and switched forcing handled cleanly. Initial-value problems solved entirely in the s-domain. The transfer-function idea planted for the controls course.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Invert 6/(s(s+3)). (2 − 2e^(−3t))",
-            "What does dividing by s do to a signal in the time domain?"
-          ],
-          "video": {
-            "id": "_YVcjNmjHik",
-            "title": "MIT 18.03 Lec 22 — Laplace Transforms with Discontinuous Inputs",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 8,
-          "t": "Systems of equations: the matrix view",
-          "tier": 3,
-          "scope": "Coupled tanks and coupled masses written as x' = Ax. Why coupled dynamics needs matrices rather than more calculus. The eigenvalue preview: a system's tempo hides in A itself.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Write the two-tank mixing problem as a matrix equation.",
-            "What plays the characteristic equation's role for a system of equations?"
-          ],
-          "video": {
-            "id": "MCrDzhpu3-s",
-            "title": "MIT 18.03 Lec 24 — Introduction to First-order Systems of ODEs",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 9,
-          "t": "Matrices and linear systems",
-          "tier": 3,
-          "scope": "Gaussian elimination, rank, and solvability; determinants at working strength. The numerical caution: ill-conditioned systems amplify data noise, and engineering data is never clean. Where matrix solving hides inside every simulation tool.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Solve a 3×3 system by elimination, tracking each pivot.",
-            "What does a near-zero determinant warn you about the answer?"
-          ],
-          "video": {
-            "id": "YBajUR3EFSM",
-            "title": "MIT 18.02 Lec 4 — Square Systems",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 10,
-          "t": "Eigenvalues and eigenvectors",
-          "tier": 3,
-          "scope": "Eigenvalues computed for 2×2 and 3×3 matrices; eigenvalues as the system's tempo — decay rates and oscillation frequencies — and eigenvectors as its mode shapes. The modal language of the vibrations course is born here.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Find the eigenvalues of [[2,1],[1,2]]. (1 and 3)",
-            "Why do the signs of eigenvalues decide stability?"
-          ],
-          "video": {
-            "id": "heBvViSi9xQ",
-            "title": "MIT 18.03 Lec 25 — Homogeneous Linear Systems (eigenvalues at work)",
-            "channel": "MIT OpenCourseWare"
-          }
-        },
-        {
-          "n": 11,
-          "t": "Numerical solution of differential equations",
-          "tier": 3,
-          "scope": "Euler's method and Runge–Kutta; step size traded against accuracy and stability, observed live on the cooling equation. When numerical solution is the only honest route — and how to distrust it productively. Closes the loop with the computing course.",
-          "src": "MIT OCW 18.03",
-          "preview": [
-            "Take two Euler steps of y' = −y, y(0) = 1, h = 0.5. (0.25)",
-            "Why can too large a step make a stable equation explode numerically?"
-          ],
-          "video": {
-            "id": "LbKKzMag5Rc",
-            "title": "MIT 18.03 Lec 2 — Euler's Numerical Method",
-            "channel": "MIT OpenCourseWare"
-          }
-        }
-      ],
-      "career": "<p>Differential equations are the native language of every engineer who predicts how\na system behaves over time — the sector only changes the system:</p>\n<ul>\n<li><b>Automotive &amp; heavy equipment</b> — ride and driveline engineers at manufacturers\nsuch as <b>Toyota</b> tune suspensions and mounts as mass–spring–damper systems, reading\n\\( \\zeta \\) and \\( \\omega_n \\) straight off this course to decide whether a chassis slams,\nsettles, or rings.</li>\n<li><b>Aerospace &amp; defense</b> — flight-control and structures engineers at houses such as\n<b>Airbus</b> live in second-order dynamics and Laplace transforms: every actuator loop and\nflutter margin is the forced-response and eigenvalue mathematics of Lessons 4–10.</li>\n<li><b>Industrial technology &amp; controls</b> — automation engineers at suppliers such as\n<b>Rockwell Automation</b> size every servo, filter, and PID loop from time constants and\npole locations — the state-space and eigenvalue view of Lessons 8–10 is their daily model.</li>\n</ul>\n<p><b>Interview angle:</b> the recurring probe is qualitative — \"sketch the response of this\nsystem without solving it.\" The discriminant, \\( \\omega_n \\), and \\( \\zeta \\) drilled here are\nthe expected instant answer, before any integration.</p>"
+     "n": 1,
+     "t": "First-order equations revisited: separable and linear",
+     "tier": 3,
+     "scope": "Separable equations recapped from the calculus course, then the linear first-order equation solved with the integrating factor, derived rather than decreed. Solution families and the initial condition that picks one. The course's working vocabulary set in one lesson.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)",
+      "What exactly does the integrating factor multiply away?"
+     ],
+     "video": {
+      "id": "tVzaX9u6YAE",
+      "title": "MIT 18.03 Lec 3 — Solving First-order Linear ODEs",
+      "channel": "MIT OpenCourseWare"
+     }
     },
     {
-      "id": "strength",
-      "code": "SOM 201",
-      "title": "Strength of Materials",
-      "summary": "Stress where it lives: axial members, torsion, bending, combined loading, and failure theories — the course that turns statics diagrams into the numbers written on repair procedures and fitness-for-service notes.",
-      "taught_from": [
-        "MIT OCW 2.001 Mechanics & Materials I (ocw.mit.edu)",
-        "NPTEL: Strength of Materials (nptel.ac.in)"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Stress and strain under axial load",
-          "tier": 2,
-          "core60": "B1",
-          "scope": "Normal stress and strain defined from first principles; the tensile curve reread as an engineer's contract — modulus, yield, ultimate, ductility. Allowable stress and factor of safety as institutional honesty. Saint-Venant's caution about where formulas apply.",
-          "src": "MIT OCW 2.001; Callister & Rethwisch, Ch. 6; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "A 16 mm bar carries 45 kN: compute the stress and the safety factor against 355 MPa yield.",
-            "Engineering versus true stress: which keeps rising after necking, and why?",
-            "Why do aluminum alloys need the 0.2% offset construction to define yield at all?"
-          ],
-          "video": {
-            "id": "P38xMOqvytU",
-            "title": "MoM Lesson 9 — The Stress-Strain Diagram",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 2,
-          "t": "Axial members and thermal stress",
-          "tier": 3,
-          "scope": "Deformation of stepped and composite bars. Statically indeterminate axial problems. Thermal expansion against restraint — the piping stress problem in embryo.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Two bars in series under one load: which stretches more and why?",
-            "Why does restrained thermal expansion create stress without any external load?"
-          ],
-          "video": {
-            "id": "xWZAIKemz04",
-            "title": "MoM Lesson 21 — Thermal Expansion and Axial Elongation",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 3,
-          "t": "Torsion of shafts",
-          "tier": 3,
-          "scope": "Shear stress and angle of twist in circular shafts derived. Power–torque–speed relations for drivelines. Sizing a pump shaft and reading a torsional failure surface's 45° signature.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Why does a torsional fatigue crack spiral at 45°?",
-            "Double a shaft's diameter: what happens to its torsional stress at the same torque?"
-          ],
-          "video": {
-            "id": "HTW0PxHw_00",
-            "title": "MoM Lesson 23 — Shear Stress Due to Torsion, Polar Moment",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 4,
-          "t": "Bending and transverse shear in beams",
-          "tier": 3,
-          "scope": "The flexure formula derived from plane sections; section modulus as the designer's currency. Shear stress distribution and shear flow — why webs carry shear and flanges carry moment in an I-beam. Built-up sections and their fastener spacing, and where beams actually fail.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Why does bending stress vanish at the neutral axis and peak at the surface?",
-            "Why do I-beam webs carry the shear while flanges carry the moment?"
-          ],
-          "video": {
-            "id": "9Y448EOR2vk",
-            "title": "MoM Lesson 31 — The Flexure Formula",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 5,
-          "t": "Beam deflection",
-          "tier": 3,
-          "scope": "Elastic curve by integration; superposition with standard cases. Stiffness as a serviceability limit distinct from strength. Machinery baseplate and walkway deflection checks.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Stiffness and strength are different failures: give a case where deflection governs.",
-            "Why does superposition work for beam deflections?"
-          ],
-          "video": {
-            "id": "vd5tpO3eRdg",
-            "title": "MoM Lesson 62 — Slope and Deflection Introduction",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 6,
-          "t": "Combined loading",
-          "tier": 3,
-          "scope": "Axial, torsion, bending, and pressure superposed at a point. Critical-point hunting on real components. A shaft with a pulley worked completely — the pattern for machine design.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "At a shaft surface point under bending plus torsion: which stresses combine, and how?",
-            "Why is the critical point rarely obvious before you check candidates?"
-          ],
-          "video": {
-            "id": "9_X8Ir7LLnk",
-            "title": "MoM Lesson 44 — Combined Loading Introduction",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 7,
-          "t": "Stress transformation and Mohr's circle",
-          "tier": 3,
-          "scope": "Plane-stress transformation derived, then Mohr's circle as its graphical engine. Principal stresses and maximum shear located. Why fatigue cracks pick their planes.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "What do Mohr's circle's center and radius each represent?",
-            "Why do principal planes carry no shear?"
-          ],
-          "video": {
-            "id": "q3xpMLFnGeY",
-            "title": "MoM Lesson 50 — Mohr's Circle for Stress Transformation",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 8,
-          "t": "Pressure vessels: thin-walled theory",
-          "tier": 3,
-          "scope": "Hoop and axial stress derived from equilibrium. The 2:1 hoop-to-axial ratio and what it predicts about vessel failure orientation. First contact with the equipment class Asset Integrity will govern.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Derive the 2:1 hoop-to-axial ratio and say which way a vessel should split first.",
-            "When does thin-wall theory stop being honest?"
-          ],
-          "video": {
-            "id": "0AbW_guBj5Y",
-            "title": "MoM Lesson 41 — Intro to Thin-Walled Pressure Vessels",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 9,
-          "t": "Failure theories",
-          "tier": 3,
-          "scope": "Tresca and von Mises for ductile metals; maximum normal stress for brittle ones. Using them on combined-stress states from lesson 7. What 'the stress' means when there are six components.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Why does von Mises predict yielding better than max-normal-stress for ductile metals?",
-            "A pure-shear state: what does each theory predict for yield?"
-          ],
-          "video": {
-            "id": "QV6xB0bLJwM",
-            "title": "MoM Lesson 55 — Tresca, Von Mises, and Rankine Failure Theories",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 10,
-          "t": "Buckling of columns",
-          "tier": 3,
-          "scope": "Euler buckling derived; effective length and slenderness. The crossover between yielding and buckling. Why long slender compression members fail sideways without warning.",
-          "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Why does buckling depend on stiffness and length but not strength?",
-            "What does effective length encode about end conditions?"
-          ],
-          "video": {
-            "id": "ai4nS1t7LeY",
-            "title": "MoM Lesson 66 — Intro to Column Buckling",
-            "channel": "Jeff Hanson"
-          }
-        },
-        {
-          "n": 11,
-          "t": "Stress concentration and fatigue preview",
-          "tier": 3,
-          "scope": "Kt at holes, fillets, and keyways; the geometry tax on nominal stress. Notch sensitivity in brief. The handshake with Materials II's fatigue lesson — geometry and metallurgy jointly set life.",
-          "src": "MIT OCW 2.001; Callister & Rethwisch, Ch. 8; video: Jeff Hanson (Texas Tech) — mechanics of materials",
-          "preview": [
-            "Why does a keyway multiply nominal stress, and by roughly how much order-wise?",
-            "What does notch sensitivity add to the geometric Kt story?"
-          ],
-          "video": {
-            "id": "G1Zbzvn7eyg",
-            "title": "MoM Lesson 22 — Stress Concentration (Stress Risers)",
-            "channel": "Jeff Hanson"
-          }
-        }
-      ],
-      "career": "<p>Strength of Materials is the sizing calculation behind every load-bearing part — the\nsector picks which parts:</p>\n<ul>\n<li><b>Construction &amp; heavy structures</b> — structural engineers at contractors such as\n<b>Bechtel</b> size beams and columns by the section modulus and allowable-stress logic of\nthis course; the flexure formula is their daily tool.</li>\n<li><b>Oil, gas &amp; process plant</b> — piping and pressure engineers at operators such as\n<b>Shell</b> live in the thermal-stress and restraint problem of Lesson 2 — expansion loops\nand supports exist to keep \\( E\\alpha\\Delta T \\) below allowable.</li>\n<li><b>Automotive &amp; rotating machinery</b> — driveline and machine engineers at makers such\nas <b>Caterpillar</b> size shafts by \\( \\tau_{max}=16T/\\pi d^3 \\) and read torsional fracture\nsurfaces exactly as Lesson 3 teaches.</li>\n</ul>\n<p><b>Interview angle:</b> the classic probe is \"size this shaft/beam for this load\" — the\nallowable-stress inversion (\\( S\\ge M/\\sigma_{allow} \\), \\( d=(16T/\\pi\\tau)^{1/3} \\)) is the\nexpected working answer, with the factor of safety stated explicitly.</p>"
+     "n": 2,
+     "t": "Modeling with first-order equations",
+     "tier": 3,
+     "scope": "Mixing tanks, thermal soak, and RC circuits: one balance statement each, and the same equation three times. Time constants read directly from coefficients. Steady state as the equation's destination, transient as its journey.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Write the ODE for a 5 m³ well-mixed tank flushed at 0.25 m³/min, and read off τ. (20 min)",
+      "Why do a cooling casting and a discharging capacitor share one mathematics?"
+     ],
+     "video": {
+      "id": "XDhJ8lVGbl8",
+      "title": "MIT 18.03 Lec 1 — The Geometrical View of y' = f(x,y)",
+      "channel": "MIT OpenCourseWare"
+     }
     },
     {
-      "id": "fluids",
-      "code": "FLD 203",
-      "title": "Fluid Mechanics",
-      "summary": "Pressure, flow, and loss: statics to Bernoulli to real pipe networks with pumps attached — taught so that a pump curve, a system curve, and an NPSH margin become native reading.",
-      "taught_from": [
-        "Çengel & Cimbala, Fluid Mechanics: Fundamentals and Applications (McGraw-Hill)"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Fluid properties",
-          "tier": 3,
-          "scope": "Density, viscosity, vapor pressure, surface tension — each tied to a plant consequence. Newtonian behavior and where slurries and polymers depart from it. Vapor pressure flagged early: cavitation is coming.",
-          "src": "Çengel & Cimbala, Ch. 2; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Why does vapor pressure, not boiling point, decide cavitation risk?",
-            "Newtonian or not: what does the label actually claim?"
-          ],
-          "video": {
-            "id": "VvDJyhYSJv8",
-            "title": "Understanding Viscosity",
-            "channel": "The Efficient Engineer",
-            "alternatives": [
-              {
-                "id": "Fa_VzLBgSfg",
-                "title": "Understanding Viscosity of Fluids: Theory & Experiments",
-                "channel": "Engineering Materials-Tribology-Design"
-              },
-              {
-                "id": "UVcyea3ZH54",
-                "title": "Understanding Viscosity and Viscous Force",
-                "channel": "The Practical School"
-              },
-              {
-                "id": "f8areXBvSsA",
-                "title": "Understanding Viscosity in Fluids",
-                "channel": "Engineering Streamlined"
-              }
-            ]
-          }
-        },
-        {
-          "n": 2,
-          "t": "Pressure and fluid statics",
-          "tier": 3,
-          "scope": "Pressure fields, manometry, and forces on submerged surfaces. Gauge versus absolute pressure — the eternal instrumentation trap. Tank and dam wall calculations done cleanly.",
-          "src": "Çengel & Cimbala, Ch. 3; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Gauge versus absolute: which does a transmitter read, and when does it bite?",
-            "Why does force on a submerged gate act below its centroid?"
-          ],
-          "video": {
-            "id": "6btDiYZ5xa0",
-            "title": "Fluid/Hydrostatic Pressure in 11 Minutes!",
-            "channel": "Less Boring Lectures",
-            "alternatives": [
-              {
-                "id": "3MvRpp7WnK0",
-                "title": "Hydrostatic Pressure in 8 Minutes!",
-                "channel": "Less Boring Lectures"
-              },
-              {
-                "id": "C0ujLqKPWew",
-                "title": "Hydrostatic Pressure (Fluid Mechanics Lesson 3)",
-                "channel": "Strong Medicine"
-              },
-              {
-                "id": "vLiC_v_2iFU",
-                "title": "Hydrostatic Pressure Basics",
-                "channel": "kvillesblog"
-              }
-            ]
-          }
-        },
-        {
-          "n": 3,
-          "t": "Flow description, Reynolds number, and continuity",
-          "tier": 3,
-          "scope": "Streamlines and flow regimes; the Reynolds number as the master dimensionless group, with laminar and turbulent flow distinguished physically and transition located in real pipe sizes. Control-volume mass balances, steady and unsteady, and velocity–area trades in ducts and nozzles. The one-line continuity equation that gating design already used in MFG 105.",
-          "src": "Çengel & Cimbala, Ch. 4–5, 8; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Compute-style: what Reynolds number regime is water at 2 m/s in a 100 mm pipe?",
-            "Halve a duct's area at constant flow: what must velocity do?"
-          ],
-          "video": {
-            "id": "MGxHVAfaAuc",
-            "title": "Understanding Reynolds Number",
-            "channel": "Fluid Matters",
-            "verified": true,
-            "note": "owner-approved 2026-07-18; oEmbed-verified real; video-policy v3",
-            "alternatives": [
-              {
-                "id": "NenlNon6ODw",
-                "title": "Reynolds Number — Laminar vs. Turbulent Flow in 8 Minutes",
-                "channel": "Less Boring Lectures"
-              },
-              {
-                "id": "t_D_tbzBnDg",
-                "title": "Reynolds Number Explained: Complete Engineering Guide",
-                "channel": "Academic Engineering"
-              },
-              {
-                "id": "WNIbQm8wg2E",
-                "title": "Laminar Flow, Turbulent Flow and Reynolds Number",
-                "channel": "Fluids Explained"
-              }
-            ]
-          }
-        },
-        {
-          "n": 4,
-          "t": "Bernoulli, energy equation, pipe flow, and pump curves",
-          "tier": 2,
-          "core60": "B7",
-          "scope": "Bernoulli derived with its assumptions on the table, then upgraded to the energy equation with head loss and pump head. Major losses via friction factor and the Moody chart; minor losses by coefficient. System curve meets pump curve — the operating point found, the lesson this whole course exists to deliver.",
-          "src": "Çengel & Cimbala, Ch. 5, 8, 14; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Static head 12 m plus 6 m friction at design flow: what pump head is needed, and what happens if friction doubles?",
-            "Why does the pump-curve/system-curve intersection define a stable operating point?",
-            "In turbulent pipe flow, head loss scales with roughly which power of velocity — and what does that mean for 'just open the valve more'?"
-          ],
-          "video": {
-            "id": "DW4rItB20h4",
-            "title": "Understanding Bernoulli's Equation",
-            "channel": "The Efficient Engineer",
-            "alternatives": [
-              {
-                "id": "1almvhAFgHA",
-                "title": "Bernoulli's Equation & Flow in Pipes — Understanding Bernoulli",
-                "channel": "Michel van Biezen"
-              },
-              {
-                "id": "LylAqJnncbo",
-                "title": "Pumps in Bernoulli's Equation",
-                "channel": "Michel van Biezen"
-              },
-              {
-                "id": "3y6AP70P8fY",
-                "title": "Flow with a Pump",
-                "channel": "Michel van Biezen"
-              }
-            ]
-          }
-        },
-        {
-          "n": 5,
-          "t": "Momentum analysis",
-          "tier": 3,
-          "scope": "Control-volume momentum for forces on bends, nozzles, and vanes. Thrust blocks and pipe anchor loads. Why elbows in large lines need restraint calculations.",
-          "src": "Çengel & Cimbala, Ch. 6; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Why does a pipe bend need an anchor even at steady flow?",
-            "What momentum change does a nozzle impose on its bracket?"
-          ],
-          "video": {
-            "id": "0QMptwYzF1k",
-            "title": "Conservation of Linear Momentum in Fluid Mechanics",
-            "channel": "Fluid Matters",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "ObKwjK0vU2c",
-                "title": "Conservation of Linear Momentum for a Control Volume",
-                "channel": "CPPMechEngTutorials"
-              },
-              {
-                "id": "83QyZFMfhoQ",
-                "title": "Linear Momentum Equation Examples",
-                "channel": "CPPMechEngTutorials"
-              },
-              {
-                "id": "BXkYIacZzzM",
-                "title": "Solved Example: Conservation of Mass & Momentum (Control Volume)",
-                "channel": "CollegeFluidMechanics"
-              }
-            ]
-          }
-        },
-        {
-          "n": 6,
-          "t": "Dimensional analysis and similarity",
-          "tier": 3,
-          "scope": "Buckingham Pi with engineering judgment. Model testing and scale-up logic. The affinity-law preview: why pump performance scales the way it does.",
-          "src": "Çengel & Cimbala, Ch. 7; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "What does Buckingham Pi promise about model tests?",
-            "Why do pump affinity laws follow from similarity?"
-          ],
-          "video": {
-            "id": "eRBEPV8NCHI",
-            "title": "Buckingham Pi Theorem (Fluid Mechanics)",
-            "channel": "Prof. Van Buren",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "TOhCNYcg5Lc",
-                "title": "Dimensional Analysis: Buckingham Pi Theorem",
-                "channel": "Fluid Matters"
-              },
-              {
-                "id": "ELDJGLDtCy4",
-                "title": "Dimensional Analysis & Buckingham Pi Theorem",
-                "channel": "Spoon Feed Me"
-              },
-              {
-                "id": "pBkfjNMW26Y",
-                "title": "Dimensional Analysis: Buckingham Pi Theorem",
-                "channel": "Study from Home with Us"
-              }
-            ]
-          }
-        },
-        {
-          "n": 7,
-          "t": "Laminar and turbulent pipe flow in depth",
-          "tier": 3,
-          "scope": "Fully developed laminar flow derived to the Hagen–Poiseuille result. Turbulent velocity profiles and roughness effects. Entrance lengths and where gauges should not be installed.",
-          "src": "Çengel & Cimbala, Ch. 8; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Where does Hagen–Poiseuille's fourth-power radius dependence come from?",
-            "Why do entrance lengths matter for meter placement?"
-          ],
-          "video": {
-            "id": "9A-uUG0WR0w",
-            "title": "Understanding Laminar and Turbulent Flow",
-            "channel": "The Efficient Engineer",
-            "alternatives": [
-              {
-                "id": "2YtZFf0NsY8",
-                "title": "Laminar & Turbulent Pipe Flow, The Moody Diagram",
-                "channel": "CPPMechEngTutorials"
-              },
-              {
-                "id": "hZskrtS2bhU",
-                "title": "Moody Chart, Colebrook & Haaland — Friction Factor & Head Loss",
-                "channel": "Professor Behrang"
-              },
-              {
-                "id": "tISdp_394Bw",
-                "title": "Turbulent Flow: Moody Chart",
-                "channel": "Simmy Sigma"
-              }
-            ]
-          }
-        },
-        {
-          "n": 8,
-          "t": "Piping networks and valves",
-          "tier": 3,
-          "scope": "Series and parallel lines; three-reservoir style problems by iteration. Valve types and their loss and control characters. Reading a pump-and-piping isometric as a resistance network.",
-          "src": "Çengel & Cimbala, Ch. 8; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Two parallel lines: how does flow split, physically?",
-            "What does a globe valve's high loss coefficient buy you?"
-          ],
-          "video": {
-            "id": "DVd0TW7HffU",
-            "title": "Valves Explained — Control Valve Types",
-            "channel": "saVRee",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "X14nww4wuAk",
-                "title": "How Ball, Gate, Globe, Butterfly, Check & Relief Valves Work",
-                "channel": "ExplainFull"
-              },
-              {
-                "id": "GSEIpwf5FBI",
-                "title": "How Globe Valves Work",
-                "channel": "saVRee"
-              },
-              {
-                "id": "RQhMh0suaDI",
-                "title": "Types of Valves Explained — Gate, Globe, Ball & Butterfly",
-                "channel": "3D DECODE"
-              }
-            ]
-          }
-        },
-        {
-          "n": 9,
-          "t": "Flow measurement",
-          "tier": 3,
-          "scope": "Orifice, venturi, rotameter, magnetic, ultrasonic, and Coriolis meters — principle, accuracy, and installation effects. Differential-pressure metering derived from Bernoulli. Straight-run requirements as physics, not superstition.",
-          "src": "Çengel & Cimbala, Ch. 8; instrumentation sections; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "Why does an orifice meter trade permanent loss for cheapness?",
-            "Which meter survives dirty slurry, and which demands clean fluid?"
-          ],
-          "video": {
-            "id": "so1NXTcTirs",
-            "title": "Flow Measurement with Venturi Flow Meters",
-            "channel": "Fluid Matters",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "GXDJvva1g9A",
-                "title": "Differential Flow Devices — Venturi, Orifice Plates, Flow Nozzles",
-                "channel": "Ives Equipment Corporation"
-              },
-              {
-                "id": "rN_xgeps7xY",
-                "title": "Differential Pressure Flow Meter — Basics",
-                "channel": "Simplifyde"
-              }
-            ]
-          }
-        },
-        {
-          "n": 10,
-          "t": "Turbomachinery fundamentals",
-          "tier": 3,
-          "scope": "Euler turbomachine equation derived from angular momentum. Velocity triangles for a centrifugal impeller. Specific speed as the shape parameter of the pump world.",
-          "src": "Çengel & Cimbala, Ch. 14; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "What does the Euler equation say a pump impeller does to angular momentum?",
-            "What does specific speed classify?"
-          ],
-          "video": {
-            "id": "6Yxc2Q_jBdU",
-            "title": "Centrifugal Pump Curves — Performance & Characteristics",
-            "channel": "HardHat Engineer",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "WUal9LXc0iM",
-                "title": "How Do Centrifugal Pumps Work? (100% Animation)",
-                "channel": "saVRee"
-              },
-              {
-                "id": "zUsmZc9sUhI",
-                "title": "Pump Curve Explained — How to Read a Pump Curve",
-                "channel": "Jeferson Costa"
-              },
-              {
-                "id": "vc0CiMo2Z3Y",
-                "title": "Centrifugal Pump Performance Curve (Head, Flow, Efficiency)",
-                "channel": "An Pump"
-              }
-            ]
-          }
-        },
-        {
-          "n": 11,
-          "t": "Compressible flow first contact",
-          "tier": 3,
-          "scope": "Mach number, choking, and converging-nozzle behavior. Relief and blowdown implications. Enough gas dynamics to respect what happens downstream of a PSV.",
-          "src": "Çengel & Cimbala, compressible flow chapter; video: LearnChemE (CU Boulder) — fluids",
-          "preview": [
-            "What chokes at a nozzle throat, and at what Mach number?",
-            "Why does a PSV's downstream pipe size matter?"
-          ],
-          "video": {
-            "id": "ewoUwCVa3QY",
-            "title": "Introduction to Compressible Flow",
-            "channel": "CPPMechEngTutorials",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "FERCAWBqDaE",
-                "title": "Mach Number and Introduction to Compressible Flow",
-                "channel": "Flowthermolab"
-              },
-              {
-                "id": "iMPFN3rLIr8",
-                "title": "Compressible Flow & Mach Number",
-                "channel": "Ahsan"
-              },
-              {
-                "id": "naejqfrUXmY",
-                "title": "Compressible Flow — Subsonic, Sonic, Supersonic, Hypersonic",
-                "channel": "Lead GATE"
-              }
-            ]
-          }
-        }
-      ]
+     "n": 3,
+     "t": "Second-order equations: the homogeneous story",
+     "tier": 3,
+     "scope": "The characteristic equation turns a differential equation into algebra. Overdamped, critically damped, and underdamped responses classified by the discriminant. Why the damping ratio will become the vibration engineer's favorite number.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Classify y'' + 4y' + 3y = 0 by its roots. (−1 and −3: overdamped)",
+      "What does a complex-conjugate root pair mean physically?"
+     ],
+     "video": {
+      "id": "vP-oRQqmeg4",
+      "title": "MIT 18.03 Lec 9 — Second-order Linear ODEs with Constant Coefficients",
+      "channel": "MIT OpenCourseWare"
+     }
     },
     {
-      "id": "statistics",
-      "code": "STS 206",
-      "title": "Engineering Statistics",
-      "summary": "Data with judgment: probability, distributions, estimation, hypothesis tests, and regression — the quiet prerequisite under SPC, Weibull analysis, measurement uncertainty, and every reliability claim you will ever audit.",
-      "taught_from": [
-        "MIT OCW 18.05 Introduction to Probability and Statistics (ocw.mit.edu)",
-        "NPTEL: Probability and Statistics"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Describing data",
-          "tier": 3,
-          "scope": "Location, spread, and shape; histograms and box plots that don't lie. Outliers treated as evidence, not embarrassment. Plant data pathologies previewed.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "Mean versus median on skewed repair times: which tells the truer story?",
-            "What does a box plot show that a bar of averages hides?"
-          ],
-          "video": {
-            "id": "SplCk-t1BeA",
-            "title": "Descriptive Statistics: FULL Tutorial - Mean, Median, Mode, Variance & SD (With Examples)",
-            "channel": "Grad Coach",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "d2SbaRpvuos",
-                "title": "Mean, Median, Mode and Standard Deviation: Descriptive Statistics",
-                "channel": "Endpoint Media"
-              }
-            ]
-          }
-        },
-        {
-          "n": 2,
-          "t": "Probability rules",
-          "tier": 3,
-          "scope": "Sample spaces, independence, and conditional probability. Bayes' theorem worked on an inspection-alarm example. The base-rate trap that fools test results everywhere.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "Bayes in one line: why do false alarms dominate rare-event detection?",
-            "Independence: what does assuming it wrongly do to risk estimates?"
-          ],
-          "video": {
-            "id": "_IgyaD7vOOA",
-            "title": "Conditional Probabilities, Clearly Explained!!!",
-            "channel": "StatQuest with Josh Starmer",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "84Nkyd8A0Qw",
-                "title": "Common Discrete Distributions: Bernoulli, Binomial, Poisson",
-                "channel": "BIOS 6611"
-              }
-            ]
-          }
-        },
-        {
-          "n": 3,
-          "t": "Discrete distributions",
-          "tier": 3,
-          "scope": "Binomial and Poisson models with their assumptions audited. Defect counts and rare-event arrivals. When the Poisson approximation earns its keep.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "When is Poisson the right model for failure counts?",
-            "What assumptions does a binomial defect model make?"
-          ],
-          "video": {
-            "id": "oI3hZJqXJuc",
-            "title": "The Main Ideas behind Probability Distributions",
-            "channel": "StatQuest with Josh Starmer",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "84Nkyd8A0Qw",
-                "title": "Common Discrete Distributions: Bernoulli, Binomial, Poisson",
-                "channel": "BIOS 6611"
-              },
-              {
-                "id": "sVBOSwT5K8I",
-                "title": "The Binomial and Poisson Distributions",
-                "channel": "Luis Serrano Academy"
-              }
-            ]
-          }
-        },
-        {
-          "n": 4,
-          "t": "Continuous distributions",
-          "tier": 3,
-          "scope": "The normal distribution and its z-arithmetic; lognormal for repair times; exponential for memoryless failure. Choosing a model from data shape and physics. The exponential's constant hazard flagged for Reliability I.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "Why are repair times often lognormal?",
-            "What does the exponential's memoryless property claim — and when is it false?"
-          ],
-          "video": {
-            "id": "rzFX5NWojp0",
-            "title": "The Normal Distribution, Clearly Explained!!!",
-            "channel": "StatQuest with Josh Starmer",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "B1IpnjgL_0A",
-                "title": "Understanding Normal Distribution | Bell Curve Explained Step-by-Step",
-                "channel": "PM Expert"
-              },
-              {
-                "id": "OQY5FLPTzBg",
-                "title": "Normal Distribution Explained Simply (Bell Curve)",
-                "channel": "CodeLucky"
-              }
-            ]
-          }
-        },
-        {
-          "n": 5,
-          "t": "Sampling distributions and the CLT",
-          "tier": 3,
-          "scope": "Why averages behave better than individuals. Standard error and the central limit theorem demonstrated numerically. The statistical footing under control charts.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "Why do averages of n samples scatter less by √n?",
-            "What does the CLT let you assume about sample means?"
-          ],
-          "video": {
-            "id": "YAlJCEDH2uY",
-            "title": "The Central Limit Theorem, Clearly Explained!!!",
-            "channel": "StatQuest with Josh Starmer",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "ly0oRwW189M",
-                "title": "The Central Limit Theorem Explained Simply",
-                "channel": "The Synthetic Mind"
-              },
-              {
-                "id": "_7MDxoyZqlc",
-                "title": "CENTRAL LIMIT THEOREM: simple visual explanation",
-                "channel": "MaxML"
-              }
-            ]
-          }
-        },
-        {
-          "n": 6,
-          "t": "Estimation and confidence intervals",
-          "tier": 3,
-          "scope": "Point estimates and confidence intervals for means and proportions. Interpretation without the classic misreadings. Sample-size arithmetic before the test campaign, not after.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "Interpret a 95% confidence interval without the classic misreading.",
-            "Why compute sample size before the test campaign?"
-          ],
-          "video": {
-            "id": "TqOeMYtOc1w",
-            "title": "Confidence Intervals, Clearly Explained!!!",
-            "channel": "StatQuest with Josh Starmer",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "ENnlSlvQHO0",
-                "title": "Confidence Interval [Simply explained]",
-                "channel": "numiqo"
-              },
-              {
-                "id": "ftYdEm6pEkE",
-                "title": "Interpreting Confidence Intervals EXPLAINED in 3 Minutes with Examples",
-                "channel": "Ace Tutors"
-              }
-            ]
-          }
-        },
-        {
-          "n": 7,
-          "t": "Hypothesis testing",
-          "tier": 3,
-          "scope": "Null logic, p-values, and both error types with plant-decision stakes. One- and two-sample t-tests. 'Statistically significant' versus 'operationally meaningful' — a distinction with budget consequences.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "What do Type I and Type II errors cost in a plant decision?",
-            "Statistically significant but operationally meaningless: give an example."
-          ],
-          "video": {
-            "id": "vemZtEM63GY",
-            "title": "p-values: What they are and how to interpret them",
-            "channel": "StatQuest with Josh Starmer",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "N4ZQQqyIf6k",
-                "title": "Using Bootstrapping to Calculate p-values!!!",
-                "channel": "StatQuest with Josh Starmer"
-              }
-            ]
-          }
-        },
-        {
-          "n": 8,
-          "t": "Regression",
-          "tier": 3,
-          "scope": "Least squares fitting with residual diagnostics. Interpretation of slope, intercept, and R² without overclaiming. Degradation trends and calibration curves as the working examples.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "What pattern in residuals invalidates a straight-line fit?",
-            "Why does R² alone never justify a model?"
-          ],
-          "video": {
-            "id": "7ArmBVF2dCs",
-            "title": "Linear Regression, Clearly Explained!!!",
-            "channel": "StatQuest with Josh Starmer",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "aFDOzpTeg0s",
-                "title": "The Essence of Linear Regression!!!",
-                "channel": "StatQuest with Josh Starmer"
-              },
-              {
-                "id": "zITIFTsivN8",
-                "title": "Multiple Regression, Clearly Explained!!!",
-                "channel": "StatQuest with Josh Starmer"
-              }
-            ]
-          }
-        },
-        {
-          "n": 9,
-          "t": "Design of experiments first contact",
-          "tier": 3,
-          "scope": "One factor at a time versus factorial thinking. Main effects and interactions read from a 2² experiment. The efficiency argument that Lean Six Sigma will later monetize.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "What is an interaction, and why does one-factor-at-a-time miss it?",
-            "Read main effects from a 2² experiment table."
-          ],
-          "video": {
-            "id": "cHoYAyYHzB0",
-            "title": "Full Factorial Design (DoE - Design of Experiments) Simply explained",
-            "channel": "numiqo",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "orl3r0VDNpw",
-                "title": "Full Factorial Experiments Explained",
-                "channel": "Jordan Edmunds Chetty"
-              },
-              {
-                "id": "ntiBXZ7R_kw",
-                "title": "What is Fractional Factorial Design of Experiments Explained and How to Use it Like an Expert",
-                "channel": "The Open Educator"
-              }
-            ]
-          }
-        },
-        {
-          "n": 10,
-          "t": "Reliability statistics preview",
-          "tier": 3,
-          "scope": "Censored data — the defining feature of failure records. Hazard and survival functions introduced gently. The bridge lesson into Weibull analysis in Reliability I.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "What is censored data, and why do failure logs teem with it?",
-            "Hazard versus failure rate: what does each function describe?"
-          ],
-          "video": {
-            "id": "BQXnKpP2lrI",
-            "title": "RELIABILITY Explained! Failure Rate, MTTF, MTBF, Bathtub Curve, Exponential and Weibull Distribution",
-            "channel": "CQE Academy",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "UhnvPx3_ImQ",
-                "title": "introduction to Weibull Analysis for Reliability Engineering",
-                "channel": "LT72884"
-              },
-              {
-                "id": "ibnU0TM5O-M",
-                "title": "Weibull distribution using the fatigue test as an example (survival/failure/reliability analysis)",
-                "channel": "tec-science"
-              }
-            ]
-          }
-        },
-        {
-          "n": 11,
-          "t": "Statistical malpractice and honest reporting",
-          "tier": 3,
-          "scope": "P-hacking, survivorship bias, and cherry-picked baselines — recognized and named. Uncertainty statements as professional obligation. How to present data to management without lying by chart.",
-          "src": "MIT OCW 18.05",
-          "preview": [
-            "Name two chart crimes that flatter a KPI.",
-            "What must an honest uncertainty statement accompany?"
-          ],
-          "video": {
-            "id": "hgp91KvbJV4",
-            "title": "How to Lie with Data | Misleading Graphs",
-            "channel": "Alex The Analyst",
-            "verified": true,
-            "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
-            "alternatives": [
-              {
-                "id": "f4yZJVdJCG4",
-                "title": "How to Lie With Statistics (and get away with it)",
-                "channel": "Unsolicited advice"
-              },
-              {
-                "id": "1NIW1Ia8M2U",
-                "title": "Misleading Graphs",
-                "channel": "Dan Kernler"
-              }
-            ]
-          }
-        }
-      ]
+     "n": 4,
+     "t": "Nonhomogeneous equations and forced response",
+     "tier": 3,
+     "scope": "Undetermined coefficients for constant, ramp, and sinusoidal forcing. The structure theorem: general solution = homogeneous + particular. Transient versus steady-state response — the vocabulary the controls course inherits whole.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Why does the transient die out while the forced response persists?",
+      "What particular-solution form do you try for a constant force input?"
+     ],
+     "video": {
+      "id": "9KbpbBMThTE",
+      "title": "MIT 18.03 Lec 13 — Finding Particular Solutions to Inhomogeneous ODEs",
+      "channel": "MIT OpenCourseWare"
+     }
     },
     {
-      "id": "electronics-sensors",
-      "code": "ELX 205",
-      "title": "Electronics & Sensors",
-      "summary": "From signal to decision: analog conditioning, digital basics, and the industrial sensor families — temperature, pressure, flow, level, proximity, vibration — wired, scaled, and sanity-checked on a production line.",
-      "taught_from": [
-        "NPTEL: Industrial Instrumentation (nptel.ac.in)",
-        "NPTEL: Basic Electronics"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Semiconductors, diodes, and power supplies",
-          "tier": 3,
-          "scope": "Diode behavior and rectification; regulated DC supplies that feed every control panel. Ripple and regulation specs read from a datasheet. The 24 VDC world introduced.",
-          "src": "NPTEL: Basic Electronics",
-          "preview": [
-            "What does a rectifier-plus-regulator chain deliver, and what ripple means?",
-            "Why is 24 VDC the control-panel standard?"
-          ]
-        },
-        {
-          "n": 2,
-          "t": "Transistors and switching",
-          "tier": 3,
-          "scope": "The transistor as a switch; driving relays and indicator loads. Saturation, cutoff, and heat. Solid-state relays versus electromechanical ones.",
-          "src": "NPTEL: Basic Electronics",
-          "preview": [
-            "Transistor as a switch: what do saturation and cutoff correspond to?",
-            "When does a solid-state relay beat an electromechanical one?"
-          ]
-        },
-        {
-          "n": 3,
-          "t": "Op-amps and signal conditioning",
-          "tier": 3,
-          "scope": "Amplification, filtering, and instrumentation amplifiers for small sensor signals. Common-mode rejection as noise defense. Why thermocouple microvolts survive a noisy plant at all.",
-          "src": "NPTEL: Basic Electronics",
-          "preview": [
-            "Why does a thermocouple signal need an instrumentation amplifier?",
-            "What does common-mode rejection actually reject?"
-          ]
-        },
-        {
-          "n": 4,
-          "t": "Digital logic and interfaces",
-          "tier": 3,
-          "scope": "Logic levels, gates, and simple combinational thinking. Discrete inputs and outputs as the PLC sees them. Sinking versus sourcing — the wiring confusion resolved once.",
-          "src": "NPTEL: Basic Electronics",
-          "preview": [
-            "Sinking versus sourcing I/O: what actually differs in the wiring?",
-            "Why do PLCs read logic levels, not analog values, on discrete inputs?"
-          ]
-        },
-        {
-          "n": 5,
-          "t": "Sensors on a production line",
-          "tier": 2,
-          "core60": "G2",
-          "scope": "The industrial sensor families in one working tour — RTD/thermocouple, pressure transmitters, flow and level, proximity and photoelectric — each with its signal, failure modes, and wiring. The 4–20 mA loop derived as an engineering decision, live zero included. A filling line's sensor set walked end to end.",
-          "src": "NPTEL: Industrial Instrumentation",
-          "kuwait": "KDD / Petra",
-          "preview": [
-            "A 4–20 mA transmitter spans 0–5 m of level and reads 12 mA: what is the level?",
-            "Why is the live zero at 4 mA instead of 0 mA?",
-            "RTD or thermocouple for a 90 °C bearing housing: which, and on what grounds?"
-          ]
-        },
-        {
-          "n": 6,
-          "t": "Temperature measurement in depth",
-          "tier": 3,
-          "scope": "RTD classes and self-heating; thermocouple types, cold junctions, and extension wire sins. Thermowells and response lag. Choosing and installing temperature points that tell the truth.",
-          "src": "NPTEL: Industrial Instrumentation",
-          "preview": [
-            "Why does an RTD self-heat, and how is it managed?",
-            "What does a thermowell cost you in response time?"
-          ]
-        },
-        {
-          "n": 7,
-          "t": "Pressure and level measurement in depth",
-          "tier": 3,
-          "scope": "Transmitter anatomy: sensing, isolation, and impulse lines. DP level measurement with wet legs — where the arithmetic goes wrong. Purges, seals, and Gulf-summer condensation traps.",
-          "src": "NPTEL: Industrial Instrumentation",
-          "preview": [
-            "Wet leg versus dry leg in DP level: what changes in the arithmetic?",
-            "Why do impulse lines fail more than transmitters?"
-          ]
-        },
-        {
-          "n": 8,
-          "t": "Vibration and speed sensors",
-          "tier": 3,
-          "scope": "Piezoelectric accelerometers with IEPE powering; mounting and its frequency ceiling, previewed for the condition-monitoring course. Eddy-current proximity probes for shaft motion on journal bearings. Tachometers and encoders — the speed and phase references every machinery diagnosis leans on.",
-          "src": "NPTEL: Industrial Instrumentation",
-          "preview": [
-            "Why does an accelerometer's mounting method set its usable frequency range?",
-            "What does a proximity probe measure that a case-mounted accelerometer cannot?"
-          ]
-        },
-        {
-          "n": 9,
-          "t": "Analog-to-digital and sampling",
-          "tier": 3,
-          "scope": "Sampling, aliasing, and resolution in bits. Anti-alias filtering as a non-negotiable. Why a vibration channel's sample rate sets what defects it can see — the data-collector connection.",
-          "src": "NPTEL: Industrial Instrumentation",
-          "preview": [
-            "State the sampling theorem and one aliasing symptom on a trend.",
-            "What does bit resolution mean for a 4–20 mA channel?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Signal transmission and noise",
-          "tier": 3,
-          "scope": "Grounding, shielding, and segregation of signal from power. Ground loops diagnosed and killed. HART over 4–20 mA in outline.",
-          "src": "NPTEL: Industrial Instrumentation",
-          "preview": [
-            "What causes a ground loop, and what breaks it?",
-            "Why route signal and power cables apart?"
-          ]
-        },
-        {
-          "n": 11,
-          "t": "Sensor selection and installation project",
-          "tier": 3,
-          "scope": "Specify the measurement points for a small process skid: variables, technologies, ranges, and installation details. Datasheets filled honestly. The exercise instrument engineers call 'doing the index'.",
-          "src": "NPTEL: Industrial Instrumentation",
-          "preview": [
-            "What belongs on an instrument datasheet before purchase?",
-            "Pick measurement points for a small skid: what logic orders the list?"
-          ]
-        }
-      ]
+     "n": 5,
+     "t": "Free and forced oscillations",
+     "tier": 3,
+     "scope": "The mass–spring–damper equation solved end to end. Resonance: why amplitude grows when forcing approaches the natural frequency, and why machines care at one-times running speed. Beats in brief.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Compute ωn for m = 4 kg, k = 10 kN/m. (50 rad/s)",
+      "What limits the resonant amplitude in a real machine?"
+     ],
+     "video": {
+      "id": "Y9_zrupnz0Q",
+      "title": "MIT 18.03 Lec 14 — Resonance (reinforcement/bridge lecture)",
+      "channel": "MIT OpenCourseWare"
+     }
     },
     {
-      "id": "mfg-processes-2",
-      "code": "MFG 154",
-      "title": "Manufacturing Processes II — Machining & Joining",
-      "summary": "Chips and joints: machining theory and its operations, grinding, and the welding processes — the removal and joining half of the process world, with Kirby's fabrication lines as the standing example.",
-      "taught_from": [
-        "Groover, Fundamentals of Modern Manufacturing (Wiley) — machining & joining chapters",
-        "Kalpakjian & Schmid, Manufacturing Engineering and Technology (Pearson)",
-        "Black & Kohser, DeGarmo's Materials and Processes in Manufacturing (Wiley)"
-      ],
-      "lessons": [
-        {
-          "n": 1,
-          "t": "Theory of metal machining",
-          "tier": 2,
-          "core60": "A9",
-          "scope": "Orthogonal cutting model: shear plane, chip formation, cutting forces, and the Merchant relation. Cutting temperature and where tool wear comes from. Taylor tool-life equation with its exponents read as economics.",
-          "src": "Groover, Ch. 21",
-          "preview": [
-            "Cutting at 200 m/min gives 30 min of tool life; with Taylor exponent n = 0.25, evaluate the constant C = vTⁿ.",
-            "Where does most of the cutting energy end up, and why does that cap cutting speed?",
-            "If tool–chip friction falls, what does the Merchant relation predict for the shear angle and cutting force?"
-          ]
-        },
-        {
-          "n": 2,
-          "t": "Cutting tools and fluids",
-          "tier": 3,
-          "scope": "Tool materials from HSS to coated carbides and ceramics; wear modes — flank, crater, notch. Insert geometry and grades read from a catalog. Cutting fluids and their delivery, with health notes.",
-          "src": "Groover, cutting-tool chapter; Kalpakjian & Schmid",
-          "preview": [
-            "Flank wear versus crater wear: where does each live and what drives it?",
-            "What do coating layers on a carbide insert actually do?"
-          ]
-        },
-        {
-          "n": 3,
-          "t": "Turning, milling, and drilling",
-          "tier": 2,
-          "core60": "A10",
-          "scope": "The core operations with their speeds-and-feeds arithmetic: material removal rate, machining time, and power. Workholding logic. One condensed worked example runs a job from print to cycle estimate.",
-          "src": "Groover, Ch. 22",
-          "preview": [
-            "Compute MRR for turning at v = 150 m/min, f = 0.3 mm/rev, depth 3 mm.",
-            "How long is one 300 mm turning pass at 0.3 mm/rev and 800 rpm?",
-            "Why does chip evacuation dominate deep-hole drilling in a way milling never sees?"
-          ]
-        },
-        {
-          "n": 4,
-          "t": "Machine tools and CNC basics",
-          "tier": 3,
-          "scope": "Lathe and machining-center anatomy; axes and coordinate systems. What G-code programs actually command. Accuracy, repeatability, and backlash as machine-health quantities a maintenance engineer owns.",
-          "src": "Groover, CNC sections; Kalpakjian & Schmid",
-          "preview": [
-            "What do accuracy, repeatability, and backlash each mean for a CNC axis?",
-            "Why does climb versus conventional milling change finish and force?"
-          ]
-        },
-        {
-          "n": 5,
-          "t": "Grinding and abrasive processes",
-          "tier": 2,
-          "core60": "A11",
-          "scope": "Abrasive mechanics: grain depth of cut, specific energy, and why grinding burns parts when abused. Wheel designation decoded. Surface and cylindrical grinding with dressing and balancing practice.",
-          "src": "Groover, Ch. 25",
-          "preview": [
-            "Why can grinding burn or crack a surface that turning would leave unharmed?",
-            "In a wheel marked A60KV, what do the A, the 60, and the K each specify?",
-            "What does dressing restore, and what workpiece symptom says it is overdue?"
-          ]
-        },
-        {
-          "n": 6,
-          "t": "Surface finish and integrity",
-          "tier": 3,
-          "scope": "Ra and Rz defined and measured; finish versus process capability charts. Residual stresses from machining and grinding. Why a ground bearing journal's finish is a reliability parameter.",
-          "src": "Groover, surface chapters; Kalpakjian & Schmid",
-          "preview": [
-            "Ra versus Rz: what does each capture about a surface?",
-            "Why can grinding leave tensile residual stress, and who cares?"
-          ]
-        },
-        {
-          "n": 7,
-          "t": "Nontraditional machining",
-          "tier": 3,
-          "scope": "EDM, wire EDM, ECM, laser and abrasive-waterjet cutting. Where conventional cutting cannot go: hardened dies, delicate profiles. Selection by material, feature, and tolerance.",
-          "src": "Groover, nontraditional processes chapter",
-          "preview": [
-            "Why does EDM ignore hardness, and what does it demand instead?",
-            "Pick a process for a hardened die cavity's sharp internal corner."
-          ]
-        },
-        {
-          "n": 8,
-          "t": "Welding processes I — arc processes",
-          "tier": 2,
-          "core60": "A12",
-          "scope": "SMAW, GMAW, FCAW, GTAW, SAW: how each arc works, its consumables, positions, and typical defects. Heat input defined and computed. The process lineup on Kirby's structural fabrication floor.",
-          "src": "Groover, welding chapters; Kalpakjian & Schmid",
-          "kuwait": "Kirby Building Systems",
-          "preview": [
-            "Compute heat input for 25 V, 200 A at 5 mm/s travel.",
-            "For structural work outdoors in wind, which arc process displaces GMAW and why?",
-            "Why is GTAW the default for open root passes despite its deposition rate?"
-          ]
-        },
-        {
-          "n": 9,
-          "t": "Welding II, thermal cutting, and joint preparation",
-          "tier": 3,
-          "scope": "Resistance spot and seam welding; oxyfuel, friction, and explosion welding in outline; brazing and soldering distinguished properly from welding. Thermal cutting — oxyfuel, plasma, and laser — with kerf and heat-affected edges. Joint types, edge preparation geometry, and fit-up as the quiet variable behind weld quality.",
-          "src": "Groover, welding chapters; Kalpakjian & Schmid; Black & Kohser",
-          "preview": [
-            "Resistance spot welding: what generates the heat, and where?",
-            "What does poor fit-up do to a weld's defect odds?"
-          ]
-        },
-        {
-          "n": 10,
-          "t": "Mechanical joining",
-          "tier": 3,
-          "scope": "Bolted joints: preload, torque–tension, and why gasketed flanges leak when torqued wrong. Riveting and adhesive bonding in outline. The maintenance view: joints are made to be remade.",
-          "src": "Groover, assembly chapters; Kalpakjian & Schmid",
-          "preview": [
-            "Why does bolt preload, not bolt strength, decide a joint's fatigue life?",
-            "What does a gasket actually seal against, mechanically?"
-          ]
-        },
-        {
-          "n": 11,
-          "t": "Additive manufacturing first contact",
-          "tier": 3,
-          "scope": "The AM process families in one pass: PBF, DED, FDM, binder jetting. Where AM already earns keep: jigs, obsolete spares, prototypes. Honest limits — surface, properties, qualification.",
-          "src": "Groover, additive manufacturing chapter",
-          "preview": [
-            "Where does AM already earn its keep in a maintenance organization?",
-            "Why do printed load-bearing parts face a qualification problem?"
-          ]
-        }
-      ],
-      "videos": [
-        {
-          "title": "SME — machining and joining process videos",
-          "url": "https://www.youtube.com/channel/UCiEiOeFUl4Ytrv63Udugckg",
-          "src": "SME (Society of Manufacturing Engineers)",
-          "tag": "PROFESSIONAL BODY · CLEAR NARRATION · VERIFIED",
-          "note": "Clearly narrated process explainers: machining, grinding, and welding — watch alongside each lesson."
-        },
-        {
-          "title": "Manufacturing Processes II — IIT Kharagpur",
-          "url": "https://nptel.ac.in/courses/112105126",
-          "src": "NPTEL",
-          "tag": "ALTERNATIVE · ENABLE CAPTIONS",
-          "note": "Machining-focused lecture series: cutting mechanics, tools, and grinding."
-        },
-        {
-          "title": "Manufacturing lectures by Eng. Mahmoud Marzouk",
-          "url": "https://www.youtube.com/@Marzouk-Tutorials",
-          "src": "YouTube — independent educator",
-          "tag": "IN ARABIC — ALTERNATIVE · VERIFIED",
-          "note": "Arabic-language manufacturing-processes lectures (casting, forming, sheet metal). English sources above remain the primary path."
-        }
-      ]
+     "n": 6,
+     "t": "Laplace transforms I",
+     "tier": 3,
+     "scope": "The transform defined and a working table built by direct integration. Transforms of derivatives: calculus becomes algebra, and initial conditions walk in automatically. Linearity as the property that makes the method industrial.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "What is the transform of e^(−3t)? (1/(s+3))",
+      "How do initial conditions enter a transformed equation without extra work?"
+     ],
+     "video": {
+      "id": "sZ2qulI6GEk",
+      "title": "MIT 18.03 Lec 19 — Introduction to the Laplace Transform (reinforcement/bridge lecture)",
+      "channel": "MIT OpenCourseWare"
+     }
+    },
+    {
+     "n": 7,
+     "t": "Laplace transforms II: solving problems",
+     "tier": 3,
+     "scope": "Inverse transforms by partial fractions; step inputs and switched forcing handled cleanly. Initial-value problems solved entirely in the s-domain. The transfer-function idea planted for the controls course.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Invert 6/(s(s+3)). (2 − 2e^(−3t))",
+      "What does dividing by s do to a signal in the time domain?"
+     ],
+     "video": {
+      "id": "_YVcjNmjHik",
+      "title": "MIT 18.03 Lec 22 — Laplace Transforms with Discontinuous Inputs",
+      "channel": "MIT OpenCourseWare"
+     }
+    },
+    {
+     "n": 8,
+     "t": "Systems of equations: the matrix view",
+     "tier": 3,
+     "scope": "Coupled tanks and coupled masses written as x' = Ax. Why coupled dynamics needs matrices rather than more calculus. The eigenvalue preview: a system's tempo hides in A itself.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Write the two-tank mixing problem as a matrix equation.",
+      "What plays the characteristic equation's role for a system of equations?"
+     ],
+     "video": {
+      "id": "MCrDzhpu3-s",
+      "title": "MIT 18.03 Lec 24 — Introduction to First-order Systems of ODEs",
+      "channel": "MIT OpenCourseWare"
+     }
+    },
+    {
+     "n": 9,
+     "t": "Matrices and linear systems",
+     "tier": 3,
+     "scope": "Gaussian elimination, rank, and solvability; determinants at working strength. The numerical caution: ill-conditioned systems amplify data noise, and engineering data is never clean. Where matrix solving hides inside every simulation tool.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Solve a 3×3 system by elimination, tracking each pivot.",
+      "What does a near-zero determinant warn you about the answer?"
+     ],
+     "video": {
+      "id": "YBajUR3EFSM",
+      "title": "MIT 18.02 Lec 4 — Square Systems",
+      "channel": "MIT OpenCourseWare"
+     }
+    },
+    {
+     "n": 10,
+     "t": "Eigenvalues and eigenvectors",
+     "tier": 3,
+     "scope": "Eigenvalues computed for 2×2 and 3×3 matrices; eigenvalues as the system's tempo — decay rates and oscillation frequencies — and eigenvectors as its mode shapes. The modal language of the vibrations course is born here.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Find the eigenvalues of [[2,1],[1,2]]. (1 and 3)",
+      "Why do the signs of eigenvalues decide stability?"
+     ],
+     "video": {
+      "id": "heBvViSi9xQ",
+      "title": "MIT 18.03 Lec 25 — Homogeneous Linear Systems (eigenvalues at work)",
+      "channel": "MIT OpenCourseWare"
+     }
+    },
+    {
+     "n": 11,
+     "t": "Numerical solution of differential equations",
+     "tier": 3,
+     "scope": "Euler's method and Runge–Kutta; step size traded against accuracy and stability, observed live on the cooling equation. When numerical solution is the only honest route — and how to distrust it productively. Closes the loop with the computing course.",
+     "src": "MIT OCW 18.03",
+     "preview": [
+      "Take two Euler steps of y' = −y, y(0) = 1, h = 0.5. (0.25)",
+      "Why can too large a step make a stable equation explode numerically?"
+     ],
+     "video": {
+      "id": "LbKKzMag5Rc",
+      "title": "MIT 18.03 Lec 2 — Euler's Numerical Method",
+      "channel": "MIT OpenCourseWare"
+     }
     }
-  ]
+   ],
+   "career": "<p>Differential equations are the native language of every engineer who predicts how\na system behaves over time — the sector only changes the system:</p>\n<ul>\n<li><b>Automotive &amp; heavy equipment</b> — ride and driveline engineers at manufacturers\nsuch as <b>Toyota</b> tune suspensions and mounts as mass–spring–damper systems, reading\n\\( \\zeta \\) and \\( \\omega_n \\) straight off this course to decide whether a chassis slams,\nsettles, or rings.</li>\n<li><b>Aerospace &amp; defense</b> — flight-control and structures engineers at houses such as\n<b>Airbus</b> live in second-order dynamics and Laplace transforms: every actuator loop and\nflutter margin is the forced-response and eigenvalue mathematics of Lessons 4–10.</li>\n<li><b>Industrial technology &amp; controls</b> — automation engineers at suppliers such as\n<b>Rockwell Automation</b> size every servo, filter, and PID loop from time constants and\npole locations — the state-space and eigenvalue view of Lessons 8–10 is their daily model.</li>\n</ul>\n<p><b>Interview angle:</b> the recurring probe is qualitative — \"sketch the response of this\nsystem without solving it.\" The discriminant, \\( \\omega_n \\), and \\( \\zeta \\) drilled here are\nthe expected instant answer, before any integration.</p>"
+  },
+  {
+   "id": "strength",
+   "code": "SOM 201",
+   "title": "Strength of Materials",
+   "summary": "Stress where it lives: axial members, torsion, bending, combined loading, and failure theories — the course that turns statics diagrams into the numbers written on repair procedures and fitness-for-service notes.",
+   "taught_from": [
+    "MIT OCW 2.001 Mechanics & Materials I (ocw.mit.edu)",
+    "NPTEL: Strength of Materials (nptel.ac.in)"
+   ],
+   "lessons": [
+    {
+     "n": 1,
+     "t": "Stress and strain under axial load",
+     "tier": 2,
+     "core60": "B1",
+     "scope": "Normal stress and strain defined from first principles; the tensile curve reread as an engineer's contract — modulus, yield, ultimate, ductility. Allowable stress and factor of safety as institutional honesty. Saint-Venant's caution about where formulas apply.",
+     "src": "MIT OCW 2.001; Callister & Rethwisch, Ch. 6; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "A 16 mm bar carries 45 kN: compute the stress and the safety factor against 355 MPa yield.",
+      "Engineering versus true stress: which keeps rising after necking, and why?",
+      "Why do aluminum alloys need the 0.2% offset construction to define yield at all?"
+     ],
+     "video": {
+      "id": "P38xMOqvytU",
+      "title": "MoM Lesson 9 — The Stress-Strain Diagram",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 2,
+     "t": "Axial members and thermal stress",
+     "tier": 3,
+     "scope": "Deformation of stepped and composite bars. Statically indeterminate axial problems. Thermal expansion against restraint — the piping stress problem in embryo.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "Two bars in series under one load: which stretches more and why?",
+      "Why does restrained thermal expansion create stress without any external load?"
+     ],
+     "video": {
+      "id": "xWZAIKemz04",
+      "title": "MoM Lesson 21 — Thermal Expansion and Axial Elongation",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 3,
+     "t": "Torsion of shafts",
+     "tier": 3,
+     "scope": "Shear stress and angle of twist in circular shafts derived. Power–torque–speed relations for drivelines. Sizing a pump shaft and reading a torsional failure surface's 45° signature.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "Why does a torsional fatigue crack spiral at 45°?",
+      "Double a shaft's diameter: what happens to its torsional stress at the same torque?"
+     ],
+     "video": {
+      "id": "HTW0PxHw_00",
+      "title": "MoM Lesson 23 — Shear Stress Due to Torsion, Polar Moment",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 4,
+     "t": "Bending and transverse shear in beams",
+     "tier": 3,
+     "scope": "The flexure formula derived from plane sections; section modulus as the designer's currency. Shear stress distribution and shear flow — why webs carry shear and flanges carry moment in an I-beam. Built-up sections and their fastener spacing, and where beams actually fail.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "Why does bending stress vanish at the neutral axis and peak at the surface?",
+      "Why do I-beam webs carry the shear while flanges carry the moment?"
+     ],
+     "video": {
+      "id": "9Y448EOR2vk",
+      "title": "MoM Lesson 31 — The Flexure Formula",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 5,
+     "t": "Beam deflection",
+     "tier": 3,
+     "scope": "Elastic curve by integration; superposition with standard cases. Stiffness as a serviceability limit distinct from strength. Machinery baseplate and walkway deflection checks.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "Stiffness and strength are different failures: give a case where deflection governs.",
+      "Why does superposition work for beam deflections?"
+     ],
+     "video": {
+      "id": "vd5tpO3eRdg",
+      "title": "MoM Lesson 62 — Slope and Deflection Introduction",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 6,
+     "t": "Combined loading",
+     "tier": 3,
+     "scope": "Axial, torsion, bending, and pressure superposed at a point. Critical-point hunting on real components. A shaft with a pulley worked completely — the pattern for machine design.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "At a shaft surface point under bending plus torsion: which stresses combine, and how?",
+      "Why is the critical point rarely obvious before you check candidates?"
+     ],
+     "video": {
+      "id": "9_X8Ir7LLnk",
+      "title": "MoM Lesson 44 — Combined Loading Introduction",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 7,
+     "t": "Stress transformation and Mohr's circle",
+     "tier": 3,
+     "scope": "Plane-stress transformation derived, then Mohr's circle as its graphical engine. Principal stresses and maximum shear located. Why fatigue cracks pick their planes.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "What do Mohr's circle's center and radius each represent?",
+      "Why do principal planes carry no shear?"
+     ],
+     "video": {
+      "id": "q3xpMLFnGeY",
+      "title": "MoM Lesson 50 — Mohr's Circle for Stress Transformation",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 8,
+     "t": "Pressure vessels: thin-walled theory",
+     "tier": 3,
+     "scope": "Hoop and axial stress derived from equilibrium. The 2:1 hoop-to-axial ratio and what it predicts about vessel failure orientation. First contact with the equipment class Asset Integrity will govern.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "Derive the 2:1 hoop-to-axial ratio and say which way a vessel should split first.",
+      "When does thin-wall theory stop being honest?"
+     ],
+     "video": {
+      "id": "0AbW_guBj5Y",
+      "title": "MoM Lesson 41 — Intro to Thin-Walled Pressure Vessels",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 9,
+     "t": "Failure theories",
+     "tier": 3,
+     "scope": "Tresca and von Mises for ductile metals; maximum normal stress for brittle ones. Using them on combined-stress states from lesson 7. What 'the stress' means when there are six components.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "Why does von Mises predict yielding better than max-normal-stress for ductile metals?",
+      "A pure-shear state: what does each theory predict for yield?"
+     ],
+     "video": {
+      "id": "QV6xB0bLJwM",
+      "title": "MoM Lesson 55 — Tresca, Von Mises, and Rankine Failure Theories",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 10,
+     "t": "Buckling of columns",
+     "tier": 3,
+     "scope": "Euler buckling derived; effective length and slenderness. The crossover between yielding and buckling. Why long slender compression members fail sideways without warning.",
+     "src": "MIT OCW 2.001; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "Why does buckling depend on stiffness and length but not strength?",
+      "What does effective length encode about end conditions?"
+     ],
+     "video": {
+      "id": "ai4nS1t7LeY",
+      "title": "MoM Lesson 66 — Intro to Column Buckling",
+      "channel": "Jeff Hanson"
+     }
+    },
+    {
+     "n": 11,
+     "t": "Stress concentration and fatigue preview",
+     "tier": 3,
+     "scope": "Kt at holes, fillets, and keyways; the geometry tax on nominal stress. Notch sensitivity in brief. The handshake with Materials II's fatigue lesson — geometry and metallurgy jointly set life.",
+     "src": "MIT OCW 2.001; Callister & Rethwisch, Ch. 8; video: Jeff Hanson (Texas Tech) — mechanics of materials",
+     "preview": [
+      "Why does a keyway multiply nominal stress, and by roughly how much order-wise?",
+      "What does notch sensitivity add to the geometric Kt story?"
+     ],
+     "video": {
+      "id": "G1Zbzvn7eyg",
+      "title": "MoM Lesson 22 — Stress Concentration (Stress Risers)",
+      "channel": "Jeff Hanson"
+     }
+    }
+   ],
+   "career": "<p>Strength of Materials is the sizing calculation behind every load-bearing part — the\nsector picks which parts:</p>\n<ul>\n<li><b>Construction &amp; heavy structures</b> — structural engineers at contractors such as\n<b>Bechtel</b> size beams and columns by the section modulus and allowable-stress logic of\nthis course; the flexure formula is their daily tool.</li>\n<li><b>Oil, gas &amp; process plant</b> — piping and pressure engineers at operators such as\n<b>Shell</b> live in the thermal-stress and restraint problem of Lesson 2 — expansion loops\nand supports exist to keep \\( E\\alpha\\Delta T \\) below allowable.</li>\n<li><b>Automotive &amp; rotating machinery</b> — driveline and machine engineers at makers such\nas <b>Caterpillar</b> size shafts by \\( \\tau_{max}=16T/\\pi d^3 \\) and read torsional fracture\nsurfaces exactly as Lesson 3 teaches.</li>\n</ul>\n<p><b>Interview angle:</b> the classic probe is \"size this shaft/beam for this load\" — the\nallowable-stress inversion (\\( S\\ge M/\\sigma_{allow} \\), \\( d=(16T/\\pi\\tau)^{1/3} \\)) is the\nexpected working answer, with the factor of safety stated explicitly.</p>"
+  },
+  {
+   "id": "fluids",
+   "code": "FLD 203",
+   "title": "Fluid Mechanics",
+   "summary": "Pressure, flow, and loss: statics to Bernoulli to real pipe networks with pumps attached — taught so that a pump curve, a system curve, and an NPSH margin become native reading.",
+   "taught_from": [
+    "Çengel & Cimbala, Fluid Mechanics: Fundamentals and Applications (McGraw-Hill)"
+   ],
+   "lessons": [
+    {
+     "n": 1,
+     "t": "Fluid properties",
+     "tier": 3,
+     "scope": "Density, viscosity, vapor pressure, surface tension — each tied to a plant consequence. Newtonian behavior and where slurries and polymers depart from it. Vapor pressure flagged early: cavitation is coming.",
+     "src": "Çengel & Cimbala, Ch. 2; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "Why does vapor pressure, not boiling point, decide cavitation risk?",
+      "Newtonian or not: what does the label actually claim?"
+     ],
+     "video": {
+      "id": "VvDJyhYSJv8",
+      "title": "Understanding Viscosity",
+      "channel": "The Efficient Engineer",
+      "alternatives": [
+       {
+        "id": "Fa_VzLBgSfg",
+        "title": "Understanding Viscosity of Fluids: Theory & Experiments",
+        "channel": "Engineering Materials-Tribology-Design"
+       },
+       {
+        "id": "UVcyea3ZH54",
+        "title": "Understanding Viscosity and Viscous Force",
+        "channel": "The Practical School"
+       },
+       {
+        "id": "f8areXBvSsA",
+        "title": "Understanding Viscosity in Fluids",
+        "channel": "Engineering Streamlined"
+       }
+      ]
+     }
+    },
+    {
+     "n": 2,
+     "t": "Pressure and fluid statics",
+     "tier": 3,
+     "scope": "Pressure fields, manometry, and forces on submerged surfaces. Gauge versus absolute pressure — the eternal instrumentation trap. Tank and dam wall calculations done cleanly.",
+     "src": "Çengel & Cimbala, Ch. 3; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "Gauge versus absolute: which does a transmitter read, and when does it bite?",
+      "Why does force on a submerged gate act below its centroid?"
+     ],
+     "video": {
+      "id": "6btDiYZ5xa0",
+      "title": "Fluid/Hydrostatic Pressure in 11 Minutes!",
+      "channel": "Less Boring Lectures",
+      "alternatives": [
+       {
+        "id": "3MvRpp7WnK0",
+        "title": "Hydrostatic Pressure in 8 Minutes!",
+        "channel": "Less Boring Lectures"
+       },
+       {
+        "id": "C0ujLqKPWew",
+        "title": "Hydrostatic Pressure (Fluid Mechanics Lesson 3)",
+        "channel": "Strong Medicine"
+       },
+       {
+        "id": "vLiC_v_2iFU",
+        "title": "Hydrostatic Pressure Basics",
+        "channel": "kvillesblog"
+       }
+      ]
+     }
+    },
+    {
+     "n": 3,
+     "t": "Flow description, Reynolds number, and continuity",
+     "tier": 3,
+     "scope": "Streamlines and flow regimes; the Reynolds number as the master dimensionless group, with laminar and turbulent flow distinguished physically and transition located in real pipe sizes. Control-volume mass balances, steady and unsteady, and velocity–area trades in ducts and nozzles. The one-line continuity equation that gating design already used in MFG 105.",
+     "src": "Çengel & Cimbala, Ch. 4–5, 8; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "Compute-style: what Reynolds number regime is water at 2 m/s in a 100 mm pipe?",
+      "Halve a duct's area at constant flow: what must velocity do?"
+     ],
+     "video": {
+      "id": "MGxHVAfaAuc",
+      "title": "Understanding Reynolds Number",
+      "channel": "Fluid Matters",
+      "verified": true,
+      "note": "owner-approved 2026-07-18; oEmbed-verified real; video-policy v3",
+      "alternatives": [
+       {
+        "id": "NenlNon6ODw",
+        "title": "Reynolds Number — Laminar vs. Turbulent Flow in 8 Minutes",
+        "channel": "Less Boring Lectures"
+       },
+       {
+        "id": "t_D_tbzBnDg",
+        "title": "Reynolds Number Explained: Complete Engineering Guide",
+        "channel": "Academic Engineering"
+       },
+       {
+        "id": "WNIbQm8wg2E",
+        "title": "Laminar Flow, Turbulent Flow and Reynolds Number",
+        "channel": "Fluids Explained"
+       }
+      ]
+     }
+    },
+    {
+     "n": 4,
+     "t": "Bernoulli, energy equation, pipe flow, and pump curves",
+     "tier": 2,
+     "core60": "B7",
+     "scope": "Bernoulli derived with its assumptions on the table, then upgraded to the energy equation with head loss and pump head. Major losses via friction factor and the Moody chart; minor losses by coefficient. System curve meets pump curve — the operating point found, the lesson this whole course exists to deliver.",
+     "src": "Çengel & Cimbala, Ch. 5, 8, 14; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "Static head 12 m plus 6 m friction at design flow: what pump head is needed, and what happens if friction doubles?",
+      "Why does the pump-curve/system-curve intersection define a stable operating point?",
+      "In turbulent pipe flow, head loss scales with roughly which power of velocity — and what does that mean for 'just open the valve more'?"
+     ],
+     "video": {
+      "id": "DW4rItB20h4",
+      "title": "Understanding Bernoulli's Equation",
+      "channel": "The Efficient Engineer",
+      "alternatives": [
+       {
+        "id": "1almvhAFgHA",
+        "title": "Bernoulli's Equation & Flow in Pipes — Understanding Bernoulli",
+        "channel": "Michel van Biezen"
+       },
+       {
+        "id": "LylAqJnncbo",
+        "title": "Pumps in Bernoulli's Equation",
+        "channel": "Michel van Biezen"
+       },
+       {
+        "id": "3y6AP70P8fY",
+        "title": "Flow with a Pump",
+        "channel": "Michel van Biezen"
+       }
+      ]
+     }
+    },
+    {
+     "n": 5,
+     "t": "Momentum analysis",
+     "tier": 3,
+     "scope": "Control-volume momentum for forces on bends, nozzles, and vanes. Thrust blocks and pipe anchor loads. Why elbows in large lines need restraint calculations.",
+     "src": "Çengel & Cimbala, Ch. 6; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "Why does a pipe bend need an anchor even at steady flow?",
+      "What momentum change does a nozzle impose on its bracket?"
+     ],
+     "video": {
+      "id": "0QMptwYzF1k",
+      "title": "Conservation of Linear Momentum in Fluid Mechanics",
+      "channel": "Fluid Matters",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "ObKwjK0vU2c",
+        "title": "Conservation of Linear Momentum for a Control Volume",
+        "channel": "CPPMechEngTutorials"
+       },
+       {
+        "id": "83QyZFMfhoQ",
+        "title": "Linear Momentum Equation Examples",
+        "channel": "CPPMechEngTutorials"
+       },
+       {
+        "id": "BXkYIacZzzM",
+        "title": "Solved Example: Conservation of Mass & Momentum (Control Volume)",
+        "channel": "CollegeFluidMechanics"
+       }
+      ]
+     }
+    },
+    {
+     "n": 6,
+     "t": "Dimensional analysis and similarity",
+     "tier": 3,
+     "scope": "Buckingham Pi with engineering judgment. Model testing and scale-up logic. The affinity-law preview: why pump performance scales the way it does.",
+     "src": "Çengel & Cimbala, Ch. 7; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "What does Buckingham Pi promise about model tests?",
+      "Why do pump affinity laws follow from similarity?"
+     ],
+     "video": {
+      "id": "eRBEPV8NCHI",
+      "title": "Buckingham Pi Theorem (Fluid Mechanics)",
+      "channel": "Prof. Van Buren",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "TOhCNYcg5Lc",
+        "title": "Dimensional Analysis: Buckingham Pi Theorem",
+        "channel": "Fluid Matters"
+       },
+       {
+        "id": "ELDJGLDtCy4",
+        "title": "Dimensional Analysis & Buckingham Pi Theorem",
+        "channel": "Spoon Feed Me"
+       },
+       {
+        "id": "pBkfjNMW26Y",
+        "title": "Dimensional Analysis: Buckingham Pi Theorem",
+        "channel": "Study from Home with Us"
+       }
+      ]
+     }
+    },
+    {
+     "n": 7,
+     "t": "Laminar and turbulent pipe flow in depth",
+     "tier": 3,
+     "scope": "Fully developed laminar flow derived to the Hagen–Poiseuille result. Turbulent velocity profiles and roughness effects. Entrance lengths and where gauges should not be installed.",
+     "src": "Çengel & Cimbala, Ch. 8; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "Where does Hagen–Poiseuille's fourth-power radius dependence come from?",
+      "Why do entrance lengths matter for meter placement?"
+     ],
+     "video": {
+      "id": "9A-uUG0WR0w",
+      "title": "Understanding Laminar and Turbulent Flow",
+      "channel": "The Efficient Engineer",
+      "alternatives": [
+       {
+        "id": "2YtZFf0NsY8",
+        "title": "Laminar & Turbulent Pipe Flow, The Moody Diagram",
+        "channel": "CPPMechEngTutorials"
+       },
+       {
+        "id": "hZskrtS2bhU",
+        "title": "Moody Chart, Colebrook & Haaland — Friction Factor & Head Loss",
+        "channel": "Professor Behrang"
+       },
+       {
+        "id": "tISdp_394Bw",
+        "title": "Turbulent Flow: Moody Chart",
+        "channel": "Simmy Sigma"
+       }
+      ]
+     }
+    },
+    {
+     "n": 8,
+     "t": "Piping networks and valves",
+     "tier": 3,
+     "scope": "Series and parallel lines; three-reservoir style problems by iteration. Valve types and their loss and control characters. Reading a pump-and-piping isometric as a resistance network.",
+     "src": "Çengel & Cimbala, Ch. 8; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "Two parallel lines: how does flow split, physically?",
+      "What does a globe valve's high loss coefficient buy you?"
+     ],
+     "video": {
+      "id": "DVd0TW7HffU",
+      "title": "Valves Explained — Control Valve Types",
+      "channel": "saVRee",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "X14nww4wuAk",
+        "title": "How Ball, Gate, Globe, Butterfly, Check & Relief Valves Work",
+        "channel": "ExplainFull"
+       },
+       {
+        "id": "GSEIpwf5FBI",
+        "title": "How Globe Valves Work",
+        "channel": "saVRee"
+       },
+       {
+        "id": "RQhMh0suaDI",
+        "title": "Types of Valves Explained — Gate, Globe, Ball & Butterfly",
+        "channel": "3D DECODE"
+       }
+      ]
+     }
+    },
+    {
+     "n": 9,
+     "t": "Flow measurement",
+     "tier": 3,
+     "scope": "Orifice, venturi, rotameter, magnetic, ultrasonic, and Coriolis meters — principle, accuracy, and installation effects. Differential-pressure metering derived from Bernoulli. Straight-run requirements as physics, not superstition.",
+     "src": "Çengel & Cimbala, Ch. 8; instrumentation sections; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "Why does an orifice meter trade permanent loss for cheapness?",
+      "Which meter survives dirty slurry, and which demands clean fluid?"
+     ],
+     "video": {
+      "id": "so1NXTcTirs",
+      "title": "Flow Measurement with Venturi Flow Meters",
+      "channel": "Fluid Matters",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "GXDJvva1g9A",
+        "title": "Differential Flow Devices — Venturi, Orifice Plates, Flow Nozzles",
+        "channel": "Ives Equipment Corporation"
+       },
+       {
+        "id": "rN_xgeps7xY",
+        "title": "Differential Pressure Flow Meter — Basics",
+        "channel": "Simplifyde"
+       }
+      ]
+     }
+    },
+    {
+     "n": 10,
+     "t": "Turbomachinery fundamentals",
+     "tier": 3,
+     "scope": "Euler turbomachine equation derived from angular momentum. Velocity triangles for a centrifugal impeller. Specific speed as the shape parameter of the pump world.",
+     "src": "Çengel & Cimbala, Ch. 14; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "What does the Euler equation say a pump impeller does to angular momentum?",
+      "What does specific speed classify?"
+     ],
+     "video": {
+      "id": "6Yxc2Q_jBdU",
+      "title": "Centrifugal Pump Curves — Performance & Characteristics",
+      "channel": "HardHat Engineer",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "WUal9LXc0iM",
+        "title": "How Do Centrifugal Pumps Work? (100% Animation)",
+        "channel": "saVRee"
+       },
+       {
+        "id": "zUsmZc9sUhI",
+        "title": "Pump Curve Explained — How to Read a Pump Curve",
+        "channel": "Jeferson Costa"
+       },
+       {
+        "id": "vc0CiMo2Z3Y",
+        "title": "Centrifugal Pump Performance Curve (Head, Flow, Efficiency)",
+        "channel": "An Pump"
+       }
+      ]
+     }
+    },
+    {
+     "n": 11,
+     "t": "Compressible flow first contact",
+     "tier": 3,
+     "scope": "Mach number, choking, and converging-nozzle behavior. Relief and blowdown implications. Enough gas dynamics to respect what happens downstream of a PSV.",
+     "src": "Çengel & Cimbala, compressible flow chapter; video: LearnChemE (CU Boulder) — fluids",
+     "preview": [
+      "What chokes at a nozzle throat, and at what Mach number?",
+      "Why does a PSV's downstream pipe size matter?"
+     ],
+     "video": {
+      "id": "ewoUwCVa3QY",
+      "title": "Introduction to Compressible Flow",
+      "channel": "CPPMechEngTutorials",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "FERCAWBqDaE",
+        "title": "Mach Number and Introduction to Compressible Flow",
+        "channel": "Flowthermolab"
+       },
+       {
+        "id": "iMPFN3rLIr8",
+        "title": "Compressible Flow & Mach Number",
+        "channel": "Ahsan"
+       },
+       {
+        "id": "naejqfrUXmY",
+        "title": "Compressible Flow — Subsonic, Sonic, Supersonic, Hypersonic",
+        "channel": "Lead GATE"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "statistics",
+   "code": "STS 206",
+   "title": "Engineering Statistics",
+   "summary": "Data with judgment: probability, distributions, estimation, hypothesis tests, and regression — the quiet prerequisite under SPC, Weibull analysis, measurement uncertainty, and every reliability claim you will ever audit.",
+   "taught_from": [
+    "MIT OCW 18.05 Introduction to Probability and Statistics (ocw.mit.edu)",
+    "NPTEL: Probability and Statistics"
+   ],
+   "lessons": [
+    {
+     "n": 1,
+     "t": "Describing data",
+     "tier": 3,
+     "scope": "Location, spread, and shape; histograms and box plots that don't lie. Outliers treated as evidence, not embarrassment. Plant data pathologies previewed.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "Mean versus median on skewed repair times: which tells the truer story?",
+      "What does a box plot show that a bar of averages hides?"
+     ],
+     "video": {
+      "id": "SplCk-t1BeA",
+      "title": "Descriptive Statistics: FULL Tutorial - Mean, Median, Mode, Variance & SD (With Examples)",
+      "channel": "Grad Coach",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "d2SbaRpvuos",
+        "title": "Mean, Median, Mode and Standard Deviation: Descriptive Statistics",
+        "channel": "Endpoint Media"
+       }
+      ]
+     }
+    },
+    {
+     "n": 2,
+     "t": "Probability rules",
+     "tier": 3,
+     "scope": "Sample spaces, independence, and conditional probability. Bayes' theorem worked on an inspection-alarm example. The base-rate trap that fools test results everywhere.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "Bayes in one line: why do false alarms dominate rare-event detection?",
+      "Independence: what does assuming it wrongly do to risk estimates?"
+     ],
+     "video": {
+      "id": "_IgyaD7vOOA",
+      "title": "Conditional Probabilities, Clearly Explained!!!",
+      "channel": "StatQuest with Josh Starmer",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "84Nkyd8A0Qw",
+        "title": "Common Discrete Distributions: Bernoulli, Binomial, Poisson",
+        "channel": "BIOS 6611"
+       }
+      ]
+     }
+    },
+    {
+     "n": 3,
+     "t": "Discrete distributions",
+     "tier": 3,
+     "scope": "Binomial and Poisson models with their assumptions audited. Defect counts and rare-event arrivals. When the Poisson approximation earns its keep.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "When is Poisson the right model for failure counts?",
+      "What assumptions does a binomial defect model make?"
+     ],
+     "video": {
+      "id": "oI3hZJqXJuc",
+      "title": "The Main Ideas behind Probability Distributions",
+      "channel": "StatQuest with Josh Starmer",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "84Nkyd8A0Qw",
+        "title": "Common Discrete Distributions: Bernoulli, Binomial, Poisson",
+        "channel": "BIOS 6611"
+       },
+       {
+        "id": "sVBOSwT5K8I",
+        "title": "The Binomial and Poisson Distributions",
+        "channel": "Luis Serrano Academy"
+       }
+      ]
+     }
+    },
+    {
+     "n": 4,
+     "t": "Continuous distributions",
+     "tier": 3,
+     "scope": "The normal distribution and its z-arithmetic; lognormal for repair times; exponential for memoryless failure. Choosing a model from data shape and physics. The exponential's constant hazard flagged for Reliability I.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "Why are repair times often lognormal?",
+      "What does the exponential's memoryless property claim — and when is it false?"
+     ],
+     "video": {
+      "id": "rzFX5NWojp0",
+      "title": "The Normal Distribution, Clearly Explained!!!",
+      "channel": "StatQuest with Josh Starmer",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "B1IpnjgL_0A",
+        "title": "Understanding Normal Distribution | Bell Curve Explained Step-by-Step",
+        "channel": "PM Expert"
+       },
+       {
+        "id": "OQY5FLPTzBg",
+        "title": "Normal Distribution Explained Simply (Bell Curve)",
+        "channel": "CodeLucky"
+       }
+      ]
+     }
+    },
+    {
+     "n": 5,
+     "t": "Sampling distributions and the CLT",
+     "tier": 3,
+     "scope": "Why averages behave better than individuals. Standard error and the central limit theorem demonstrated numerically. The statistical footing under control charts.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "Why do averages of n samples scatter less by √n?",
+      "What does the CLT let you assume about sample means?"
+     ],
+     "video": {
+      "id": "YAlJCEDH2uY",
+      "title": "The Central Limit Theorem, Clearly Explained!!!",
+      "channel": "StatQuest with Josh Starmer",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "ly0oRwW189M",
+        "title": "The Central Limit Theorem Explained Simply",
+        "channel": "The Synthetic Mind"
+       },
+       {
+        "id": "_7MDxoyZqlc",
+        "title": "CENTRAL LIMIT THEOREM: simple visual explanation",
+        "channel": "MaxML"
+       }
+      ]
+     }
+    },
+    {
+     "n": 6,
+     "t": "Estimation and confidence intervals",
+     "tier": 3,
+     "scope": "Point estimates and confidence intervals for means and proportions. Interpretation without the classic misreadings. Sample-size arithmetic before the test campaign, not after.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "Interpret a 95% confidence interval without the classic misreading.",
+      "Why compute sample size before the test campaign?"
+     ],
+     "video": {
+      "id": "TqOeMYtOc1w",
+      "title": "Confidence Intervals, Clearly Explained!!!",
+      "channel": "StatQuest with Josh Starmer",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "ENnlSlvQHO0",
+        "title": "Confidence Interval [Simply explained]",
+        "channel": "numiqo"
+       },
+       {
+        "id": "ftYdEm6pEkE",
+        "title": "Interpreting Confidence Intervals EXPLAINED in 3 Minutes with Examples",
+        "channel": "Ace Tutors"
+       }
+      ]
+     }
+    },
+    {
+     "n": 7,
+     "t": "Hypothesis testing",
+     "tier": 3,
+     "scope": "Null logic, p-values, and both error types with plant-decision stakes. One- and two-sample t-tests. 'Statistically significant' versus 'operationally meaningful' — a distinction with budget consequences.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "What do Type I and Type II errors cost in a plant decision?",
+      "Statistically significant but operationally meaningless: give an example."
+     ],
+     "video": {
+      "id": "vemZtEM63GY",
+      "title": "p-values: What they are and how to interpret them",
+      "channel": "StatQuest with Josh Starmer",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "N4ZQQqyIf6k",
+        "title": "Using Bootstrapping to Calculate p-values!!!",
+        "channel": "StatQuest with Josh Starmer"
+       }
+      ]
+     }
+    },
+    {
+     "n": 8,
+     "t": "Regression",
+     "tier": 3,
+     "scope": "Least squares fitting with residual diagnostics. Interpretation of slope, intercept, and R² without overclaiming. Degradation trends and calibration curves as the working examples.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "What pattern in residuals invalidates a straight-line fit?",
+      "Why does R² alone never justify a model?"
+     ],
+     "video": {
+      "id": "7ArmBVF2dCs",
+      "title": "Linear Regression, Clearly Explained!!!",
+      "channel": "StatQuest with Josh Starmer",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "aFDOzpTeg0s",
+        "title": "The Essence of Linear Regression!!!",
+        "channel": "StatQuest with Josh Starmer"
+       },
+       {
+        "id": "zITIFTsivN8",
+        "title": "Multiple Regression, Clearly Explained!!!",
+        "channel": "StatQuest with Josh Starmer"
+       }
+      ]
+     }
+    },
+    {
+     "n": 9,
+     "t": "Design of experiments first contact",
+     "tier": 3,
+     "scope": "One factor at a time versus factorial thinking. Main effects and interactions read from a 2² experiment. The efficiency argument that Lean Six Sigma will later monetize.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "What is an interaction, and why does one-factor-at-a-time miss it?",
+      "Read main effects from a 2² experiment table."
+     ],
+     "video": {
+      "id": "cHoYAyYHzB0",
+      "title": "Full Factorial Design (DoE - Design of Experiments) Simply explained",
+      "channel": "numiqo",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "orl3r0VDNpw",
+        "title": "Full Factorial Experiments Explained",
+        "channel": "Jordan Edmunds Chetty"
+       },
+       {
+        "id": "ntiBXZ7R_kw",
+        "title": "What is Fractional Factorial Design of Experiments Explained and How to Use it Like an Expert",
+        "channel": "The Open Educator"
+       }
+      ]
+     }
+    },
+    {
+     "n": 10,
+     "t": "Reliability statistics preview",
+     "tier": 3,
+     "scope": "Censored data — the defining feature of failure records. Hazard and survival functions introduced gently. The bridge lesson into Weibull analysis in Reliability I.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "What is censored data, and why do failure logs teem with it?",
+      "Hazard versus failure rate: what does each function describe?"
+     ],
+     "video": {
+      "id": "BQXnKpP2lrI",
+      "title": "RELIABILITY Explained! Failure Rate, MTTF, MTBF, Bathtub Curve, Exponential and Weibull Distribution",
+      "channel": "CQE Academy",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "UhnvPx3_ImQ",
+        "title": "introduction to Weibull Analysis for Reliability Engineering",
+        "channel": "LT72884"
+       },
+       {
+        "id": "ibnU0TM5O-M",
+        "title": "Weibull distribution using the fatigue test as an example (survival/failure/reliability analysis)",
+        "channel": "tec-science"
+       }
+      ]
+     }
+    },
+    {
+     "n": 11,
+     "t": "Statistical malpractice and honest reporting",
+     "tier": 3,
+     "scope": "P-hacking, survivorship bias, and cherry-picked baselines — recognized and named. Uncertainty statements as professional obligation. How to present data to management without lying by chart.",
+     "src": "MIT OCW 18.05",
+     "preview": [
+      "Name two chart crimes that flatter a KPI.",
+      "What must an honest uncertainty statement accompany?"
+     ],
+     "video": {
+      "id": "hgp91KvbJV4",
+      "title": "How to Lie with Data | Misleading Graphs",
+      "channel": "Alex The Analyst",
+      "verified": true,
+      "note": "oEmbed-verified real 2026-07-18; established channel (>3k views); video-policy v3",
+      "alternatives": [
+       {
+        "id": "f4yZJVdJCG4",
+        "title": "How to Lie With Statistics (and get away with it)",
+        "channel": "Unsolicited advice"
+       },
+       {
+        "id": "1NIW1Ia8M2U",
+        "title": "Misleading Graphs",
+        "channel": "Dan Kernler"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "electronics-sensors",
+   "code": "ELX 205",
+   "title": "Electronics & Sensors",
+   "summary": "From signal to decision: analog conditioning, digital basics, and the industrial sensor families — temperature, pressure, flow, level, proximity, vibration — wired, scaled, and sanity-checked on a production line.",
+   "taught_from": [
+    "NPTEL: Industrial Instrumentation (nptel.ac.in)",
+    "NPTEL: Basic Electronics"
+   ],
+   "lessons": [
+    {
+     "n": 1,
+     "t": "Semiconductors, diodes, and power supplies",
+     "tier": 3,
+     "scope": "Diode behavior and rectification; regulated DC supplies that feed every control panel. Ripple and regulation specs read from a datasheet. The 24 VDC world introduced.",
+     "src": "NPTEL: Basic Electronics",
+     "preview": [
+      "What does a rectifier-plus-regulator chain deliver, and what ripple means?",
+      "Why is 24 VDC the control-panel standard?"
+     ]
+    },
+    {
+     "n": 2,
+     "t": "Transistors and switching",
+     "tier": 3,
+     "scope": "The transistor as a switch; driving relays and indicator loads. Saturation, cutoff, and heat. Solid-state relays versus electromechanical ones.",
+     "src": "NPTEL: Basic Electronics",
+     "preview": [
+      "Transistor as a switch: what do saturation and cutoff correspond to?",
+      "When does a solid-state relay beat an electromechanical one?"
+     ]
+    },
+    {
+     "n": 3,
+     "t": "Op-amps and signal conditioning",
+     "tier": 3,
+     "scope": "Amplification, filtering, and instrumentation amplifiers for small sensor signals. Common-mode rejection as noise defense. Why thermocouple microvolts survive a noisy plant at all.",
+     "src": "NPTEL: Basic Electronics",
+     "preview": [
+      "Why does a thermocouple signal need an instrumentation amplifier?",
+      "What does common-mode rejection actually reject?"
+     ]
+    },
+    {
+     "n": 4,
+     "t": "Digital logic and interfaces",
+     "tier": 3,
+     "scope": "Logic levels, gates, and simple combinational thinking. Discrete inputs and outputs as the PLC sees them. Sinking versus sourcing — the wiring confusion resolved once.",
+     "src": "NPTEL: Basic Electronics",
+     "preview": [
+      "Sinking versus sourcing I/O: what actually differs in the wiring?",
+      "Why do PLCs read logic levels, not analog values, on discrete inputs?"
+     ]
+    },
+    {
+     "n": 5,
+     "t": "Sensors on a production line",
+     "tier": 2,
+     "core60": "G2",
+     "scope": "The industrial sensor families in one working tour — RTD/thermocouple, pressure transmitters, flow and level, proximity and photoelectric — each with its signal, failure modes, and wiring. The 4–20 mA loop derived as an engineering decision, live zero included. A filling line's sensor set walked end to end.",
+     "src": "NPTEL: Industrial Instrumentation",
+     "kuwait": "KDD / Petra",
+     "preview": [
+      "A 4–20 mA transmitter spans 0–5 m of level and reads 12 mA: what is the level?",
+      "Why is the live zero at 4 mA instead of 0 mA?",
+      "RTD or thermocouple for a 90 °C bearing housing: which, and on what grounds?"
+     ]
+    },
+    {
+     "n": 6,
+     "t": "Temperature measurement in depth",
+     "tier": 3,
+     "scope": "RTD classes and self-heating; thermocouple types, cold junctions, and extension wire sins. Thermowells and response lag. Choosing and installing temperature points that tell the truth.",
+     "src": "NPTEL: Industrial Instrumentation",
+     "preview": [
+      "Why does an RTD self-heat, and how is it managed?",
+      "What does a thermowell cost you in response time?"
+     ]
+    },
+    {
+     "n": 7,
+     "t": "Pressure and level measurement in depth",
+     "tier": 3,
+     "scope": "Transmitter anatomy: sensing, isolation, and impulse lines. DP level measurement with wet legs — where the arithmetic goes wrong. Purges, seals, and Gulf-summer condensation traps.",
+     "src": "NPTEL: Industrial Instrumentation",
+     "preview": [
+      "Wet leg versus dry leg in DP level: what changes in the arithmetic?",
+      "Why do impulse lines fail more than transmitters?"
+     ]
+    },
+    {
+     "n": 8,
+     "t": "Vibration and speed sensors",
+     "tier": 3,
+     "scope": "Piezoelectric accelerometers with IEPE powering; mounting and its frequency ceiling, previewed for the condition-monitoring course. Eddy-current proximity probes for shaft motion on journal bearings. Tachometers and encoders — the speed and phase references every machinery diagnosis leans on.",
+     "src": "NPTEL: Industrial Instrumentation",
+     "preview": [
+      "Why does an accelerometer's mounting method set its usable frequency range?",
+      "What does a proximity probe measure that a case-mounted accelerometer cannot?"
+     ]
+    },
+    {
+     "n": 9,
+     "t": "Analog-to-digital and sampling",
+     "tier": 3,
+     "scope": "Sampling, aliasing, and resolution in bits. Anti-alias filtering as a non-negotiable. Why a vibration channel's sample rate sets what defects it can see — the data-collector connection.",
+     "src": "NPTEL: Industrial Instrumentation",
+     "preview": [
+      "State the sampling theorem and one aliasing symptom on a trend.",
+      "What does bit resolution mean for a 4–20 mA channel?"
+     ]
+    },
+    {
+     "n": 10,
+     "t": "Signal transmission and noise",
+     "tier": 3,
+     "scope": "Grounding, shielding, and segregation of signal from power. Ground loops diagnosed and killed. HART over 4–20 mA in outline.",
+     "src": "NPTEL: Industrial Instrumentation",
+     "preview": [
+      "What causes a ground loop, and what breaks it?",
+      "Why route signal and power cables apart?"
+     ]
+    },
+    {
+     "n": 11,
+     "t": "Sensor selection and installation project",
+     "tier": 3,
+     "scope": "Specify the measurement points for a small process skid: variables, technologies, ranges, and installation details. Datasheets filled honestly. The exercise instrument engineers call 'doing the index'.",
+     "src": "NPTEL: Industrial Instrumentation",
+     "preview": [
+      "What belongs on an instrument datasheet before purchase?",
+      "Pick measurement points for a small skid: what logic orders the list?"
+     ]
+    }
+   ],
+   "career": "<p>Electronics &amp; Sensors is the reason the rest of the plant has numbers to control by — the\nsector picks which numbers:</p>\n<ul>\n<li><b>Analog and mixed-signal semiconductors</b> — component engineers at manufacturers such as\n<b>Texas Instruments</b> design the op-amp, regulator, and instrumentation-amplifier building\nblocks behind Lessons 1 and 3 — the same rectify/filter/regulate chain and CMRR-driven signal\nconditioning this course develops from first principles.</li>\n<li><b>Precision sensors and data-acquisition ICs</b> — applications engineers at manufacturers such\nas <b>Analog Devices</b> build the MEMS accelerometers and ADCs at the center of Lessons 8 and 9 —\nthe mounting-resonance trade-off and the \\( F_s>2f_{max} \\) Nyquist criterion are exactly the\nspecifications printed on those datasheets.</li>\n<li><b>Industrial sensors and discrete automation components</b> — applications engineers at\nmanufacturers such as <b>Omron</b> build the proximity sensors and discrete I/O devices of Lesson 4 —\nthe sourcing/sinking mismatch this course flags as the most common discrete-I/O wiring error is a\nroutine technical-support call for them.</li>\n</ul>\n<p><b>Interview angle:</b> the classic probe is a diagnostic scenario — \"this signal is noisy or\nwrong, walk me through how you would isolate the cause\" — expecting a systematic elimination across\nwiring convention (sourcing/sinking), common-mode versus differential noise (CMRR and shielding),\ngrounding (ground loops), and sampling (Nyquist and aliasing), rather than a guess at a single\ncause.</p>"
+  },
+  {
+   "id": "mfg-processes-2",
+   "code": "MFG 154",
+   "title": "Manufacturing Processes II — Machining & Joining",
+   "summary": "Chips and joints: machining theory and its operations, grinding, and the welding processes — the removal and joining half of the process world, with Kirby's fabrication lines as the standing example.",
+   "taught_from": [
+    "Groover, Fundamentals of Modern Manufacturing (Wiley) — machining & joining chapters",
+    "Kalpakjian & Schmid, Manufacturing Engineering and Technology (Pearson)",
+    "Black & Kohser, DeGarmo's Materials and Processes in Manufacturing (Wiley)"
+   ],
+   "lessons": [
+    {
+     "n": 1,
+     "t": "Theory of metal machining",
+     "tier": 2,
+     "core60": "A9",
+     "scope": "Orthogonal cutting model: shear plane, chip formation, cutting forces, and the Merchant relation. Cutting temperature and where tool wear comes from. Taylor tool-life equation with its exponents read as economics.",
+     "src": "Groover, Ch. 21",
+     "preview": [
+      "Cutting at 200 m/min gives 30 min of tool life; with Taylor exponent n = 0.25, evaluate the constant C = vTⁿ.",
+      "Where does most of the cutting energy end up, and why does that cap cutting speed?",
+      "If tool–chip friction falls, what does the Merchant relation predict for the shear angle and cutting force?"
+     ]
+    },
+    {
+     "n": 2,
+     "t": "Cutting tools and fluids",
+     "tier": 3,
+     "scope": "Tool materials from HSS to coated carbides and ceramics; wear modes — flank, crater, notch. Insert geometry and grades read from a catalog. Cutting fluids and their delivery, with health notes.",
+     "src": "Groover, cutting-tool chapter; Kalpakjian & Schmid",
+     "preview": [
+      "Flank wear versus crater wear: where does each live and what drives it?",
+      "What do coating layers on a carbide insert actually do?"
+     ]
+    },
+    {
+     "n": 3,
+     "t": "Turning, milling, and drilling",
+     "tier": 2,
+     "core60": "A10",
+     "scope": "The core operations with their speeds-and-feeds arithmetic: material removal rate, machining time, and power. Workholding logic. One condensed worked example runs a job from print to cycle estimate.",
+     "src": "Groover, Ch. 22",
+     "preview": [
+      "Compute MRR for turning at v = 150 m/min, f = 0.3 mm/rev, depth 3 mm.",
+      "How long is one 300 mm turning pass at 0.3 mm/rev and 800 rpm?",
+      "Why does chip evacuation dominate deep-hole drilling in a way milling never sees?"
+     ]
+    },
+    {
+     "n": 4,
+     "t": "Machine tools and CNC basics",
+     "tier": 3,
+     "scope": "Lathe and machining-center anatomy; axes and coordinate systems. What G-code programs actually command. Accuracy, repeatability, and backlash as machine-health quantities a maintenance engineer owns.",
+     "src": "Groover, CNC sections; Kalpakjian & Schmid",
+     "preview": [
+      "What do accuracy, repeatability, and backlash each mean for a CNC axis?",
+      "Why does climb versus conventional milling change finish and force?"
+     ]
+    },
+    {
+     "n": 5,
+     "t": "Grinding and abrasive processes",
+     "tier": 2,
+     "core60": "A11",
+     "scope": "Abrasive mechanics: grain depth of cut, specific energy, and why grinding burns parts when abused. Wheel designation decoded. Surface and cylindrical grinding with dressing and balancing practice.",
+     "src": "Groover, Ch. 25",
+     "preview": [
+      "Why can grinding burn or crack a surface that turning would leave unharmed?",
+      "In a wheel marked A60KV, what do the A, the 60, and the K each specify?",
+      "What does dressing restore, and what workpiece symptom says it is overdue?"
+     ]
+    },
+    {
+     "n": 6,
+     "t": "Surface finish and integrity",
+     "tier": 3,
+     "scope": "Ra and Rz defined and measured; finish versus process capability charts. Residual stresses from machining and grinding. Why a ground bearing journal's finish is a reliability parameter.",
+     "src": "Groover, surface chapters; Kalpakjian & Schmid",
+     "preview": [
+      "Ra versus Rz: what does each capture about a surface?",
+      "Why can grinding leave tensile residual stress, and who cares?"
+     ]
+    },
+    {
+     "n": 7,
+     "t": "Nontraditional machining",
+     "tier": 3,
+     "scope": "EDM, wire EDM, ECM, laser and abrasive-waterjet cutting. Where conventional cutting cannot go: hardened dies, delicate profiles. Selection by material, feature, and tolerance.",
+     "src": "Groover, nontraditional processes chapter",
+     "preview": [
+      "Why does EDM ignore hardness, and what does it demand instead?",
+      "Pick a process for a hardened die cavity's sharp internal corner."
+     ]
+    },
+    {
+     "n": 8,
+     "t": "Welding processes I — arc processes",
+     "tier": 2,
+     "core60": "A12",
+     "scope": "SMAW, GMAW, FCAW, GTAW, SAW: how each arc works, its consumables, positions, and typical defects. Heat input defined and computed. The process lineup on Kirby's structural fabrication floor.",
+     "src": "Groover, welding chapters; Kalpakjian & Schmid",
+     "kuwait": "Kirby Building Systems",
+     "preview": [
+      "Compute heat input for 25 V, 200 A at 5 mm/s travel.",
+      "For structural work outdoors in wind, which arc process displaces GMAW and why?",
+      "Why is GTAW the default for open root passes despite its deposition rate?"
+     ]
+    },
+    {
+     "n": 9,
+     "t": "Welding II, thermal cutting, and joint preparation",
+     "tier": 3,
+     "scope": "Resistance spot and seam welding; oxyfuel, friction, and explosion welding in outline; brazing and soldering distinguished properly from welding. Thermal cutting — oxyfuel, plasma, and laser — with kerf and heat-affected edges. Joint types, edge preparation geometry, and fit-up as the quiet variable behind weld quality.",
+     "src": "Groover, welding chapters; Kalpakjian & Schmid; Black & Kohser",
+     "preview": [
+      "Resistance spot welding: what generates the heat, and where?",
+      "What does poor fit-up do to a weld's defect odds?"
+     ]
+    },
+    {
+     "n": 10,
+     "t": "Mechanical joining",
+     "tier": 3,
+     "scope": "Bolted joints: preload, torque–tension, and why gasketed flanges leak when torqued wrong. Riveting and adhesive bonding in outline. The maintenance view: joints are made to be remade.",
+     "src": "Groover, assembly chapters; Kalpakjian & Schmid",
+     "preview": [
+      "Why does bolt preload, not bolt strength, decide a joint's fatigue life?",
+      "What does a gasket actually seal against, mechanically?"
+     ]
+    },
+    {
+     "n": 11,
+     "t": "Additive manufacturing first contact",
+     "tier": 3,
+     "scope": "The AM process families in one pass: PBF, DED, FDM, binder jetting. Where AM already earns keep: jigs, obsolete spares, prototypes. Honest limits — surface, properties, qualification.",
+     "src": "Groover, additive manufacturing chapter",
+     "preview": [
+      "Where does AM already earn its keep in a maintenance organization?",
+      "Why do printed load-bearing parts face a qualification problem?"
+     ]
+    }
+   ],
+   "videos": [
+    {
+     "title": "SME — machining and joining process videos",
+     "url": "https://www.youtube.com/channel/UCiEiOeFUl4Ytrv63Udugckg",
+     "src": "SME (Society of Manufacturing Engineers)",
+     "tag": "PROFESSIONAL BODY · CLEAR NARRATION · VERIFIED",
+     "note": "Clearly narrated process explainers: machining, grinding, and welding — watch alongside each lesson."
+    },
+    {
+     "title": "Manufacturing Processes II — IIT Kharagpur",
+     "url": "https://nptel.ac.in/courses/112105126",
+     "src": "NPTEL",
+     "tag": "ALTERNATIVE · ENABLE CAPTIONS",
+     "note": "Machining-focused lecture series: cutting mechanics, tools, and grinding."
+    },
+    {
+     "title": "Manufacturing lectures by Eng. Mahmoud Marzouk",
+     "url": "https://www.youtube.com/@Marzouk-Tutorials",
+     "src": "YouTube — independent educator",
+     "tag": "IN ARABIC — ALTERNATIVE · VERIFIED",
+     "note": "Arabic-language manufacturing-processes lectures (casting, forming, sheet metal). English sources above remain the primary path."
+    }
+   ]
+  }
+ ]
 }
