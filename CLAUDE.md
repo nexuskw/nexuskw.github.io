@@ -1103,3 +1103,46 @@ build-time injection covers new courses with no extra authoring step).
 NEXT (approved order, unstarted): machine-design-1, kinematics-machinery,
 metrology, mfg-processes-3 — closing Y2S2. 32 courses remain empty across
 Years 3-4 after that.
+
+## STANDING DIRECTIVE — Resources restructure (owner, 2026-07-24)
+
+Owner feedback: the site-wide "Reference" tab piled every course's equations
+into one giant page — references must instead be attached to their own
+distinct course. Implemented as a site-architecture change (nexus_build.py +
+one new data file), not new lesson content — regenerates all 48 courses.
+
+1. Each course's own main page (`build_course_page`) now has a 3-tab bar —
+   Syllabus / Reference / Tools & Software — reusing the fully generic
+   lesson-page `.tabs`/`.tabpanel` CSS+JS as-is. Reference tab reuses
+   `reference_section_html` (already per-course; previously only surfaced
+   inside the course-summary PDF, never on the course's own page).
+2. Top nav "Reference" → **"Resources"** (owner-confirmed wording). The old
+   `build_reference_page` (all-courses equation dump) is retired; the same
+   URL (`reference/index.html`) now serves `build_resources_page`: a
+   Tools & Software directory grouped by category (new `data/tools.json`,
+   schema mirrors textbooks.json/sources.json exactly — `_comment`
+   provenance note + tools dict + courses map) plus a Compiled Summaries
+   tree (Year → Semester → Course).
+3. New `data/tools.json` populated for the 20 courses currently at full
+   depth (owner-confirmed scope — the other 28 get an honest "not compiled
+   yet" placeholder, filled in as each course is authored, same convention
+   as career blocks). 13 tools across CAD/FEA/Numerical/Circuit/CAM/
+   Materials/Statistics/Thermal categories. MathWorks, F-Chart, Mastercam,
+   Minitab, and python.org URLs were live-fetched and confirmed; Autodesk,
+   ANSYS, Dassault, and Analog Devices blocked automated fetch (403/
+   timeout — their bot protection, not a wrong-URL signal) but are current,
+   long-stable product URLs — see tools.json's own `_comment` for the
+   honest verification-status breakdown.
+4. `build_course_summary` split into `course_summary_fragment` (the
+   reusable per-course content) + a thin page wrapper — enables new
+   `build_grouped_summary`, called once per semester and once per year
+   (`curriculum/{sem}/summary.html`, `curriculum/year-{n}/summary.html`),
+   reusing the existing `.sum-part{break-before:page}` print CSS
+   unmodified for automatic per-course page breaks in the combined
+   documents. Verified against a completely unauthored course
+   (machine-design-2, Y3S1): both new tabs and the combined summary
+   degrade gracefully to honest "not yet compiled"/"still in production"
+   text, never an error.
+
+Pages 628→640 (+12 = 8 semester + 4 year summaries). Coverage unchanged
+(221/528) — this pass touched zero lesson content.
