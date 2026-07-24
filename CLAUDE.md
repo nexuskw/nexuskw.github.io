@@ -1056,3 +1056,50 @@ Coverage: 199→210/528 lessons at full depth (38%→40%).
 NEXT (approved order, unstarted): heat-transfer, then machine-design-1,
 kinematics-machinery, metrology, mfg-processes-3 — closing Y2S2. 32
 courses remain empty across Years 3-4 after that.
+
+CHECKPOINT — HEAT-TRANSFER COMPLETE (2026-07-24, new session): heat-transfer
+(HTX 253, Y2S2) authored fresh, all 11 lessons + career block (Alfa Laval /
+Danfoss / Vertiv — fresh rotation, none reused from an earlier course).
+Thermal resistance networks and the critical-radius-of-insulation surprise;
+the fin equation derived and solved (doubling a worked fin's length from
+200 to 400 mm verified at only 9% more heat for double the material);
+lumped capacitance with a Biot-number worked example deliberately tuned to
+land at Bi=0.05 to match this course's own pre-written checkpoint question,
+plus the same pin re-quenched in water to cross the 0.1 threshold and
+invalidate the lumped shortcut; external and internal forced convection (a
+flat-plate h cross-checked against an independent Dittus-Boelter estimate
+to within 1%); natural convection (a sealed-cabinet example showing a
+hotter Gulf ambient cutting real rejected heat by ~24% even as h itself
+barely changes); boiling and condensation (Zuber CHF for water at 1 atm
+landing at the standard ~1.1 MW/m^2 textbook figure, plus a design-margin
+check flagging a hypothetical 0.85 MW/m^2 spec as running hotter than
+typical practice); heat exchangers (LMTD + effectiveness-NTU, and a
+radiation-shield-style N+1 resistance rule re-derived numerically from raw
+resistances rather than quoted from memory); radiation (a two-surface
+network diagram explicitly echoing Lesson 1's resistor-chain visual, and a
+bare-pipe example showing radiation carrying ~48% of total loss — a
+field-relevant number a convection-only audit would miss); the heat-mass
+analogy (reusing this course's own Lesson 4 and Lesson 6 convection
+numbers via the Lewis relation, an explicit numeric callback across
+lessons); and a capstone exchanger-sizing mini-project (LMTD sizing, then
+a 20% fouling margin expressed two equivalent ways — extra area vs. a
+derated design U, both landing on an exact U_design=375 W/m^2K). Every
+numeric example Python-verified pre-write, including several deliberate
+cross-checks between independently-derived results.
+
+Process improvement, this pass: caught a real hyphenation bug in the
+career-block source — a print-style mid-word line wrap ("natural-\n
+convection") that HTML actually renders as "natural- convection" with a
+stray space, not merely a text-extraction artifact. Swept all 11 lesson
+scripts for the same `[a-z]-\n"$` pattern (none found — isolated to the
+hand-typed career block) and fixed by re-running the (now idempotent)
+career-block script rather than hand-patching the JSON. Recommend
+grep-checking any hand-wrapped HTML source string for trailing mid-word
+hyphens before a first build, not just relying on the diagram scanner.
+
+Coverage: 210→221/528 lessons at full depth (40%→42%). Unit-policy
+audit: 20/20 authored-quiz courses compliant (directive #2's automatic
+build-time injection covers new courses with no extra authoring step).
+NEXT (approved order, unstarted): machine-design-1, kinematics-machinery,
+metrology, mfg-processes-3 — closing Y2S2. 32 courses remain empty across
+Years 3-4 after that.
