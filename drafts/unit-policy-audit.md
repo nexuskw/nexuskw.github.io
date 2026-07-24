@@ -22,6 +22,6 @@ Compliant: 16/16 authored-quiz courses.
 | ELE 156 Electrical Fundamentals for Mechanical Engineers | ft, ft/s, hp, lb, lbf, psi, rpm | ✅ tests non-SI |
 | MFG 105 Manufacturing Processes I — Casting & Bulk Forming | ft, ft/s, hp, in, lb, lbf, psi, rpm | ✅ tests non-SI |
 | MTH 207 Engineering Mathematics III — Differential Equations & Linear Algebra | ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
-| SOM 201 Strength of Materials | ft, lb, psi, rpm | ✅ tests non-SI |
+| SOM 201 Strength of Materials | ft, ft/s, hp, in, lb, lbf, psi, rpm | ✅ tests non-SI |
 | FLD 203 Fluid Mechanics | ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
 | STS 206 Engineering Statistics | ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
